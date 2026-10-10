@@ -181,8 +181,8 @@ final class RedirectRules {
 		foreach ( $prefixes as $rule ) {
 			$base = self::key( (string) $rule['source'] );
 			$base = '/' === $base ? '/' : $base . '/';
-			if ( $key === rtrim( $base, '/' ) || ( '/' !== $base && str_starts_with( strtolower( $path ), $base ) ) ) {
-				$remainder = $key === rtrim( $base, '/' ) ? '' : (string) substr( $path, strlen( $base ) );
+			if ( rtrim( $base, '/' ) === $key || ( '/' !== $base && str_starts_with( strtolower( $path ), $base ) ) ) {
+				$remainder = rtrim( $base, '/' ) === $key ? '' : (string) substr( $path, strlen( $base ) );
 				$target    = (string) $rule['target'];
 				if ( str_ends_with( $target, '/' ) ) {
 					$target .= ltrim( $remainder, '/' );

@@ -93,7 +93,7 @@ function td_popup_form( array $popup, string $id ): string {
 				'variant'       => 'compact',
 				'title'         => '',
 				'intro'         => '',
-				'hidden'        => array_filter( $hidden, 'strlen' ),
+				'hidden'        => array_filter( $hidden, static fn( $v ) => '' !== (string) $v ),
 				'id_prefix'     => $id . '-form',
 				'heading_level' => 3,
 				'submit_label'  => '' !== $label ? $label : __( 'Send', 'techdella' ),
@@ -107,7 +107,7 @@ function td_popup_form( array $popup, string $id ): string {
 	$out  = '<form class="td-popup__form" method="post" action="' . esc_url( rest_url( 'techdella/v1/submit/' . $key ) ) . '" data-td-popup-form="' . esc_attr( $key ) . '">';
 	$out .= '<label class="td-popup__label" for="' . esc_attr( $id ) . '-email">' . esc_html__( 'Email', 'techdella' ) . '</label>';
 	$out .= '<input class="td-input" type="email" id="' . esc_attr( $id ) . '-email" name="email" required autocomplete="email">';
-	foreach ( array_filter( $hidden, 'strlen' ) as $name => $value ) {
+	foreach ( array_filter( $hidden, static fn( $v ) => '' !== (string) $v ) as $name => $value ) {
 		$out .= '<input type="hidden" name="' . esc_attr( $name ) . '" value="' . esc_attr( $value ) . '">';
 	}
 	$out .= '<button type="submit" class="td-btn td-btn--primary td-btn--sm"><span class="td-form__submit-label">' . esc_html( '' !== $label ? $label : __( 'Send', 'techdella' ) ) . '</span></button>';
@@ -133,15 +133,15 @@ function td_popup_markup( array $popup, string $context = 'footer' ): string {
 	$type   = $inline ? 'inline' : (string) $popup['type'];
 	$modal  = 'exit' === $type;
 	$attrs  = [
-		'class'              => 'td-popup td-popup--' . $type,
-		'id'                 => $id,
-		'data-td-popup'      => (string) $popup['id'],
-		'data-type'          => $type,
-		'data-form-key'      => (string) $popup['form_key'],
-		'data-variants'      => (string) count( (array) $popup['variants'] ),
-		'data-button-b'      => (string) ( $popup['variants'][1]['button'] ?? '' ),
-		'data-button-a'      => (string) ( $popup['variants'][0]['button'] ?? '' ),
-		'aria-labelledby'    => $id . '-title-a',
+		'class'           => 'td-popup td-popup--' . $type,
+		'id'              => $id,
+		'data-td-popup'   => (string) $popup['id'],
+		'data-type'       => $type,
+		'data-form-key'   => (string) $popup['form_key'],
+		'data-variants'   => (string) count( (array) $popup['variants'] ),
+		'data-button-b'   => (string) ( $popup['variants'][1]['button'] ?? '' ),
+		'data-button-a'   => (string) ( $popup['variants'][0]['button'] ?? '' ),
+		'aria-labelledby' => $id . '-title-a',
 	];
 	if ( ! $inline ) {
 		$attrs['role']       = 'dialog';

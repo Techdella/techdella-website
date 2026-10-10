@@ -46,7 +46,7 @@ function td_popups_admin_handle(): void {
 		wp_safe_redirect( add_query_arg( 'td_msg', 'deleted', td_popups_admin_page_url() ) );
 		exit;
 	}
-	$text = static fn( string $k ): string => isset( $_POST[ $k ] ) ? sanitize_textarea_field( wp_unslash( (string) $_POST[ $k ] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Missing -- verified above.
+	$text     = static fn( string $k ): string => isset( $_POST[ $k ] ) ? sanitize_textarea_field( wp_unslash( (string) $_POST[ $k ] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Missing -- verified above.
 	$variants = [];
 	foreach ( [ 'a', 'b' ] as $v ) {
 		$variants[] = [
@@ -75,8 +75,8 @@ function td_popups_admin_handle(): void {
 		'frequency_days'     => (int) $text( 'frequency_days' ),
 		'variants'           => $variants,
 	];
-	$popup    = Targeting::normalize( $raw );
-	$replaced = false;
+	$popup      = Targeting::normalize( $raw );
+	$replaced   = false;
 	foreach ( $popups as $i => $existing ) {
 		if ( $existing['id'] === $popup['id'] ) {
 			$popups[ $i ] = $popup;
@@ -216,8 +216,8 @@ function td_popups_admin_form( string $id ): void {
 		}
 		return $out . '</select>';
 	};
-	$input = static fn( string $name, string $value, string $type = 'text', string $extra = '' ): string => '<input class="regular-text" type="' . esc_attr( $type ) . '" id="td-pop-' . esc_attr( $name ) . '" name="' . esc_attr( $name ) . '" value="' . esc_attr( $value ) . '"' . $extra . '>';
-	$area  = static fn( string $name, string $value ): string => '<textarea class="large-text" rows="3" id="td-pop-' . esc_attr( $name ) . '" name="' . esc_attr( $name ) . '">' . esc_textarea( $value ) . '</textarea>';
+	$input  = static fn( string $name, string $value, string $type = 'text', string $extra = '' ): string => '<input class="regular-text" type="' . esc_attr( $type ) . '" id="td-pop-' . esc_attr( $name ) . '" name="' . esc_attr( $name ) . '" value="' . esc_attr( $value ) . '"' . $extra . '>';
+	$area   = static fn( string $name, string $value ): string => '<textarea class="large-text" rows="3" id="td-pop-' . esc_attr( $name ) . '" name="' . esc_attr( $name ) . '">' . esc_textarea( $value ) . '</textarea>';
 
 	echo '<h1>' . esc_html( $popup ? __( 'Edit popup', 'techdella' ) : __( 'Add popup', 'techdella' ) ) . '</h1>';
 	echo '<p><a href="' . esc_url( td_popups_admin_page_url() ) . '">&larr; ' . esc_html__( 'All popups', 'techdella' ) . '</a></p>';
@@ -242,11 +242,28 @@ function td_popups_admin_form( string $id ): void {
 	$field( 'exclude_categories', __( 'Not in categories', 'techdella' ), $input( 'exclude_categories', implode( ', ', (array) $p['exclude_categories'] ) ) );
 	$field( 'include', __( 'Only on URLs', 'techdella' ), $area( 'include', implode( "\n", (array) $p['include'] ) ), __( 'One path per line; * matches anything, e.g. /services/*. Empty = any.', 'techdella' ) );
 	$field( 'exclude', __( 'Never on URLs', 'techdella' ), $area( 'exclude', implode( "\n", (array) $p['exclude'] ) ) );
-	$field( 'offer_type', __( 'Offer', 'techdella' ), $select( 'offer_type', [ 'resource' => __( 'Resource (PDF)', 'techdella' ), 'newsletter' => __( 'Newsletter', 'techdella' ) ], (string) $p['offer_type'] ) );
+	$field(
+		'offer_type',
+		__( 'Offer', 'techdella' ),
+		$select(
+			'offer_type',
+			[
+				'resource'   => __( 'Resource (PDF)', 'techdella' ),
+				'newsletter' => __( 'Newsletter', 'techdella' ),
+			],
+			(string) $p['offer_type']
+		)
+	);
 
 	$resources = [ '' => __( '— choose —', 'techdella' ) ];
 	if ( post_type_exists( 'td_resource' ) ) {
-		foreach ( get_posts( [ 'post_type' => 'td_resource', 'post_status' => [ 'publish', 'draft', 'pending' ], 'posts_per_page' => 100 ] ) as $r ) {
+		foreach ( get_posts(
+			[
+				'post_type'      => 'td_resource',
+				'post_status'    => [ 'publish', 'draft', 'pending' ],
+				'posts_per_page' => 100,
+			]
+		) as $r ) {
 			$resources[ $r->post_name ] = $r->post_title;
 		}
 	}
@@ -258,7 +275,10 @@ function td_popups_admin_form( string $id ): void {
 	$field( 'frequency_days', __( 'Show again after (days)', 'techdella' ), $input( 'frequency_days', (string) $p['frequency_days'], 'number', ' min="1" max="365" style="width:6em"' ), __( 'Default 7. Never shown again to someone who converted.', 'techdella' ) );
 	echo '</tbody></table>';
 
-	foreach ( [ 0 => 'a', 1 => 'b' ] as $i => $letter ) {
+	foreach ( [
+		0 => 'a',
+		1 => 'b',
+	] as $i => $letter ) {
 		echo '<h2>' . esc_html( 0 === $i ? __( 'Copy (variant A)', 'techdella' ) : __( 'Variant B (optional A/B test, split 50/50)', 'techdella' ) ) . '</h2><table class="form-table" role="presentation"><tbody>';
 		$field( 'title_' . $letter, __( 'Headline', 'techdella' ), $input( 'title_' . $letter, $v( $i, 'title' ) ), __( 'Mark the one accent word with *asterisks*, e.g. "Audit your *growth*". Leave variant B empty for no test.', 'techdella' ) );
 		$field( 'text_' . $letter, __( 'Text', 'techdella' ), $area( 'text_' . $letter, $v( $i, 'text' ) ) );

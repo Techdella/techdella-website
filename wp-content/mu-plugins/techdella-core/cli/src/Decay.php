@@ -103,7 +103,7 @@ final class Decay {
 				$out[] = $row + [ 'drop' => round( $drop, 4 ) ];
 			}
 		}
-		usort( $out, static fn( $a, $b ) => $b['drop'] <=> $a['drop'] ?: $b['previous'] <=> $a['previous'] );
+		usort( $out, static fn( $a, $b ) => 0 !== ( $b['drop'] <=> $a['drop'] ) ? $b['drop'] <=> $a['drop'] : $b['previous'] <=> $a['previous'] );
 		return $out;
 	}
 
@@ -118,12 +118,11 @@ final class Decay {
 		if ( $months <= 0 ) {
 			return false;
 		}
-		$y   = (int) gmdate( 'Y', $reviewed );
-		$m   = (int) gmdate( 'n', $reviewed ) + $months;
-		$y  += intdiv( $m - 1, 12 );
-		$m   = ( ( $m - 1 ) % 12 ) + 1;
-		$d   = min( (int) gmdate( 'j', $reviewed ), (int) gmdate( 't', gmmktime( 0, 0, 0, $m, 1, $y ) ) );
-		$due = gmmktime( 0, 0, 0, $m, $d, $y );
+		$index = (int) gmdate( 'n', $reviewed ) - 1 + $months; // Months since January of the review year.
+		$y     = (int) gmdate( 'Y', $reviewed ) + intdiv( $index, 12 );
+		$m     = ( $index % 12 ) + 1;
+		$d     = min( (int) gmdate( 'j', $reviewed ), (int) gmdate( 't', gmmktime( 0, 0, 0, $m, 1, $y ) ) );
+		$due   = gmmktime( 0, 0, 0, $m, $d, $y );
 		return $now >= $due;
 	}
 }

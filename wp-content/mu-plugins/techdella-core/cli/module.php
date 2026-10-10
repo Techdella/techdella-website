@@ -30,5 +30,7 @@ require_once __DIR__ . '/setup.php';
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
 	require_once __DIR__ . '/importer.php';
 	require_once __DIR__ . '/audit.php';
+	require_once __DIR__ . '/class-redirects-command.php';
+	require_once __DIR__ . '/class-audit-command.php';
 	require_once __DIR__ . '/commands.php';
 }

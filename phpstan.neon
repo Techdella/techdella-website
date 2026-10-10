@@ -7,8 +7,10 @@ parameters:
 		- wp-content/mu-plugins
 	excludePaths:
 		- wp-content/themes/techdella/assets/*
+		- wp-content/mu-plugins/techdella-core/lib/*
 	scanFiles:
 		- vendor/php-stubs/wp-cli-stubs/wp-cli-stubs.php
+		- wp-content/mu-plugins/techdella-core/lib/Parsedown.php
 	bootstrapFiles:
 		- tests/phpstan-bootstrap.php
 	treatPhpDocTypesAsCertain: false

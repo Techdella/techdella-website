@@ -13,6 +13,8 @@
  * Pure PHP, unit-tested (tests/unit/CliFrontMatterTest.php).
  */
 
+// phpcs:disable WordPress.Security.EscapeOutput.ExceptionNotEscaped -- parser errors are plain-text CLI messages, never HTML.
+
 namespace TechDella\Core\Cli;
 
 defined( 'ABSPATH' ) || exit;
@@ -68,10 +70,14 @@ final class FrontMatter {
 				continue;
 			}
 			if ( self::indent( $line ) > 0 ) {
-				throw new \InvalidArgumentException( sprintf( 'Unexpected indentation on line %d.', $i + 1 ) );
+				throw new \InvalidArgumentException(
+					sprintf( 'Unexpected indentation on line %d.', (int) $i + 1 ) // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped -- CLI message, integer.
+				);
 			}
 			if ( ! preg_match( '/^([A-Za-z0-9_][A-Za-z0-9_\-\.]*)\s*:(?:\s+(.*))?$/', rtrim( $line ), $m ) ) {
-				throw new \InvalidArgumentException( sprintf( 'Cannot read line %d: expected "key: value".', $i + 1 ) );
+				throw new \InvalidArgumentException(
+					sprintf( 'Cannot read line %d: expected "key: value".', (int) $i + 1 ) // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped -- CLI message, integer.
+				);
 			}
 			$key   = $m[1];
 			$value = isset( $m[2] ) ? trim( $m[2] ) : '';
@@ -171,6 +177,7 @@ final class FrontMatter {
 	 *
 	 * @param string $value Raw value.
 	 * @return mixed
+	 * @throws \InvalidArgumentException On inline maps.
 	 */
 	private static function scalar_or_inline( string $value ) {
 		if ( '' !== $value && '[' === $value[0] && ']' === substr( $value, -1 ) ) {

@@ -2,7 +2,7 @@ import js from '@eslint/js';
 import globals from 'globals';
 
 export default [
-  { ignores: ['node_modules/', 'vendor/', '**/assets/build/', 'prototype/', 'test-results/', 'playwright-report/', 'motion/', '.lighthouseci/'] },
+  { ignores: ['node_modules/', 'vendor/', '**/assets/build/', '**/*.min.js', 'prototype/', 'test-results/', 'playwright-report/', 'motion/', '.lighthouseci/'] },
   js.configs.recommended,
   {
     files: ['wp-content/**/*.js'],

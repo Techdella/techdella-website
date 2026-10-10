@@ -148,9 +148,11 @@ function td_og_render( string $title, string $label, string $file ): bool {
 	// Title: Geist SemiBold, up to 4 lines, shrinking for long titles.
 	$size  = 54.0;
 	$lines = td_og_wrap( $title, $sans, $size, 960 );
-	while ( count( $lines ) > 3 && $size > 38 ) {
+	$count = count( $lines );
+	while ( $count > 3 && $size > 38 ) {
 		$size -= 4;
 		$lines = td_og_wrap( $title, $sans, $size, 960 );
+		$count = count( $lines );
 	}
 	if ( count( $lines ) > 4 ) {
 		$lines    = array_slice( $lines, 0, 4 );
@@ -211,12 +213,16 @@ function td_og_generate( int $post_id, bool $force = false ) {
 	if ( is_wp_error( $att ) ) {
 		return $att;
 	}
-	update_post_meta( (int) $att, '_wp_attachment_metadata', [
-		'width'  => 1200,
-		'height' => 630,
-		'file'   => _wp_relative_upload_path( $file ),
-		'sizes'  => [],
-	] );
+	update_post_meta(
+		(int) $att,
+		'_wp_attachment_metadata',
+		[
+			'width'  => 1200,
+			'height' => 630,
+			'file'   => _wp_relative_upload_path( $file ),
+			'sizes'  => [],
+		]
+	);
 	update_post_meta( (int) $att, '_wp_attachment_image_alt', $post->post_title );
 	update_post_meta( (int) $att, '_td_og_hash', $hash );
 	update_post_meta( (int) $att, '_td_noindex', 1 );

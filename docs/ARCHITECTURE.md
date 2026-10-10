@@ -77,7 +77,11 @@ Extension points (use these instead of reaching into another module):
 | `td_breadcrumbs()` / `td_breadcrumb_items()` | seo | Breadcrumb nav + data (also feeds `BreadcrumbList`). |
 | `td_form_render( $key, $args )` / `td_form_schema( $key )` | forms | Render a form for a Startbuddi endpoint key; field schema. |
 | `td_popups_for_request()` | popups | Popups that match the current page. |
-| `td_ad_slot( $position )` / `td_ads_enabled()` | ads | Manual AdSense unit with reserved height; whether this page may load ads. |
+| `td_ad_slot( $position )` / `td_ads_enabled()` | ads | Manual AdSense unit with reserved height; whether this page may load ads. Filters `td_ads_enabled`, `td_ads_journal`; unit IDs in option `td_adsense_slots` (`{result, content, sidebar}`). |
+| `window.tdConsent.analytics(cb)` / `.ads(cb)` | ads | Run code only after consent (inline loader, first script in `<head>`). Filters `td_consent_regions`, `td_cmp_everywhere`. |
+| `td_redirects_health()` / `td_seo_health()` | cli / seo | Dashboard health rows `{ok, label}`. |
+| `td_popups_admin_url` (filter) | popups | Admin URL for the "Edit popups" quick action. |
+| `td_setup` priorities | cpt 5 · admin 20 · seo 20 · popups 25 | Order of the setup steps. |
 
 Form keys (lowercase): `contact, audit, studios_brief, newsletter, lead_magnet, tool_gate, popup_exit,
 popup_scroll, mvp_calc, guest_post` → env `SB_ENDPOINT_<KEY>`.
@@ -95,6 +99,7 @@ popup_scroll, mvp_calc, guest_post` → env `SB_ENDPOINT_<KEY>`.
 
 ```bash
 make up                       # build assets, start stack, install WP (admin/admin)
+make seed                     # wp td import-content <dir> --status=draft (positional dir: --path is WP-CLI's own flag)
 make wp SITE=journal ARGS="td setup"
 docker compose exec -T -u www-data wp-marketing wp <command>
 npm run build:assets          # CSS/JS only (fast)

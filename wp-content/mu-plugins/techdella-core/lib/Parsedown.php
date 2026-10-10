@@ -1,4 +1,5 @@
 <?php
+// phpcs:ignoreFile -- third-party (Parsedown 1.7.4, MIT, see Parsedown-LICENSE.txt); kept as released.
 
 #
 #

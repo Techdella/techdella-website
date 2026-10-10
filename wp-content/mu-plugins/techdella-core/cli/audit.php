@@ -311,9 +311,10 @@ function td_audit_crawl( string $base, int $max ): array {
 			}
 		}
 	}
-	$seen = [];
-	$rows = [];
-	while ( $queue && count( $seen ) < $max ) {
+	$seen  = [];
+	$rows  = [];
+	$count = 0;
+	while ( $queue && $count < $max ) {
 		$url  = (string) array_key_first( $queue );
 		$from = (string) $queue[ $url ];
 		unset( $queue[ $url ] );
@@ -321,10 +322,11 @@ function td_audit_crawl( string $base, int $max ): array {
 			continue;
 		}
 		$seen[ $url ] = true;
-		$hops         = 0;
-		$current      = $url;
-		$visited      = [ $url => true ];
-		$note         = '';
+		++$count;
+		$hops    = 0;
+		$current = $url;
+		$visited = [ $url => true ];
+		$note    = '';
 		do {
 			$res = td_cli_http_get( $current );
 			if ( $res['status'] >= 300 && $res['status'] < 400 && '' !== $res['location'] ) {
@@ -373,8 +375,8 @@ function td_audit_crawl( string $base, int $max ): array {
 /**
  * Write rows to uploads/td-audit/<name>-<date>.csv; returns the path.
  *
- * @param string                           $name Base name.
- * @param array<int,array<string,mixed>>   $rows Rows.
+ * @param string                         $name Base name.
+ * @param array<int,array<string,mixed>> $rows Rows.
  */
 function td_audit_save_csv( string $name, array $rows ): string {
 	$uploads = wp_upload_dir();

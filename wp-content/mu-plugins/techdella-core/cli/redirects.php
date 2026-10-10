@@ -184,6 +184,9 @@ function td_redirects_import_rank_math( array $rules, bool $dry = false ): array
 	if ( ! $dry ) {
 		td_redirects_rank_math_tables();
 	}
+	if ( ! class_exists( '\RankMath\Redirections\Redirection' ) || ! class_exists( '\RankMath\Redirections\DB' ) ) {
+		return [];
+	}
 	foreach ( $rules as $rule ) {
 		$rows = RedirectRules::to_rank_math( $rule, (string) $rule['target'] );
 		if ( is_string( $rows ) ) {
@@ -217,7 +220,7 @@ function td_redirects_import_rank_math( array $rules, bool $dry = false ): array
 						'updated'     => wp_date( 'Y-m-d H:i:s', time() - 60 * (int) $row['rank'] ),
 					]
 				);
-				$id = $redirection->save();
+				$id          = $redirection->save();
 				if ( $id ) {
 					$ids[] = (int) $id;
 				} else {

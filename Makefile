@@ -44,7 +44,7 @@ wp: ## Run WP-CLI on SITE: make wp SITE=journal ARGS="plugin list"
 
 seed: ## Import content/ as DRAFTS + menus + options (§10)
 	@for s in marketing journal studios; do \
-	  $(COMPOSE) exec -T -u www-data wp-$$s wp td import-content --path=/var/www/repo/content --status=draft; \
+	  $(COMPOSE) exec -T -u www-data wp-$$s wp td import-content /var/www/repo/content --status=draft; \
 	  $(COMPOSE) exec -T -u www-data wp-$$s wp td setup; \
 	done
 

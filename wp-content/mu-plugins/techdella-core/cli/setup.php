@@ -61,7 +61,7 @@ function td_setup_run(): array {
 			true
 		);
 		if ( ! is_wp_error( $id ) ) {
-			$log[] = 'Created /styleguide/ (published, noindex)';
+			$log[]      = 'Created /styleguide/ (published, noindex)';
 			$styleguide = get_post( $id );
 		}
 	} elseif ( 'publish' !== $styleguide->post_status ) {
@@ -142,13 +142,13 @@ function td_setup_rank_math(): array {
 	}
 	$general = get_option( 'rank-math-options-general', [] );
 	if ( is_array( $general ) ) {
-		$changed = $general;
-		$changed['redirections_header_code']             = '301';
-		$changed['redirections_debug']                   = 'off';
-		$changed['redirections_fallback']                = 'default'; // 404s stay 404s (no soft redirects to home).
-		$changed['redirections_post_redirect']           = 'on'; // Auto-redirect when a slug changes.
-		$changed['404_monitor_mode']                     = 'simple';
-		$changed['404_monitor_ignore_query_parameters']  = 'on';
+		$changed                                        = $general;
+		$changed['redirections_header_code']            = '301';
+		$changed['redirections_debug']                  = 'off';
+		$changed['redirections_fallback']               = 'default'; // 404s stay 404s (no soft redirects to home).
+		$changed['redirections_post_redirect']          = 'on'; // Auto-redirect when a slug changes.
+		$changed['404_monitor_mode']                    = 'simple';
+		$changed['404_monitor_ignore_query_parameters'] = 'on';
 		if ( $changed !== $general ) {
 			update_option( 'rank-math-options-general', $changed );
 			$log[] = 'Rank Math redirect + 404 monitor settings applied';

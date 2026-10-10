@@ -51,7 +51,7 @@ function td_import_files( string $path ): array {
 	}
 	$it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $path, FilesystemIterator::SKIP_DOTS ) );
 	foreach ( $it as $file ) {
-		/** @var SplFileInfo $file */
+		// $file is an SplFileInfo.
 		if ( 'md' === strtolower( $file->getExtension() ) && 'readme.md' !== strtolower( $file->getFilename() ) && ! str_starts_with( $file->getFilename(), '_' ) ) {
 			$files[] = $file->getPathname();
 		}
@@ -84,6 +84,7 @@ function td_import_infer( string $file ): ?array {
  * @param string $markdown Markdown.
  */
 function td_import_markdown_to_blocks( string $markdown ): string {
+	// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- DOM API property names.
 	if ( ! class_exists( 'Parsedown' ) ) {
 		require_once TD_CORE_DIR . '/lib/Parsedown.php';
 	}
@@ -149,6 +150,7 @@ function td_import_markdown_to_blocks( string $markdown ): string {
 			$out[] = "<!-- wp:html -->\n" . $html( $node ) . "\n<!-- /wp:html -->";
 		}
 	}
+	// phpcs:enable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 	return implode( "\n\n", $out );
 }
 
@@ -231,7 +233,7 @@ function td_import_set_field( int $post_id, string $name, $value ): void {
 				$found = get_posts(
 					[
 						'name'           => sanitize_title( (string) $slug ),
-						'post_type'      => (array) ( $field['post_type'] ?: 'any' ),
+						'post_type'      => ! empty( $field['post_type'] ) ? (array) $field['post_type'] : 'any',
 						'post_status'    => 'any',
 						'posts_per_page' => 1,
 						'fields'         => 'ids',

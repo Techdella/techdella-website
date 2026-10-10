@@ -41,7 +41,7 @@ final class Targeting {
 				$value = preg_split( '/[\r\n,]+/', $value );
 			}
 			$value = is_array( $value ) ? $value : [];
-			return array_values( array_unique( array_filter( array_map( static fn( $v ) => trim( (string) $v ), $value ), 'strlen' ) ) );
+			return array_values( array_unique( array_filter( array_map( static fn( $v ) => trim( (string) $v ), $value ), static fn( $v ) => '' !== (string) $v ) ) );
 		};
 		$slug = static fn( $v ) => strtolower( (string) preg_replace( '/[^A-Za-z0-9_\-]/', '', (string) $v ) );
 
@@ -79,7 +79,8 @@ final class Targeting {
 		$id       = $slug( $raw['id'] ?? '' );
 
 		return [
-			'id'                 => '' !== $id ? $id : 'popup-' . substr( md5( (string) wp_json_encode_safe( $raw ) ), 0, 8 ),
+			'id'                 => '' !== $id ? $id : 'popup-' . substr( md5( serialize( $raw ) ), 0, 8 ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.serialize_serialize -- hashing only.
+
 			'name'               => trim( (string) ( $raw['name'] ?? '' ) ),
 			'enabled'            => ! empty( $raw['enabled'] ),
 			'type'               => $type,
@@ -94,7 +95,7 @@ final class Targeting {
 			'offer_type'         => $offer,
 			'resource'           => 'resource' === $offer ? $slug( $raw['resource'] ?? '' ) : '',
 			'form_key'           => $form_key,
-			'frequency_days'     => max( 1, min( 365, (int) ( $raw['frequency_days'] ?? 7 ) ?: 7 ) ),
+			'frequency_days'     => max( 1, min( 365, (int) ( $raw['frequency_days'] ?? 0 ) > 0 ? (int) $raw['frequency_days'] : 7 ) ),
 			'variants'           => $variants,
 		];
 	}
@@ -317,13 +318,4 @@ final class Targeting {
 		}
 		return $out;
 	}
-}
-
-/**
- * JSON-encode for hashing without depending on WordPress.
- *
- * @param mixed $data Data.
- */
-function wp_json_encode_safe( $data ): string {
-	return (string) json_encode( $data ); // phpcs:ignore WordPress.WP.AlternativeFunctions.json_encode_json_encode -- pure class, hashing only.
 }

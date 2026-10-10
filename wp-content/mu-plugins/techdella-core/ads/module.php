@@ -125,7 +125,7 @@ add_action(
 			'gtm' => $gtm,
 			'cl'  => $clarity,
 		];
-		$js = str_replace( 'window.__tdc', (string) wp_json_encode( $config ), $js );
+		$js     = str_replace( 'window.__tdc', (string) wp_json_encode( $config ), $js );
 		echo '<script id="td-consent">' . $js . "</script>\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- our static script + JSON of validated IDs.
 	},
 	0
