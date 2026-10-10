@@ -32,7 +32,7 @@
 					"label": "Meta · Facebook & Instagram", "job": "Job: create demand", "title": "Meta ads agency", "subtitle": "Facebook & Instagram", "dark": true,
 					"text": "Reach the right people before they search, then bring back everyone who showed interest.",
 					"facts": [ { "label": "Formats", "text": "Reels, Stories, feed, carousel, lead forms" }, { "label": "Targeting", "text": "Interests, lookalikes, retargeting" }, { "label": "Best for", "text": "Visual offers, lead magnets, retargeting" }, { "label": "Tracking", "text": "Meta Pixel + Conversions API" } ],
-					"mock": { "block": "ad-mock", "format": "meta", "brand": "YourCo", "overlay": "Audit-ready in weeks.", "headline": "SOC 2 checklist", "cta": "Learn more", "image": "stock/designer-drawing-tablet-studio" }
+					"mock": { "block": "ad-mock", "format": "meta", "brand": "YourCo", "overlay": "Audit-ready in weeks.", "headline": "SOC 2 checklist", "cta": "Learn more", "image": "stock/product-flatlay-notebook-candle-square" }
 				},
 				{
 					"label": "TikTok Ads", "job": "Job: reach new audiences with video", "title": "TikTok ads agency",
