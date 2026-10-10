@@ -90,8 +90,8 @@ $td_sequence = static function ( array $steps, string $title, bool $dark ): stri
 	if ( '' !== $title ) {
 		$out .= '<p class="td-email-seq__title">' . esc_html( $title ) . '</p>';
 	}
-	$out  .= '<ol class="td-email-seq__list">';
-	$last  = count( $steps ) - 1;
+	$out .= '<ol class="td-email-seq__list">';
+	$last = count( $steps ) - 1;
 	foreach ( $steps as $i => $s ) {
 		$day    = (string) ( $s['day'] ?? '' );
 		$status = (string) ( $s['status'] ?? '' );

@@ -197,9 +197,9 @@ if ( ! function_exists( 'td_a3_case_card' ) ) {
 		$meta    = array_filter( [ $c['industry'], $c['timeframe'], $c['country'] ], static fn( $v ) => '' !== trim( (string) $v ) );
 
 		if ( 'cover' === $variant ) {
-			$tag = $c['disciplines'] ? implode( ' · ', $c['disciplines'] ) : (string) $c['industry'];
-			$tag = $concept ? trim( 'Concept · ' . $tag, ' ·' ) : $tag;
-			$out = '<article class="td-case-card td-case-card--cover' . ( $concept ? ' td-case-card--concept' : '' ) . '">';
+			$tag  = $c['disciplines'] ? implode( ' · ', $c['disciplines'] ) : (string) $c['industry'];
+			$tag  = $concept ? trim( 'Concept · ' . $tag, ' ·' ) : $tag;
+			$out  = '<article class="td-case-card td-case-card--cover' . ( $concept ? ' td-case-card--concept' : '' ) . '">';
 			$out .= '<div class="td-case-card__visual">';
 			if ( $concept ) {
 				$out .= '<span class="td-label-example">' . esc_html__( 'Concept', 'techdella' ) . '</span>';

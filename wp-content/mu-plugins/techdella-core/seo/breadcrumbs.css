@@ -1,0 +1,67 @@
+/* Breadcrumbs (§8.3) — markup from td_breadcrumbs() in techdella-core/seo/breadcrumbs.php.
+   Integrator: bundle this file with the theme CSS (scripts/build.mjs). Tokens only. */
+.td-breadcrumbs {
+	font-size: var(--td-small, 14px);
+	line-height: var(--td-small-lh, 1.5);
+	color: var(--td-muted, #6b6560);
+}
+
+.td-breadcrumbs__list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0 6px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.td-breadcrumbs__item {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	min-width: 0;
+}
+
+.td-breadcrumbs__item + .td-breadcrumbs__item::before {
+	content: "/";
+	color: var(--td-line, #e7e4df);
+}
+
+.td-breadcrumbs__link {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	color: var(--td-body, #57534e);
+	text-decoration: none;
+	border-radius: 4px;
+}
+
+.td-breadcrumbs__link:hover {
+	color: var(--td-orange-text, #c23b07);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.td-breadcrumbs__link:focus-visible {
+	outline: none;
+	box-shadow: var(--td-focus, 0 0 0 3px #fff, 0 0 0 5px #e8470a);
+}
+
+.td-breadcrumbs__current,
+.td-breadcrumbs__text {
+	overflow: hidden;
+	max-width: 40ch;
+	color: var(--td-ink, #0d0d0d);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.td-breadcrumbs--on-dark,
+.td-breadcrumbs--on-dark .td-breadcrumbs__link {
+	color: var(--td-on-dark, #c9c4be);
+}
+
+.td-breadcrumbs--on-dark .td-breadcrumbs__current {
+	color: var(--td-paper, #fff);
+}

@@ -11,7 +11,7 @@ require_once __DIR__ . '/lib.php';
 
 $td_id   = (int) ( $attributes['postId'] ?? 0 );
 $td_post = $td_id ? td_a3_post_data( $td_id ) : null;
-if ( ! $td_post && ! $td_id && ! empty( $attributes['item']['title'] ) ) {
+if ( ! $td_post && ! $td_id && ! empty( $attributes['item']['title'] ) && td_a3_is_preview() ) {
 	$td_post = td_a3_post_inline( (array) $attributes['item'] );
 }
 if ( ! $td_post ) {

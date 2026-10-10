@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/toc",
+	"title": "Table of contents",
+	"category": "techdella",
+	"icon": "list-view",
+	"description": "'On this page' list built server-side from the post's H2/H3 headings (ids are added to the headings automatically). Sticky on desktop, a collapsible <details> on phones; highlights the current section when JS runs.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"postId": { "type": "integer", "default": 0 },
+		"title": { "type": "string", "default": "On this page" },
+		"depth": { "type": "integer", "enum": [ 2, 3 ], "default": 3 },
+		"minItems": { "type": "integer", "default": 2 },
+		"items": { "type": "array", "default": [] }
+	},
+	"example": {
+		"attributes": {
+			"title": "On this page",
+			"items": [
+				{ "text": "What it is", "id": "what" },
+				{ "text": "How AI answers pick brands", "id": "how" },
+				{ "text": "How it differs from SEO", "id": "diff" },
+				{ "text": "What you can do", "id": "do" },
+				{ "text": "Measuring it honestly", "id": "measure" }
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "items": "json" },
+		"help": "Reads the current post (or postId). Place it in the post template's sidebar, or at the top of the content. depth 2 lists H2s only. items are a preview-only example. Hidden when the post has fewer than minItems headings."
+	}
+}

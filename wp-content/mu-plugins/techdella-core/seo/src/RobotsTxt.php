@@ -1,6 +1,6 @@
 <?php
 /**
- * robots.txt builder (§8.3, §5.3). Pure PHP.
+ * The robots.txt builder (§8.3, §5.3). Pure PHP.
  */
 
 namespace TechDella\Core\Seo;
@@ -8,7 +8,7 @@ namespace TechDella\Core\Seo;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * robots.txt content.
+ * The robots.txt content.
  */
 final class RobotsTxt {
 

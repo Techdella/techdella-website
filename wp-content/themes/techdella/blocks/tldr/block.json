@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/tldr",
+	"title": "TL;DR (answer first)",
+	"category": "techdella",
+	"icon": "excerpt-view",
+	"description": "Answer-first summary box for posts: the post's tldr field (or the text set here). Style 'summary' is a sand box with a label; 'sentence' is the large serif one-sentence version.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"postId": { "type": "integer", "default": 0 },
+		"label": { "type": "string", "default": "The short answer" },
+		"text": { "type": "string", "default": "" },
+		"style": { "type": "string", "enum": [ "summary", "sentence" ], "default": "summary" }
+	},
+	"example": {
+		"attributes": {
+			"label": "The short answer",
+			"text": "AI search optimization makes your brand easy for AI tools to understand, trust and mention. Describe what you do plainly, answer real buyer questions, and keep your details consistent wherever you appear."
+		}
+	},
+	"techdella": {
+		"controls": { "text": "textarea" },
+		"help": "Leave text empty to use the post's tldr field (40–60 words, answers the title's question). Hidden when both are empty."
+	}
+}

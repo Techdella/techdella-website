@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/post-cta",
+	"title": "Post CTA (service)",
+	"category": "techdella",
+	"icon": "megaphone",
+	"description": "In-article dark CTA card for the post's one service CTA (cta_service field, §10.7), with a white button. Copy can be overridden.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"postId": { "type": "integer", "default": 0 },
+		"service": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"text": { "type": "string", "default": "" },
+		"buttonLabel": { "type": "string", "default": "" },
+		"buttonUrl": { "type": "string", "default": "" }
+	},
+	"example": {
+		"attributes": {
+			"service": "ai-search-optimization",
+			"title": "Want us to run this check for you?",
+			"text": "The Search Visibility Audit covers Google and AI search, with a prioritized roadmap.",
+			"buttonLabel": "Get an audit",
+			"buttonUrl": "marketing:/growth-audit/"
+		}
+	},
+	"techdella": {
+		"controls": { "text": "textarea", "buttonUrl": "url" },
+		"help": "service: seo, technical-seo, local-seo, ai-search-optimization, paid-ads, lead-generation, email-marketing, marketing-automation or studios. Empty = the post's cta_service field. URLs: \"marketing:/path/\" or \"studios:/path/\" link across sites."
+	}
+}

@@ -30,7 +30,6 @@ $td_placeholder = static function ( string $kind ): string {
 <section <?php echo td_block_wrapper( 'td-studio-hero' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<div class="td-container">
 		<div class="td-studio-hero__panel">
-			<svg class="td-studio-hero__arch" viewBox="0 0 400 520" aria-hidden="true" focusable="false"><path d="M20 520V200a180 180 0 0 1 360 0v320" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
 			<div class="td-studio-hero__copy">
 				<?php if ( ! empty( $attributes['chip'] ) ) : ?>
 					<?php echo td_chip( (string) $attributes['chip'], 'td-chip--dark td-studio-hero__chip' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>

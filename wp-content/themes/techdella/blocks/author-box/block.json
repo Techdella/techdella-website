@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/author-box",
+	"title": "Author box",
+	"category": "techdella",
+	"icon": "admin-users",
+	"description": "E-E-A-T byline at the end of a post: the named author (td_team profile: role, bio, photo, LinkedIn), the reviewer and the last-reviewed date (post fields reviewer, last_reviewed). Never a generic 'TechDella Team' byline.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"postId": { "type": "integer", "default": 0 },
+		"showReviewer": { "type": "boolean", "default": true },
+		"item": { "type": "object", "default": {} }
+	},
+	"example": {
+		"attributes": {
+			"item": {
+				"author": "Joanna Okedara-Kalu",
+				"role": "Founder & CEO",
+				"bio": "Founder & CEO of TechDella. Helps B2B companies get found on Google and in AI search.",
+				"image": "team/joanna-okedara-kalu",
+				"reviewer": "Akeem Feysupo",
+				"reviewerRole": "Growth Strategist",
+				"lastReviewed": "2026-10-01"
+			}
+		}
+	},
+	"techdella": {
+		"controls": { "item": "json" },
+		"help": "Reads the current post: author → the td_team member linked to that user (wp_user field), reviewer (user field) and last_reviewed (date). Hidden when the author is not a named person. item is a preview-only example."
+	}
+}

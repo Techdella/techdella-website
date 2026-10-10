@@ -1,0 +1,49 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/newsletter",
+	"title": "Newsletter (dark)",
+	"category": "techdella",
+	"icon": "email-alt",
+	"description": "Journal newsletter sign-up: dark rounded panel, headline with one accent, the 'newsletter' Startbuddi form (email + unticked marketing consent). Works without JavaScript.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "One useful search insight, *every two weeks*"
+		},
+		"intro": {
+			"type": "string",
+			"default": "No fluff. Unsubscribe anytime."
+		},
+		"submitLabel": {
+			"type": "string",
+			"default": "Subscribe"
+		},
+		"fields": {
+			"type": "array",
+			"default": [
+				"email"
+			]
+		}
+	},
+	"example": {
+		"attributes": {
+			"title": "One useful search insight, *every two weeks*",
+			"intro": "No fluff. Unsubscribe anytime.",
+			"submitLabel": "Subscribe"
+		}
+	},
+	"techdella": {
+		"controls": {
+			"intro": "textarea",
+			"fields": "json"
+		},
+		"help": "Posts to the newsletter endpoint (§11). fields: which newsletter fields to show, in order (email, first_name, topic_interest); the consent checkbox is always added, unticked."
+	}
+}
