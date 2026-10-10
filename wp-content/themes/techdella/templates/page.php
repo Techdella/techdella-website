@@ -21,7 +21,10 @@ while ( have_posts() ) :
 	?>
 	<article <?php post_class(); ?>>
 		<header class="td-container td-container--narrow td-section" style="padding-bottom:32px">
-			<?php if ( function_exists( 'td_breadcrumbs' ) ) { td_breadcrumbs(); } ?>
+			<?php
+			if ( function_exists( 'td_breadcrumbs' ) ) {
+				td_breadcrumbs(); }
+			?>
 			<h1><?php the_title(); ?></h1>
 		</header>
 		<div class="td-container td-container--narrow td-prose" style="padding-bottom:var(--td-space)">

@@ -10,10 +10,10 @@ defined( 'ABSPATH' ) || exit;
  * Button: primary (black pill + orange arrow circle), secondary (white pill,
  * ink border) or light (white pill + arrow, for dark sections).
  *
- * @param string               $label   Text.
- * @param string               $url     Link.
- * @param string               $variant primary|secondary|light.
- * @param array<string,mixed>  $args    size (md|sm), class, attrs (array of extra attributes).
+ * @param string              $label   Text.
+ * @param string              $url     Link.
+ * @param string              $variant primary|secondary|light.
+ * @param array<string,mixed> $args    size (md|sm), class, attrs (array of extra attributes).
  */
 function td_button( string $label, string $url, string $variant = 'primary', array $args = [] ): string {
 	$size    = ( $args['size'] ?? 'md' ) === 'sm' ? ' td-btn--sm' : '';
@@ -30,13 +30,13 @@ function td_button( string $label, string $url, string $variant = 'primary', arr
  * Label chip: orange dot + label.
  *
  * @param string $text  Label.
- * @param string $class Extra classes (td-chip--upper, td-chip--dark, td-chip--plain).
+ * @param string $css_class Extra classes (td-chip--upper, td-chip--dark, td-chip--plain).
  */
-function td_chip( string $text, string $class = '' ): string {
+function td_chip( string $text, string $css_class = '' ): string {
 	if ( '' === trim( $text ) ) {
 		return '';
 	}
-	return '<span class="td-chip' . ( $class ? ' ' . esc_attr( $class ) : '' ) . '">' . esc_html( $text ) . '</span>';
+	return '<span class="td-chip' . ( $css_class ? ' ' . esc_attr( $css_class ) : '' ) . '">' . esc_html( $text ) . '</span>';
 }
 
 /**

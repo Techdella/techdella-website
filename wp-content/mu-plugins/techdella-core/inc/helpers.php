@@ -60,7 +60,7 @@ function td_site_domains(): array {
  */
 function td_url( string $site = 'marketing', string $path = '/' ): string {
 	$path = '/' . ltrim( $path, '/' );
-	if ( $site === td_site() ) {
+	if ( td_site() === $site ) {
 		return home_url( $path );
 	}
 	$override = [
@@ -68,8 +68,8 @@ function td_url( string $site = 'marketing', string $path = '/' ): string {
 		'journal'   => TD_URL_JOURNAL,
 		'studios'   => TD_URL_STUDIOS,
 	][ $site ] ?? '';
-	$domains = td_site_domains();
-	$base    = '' !== $override ? $override : ( $domains[ $site ] ?? $domains['marketing'] );
+	$domains  = td_site_domains();
+	$base     = '' !== $override ? $override : ( $domains[ $site ] ?? $domains['marketing'] );
 	return untrailingslashit( $base ) . $path;
 }
 
@@ -126,11 +126,11 @@ function td_mark_placeholders( string $html ): string {
  * Inline SVG icon from the theme's assets/svg/ directory (aria-hidden).
  *
  * @param string $name  Icon file name without extension.
- * @param string $class Extra class.
+ * @param string $css_class Extra class.
  */
-function td_icon( string $name, string $class = '' ): string {
+function td_icon( string $name, string $css_class = '' ): string {
 	static $cache = [];
-	$name = sanitize_file_name( $name );
+	$name         = sanitize_file_name( $name );
 	if ( ! isset( $cache[ $name ] ) ) {
 		$file           = get_theme_file_path( "assets/svg/{$name}.svg" );
 		$cache[ $name ] = is_readable( $file ) ? trim( (string) file_get_contents( $file ) ) : ''; // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
@@ -138,6 +138,6 @@ function td_icon( string $name, string $class = '' ): string {
 	if ( '' === $cache[ $name ] ) {
 		return '';
 	}
-	$attrs = ' aria-hidden="true" focusable="false"' . ( $class ? ' class="' . esc_attr( $class ) . '"' : '' );
+	$attrs = ' aria-hidden="true" focusable="false"' . ( $css_class ? ' class="' . esc_attr( $css_class ) . '"' : '' );
 	return (string) preg_replace( '/<svg\b/', '<svg' . $attrs, $cache[ $name ], 1 );
 }

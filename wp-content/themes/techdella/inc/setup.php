@@ -19,12 +19,12 @@ add_action(
 
 		register_nav_menus(
 			[
-				'primary'        => __( 'Main navigation', 'techdella' ),
-				'services'       => __( 'Services mega-menu', 'techdella' ),
-				'footer-1'       => __( 'Footer column 1', 'techdella' ),
-				'footer-2'       => __( 'Footer column 2', 'techdella' ),
-				'footer-social'  => __( 'Footer social links', 'techdella' ),
-				'footer-legal'   => __( 'Footer legal links', 'techdella' ),
+				'primary'       => __( 'Main navigation', 'techdella' ),
+				'services'      => __( 'Services mega-menu', 'techdella' ),
+				'footer-1'      => __( 'Footer column 1', 'techdella' ),
+				'footer-2'      => __( 'Footer column 2', 'techdella' ),
+				'footer-social' => __( 'Footer social links', 'techdella' ),
+				'footer-legal'  => __( 'Footer legal links', 'techdella' ),
 			]
 		);
 

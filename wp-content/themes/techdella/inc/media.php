@@ -23,10 +23,10 @@ function td_image_manifest(): array {
 /**
  * Responsive <picture> for a theme image.
  *
- * @param string               $key  Manifest key, e.g. "team/joanna-okedara-kalu".
- * @param array<string,mixed>  $args alt (required for meaningful images; "" = decorative),
- *                                   sizes, class, img_class, priority (hero: fetchpriority=high, no lazy),
- *                                   style (inline style on <img>, e.g. object-position).
+ * @param string              $key  Manifest key, e.g. "team/joanna-okedara-kalu".
+ * @param array<string,mixed> $args alt (required for meaningful images; "" = decorative),
+ *                                  sizes, class, img_class, priority (hero: fetchpriority=high, no lazy),
+ *                                  style (inline style on <img>, e.g. object-position).
  */
 function td_picture( string $key, array $args = [] ): string {
 	$manifest = td_image_manifest();
@@ -86,8 +86,8 @@ function td_picture( string $key, array $args = [] ): string {
 /**
  * Image from either an attachment ID (uploads) or a theme manifest key.
  *
- * @param int|string           $image Attachment ID or manifest key.
- * @param array<string,mixed>  $args  See td_picture().
+ * @param int|string          $image Attachment ID or manifest key.
+ * @param array<string,mixed> $args  See td_picture().
  */
 function td_image( $image, array $args = [] ): string {
 	if ( is_numeric( $image ) && (int) $image > 0 ) {

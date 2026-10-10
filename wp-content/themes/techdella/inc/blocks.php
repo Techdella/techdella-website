@@ -45,7 +45,7 @@ add_action(
 		foreach ( td_block_dirs() as $name => $dir ) {
 			$type = register_block_type( $dir );
 			if ( $type ) {
-				$raw                       = (array) json_decode( (string) file_get_contents( $dir . '/block.json' ), true ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+				$raw                        = (array) json_decode( (string) file_get_contents( $dir . '/block.json' ), true ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 				$editor_meta[ $type->name ] = [
 					'controls' => $raw['techdella']['controls'] ?? new stdClass(),
 					'help'     => $raw['techdella']['help'] ?? '',
@@ -95,14 +95,14 @@ function td_block( string $name, array $attributes = [], string $content = '' ):
  * Wrapper attributes for a block's root element, working both inside the
  * editor/front-end block render and when called through td_block().
  *
- * @param string              $class Base class, e.g. "td-hero-orbit".
+ * @param string              $css_class Base class, e.g. "td-hero-orbit".
  * @param array<string,mixed> $extra Extra attributes (id, style, data-*).
  */
-function td_block_wrapper( string $class, array $extra = [] ): string {
+function td_block_wrapper( string $css_class, array $extra = [] ): string {
 	if ( class_exists( 'WP_Block_Supports' ) && null !== WP_Block_Supports::$block_to_render ) {
-		return get_block_wrapper_attributes( array_merge( [ 'class' => $class ], $extra ) );
+		return get_block_wrapper_attributes( array_merge( [ 'class' => $css_class ], $extra ) );
 	}
-	$out = 'class="' . esc_attr( $class ) . '"';
+	$out = 'class="' . esc_attr( $css_class ) . '"';
 	foreach ( $extra as $k => $v ) {
 		$out .= ' ' . esc_attr( (string) $k ) . '="' . esc_attr( (string) $v ) . '"';
 	}

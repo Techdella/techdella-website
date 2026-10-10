@@ -56,7 +56,10 @@ add_action(
 			$css = str_replace( '../img/', get_theme_file_uri( 'assets/img/' ), $css );
 			echo '<style id="td-css">' . $css . "</style>\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built, trusted CSS.
 		} else {
-			printf( '<link rel="stylesheet" id="td-css" href="%s">' . "\n", esc_url( get_theme_file_uri( 'assets/build/main.css' ) . '?v=' . td_build_version( 'main.css' ) ) );
+			printf(
+				'<link rel="stylesheet" id="td-css" href="%s">' . "\n", // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet -- printed at wp_head priority 2, before any enqueued style.
+				esc_url( get_theme_file_uri( 'assets/build/main.css' ) . '?v=' . td_build_version( 'main.css' ) )
+			);
 		}
 	},
 	2
@@ -66,15 +69,24 @@ add_action(
 	'wp_enqueue_scripts',
 	static function () {
 		if ( is_readable( get_theme_file_path( 'assets/build/main.js' ) ) ) {
-			wp_enqueue_script( 'techdella', get_theme_file_uri( 'assets/build/main.js' ), [], td_build_version( 'main.js' ), [ 'strategy' => 'defer', 'in_footer' => false ] );
+			wp_enqueue_script(
+				'techdella',
+				get_theme_file_uri( 'assets/build/main.js' ),
+				[],
+				td_build_version( 'main.js' ),
+				[
+					'strategy'  => 'defer',
+					'in_footer' => false,
+				]
+			);
 			wp_localize_script(
 				'techdella',
 				'TD',
 				[
-					'site'    => td_site(),
-					'env'     => td_environment(),
-					'rest'    => esc_url_raw( rest_url( 'techdella/v1/' ) ),
-					'urls'    => [
+					'site' => td_site(),
+					'env'  => td_environment(),
+					'rest' => esc_url_raw( rest_url( 'techdella/v1/' ) ),
+					'urls' => [
 						'marketing' => td_url( 'marketing', '/' ),
 						'journal'   => td_url( 'journal', '/' ),
 						'studios'   => td_url( 'studios', '/' ),

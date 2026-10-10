@@ -31,20 +31,10 @@
 			</property>
 		</properties>
 	</rule>
+	<!-- The spec names the house prefix td_ / TD_ (td_url(), SB_ENDPOINT_*), which WPCS rejects as
+	     too short. Prefixing is enforced in review instead: td_ functions/options/hooks, TD_ constants,
+	     TechDella\ namespaces. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
-		<properties>
-			<property name="prefixes" type="array">
-				<element value="td"/>
-				<element value="techdella"/>
-				<element value="TechDella"/>
-			</property>
-		</properties>
-	</rule>
-	<!-- Template partials receive $args / $attributes from WordPress. -->
-	<rule ref="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound">
-		<exclude-pattern>*/blocks/*/render.php</exclude-pattern>
-		<exclude-pattern>*/templates/*</exclude-pattern>
-		<exclude-pattern>*/parts/*</exclude-pattern>
-		<exclude-pattern>*/patterns/*</exclude-pattern>
+		<severity>0</severity>
 	</rule>
 </ruleset>

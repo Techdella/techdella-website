@@ -13,14 +13,14 @@ defined( 'ABSPATH' ) || exit;
  * Read an environment variable, with a default for missing/empty values.
  *
  * @param string $key     Variable name.
- * @param string $default Fallback.
+ * @param string $fallback Fallback.
  */
-function td_env( string $key, string $default = '' ): string {
+function td_env( string $key, string $fallback = '' ): string {
 	if ( defined( $key ) ) {
 		return (string) constant( $key );
 	}
 	$value = getenv( $key );
-	return ( false === $value || '' === $value ) ? $default : (string) $value;
+	return ( false === $value || '' === $value ) ? $fallback : (string) $value;
 }
 
 ( static function () {
