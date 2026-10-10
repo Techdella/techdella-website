@@ -34,7 +34,7 @@ function td_build_version( string $file ): string {
  * Inline CSS at or under this size (bytes, minified). Above it, link the file.
  */
 function td_inline_css_limit(): int {
-	return (int) apply_filters( 'td_inline_css_limit', 60 * 1024 );
+	return (int) apply_filters( 'td_inline_css_limit', 120 * 1024 );
 }
 
 add_action(

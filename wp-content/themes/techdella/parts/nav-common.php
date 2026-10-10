@@ -109,7 +109,7 @@ if ( ! function_exists( 'td_nav_services' ) ) {
 			return (string) wp_nav_menu(
 				[
 					'theme_location' => 'primary',
-					'container'      => false,
+					'container'      => '',
 					'items_wrap'     => '%3$s',
 					'depth'          => 1,
 					'echo'           => false,
@@ -155,7 +155,7 @@ if ( ! function_exists( 'td_nav_services' ) ) {
 	 * @param string $tag     Element: a (link home) or span.
 	 */
 	function td_nav_brand( string $suffix = '', string $variant = 'default', string $tag = 'a' ): string {
-		$inner = td_logo( $variant, 28 ) . ( '' !== $suffix ? '<span class="td-brand__suffix">' . esc_html( $suffix ) . '</span>' : '' );
+		$inner = td_logo( $variant, 28, 'a' === $tag ) . ( '' !== $suffix ? '<span class="td-brand__suffix">' . esc_html( $suffix ) . '</span>' : '' );
 		if ( 'a' !== $tag ) {
 			return '<span class="td-brand">' . $inner . '</span>';
 		}

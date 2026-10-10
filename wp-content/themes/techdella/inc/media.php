@@ -115,9 +115,10 @@ function td_image( $image, array $args = [] ): string {
  * The TechDella logo (official file, never redrawn).
  *
  * @param string $variant "default" (gradient mark + ink wordmark) | "white" | "mark".
- * @param int    $height  Rendered height in px.
+ * @param int    $height   Rendered height in px.
+ * @param bool   $priority Above the fold (header): fetchpriority high, no lazy-load. Footers pass false.
  */
-function td_logo( string $variant = 'default', int $height = 28 ): string {
+function td_logo( string $variant = 'default', int $height = 28, bool $priority = true ): string {
 	$key = [
 		'default' => 'brand/techdella-logo',
 		'white'   => 'brand/techdella-logo-white',
@@ -136,7 +137,7 @@ function td_logo( string $variant = 'default', int $height = 28 ): string {
 			'width'     => $width,
 			'img_class' => 'td-logo__img',
 			'style'     => "width:{$width}px;height:{$height}px",
-			'priority'  => true,
+			'priority'  => $priority,
 		]
 	);
 }
