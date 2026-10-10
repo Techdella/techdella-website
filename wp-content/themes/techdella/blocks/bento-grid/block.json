@@ -36,7 +36,7 @@
 					"type": "platform-list", "span": 5, "spanTablet": 6, "url": "/services/paid-ads/",
 					"eyebrow": "02 · Get noticed", "title": "Paid ads, made in-house",
 					"platforms": [ { "name": "Google", "mark": "G" }, { "name": "Meta", "mark": "M" }, { "name": "TikTok", "mark": "T" }, { "name": "LinkedIn", "mark": "in" } ],
-					"thumb": "brand/techdella-character-waving", "thumbCaption": "Example · 3 SEO myths ▶",
+					"thumb": "stock/creator-recording-video-vertical", "thumbCaption": "Example · 3 SEO myths ▶",
 					"text": "Strategy, creatives and media buying under one roof. →"
 				},
 				{
@@ -52,7 +52,7 @@
 				},
 				{
 					"type": "photo", "span": 4, "url": "studios:/",
-					"image": "work/shopinbos-store-builder-hot-sauce", "alt": "Shopinbos store builder showing a hot sauce shop preview, designed by TechDella Studios",
+					"image": "stock/designer-drawing-tablet-studio", "alt": "Designer sketching on a drawing tablet in a sunlit studio",
 					"eyebrow": "Creative", "title": "Ads, videos and visuals designed by our Studios team"
 				},
 				{
