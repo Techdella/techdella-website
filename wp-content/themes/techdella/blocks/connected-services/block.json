@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/connected-services",
+	"title": "Connected services",
+	"category": "techdella",
+	"icon": "networking",
+	"description": "The service pages' \"works better connected\" strip: one linked card per service with how it relates to this one; the current service shows \"You are here\".",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"surface": { "type": "string", "enum": [ "dark", "paper", "canvas" ], "default": "dark" },
+		"items": { "type": "array", "default": [] },
+		"current": { "type": "string", "default": "" },
+		"footerLabel": { "type": "string", "default": "" },
+		"footerUrl": { "type": "string", "default": "" }
+	},
+	"example": {
+		"attributes": {
+			"title": "SEO works better *connected*",
+			"intro": "Your rankings feed AI answers, your keyword data sharpens Google Ads, and every organic visitor can become a lead.",
+			"current": "/services/seo/",
+			"items": [
+				{ "relation": "You are here", "title": "SEO", "text": "Ranks your pages for buying searches.", "url": "/services/seo/" },
+				{ "relation": "Feeds", "title": "AI Search", "text": "Ranked pages become AI citations.", "url": "/services/ai-search-optimization/" },
+				{ "relation": "Shares data", "title": "Paid ads", "text": "Keyword insights guide Google Ads.", "url": "/services/paid-ads/" },
+				{ "relation": "Converts", "title": "Lead generation", "text": "Organic visitors get a reason to act.", "url": "/services/lead-generation/" },
+				{ "relation": "Reuses", "title": "Email", "text": "Articles become newsletter content.", "url": "/services/email-marketing/" },
+				{ "relation": "Follows up", "title": "AI automation", "text": "New leads routed in minutes.", "url": "/services/marketing-automation/" }
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "intro": "textarea", "items": "json", "footerUrl": "url" },
+		"help": "Items: [{relation, title, text, url}]. The card whose URL matches \"current\" (or the page you are on) is highlighted and labelled \"You are here\". Optional footer pill link, e.g. to Studios (\"studios:/\")."
+	}
+}

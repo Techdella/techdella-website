@@ -83,7 +83,7 @@
                     "name": "discipline",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "One discipline, e.g. \"UI/UX design\".",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {

@@ -76,7 +76,7 @@
                     "name": "topic",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "One topic they can review, e.g. \"Technical SEO\".",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {

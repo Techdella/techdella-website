@@ -86,7 +86,7 @@ function td_block_templates(): array {
 				td_tpl_block( 'section-head', [], false ),
 				td_tpl_block( 'feature-grid', [], false ), // 3 industry pains.
 				td_tpl_block( 'steps-fold', [], false ),   // Services used, in order.
-				td_tpl_block( 'case-grid', [], false ),    // Proof (or "what we'd do first").
+				td_tpl_block( 'case-grid', [], false ),    // Proof, or an honest first-steps section.
 				td_tpl_block( 'faq', [], false ),
 				td_tpl_block( 'cta-dark', [], false ),
 			],

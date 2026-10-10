@@ -36,12 +36,10 @@ final class Refresh {
 	 * @param int $months   Cadence in months.
 	 */
 	public static function due_at( int $reviewed, int $months ): int {
-		$y  = (int) gmdate( 'Y', $reviewed );
-		$m  = (int) gmdate( 'n', $reviewed ) + $months;
-		$d  = (int) gmdate( 'j', $reviewed );
-		$y += intdiv( $m - 1, 12 );
-		$m  = ( ( $m - 1 ) % 12 ) + 1;
-		$d  = min( $d, (int) gmdate( 't', gmmktime( 0, 0, 0, $m, 1, $y ) ) );
+		$index = (int) gmdate( 'n', $reviewed ) - 1 + $months; // Months since January of the review year.
+		$y     = (int) gmdate( 'Y', $reviewed ) + intdiv( $index, 12 );
+		$m     = ( $index % 12 ) + 1;
+		$d     = min( (int) gmdate( 'j', $reviewed ), (int) gmdate( 't', gmmktime( 0, 0, 0, $m, 1, $y ) ) );
 		return gmmktime( 0, 0, 0, $m, $d, $y );
 	}
 
@@ -77,9 +75,10 @@ final class Refresh {
 	/**
 	 * Sort due items, most overdue first, and keep the top N.
 	 *
-	 * @param array<int,array{days_overdue:int}> $items Items with status merged in.
-	 * @param int                                $limit Max items.
-	 * @return array<int,array{days_overdue:int}>
+	 * @template T of array{days_overdue:int}
+	 * @param array<int,T> $items Items with status merged in.
+	 * @param int          $limit Max items.
+	 * @return array<int,T>
 	 */
 	public static function top( array $items, int $limit = 10 ): array {
 		usort( $items, static fn( $a, $b ) => $b['days_overdue'] <=> $a['days_overdue'] );

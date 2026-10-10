@@ -98,7 +98,7 @@
                     "name": "title",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Short and specific: a verb or a noun, under 8 words.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -114,7 +114,7 @@
                     "name": "url",
                     "aria-label": "",
                     "type": "url",
-                    "instructions": "",
+                    "instructions": "A full URL. Prefer internal pages; external sources should be primary.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -130,7 +130,7 @@
                     "name": "publisher",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Who published it, e.g. \"Google Search Central\".",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {

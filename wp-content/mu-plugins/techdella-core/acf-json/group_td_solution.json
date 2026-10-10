@@ -68,7 +68,7 @@
                     "name": "title",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Short and specific: a verb or a noun, under 8 words.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -124,7 +124,7 @@
                     "name": "service",
                     "aria-label": "",
                     "type": "post_object",
-                    "instructions": "",
+                    "instructions": "Pick the service page.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -145,7 +145,7 @@
                     "name": "why",
                     "aria-label": "",
                     "type": "textarea",
-                    "instructions": "",
+                    "instructions": "Why this industry needs it, from what we see on calls. One or two sentences.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {

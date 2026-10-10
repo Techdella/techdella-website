@@ -46,7 +46,12 @@ add_action(
 );
 
 // New users get the TechDella scheme; anyone who never picked one sees it too.
-add_action( 'user_register', static fn( $user_id ) => update_user_meta( (int) $user_id, 'admin_color', 'techdella' ) );
+add_action(
+	'user_register',
+	static function ( $user_id ) {
+		update_user_meta( (int) $user_id, 'admin_color', 'techdella' );
+	}
+);
 add_filter( 'get_user_option_admin_color', static fn( $color ) => ( false === $color || '' === $color ) ? 'techdella' : $color );
 
 // Admin styles for the dashboard, help page and the fallback field box.

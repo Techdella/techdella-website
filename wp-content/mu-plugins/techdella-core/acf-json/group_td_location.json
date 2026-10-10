@@ -116,7 +116,7 @@
                     "name": "channel",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "The channel name, e.g. \"LinkedIn Ads\".",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {

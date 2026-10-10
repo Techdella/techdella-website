@@ -150,7 +150,7 @@
             "name": "metric_2_num",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Optional. Client-confirmed only; leave empty rather than guess.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -165,7 +165,7 @@
             "name": "metric_2_label",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "What the number measures, in under 8 words.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -180,7 +180,7 @@
             "name": "metric_3_num",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Optional. Client-confirmed only; leave empty rather than guess.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -195,7 +195,7 @@
             "name": "metric_3_label",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "What the number measures, in under 8 words.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {

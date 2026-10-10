@@ -203,7 +203,7 @@ add_filter(
 	'rest_pre_dispatch',
 	static function ( $result, $server, WP_REST_Request $request ) {
 		$route = $request->get_route();
-		if ( preg_match( '#^/wp/v2/(document|types/document)(/|$)#', $route ) && ! current_user_can( 'edit_td_documents' ) ) {
+		if ( preg_match( '#^/wp/v2/(document|types/document)(/|$)#', $route ) && ! current_user_can( 'edit_td_documents' ) ) { // phpcs:ignore WordPress.WP.Capabilities.Unknown -- Document CPT capability (map_meta_cap).
 			return new WP_Error( 'rest_forbidden', __( 'Sorry, you are not allowed to do that.', 'techdella' ), [ 'status' => rest_authorization_required_code() ] );
 		}
 		return $result;

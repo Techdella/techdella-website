@@ -121,7 +121,7 @@
                     "name": "text",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "One or two plain sentences. Name the platform, metric or timeframe.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {

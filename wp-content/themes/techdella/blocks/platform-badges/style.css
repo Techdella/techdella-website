@@ -1,0 +1,15 @@
+/* techdella/platform-badges */
+.td-platform-badges{display:flex;flex-direction:column;gap:10px}
+.td-platform-badges__inner{display:flex;flex-direction:column;gap:10px}
+.td-platform-badges__label{font-size:12.5px;color:var(--td-muted)}
+.td-section--dark .td-platform-badges__label{color:var(--td-on-dark)}
+.td-platform-badges__list{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.td-platform-badges__list--row .td-badge{border-color:var(--td-line);border-radius:var(--td-r-sm);padding:6px 12px 6px 6px;font-size:13.5px}
+.td-platform-badges__list--row .td-badge__mark{width:24px;height:24px;border-radius:7px;font-size:11px}
+.td-platform-badges__list--grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:10px}
+.td-platform-badges__list--grid .td-platform-badges__item{display:flex;flex-direction:column;gap:10px;background:var(--td-paper);border:1px solid var(--td-line);border-radius:var(--td-r-md);padding:16px}
+.td-platform-badges__list--grid .td-badge{border:0;padding:0;background:none;font-size:16px;font-weight:600}
+.td-platform-badges__note{font-size:14px;color:var(--td-body)}
+.td-section--dark .td-platform-badges__list--grid .td-platform-badges__item{background:var(--td-dark-1);border-color:var(--td-dark-border)}
+.td-section--dark .td-platform-badges__list--grid .td-badge{color:var(--td-paper)}
+.td-section--dark .td-platform-badges__note{color:var(--td-on-dark)}

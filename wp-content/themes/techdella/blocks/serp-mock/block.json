@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/serp-mock",
+	"title": "SERP mock",
+	"category": "techdella",
+	"icon": "search",
+	"description": "Google results mock in HTML/CSS (not a screenshot): query pill, organic or sponsored results, your result highlighted. Always labelled as an example.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"query": { "type": "string", "default": "" },
+		"results": { "type": "array", "default": [] },
+		"caption": { "type": "string", "default": "Example result" },
+		"variant": { "type": "string", "enum": [ "sand", "plain" ], "default": "sand" },
+		"contained": { "type": "boolean", "default": false }
+	},
+	"example": {
+		"attributes": {
+			"query": "data protection consultant for fintech",
+			"results": [
+				{ "rank": "#1", "url": "yourcompany.com › services", "title": "Data Protection Consulting for Fintech Companies", "text": "NDPA, GDPR and PCI DSS compliance programs for growing…", "highlight": true },
+				{ "url": "competitor.com", "title": "Compliance services | Home" }
+			],
+			"caption": "Example result",
+			"variant": "sand",
+			"contained": true
+		}
+	},
+	"techdella": {
+		"controls": { "results": "json" },
+		"help": "Results: [{url, title, text, rank (\"#1\"), highlight (your result), sponsored, sitelinks: [\"Pricing\", …]}]. Use a fictional brand (yourcompany.com, Northwind). The caption always shows; it defaults to \"Example result\"."
+	}
+}

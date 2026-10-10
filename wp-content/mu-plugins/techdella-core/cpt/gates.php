@@ -25,11 +25,11 @@ function td_permission_post_types(): array {
 /**
  * Whether a status change goes live.
  *
- * @param string $old Old status ('new' for new posts).
- * @param string $new New status.
+ * @param string $old_status Old status ('new' for new posts).
+ * @param string $new_status New status.
  */
-function td_is_going_live( string $old, string $new ): bool {
-	return in_array( $new, [ 'publish', 'future' ], true ) && ! in_array( $old, [ 'publish', 'future' ], true );
+function td_is_going_live( string $old_status, string $new_status ): bool {
+	return in_array( $new_status, [ 'publish', 'future' ], true ) && ! in_array( $old_status, [ 'publish', 'future' ], true );
 }
 
 /**

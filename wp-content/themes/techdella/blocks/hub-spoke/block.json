@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/hub-spoke",
+	"title": "Hub & spoke",
+	"category": "techdella",
+	"icon": "share",
+	"description": "Connected growth system: a centre node with services as spokes joined by SVG lines (Options B). Collapses to a list on phones. A pattern alternative to the services bento.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"centerLabel": { "type": "string", "default": "Your growth" },
+		"items": { "type": "array", "default": [] }
+	},
+	"example": {
+		"attributes": {
+			"title": "Everything *connects* to growth",
+			"intro": "Seven services, one plan. Data from each channel makes the others work better.",
+			"centerLabel": "Your growth",
+			"items": [
+				{ "title": "SEO", "text": "Get found", "url": "/services/seo/" },
+				{ "title": "AI Search", "text": "Get found", "url": "/services/ai-search-optimization/" },
+				{ "title": "Paid ads", "text": "Google · Meta · TikTok · LinkedIn", "url": "/services/paid-ads/", "tone": "dark" },
+				{ "title": "Lead generation", "text": "Capture", "url": "/services/lead-generation/" },
+				{ "title": "Email marketing", "text": "Nurture", "url": "/services/email-marketing/" },
+				{ "title": "AI automations", "text": "Follow up", "url": "/services/marketing-automation/", "tone": "sand" },
+				{ "title": "Creatives", "text": "by Studios", "url": "studios:/", "image": "team/abel-saka" }
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "intro": "textarea", "items": "json" },
+		"help": "Items (3–8) are placed evenly around the centre, starting at the top: [{title, text, url, tone (paper|dark|sand), image}]. On phones the nodes become a list."
+	}
+}

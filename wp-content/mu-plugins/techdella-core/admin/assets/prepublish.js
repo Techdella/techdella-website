@@ -127,7 +127,7 @@
     try {
       const rm = wp.data.select('rank-math');
       return rm && typeof rm[getter] === 'function' ? rm[getter]() : undefined;
-    } catch (e) {
+    } catch {
       return undefined;
     }
   }

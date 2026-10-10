@@ -1,0 +1,49 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/ad-mock",
+	"title": "Ad mock",
+	"category": "techdella",
+	"icon": "megaphone",
+	"description": "One ad creative mock in HTML/CSS: TikTok (9:16), Instagram (1:1), Meta feed, LinkedIn (1.91:1 or document ad), Google search, Google display, plus reel, carousel, video and motion tiles. Carries a visible \"Example\" label unless it is a live client ad.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"format": { "type": "string", "enum": [ "tiktok", "instagram", "meta", "linkedin", "linkedin-document", "google-search", "google-display", "reel", "carousel", "video", "motion" ], "default": "meta" },
+		"brand": { "type": "string", "default": "YourCo" },
+		"domain": { "type": "string", "default": "yourcompany.com" },
+		"headline": { "type": "string", "default": "" },
+		"text": { "type": "string", "default": "" },
+		"overlay": { "type": "string", "default": "" },
+		"cta": { "type": "string", "default": "" },
+		"footer": { "type": "string", "default": "" },
+		"tag": { "type": "string", "default": "" },
+		"query": { "type": "string", "default": "" },
+		"sitelinks": { "type": "array", "default": [] },
+		"slides": { "type": "array", "default": [] },
+		"image": { "type": [ "string", "integer" ], "default": "" },
+		"imageAlt": { "type": "string", "default": "" },
+		"liveClientAd": { "type": "boolean", "default": false },
+		"fluid": { "type": "boolean", "default": false },
+		"contained": { "type": "boolean", "default": false }
+	},
+	"example": {
+		"attributes": {
+			"format": "tiktok",
+			"brand": "YourCo",
+			"overlay": "POV: your ads finally pay back",
+			"headline": "@yourco · Sponsored",
+			"text": "We tested 12 hooks. Here’s what worked.",
+			"cta": "Learn more",
+			"image": "team/akeem-feysupo",
+			"imageAlt": "",
+			"liveClientAd": false,
+			"contained": true
+		}
+	},
+	"techdella": {
+		"controls": { "text": "textarea", "image": "media", "sitelinks": "json", "slides": "json" },
+		"help": "Fictional brand only (YourCo / Northwind) unless liveClientAd is on — tick it only for a real client ad with written permission; it removes the \"Example\" label (§2.3). Fields by format: headline, text, overlay (text on the image), cta, footer (bottom note), tag (top pill, e.g. \"Reel · 0:15\"), query (Google search), sitelinks [\"Pricing\"], slides [{label, title}] (carousel)."
+	}
+}

@@ -386,6 +386,24 @@ final class Fields {
 	}
 
 	/**
+	 * Example value for a field: like example(), but flexible content shows
+	 * one row per layout with only that layout's fields.
+	 *
+	 * @param array<string,mixed> $field ACF field.
+	 * @return mixed
+	 */
+	public static function example_for( array $field ) {
+		if ( 'flexible_content' !== ( $field['type'] ?? '' ) ) {
+			return self::example( self::schema( $field ) );
+		}
+		$rows = [];
+		foreach ( (array) ( $field['layouts'] ?? [] ) as $layout ) {
+			$rows[] = [ 'acf_fc_layout' => (string) ( $layout['name'] ?? '' ) ] + (array) self::example( self::object_schema( (array) ( $layout['sub_fields'] ?? [] ) ) );
+		}
+		return $rows;
+	}
+
+	/**
 	 * Convert ACF repeater/flexible rows keyed by field key (field_…) to rows
 	 * keyed by field name (our canonical storage), recursively.
 	 *

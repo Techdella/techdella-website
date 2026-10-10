@@ -111,8 +111,8 @@ function td_checklist_post_types(): array {
  */
 add_filter(
 	'acf/load_fields',
-	static function ( $fields, $parent ) {
-		if ( td_acf_pro_active() || ! is_array( $parent ) || ! str_starts_with( (string) ( $parent['key'] ?? '' ), 'group_td_' ) ) {
+	static function ( $fields, $group ) {
+		if ( td_acf_pro_active() || ! is_array( $group ) || ! str_starts_with( (string) ( $group['key'] ?? '' ), 'group_td_' ) ) {
 			return $fields;
 		}
 		return array_values( array_filter( (array) $fields, static fn( $f ) => ! Fields::is_pro_only( (array) $f ) ) );
@@ -194,8 +194,8 @@ add_action(
  */
 function td_render_fallback_box( WP_Post $post ): void {
 	wp_nonce_field( 'td_fields_' . $post->ID, '_td_fields_nonce' );
+	// Kept until the next save: the block editor saves meta boxes in a background request.
 	$errors = (array) get_transient( 'td_fields_errors_' . get_current_user_id() . '_' . $post->ID );
-	delete_transient( 'td_fields_errors_' . get_current_user_id() . '_' . $post->ID );
 
 	echo '<p class="description">';
 	if ( td_acf_active() ) {
@@ -234,7 +234,7 @@ function td_render_fallback_box( WP_Post $post ): void {
 					esc_attr( $name ),
 					esc_textarea( $json )
 				);
-				$help .= ' ' . __( 'Example:', 'techdella' ) . ' ' . wp_json_encode( Fields::example( $schema ), JSON_UNESCAPED_SLASHES );
+				$help .= ' ' . __( 'Example:', 'techdella' ) . ' ' . wp_json_encode( Fields::example_for( $field ), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
 			} elseif ( 'textarea' === ( $field['type'] ?? '' ) ) {
 				printf( '<textarea id="%1$s" name="td_fields[%2$s]" rows="3" class="large-text" aria-describedby="%1$s-help">%3$s</textarea>', esc_attr( $id ), esc_attr( $name ), esc_textarea( (string) $value ) );
 			} else {
@@ -263,6 +263,7 @@ add_action(
 		if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_td_fields_nonce'] ) ), 'td_fields_' . $post_id ) || ! current_user_can( 'edit_post', $post_id ) ) {
 			return;
 		}
+		delete_transient( 'td_fields_errors_' . get_current_user_id() . '_' . $post_id );
 		$input  = (array) wp_unslash( $_POST['td_fields'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitised per field schema below.
 		$errors = [];
 		foreach ( td_fallback_fields( $post->post_type ) as $name => $field ) {

@@ -110,8 +110,10 @@ add_action(
 			add_submenu_page( 'td-content', (string) $def['plural'], (string) $def['plural'], 'manage_categories', 'edit-tags.php?taxonomy=' . $tax . '&post_type=' . $type );
 		}
 		// Menus for Editors (scoped edit_theme_options, admin/roles.php). Admins keep Appearance → Menus.
+		// phpcs:disable WordPress.WP.Capabilities.Unknown -- td_edit_menus is added by admin/roles.php.
 		if ( ! current_user_can( 'manage_options' ) && current_user_can( 'td_edit_menus' ) ) {
 			add_submenu_page( 'td-content', __( 'Menus', 'techdella' ), __( 'Menus', 'techdella' ), 'td_edit_menus', 'nav-menus.php' );
+			// phpcs:enable WordPress.WP.Capabilities.Unknown
 		}
 	},
 	11

@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/feature-grid",
+	"title": "Feature grid",
+	"category": "techdella",
+	"icon": "columns",
+	"description": "Card grid for factor, process, included, fit and small-card sections. Styles: rule (top-ruled columns), numbered (01–04 cards, last one dark), icon (icon cards), checks (fit checklist in one card), tiles (compact title + text cards).",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"lead": { "type": "string", "default": "" },
+		"style": { "type": "string", "enum": [ "rule", "numbered", "icon", "checks", "tiles" ], "default": "rule" },
+		"align": { "type": "string", "enum": [ "split", "center", "left" ], "default": "left" },
+		"surface": { "type": "string", "enum": [ "paper", "canvas", "sand", "dark" ], "default": "paper" },
+		"columns": { "type": "integer", "default": 0 },
+		"highlight": { "type": "integer", "default": -1 },
+		"items": { "type": "array", "default": [] },
+		"bare": { "type": "boolean", "default": false }
+	},
+	"example": {
+		"attributes": {
+			"title": "How AI answers decide which brands to *mention*",
+			"style": "rule",
+			"align": "left",
+			"items": [
+				{ "title": "Clearly described", "text": "Your site says plainly what you do, for whom, and where." },
+				{ "title": "Mentioned elsewhere", "text": "Credible directories, reviews and articles reference you." },
+				{ "title": "Directly useful", "text": "Your pages answer real buyer questions, answer-first." },
+				{ "title": "Consistent", "text": "Your name, services and details match everywhere." }
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "intro": "textarea", "lead": "textarea", "items": "json" },
+		"help": "Items: [{title, text, icon, url, tone}]. icon: list, lines, nodes, chart, person, chat, search, target, check. tone (icon style): paper, canvas, sand, dark. highlight: index of the one accented item (-1 = last for rule/numbered, none otherwise; -2 = none). checks: title + lead render inside one card; item title is bold, text follows. bare: no section/container (to sit inside columns next to a testimonial or pricing card)."
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/platform-badges",
+	"title": "Platform badges",
+	"category": "techdella",
+	"icon": "screenoptions",
+	"description": "Row or grid of platforms we work in. Uses the official logo file from assets/img/logos/platforms/<slug>.svg|png when present, else the prototype's text badge (never a drawn logo).",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"items": { "type": "array", "default": [] },
+		"layout": { "type": "string", "enum": [ "row", "grid" ], "default": "row" },
+		"surface": { "type": "string", "enum": [ "paper", "canvas", "sand", "dark" ], "default": "paper" },
+		"contained": { "type": "boolean", "default": false }
+	},
+	"example": {
+		"attributes": {
+			"label": "AI platforms we optimize for",
+			"items": [ "chatgpt", "perplexity", "google-ai-overviews", "gemini", "copilot" ],
+			"layout": "row",
+			"contained": true
+		}
+	},
+	"techdella": {
+		"controls": { "items": "json", "intro": "textarea" },
+		"help": "Items: a known slug (google-search-console, ga4, semrush, wordpress-webflow, google-search, google-ads, meta, tiktok, linkedin, youtube, chatgpt, perplexity, google-ai-overviews, gemini, copilot, bing) or {\"slug\",\"name\",\"mark\",\"ink\",\"note\"}. Drop the official logo file into assets/img/logos/platforms/<slug>.svg to replace the text badge. A title turns the row into a full section; layout \"grid\" shows a card per platform with its note."
+	}
+}

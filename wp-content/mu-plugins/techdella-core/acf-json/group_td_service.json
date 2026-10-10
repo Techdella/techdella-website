@@ -75,7 +75,7 @@
                     "name": "keyword",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "One phrase, lowercase, as people search it.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -214,7 +214,7 @@
                             "name": "caption",
                             "aria-label": "",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "Optional. What the image shows, in one line.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -271,7 +271,7 @@
                             "name": "title",
                             "aria-label": "",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "Short and specific: a verb or a noun, under 8 words.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -329,7 +329,7 @@
                             "name": "platforms",
                             "aria-label": "",
                             "type": "relationship",
-                            "instructions": "",
+                            "instructions": "Platforms we actually use here.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -379,7 +379,7 @@
                     "name": "title",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Short and specific: a verb or a noun, under 8 words.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -395,7 +395,7 @@
                     "name": "text",
                     "aria-label": "",
                     "type": "textarea",
-                    "instructions": "",
+                    "instructions": "One or two plain sentences. Name the platform, metric or timeframe.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {

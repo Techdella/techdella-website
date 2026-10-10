@@ -40,7 +40,7 @@ function td_hq_quick_actions(): array {
 	 * @param string $url URL.
 	 */
 	$popups = (string) apply_filters( 'td_popups_admin_url', post_type_exists( 'td_popup' ) ? admin_url( 'edit.php?post_type=td_popup' ) : '' );
-	if ( '' !== $popups && ( current_user_can( 'td_manage_popups' ) || current_user_can( 'manage_options' ) ) ) {
+	if ( '' !== $popups && ( current_user_can( 'td_manage_popups' ) || current_user_can( 'manage_options' ) ) ) { // phpcs:ignore WordPress.WP.Capabilities.Unknown -- Added by admin/roles.php.
 		$out[] = [
 			'label' => 'Edit popups',
 			'url'   => $popups,
@@ -84,7 +84,7 @@ function td_hq_refresh_due(): array {
 			[
 				'post_type'        => $type,
 				'post_status'      => 'publish',
-				'posts_per_page'   => 500,
+				'posts_per_page'   => 500, // phpcs:ignore WordPress.WP.PostsPerPage.posts_per_page_posts_per_page -- IDs only, cached hourly.
 				'fields'           => 'ids',
 				'no_found_rows'    => true,
 				'suppress_filters' => false,
@@ -251,7 +251,12 @@ add_action(
 );
 
 // Clear the refresh cache when content changes.
-add_action( 'save_post', static fn() => delete_transient( 'td_hq_refresh_due' ) );
+add_action(
+	'save_post',
+	static function () {
+		delete_transient( 'td_hq_refresh_due' );
+	}
+);
 
 /**
  * Edit link or plain title.
@@ -343,7 +348,7 @@ function td_hq_widget_refresh(): void {
 		}
 		echo '</ul>';
 	}
-	echo '<p class="td-hq__meta">' . esc_html__( 'GSC decay list (clicks down 30% over 90 days): coming with', 'techdella' ) . ' <code>wp td audit decay</code> — ' . '<a href="' . esc_url( admin_url( 'admin.php?page=td-help#refresh' ) ) . '">' . esc_html__( 'how it works', 'techdella' ) . '</a>.</p>';
+	echo '<p class="td-hq__meta">' . esc_html__( 'GSC decay list (clicks down 30% over 90 days): coming with', 'techdella' ) . ' <code>wp td audit decay</code> — <a href="' . esc_url( admin_url( 'admin.php?page=td-help#refresh' ) ) . '">' . esc_html__( 'how it works', 'techdella' ) . '</a>.</p>';
 }
 
 /**
@@ -389,7 +394,7 @@ function td_hq_widget_health(): void {
 		$checks = [
 			[ td_acf_pro_active(), __( 'ACF Pro licence active (D4) [CONFIRM licence] — without it, list fields use the JSON box.', 'techdella' ) ],
 			[ defined( 'RANK_MATH_VERSION' ), __( 'Rank Math active (titles, meta, sitemaps).', 'techdella' ) ],
-			[ defined( 'DISALLOW_FILE_EDIT' ) && DISALLOW_FILE_EDIT, __( 'Theme/plugin file editor disabled.', 'techdella' ) ],
+			[ defined( 'DISALLOW_FILE_EDIT' ) && true === constant( 'DISALLOW_FILE_EDIT' ), __( 'Theme/plugin file editor disabled.', 'techdella' ) ],
 			[ null, __( '2FA on for every admin and editor (WP 2FA plugin or Hostinger) [CONFIRM].', 'techdella' ) ],
 		];
 		echo '<h3 class="td-hq__sub">' . esc_html__( 'Setup', 'techdella' ) . '</h3><ul class="td-hq__health">';

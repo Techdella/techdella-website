@@ -36,7 +36,7 @@ final class Checklist {
 		$content  = (string) ( $in['content'] ?? '' );
 		$kw       = trim( (string) ( $in['primary_kw'] ?? '' ) );
 		$meta     = trim( (string) ( $in['meta_description'] ?? '' ) );
-		$h1s      = array_values( array_filter( array_merge( [ $title ], (array) ( $in['h1'] ?? [] ) ), 'strlen' ) );
+		$h1s      = array_values( array_filter( array_merge( [ $title ], (array) ( $in['h1'] ?? [] ) ), static fn( $h ): bool => '' !== (string) $h ) );
 		$links    = self::internal_links( $content, (array) ( $in['hosts'] ?? [] ) );
 		$no_alt   = self::images_missing_alt( $content );
 		$tokens   = array_values( array_unique( array_merge( self::placeholders( $title ), self::placeholders( $content ), self::placeholders( $meta ) ) ) );

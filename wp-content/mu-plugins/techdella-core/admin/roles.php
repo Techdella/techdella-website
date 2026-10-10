@@ -208,7 +208,7 @@ add_filter(
 			return $caps;
 		}
 		$post = get_post( (int) $args[0] );
-		if ( $post && 'attachment' === $post->post_type && user_can( $user_id, 'td_manage_media' ) ) {
+		if ( $post && 'attachment' === $post->post_type && user_can( $user_id, 'td_manage_media' ) ) { // phpcs:ignore WordPress.WP.Capabilities.Unknown -- Added above.
 			return [ 'edit_post' === $cap ? 'upload_files' : 'td_manage_media' ];
 		}
 		return $caps;
