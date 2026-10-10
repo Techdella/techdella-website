@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/ad-slot",
+	"title": "Ad slot (tools only)",
+	"category": "techdella",
+	"icon": "money-alt",
+	"description": "Manual AdSense unit with reserved height and an 'Advertisement' label (§12.2). Renders only on tool pages and the /tools/ hub on the Marketing site, at most 3 per page; nothing elsewhere.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": false,
+		"multiple": true
+	},
+	"attributes": {
+		"position": {
+			"type": "string",
+			"enum": [ "result", "content", "sidebar" ],
+			"default": "content"
+		}
+	},
+	"example": {
+		"attributes": {
+			"position": "content"
+		}
+	},
+	"techdella": {
+		"controls": {},
+		"help": "position: result (below the tool result), content (after 'How to use'), sidebar (desktop only). Keep the slot at least 150px away from tool buttons and inputs (AdSense policy): the block adds that margin, so don't place it directly next to the tool form. Unit IDs come from the td_adsense_slots option."
+	}
+}
