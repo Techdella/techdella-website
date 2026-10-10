@@ -1,0 +1,42 @@
+/* Popups (§13.1): exit-intent modal, corner slide-in, top bar, inline card. */
+.td-popup[hidden]{display:none!important}
+.td-popup{--pop-pad:28px;color:var(--td-ink)}
+.td-popup__panel{position:relative;background:var(--td-paper);border-radius:var(--td-r-lg);padding:var(--pop-pad);box-shadow:var(--td-shadow-float, var(--td-shadow))}
+.td-popup__title{font-size:clamp(22px,2.4vw,28px);line-height:1.15;letter-spacing:-0.02em;font-weight:600;margin:0 48px 8px 0}
+.td-popup__text{color:var(--td-body);font-size:15.5px;line-height:1.55;margin:0 0 16px}
+.td-popup__close{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;border:0;background:transparent;color:var(--td-ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.td-popup__close:hover{background:var(--td-canvas)}
+.td-popup__close:focus-visible{outline:none;box-shadow:var(--td-focus)}
+.td-popup__panel:focus{outline:none}
+.td-popup__form{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+.td-popup__form .td-input{flex:1 1 200px;min-height:48px}
+.td-popup__label{flex-basis:100%;font-size:14px;font-weight:500}
+.td-popup__done{flex-basis:100%;margin:0;font-weight:500}
+/* Exit-intent modal (desktop only; view.js never opens it on mobile). */
+.td-popup--exit{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(13,13,13,.55)}
+.td-popup--exit .td-popup__panel{width:min(520px,100%);max-height:calc(100vh - 48px);overflow:auto;--pop-pad:36px}
+/* Corner slide-in: a small card, a bottom sheet on phones (never full screen). */
+.td-popup--slidein{position:fixed;right:24px;bottom:24px;z-index:900;width:min(380px,calc(100vw - 32px))}
+.td-popup--slidein .td-popup__panel{border:1px solid var(--td-line);--pop-pad:24px;max-height:min(60vh,520px);overflow:auto}
+.td-popup--slidein .td-popup__title{font-size:21px}
+/* Top bar: one line on ink, link to the offer. */
+.td-popup--topbar{position:fixed;top:0;left:0;right:0;z-index:950}
+.td-popup--topbar .td-popup__panel{border-radius:0;background:var(--td-ink);color:var(--td-paper);display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:8px 64px 8px 16px;box-shadow:none}
+.td-popup--topbar .td-popup__title{font-size:15px;font-weight:500;margin:0;letter-spacing:0}
+.td-popup--topbar .td-popup__text{display:none}
+.td-popup--topbar .td-popup__close{top:50%;transform:translateY(-50%);color:var(--td-paper);right:8px}
+.td-popup--topbar .td-popup__close:hover{background:var(--td-dark-2)}
+.td-popup--topbar .td-btn{padding:6px 18px}
+/* Inline end-of-post card. */
+.td-popup--inline{margin-block:40px}
+.td-popup--inline .td-popup__panel{background:var(--td-canvas);box-shadow:none}
+.td-popup--inline .td-popup__title{margin-right:0}
+@media (max-width:767px){
+  .td-popup--slidein{right:0;left:0;bottom:0;width:auto}
+  .td-popup--slidein .td-popup__panel{border-radius:var(--td-r-md) var(--td-r-md) 0 0;max-height:50vh}
+  .td-popup--topbar .td-popup__panel{justify-content:flex-start;padding-right:56px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .td-popup--slidein.is-open .td-popup__panel{animation:td-popup-in .25s ease-out}
+  @keyframes td-popup-in{from{transform:translateY(16px);opacity:0}to{transform:none;opacity:1}}
+}

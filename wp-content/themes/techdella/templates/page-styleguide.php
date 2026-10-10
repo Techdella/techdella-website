@@ -116,7 +116,7 @@ $td_blocks = array_filter(
 );
 ksort( $td_blocks );
 // Blocks that render a bare component (no section/container of their own).
-$td_inline_blocks = [ 'techdella/button', 'techdella/label-chip', 'techdella/testimonial' ];
+$td_inline_blocks = [ 'techdella/button', 'techdella/label-chip', 'techdella/testimonial', 'techdella/tldr', 'techdella/post-cta', 'techdella/author-box', 'techdella/post-card', 'techdella/toc' ];
 ?>
 <div class="td-sg">
 	<div class="td-container td-sg__wrap">

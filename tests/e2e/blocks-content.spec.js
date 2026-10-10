@@ -37,6 +37,13 @@ test.beforeAll(() => {
   for (const name of ['marketing', 'studios']) {
     const old = wp(name, ['post', 'list', '--post_type=page', `--name=${SLUG}`, '--field=ID', '--post_status=any']);
     old.split(/\s+/).filter(Boolean).forEach((id) => wp(name, ['post', 'delete', id, '--force']));
+    const types = name === 'studios' ? 'studio_work' : 'post,case_study,td_team';
+    for (const search of ['E2E', 'Ada Example']) {
+      wp(name, ['post', 'list', `--post_type=${types}`, `--s=${search}`, '--field=ID', '--post_status=any'])
+        .split(/\s+/).filter(Boolean).forEach((id) => wp(name, ['post', 'delete', id, '--force']));
+    }
+    wp(name, ['user', 'list', '--search=a3-*', '--field=ID']).split(/\s+/).filter(Boolean)
+      .forEach((id) => wp(name, ['user', 'delete', id, '--yes']));
   }
 
   // Named author + reviewer with a td_team profile (E-E-A-T byline).

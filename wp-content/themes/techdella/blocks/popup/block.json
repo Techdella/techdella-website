@@ -1,0 +1,56 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/popup",
+	"title": "Offer card (inline popup)",
+	"category": "techdella",
+	"icon": "megaphone",
+	"description": "Inline end-of-post card with a short Startbuddi form. Either shows a popup configured under Growth → Popups (popupId), or its own copy. Exit-intent, slide-in and top-bar popups are placed automatically by the popup engine (§13.1), not with this block.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"attributes": {
+		"popupId": {
+			"type": "string",
+			"default": ""
+		},
+		"title": {
+			"type": "string",
+			"default": "Get the Journal by *email*"
+		},
+		"text": {
+			"type": "string",
+			"default": "New guides on search, paid, email and automation. Unsubscribe any time."
+		},
+		"buttonLabel": {
+			"type": "string",
+			"default": "Subscribe"
+		},
+		"formKey": {
+			"type": "string",
+			"enum": [ "newsletter", "lead_magnet", "popup_scroll", "popup_exit" ],
+			"default": "newsletter"
+		},
+		"resource": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"example": {
+		"attributes": {
+			"title": "Get the Journal by *email*",
+			"text": "New guides on search, paid, email and automation. Unsubscribe any time.",
+			"buttonLabel": "Subscribe",
+			"formKey": "newsletter"
+		}
+	},
+	"techdella": {
+		"controls": {
+			"text": "textarea"
+		},
+		"help": "popupId: the ID of a popup from Growth → Popups (its copy and form are used). Otherwise: headline (*accent* word), text, button label, form (newsletter | lead_magnet | popup_scroll | popup_exit) and, for a PDF offer, the resource slug."
+	}
+}

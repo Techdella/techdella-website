@@ -295,7 +295,7 @@ if ( ! function_exists( 'td_a3_case_card' ) ) {
 		if ( '' !== (string) $c['client'] && false === stripos( (string) $c['title'], (string) $c['client'] ) ) {
 			$label .= ' · ' . $c['client'];
 		}
-		$out  = '<article class="td-case-card td-case-card--card' . ( $concept ? ' td-case-card--concept' : '' ) . '">';
+		$out = '<article class="td-case-card td-case-card--card' . ( $concept ? ' td-case-card--concept' : '' ) . '">';
 		if ( $c['image'] ) {
 			$out .= '<div class="td-case-card__shot">' . td_a3_case_visual( $c ) . '</div>';
 		}

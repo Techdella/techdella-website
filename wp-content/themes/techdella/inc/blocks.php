@@ -58,6 +58,9 @@ add_action(
 	}
 );
 
+// Heading ids for the table of contents must exist whether or not a toc block renders first.
+require_once get_theme_file_path( 'blocks/toc/lib.php' );
+
 add_filter(
 	'block_categories_all',
 	static function ( array $categories ): array {
