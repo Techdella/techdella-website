@@ -89,3 +89,12 @@
   @keyframes td-ad-draw{from{stroke-dashoffset:102}to{stroke-dashoffset:0}}
 }
 @media (max-width:420px){.td-ad__slide:nth-child(n+3){display:none}}
+/* Label placement where a platform tag sits top-left: stack label, then tag. */
+.td-ad:is(.td-ad--tiktok,.td-ad--reel,.td-ad--instagram) .td-ad__label{right:auto;left:12px;top:12px}
+.td-ad:is(.td-ad--tiktok,.td-ad--reel) .td-ad__tag{top:40px}
+.td-ad--instagram .td-ad__label{left:8px;top:8px}
+.td-ad--instagram .td-ad__tag--dark{top:34px}
+.td-ad.td-ad--google-search .td-ad__label{top:12px;bottom:auto}
+.td-ad--google-search .td-ad__url{padding-right:72px}
+.td-ad--google-search .td-ad__query+.td-ad__result .td-ad__url{padding-right:0}
+.td-ad--google-search .td-ad__sitelinks{padding-bottom:0}

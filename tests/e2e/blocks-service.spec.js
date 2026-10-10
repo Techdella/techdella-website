@@ -24,10 +24,10 @@ test.beforeAll(() => {
     block('creative-gallery', {
       layout: 'collage', contained: true, note: 'Example creatives made by our team',
       items: [
-        { format: 'tiktok', headline: '3 signs your website is invisible to buyers', cta: 'Learn more', tag: 'TikTok · Sponsored', image: 'brand/techdella-character-waving' },
-        { format: 'linkedin', brand: 'Northwind', tag: 'Promoted · LinkedIn', text: 'Is your brand showing up when buyers ask AI?', overlay: 'The AI Search Checklist', footer: 'Free guide', cta: 'Download', image: 'work/shopinbos-store-builder-hot-sauce' },
+        { format: 'tiktok', headline: '3 signs your website is invisible to buyers', cta: 'Learn more', tag: 'TikTok · Sponsored', image: 'stock/creator-recording-video-vertical' },
+        { format: 'linkedin', brand: 'Northwind', tag: 'Promoted · LinkedIn', text: 'Is your brand showing up when buyers ask AI?', overlay: 'The AI Search Checklist', footer: 'Free guide', cta: 'Download', image: 'stock/designer-drawing-tablet-studio' },
         { format: 'google-search', domain: 'northwind.example', headline: 'SOC 2 Readiness in Weeks | Fixed Fee', text: 'Gap assessment and audit support.' },
-        { format: 'instagram', cta: 'Book a call', image: 'brand/techdella-character-waving' },
+        { format: 'instagram', cta: 'Book a call', image: 'stock/designer-drawing-tablet-studio' },
       ],
     }),
   ].join('\n');
@@ -121,7 +121,7 @@ test.describe('service blocks', () => {
       for (let i = 0; i < n; i++) {
         const label = mocks.nth(i).locator(':scope > figcaption.td-ad__label');
         await expect(label, `${path} mock ${i}`).toHaveText(/^Example/);
-        await expect(label).toBeVisible();
+        if (await mocks.nth(i).isVisible()) await expect(label).toBeVisible(); // mocks in inactive tabs are hidden
       }
       // SERP / AI answer / report mocks are labelled too.
       for (const sel of ['.td-serp-mock__caption', '.td-ai-answer__caption', '.td-report__badge']) {

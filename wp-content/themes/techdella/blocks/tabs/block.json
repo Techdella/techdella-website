@@ -32,13 +32,13 @@
 					"label": "Meta · Facebook & Instagram", "job": "Job: create demand", "title": "Meta ads agency", "subtitle": "Facebook & Instagram", "dark": true,
 					"text": "Reach the right people before they search, then bring back everyone who showed interest.",
 					"facts": [ { "label": "Formats", "text": "Reels, Stories, feed, carousel, lead forms" }, { "label": "Targeting", "text": "Interests, lookalikes, retargeting" }, { "label": "Best for", "text": "Visual offers, lead magnets, retargeting" }, { "label": "Tracking", "text": "Meta Pixel + Conversions API" } ],
-					"mock": { "block": "ad-mock", "format": "meta", "brand": "YourCo", "overlay": "Audit-ready in weeks.", "headline": "SOC 2 checklist", "cta": "Learn more", "image": "work/shopinbos-store-builder-hot-sauce" }
+					"mock": { "block": "ad-mock", "format": "meta", "brand": "YourCo", "overlay": "Audit-ready in weeks.", "headline": "SOC 2 checklist", "cta": "Learn more", "image": "stock/designer-drawing-tablet-studio" }
 				},
 				{
 					"label": "TikTok Ads", "job": "Job: reach new audiences with video", "title": "TikTok ads agency",
 					"text": "Native, sound-on short videos that stop the scroll. We script, film or animate, and test hooks every week.",
 					"facts": [ { "label": "Formats", "text": "In-feed video, Spark Ads, lead generation" }, { "label": "Creative", "text": "Hooks, UGC-style, motion graphics" }, { "label": "Best for", "text": "Consumer brands, apps, younger audiences" }, { "label": "Tracking", "text": "TikTok Pixel + Events API" } ],
-					"mock": { "block": "ad-mock", "format": "tiktok", "overlay": "POV: your ads finally pay back", "headline": "@yourco · Sponsored", "text": "We tested 12 hooks. Here’s what worked.", "cta": "Learn more", "image": "brand/techdella-character-waving" }
+					"mock": { "block": "ad-mock", "format": "tiktok", "overlay": "POV: your ads finally pay back", "headline": "@yourco · Sponsored", "text": "We tested 12 hooks. Here’s what worked.", "cta": "Learn more", "image": "stock/creator-recording-video-vertical" }
 				},
 				{
 					"label": "LinkedIn Ads", "job": "Job: reach decision-makers", "title": "LinkedIn ads agency", "dark": true,
