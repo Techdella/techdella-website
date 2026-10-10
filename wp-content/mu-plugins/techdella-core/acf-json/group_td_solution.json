@@ -1,0 +1,276 @@
+{
+    "key": "group_td_solution",
+    "title": "TechDella · Solution",
+    "fields": [
+        {
+            "key": "field_td_solution_industry",
+            "label": "Industry",
+            "name": "industry",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "The one industry this page is for. Saved as the Industry term too.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "td_industry",
+            "field_type": "select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_td_solution_primary_kw",
+            "label": "Primary keyword",
+            "name": "primary_kw",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The one search phrase this page should rank for, validated in Ahrefs/Semrush/GSC first. Good: \"b2b seo services\". It must appear in the H1/title and in the first paragraph, or the pre-publish checklist blocks publishing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_solution_pains",
+            "label": "Industry pains",
+            "name": "pains",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Exactly 3 pains specific to this industry, written from our calls. If it would fit any industry, rewrite it (§10.4).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 3,
+            "button_label": "Add pain",
+            "collapsed": "",
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_solution_pains_title",
+                    "label": "Pain",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_solution_pains"
+                },
+                {
+                    "key": "field_td_solution_pains_text",
+                    "label": "Detail",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "What it costs them, in their words.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_solution_pains"
+                }
+            ]
+        },
+        {
+            "key": "field_td_solution_services_used",
+            "label": "Services used",
+            "name": "services_used",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Which of our services apply, in the order this industry needs them, with one line on why.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Add service",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_solution_services_used_service",
+                    "label": "Service",
+                    "name": "service",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "service"
+                    ],
+                    "return_format": "id",
+                    "allow_null": 1,
+                    "parent_repeater": "field_td_solution_services_used"
+                },
+                {
+                    "key": "field_td_solution_services_used_why",
+                    "label": "Why for this industry",
+                    "name": "why",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_solution_services_used"
+                }
+            ]
+        },
+        {
+            "key": "field_td_solution_proof",
+            "label": "Proof (case study)",
+            "name": "proof",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "A case study from this industry. If there is none, leave this empty and write an honest \"what we would do first\" section. Never invent proof.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "case_study"
+            ],
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": 2
+        },
+        {
+            "key": "field_td_solution_compliance_notes",
+            "label": "Compliance and channel notes",
+            "name": "compliance_notes",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "The industry's real ad-policy and claims rules (e.g. fintech ad approvals, healthcare claims). Mark anything unchecked [CONFIRM].",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 4
+        },
+        {
+            "key": "field_td_solution_faq",
+            "label": "FAQ",
+            "name": "faq",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "4–8 real questions from sales calls or Search Console. Answer in the first sentence, 40–80 words in total. Shown as page content only: no FAQPage schema (§8.2).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Add question",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_solution_faq_question",
+                    "label": "Question",
+                    "name": "question",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Phrase it the way a buyer would type it.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_solution_faq"
+                },
+                {
+                    "key": "field_td_solution_faq_answer",
+                    "label": "Answer",
+                    "name": "answer",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Lead with the direct answer, then one supporting detail.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_solution_faq"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "solution"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for solution entries (CLAUDE.md §7). Also registered as post meta by techdella-core/cpt.",
+    "show_in_rest": 0,
+    "modified": 1791590400
+}

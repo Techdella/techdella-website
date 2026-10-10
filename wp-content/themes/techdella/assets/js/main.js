@@ -70,3 +70,4 @@ td.ready(() => {
   if (!/(?:^|; )td_utm_first=/.test(document.cookie)) td.cookie('td_utm_first', value);
   td.cookie('td_utm_last', value);
 });
+import './nav.js';

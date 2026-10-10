@@ -1,0 +1,207 @@
+{
+    "key": "group_td_td_tool",
+    "title": "TechDella · Tool",
+    "fields": [
+        {
+            "key": "field_td_td_tool_tool_component",
+            "label": "Tool app",
+            "name": "tool_component",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The tool block that runs this page, e.g. \"tool-utm-generator\". Ask a developer before changing it.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_td_tool_primary_kw",
+            "label": "Primary keyword",
+            "name": "primary_kw",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The one search phrase this page should rank for, validated in Ahrefs/Semrush/GSC first. Good: \"b2b seo services\". It must appear in the H1/title and in the first paragraph, or the pre-publish checklist blocks publishing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_td_tool_how_to",
+            "label": "How to use it",
+            "name": "how_to",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "3–5 short steps a first-time visitor can follow. Required for AdSense: the page must be helpful on its own.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Add step",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_td_tool_how_to_title",
+                    "label": "Step",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_td_tool_how_to"
+                },
+                {
+                    "key": "field_td_td_tool_how_to_text",
+                    "label": "Detail",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_td_tool_how_to"
+                }
+            ]
+        },
+        {
+            "key": "field_td_td_tool_faq",
+            "label": "FAQ",
+            "name": "faq",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "4–8 real questions from sales calls or Search Console. Answer in the first sentence, 40–80 words in total. Shown as page content only: no FAQPage schema (§8.2).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Add question",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_td_tool_faq_question",
+                    "label": "Question",
+                    "name": "question",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Phrase it the way a buyer would type it.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_td_tool_faq"
+                },
+                {
+                    "key": "field_td_td_tool_faq_answer",
+                    "label": "Answer",
+                    "name": "answer",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Lead with the direct answer, then one supporting detail.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_td_tool_faq"
+                }
+            ]
+        },
+        {
+            "key": "field_td_td_tool_ad_slots",
+            "label": "Show ad slots",
+            "name": "ad_slots",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "AdSense manual units (max 3, reserved height). Only tool pages may show ads (D8).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "ui": 1,
+            "default_value": 1
+        },
+        {
+            "key": "field_td_td_tool_gate",
+            "label": "Email gate",
+            "name": "gate",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Ask for an email before showing the full result? Default: no gate.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "No gate",
+                "email": "Email gate"
+            },
+            "default_value": "none",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "td_tool"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for tool entries (CLAUDE.md §7). Also registered as post meta by techdella-core/cpt.",
+    "show_in_rest": 0,
+    "modified": 1791590400
+}

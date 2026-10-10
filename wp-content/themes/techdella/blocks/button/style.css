@@ -1,0 +1,3 @@
+/* techdella/button */
+.td-button-block{display:flex;flex-wrap:wrap;gap:10px}
+.td-button-block--center{justify-content:center}

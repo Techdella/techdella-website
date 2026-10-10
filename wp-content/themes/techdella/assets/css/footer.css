@@ -1,0 +1,35 @@
+/* Site footers (Main / Blog / Studios). */
+.td-footer{border-top:1px solid var(--td-line-soft);font-size:14.5px}
+.td-footer a{text-decoration:none;color:var(--td-ink)}
+.td-footer a:hover{color:var(--td-orange-text);text-decoration:underline}
+.td-footer ul{margin:0;padding:0;list-style:none}
+.td-footer__inner{padding-block:64px 28px;display:flex;flex-direction:column;gap:48px}
+.td-footer__top{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between}
+.td-footer__brand{flex:1 1 260px;display:flex;flex-direction:column;gap:12px}
+.td-footer__tagline{color:var(--td-body);max-width:300px}
+.td-footer__col{display:flex;flex-direction:column;gap:6px;min-width:150px}
+.td-footer__heading{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--td-muted);margin-bottom:4px}
+.td-footer__col ul{display:flex;flex-direction:column}
+.td-footer__col a{display:inline-flex;align-items:center;min-height:36px}
+.td-footer__bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 24px;font-size:13px;color:var(--td-muted);border-top:1px solid var(--td-line-soft);padding-top:22px}
+.td-footer__bottom a{color:var(--td-muted)}
+.td-footer__inline{display:flex;flex-wrap:wrap;gap:4px 20px}
+.td-footer__inline a{display:inline-flex;align-items:center;min-height:44px}
+.td-footer__inline--lg{font-size:14px;gap:4px 24px}
+.td-footer--compact .td-footer__inner{padding-block:40px 24px;gap:28px}
+.td-footer__row{display:flex;flex-wrap:wrap;gap:16px 24px;justify-content:space-between;align-items:center}
+.td-footer__row .td-brand__suffix{font-size:22px}
+
+.td-footer--dark{background:var(--td-ink);color:var(--td-paper);border-top:0}
+.td-footer--dark a,.td-footer--dark .td-brand,.td-footer--dark .td-brand__suffix{color:var(--td-paper)}
+.td-footer--dark a:hover{color:var(--td-paper)}
+.td-footer--dark .td-footer__bottom{border-top-color:var(--td-dark-border);color:var(--td-num)}
+.td-footer--dark .td-footer__bottom a{color:var(--td-on-dark)}
+.td-footer--dark :focus-visible{outline-color:var(--td-orange-on-dark)}
+@media (max-width:640px){
+  .td-footer__inner{padding-block:48px 24px;gap:36px}
+  .td-footer__top{gap:28px 24px}
+  .td-footer__brand{flex-basis:100%}
+  .td-footer__col{flex:1 1 140px}
+  .td-footer__bottom{flex-direction:column;align-items:flex-start}
+}

@@ -1,0 +1,148 @@
+{
+    "key": "group_td_td_team",
+    "title": "TechDella · Team member",
+    "fields": [
+        {
+            "key": "field_td_td_team_role",
+            "label": "Role",
+            "name": "role",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Exactly as in §2.4, e.g. \"Growth Strategist\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_td_team_bio",
+            "label": "Bio",
+            "name": "bio",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "2–3 sentences of first-hand experience: what they have done, for whom. Shown in author boxes.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 4
+        },
+        {
+            "key": "field_td_td_team_linkedin",
+            "label": "LinkedIn",
+            "name": "linkedin",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "The public profile URL. Used for Person schema sameAs.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_td_team_expertise",
+            "label": "Expertise",
+            "name": "expertise",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "3–5 topics they can genuinely review.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add topic",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_td_team_expertise_topic",
+                    "label": "Topic",
+                    "name": "topic",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_td_team_expertise"
+                }
+            ]
+        },
+        {
+            "key": "field_td_td_team_photo",
+            "label": "Photo",
+            "name": "photo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "A 4:5 portrait on the Sand backdrop. Alt: their name.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_td_td_team_wp_user",
+            "label": "WordPress user",
+            "name": "wp_user",
+            "aria-label": "",
+            "type": "user",
+            "instructions": "The login this person writes under, so bylines and author boxes find this profile.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "id"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "td_team"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for team member entries (CLAUDE.md §7). Also registered as post meta by techdella-core/cpt.",
+    "show_in_rest": 0,
+    "modified": 1791590400
+}

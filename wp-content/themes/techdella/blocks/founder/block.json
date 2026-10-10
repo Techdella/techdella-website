@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/founder",
+	"title": "Founder letter",
+	"category": "techdella",
+	"icon": "id-alt",
+	"description": "\"From the founder\" letter with two stat cards and an arch portrait, plus a client quote strip beneath.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "From the founder" },
+		"title": { "type": "string", "default": "Hi, I’m *Joanna*." },
+		"body": { "type": "string", "default": "" },
+		"stats": { "type": "array", "default": [] },
+		"image": { "type": [ "string", "integer" ], "default": "team/joanna-okedara-kalu" },
+		"imageAlt": { "type": "string", "default": "Joanna Okedara-Kalu, Founder and CEO" },
+		"note": { "type": "string", "default": "" },
+		"quote": { "type": "string", "default": "" },
+		"quoteName": { "type": "string", "default": "" },
+		"quoteRole": { "type": "string", "default": "" },
+		"quoteImage": { "type": [ "string", "integer" ], "default": "" }
+	},
+	"example": {
+		"attributes": {
+			"label": "From the founder",
+			"title": "Hi, I’m *Joanna*.",
+			"body": "I founded TechDella to help companies become easier to understand, easier to trust and easier to choose. We bring search, paid, email and automation together, so your marketing works as one system instead of disconnected tactics.\n\nWe only promise what we can control: clear priorities, quality work and honest reporting.",
+			"stats": [ { "value": "11", "label": "Published case studies" }, { "value": "5", "label": "Client countries" } ],
+			"image": "team/joanna-okedara-kalu",
+			"imageAlt": "Joanna Okedara-Kalu, Founder and CEO",
+			"note": "[CONFIRM founder sign-off]",
+			"quote": "Techdella reframed how we were thinking about our market entirely. We went from scattered tactics to a positioning and GTM system that actually made sense for where we were heading. The difference was immediate.",
+			"quoteName": "Levi Barbosa",
+			"quoteRole": "CEO, WezOps",
+			"quoteImage": "people/levi-barbosa-wezops"
+		}
+	},
+	"techdella": {
+		"controls": { "body": "textarea", "stats": "json", "image": "media", "quote": "textarea", "quoteImage": "media" },
+		"help": "The letter is draft copy and needs Joanna's sign-off before launch (§2.4): keep the note '[CONFIRM founder sign-off]' until she approves, then clear it. Blank lines in the body start new paragraphs. The quote strip takes verbatim §2.4 quotes only."
+	}
+}

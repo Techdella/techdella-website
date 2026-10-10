@@ -1,0 +1,71 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/bento-grid",
+	"title": "Bento grid",
+	"category": "techdella",
+	"icon": "grid-view",
+	"description": "12-column grid of tiles: stat, image, photo, quote, link, platform-list, search, form, sequence and flow.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"rowHeight": { "type": "integer", "default": 0 },
+		"padding": { "type": "string", "enum": [ "default", "flush-top", "none" ], "default": "default" },
+		"tiles": { "type": "array", "default": [] }
+	},
+	"example": {
+		"attributes": {
+			"label": "Services",
+			"title": "One connected *growth* system",
+			"intro": "Each service stands on its own. Together they cover the whole journey, from the first search to the signed client.",
+			"tiles": [
+				{
+					"type": "search", "span": 7, "spanTablet": 6,
+					"eyebrow": "01 · Get found", "title": "SEO & AI Search Optimization",
+					"text": "Rank on Google and get recommended when buyers ask ChatGPT, Perplexity or Google’s AI.",
+					"links": [ { "label": "SEO", "url": "/services/seo/", "style": "dark" }, { "label": "AI Search", "url": "/services/ai-search-optimization/", "style": "light" } ],
+					"serp": { "meta": "#1 · yourcompany.com", "title": "SOC 2 Consulting for SaaS Companies", "desc": "Fixed-fee readiness for growing teams…" },
+					"answer": { "label": "AI answer · sources", "text": "“…firms frequently recommended include *YourCo*…”", "tag": "cited" },
+					"caption": "Example result"
+				},
+				{
+					"type": "platform-list", "span": 5, "spanTablet": 6, "url": "/services/paid-ads/",
+					"eyebrow": "02 · Get noticed", "title": "Paid ads, made in-house",
+					"platforms": [ { "name": "Google", "mark": "G" }, { "name": "Meta", "mark": "M" }, { "name": "TikTok", "mark": "T" }, { "name": "LinkedIn", "mark": "in" } ],
+					"thumb": "team/akeem-feysupo", "thumbCaption": "Example · 3 SEO myths ▶",
+					"text": "Strategy, creatives and media buying under one roof. →"
+				},
+				{
+					"type": "form", "span": 4, "url": "/services/lead-generation/",
+					"eyebrow": "03 · Capture", "title": "Lead generation",
+					"formTitle": "Get the free SOC 2 checklist", "formButton": "Download"
+				},
+				{
+					"type": "sequence", "span": 4, "url": "/services/email-marketing/",
+					"eyebrow": "04 · Nurture", "title": "Email marketing",
+					"rows": [ { "label": "Day 0 · Your checklist", "status": "62% open", "strong": true }, { "label": "Day 3 · Case study", "status": "Sent" }, { "label": "Day 7 · Book a call", "status": "Queued", "dot": true } ],
+					"caption": "Example sequence"
+				},
+				{
+					"type": "photo", "span": 4, "url": "studios:/",
+					"image": "team/abel-saka", "alt": "",
+					"eyebrow": "Creative", "title": "Ads, videos and visuals designed by our Studios team"
+				},
+				{
+					"type": "flow", "span": 12, "url": "/services/marketing-automation/",
+					"eyebrow": "05 · Follow up", "title": "AI automations",
+					"text": "Every lead answered in minutes, scored, logged in your CRM and routed to the right person.",
+					"steps": [ { "label": "New lead" }, { "label": "AI scores", "highlight": true }, { "label": "CRM updated" }, { "label": "Email sent" }, { "label": "Sales alerted" } ]
+				}
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "intro": "textarea", "tiles": "json" },
+		"help": "Tiles: {type, span (1-12), spanTablet (1-6), rows (1-3), variant (paper|canvas|sand|dark|photo), url, eyebrow, title, text, …}. Types: stat {value, label, note, avatars[], avatarsMore}; image {image, alt, title, text}; photo {image, alt, eyebrow, title, url}; quote {quote, name, role, image} (verbatim §2.4 quotes only); link {image, alt, chip, title, linkLabel, url}; platform-list {platforms[{name,mark}], thumb, thumbCaption}; search {links[], serp{}, answer{}, caption}; form {formTitle, formButton}; sequence {rows[{label,status,strong,dot}], caption}; flow {steps[{label,highlight}]}. URLs: '/path/' (this site) or 'studios:/path/', 'journal:/path/', 'marketing:/path/'. Stats: verified proof only."
+	}
+}

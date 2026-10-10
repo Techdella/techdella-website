@@ -1,0 +1,162 @@
+{
+    "key": "group_td_em_glossary",
+    "title": "TechDella · Glossary term",
+    "fields": [
+        {
+            "key": "field_td_em_glossary_short_definition",
+            "label": "Short definition",
+            "name": "short_definition",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Answer the question in 40 words or fewer. Start with the term: \"Technical SEO is …\". This is shown first and is what AI answers quote.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "maxlength": ""
+        },
+        {
+            "key": "field_td_em_glossary_primary_kw",
+            "label": "Primary keyword",
+            "name": "primary_kw",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The one search phrase this page should rank for, validated in Ahrefs/Semrush/GSC first. Good: \"b2b seo services\". It must appear in the H1/title and in the first paragraph, or the pre-publish checklist blocks publishing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_em_glossary_category",
+            "label": "Category",
+            "name": "category",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "One glossary category. Saved as the Glossary category term.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "glossary_category",
+            "field_type": "select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_td_em_glossary_related_terms",
+            "label": "Related terms",
+            "name": "related_terms",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "3–5 terms a reader needs next. They become the \"Related terms\" links.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "em-glossary"
+            ],
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": 5
+        },
+        {
+            "key": "field_td_em_glossary_related_service",
+            "label": "Related service",
+            "name": "related_service",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "The one service this term leads to (every term links to one service, §8.3).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "service"
+            ],
+            "return_format": "id",
+            "allow_null": 1,
+            "multiple": 0
+        },
+        {
+            "key": "field_td_em_glossary_last_reviewed",
+            "label": "Last reviewed",
+            "name": "last_reviewed",
+            "aria-label": "",
+            "type": "date_picker",
+            "instructions": "The day a named reviewer last checked every fact on this page. Drives the \"Refresh due\" list: money pages every 3 months, guides every 6.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "j M Y",
+            "return_format": "Y-m-d",
+            "first_day": 1
+        },
+        {
+            "key": "field_td_em_glossary_reviewer",
+            "label": "Reviewer",
+            "name": "reviewer",
+            "aria-label": "",
+            "type": "user",
+            "instructions": "A real team member (with a Team profile) who fact-checked this. Never \"TechDella Team\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "id"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "em-glossary"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for glossary term entries (CLAUDE.md §7). Also registered as post meta by techdella-core/cpt.",
+    "show_in_rest": 0,
+    "modified": 1791590400
+}
