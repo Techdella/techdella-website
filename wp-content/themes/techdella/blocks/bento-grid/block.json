@@ -35,7 +35,7 @@
 				{
 					"type": "platform-list", "span": 5, "spanTablet": 6, "url": "/services/paid-ads/",
 					"eyebrow": "02 · Get noticed", "title": "Paid ads, made in-house",
-					"platforms": [ { "name": "Google", "mark": "G" }, { "name": "Meta", "mark": "M" }, { "name": "TikTok", "mark": "T" }, { "name": "LinkedIn", "mark": "in" } ],
+					"platforms": [ { "name": "Google", "mark": "G", "slug": "google-ads" }, { "name": "Meta", "mark": "M", "slug": "meta" }, { "name": "TikTok", "mark": "T", "slug": "tiktok" }, { "name": "LinkedIn", "mark": "in", "slug": "linkedin" } ],
 					"thumb": "stock/creator-recording-video-vertical", "thumbCaption": "Example · 3 SEO myths ▶",
 					"text": "Strategy, creatives and media buying under one roof. →"
 				},

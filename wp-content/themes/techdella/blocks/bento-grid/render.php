@@ -138,7 +138,16 @@ $td_wrap     = $td_style ? [ 'style' => $td_style ] : [];
 						<?php if ( ! empty( $td_t['platforms'] ) ) : ?>
 							<ul class="td-bento__platforms" role="list">
 								<?php foreach ( (array) $td_t['platforms'] as $td_p ) : ?>
-									<li><span class="td-bento__mark" aria-hidden="true"><?php echo esc_html( (string) ( $td_p['mark'] ?? mb_substr( (string) ( $td_p['name'] ?? '' ), 0, 1 ) ) ); ?></span><?php echo esc_html( (string) ( $td_p['name'] ?? '' ) ); ?></li>
+									<?php $td_logo_url = td_platform_logo_url( (string) ( $td_p['slug'] ?? '' ) ); ?>
+									<li><span class="td-bento__mark" aria-hidden="true">
+									<?php
+									if ( $td_logo_url ) :
+										?>
+										<img src="<?php echo esc_url( $td_logo_url ); ?>" alt="" width="14" height="14" loading="lazy">
+										<?php
+else :
+	?>
+										<?php echo esc_html( (string) ( $td_p['mark'] ?? mb_substr( (string) ( $td_p['name'] ?? '' ), 0, 1 ) ) ); ?><?php endif; ?></span><?php echo esc_html( (string) ( $td_p['name'] ?? '' ) ); ?></li>
 								<?php endforeach; ?>
 							</ul>
 						<?php endif; ?>

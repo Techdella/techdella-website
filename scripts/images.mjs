@@ -1,7 +1,7 @@
 // Responsive image pipeline (§6.1): assets/images/**  →  theme assets/img/**
 // AVIF + WebP + JPEG/PNG fallback at 480/768/1200/1600/2400 (never upscaled),
 // plus img/manifest.json, which td_picture() reads for width/height/srcset.
-import { readdirSync, mkdirSync, existsSync, statSync, writeFileSync, readFileSync } from 'node:fs';
+import { readdirSync, mkdirSync, existsSync, statSync, writeFileSync, readFileSync, copyFileSync } from 'node:fs';
 import { join, relative, dirname, extname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
@@ -47,6 +47,15 @@ for (const file of walk(SRC)) {
     else await base.clone().jpeg({ quality: 78, mozjpeg: true, progressive: true }).toFile(join(outDir, `${name}-${w}.jpg`));
   }
   made++;
+}
+
+// Platform logos (SVG/PNG) are copied as-is; td_platform_badge() looks for them here.
+const LOGOS = join(ROOT, 'assets/logos/platforms');
+if (existsSync(LOGOS)) {
+  mkdirSync(join(OUT, 'logos/platforms'), { recursive: true });
+  for (const f of readdirSync(LOGOS).filter((n) => /\.(svg|png|webp)$/i.test(n))) {
+    copyFileSync(join(LOGOS, f), join(OUT, 'logos/platforms', f));
+  }
 }
 
 mkdirSync(OUT, { recursive: true });

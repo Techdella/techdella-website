@@ -70,6 +70,21 @@ function td_section_head( array $args ): string {
 }
 
 /**
+ * URL of an official platform logo file (assets/logos/platforms/<slug>.*,
+ * copied into the theme by `npm run images`), or '' when none exists.
+ *
+ * @param string $slug Platform slug, e.g. "google-ads".
+ */
+function td_platform_logo_url( string $slug ): string {
+	foreach ( [ 'svg', 'png', 'webp' ] as $ext ) {
+		if ( '' !== $slug && is_readable( get_theme_file_path( "assets/img/logos/platforms/{$slug}.{$ext}" ) ) ) {
+			return get_theme_file_uri( "assets/img/logos/platforms/{$slug}.{$ext}" );
+		}
+	}
+	return '';
+}
+
+/**
  * Platform badge: official logo file when one exists in
  * assets/img/logos/platforms/<slug>.*, else the prototype's text badge (§0.6).
  *
@@ -79,15 +94,10 @@ function td_section_head( array $args ): string {
  * @param bool   $ink   Ink (dark) mark background.
  */
 function td_platform_badge( string $name, string $slug = '', string $mark = '', bool $ink = false ): string {
-	$slug = $slug ? $slug : sanitize_title( $name );
-	$mark = $mark ? $mark : mb_substr( $name, 0, 1 );
-	$logo = '';
-	foreach ( [ 'svg', 'png', 'webp' ] as $ext ) {
-		if ( is_readable( get_theme_file_path( "assets/img/logos/platforms/{$slug}.{$ext}" ) ) ) {
-			$logo = '<img src="' . esc_url( get_theme_file_uri( "assets/img/logos/platforms/{$slug}.{$ext}" ) ) . '" alt="" width="18" height="18" loading="lazy">';
-			break;
-		}
-	}
+	$slug      = $slug ? $slug : sanitize_title( $name );
+	$mark      = $mark ? $mark : mb_substr( $name, 0, 1 );
+	$url       = td_platform_logo_url( $slug );
+	$logo      = $url ? '<img src="' . esc_url( $url ) . '" alt="" width="18" height="18" loading="lazy">' : '';
 	$mark_html = $logo ? $logo : esc_html( $mark );
 	return '<span class="td-badge"><span class="td-badge__mark' . ( $ink && ! $logo ? ' td-badge__mark--ink' : '' ) . '" aria-hidden="true">' . $mark_html . '</span>' . esc_html( $name ) . '</span>';
 }

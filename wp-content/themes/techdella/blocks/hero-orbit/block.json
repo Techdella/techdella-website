@@ -35,11 +35,11 @@
 			"trustText": "Trusted by teams at Paycape, Johan Consults and WezOps",
 			"trustAvatars": [ "people/levi-barbosa-wezops", "people/akin-oyegoke-johan-consults", "team/joanna-okedara-kalu" ],
 			"platforms": [
-				{ "name": "Google Search & Ads", "mark": "G", "ink": true },
+				{ "name": "Google Search & Ads", "mark": "G", "slug": "google-search", "ink": true },
 				{ "name": "AI answers", "mark": "AI" },
-				{ "name": "LinkedIn Ads", "mark": "in" },
-				{ "name": "Meta · Facebook & Instagram", "mark": "M", "ink": true },
-				{ "name": "TikTok Ads", "mark": "T" }
+				{ "name": "LinkedIn Ads", "mark": "in", "slug": "linkedin" },
+				{ "name": "Meta · Facebook & Instagram", "mark": "M", "slug": "meta", "ink": true },
+				{ "name": "TikTok Ads", "mark": "T", "slug": "tiktok" }
 			],
 			"stats": [
 				{ "value": "15,000", "label": "monthly organic visitors · Paycape" },
