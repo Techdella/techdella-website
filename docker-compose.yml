@@ -1,0 +1,127 @@
+# Local stack (§4.1): one MariaDB, three WordPress sites, Mailpit,
+# phpMyAdmin and a Startbuddi mock. `make up` starts it and installs WP.
+name: techdella
+
+x-wordpress: &wordpress
+  build: ./docker/wordpress
+  image: techdella/wordpress:local
+  depends_on:
+    db:
+      condition: service_healthy
+  env_file:
+    - path: docker/local.env
+    - path: .env
+      required: false
+  restart: unless-stopped
+
+services:
+  db:
+    image: mariadb:10.11
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: wordpress
+    volumes:
+      - db:/var/lib/mysql
+      - ./docker/db/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+
+  wp-marketing:
+    <<: *wordpress
+    ports: ["8081:8081"]
+    environment:
+      APACHE_PORT: 8081
+      TD_SITE: marketing
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wp_marketing
+      WORDPRESS_CONFIG_EXTRA: &wp-config-extra |
+        define( 'WP_HOME', getenv( 'TD_URL_' . strtoupper( getenv( 'TD_SITE' ) ) ) );
+        define( 'WP_SITEURL', WP_HOME );
+        define( 'WP_ENVIRONMENT_TYPE', getenv( 'TD_ENV' ) ?: 'local' );
+        define( 'WP_DEBUG_LOG', true );
+        define( 'WP_DEBUG_DISPLAY', false );
+    volumes:
+      - wp-marketing:/var/www/html
+      - ./wp-content/themes/techdella:/var/www/html/wp-content/themes/techdella
+      - ./wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
+      - ./data:/var/www/repo/data:ro
+      - ./content:/var/www/repo/content:ro
+      - ./docker/cache:/var/www/repo/cache:ro
+  wp-journal:
+    <<: *wordpress
+    ports: ["8082:8082"]
+    environment:
+      APACHE_PORT: 8082
+      TD_SITE: journal
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wp_journal
+      WORDPRESS_CONFIG_EXTRA: *wp-config-extra
+    volumes:
+      - wp-journal:/var/www/html
+      - ./wp-content/themes/techdella:/var/www/html/wp-content/themes/techdella
+      - ./wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
+      - ./data:/var/www/repo/data:ro
+      - ./content:/var/www/repo/content:ro
+      - ./docker/cache:/var/www/repo/cache:ro
+  wp-studios:
+    <<: *wordpress
+    ports: ["8083:8083"]
+    environment:
+      APACHE_PORT: 8083
+      TD_SITE: studios
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wp_studios
+      WORDPRESS_CONFIG_EXTRA: *wp-config-extra
+    volumes:
+      - wp-studios:/var/www/html
+      - ./wp-content/themes/techdella:/var/www/html/wp-content/themes/techdella
+      - ./wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
+      - ./data:/var/www/repo/data:ro
+      - ./content:/var/www/repo/content:ro
+      - ./docker/cache:/var/www/repo/cache:ro
+
+  mailpit:
+    image: axllent/mailpit:latest
+    ports: ["8025:8025"]
+    restart: unless-stopped
+
+  pma:
+    image: phpmyadmin:5
+    profiles: ["tools"]
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports: ["8080:80"]
+    depends_on: [db]
+
+  sb-mock:
+    image: node:22-alpine
+    working_dir: /app
+    command: ["node", "server.js"]
+    volumes:
+      - ./tools/sb-mock:/app:ro
+    environment:
+      PORT: 8090
+    ports: ["8090:8090"]
+    restart: unless-stopped
+
+volumes:
+  db:
+  wp-marketing:
+  wp-journal:
+  wp-studios:

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<ruleset name="TechDella">
+	<description>WordPress Coding Standards for the TechDella theme and core plugin.</description>
+	<file>wp-content/themes/techdella</file>
+	<file>wp-content/mu-plugins</file>
+	<exclude-pattern>*/assets/build/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<arg name="extensions" value="php"/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+	<config name="testVersion" value="8.2-"/>
+	<config name="minimum_wp_version" value="6.6"/>
+
+	<rule ref="WordPress-Extra">
+		<!-- PSR-4-ish file names inside techdella-core/ (class-*.php is not required). -->
+		<exclude name="WordPress.Files.FileName"/>
+		<!-- Short array syntax is the house style. -->
+		<exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
+	</rule>
+	<rule ref="WordPress-Docs">
+		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag"/>
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment"/>
+		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+	</rule>
+	<rule ref="PHPCompatibilityWP"/>
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="techdella"/>
+			</property>
+		</properties>
+	</rule>
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="td"/>
+				<element value="techdella"/>
+				<element value="TechDella"/>
+			</property>
+		</properties>
+	</rule>
+	<!-- Template partials receive $args / $attributes from WordPress. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound">
+		<exclude-pattern>*/blocks/*/render.php</exclude-pattern>
+		<exclude-pattern>*/templates/*</exclude-pattern>
+		<exclude-pattern>*/parts/*</exclude-pattern>
+		<exclude-pattern>*/patterns/*</exclude-pattern>
+	</rule>
+</ruleset>

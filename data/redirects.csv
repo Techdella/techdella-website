@@ -1,0 +1,67 @@
+source,target,code,condition,notes
+/locations/ibadan-nigeria/,/locations/nigeria/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
+/locations/abuja-nigeria/,/locations/nigeria/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
+/locations/mumbai-india/,/locations/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
+/locations/germany/,/locations/europe/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
+/locations/new-york/,/locations/usa/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
+/locations/pakistan/,/locations/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
+/guides/,https://blog.techdella.com/,301,,Guides index moves to the Journal
+/guide/email-marketing-setup-problems/,https://blog.techdella.com/email-marketing-setup-problems/,301,,Guide moves to Journal (see D1)
+/free-tools/,/tools/,301,,Duplicate of /tools/ archive
+/startup-quiz/,/growth-audit/,301,,Replaced by Growth Audit
+/cmo-as-a-service/,/services/,301,,Retired offer
+/vibe-marketing/,/services/marketing-automation/,301,,Folded into AI automation
+/global-expansion/,/locations/,301,,Folded into markets hub
+/studio/,https://studios.techdella.com/,301,,Studios moves to subdomain
+/mvp-calculator/,https://studios.techdella.com/mvp-calculator/,301,,Studios tool
+/services/content-marketing/,/services/seo/,301,,
+/services/social-media-marketing/,/services/paid-ads/,301,,
+/services/conversion-rate-optimization/,/services/lead-generation/,301,,
+/services/branding-and-design/,https://studios.techdella.com/services/branding/,301,,Studios
+/guide/how-to-crush-q4/,https://blog.techdella.com/how-to-crush-q4/,301,,Guide moves to Journal (see D1)
+/guide/business-launch-lessons/,https://blog.techdella.com/business-launch-lessons/,301,,Guide moves to Journal (see D1)
+/guide/how-to-get-your-first-100-customers/,https://blog.techdella.com/how-to-get-your-first-100-customers/,301,,Guide moves to Journal (see D1)
+/guide/content-marketing-agency-for-startups/,https://blog.techdella.com/content-marketing-agency-for-startups/,301,,Guide moves to Journal (see D1)
+/guide/how-to-brainstorm-a-startup-name/,https://blog.techdella.com/how-to-brainstorm-a-startup-name/,301,,Guide moves to Journal (see D1)
+/guide/how-to-launch-a-new-product/,https://blog.techdella.com/how-to-launch-a-new-product/,301,,Guide moves to Journal (see D1)
+/guide/what-is-vibe-coding/,https://blog.techdella.com/what-is-vibe-coding/,301,,Guide moves to Journal (see D1)
+/guide/how-to-develop-an-mvp-for-startup/,https://blog.techdella.com/how-to-develop-an-mvp-for-startup/,301,,Guide moves to Journal (see D1)
+/guide/mvp-development-for-startups/,https://blog.techdella.com/mvp-development-for-startups/,301,,Guide moves to Journal (see D1)
+/guide/product-validation-for-startups/,https://blog.techdella.com/product-validation-for-startups/,301,,Guide moves to Journal (see D1)
+/guide/startup-funding-stages-for-african-founders/,https://blog.techdella.com/startup-funding-stages-for-african-founders/,301,,Guide moves to Journal (see D1)
+/guide/finding-startup-grants-in-africa/,https://blog.techdella.com/finding-startup-grants-in-africa/,301,,Guide moves to Journal (see D1)
+/guide/safe-note-guide/,https://blog.techdella.com/safe-note-guide/,301,,Guide moves to Journal (see D1)
+/guide/startup-marketing-team-for-growth-stage/,https://blog.techdella.com/startup-marketing-team-for-growth-stage/,301,,Guide moves to Journal (see D1)
+/guide/startup-hiring-strategy/,https://blog.techdella.com/startup-hiring-strategy/,301,,Guide moves to Journal (see D1)
+/guide/how-to-build-momentum/,https://blog.techdella.com/how-to-build-momentum/,301,,Guide moves to Journal (see D1)
+/services/website-design/,https://studios.techdella.com/services/website-design/,301,,Studios
+/services/growth-paid/,/services/paid-ads/,301,,
+/services/startup-marketing-strategy/,/services/,301,,
+/services/growth-hacking/,/services/lead-generation/,301,,
+/services/b2b-marketing/,/services/lead-generation/,301,,
+/services/on-page-seo/,/services/seo/,301,,
+/services/landing-page-design/,https://studios.techdella.com/services/website-design/,301,,Studios
+/services/gtm-strategy/,/services/,301,,
+/services/product-launches/,/services/paid-ads/,301,,
+/services/saas-seo-content/,/solution/saas-marketing-agency/,301,,
+/service/cmo-as-a-service/,/services/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/startup-marketing-strategy/,/services/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/seo/,/services/seo/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/on-page-seo/,/services/seo/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/technical-seo/,/services/technical-seo/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/local-seo/,/services/local-seo/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/content-marketing/,/services/seo/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/social-media-marketing/,/services/paid-ads/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/email-marketing/,/services/email-marketing/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/paid-advertising/,/services/paid-ads/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/b2b-marketing/,/services/lead-generation/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/growth-hacking/,/services/lead-generation/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/website-design/,https://studios.techdella.com/services/website-design/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/landing-page-design/,https://studios.techdella.com/services/website-design/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/branding-and-design/,https://studios.techdella.com/services/branding/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/conversion-rate-optimization/,/services/lead-generation/,301,,Legacy redirect carried from old theme (fixed targets)
+/solutions/,/solution/,301,prefix,Legacy redirect carried from old theme (fixed targets)
+/case-study/,/case-studies/,301,,Legacy redirect carried from old theme (fixed targets)
+/founder-dashboard/,https://hub.techdella.com/,301,,Legacy redirect carried from old theme (fixed targets)
+/guide/,https://blog.techdella.com/,301,prefix,Legacy redirect carried from old theme (fixed targets)
+/guide/*,https://blog.techdella.com/$1,301,regex ^/guide/(.+)$,Catch-all for any guide not listed

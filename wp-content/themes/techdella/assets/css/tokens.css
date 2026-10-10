@@ -1,0 +1,37 @@
+/* Brand tokens (§2.1, §2.2). Mirrored in theme.json so the editor matches. */
+:root{
+  /* Neutrals (≈60%) */
+  --td-ink:#0D0D0D;      --td-paper:#FFFFFF;   --td-canvas:#F7F5F2;  --td-sand:#EFE7DD;
+  --td-body:#57534E;     --td-muted:#6B6560;   --td-line:#E7E4DF;    --td-line-soft:#EFEDE9;
+  /* Dark surfaces (≈30% on dark sections) */
+  --td-dark-1:#1A1715;   --td-dark-border:#2E2A27; --td-dark-2:#262321; --td-on-dark:#C9C4BE;
+  /* Signal (≤10% — accents only) */
+  --td-orange:#E8470A;   --td-orange-tint:#FDF0E9; --td-orange-text:#C23B07;
+  --td-gradient:linear-gradient(135deg,#D62F14 0%,#F98A0F 100%); /* logo + one CTA arch per page max */
+  /* Radii, shadow, space */
+  --td-r-sm:12px; --td-r-md:20px; --td-r-lg:28px; --td-r-pill:999px; --td-arch:999px 999px 24px 24px;
+  --td-shadow:0 1px 2px rgba(13,13,13,.04),0 8px 24px rgba(13,13,13,.06);
+  --td-space:clamp(64px,8vw,120px); /* section padding */
+  --td-max:1240px;
+
+  /* Derived (prototype values that are not in the core list) */
+  --td-ink-soft:#3D3A36;          /* secondary text on sand */
+  --td-num:#A8A29E;               /* inactive step numbers */
+  --td-orange-on-dark:#FF7A3D;    /* one highlighted word/stat on ink */
+  --td-r-xl:32px;
+  --td-gutter:20px;
+  --td-shadow-float:0 14px 34px -18px rgba(13,13,13,.25);
+  --td-shadow-lift:0 18px 40px -24px rgba(13,13,13,.3);
+  --td-focus:0 0 0 3px var(--td-paper),0 0 0 5px var(--td-orange);
+
+  /* Type (§2.2) */
+  --td-font:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --td-font-serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --td-font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --td-h1:clamp(44px,6vw,84px);  --td-h1-lh:1.02;
+  --td-h2:clamp(32px,4vw,56px);  --td-h2-lh:1.06;
+  --td-h3:24px;                  --td-h3-lh:1.2;
+  --td-text:17px;                --td-text-lh:1.6;
+  --td-small:14px;               --td-small-lh:1.5;
+  --td-track-tight:-0.03em;
+}
