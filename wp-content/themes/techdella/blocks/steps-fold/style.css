@@ -1,4 +1,4 @@
-/* techdella/steps-fold */
+/* techdella/steps-fold. Inactive numbers use #8C857E (not --td-num) so 44px digits pass 3:1. */
 .td-steps--canvas{background:var(--td-canvas)}
 .td-steps__inner{padding-block:var(--td-space);display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start}
 .td-steps__intro{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:22px}
@@ -18,7 +18,7 @@
 .td-steps__summary{display:flex;align-items:center;gap:20px;padding:20px 0;min-height:44px;cursor:pointer;list-style:none;border-radius:12px}
 .td-steps__summary::-webkit-details-marker{display:none}
 .td-steps__summary::marker{content:""}
-.td-steps__num{font-family:var(--td-font-serif);font-size:44px;line-height:1;color:var(--td-num);width:52px;flex:0 0 52px;transition:color .2s}
+.td-steps__num{font-family:var(--td-font-serif);font-size:44px;line-height:1;color:#8C857E;width:52px;flex:0 0 52px;transition:color .2s}
 .td-steps__item[open] .td-steps__num{color:var(--td-ink)}
 .td-steps__head{flex:1;display:flex;flex-direction:column;min-width:0}
 .td-steps__name{font-size:21px;letter-spacing:-.03em;line-height:1.3}

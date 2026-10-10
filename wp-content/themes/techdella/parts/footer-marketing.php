@@ -12,7 +12,7 @@ $td_services = [];
 foreach ( td_nav_services() as $td_s ) {
 	$td_services[ $td_s['label'] ] = $td_s['url'];
 }
-$td_company = td_footer_links(
+$td_company  = td_footer_links(
 	'footer-2',
 	[
 		__( 'How we work', 'techdella' )       => td_url( 'marketing', '/#how' ),

@@ -1,0 +1,67 @@
+/* TechDella login (§14.2): ink on canvas, orange only for focus. */
+body.login {
+  background: #F7F5F2;
+  color: #0D0D0D;
+  font-family: Geist, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.login h1 { display: none; }
+.td-login-brand {
+  display: flex;
+  justify-content: center;
+  padding: 8vh 16px 0;
+}
+.td-login-brand a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #0D0D0D;
+  text-decoration: none;
+  border-radius: 12px;
+}
+.td-login-brand img { display: block; height: 32px; width: auto; }
+.td-login-brand .td-logo-text { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+#login { padding-top: 24px; }
+.login form {
+  background: #FFFFFF;
+  border: 1px solid #E7E4DF;
+  border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(13, 13, 13, .04), 0 8px 24px rgba(13, 13, 13, .06);
+}
+.login label { color: #0D0D0D; }
+.login input[type="text"],
+.login input[type="password"],
+.login input[type="email"] {
+  border: 1px solid #E7E4DF;
+  border-radius: 12px;
+  min-height: 44px;
+}
+.wp-core-ui .button-primary {
+  background: #0D0D0D;
+  border-color: #0D0D0D;
+  border-radius: 999px;
+  min-height: 44px;
+  padding: 0 22px;
+  color: #FFFFFF;
+}
+.wp-core-ui .button-primary:hover { background: #262321; border-color: #262321; }
+.login #nav a,
+.login #backtoblog a,
+.login .privacy-policy-link { color: #57534E; }
+.login #nav a:hover,
+.login #backtoblog a:hover { color: #0D0D0D; }
+.login a:focus-visible,
+.login input:focus,
+.login .button:focus,
+.td-login-brand a:focus-visible {
+  outline: 2px solid #E8470A;
+  outline-offset: 2px;
+  box-shadow: none;
+  border-color: #0D0D0D;
+}
+.login .message,
+.login .notice,
+.login .success { border-left-color: #0D0D0D; border-radius: 12px; }
+.login #login_error { border-left-color: #C23B07; border-radius: 12px; }
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

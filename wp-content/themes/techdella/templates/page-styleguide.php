@@ -85,6 +85,7 @@ add_action(
 .td-sg__block-label{padding-block:14px 0}
 .td-sg__block-label .td-sg__mono{display:inline-block;background:var(--td-canvas);border-radius:6px;padding:3px 8px}
 .td-sg__block-body{padding-block:24px}
+.td-sg__block[data-td-block="techdella/testimonial"] .td-testimonial{max-width:560px}
 .td-sg__block-body--inline{max-width:calc(var(--td-max) + var(--td-gutter)*2);margin-inline:auto;padding-inline:var(--td-gutter)}
 .td-sg__toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 0;padding:0;list-style:none}
 .td-sg__toc a{display:inline-flex;align-items:center;min-height:36px;padding:4px 12px;border-radius:var(--td-r-pill);background:var(--td-canvas);font-family:var(--td-font-mono);font-size:12.5px;text-decoration:none}
@@ -204,8 +205,30 @@ $td_inline_blocks = [ 'techdella/button', 'techdella/label-chip', 'techdella/tes
 				<div class="td-sg__card">
 					<span class="td-sg__mono">THE ARCH</span>
 					<div class="td-sg__arches">
-						<div class="td-arch td-arch--lg"><?php echo td_picture( 'team/joanna-okedara-kalu', [ 'alt' => '', 'sizes' => '110px', 'width' => 110 ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
-						<div class="td-arch td-arch--sm"><?php echo td_picture( 'team/akeem-feysupo', [ 'alt' => '', 'sizes' => '90px', 'width' => 90 ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+						<div class="td-arch td-arch--lg">
+						<?php
+						echo td_picture( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							'team/joanna-okedara-kalu',
+							[
+								'alt'   => '',
+								'sizes' => '110px',
+								'width' => 110,
+							]
+						);
+						?>
+						</div>
+						<div class="td-arch td-arch--sm">
+						<?php
+						echo td_picture( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							'team/akeem-feysupo',
+							[
+								'alt'   => '',
+								'sizes' => '90px',
+								'width' => 90,
+							]
+						);
+						?>
+						</div>
 						<svg width="90" height="115" viewBox="0 0 90 115" aria-hidden="true" focusable="false"><path d="M8 115 V45 A37 37 0 0 1 82 45 V115" fill="none" stroke="currentColor" stroke-width="10"/><path d="M45 20 V115" stroke="currentColor" stroke-width="8"/></svg>
 					</div>
 					<p class="td-sg__note"><?php esc_html_e( 'Portraits and feature images sit in arch frames; large outline arches can mark dark sections.', 'techdella' ); ?></p>

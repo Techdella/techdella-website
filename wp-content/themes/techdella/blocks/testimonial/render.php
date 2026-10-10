@@ -64,7 +64,8 @@ if ( ! empty( $td_a['aboutThisPage'] ) && function_exists( 'td_schema_add_node' 
 		);
 		?>
 	<?php endif; ?>
-	<blockquote class="td-testimonial__quote"><p>“<?php echo esc_html( $td_quote ); ?>”</p></blockquote>
+	<?php $td_q = 'dark' === $td_variant ? $td_quote : '“' . $td_quote . '”'; ?>
+	<blockquote class="td-testimonial__quote"><p><?php echo esc_html( $td_q ); ?></p></blockquote>
 	<figcaption class="td-testimonial__person">
 		<?php
 		if ( ! empty( $td_a['image'] ) ) {

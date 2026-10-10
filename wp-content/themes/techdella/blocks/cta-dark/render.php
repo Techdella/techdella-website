@@ -24,7 +24,7 @@ $td_grad = wp_unique_id( 'td-arch-grad-' );
 				<?php if ( $td_sand ) : ?>
 					<svg class="td-cta__arch td-cta__arch--ink" viewBox="0 0 400 480" aria-hidden="true" focusable="false"><path d="M40 480 V190 A160 160 0 0 1 360 190 V480" fill="none" stroke="currentColor" stroke-width="36"/><path d="M200 60 V480" stroke="currentColor" stroke-width="28"/></svg>
 				<?php else : ?>
-					<svg class="td-cta__arch" viewBox="0 0 400 480" aria-hidden="true" focusable="false"><defs><linearGradient id="<?php echo esc_attr( $td_grad ); ?>" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D62F14"/><stop offset="1" stop-color="#F98A0F"/></linearGradient></defs><path d="M40 480 V190 A160 160 0 0 1 360 190 V480" fill="none" stroke="url(#<?php echo esc_attr( $td_grad ); ?>)" stroke-width="36"/><path d="M200 60 V480" stroke="url(#<?php echo esc_attr( $td_grad ); ?>)" stroke-width="28"/></svg>
+					<svg class="td-cta__arch" viewBox="0 0 400 480" aria-hidden="true" focusable="false"><defs><linearGradient id="<?php echo esc_attr( $td_grad ); ?>" x1="0" y1="0" x2="400" y2="480" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#D62F14"/><stop offset="1" stop-color="#F98A0F"/></linearGradient></defs><path d="M40 480 V190 A160 160 0 0 1 360 190 V480" fill="none" stroke="url(#<?php echo esc_attr( $td_grad ); ?>)" stroke-width="36"/><path d="M200 60 V480" stroke="url(#<?php echo esc_attr( $td_grad ); ?>)" stroke-width="28"/></svg>
 				<?php endif; ?>
 			<?php endif; ?>
 			<h2 class="td-cta__title"><?php echo td_accent( (string) ( $td_a['title'] ?? '' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>

@@ -35,7 +35,13 @@ $td_defaults = [
 	'sequence'      => 'canvas',
 	'flow'          => 'dark',
 ];
-$td_tablet   = [ 1 => 2, 2 => 2, 3 => 3, 4 => 2, 5 => 3 ];
+$td_tablet   = [
+	1 => 2,
+	2 => 2,
+	3 => 3,
+	4 => 2,
+	5 => 3,
+];
 $td_row_h    = (int) ( $attributes['rowHeight'] ?? 0 );
 $td_padding  = (string) ( $attributes['padding'] ?? 'default' );
 $td_style    = $td_row_h > 0 ? '--td-bento-row:' . $td_row_h . 'px' : '';
@@ -69,7 +75,7 @@ $td_wrap     = $td_style ? [ 'style' => $td_style ] : [];
 				$td_tag     = $td_is_link ? 'a' : 'div';
 				$td_attrs   = sprintf(
 					' class="%s" style="%s"',
-					esc_attr( 'td-bento__tile td-bento__tile--' . $td_type . ' td-bento__tile--' . $td_variant . ( $td_is_link ? ' td-bento__tile--link' : '' ) ),
+					esc_attr( 'td-bento__tile td-bento__tile--' . $td_type . ' td-bento__tile--' . $td_variant . ( $td_is_link ? ' td-bento__tile--anchor' : '' ) ),
 					esc_attr( "--s:{$td_span};--t:{$td_span_t};--r:{$td_rows}" )
 				);
 				if ( $td_is_link ) {
@@ -302,9 +308,9 @@ $td_wrap     = $td_style ? [ 'style' => $td_style ] : [];
 										echo td_image( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 											$td_img,
 											[
-												'alt'       => '',
-												'sizes'     => '32px',
-												'width'     => 32,
+												'alt'   => '',
+												'sizes' => '32px',
+												'width' => 32,
 												'img_class' => 'td-bento__avatar',
 											]
 										);

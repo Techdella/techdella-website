@@ -11,7 +11,7 @@ $td_logos = array_filter( (array) ( $attributes['logos'] ?? [] ), static fn( $l 
 if ( ! $td_logos ) {
 	return;
 }
-$td_label = (string) ( $attributes['label'] ?? '' );
+$td_label      = (string) ( $attributes['label'] ?? '' );
 $td_heading_id = wp_unique_id( 'td-logos-' );
 ?>
 <section <?php echo td_block_wrapper( 'td-logo-strip' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> aria-labelledby="<?php echo esc_attr( $td_heading_id ); ?>">
