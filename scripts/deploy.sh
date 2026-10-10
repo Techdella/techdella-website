@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Deploy theme + mu-plugins over SSH (§5.3). Uploads and wp-config.php are never touched.
+#   ./scripts/deploy.sh staging|production
+set -euo pipefail
+cd "$(dirname "$0")/.."
+TARGET="${1:?usage: deploy.sh staging|production}"
+: "${HOSTINGER_SSH_HOST:?}" "${HOSTINGER_SSH_USER:?}"
+PORT="${HOSTINGER_SSH_PORT:-65002}"
+SSH="ssh -p $PORT $HOSTINGER_SSH_USER@$HOSTINGER_SSH_HOST"
+
+test -f wp-content/themes/techdella/assets/build/main.css || { echo "Run npm run build first"; exit 1; }
+
+if [ "$TARGET" = production ]; then
+  PATHS=("$PATH_MARKETING" "$PATH_JOURNAL" "$PATH_STUDIOS")
+else
+  PATHS=("${PATH_STAGING:?}")
+fi
+
+for P in "${PATHS[@]}"; do
+  echo "▸ $TARGET → $P"
+  rsync -az --delete -e "ssh -p $PORT" \
+    --exclude '.DS_Store' --exclude 'node_modules' \
+    wp-content/themes/techdella/ "$HOSTINGER_SSH_USER@$HOSTINGER_SSH_HOST:$P/wp-content/themes/techdella/"
+  rsync -az -e "ssh -p $PORT" \
+    wp-content/mu-plugins/techdella-core.php "$HOSTINGER_SSH_USER@$HOSTINGER_SSH_HOST:$P/wp-content/mu-plugins/"
+  rsync -az --delete -e "ssh -p $PORT" \
+    wp-content/mu-plugins/techdella-core/ "$HOSTINGER_SSH_USER@$HOSTINGER_SSH_HOST:$P/wp-content/mu-plugins/techdella-core/"
+  $SSH "cd $P && wp cache flush && (wp litespeed-purge all || true) && (wp rankmath sitemap generate || true) && wp td setup --quiet"
+done
+echo "✓ deployed to $TARGET"
