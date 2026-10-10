@@ -221,10 +221,16 @@ function td_schema_person_from_user( int $user_id ): array {
 	if ( ! $user ) {
 		return [];
 	}
-	$same = array_values( array_filter( [ (string) get_user_meta( $user_id, 'linkedin', true ), (string) $user->user_url ], 'wp_http_validate_url' ) );
+	$home = untrailingslashit( home_url() );
+	$same = array_values(
+		array_filter(
+			[ (string) get_user_meta( $user_id, 'linkedin', true ), (string) $user->user_url ],
+			static fn( $url ) => '' !== $url && untrailingslashit( $url ) !== $home && wp_http_validate_url( $url )
+		)
+	);
 	return [
 		'@type'  => 'Person',
-		'@id'    => td_schema_person_id( $user->display_name ),
+		'@id'    => get_author_posts_url( $user_id ) . '#person',
 		'name'   => $user->display_name,
 		'url'    => td_seo_author_indexable( $user_id ) ? get_author_posts_url( $user_id ) : '',
 		'sameAs' => $same,
@@ -649,6 +655,9 @@ function td_schema_graph_nodes(): array {
 		}
 	} elseif ( is_post_type_archive( 'em-glossary' ) ) {
 		$webpage['mainEntity'] = [ '@id' => td_url( 'marketing', '/glossary/#set' ) ];
+	}
+	if ( 'AboutPage' === $webpage['@type'] && empty( $webpage['mainEntity'] ) ) {
+		$webpage['mainEntity'] = [ '@id' => td_schema_org_id() ];
 	}
 
 	$graph = new Graph();

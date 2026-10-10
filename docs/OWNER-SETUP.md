@@ -20,6 +20,15 @@ Tick them off here as they're done.
   define( 'SB_ENDPOINT_CONTACT', 'https://…' );
   ```
   The core plugin reads these constants first, then environment variables.
+- [ ] PDFs must not be indexed (§13.2). Add to `wp-content/uploads/.htaccess` on each site:
+  ```apache
+  <IfModule mod_headers.c>
+    <FilesMatch "\.pdf$">
+      Header set X-Robots-Tag "noindex, nofollow"
+    </FilesMatch>
+  </IfModule>
+  ```
+- [ ] Set a real home title + meta description in Rank Math → Titles & Meta (§8.5).
 - [ ] Copy `wp-content/mu-plugins/techdella-core.php` + `techdella-core/` and the theme via the deploy Action (never by hand).
 
 ## 2. GitHub (Actions secrets + environments, §5.3)

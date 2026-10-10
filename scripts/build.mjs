@@ -39,11 +39,13 @@ function cssSources() {
   const first = ['tokens.css', 'fonts.css', 'base.css', 'layout.css'].map((f) => join(css, f)).filter(existsSync);
   const rest = cssFiles(css).filter((f) => !first.includes(f) && !f.endsWith('editor.css'));
   const blocks = blockDirs().map((d) => join(d, 'style.css')).filter(existsSync);
-  return [...first, ...rest, ...blocks];
+  // Front-end CSS that lives with a core-plugin module (markup printed by the plugin).
+  const core = ['seo/breadcrumbs.css'].map((f) => join(ROOT, 'wp-content/mu-plugins/techdella-core', f)).filter(existsSync);
+  return [...first, ...rest, ...blocks, ...core];
 }
 
 function buildCss(files, name) {
-  const src = files.map((f) => `/* ${relative(THEME, f)} */\n${readFileSync(f, 'utf8')}`).join('\n');
+  const src = files.map((f) => `/* ${relative(ROOT, f)} */\n${readFileSync(f, 'utf8')}`).join('\n');
   const { code, warnings } = transform({
     filename: name,
     code: Buffer.from(src),
