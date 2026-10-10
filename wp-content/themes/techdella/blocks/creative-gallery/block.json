@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/creative-gallery",
+	"title": "Creative gallery",
+	"category": "techdella",
+	"icon": "format-gallery",
+	"description": "Grid of ad creatives (Paid \"Creative gallery\") or the Paid hero collage. Items are real creatives (attachment ID or theme image key) or ad-mock tiles when no file exists yet; each is labelled \"Example\" unless marked live. Optional platform filter chips (JS enhancement).",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"layout": { "type": "string", "enum": [ "gallery", "collage" ], "default": "gallery" },
+		"surface": { "type": "string", "enum": [ "paper", "canvas" ], "default": "canvas" },
+		"filters": { "type": "boolean", "default": false },
+		"items": { "type": "array", "default": [] },
+		"note": { "type": "string", "default": "Example creatives for illustration." },
+		"contained": { "type": "boolean", "default": false }
+	},
+	"example": {
+		"attributes": {
+			"label": "Creative",
+			"title": "We make the *creatives* too",
+			"intro": "Scripts, video, motion, static and carousels, made by our Studios team and tested inside your campaigns.",
+			"layout": "gallery",
+			"surface": "canvas",
+			"filters": true,
+			"note": "Example creatives for illustration.",
+			"items": [
+				{ "size": "tall", "platform": "Meta", "format": "reel", "tag": "Reel · 0:15", "headline": "“We stopped guessing which leads to call first.”", "image": "brand/techdella-character-waving" },
+				{ "size": "wide", "platform": "LinkedIn", "format": "carousel", "tag": "Carousel · 5 slides", "slides": [ { "label": "1/5", "title": "5 SEO mistakes costing you leads" }, { "label": "2/5", "title": "Pages written for you, not buyers" }, { "label": "3/5", "title": "No answer to “how much?”" } ] },
+				{ "platform": "TikTok", "format": "motion", "tag": "Motion · 0:06" },
+				{ "platform": "Google", "format": "google-display", "headline": "Be the answer.", "cta": "Audit" },
+				{ "platform": "Meta", "format": "video", "tag": "Product video", "image": "work/shopinbos-store-builder-hot-sauce" },
+				{ "type": "link", "eyebrow": "Made with", "title": "TechDella *Studios*", "cta": "See creative services", "url": "studios:/" }
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "intro": "textarea", "items": "json" },
+		"help": "Items: ad-mock attributes ({format, platform, headline, text, overlay, cta, tag, image, slides, liveClientAd, size: tall|wide}), a real creative ({type: \"image\", image: attachment ID or key, alt, platform, live}) or a link card ({type: \"link\", eyebrow, title, cta, url}). Only mark live/liveClientAd for real client ads with permission. layout \"collage\": the Paid hero (first four items: TikTok, LinkedIn, Google search, Instagram)."
+	}
+}

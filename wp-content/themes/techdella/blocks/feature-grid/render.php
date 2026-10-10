@@ -40,7 +40,7 @@ $td_icons = [
 	'target' => '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/>',
 	'check'  => '<path d="M5 12l5 5L20 7"/>',
 ];
-$td_icon = static function ( string $name ) use ( $td_icons ): string {
+$td_icon  = static function ( string $name ) use ( $td_icons ): string {
 	if ( isset( $td_icons[ $name ] ) ) {
 		return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">' . $td_icons[ $name ] . '</svg>';
 	}

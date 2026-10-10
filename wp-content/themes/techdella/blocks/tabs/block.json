@@ -1,0 +1,56 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/tabs",
+	"title": "Tabs",
+	"category": "techdella",
+	"icon": "index-card",
+	"description": "Accessible ARIA tabs (Paid \"platform tabs\"): each panel has a job chip, title, text, fact cards or bullets, and an optional mock or image. Without JavaScript every panel shows as a stacked section; JS turns them into tabs (arrow keys, Home, End).",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"ariaLabel": { "type": "string", "default": "" },
+		"items": { "type": "array", "default": [] }
+	},
+	"example": {
+		"attributes": {
+			"title": "The right platform for *each job*",
+			"intro": "Every platform does something different. We match each one to a clear job in your funnel.",
+			"ariaLabel": "Ad platforms",
+			"items": [
+				{
+					"label": "Google Ads", "job": "Job: capture demand", "title": "Google Ads management",
+					"text": "Appear the moment someone searches for what you sell. The highest-intent traffic you can buy.",
+					"facts": [ { "label": "Formats", "text": "Search, Performance Max, YouTube, remarketing" }, { "label": "Targeting", "text": "Keywords, negatives, locations, audiences" }, { "label": "Best for", "text": "Services people already search for" }, { "label": "Tracking", "text": "Google Ads conversions + GA4" } ],
+					"mock": { "block": "serp-mock", "query": "soc 2 compliance consultant", "caption": "Example search ad", "results": [ { "sponsored": true, "highlight": true, "url": "yourcompany.com", "title": "SOC 2 Readiness in Weeks | Fixed Fee", "text": "Gap assessment, policies and audit support. Book a free scoping call.", "sitelinks": [ "Pricing", "Case studies", "Book a call" ] } ] }
+				},
+				{
+					"label": "Meta · Facebook & Instagram", "job": "Job: create demand", "title": "Meta ads agency", "subtitle": "Facebook & Instagram", "dark": true,
+					"text": "Reach the right people before they search, then bring back everyone who showed interest.",
+					"facts": [ { "label": "Formats", "text": "Reels, Stories, feed, carousel, lead forms" }, { "label": "Targeting", "text": "Interests, lookalikes, retargeting" }, { "label": "Best for", "text": "Visual offers, lead magnets, retargeting" }, { "label": "Tracking", "text": "Meta Pixel + Conversions API" } ],
+					"mock": { "block": "ad-mock", "format": "meta", "brand": "YourCo", "overlay": "Audit-ready in weeks.", "headline": "SOC 2 checklist", "cta": "Learn more", "image": "work/shopinbos-store-builder-hot-sauce" }
+				},
+				{
+					"label": "TikTok Ads", "job": "Job: reach new audiences with video", "title": "TikTok ads agency",
+					"text": "Native, sound-on short videos that stop the scroll. We script, film or animate, and test hooks every week.",
+					"facts": [ { "label": "Formats", "text": "In-feed video, Spark Ads, lead generation" }, { "label": "Creative", "text": "Hooks, UGC-style, motion graphics" }, { "label": "Best for", "text": "Consumer brands, apps, younger audiences" }, { "label": "Tracking", "text": "TikTok Pixel + Events API" } ],
+					"mock": { "block": "ad-mock", "format": "tiktok", "overlay": "POV: your ads finally pay back", "headline": "@yourco · Sponsored", "text": "We tested 12 hooks. Here’s what worked.", "cta": "Learn more", "image": "brand/techdella-character-waving" }
+				},
+				{
+					"label": "LinkedIn Ads", "job": "Job: reach decision-makers", "title": "LinkedIn ads agency", "dark": true,
+					"text": "Target by job title, company size and industry. The most precise B2B targeting available.",
+					"facts": [ { "label": "Formats", "text": "Sponsored content, document ads, lead gen forms" }, { "label": "Targeting", "text": "Job titles, seniority, company lists (ABM)" }, { "label": "Best for", "text": "High-value B2B services and SaaS" }, { "label": "Tracking", "text": "Insight Tag + CRM sync" } ],
+					"mock": { "block": "ad-mock", "format": "linkedin-document", "brand": "YourCo", "text": "Heads of Marketing: how many of your top 20 buyer prompts mention your brand? Download the AI search benchmark.", "headline": "AI Search Benchmark", "footer": "Document ad", "cta": "Download" }
+				}
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "intro": "textarea", "items": "json" },
+		"help": "Items: [{label (tab), job, title, subtitle, text, facts: [{label, text}], bullets: [\"…\"], dark, image + imageAlt, mock: {block: ad-mock|serp-mock|ai-answer-mock|report-mock, …that block's attributes}}]. Mocks carry their own \"Example\" label."
+	}
+}

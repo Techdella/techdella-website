@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/case-grid",
+	"title": "Case grid",
+	"category": "techdella",
+	"icon": "grid-view",
+	"description": "Grid of case studies (case_study, permission-confirmed only) or Studios work (studio_work, Live/Concept labels), filtered by division and industry. Renders nothing when there is nothing to show.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"source": { "type": "string", "enum": [ "case_study", "studio_work" ], "default": "case_study" },
+		"count": { "type": "integer", "default": 3 },
+		"division": { "type": "string", "enum": [ "", "marketing", "studios" ], "default": "" },
+		"industry": { "type": "string", "default": "" },
+		"variant": { "type": "string", "enum": [ "card", "cover" ], "default": "card" },
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"surface": { "type": "string", "enum": [ "paper", "canvas" ], "default": "paper" },
+		"items": { "type": "array", "default": [] }
+	},
+	"example": {
+		"attributes": {
+			"source": "studio_work",
+			"variant": "cover",
+			"title": "Selected *work*",
+			"intro": "Apps · Automation · Design · Motion",
+			"items": [
+				{ "title": "Epic Entertainment Games", "status": "Live", "disciplines": [ "Workflow & automation" ], "excerpt": "A structured credit-request workflow that made scaling operations manageable.", "visual": "table", "url": "/work/" },
+				{ "title": "Booking & payments MVP", "status": "Concept", "disciplines": [ "App" ], "excerpt": "A mobile-first booking flow for service businesses, from prototype to build.", "visual": "phones" },
+				{ "title": "Customer support assistant", "status": "Concept", "disciplines": [ "AI agent" ], "excerpt": "An AI assistant connected to orders and CRM, with human handoff built in.", "visual": "chat" },
+				{ "title": "SaaS product demo film", "status": "Concept", "disciplines": [ "Motion" ], "excerpt": "A short animated walkthrough for launches, ads and sales decks.", "visual": "video" }
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "intro": "textarea", "items": "json" },
+		"help": "Pulls published posts first. items (inline fallback, same shape as Case card's item) render only when the query finds nothing. industry = td_industry slug. Studios: source studio_work, variant cover. Concept items always show a Concept label."
+	}
+}

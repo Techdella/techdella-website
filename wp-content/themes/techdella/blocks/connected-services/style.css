@@ -25,3 +25,4 @@
 .td-connected__footer-arrow{width:30px;height:30px;border-radius:50%;background:var(--td-orange);display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
 .td-connected__footer-arrow svg{width:12px;height:12px;stroke:var(--td-paper)}
 @media (prefers-reduced-motion:reduce){.td-connected__card:hover{transform:none}}
+.td-section--dark .td-section-head p{color:var(--td-on-dark)}

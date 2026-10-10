@@ -2,7 +2,7 @@
 .td-serp-mock{margin:0;display:flex;flex-direction:column;gap:10px;border-radius:30px;padding:26px}
 .td-serp-mock--sand{background-color:var(--td-sand);background-image:radial-gradient(45% 50% at 70% 30%,rgba(255,255,255,.65),transparent 70%)}
 .td-serp-mock--plain{background:var(--td-canvas);border-radius:var(--td-r-md);padding:18px}
-.td-serp-mock__query{display:flex;align-items:center;gap:8px;font-size:13px;background:var(--td-paper);border-radius:var(--td-r-pill);padding:8px 14px;color:var(--td-body);align-self:flex-start;max-width:100%}
+.td-serp-mock p.td-serp-mock__query{display:flex;align-items:center;gap:8px;font-size:13px;background:var(--td-paper);border-radius:var(--td-r-pill);padding:8px 14px;color:var(--td-body);align-self:flex-start;max-width:100%}
 .td-serp-mock__query svg{flex:0 0 auto}
 .td-serp-mock__results{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
 .td-serp-mock__result{display:flex;gap:14px;align-items:flex-start;border-radius:18px;padding:14px 16px;min-width:0}

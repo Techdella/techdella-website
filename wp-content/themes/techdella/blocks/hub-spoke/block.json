@@ -28,7 +28,7 @@
 				{ "title": "Lead generation", "text": "Capture", "url": "/services/lead-generation/" },
 				{ "title": "Email marketing", "text": "Nurture", "url": "/services/email-marketing/" },
 				{ "title": "AI automations", "text": "Follow up", "url": "/services/marketing-automation/", "tone": "sand" },
-				{ "title": "Creatives", "text": "by Studios", "url": "studios:/", "image": "team/abel-saka" }
+				{ "title": "Creatives", "text": "by Studios", "url": "studios:/", "image": "work/shopinbos-store-builder-hot-sauce" }
 			]
 		}
 	},

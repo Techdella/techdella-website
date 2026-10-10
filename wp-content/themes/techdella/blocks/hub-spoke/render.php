@@ -20,7 +20,7 @@ $td_href = static function ( string $url ): string {
 $td_n    = count( $td_items );
 $td_pos  = [];
 foreach ( $td_items as $td_i => $td_item ) {
-	$td_angle         = -M_PI / 2 + ( 2 * M_PI * $td_i / $td_n );
+	$td_angle        = -M_PI / 2 + ( 2 * M_PI * $td_i / $td_n );
 	$td_pos[ $td_i ] = [ round( 50 + 37 * cos( $td_angle ), 2 ), round( 50 + 40 * sin( $td_angle ), 2 ) ];
 }
 ?>

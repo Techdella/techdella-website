@@ -1,0 +1,40 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/case-card",
+	"title": "Case card",
+	"category": "techdella",
+	"icon": "awards",
+	"description": "One case study (case_study CPT) or Studios work item (studio_work CPT). Case studies show only when permission_confirmed is set. Concept work always carries a visible Concept label.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"postId": { "type": "integer", "default": 0 },
+		"variant": { "type": "string", "enum": [ "card", "cover" ], "default": "card" },
+		"item": { "type": "object", "default": {} },
+		"contained": { "type": "boolean", "default": false }
+	},
+	"example": {
+		"attributes": {
+			"variant": "card",
+			"item": {
+				"title": "Paycape: inbound became half of all conversions",
+				"client": "Paycape",
+				"industry": "Fintech",
+				"timeframe": "5 months · Q3 2025",
+				"excerpt": "From first audit to first result in 50 days, growing to about 15,000 monthly organic visitors.",
+				"metrics": [
+					{ "num": "50%", "label": "of conversions from inbound" },
+					{ "num": "~15,000", "label": "monthly organic visitors" },
+					{ "num": "50 days", "label": "to first result" }
+				],
+				"url": "/case-studies/paycape/"
+			}
+		}
+	},
+	"techdella": {
+		"controls": { "item": "json" },
+		"help": "Set postId to a published case_study or studio_work post. The inline item {title, client, industry, country, timeframe, excerpt, metrics:[{num,label}], url, status (Live/Concept), disciplines[], image, imageAlt, visual (table|phones|chat|video)} is used only when no post is set or found. Inline proof must come from §2.4."
+	}
+}

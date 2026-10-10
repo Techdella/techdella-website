@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/email-mock",
+	"title": "Email mock",
+	"category": "techdella",
+	"icon": "email",
+	"description": "Email designs built in HTML/CSS (not screenshots), always labelled Example. Variants: designs (newsletter / nurture / invite cards), collage (hero visual: inbox message, sequence, reply), sequence (Day 0/3/7 list with example-data labels).",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"variant": { "type": "string", "enum": [ "designs", "collage", "sequence" ], "default": "designs" },
+		"caption": { "type": "string", "default": "" },
+		"emails": { "type": "array", "default": [] },
+		"sequenceTitle": { "type": "string", "default": "Nurture sequence" },
+		"sequence": { "type": "array", "default": [] },
+		"reply": { "type": "string", "default": "" },
+		"image": { "type": [ "string", "integer" ], "default": "" },
+		"imageAlt": { "type": "string", "default": "" },
+		"imageCaption": { "type": "string", "default": "" },
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"surface": { "type": "string", "enum": [ "paper", "canvas" ], "default": "canvas" },
+		"contained": { "type": "boolean", "default": false }
+	},
+	"example": {
+		"attributes": {
+			"variant": "designs",
+			"title": "Emails people *actually* read",
+			"caption": "Example email designs",
+			"emails": [
+				{ "type": "newsletter", "tag": "Newsletter", "from": "YourCo", "subject": "The Monthly Brief: what changed in search", "cta": "Read more" },
+				{ "type": "nurture", "tag": "Nurture · Day 3", "subject": "How Paycape reached 15,000 monthly visitors", "preview": "Hi Ada, a quick story about a fintech team that had the right product but couldn’t be found…", "stats": [ { "num": "15,000", "label": "monthly traffic" }, { "num": "50 days", "label": "first result" } ], "cta": "Read the case study" },
+				{ "type": "invite", "tag": "Invite", "subject": "Free workshop: is your brand in AI answers?", "detail": "45 minutes, live Q&A, recording included.", "cta": "Save my seat" }
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "emails": "json", "sequence": "json", "image": "media", "intro": "textarea" },
+		"help": "emails: [{type: newsletter|nurture|invite, tag, from, subject, preview, stats:[{num,label}] (only §2.4 proof), month, day, detail, cta, image}]. sequence: [{day, title, status (Sent/Scheduled/Queued), metric}] — metrics are always shown as example data. Use a fictional sender (YourCo). The Example caption always shows."
+	}
+}

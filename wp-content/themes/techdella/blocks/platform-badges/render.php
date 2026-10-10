@@ -35,9 +35,9 @@ foreach ( (array) ( $attributes['items'] ?? [] ) as $td_item ) {
 	if ( ! is_array( $td_item ) ) {
 		continue;
 	}
-	$td_slug  = sanitize_title( (string) ( $td_item['slug'] ?? ( $td_item['name'] ?? '' ) ) );
-	$td_def   = $td_known[ $td_slug ] ?? [ (string) ( $td_item['name'] ?? $td_slug ), '', false ];
-	$td_name  = (string) ( $td_item['name'] ?? $td_def[0] );
+	$td_slug    = sanitize_title( (string) ( $td_item['slug'] ?? ( $td_item['name'] ?? '' ) ) );
+	$td_def     = $td_known[ $td_slug ] ?? [ (string) ( $td_item['name'] ?? $td_slug ), '', false ];
+	$td_name    = (string) ( $td_item['name'] ?? $td_def[0] );
 	$td_items[] = [
 		'name' => $td_name,
 		'slug' => $td_slug,

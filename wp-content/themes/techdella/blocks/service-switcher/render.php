@@ -16,12 +16,30 @@ $td_href  = static function ( string $url ): string {
 $td_items = array_filter( (array) ( $attributes['items'] ?? [] ), static fn( $i ) => is_array( $i ) && ! empty( $i['label'] ) && ! empty( $i['url'] ) );
 if ( ! $td_items ) {
 	$td_items = [
-		[ 'label' => __( 'SEO', 'techdella' ), 'url' => '/services/seo/' ],
-		[ 'label' => __( 'AI Search', 'techdella' ), 'url' => '/services/ai-search-optimization/' ],
-		[ 'label' => __( 'Paid ads', 'techdella' ), 'url' => '/services/paid-ads/' ],
-		[ 'label' => __( 'Lead generation', 'techdella' ), 'url' => '/services/lead-generation/' ],
-		[ 'label' => __( 'Email marketing', 'techdella' ), 'url' => '/services/email-marketing/' ],
-		[ 'label' => __( 'AI automations', 'techdella' ), 'url' => '/services/marketing-automation/' ],
+		[
+			'label' => __( 'SEO', 'techdella' ),
+			'url'   => '/services/seo/',
+		],
+		[
+			'label' => __( 'AI Search', 'techdella' ),
+			'url'   => '/services/ai-search-optimization/',
+		],
+		[
+			'label' => __( 'Paid ads', 'techdella' ),
+			'url'   => '/services/paid-ads/',
+		],
+		[
+			'label' => __( 'Lead generation', 'techdella' ),
+			'url'   => '/services/lead-generation/',
+		],
+		[
+			'label' => __( 'Email marketing', 'techdella' ),
+			'url'   => '/services/email-marketing/',
+		],
+		[
+			'label' => __( 'AI automations', 'techdella' ),
+			'url'   => '/services/marketing-automation/',
+		],
 	];
 }
 
