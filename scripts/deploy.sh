@@ -25,6 +25,6 @@ for P in "${PATHS[@]}"; do
     wp-content/mu-plugins/techdella-core.php "$HOSTINGER_SSH_USER@$HOSTINGER_SSH_HOST:$P/wp-content/mu-plugins/"
   rsync -az --delete -e "ssh -p $PORT" \
     wp-content/mu-plugins/techdella-core/ "$HOSTINGER_SSH_USER@$HOSTINGER_SSH_HOST:$P/wp-content/mu-plugins/techdella-core/"
-  $SSH "cd $P && wp cache flush && (wp litespeed-purge all || true) && (wp rankmath sitemap generate || true) && wp td setup --quiet"
+  $SSH "cd $P && wp theme activate techdella && wp cache flush && (wp litespeed-purge all || true) && (wp rankmath sitemap generate || true) && wp td setup --quiet"
 done
 echo "✓ deployed to $TARGET"
