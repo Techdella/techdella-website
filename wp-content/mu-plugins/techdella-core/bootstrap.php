@@ -21,7 +21,7 @@ require_once __DIR__ . '/inc/dev.php';
  *
  * @var string[] $td_modules
  */
-$td_modules = apply_filters( 'td_core_modules', [ 'cpt', 'seo', 'forms', 'popups', 'ads', 'admin', 'cli' ] );
+$td_modules = apply_filters( 'td_core_modules', [ 'cpt', 'seo', 'forms', 'popups', 'ads', 'admin', 'cli', 'preview' ] );
 
 foreach ( $td_modules as $td_module ) {
 	$td_module_file = __DIR__ . '/' . $td_module . '/module.php';

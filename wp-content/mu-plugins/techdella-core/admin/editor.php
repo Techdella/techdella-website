@@ -228,6 +228,10 @@ add_filter(
 		if ( ! in_array( $type, td_checklist_post_types(), true ) || ! td_is_going_live( $old, (string) $data['post_status'] ) || isset( td_checklist_passed()[ $post_id ] ) ) {
 			return $data;
 		}
+		// `wp td preview:seed` on a local site only: preview pages are not editorial content.
+		if ( 'local' === td_environment() && apply_filters( 'td_checklist_bypass', false ) ) {
+			return $data;
+		}
 		$meta     = (array) ( $postarr['meta_input'] ?? [] );
 		$failures = Checklist::failures( Checklist::run( td_checklist_input( $post_id, wp_unslash( (string) $data['post_title'] ), wp_unslash( (string) $data['post_content'] ), $meta ) ) );
 		if ( ! $failures ) {

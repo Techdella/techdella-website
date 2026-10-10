@@ -100,3 +100,13 @@ docker compose exec -T -u www-data wp-marketing wp <command>
 npm run build:assets          # CSS/JS only (fast)
 npm run watch
 ```
+
+## Pages (Phase 3/4): patterns → pages
+
+- Each page is a full-page block pattern in `theme/patterns/<site>-<page>.php` (serialized
+  `<!-- wp:techdella/… {json} /-->` markup copied from its prototype artboard, PHP allowed for `td_url()`/`esc_*`).
+  Header fields `TD Site`, `TD Post Type`, `TD Slug`, `TD Title` (+ optional `TD Front Page: yes`, `TD Template`).
+- `wp td preview:seed` turns the patterns into posts: **published on local only** (so the site can be browsed),
+  drafts everywhere else (§0.4). It never overwrites content a person has edited.
+- `templates/singular.php` renders block-built content full-bleed; specific templates (archives, single post,
+  glossary term, case study…) go in `templates/` and pull fields with `td_field()`.
