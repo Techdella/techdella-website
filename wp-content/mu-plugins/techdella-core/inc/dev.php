@@ -17,6 +17,8 @@ if ( 'local' === td_environment() && '' !== TD_SMTP_HOST ) {
 			$mailer->SMTPAutoTLS = false; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 		}
 	);
+	// WordPress defaults to wordpress@localhost, which PHPMailer rejects.
+	add_filter( 'wp_mail_from', static fn() => 'noreply@techdella.com' );
 }
 
 /*

@@ -213,24 +213,35 @@ function td_forms_resource_pdf( int $post_id ): ?array {
 	];
 }
 
-// Lead-magnet thank-you: show the download link right away (valid signed ?dl= grant only; never guessable).
+/**
+ * Download box for the lead-magnet thank-you page: only with a valid signed
+ * ?dl= grant (1 hour, issued by the submit route), never guessable (§13.2).
+ * Templates may call this directly; the_content gets it automatically.
+ *
+ * @param string|null $grant Signed grant (default: $_GET['dl']).
+ */
+function td_forms_thankyou_download_html( ?string $grant = null ): string {
+	if ( null === $grant ) {
+		$grant = isset( $_GET['dl'] ) ? sanitize_text_field( wp_unslash( $_GET['dl'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- signed grant.
+	}
+	$id  = '' !== $grant ? td_forms_token()->open( $grant, time() ) : null;
+	$pdf = ( null !== $id && ctype_digit( $id ) ) ? td_forms_resource_pdf( (int) $id ) : null;
+	if ( ! $pdf ) {
+		return '';
+	}
+	$box  = '<div class="td-form__download-box">';
+	$box .= '<p><strong>' . esc_html( $pdf['title'] ) . '</strong></p>';
+	$box .= '<p><a class="td-btn td-btn--primary" href="' . esc_url( $pdf['url'] ) . '" download>' . esc_html__( 'Download the PDF', 'techdella' ) . '<span class="td-btn__arrow">' . td_icon( 'arrow-right' ) . '</span></a></p>';
+	return $box . '</div>';
+}
+
 add_filter(
 	'the_content',
 	static function ( $content ) {
 		if ( 'lead_magnet' !== td_forms_current_thankyou_key() || ! in_the_loop() || ! is_main_query() ) {
 			return $content;
 		}
-		$raw = isset( $_GET['dl'] ) ? sanitize_text_field( wp_unslash( $_GET['dl'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- signed grant.
-		$id  = '' !== $raw ? td_forms_token()->open( $raw, time() ) : null;
-		$pdf = ( null !== $id && ctype_digit( $id ) ) ? td_forms_resource_pdf( (int) $id ) : null;
-		if ( ! $pdf ) {
-			return $content;
-		}
-		$box  = '<div class="td-form__download-box">';
-		$box .= '<p><strong>' . esc_html( $pdf['title'] ) . '</strong></p>';
-		$box .= '<p><a class="td-btn td-btn--primary" href="' . esc_url( $pdf['url'] ) . '" download>' . esc_html__( 'Download the PDF', 'techdella' ) . '<span class="td-btn__arrow">' . td_icon( 'arrow-right' ) . '</span></a></p>';
-		$box .= '</div>';
-		return $box . $content;
+		return td_forms_thankyou_download_html() . $content;
 	},
 	20
 );
