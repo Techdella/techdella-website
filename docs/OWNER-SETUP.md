@@ -31,7 +31,7 @@ Create a `production` environment with required reviewers (the manual approval s
 ## 3. Startbuddi (§11.1)
 
 The connected workspace is **startbuddi**. `[CONFIRM: use it, or create a separate TechDella workspace]`.
-No `Techdella · …` endpoint forms exist yet (checked 10 Oct 2026). Existing endpoint forms such as
+No `TechDella · …` endpoint forms exist yet (checked 10 Oct 2026). The Startbuddi connector can only create hosted question forms, not endpoint forms, so create these in the Startbuddi app: Forms → New → Endpoint. Existing endpoint forms such as
 "exit intent popup - webbsite", "startbuddi blog newsletter" and "Blog posts: 60% scroll slide-in" belong to the
 startbuddi site — don't reuse them for TechDella.
 
@@ -39,18 +39,18 @@ Create one **endpoint** form per row and paste each endpoint URL into the matchi
 
 | Constant | Startbuddi form name | Automation to set up in Startbuddi |
 |---|---|---|
-| `SB_ENDPOINT_CONTACT` | Techdella · Contact / Book a call | contact + deal in "Marketing" pipeline, notify owner, confirmation email |
-| `SB_ENDPOINT_AUDIT` | Techdella · Growth Audit | deal stage "Audit requested", tag `audit` |
-| `SB_ENDPOINT_STUDIOS_BRIEF` | Techdella Studios · Project brief | deal in "Studios" pipeline |
-| `SB_ENDPOINT_NEWSLETTER` | Techdella · Journal newsletter | tag `newsletter`, welcome sequence |
-| `SB_ENDPOINT_LEAD_MAGNET` | Techdella · Resource download | tag `lm-<slug>`, send PDF link, 3-email nurture |
-| `SB_ENDPOINT_TOOL_GATE` | Techdella · Free tool | tag `tool-<slug>` |
-| `SB_ENDPOINT_POPUP_EXIT` | Techdella · Exit-intent popup | tag `popup-exit` |
-| `SB_ENDPOINT_POPUP_SCROLL` | Techdella · Post slide-in | tag `popup-scroll` |
-| `SB_ENDPOINT_MVP_CALC` | Techdella Studios · MVP calculator | deal in "Studios", tag `mvp-calc` |
-| `SB_ENDPOINT_GUEST_POST` | Techdella · Write for us | task for editor |
+| `SB_ENDPOINT_CONTACT` | TechDella · Contact / Book a call | contact + deal in "Marketing" pipeline, notify owner, confirmation email |
+| `SB_ENDPOINT_AUDIT` | TechDella · Growth Audit | deal stage "Audit requested", tag `audit` |
+| `SB_ENDPOINT_STUDIOS_BRIEF` | TechDella Studios · Project brief | deal in "Studios" pipeline |
+| `SB_ENDPOINT_NEWSLETTER` | TechDella · Journal newsletter | tag `newsletter`, welcome sequence |
+| `SB_ENDPOINT_LEAD_MAGNET` | TechDella · Resource download | tag `lm-<slug>`, send PDF link, 3-email nurture |
+| `SB_ENDPOINT_TOOL_GATE` | TechDella · Free tool | tag `tool-<slug>` |
+| `SB_ENDPOINT_POPUP_EXIT` | TechDella · Exit-intent popup | tag `popup-exit` |
+| `SB_ENDPOINT_POPUP_SCROLL` | TechDella · Post slide-in | tag `popup-scroll` |
+| `SB_ENDPOINT_MVP_CALC` | TechDella Studios · MVP calculator | deal in "Studios", tag `mvp-calc` |
+| `SB_ENDPOINT_GUEST_POST` | TechDella · Write for us | task for editor |
 
-For staging, create the same set as `Techdella · TEST · …` (§11.5).
+For staging, create the same set as `TechDella · TEST · …` (§11.5).
 `[CONFIRM]` the field names Startbuddi expects for endpoint forms and whether it supports signed requests
 (`SB_SHARED_SECRET`); the mapping lives in `techdella-core/forms/schema.php`.
 
