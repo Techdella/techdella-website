@@ -35,9 +35,9 @@ function td_is_going_live( string $old, string $new ): bool {
 /**
  * Read a boolean from incoming meta, else from the stored meta.
  *
- * @param int                $post_id  Post ID (0 for new).
+ * @param int                 $post_id  Post ID (0 for new).
  * @param array<string,mixed> $incoming Incoming meta (meta_input / REST meta).
- * @param string             $key      Meta key.
+ * @param string              $key      Meta key.
  */
 function td_incoming_bool( int $post_id, array $incoming, string $key ): bool {
 	$value = array_key_exists( $key, $incoming ) ? $incoming[ $key ] : ( $post_id ? get_post_meta( $post_id, $key, true ) : '' );
@@ -62,8 +62,8 @@ function td_permission_message( string $post_type ): string {
  * @param string $type    error|warning|success.
  */
 function td_queue_admin_notice( string $message, string $type = 'error' ): void {
-	$key     = 'td_notices_' . get_current_user_id();
-	$notices = (array) get_transient( $key );
+	$key                        = 'td_notices_' . get_current_user_id();
+	$notices                    = (array) get_transient( $key );
 	$notices[ md5( $message ) ] = [
 		'message' => $message,
 		'type'    => $type,

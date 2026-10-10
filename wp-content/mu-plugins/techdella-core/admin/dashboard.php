@@ -168,7 +168,7 @@ function td_hq_health(): array {
 			];
 		}
 	}
-	$psi = td_psi_summary();
+	$psi    = td_psi_summary();
 	$rows[] = [
 		'ok'    => $psi['ok'],
 		'label' => $psi['label'],

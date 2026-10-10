@@ -100,11 +100,11 @@ function td_forms_definitions(): array {
 	];
 
 	$monthly = [
-		'under-2000'   => __( 'Under $2,000 / month', 'techdella' ),
-		'2000-5000'    => __( '$2,000 – $5,000 / month', 'techdella' ),
-		'5000-15000'   => __( '$5,000 – $15,000 / month', 'techdella' ),
-		'15000-plus'   => __( '$15,000+ / month', 'techdella' ),
-		'not-sure'     => __( 'Not sure yet', 'techdella' ),
+		'under-2000' => __( 'Under $2,000 / month', 'techdella' ),
+		'2000-5000'  => __( '$2,000 – $5,000 / month', 'techdella' ),
+		'5000-15000' => __( '$5,000 – $15,000 / month', 'techdella' ),
+		'15000-plus' => __( '$15,000+ / month', 'techdella' ),
+		'not-sure'   => __( 'Not sure yet', 'techdella' ),
 	];
 
 	return [
@@ -117,10 +117,16 @@ function td_forms_definitions(): array {
 			'success_title' => __( 'Message *received*', 'techdella' ),
 			'success'       => __( 'Thanks. We’ll reply within one business day with times for a call.', 'techdella' ),
 			'fields'        => [
-				'name'             => $name,
-				'email'            => array_merge( $email, [ 'label' => __( 'Work email', 'techdella' ), 'width' => 'half' ] ),
-				'company'          => $co,
-				'website'          => [
+				'name'              => $name,
+				'email'             => array_merge(
+					$email,
+					[
+						'label' => __( 'Work email', 'techdella' ),
+						'width' => 'half',
+					]
+				),
+				'company'           => $co,
+				'website'           => [
 					'type'         => 'url',
 					'label'        => __( 'Website', 'techdella' ),
 					'max'          => 300,
@@ -129,7 +135,7 @@ function td_forms_definitions(): array {
 					'width'        => 'half',
 					'sb'           => 'website',
 				],
-				'service_interest' => [
+				'service_interest'  => [
 					'type'     => 'pills',
 					'multiple' => true,
 					'label'    => __( 'What do you need help with?', 'techdella' ),
@@ -146,13 +152,13 @@ function td_forms_definitions(): array {
 					],
 					'sb'       => 'service_interest',
 				],
-				'budget'           => [
+				'budget'            => [
 					'type'    => 'select',
 					'label'   => __( 'Monthly budget', 'techdella' ),
 					'options' => $monthly,
 					'sb'      => 'budget',
 				],
-				'message'          => [
+				'message'           => [
 					'type'     => 'textarea',
 					'label'    => __( 'How can we help?', 'techdella' ),
 					'required' => true,
@@ -172,7 +178,7 @@ function td_forms_definitions(): array {
 			'success_title' => __( 'Request *received*', 'techdella' ),
 			'success'       => __( 'Here’s what happens next: we review your site and confirm the audit is a good fit, you get a short scoping email with the fee and timeline, then we deliver the audit and walk your team through the roadmap.', 'techdella' ),
 			'fields'        => [
-				'website'        => [
+				'website'           => [
 					'type'         => 'url',
 					'label'        => __( 'Website', 'techdella' ),
 					'required'     => true,
@@ -181,10 +187,16 @@ function td_forms_definitions(): array {
 					'autocomplete' => 'url',
 					'sb'           => 'website',
 				],
-				'name'           => $name,
-				'email'          => array_merge( $email, [ 'label' => __( 'Work email', 'techdella' ), 'width' => 'half' ] ),
-				'company'        => $co,
-				'role'           => [
+				'name'              => $name,
+				'email'             => array_merge(
+					$email,
+					[
+						'label' => __( 'Work email', 'techdella' ),
+						'width' => 'half',
+					]
+				),
+				'company'           => $co,
+				'role'              => [
 					'type'    => 'select',
 					'label'   => __( 'Your role', 'techdella' ),
 					'width'   => 'half',
@@ -197,7 +209,7 @@ function td_forms_definitions(): array {
 					],
 					'sb'      => 'role',
 				],
-				'company_size'   => [
+				'company_size'      => [
 					'type'    => 'select',
 					'label'   => __( 'Company size', 'techdella' ),
 					'width'   => 'half',
@@ -209,14 +221,14 @@ function td_forms_definitions(): array {
 					],
 					'sb'      => 'company_size',
 				],
-				'monthly_budget' => [
+				'monthly_budget'    => [
 					'type'    => 'select',
 					'label'   => __( 'Monthly marketing budget', 'techdella' ),
 					'width'   => 'half',
 					'options' => $monthly,
 					'sb'      => 'monthly_budget',
 				],
-				'goals'          => [
+				'goals'             => [
 					'type'     => 'pills',
 					'multiple' => true,
 					'required' => true,
@@ -232,7 +244,7 @@ function td_forms_definitions(): array {
 					],
 					'sb'       => 'goals',
 				],
-				'notes'          => [
+				'notes'             => [
 					'type'        => 'textarea',
 					'label'       => __( 'Anything else?', 'techdella' ),
 					'max'         => 4000,
@@ -275,7 +287,7 @@ function td_forms_definitions(): array {
 				],
 			],
 			'fields'        => [
-				'project_type' => [
+				'project_type'      => [
 					'type'          => 'pills',
 					'multiple'      => true,
 					'required'      => true,
@@ -292,7 +304,7 @@ function td_forms_definitions(): array {
 					],
 					'sb'            => 'project_type',
 				],
-				'budget'       => [
+				'budget'            => [
 					'type'          => 'pills',
 					'multiple'      => false,
 					'required'      => true,
@@ -307,7 +319,7 @@ function td_forms_definitions(): array {
 					],
 					'sb'            => 'budget',
 				],
-				'timeline'     => [
+				'timeline'          => [
 					'type'          => 'pills',
 					'multiple'      => false,
 					'required'      => true,
@@ -322,7 +334,7 @@ function td_forms_definitions(): array {
 					],
 					'sb'            => 'timeline',
 				],
-				'stage'        => [
+				'stage'             => [
 					'type'     => 'pills',
 					'multiple' => false,
 					'label'    => __( 'Do you already have designs?', 'techdella' ),
@@ -333,7 +345,7 @@ function td_forms_definitions(): array {
 					],
 					'sb'       => 'stage',
 				],
-				'details'      => [
+				'details'           => [
 					'type'        => 'textarea',
 					'label'       => __( 'The idea, in a few sentences', 'techdella' ),
 					'required'    => true,
@@ -342,9 +354,9 @@ function td_forms_definitions(): array {
 					'placeholder' => __( 'What it does, who it’s for, and what success looks like…', 'techdella' ),
 					'sb'          => 'details',
 				],
-				'name'         => array_merge( $name, [ 'label' => __( 'Name', 'techdella' ) ] ),
-				'email'        => array_merge( $email, [ 'width' => 'half' ] ),
-				'company'      => array_merge( $co, [ 'width' => 'full' ] ),
+				'name'              => array_merge( $name, [ 'label' => __( 'Name', 'techdella' ) ] ),
+				'email'             => array_merge( $email, [ 'width' => 'half' ] ),
+				'company'           => array_merge( $co, [ 'width' => 'full' ] ),
 				'consent_marketing' => td_forms_consent_field(),
 			],
 		],
@@ -386,8 +398,20 @@ function td_forms_definitions(): array {
 			'success_title' => __( 'Your guide is *ready*', 'techdella' ),
 			'success'       => __( 'Download it below. We’ve also emailed you the link.', 'techdella' ),
 			'fields'        => [
-				'first_name'        => array_merge( $first, [ 'required' => true, 'width' => 'half' ] ),
-				'email'             => array_merge( $email, [ 'label' => __( 'Work email', 'techdella' ), 'width' => 'half' ] ),
+				'first_name'        => array_merge(
+					$first,
+					[
+						'required' => true,
+						'width'    => 'half',
+					]
+				),
+				'email'             => array_merge(
+					$email,
+					[
+						'label' => __( 'Work email', 'techdella' ),
+						'width' => 'half',
+					]
+				),
 				'company'           => array_merge( $co, [ 'width' => 'full' ] ),
 				'resource_slug'     => [
 					'type'     => 'hidden',
@@ -480,15 +504,21 @@ function td_forms_definitions(): array {
 			'success_title' => __( 'Estimate *sent*', 'techdella' ),
 			'success'       => __( 'Check your inbox. Reply to that email if you want to talk it through.', 'techdella' ),
 			'fields'        => [
-				'email'    => $email,
-				'name'     => array_merge( $name, [ 'required' => false, 'width' => 'full' ] ),
-				'inputs'   => [
+				'email'             => $email,
+				'name'              => array_merge(
+					$name,
+					[
+						'required' => false,
+						'width'    => 'full',
+					]
+				),
+				'inputs'            => [
 					'type'   => 'hidden',
 					'format' => 'json',
 					'max'    => 2000,
 					'sb'     => 'estimate_inputs',
 				],
-				'estimate' => [
+				'estimate'          => [
 					'type' => 'hidden',
 					'max'  => 200,
 					'sb'   => 'estimate',

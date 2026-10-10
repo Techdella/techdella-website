@@ -41,9 +41,9 @@ function td_internal_hosts(): array {
 /**
  * Checklist input for a post, with incoming (unsaved) values taking priority.
  *
- * @param int                $post_id  Post ID (0 for new).
- * @param string             $title    Title.
- * @param string             $content  Content.
+ * @param int                 $post_id  Post ID (0 for new).
+ * @param string              $title    Title.
+ * @param string              $content  Content.
  * @param array<string,mixed> $incoming Incoming meta.
  * @return array<string,mixed>
  */
@@ -68,7 +68,7 @@ function td_checklist_input( int $post_id, string $title, string $content, array
 /**
  * Whether an admin override applies (meta set AND user may override).
  *
- * @param int                $post_id  Post ID.
+ * @param int                 $post_id  Post ID.
  * @param array<string,mixed> $incoming Incoming meta.
  */
 function td_checklist_overridden( int $post_id, array $incoming ): bool {
@@ -191,7 +191,14 @@ add_action(
 					$content  = isset( $prepared->post_content ) ? (string) $prepared->post_content : (string) get_post_field( 'post_content', $post_id );
 					$failures = Checklist::failures( Checklist::run( td_checklist_input( $post_id, $title, $content, $meta ) ) );
 					if ( $failures && ! td_checklist_overridden( $post_id, $meta ) ) {
-						return new WP_Error( 'td_checklist_failed', td_checklist_message( $failures ), [ 'status' => 403, 'failures' => $failures ] );
+						return new WP_Error(
+							'td_checklist_failed',
+							td_checklist_message( $failures ),
+							[
+								'status'   => 403,
+								'failures' => $failures,
+							]
+						);
 					}
 					if ( $failures ) {
 						td_checklist_log_override( $failures );

@@ -1,6 +1,6 @@
 <?php
 /**
- * td_form_render(): server-rendered, accessible form markup for any key.
+ * Form renderer: td_form_render() gives server-rendered, accessible form markup for any key.
  * Works without JS (plain POST to the REST route → 303). view.js in the
  * theme's form block adds fetch(), inline validation, steps and the success state.
  */
@@ -29,7 +29,7 @@ defined( 'ABSPATH' ) || exit;
  */
 function td_form_render( string $key, array $args = [] ): string {
 	static $count = [];
-	$schema = td_form_schema( $key );
+	$schema       = td_form_schema( $key );
 	if ( ! $schema ) {
 		return '';
 	}
@@ -90,9 +90,11 @@ function td_form_render( string $key, array $args = [] ): string {
 	$out .= ' data-msg-url="' . esc_attr__( 'Enter a valid web address, like https://yourcompany.com.', 'techdella' ) . '"';
 	$out .= ' data-msg-choose="' . esc_attr__( 'Choose at least one option.', 'techdella' ) . '"';
 	$out .= ' data-msg-consent="' . esc_attr__( 'Please tick this box to continue.', 'techdella' ) . '"';
+	/* translators: %d: maximum number of characters. */
 	$out .= ' data-msg-max="' . esc_attr__( 'Keep this under %d characters.', 'techdella' ) . '"';
 	$out .= ' data-msg-network="' . esc_attr__( 'We couldn’t reach the server. Check your connection and try again.', 'techdella' ) . '"';
 	$out .= ' data-msg-sending="' . esc_attr__( 'Sending…', 'techdella' ) . '"';
+	/* translators: 1: current step number, 2: number of steps. */
 	$out .= ' data-msg-step="' . esc_attr__( 'Step %1$d of %2$d', 'techdella' ) . '"';
 	$out .= ' data-msg-back="' . esc_attr__( '← Back', 'techdella' ) . '"';
 	$out .= ' data-msg-next="' . esc_attr__( 'Continue', 'techdella' ) . '"';
@@ -208,7 +210,7 @@ function td_form_render( string $key, array $args = [] ): string {
 	if ( '' !== $args['success_message'] ) {
 		$out .= '<p class="td-form__intro">' . esc_html( (string) $args['success_message'] ) . '</p>';
 	}
-	$out .= '<p class="td-form__download" data-download hidden><a class="td-btn td-btn--primary" href="#" download>' . '<span data-download-label>' . esc_html__( 'Download the PDF', 'techdella' ) . '</span><span class="td-btn__arrow">' . td_icon( 'arrow-right' ) . '</span></a></p>';
+	$out .= '<p class="td-form__download" data-download hidden><a class="td-btn td-btn--primary" href="#" download><span data-download-label>' . esc_html__( 'Download the PDF', 'techdella' ) . '</span><span class="td-btn__arrow">' . td_icon( 'arrow-right' ) . '</span></a></p>';
 	$out .= '<button type="button" class="td-btn td-btn--secondary td-btn--sm td-form__again" data-again>' . esc_html__( 'Send another', 'techdella' ) . '</button>';
 	$out .= '</div>';
 

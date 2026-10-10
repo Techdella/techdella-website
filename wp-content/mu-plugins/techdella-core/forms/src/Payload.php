@@ -42,7 +42,7 @@ final class Payload {
 			$out[ $target ] = $value;
 		}
 		// Consent flags are always present (false when the form has no checkbox).
-		$meta        += [ 'consent_marketing' => false ];
+		$meta       += [ 'consent_marketing' => false ];
 		$out['meta'] = $meta;
 		if ( $test ) {
 			$out['test'] = true;

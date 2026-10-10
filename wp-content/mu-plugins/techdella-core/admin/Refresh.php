@@ -36,9 +36,9 @@ final class Refresh {
 	 * @param int $months   Cadence in months.
 	 */
 	public static function due_at( int $reviewed, int $months ): int {
-		$y = (int) gmdate( 'Y', $reviewed );
-		$m = (int) gmdate( 'n', $reviewed ) + $months;
-		$d = (int) gmdate( 'j', $reviewed );
+		$y  = (int) gmdate( 'Y', $reviewed );
+		$m  = (int) gmdate( 'n', $reviewed ) + $months;
+		$d  = (int) gmdate( 'j', $reviewed );
 		$y += intdiv( $m - 1, 12 );
 		$m  = ( ( $m - 1 ) % 12 ) + 1;
 		$d  = min( $d, (int) gmdate( 't', gmmktime( 0, 0, 0, $m, 1, $y ) ) );

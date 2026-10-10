@@ -55,7 +55,7 @@ function td_forms_cli_retry( array $args, array $assoc ): void {
  * @param string[]             $args  Positional.
  * @param array<string,string> $assoc Options.
  */
-function td_forms_cli_test( array $args, array $assoc ): void {
+function td_forms_cli_test( array $args, array $assoc ): void { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter -- WP-CLI signature.
 	$key    = (string) ( $args[0] ?? '' );
 	$schema = td_form_schema( $key );
 	if ( ! $schema ) {
@@ -179,7 +179,8 @@ function td_forms_cli_export_legacy( array $args, array $assoc ): void {
 			++$rows;
 		}
 		$offset += 500;
-	} while ( count( $chunk ) === 500 );
+		$more    = 500 === count( $chunk );
+	} while ( $more );
 	fclose( $fh ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose
 	WP_CLI::success( "Exported {$rows} rows from {$table} to {$file}. This file contains personal data: hand it to the owner and delete it." );
 
@@ -199,7 +200,7 @@ function td_forms_cli_export_legacy( array $args, array $assoc ): void {
  * @param string[]             $args  Positional.
  * @param array<string,string> $assoc Options.
  */
-function td_forms_cli_reset_limits( array $args, array $assoc ): void {
+function td_forms_cli_reset_limits( array $args, array $assoc ): void { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter -- WP-CLI signature.
 	global $wpdb;
 	if ( td_is_production() ) {
 		WP_CLI::error( 'Not available in production.' );

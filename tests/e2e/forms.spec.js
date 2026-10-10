@@ -2,7 +2,7 @@
 // Runs against the local stack; sb-mock (:8090) records every forward.
 import { test, expect } from '@playwright/test';
 import { execFileSync } from 'node:child_process';
-import { site, sbMock } from './helpers.js';
+import { site, sbMock, expectNoA11yViolations, expectNoHorizontalScroll } from './helpers.js';
 
 test.describe.configure({ mode: 'serial' });
 
@@ -272,9 +272,22 @@ test('JS: Studios brief steps through four questions', async ({ page, request })
   await expect(f.locator('.td-form__summary')).toContainText('AI automation');
   await f.getByLabel('The idea, in a few sentences').fill('An agent that triages support email.');
   await f.getByLabel('Name', { exact: true }).fill('Ada Obi');
-  await f.getByLabel('Email').fill('ada@example.com');
+  await f.getByLabel('Email', { exact: true }).fill('ada@example.com');
   await f.getByRole('button', { name: 'Send brief' }).click();
   await expect(f.locator('.td-form__success')).toBeFocused({ timeout: 10_000 });
   const log = await sbMock.log(request, 'studios_brief');
   expect(log[0].body).toMatchObject({ project_type: ['ai'], budget: '2k-5k', timeline: 'asap', stage: '' });
+});
+
+test('form markup is axe-clean, also with errors shown, and fits 390px', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(site('marketing', '/forms-test/'));
+  await expectNoA11yViolations(page, { include: '.td-form' });
+  await page.locator('#tdf-audit').getByRole('button', { name: 'Request my audit' }).click();
+  await expect(page.locator('#tdf-audit .td-field__error:not([hidden])').first()).toBeVisible();
+  await expectNoA11yViolations(page, { include: '.td-form' });
+  await expectNoHorizontalScroll(page);
+  await page.goto(site('studios', '/forms-test/'));
+  await expectNoA11yViolations(page, { include: '.td-form' });
+  await expectNoHorizontalScroll(page);
 });

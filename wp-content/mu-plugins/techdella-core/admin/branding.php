@@ -22,7 +22,7 @@ add_action(
 	'login_header',
 	static function () {
 		$logo = function_exists( 'td_logo' ) ? td_logo( 'default', 32 ) : '<span class="td-logo-text">TechDella</span>';
-		echo '<div class="td-login-brand"><a href="' . esc_url( home_url( '/' ) ) . '">' . wp_kses_post( $logo ) . '</a></div>';
+		echo '<div class="td-login-brand"><a href="' . esc_url( home_url( '/' ) ) . '">' . $logo . '</a></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- td_logo() escapes its markup.
 	}
 );
 

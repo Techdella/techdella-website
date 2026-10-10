@@ -93,7 +93,7 @@ add_action(
 				$tax,
 				$objects,
 				[
-					'labels'            => [
+					'labels'             => [
 						'name'          => (string) $def['plural'],
 						'singular_name' => (string) $def['singular'],
 						'menu_name'     => (string) $def['plural'],
@@ -102,16 +102,16 @@ add_action(
 						'edit_item'     => 'Edit ' . strtolower( (string) $def['singular'] ),
 					],
 					// Internal-linking and filtering only: no thin term archives (§8.1 doorway/thin content).
-					'public'            => false,
+					'public'             => false,
 					'publicly_queryable' => false,
-					'show_ui'           => true,
-					'show_in_rest'      => true,
-					'show_admin_column' => true,
-					'show_in_nav_menus' => false,
-					'hierarchical'      => 'td_service_tag' !== $tax,
-					'rewrite'           => false,
-					'query_var'         => false,
-					'capabilities'      => [
+					'show_ui'            => true,
+					'show_in_rest'       => true,
+					'show_admin_column'  => true,
+					'show_in_nav_menus'  => false,
+					'hierarchical'       => 'td_service_tag' !== $tax,
+					'rewrite'            => false,
+					'query_var'          => false,
+					'capabilities'       => [
 						'manage_terms' => 'manage_categories',
 						'edit_terms'   => 'manage_categories',
 						'delete_terms' => 'manage_categories',

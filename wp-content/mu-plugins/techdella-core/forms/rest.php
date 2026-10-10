@@ -92,9 +92,9 @@ function td_forms_client_ip(): string {
  * @param string $ip IP.
  */
 function td_forms_rate_limit_hit( string $ip ): bool {
-	$limit = (int) apply_filters( 'td_forms_rate_limit', 5 );
-	$tkey  = 'td_frl_' . md5( $ip . '|' . wp_salt( 'nonce' ) );
-	$state = get_transient( $tkey );
+	$limit               = (int) apply_filters( 'td_forms_rate_limit', 5 );
+	$tkey                = 'td_frl_' . md5( $ip . '|' . wp_salt( 'nonce' ) );
+	$state               = get_transient( $tkey );
 	[ $allowed, $state ] = Retry::rate_limit( is_array( $state ) ? $state : null, time(), $limit, MINUTE_IN_SECONDS );
 	set_transient( $tkey, $state, MINUTE_IN_SECONDS + 5 );
 	return $allowed;
@@ -184,8 +184,8 @@ function td_forms_rest_submit( WP_REST_Request $request ): WP_REST_Response {
 	}
 
 	// 6. Validate + sanitise.
-	$fields                = (array) $schema['fields'];
-	[ $clean, $errors ]    = Validator::validate( $fields, $input );
+	$fields             = (array) $schema['fields'];
+	[ $clean, $errors ] = Validator::validate( $fields, $input );
 	if ( $errors ) {
 		return td_forms_reply( $request, $is_js, $key, $input, 400, $errors, 'validation', $clean );
 	}

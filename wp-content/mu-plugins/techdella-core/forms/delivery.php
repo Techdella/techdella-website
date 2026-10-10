@@ -209,7 +209,15 @@ function td_forms_process_queue( bool $all = false, ?int $id = null ): array {
 		$payload = null === $json ? null : json_decode( $json, true );
 		if ( ! is_array( $payload ) ) {
 			// Undecryptable (salts rotated): nothing we can deliver. Mark failed; purge removes it.
-			$wpdb->update( $table, [ 'status' => 'failed', 'last_error' => 'decrypt_failed', 'updated_at' => gmdate( 'Y-m-d H:i:s' ) ], [ 'id' => (int) $row->id ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+			$wpdb->update(
+				$table,
+				[
+					'status'     => 'failed',
+					'last_error' => 'decrypt_failed',
+					'updated_at' => gmdate( 'Y-m-d H:i:s' ),
+				],
+				[ 'id' => (int) $row->id ]
+			); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 			++$stats['failed'];
 			continue;
 		}
@@ -265,7 +273,9 @@ function td_forms_notify_admin( string $key, int $attempts, string $error ): voi
 			'Check SB_ENDPOINT_' . strtoupper( $key ) . ' and Startbuddi, then run: wp td forms:retry --all',
 		]
 	);
-	wp_mail( $to, 'Startbuddi delivery failed', $body );
+	// Explicit From: WordPress's default (wordpress@<host>) is invalid on localhost hosts.
+	$from = (string) apply_filters( 'td_forms_alert_from', 'TechDella Website <noreply@' . td_forms_site_domain() . '>' );
+	wp_mail( $to, 'Startbuddi delivery failed', $body, [ 'From: ' . $from ] );
 }
 
 /**
@@ -286,7 +296,12 @@ add_action(
 		td_forms_process_queue();
 	}
 );
-add_action( TD_FORMS_PURGE_HOOK, 'td_forms_purge_queue' );
+add_action(
+	TD_FORMS_PURGE_HOOK,
+	static function () {
+		td_forms_purge_queue();
+	}
+);
 
 // Daily purge + safety sweep (picks up rows whose single event was lost).
 add_action(

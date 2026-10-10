@@ -2,7 +2,16 @@
  * "TechDella" admin colour scheme (§14.2): ink menu on a canvas page,
  * orange only for focus rings. Loaded on top of the base admin styles.
  */
-body.admin-color-techdella { background: #F7F5F2; }
+body.admin-color-techdella {
+  background: #F7F5F2;
+  /* Core and block-editor components read these. */
+  --wp-admin-theme-color: #0D0D0D;
+  --wp-admin-theme-color--rgb: 13, 13, 13;
+  --wp-admin-theme-color-darker-10: #262321;
+  --wp-admin-theme-color-darker-10--rgb: 38, 35, 33;
+  --wp-admin-theme-color-darker-20: #1A1715;
+  --wp-admin-theme-color-darker-20--rgb: 26, 23, 21;
+}
 
 /* Menu */
 .admin-color-techdella #adminmenuback,

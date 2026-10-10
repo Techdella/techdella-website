@@ -32,14 +32,14 @@ final class Checklist {
 	 * @return array<string,array{ok:bool,blocking:bool,label:string,message:string}>
 	 */
 	public static function run( array $in ): array {
-		$title   = (string) ( $in['title'] ?? '' );
-		$content = (string) ( $in['content'] ?? '' );
-		$kw      = trim( (string) ( $in['primary_kw'] ?? '' ) );
-		$meta    = trim( (string) ( $in['meta_description'] ?? '' ) );
-		$h1s     = array_values( array_filter( array_merge( [ $title ], (array) ( $in['h1'] ?? [] ) ), 'strlen' ) );
-		$links   = self::internal_links( $content, (array) ( $in['hosts'] ?? [] ) );
-		$no_alt  = self::images_missing_alt( $content );
-		$tokens  = array_values( array_unique( array_merge( self::placeholders( $title ), self::placeholders( $content ), self::placeholders( $meta ) ) ) );
+		$title    = (string) ( $in['title'] ?? '' );
+		$content  = (string) ( $in['content'] ?? '' );
+		$kw       = trim( (string) ( $in['primary_kw'] ?? '' ) );
+		$meta     = trim( (string) ( $in['meta_description'] ?? '' ) );
+		$h1s      = array_values( array_filter( array_merge( [ $title ], (array) ( $in['h1'] ?? [] ) ), 'strlen' ) );
+		$links    = self::internal_links( $content, (array) ( $in['hosts'] ?? [] ) );
+		$no_alt   = self::images_missing_alt( $content );
+		$tokens   = array_values( array_unique( array_merge( self::placeholders( $title ), self::placeholders( $content ), self::placeholders( $meta ) ) ) );
 		$meta_len = self::length( $meta );
 
 		$kw_in_h1 = '' !== $kw && (bool) array_filter( $h1s, static fn( $h ) => self::contains_keyword( (string) $h, $kw ) );
