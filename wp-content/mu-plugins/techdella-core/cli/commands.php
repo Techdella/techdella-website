@@ -39,10 +39,16 @@ function td_cli_setup( array $args, array $assoc ): void {
  * Import Markdown + front matter from content/ as drafts (or pending), matched
  * by slug + post type. Never publishes; published posts are skipped.
  *
+ * Note: `--path` is a WP-CLI global option (the WordPress install), so the
+ * content location is passed as a positional argument or --dir.
+ *
  * ## OPTIONS
  *
- * --path=<dir>
+ * [<dir>]
  * : File or directory (recursive), e.g. /var/www/repo/content/journal.
+ *
+ * [--dir=<dir>]
+ * : Same as <dir>.
  *
  * [--status=<status>]
  * : draft or pending.
@@ -55,7 +61,7 @@ function td_cli_setup( array $args, array $assoc ): void {
  *
  * ## EXAMPLES
  *
- *     wp td import-content --path=/var/www/repo/content/journal --status=draft
+ *     wp td import-content /var/www/repo/content/journal --status=draft
  *
  * @param string[]             $args  Positional.
  * @param array<string,string> $assoc Options.
@@ -65,9 +71,9 @@ function td_cli_import_content( array $args, array $assoc ): void {
 	if ( ! in_array( $status, [ 'draft', 'pending' ], true ) ) {
 		WP_CLI::error( 'Status must be draft or pending. Content is never auto-published (§0.4): a named person reviews and publishes.' );
 	}
-	$path = (string) ( $assoc['path'] ?? '' );
+	$path = (string) ( $args[0] ?? ( $assoc['dir'] ?? '' ) );
 	if ( '' === $path || ! file_exists( $path ) ) {
-		WP_CLI::error( 'Pass --path=<dir or file> (in Docker: /var/www/repo/content).' );
+		WP_CLI::error( 'Pass the content directory or file: wp td import-content /var/www/repo/content/journal (in Docker). --path is WP-CLI\'s own option.' );
 	}
 	$dry   = (bool) Utils\get_flag_value( $assoc, 'dry-run', false );
 	$files = td_import_files( $path );
@@ -510,7 +516,8 @@ function td_cli_og_generate( array $args, array $assoc ): void {
 	];
 	if ( ! empty( $assoc['id'] ) ) {
 		$query['post__in']  = array_map( 'intval', explode( ',', (string) $assoc['id'] ) );
-		$query['post_type'] = 'any';
+		$query['post_type']   = 'any';
+		$query['post_status'] = 'any';
 	}
 	$ids   = get_posts( $query );
 	$force = (bool) Utils\get_flag_value( $assoc, 'force', false );

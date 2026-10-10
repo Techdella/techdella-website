@@ -11,7 +11,7 @@
 .td-workflow__label{font-size:11px;color:var(--td-muted)}
 .td-workflow__node strong{font-size:14px}
 .td-workflow__step--ai .td-workflow__node{background:var(--td-ink);color:var(--td-paper);box-shadow:0 14px 30px -20px rgba(13,13,13,.5)}
-.td-workflow__step--ai .td-workflow__icon{background:var(--td-orange);color:var(--td-paper)}
+.td-workflow__step--ai .td-workflow__icon{background:var(--td-orange-text);color:var(--td-paper)}
 .td-workflow__step--ai .td-workflow__label{color:var(--td-on-dark)}
 .td-workflow__branches{list-style:none;margin:0;padding:0;width:100%;max-width:420px;display:flex;gap:10px}
 .td-workflow__node--branch{flex:1;flex-direction:column;align-items:flex-start;gap:6px;padding:12px}

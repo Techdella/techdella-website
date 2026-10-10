@@ -185,6 +185,27 @@ function td_import_user_id( $value ): int {
 }
 
 /**
+ * ACF fields that apply to a post (by its field groups' location rules), by name.
+ *
+ * @param int $post_id Post ID.
+ * @return array<string,array<string,mixed>>
+ */
+function td_import_acf_fields( int $post_id ): array {
+	if ( ! function_exists( 'acf_get_field_groups' ) || ! function_exists( 'acf_get_fields' ) ) {
+		return [];
+	}
+	$fields = [];
+	foreach ( (array) acf_get_field_groups( [ 'post_id' => $post_id ] ) as $group ) {
+		foreach ( (array) acf_get_fields( $group ) as $field ) {
+			if ( is_array( $field ) && ! empty( $field['name'] ) ) {
+				$fields[ (string) $field['name'] ] = $field;
+			}
+		}
+	}
+	return $fields;
+}
+
+/**
  * Write one field: ACF (with light type mapping) when it knows the field,
  * else post meta.
  *
@@ -194,7 +215,7 @@ function td_import_user_id( $value ): int {
  */
 function td_import_set_field( int $post_id, string $name, $value ): void {
 	$name  = sanitize_key( $name );
-	$field = function_exists( 'acf_get_field' ) ? acf_get_field( $name ) : null;
+	$field = td_import_acf_fields( $post_id )[ $name ] ?? null;
 	if ( is_array( $field ) && function_exists( 'update_field' ) ) {
 		$type = (string) ( $field['type'] ?? '' );
 		if ( 'repeater' === $type && is_array( $value ) && array_is_list( $value ) && ! empty( $field['sub_fields'] ) ) {
@@ -403,7 +424,8 @@ function td_import_file( string $file, string $status, bool $dry, string $base )
 			$value = trim( (string) $value );
 			$term  = get_term_by( 'slug', sanitize_title( $value ), $taxonomy );
 			if ( ! $term ) {
-				$created = wp_insert_term( $value, $taxonomy, [ 'slug' => sanitize_title( $value ) ] );
+				$name    = preg_match( '/^[a-z0-9-]+$/', $value ) ? ucwords( str_replace( '-', ' ', $value ) ) : $value; // Slug → readable name; editors can rename.
+				$created = wp_insert_term( $name, $taxonomy, [ 'slug' => sanitize_title( $value ) ] );
 				$term    = is_wp_error( $created ) ? null : get_term( (int) $created['term_id'], $taxonomy );
 			}
 			if ( $term instanceof WP_Term ) {

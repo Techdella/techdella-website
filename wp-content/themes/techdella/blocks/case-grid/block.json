@@ -79,6 +79,21 @@
 			"intro": "Apps · Automation · Design · Motion",
 			"items": [
 				{
+					"title": "startbuddi",
+					"status": "Live",
+					"disciplines": [
+						"Website"
+					],
+					"excerpt": "The startbuddi.com marketing site, on desktop and mobile.",
+					"image": "work/startbuddi-website-desktop",
+					"imagePhone": "work/startbuddi-website-phone",
+					"imageAlt": "The startbuddi.com home page in a browser",
+					"frame": "browser",
+					"site": "startbuddi.com",
+					"note": "[CONFIRM: Studios build credit for startbuddi]",
+					"url": "/work/"
+				},
+				{
 					"title": "Epic Entertainment Games",
 					"status": "Live",
 					"disciplines": [
@@ -113,10 +128,12 @@
 						"Motion"
 					],
 					"excerpt": "A short animated walkthrough for launches, ads and sales decks.",
-					"visual": "video"
+					"image": "stock/creator-recording-video-vertical",
+					"imageAlt": "A presenter recording a video to camera",
+					"frame": "phone"
 				}
 			],
-			"count": 4
+			"count": 5
 		}
 	},
 	"techdella": {
@@ -124,6 +141,6 @@
 			"intro": "textarea",
 			"items": "json"
 		},
-		"help": "Pulls published posts first. items (inline fallback, same shape as Case card's item) render only when the query finds nothing. industry = td_industry slug. Studios: source studio_work, variant cover. Concept items always show a Concept label."
+		"help": "Pulls published posts first. items (inline fallback, same shape as Case card's item) render only when the query finds nothing. industry = td_industry slug. Studios: source studio_work, variant cover. Concept items always show a Concept label. Inline items take frame (browser|phone) + site + imagePhone to show real screenshots in a CSS device frame, and note for a visible [CONFIRM]."
 	}
 }

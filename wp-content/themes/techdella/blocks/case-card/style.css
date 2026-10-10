@@ -60,3 +60,27 @@
 .td-work-visual__bar{position:absolute;left:58px;right:18px;bottom:29px;height:3px;background:var(--td-dark-border);border-radius:2px}
 .td-work-visual__bar b{width:30%;height:3px;background:var(--td-paper)}
 @media (max-width:600px){.td-case-card__visual{height:280px}.td-case-card--card{padding:24px}}
+/* Device frames for real screenshots (CSS chrome, not part of the image) */
+.td-device{background:var(--td-paper);overflow:hidden;box-shadow:0 24px 60px -30px rgba(13,13,13,.45)}
+.td-device__screen{position:relative;overflow:hidden;background:var(--td-canvas)}
+.td-device__screen picture,.td-device__screen img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+.td-device--browser{border-radius:14px;border:1px solid var(--td-line)}
+.td-device__bar{display:flex;align-items:center;gap:6px;height:30px;padding:0 12px;background:var(--td-canvas);border-bottom:1px solid var(--td-line-soft)}
+.td-device__bar i{width:8px;height:8px;border-radius:50%;background:var(--td-line)}
+.td-device__url{margin-left:10px;flex:1;max-width:240px;height:18px;border-radius:9px;background:var(--td-paper);font-size:10.5px;line-height:18px;padding:0 10px;color:var(--td-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.td-device--browser .td-device__screen{aspect-ratio:16/10}
+.td-device--phone{position:relative;border-radius:28px;padding:7px;background:var(--td-ink)}
+.td-device--phone .td-device__screen{border-radius:22px;aspect-ratio:9/19.5}
+.td-device__notch{position:absolute;z-index:1;top:12px;left:50%;transform:translateX(-50%);width:34%;height:14px;border-radius:999px;background:var(--td-ink)}
+.td-device-stack{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:32px 36px}
+.td-device-group{position:relative;width:100%;max-width:470px}
+.td-device-stack--pair .td-device-group{max-width:430px;margin-right:48px}
+.td-device-stack--pair .td-device--phone{position:absolute;right:-48px;bottom:-16px;width:112px}
+.td-device-stack--phone .td-device-group{width:auto}
+.td-device-stack--phone .td-device--phone{height:280px;width:auto;aspect-ratio:9/19.5}
+.td-device-stack--phone .td-device--phone .td-device__screen{height:100%;aspect-ratio:auto}
+.td-case-card__shot{margin:-6px -6px 4px;height:260px;border-radius:22px;overflow:hidden;background:var(--td-canvas)}
+.td-case-card__shot .td-device-stack{padding:22px 26px}
+.td-case-card__shot .td-device-group{max-width:330px}
+.td-case-card__note{font-size:12.5px;color:var(--td-muted);margin-top:-4px}
+@media (max-width:600px){.td-device-stack{padding:22px 18px}.td-device-stack--pair .td-device-group{margin-right:34px}.td-device-stack--pair .td-device--phone{width:80px;right:-34px}.td-device-stack--phone .td-device--phone{height:230px}}

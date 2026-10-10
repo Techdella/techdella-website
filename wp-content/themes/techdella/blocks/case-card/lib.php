@@ -120,6 +120,10 @@ if ( ! function_exists( 'td_a3_case_from_post' ) ) {
 			'image'       => $image,
 			'imageAlt'    => '',
 			'visual'      => '',
+			'frame'       => '',
+			'imagePhone'  => '',
+			'site'        => '',
+			'note'        => '',
 		];
 	}
 }
@@ -152,7 +156,40 @@ if ( ! function_exists( 'td_a3_case_normalize' ) ) {
 			'image'       => $item['image'] ?? '',
 			'imageAlt'    => (string) ( $item['imageAlt'] ?? '' ),
 			'visual'      => (string) ( $item['visual'] ?? '' ),
+			'frame'       => in_array( $item['frame'] ?? '', [ 'browser', 'phone' ], true ) ? (string) $item['frame'] : '',
+			'imagePhone'  => $item['imagePhone'] ?? '',
+			'site'        => (string) ( $item['site'] ?? '' ),
+			'note'        => (string) ( $item['note'] ?? '' ),
 		];
+	}
+}
+
+if ( ! function_exists( 'td_a3_device' ) ) {
+	/**
+	 * A screenshot in a CSS device frame: browser (chrome bar + address) or phone.
+	 *
+	 * @param int|string $image Attachment ID or theme image key.
+	 * @param string     $kind  browser|phone.
+	 * @param string     $alt   Alt text.
+	 * @param string     $site  Address shown in the browser bar.
+	 * @param string     $sizes sizes attribute.
+	 */
+	function td_a3_device( $image, string $kind, string $alt = '', string $site = '', string $sizes = '600px' ): string {
+		$img = td_image(
+			$image,
+			[
+				'alt'   => $alt,
+				'sizes' => $sizes,
+			]
+		);
+		if ( '' === $img || str_starts_with( $img, '<!--' ) ) {
+			return '';
+		}
+		if ( 'phone' === $kind ) {
+			return '<div class="td-device td-device--phone"><span class="td-device__notch" aria-hidden="true"></span><div class="td-device__screen">' . $img . '</div></div>';
+		}
+		$bar = '<span class="td-device__bar" aria-hidden="true"><i></i><i></i><i></i>' . ( '' !== $site ? '<span class="td-device__url">' . esc_html( $site ) . '</span>' : '' ) . '</span>';
+		return '<div class="td-device td-device--browser">' . $bar . '<div class="td-device__screen">' . $img . '</div></div>';
 	}
 }
 
@@ -173,6 +210,38 @@ if ( ! function_exists( 'td_a3_work_visual' ) ) {
 			default:
 				return '<div class="td-work-visual td-work-visual--table" aria-hidden="true"><span class="td-work-visual__panel"><b></b><i></i><i></i><i></i></span></div>';
 		}
+	}
+}
+
+if ( ! function_exists( 'td_a3_case_visual' ) ) {
+	/**
+	 * The visual for a case/work card: framed screenshots, a plain image, or a neutral placeholder.
+	 *
+	 * @param array<string,mixed> $c Normalized case data.
+	 */
+	function td_a3_case_visual( array $c ): string {
+		$frame = (string) ( $c['frame'] ?? '' );
+		$alt   = (string) $c['imageAlt'];
+		if ( $c['image'] && '' !== $frame ) {
+			$main  = td_a3_device( $c['image'], $frame, $alt, (string) ( $c['site'] ?? '' ), '(max-width: 900px) 90vw, 520px' );
+			$phone = ! empty( $c['imagePhone'] ) && 'browser' === $frame ? td_a3_device( $c['imagePhone'], 'phone', '', '', '140px' ) : '';
+			if ( '' !== $main ) {
+				return '<div class="td-device-stack' . ( '' !== $phone ? ' td-device-stack--pair' : '' ) . ' td-device-stack--' . esc_attr( $frame ) . '"><div class="td-device-group">' . $main . $phone . '</div></div>';
+			}
+		}
+		if ( $c['image'] ) {
+			$img = td_image(
+				$c['image'],
+				[
+					'alt'   => $alt,
+					'sizes' => '(max-width: 900px) 100vw, 600px',
+				]
+			);
+			if ( '' !== $img && ! str_starts_with( $img, '<!--' ) ) {
+				return $img;
+			}
+		}
+		return td_a3_work_visual( (string) $c['visual'] );
 	}
 }
 
@@ -206,14 +275,7 @@ if ( ! function_exists( 'td_a3_case_card' ) ) {
 			} elseif ( 'Live' === $c['status'] ) {
 				$out .= '<span class="td-case-card__live"><span class="td-dot" aria-hidden="true"></span>' . esc_html__( 'Live', 'techdella' ) . '</span>';
 			}
-			$img  = $c['image'] ? td_image(
-				$c['image'],
-				[
-					'alt'   => (string) $c['imageAlt'],
-					'sizes' => '(max-width: 900px) 100vw, 600px',
-				]
-			) : '';
-			$out .= '' !== $img && ! str_starts_with( $img, '<!--' ) ? $img : td_a3_work_visual( (string) $c['visual'] );
+			$out .= td_a3_case_visual( $c );
 			$out .= '</div><div class="td-case-card__row">';
 			$out .= sprintf( '<h%1$d class="td-case-card__title">%2$s</h%1$d>', $level, $title );
 			if ( '' !== $tag ) {
@@ -223,6 +285,9 @@ if ( ! function_exists( 'td_a3_case_card' ) ) {
 			if ( '' !== $c['excerpt'] ) {
 				$out .= '<p class="td-case-card__text">' . td_a3_text( $c['excerpt'] ) . '</p>';
 			}
+			if ( '' !== (string) ( $c['note'] ?? '' ) ) {
+				$out .= '<p class="td-case-card__note">' . td_a3_text( $c['note'] ) . '</p>';
+			}
 			return $out . '</article>';
 		}
 
@@ -231,6 +296,9 @@ if ( ! function_exists( 'td_a3_case_card' ) ) {
 			$label .= ' · ' . $c['client'];
 		}
 		$out  = '<article class="td-case-card td-case-card--card' . ( $concept ? ' td-case-card--concept' : '' ) . '">';
+		if ( $c['image'] ) {
+			$out .= '<div class="td-case-card__shot">' . td_a3_case_visual( $c ) . '</div>';
+		}
 		$out .= '<span class="td-case-card__chip">' . esc_html( $label ) . '</span>';
 		if ( $concept ) {
 			$out .= '<span class="td-case-card__concept">' . esc_html__( 'Concept', 'techdella' ) . '</span>';

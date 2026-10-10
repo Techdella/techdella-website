@@ -27,6 +27,11 @@ const initToc = (nav) => {
     });
   };
   const io = new IntersectionObserver(mark, { rootMargin: '-120px 0px -50% 0px' });
+  // Jumps (anchor links, keyboard) can skip the observer band: re-check on scroll too.
+  let frame = 0;
+  window.addEventListener('scroll', () => {
+    if (!frame) frame = window.requestAnimationFrame(() => { frame = 0; mark(); });
+  }, { passive: true });
   mark();
   targets.forEach((t) => io.observe(t));
 };

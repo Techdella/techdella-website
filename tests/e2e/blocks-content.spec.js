@@ -128,8 +128,10 @@ test('toc links match the heading ids, including duplicate headings', async ({ p
     expect(await target.evaluate((el) => el.tagName)).toMatch(/^H[23]$/);
   }
   // Current-section highlight (progressive enhancement).
-  await page.locator('#what-you-can-do').scrollIntoViewIfNeeded();
-  await page.evaluate(() => window.scrollBy(0, -60));
+  await page.evaluate(() => {
+    const el = document.getElementById('what-you-can-do');
+    window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - 100);
+  });
   await expect(toc.locator('a[href="#what-you-can-do"]')).toHaveAttribute('aria-current', 'true');
 });
 

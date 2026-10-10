@@ -252,3 +252,14 @@ add_action(
 		td_og_generate( (int) $post_id );
 	}
 );
+
+// Remove a post's generated OG image with the post.
+add_action(
+	'before_delete_post',
+	static function ( $post_id ) {
+		$att = (int) get_post_meta( (int) $post_id, '_td_og_image', true );
+		if ( $att && get_post_meta( $att, '_td_og_hash', true ) ) {
+			wp_delete_attachment( $att, true );
+		}
+	}
+);

@@ -1,3 +1,6 @@
 /* techdella/case-grid */
 .td-case-grid__list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px;margin:0;padding:0;list-style:none}
 .td-case-grid--cover .td-case-grid__list{grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:36px 16px}
+/* An odd number of work items: the first spans the row */
+.td-case-grid--cover .td-case-grid__list>li:first-child:nth-last-child(odd):not(:only-child){grid-column:1/-1}
+.td-case-grid--cover .td-case-grid__list>li:first-child:nth-last-child(odd):not(:only-child) .td-case-card__visual{height:420px}
