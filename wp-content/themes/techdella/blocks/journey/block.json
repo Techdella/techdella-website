@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/journey",
+	"title": "Journey",
+	"category": "techdella",
+	"icon": "arrow-right-alt",
+	"description": "Lead journey stages (visitor → offer → lead → scored → nurtured or called): an ordered list, horizontal on desktop, vertical with a connecting line on phones. One stage can be highlighted.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"stages": { "type": "array", "default": [] },
+		"highlight": { "type": "integer", "default": -1 },
+		"surface": { "type": "string", "enum": [ "canvas", "paper", "sand" ], "default": "canvas" }
+	},
+	"example": {
+		"attributes": {
+			"title": "From stranger to *sales call*",
+			"stages": [
+				{ "title": "Sees an ad or article", "text": "Paid, SEO or AI search" },
+				{ "title": "Lands on an offer", "text": "Focused landing page" },
+				{ "title": "Becomes a lead", "text": "Form or booking" },
+				{ "title": "Scored & routed", "text": "AI automation" },
+				{ "title": "Nurtured or called", "text": "Email or sales" }
+			],
+			"highlight": 3
+		}
+	},
+	"techdella": {
+		"controls": { "intro": "textarea", "stages": "json" },
+		"help": "stages: [{title, text}] — 3 to 6 work best. highlight: 0-based index of the one dark stage (-1 = none)."
+	}
+}

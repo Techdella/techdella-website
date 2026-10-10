@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/lead-mock",
+	"title": "Lead capture mock",
+	"category": "techdella",
+	"icon": "id-alt",
+	"description": "Lead generation hero visual in HTML/CSS: a lead-magnet landing page with its form, an example lead view (fit labels), a visit-to-call bar strip and an optional photo tile. Always labelled as an example.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"url": { "type": "string", "default": "yourcompany.com/checklist" },
+		"offer": { "type": "string", "default": "" },
+		"fields": { "type": "array", "default": [ "Work email", "Company size" ] },
+		"button": { "type": "string", "default": "Get the checklist" },
+		"leadsTitle": { "type": "string", "default": "New leads" },
+		"leads": { "type": "array", "default": [] },
+		"caption": { "type": "string", "default": "Example lead view" },
+		"stagesLabel": { "type": "string", "default": "From visit to booked call" },
+		"stages": { "type": "array", "default": [] },
+		"image": { "type": [ "string", "integer" ], "default": "" },
+		"imageAlt": { "type": "string", "default": "" },
+		"imageCaption": { "type": "string", "default": "" },
+		"contained": { "type": "boolean", "default": false }
+	},
+	"example": {
+		"attributes": {
+			"url": "yourcompany.com/checklist",
+			"offer": "The SOC 2 readiness checklist for SaaS teams",
+			"fields": [ "Work email", "Company size" ],
+			"button": "Get the checklist",
+			"leads": [
+				{ "who": "Head of IT · 80 staff", "status": "Hot", "hot": true },
+				{ "who": "CTO · 45 staff", "status": "Hot", "hot": true },
+				{ "who": "Student", "status": "Nurture" }
+			],
+			"stages": [ "Visits", "Leads", "Qualified", "Calls" ],
+			"contained": true
+		}
+	},
+	"techdella": {
+		"controls": { "fields": "json", "leads": "json", "stages": "json", "image": "media" },
+		"help": "Fictional offer and leads only (yourcompany.com). leads: [{who, status, hot}]. stages: 2–5 labels; the bars are illustrative (no numbers). Drop it into the hero's right-hand slot on the Lead generation page."
+	}
+}

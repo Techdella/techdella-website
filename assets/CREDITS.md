@@ -11,3 +11,5 @@ Replace with the photo shoot (§6.2) and real creatives (`assets/creatives/`) wh
 
 Own images (TechDella / clients): `images/team/*`, `images/people/*`, `images/brand/*`, `images/clients/*`,
 `images/work/shopinbos-store-builder-hot-sauce.jpg` (Shopinbos product, from the techdella.com media library).
+| `images/stock/product-flatlay-notebook-candle-square.jpg` | Meta / Instagram ad mocks (Example) | Nadiia Shuran, https://unsplash.com/photos/a-table-with-a-notebook-candle-and-sweater-on-it (photo-1694754920848-8855ee3ff364) — cropped 1:1 |
+| `images/stock/designer-desk-swatches-wide.jpg` | LinkedIn ad mock (Example) | Theme Photos (@themephotos), https://unsplash.com/photos/designer-using-tablet-and-laptop-workspace-CGpifH3FjOA — cropped 1.91:1 |
