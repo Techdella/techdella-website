@@ -22,3 +22,4 @@ docker/cache/**
 !docker/cache/plugins/
 !docker/cache/plugins/.gitkeep
 docker-compose.override.yml
+previews/
