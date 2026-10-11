@@ -3,9 +3,12 @@
 // previews the real render.php through ServerSideRender. Hints come from the
 // "techdella.controls" key in block.json (exposed as window.TD_BLOCKS):
 //   "textarea" | "media" | "json" | "url" | "select" (uses the attribute enum)
+// Blocks whose render.php prints $content (e.g. the hero's right-hand slot)
+// opt in with "techdella.innerBlocks": true; they get an InnerBlocks area and
+// save their inner blocks, so editing never drops a mock passed by a pattern.
 const { registerBlockType, getBlockType } = wp.blocks;
 const { createElement: el, Fragment, useState } = wp.element;
-const { InspectorControls, useBlockProps, MediaUpload, MediaUploadCheck } = wp.blockEditor;
+const { InspectorControls, InnerBlocks, useBlockProps, MediaUpload, MediaUploadCheck } = wp.blockEditor;
 const { PanelBody, TextControl, TextareaControl, ToggleControl, SelectControl, Button, Notice } = wp.components;
 const ServerSideRender = wp.serverSideRender;
 
@@ -65,6 +68,7 @@ function control(name, schema, hint, value, set) {
 
 Object.keys(META).forEach((name) => {
   const hints = META[name].controls || {};
+  const hasInner = !!META[name].innerBlocks;
   registerBlockType(name, {
     edit({ attributes, setAttributes }) {
       const type = getBlockType(name);
@@ -81,8 +85,12 @@ Object.keys(META).forEach((name) => {
             fields.map((k) => control(k, schema[k], hints[k], attributes[k], setAttributes))),
         ),
         el(ServerSideRender, { block: name, attributes, httpMethod: 'POST' }),
+        hasInner ? el('div', { className: 'td-editor-slot' },
+          el('p', { className: 'td-editor-help' }, META[name].slotLabel || 'Inner blocks (right-hand slot)'),
+          el(InnerBlocks, { allowedBlocks: META[name].allowedBlocks || undefined })) : null,
       );
     },
-    save: () => null,
+    // Dynamic blocks: render.php renders the markup; only inner blocks are saved.
+    save: hasInner ? () => el(InnerBlocks.Content) : () => null,
   });
 });

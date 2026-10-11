@@ -9,6 +9,7 @@
  * TD Post Type: service
  * TD Slug: seo
  * TD Title: SEO
+ * TD Description: B2B SEO services that turn searches into pipeline. We fix technical issues, research keywords that lead to sales, and write the pages that rank for them.
  *
  * @package techdella
  */

@@ -9,6 +9,7 @@
  * TD Post Type: service
  * TD Slug: paid-ads
  * TD Title: Paid ads
+ * TD Description: TechDella is a paid ads agency for Google, Meta, TikTok and LinkedIn. We plan strategy, make creatives in-house and manage campaigns for leads and revenue.
  *
  * @package techdella
  */

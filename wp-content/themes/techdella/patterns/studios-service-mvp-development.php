@@ -8,6 +8,7 @@
  * TD Post Type: studio_service
  * TD Slug: mvp-development
  * TD Title: MVP development
+ * TD Description: MVP development agency: TechDella Studios scopes, designs and builds the first version of your web app or SaaS product in milestones, ready for real users.
  *
  * @package techdella
  */
@@ -154,7 +155,7 @@ $td_blocks = [
 					'title'       => 'MVP Discovery & Prototype',
 					'text'        => 'Validate the idea with a scoped plan and a clickable prototype.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 				[
@@ -162,7 +163,7 @@ $td_blocks = [
 					'title'       => 'MVP Build',
 					'text'        => 'A working first version, built in milestones.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 			],

@@ -9,6 +9,7 @@
  * TD Post Type: service
  * TD Slug: marketing-automation
  * TD Title: AI marketing automation
+ * TD Description: AI marketing automation that replies to every lead in minutes, scores it and updates your CRM, built on the tools you use with people reviewing output.
  *
  * @package techdella
  */

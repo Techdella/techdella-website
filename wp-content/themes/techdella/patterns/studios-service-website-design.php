@@ -8,6 +8,7 @@
  * TD Post Type: studio_service
  * TD Slug: website-design
  * TD Title: Website design
+ * TD Description: Website design agency for marketing sites and landing pages: TechDella Studios designs and builds sites that explain what you do, load fast and win leads.
  *
  * @package techdella
  */
@@ -154,7 +155,7 @@ $td_blocks = [
 					'title'       => 'Landing page',
 					'text'        => 'One focused page for a campaign or offer.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 				[
@@ -162,7 +163,7 @@ $td_blocks = [
 					'title'       => 'Marketing website',
 					'text'        => 'A multi-page site with CMS and SEO foundations.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 			],

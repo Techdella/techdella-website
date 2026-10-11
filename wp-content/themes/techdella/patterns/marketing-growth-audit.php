@@ -9,6 +9,7 @@
  * TD Post Type: page
  * TD Slug: growth-audit
  * TD Title: Growth audit
+ * TD Description: Request a growth audit: a one-time marketing audit of your search and AI visibility, paid ads, funnel and follow-up, with a prioritized plan to act on.
  *
  * @package techdella
  */

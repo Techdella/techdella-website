@@ -54,6 +54,7 @@
 		}
 	},
 	"techdella": {
+		"innerBlocks": true,
 		"controls": { "lead": "textarea", "platforms": "json", "image": "media", "parentUrl": "url", "primaryUrl": "url", "secondaryUrl": "url" },
 		"help": "One H1 per page: this block renders it. Wrap one word in *asterisks* for the accent. Templates can pass a right-hand slot (e.g. a SERP mock) as inner content; otherwise the image shows. Platforms: {name, mark, ink, slug}; official logo files are used when present."
 	}

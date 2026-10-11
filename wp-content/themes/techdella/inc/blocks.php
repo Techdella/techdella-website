@@ -10,6 +10,8 @@
  * block.json's attributes and previews with ServerSideRender. Attribute hints
  * for the generic editor live under "techdella" in block.json:
  *   "techdella": { "controls": { "intro": "textarea", "image": "media", "items": "json" } }
+ * Blocks whose render.php prints $content add "innerBlocks": true there, so the
+ * editor gives them an InnerBlocks slot and saves their inner blocks.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -47,8 +49,9 @@ add_action(
 			if ( $type ) {
 				$raw                        = (array) json_decode( (string) file_get_contents( $dir . '/block.json' ), true ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 				$editor_meta[ $type->name ] = [
-					'controls' => $raw['techdella']['controls'] ?? new stdClass(),
-					'help'     => $raw['techdella']['help'] ?? '',
+					'controls'    => $raw['techdella']['controls'] ?? new stdClass(),
+					'help'        => $raw['techdella']['help'] ?? '',
+					'innerBlocks' => ! empty( $raw['techdella']['innerBlocks'] ),
 				];
 			}
 		}

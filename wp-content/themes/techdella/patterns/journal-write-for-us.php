@@ -8,6 +8,7 @@
  * TD Post Type: page
  * TD Slug: write-for-us
  * TD Title: Write for us
+ * TD Description: Write for the TechDella Journal. We publish edited guest posts from practitioners in SEO, paid ads, lead generation, email and automation. How to pitch.
  *
  * @package techdella
  */

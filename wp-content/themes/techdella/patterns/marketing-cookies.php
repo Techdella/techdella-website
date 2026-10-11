@@ -9,6 +9,7 @@
  * TD Post Type: page
  * TD Slug: cookies
  * TD Title: Cookies
+ * TD Description: Read the TechDella cookie policy: which cookies and similar technologies our websites use, why we use them, and how you can manage your consent choices.
  *
  * @package techdella
  */

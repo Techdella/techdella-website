@@ -9,6 +9,7 @@
  * TD Post Type: page
  * TD Slug: services
  * TD Title: Services
+ * TD Description: TechDella's B2B marketing services: SEO, AI search optimization, paid ads, lead generation, email marketing and AI automation, built to work as one system.
  *
  * @package techdella
  */

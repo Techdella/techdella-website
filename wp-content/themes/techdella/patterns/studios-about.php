@@ -8,6 +8,7 @@
  * TD Post Type: page
  * TD Slug: about
  * TD Title: About TechDella Studios
+ * TD Description: TechDella Studios is the build side of TechDella. We design, build and automate digital products for founders, growing businesses and agencies.
  *
  * @package techdella
  */

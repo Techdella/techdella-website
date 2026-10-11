@@ -9,6 +9,7 @@
  * TD Post Type: service
  * TD Slug: local-seo
  * TD Title: Local SEO
+ * TD Description: Local SEO services that help nearby buyers find you in Google Maps, with Google Business Profile optimization, consistent listings and real location pages.
  *
  * @package techdella
  */

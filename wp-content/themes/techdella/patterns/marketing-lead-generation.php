@@ -9,6 +9,7 @@
  * TD Post Type: service
  * TD Slug: lead-generation
  * TD Title: Lead generation
+ * TD Description: B2B lead generation services that pair strong offers, landing pages that convert and targeted outreach, with every lead scored and tracked to its source.
  *
  * @package techdella
  */

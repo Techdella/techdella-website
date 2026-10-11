@@ -9,6 +9,7 @@
  * TD Post Type: service
  * TD Slug: technical-seo
  * TD Title: Technical SEO
+ * TD Description: Technical SEO services that fix what stops Google crawling and ranking your pages: slow templates, broken links, duplicate URLs and missing schema.
  *
  * @package techdella
  */

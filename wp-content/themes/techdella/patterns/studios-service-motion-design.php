@@ -8,6 +8,7 @@
  * TD Post Type: studio_service
  * TD Slug: motion-design
  * TD Title: Motion design
+ * TD Description: Motion design studio for B2B products: explainers, product demos, launch films and animated ads made for your website, sales calls and every ad platform.
  *
  * @package techdella
  */
@@ -156,7 +157,7 @@ $td_blocks = [
 					'title'       => 'Motion Graphics Package',
 					'text'        => 'Explainers, product demos and animated ads.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 				[
@@ -164,7 +165,7 @@ $td_blocks = [
 					'title'       => 'Launch film',
 					'text'        => 'A longer piece for a launch page or keynote.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 			],

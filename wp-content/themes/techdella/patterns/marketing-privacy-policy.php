@@ -9,6 +9,7 @@
  * TD Post Type: page
  * TD Slug: privacy-policy
  * TD Title: Privacy Policy
+ * TD Description: Read the TechDella privacy policy: what personal data we collect through our websites and forms, how we use and share it, and the rights you have over it.
  *
  * @package techdella
  */

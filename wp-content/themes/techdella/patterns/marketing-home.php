@@ -9,6 +9,7 @@
  * TD Post Type: page
  * TD Slug: home
  * TD Title: Home
+ * TD Description: TechDella is a B2B growth marketing agency. We help you get found in search and AI answers, reach buyers with ads, and turn interest into qualified leads.
  * TD Front Page: yes
  *
  * @package techdella

@@ -9,6 +9,7 @@
  * TD Post Type: service
  * TD Slug: email-marketing
  * TD Title: Email marketing
+ * TD Description: B2B email marketing services: nurture sequences, newsletters and automation, planned, written and designed for you, with deliverability set up and tracked.
  *
  * @package techdella
  */

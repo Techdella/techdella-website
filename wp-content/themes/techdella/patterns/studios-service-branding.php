@@ -8,6 +8,7 @@
  * TD Post Type: studio_service
  * TD Slug: branding
  * TD Title: Branding
+ * TD Description: Branding for startups and growing businesses: logo, visual identity and brand guidelines from TechDella Studios, made to work on your site and in ads.
  *
  * @package techdella
  */
@@ -156,7 +157,7 @@ $td_blocks = [
 					'title'       => 'Brand identity',
 					'text'        => 'Logo, color, type and guidelines.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 				[
@@ -164,7 +165,7 @@ $td_blocks = [
 					'title'       => 'Brand refresh',
 					'text'        => 'An update to an existing identity, keeping what works.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 			],

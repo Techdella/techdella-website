@@ -9,6 +9,7 @@
  * TD Post Type: page
  * TD Slug: about-us
  * TD Title: About us
+ * TD Description: Meet TechDella, a B2B growth marketing agency that runs search, paid ads, lead generation, email and AI automation as one system. See who we are.
  *
  * @package techdella
  */

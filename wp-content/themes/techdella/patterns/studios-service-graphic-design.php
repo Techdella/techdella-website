@@ -8,6 +8,7 @@
  * TD Post Type: studio_service
  * TD Slug: graphic-design
  * TD Title: Graphic design
+ * TD Description: Graphic design from TechDella Studios: campaign graphics, social assets, presentations and sales documents, made on your brand and sized for every channel.
  *
  * @package techdella
  */
@@ -156,7 +157,7 @@ $td_blocks = [
 					'title'       => 'Creative Asset Package',
 					'text'        => 'Campaign graphics, social assets and presentations.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 				[
@@ -164,7 +165,7 @@ $td_blocks = [
 					'title'       => 'Pitch or sales deck',
 					'text'        => 'A presentation designed around your story.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 			],

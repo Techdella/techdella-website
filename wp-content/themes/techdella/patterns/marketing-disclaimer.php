@@ -9,6 +9,7 @@
  * TD Post Type: page
  * TD Slug: disclaimer
  * TD Title: Disclaimer
+ * TD Description: Read the TechDella website disclaimer: the limits of the information, guides, tools and examples on our sites, and how to use them for your own decisions.
  *
  * @package techdella
  */

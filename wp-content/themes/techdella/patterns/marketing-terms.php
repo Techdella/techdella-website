@@ -9,6 +9,7 @@
  * TD Post Type: page
  * TD Slug: terms
  * TD Title: Terms of use
+ * TD Description: Read the TechDella terms of use: the rules for using our websites, free tools and content, including intellectual property and limits of liability.
  *
  * @package techdella
  */

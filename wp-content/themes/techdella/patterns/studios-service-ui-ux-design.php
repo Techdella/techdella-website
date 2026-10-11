@@ -8,6 +8,7 @@
  * TD Post Type: studio_service
  * TD Slug: ui-ux-design
  * TD Title: UI/UX design
+ * TD Description: UI/UX design agency for web apps, dashboards and SaaS: user flows, wireframes and polished screens from TechDella Studios, tested with users before build.
  *
  * @package techdella
  */
@@ -156,7 +157,7 @@ $td_blocks = [
 					'title'       => 'UI/UX Design Sprint',
 					'text'        => 'Flows, wireframes and polished screens.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 				[
@@ -164,7 +165,7 @@ $td_blocks = [
 					'title'       => 'Design system',
 					'text'        => 'Components and tokens for a product that keeps growing.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 			],

@@ -8,6 +8,7 @@
  * TD Post Type: page
  * TD Slug: mvp-calculator
  * TD Title: MVP cost calculator
+ * TD Description: Estimate what your MVP will cost. Our MVP cost calculator is being rebuilt, so tell us about your idea and the Studios team will send a scoped estimate.
  *
  * @package techdella
  */

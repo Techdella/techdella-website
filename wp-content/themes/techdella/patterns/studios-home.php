@@ -8,6 +8,7 @@
  * TD Post Type: page
  * TD Slug: home
  * TD Title: TechDella Studios
+ * TD Description: TechDella Studios designs, builds and automates digital products: MVPs, websites, UI/UX, branding and motion, in clearly scoped, milestone-based projects.
  * TD Front Page: yes
  *
  * @package techdella
@@ -244,7 +245,7 @@ $td_blocks = [
 					'title'       => 'MVP Discovery & Prototype',
 					'text'        => 'Validate the idea with a scoped plan and a clickable prototype.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 				[
@@ -252,7 +253,7 @@ $td_blocks = [
 					'title'       => 'MVP Build',
 					'text'        => 'A working first version, built in milestones.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 				[
@@ -260,7 +261,7 @@ $td_blocks = [
 					'title'       => 'AI Automation Setup',
 					'text'        => 'Automate a defined workflow end to end.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 				[
@@ -268,7 +269,7 @@ $td_blocks = [
 					'title'       => 'UI/UX Design Sprint',
 					'text'        => 'Flows, wireframes and polished screens.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 				[
@@ -276,7 +277,7 @@ $td_blocks = [
 					'title'       => 'Motion Graphics Package',
 					'text'        => 'Explainers, product demos and animated ads.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 				[
@@ -284,7 +285,7 @@ $td_blocks = [
 					'title'       => 'Creative Asset Package',
 					'text'        => 'Campaign graphics, social assets and presentations.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 			],

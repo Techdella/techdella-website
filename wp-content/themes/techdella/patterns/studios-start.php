@@ -8,6 +8,7 @@
  * TD Post Type: page
  * TD Slug: start
  * TD Title: Start a project
+ * TD Description: Start a project with TechDella Studios. Answer four quick questions about your product, stage, budget and timeline, and we'll reply with scope and cost.
  *
  * @package techdella
  */

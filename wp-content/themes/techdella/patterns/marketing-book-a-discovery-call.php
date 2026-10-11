@@ -9,6 +9,7 @@
  * TD Post Type: page
  * TD Slug: book-a-discovery-call
  * TD Title: Book a discovery call
+ * TD Description: Book a discovery call with TechDella. Tell us about your company and growth goals, and we'll come prepared with questions about your market and marketing.
  *
  * @package techdella
  */

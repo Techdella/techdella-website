@@ -9,6 +9,7 @@
  * TD Post Type: page
  * TD Slug: pricing
  * TD Title: Pricing
+ * TD Description: How to work with TechDella: start with a one-time Growth Audit, then a fixed-scope Growth Sprint or monthly Growth Management with clear deliverables.
  *
  * @package techdella
  */

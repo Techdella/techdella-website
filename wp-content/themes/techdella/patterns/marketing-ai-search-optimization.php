@@ -9,6 +9,7 @@
  * TD Post Type: service
  * TD Slug: ai-search-optimization
  * TD Title: AI Search Optimization
+ * TD Description: AI search optimization for B2B brands. We make your company easy for ChatGPT, Perplexity, Gemini and Google AI Overviews to understand and recommend.
  *
  * @package techdella
  */

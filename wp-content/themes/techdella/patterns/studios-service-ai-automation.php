@@ -8,6 +8,7 @@
  * TD Post Type: studio_service
  * TD Slug: ai-automation
  * TD Title: AI automation
+ * TD Description: AI automation agency for repetitive work. We build AI assistants and workflows that connect your forms, CRM, inbox and support tools, with human review.
  *
  * @package techdella
  */
@@ -154,7 +155,7 @@ $td_blocks = [
 					'title'       => 'AI Automation Setup',
 					'text'        => 'Automate a defined workflow end to end.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 				[
@@ -162,7 +163,7 @@ $td_blocks = [
 					'title'       => 'Support assistant',
 					'text'        => 'An AI assistant for customer questions, with human handoff.',
 					'price'       => 'From [PRICE]',
-					'buttonLabel' => 'Start',
+					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 			],

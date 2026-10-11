@@ -8,6 +8,7 @@
  * TD Post Type: page
  * TD Slug: newsletter
  * TD Title: Newsletter
+ * TD Description: Get the TechDella newsletter: one practical idea on SEO, AI search and B2B growth every two weeks, written by the team that does the work. Free to join.
  *
  * @package techdella
  */
