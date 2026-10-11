@@ -10,6 +10,7 @@
  *   * TD Title: Growth audit
  *   * TD Front Page: yes            (optional; sets it as the static front page)
  *   * TD Template: blank            (optional; page template slug saved as _wp_page_template)
+ *   * TD Description: …            (optional; 140–155 chars, saved as Rank Math's meta description)
  *
  * `wp td preview:seed` creates/updates those posts from the pattern markup. On local sites
  * they are published so the site can be browsed; anywhere else they are created as drafts
@@ -22,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Parse the theme's page patterns that declare a TD Slug.
  *
- * @return array<int,array{file:string,site:string,type:string,slug:string,title:string,front:bool,template:string,content:string}>
+ * @return array<int,array{file:string,site:string,type:string,slug:string,title:string,front:bool,template:string,desc:string,content:string}>
  */
 function td_preview_patterns(): array {
 	$out = [];
@@ -36,6 +37,7 @@ function td_preview_patterns(): array {
 				'title'    => 'TD Title',
 				'front'    => 'TD Front Page',
 				'template' => 'TD Template',
+				'desc'     => 'TD Description',
 			]
 		);
 		if ( '' === $head['slug'] || ( '' !== $head['site'] && td_site() !== $head['site'] ) ) {
@@ -52,6 +54,7 @@ function td_preview_patterns(): array {
 			'title'    => $head['title'] ? $head['title'] : $head['slug'],
 			'front'    => 'yes' === strtolower( $head['front'] ),
 			'template' => $head['template'],
+			'desc'     => $head['desc'],
 			'content'  => trim( $content ),
 		];
 	}
@@ -141,6 +144,10 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 					continue;
 				}
 				update_post_meta( (int) $id, '_td_seed_hash', md5( (string) get_post_field( 'post_content', (int) $id ) ) );
+				// Meta description: only fill it when empty, so an editor's wording always wins.
+				if ( '' !== $p['desc'] && '' === (string) get_post_meta( (int) $id, 'rank_math_description', true ) ) {
+					update_post_meta( (int) $id, 'rank_math_description', $p['desc'] );
+				}
 				if ( $p['template'] ) {
 					update_post_meta( (int) $id, '_wp_page_template', $p['template'] );
 				}
