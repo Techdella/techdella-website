@@ -140,7 +140,17 @@ for (const file of files) {
 
 await browser.close();
 if (!preview) {
-	await writeFile(path.join(OUT, 'report.json'), JSON.stringify({ generated_at: new Date().toISOString(), videos: report }, null, '\t'));
+	// Merge with the last report, so rendering one scene keeps the others' rows.
+	let previous = [];
+	try {
+		previous = JSON.parse(await readFile(path.join(OUT, 'report.json'), 'utf8')).videos || [];
+	} catch {
+		previous = [];
+	}
+	const key = (r) => `${r.slug}-${r.format}`;
+	const fresh = new Set(report.map(key));
+	const videos = [...previous.filter((r) => !fresh.has(key(r))), ...report].sort((a, b) => key(a).localeCompare(key(b)));
+	await writeFile(path.join(OUT, 'report.json'), JSON.stringify({ generated_at: new Date().toISOString(), videos }, null, '\t'));
 	// The README travels with the renders so whoever uploads them knows what's what.
 	await copyFile(path.join(HERE, 'README.md'), path.join(OUT, 'README.md')).catch(() => {});
 }
