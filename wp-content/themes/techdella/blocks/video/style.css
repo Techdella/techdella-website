@@ -10,3 +10,4 @@
 .td-video__icon{display:block;width:12px;height:14px;border-left:4px solid currentColor;border-right:4px solid currentColor}
 .td-video__toggle[aria-pressed="true"] .td-video__icon{width:0;height:0;border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent currentColor;margin-left:4px}
 .td-video__caption{font-size:14px;line-height:1.5;color:var(--td-muted)}
+.td-video__toggle[hidden]{display:none}
