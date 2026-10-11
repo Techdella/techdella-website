@@ -24,12 +24,12 @@ $td_b   = static fn( string $name, array $attrs = [], array $inner = [] ): array
 	'innerContent' => array_fill( 0, count( $inner ), null ),
 ];
 $td_div = static function ( string $block, string $css_class, array $inner, string $style = '' ): array {
-	$base = [
+	$base  = [
 		'core/group'   => 'wp-block-group',
 		'core/columns' => 'wp-block-columns',
 		'core/column'  => 'wp-block-column',
 	][ $block ];
-	$open = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
+	$open  = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
 	$attrs = $css_class ? [ 'className' => $css_class ] : [];
 	return [
 		'blockName'    => $block,
@@ -92,11 +92,26 @@ $td_blocks = [
 							'style' => 'checks',
 							'bare'  => true,
 							'items' => [
-								[ 'title' => 'Technical SEO review:', 'text' => 'indexing, structure, speed, on-page.' ],
-								[ 'title' => 'AI search check:', 'text' => 'how often you’re mentioned for buyer prompts.' ],
-								[ 'title' => 'Paid ads & funnel review:', 'text' => 'Google, Meta, landing pages, email follow-up.' ],
-								[ 'title' => 'Tracking check:', 'text' => 'analytics, conversions and CRM source data.' ],
-								[ 'title' => 'Prioritized roadmap:', 'text' => 'every fix ranked by impact and effort, plus a walkthrough call with your team.' ],
+								[
+									'title' => 'Technical SEO review:',
+									'text'  => 'indexing, structure, speed, on-page.',
+								],
+								[
+									'title' => 'AI search check:',
+									'text'  => 'how often you’re mentioned for buyer prompts.',
+								],
+								[
+									'title' => 'Paid ads & funnel review:',
+									'text'  => 'Google, Meta, landing pages, email follow-up.',
+								],
+								[
+									'title' => 'Tracking check:',
+									'text'  => 'analytics, conversions and CRM source data.',
+								],
+								[
+									'title' => 'Prioritized roadmap:',
+									'text'  => 'every fix ranked by impact and effort, plus a walkthrough call with your team.',
+								],
 							],
 						]
 					),
@@ -127,9 +142,18 @@ $td_blocks = [
 			'intro' => 'After you send the form, three things happen.',
 			'style' => 'numbered',
 			'items' => [
-				[ 'title' => 'We confirm fit', 'text' => 'We review your site and confirm the audit is a good fit.' ],
-				[ 'title' => 'You get a scope', 'text' => 'A short scoping email with the fee and timeline.' ],
-				[ 'title' => 'We deliver & walk through', 'text' => 'We deliver the audit and walk your team through the roadmap.' ],
+				[
+					'title' => 'We confirm fit',
+					'text'  => 'We review your site and confirm the audit is a good fit.',
+				],
+				[
+					'title' => 'You get a scope',
+					'text'  => 'A short scoping email with the fee and timeline.',
+				],
+				[
+					'title' => 'We deliver & walk through',
+					'text'  => 'We deliver the audit and walk your team through the roadmap.',
+				],
 			],
 		]
 	),
@@ -138,10 +162,22 @@ $td_blocks = [
 		[
 			'title' => 'Common *questions*',
 			'items' => [
-				[ 'question' => 'Who is this for?', 'answer' => 'Established B2B SaaS and professional service firms with an existing website, content and marketing budget.' ],
-				[ 'question' => 'Do you guarantee rankings or AI citations?', 'answer' => 'No. Nobody honestly can. We guarantee a clear diagnosis and a roadmap built on evidence.' ],
-				[ 'question' => 'What happens after the audit?', 'answer' => 'Implement it yourselves, or work with us in a fixed-scope Growth Sprint.' ],
-				[ 'question' => 'What access do you need?', 'answer' => 'Read access to Google Search Console and GA4, and to your ad accounts if you run ads. We confirm the list in the scoping email and never need passwords to your website.' ],
+				[
+					'question' => 'Who is this for?',
+					'answer'   => 'Established B2B SaaS and professional service firms with an existing website, content and marketing budget.',
+				],
+				[
+					'question' => 'Do you guarantee rankings or AI citations?',
+					'answer'   => 'No. Nobody honestly can. We guarantee a clear diagnosis and a roadmap built on evidence.',
+				],
+				[
+					'question' => 'What happens after the audit?',
+					'answer'   => 'Implement it yourselves, or work with us in a fixed-scope Growth Sprint.',
+				],
+				[
+					'question' => 'What access do you need?',
+					'answer'   => 'Read access to Google Search Console and GA4, and to your ad accounts if you run ads. We confirm the list in the scoping email and never need passwords to your website.',
+				],
 			],
 		]
 	),

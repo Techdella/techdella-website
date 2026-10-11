@@ -24,12 +24,12 @@ $td_b   = static fn( string $name, array $attrs = [], array $inner = [] ): array
 	'innerContent' => array_fill( 0, count( $inner ), null ),
 ];
 $td_div = static function ( string $block, string $css_class, array $inner, string $style = '' ): array {
-	$base = [
+	$base  = [
 		'core/group'   => 'wp-block-group',
 		'core/columns' => 'wp-block-columns',
 		'core/column'  => 'wp-block-column',
 	][ $block ];
-	$open = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
+	$open  = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
 	$attrs = $css_class ? [ 'className' => $css_class ] : [];
 	return [
 		'blockName'    => $block,
@@ -72,11 +72,32 @@ $td_blocks = [
 			'secondaryUrl'   => '#included',
 			'platformsLabel' => 'AI platforms we optimize for',
 			'platforms'      => [
-				[ 'name' => 'ChatGPT', 'mark' => 'C', 'slug' => 'chatgpt', 'ink' => true ],
-				[ 'name' => 'Perplexity', 'mark' => 'P', 'slug' => 'perplexity' ],
-				[ 'name' => 'AI Overviews', 'mark' => 'G', 'slug' => 'google-ai-overviews' ],
-				[ 'name' => 'Gemini', 'mark' => 'Ge', 'slug' => 'gemini' ],
-				[ 'name' => 'Copilot', 'mark' => 'Co', 'slug' => 'copilot' ],
+				[
+					'name' => 'ChatGPT',
+					'mark' => 'C',
+					'slug' => 'chatgpt',
+					'ink'  => true,
+				],
+				[
+					'name' => 'Perplexity',
+					'mark' => 'P',
+					'slug' => 'perplexity',
+				],
+				[
+					'name' => 'AI Overviews',
+					'mark' => 'G',
+					'slug' => 'google-ai-overviews',
+				],
+				[
+					'name' => 'Gemini',
+					'mark' => 'Ge',
+					'slug' => 'gemini',
+				],
+				[
+					'name' => 'Copilot',
+					'mark' => 'Co',
+					'slug' => 'copilot',
+				],
 			],
 		],
 		[
@@ -86,7 +107,10 @@ $td_blocks = [
 					'question' => 'Which firms help fintechs with data protection compliance?',
 					'answer'   => 'Firms frequently recommended for fintech compliance include *YourCo*[1], known for NDPA and GDPR programs, and two others…',
 					'sources'  => [
-						[ 'label' => 'yourcompany.com', 'own' => true ],
+						[
+							'label' => 'yourcompany.com',
+							'own'   => true,
+						],
 						[ 'label' => 'industry directory' ],
 						[ 'label' => 'news article' ],
 					],
@@ -107,10 +131,22 @@ $td_blocks = [
 					'bare'    => true,
 					'columns' => 4,
 					'items'   => [
-						[ 'title' => '20 [CONFIRM]', 'text' => 'buyer prompts tracked each month' ],
-						[ 'title' => '5', 'text' => 'AI platforms monitored' ],
-						[ 'title' => '1', 'text' => 'clear monthly visibility report' ],
-						[ 'title' => '0', 'text' => 'fake guarantees' ],
+						[
+							'title' => '20 [CONFIRM]',
+							'text'  => 'buyer prompts tracked each month',
+						],
+						[
+							'title' => '5',
+							'text'  => 'AI platforms monitored',
+						],
+						[
+							'title' => '1',
+							'text'  => 'clear monthly visibility report',
+						],
+						[
+							'title' => '0',
+							'text'  => 'fake guarantees',
+						],
 					],
 				]
 			),
@@ -124,10 +160,22 @@ $td_blocks = [
 			'intro' => 'AI tools recommend brands they can describe with confidence. Four signals do most of the work.',
 			'style' => 'rule',
 			'items' => [
-				[ 'title' => 'Clearly described', 'text' => 'Your site says plainly what you do, for whom, and where.' ],
-				[ 'title' => 'Mentioned elsewhere', 'text' => 'Credible directories, reviews and articles reference you.' ],
-				[ 'title' => 'Directly useful', 'text' => 'Your pages answer real buyer questions, answer-first.' ],
-				[ 'title' => 'Consistent', 'text' => 'Your name, services and details match everywhere.' ],
+				[
+					'title' => 'Clearly described',
+					'text'  => 'Your site says plainly what you do, for whom, and where.',
+				],
+				[
+					'title' => 'Mentioned elsewhere',
+					'text'  => 'Credible directories, reviews and articles reference you.',
+				],
+				[
+					'title' => 'Directly useful',
+					'text'  => 'Your pages answer real buyer questions, answer-first.',
+				],
+				[
+					'title' => 'Consistent',
+					'text'  => 'Your name, services and details match everywhere.',
+				],
 			],
 		]
 	),
@@ -141,12 +189,38 @@ $td_blocks = [
 			'surface' => 'canvas',
 			'columns' => 3,
 			'items'   => [
-				[ 'icon' => 'search', 'title' => 'AI visibility audit', 'text' => 'We test your buyers’ questions across AI platforms and map who gets cited, and why.' ],
-				[ 'icon' => 'list', 'title' => 'Prompt research & tracking', 'text' => 'We build your list of buyer prompts and track your share of mentions every month.' ],
-				[ 'icon' => 'person', 'tone' => 'sand', 'title' => 'Entity & brand clarity', 'text' => 'Schema, About pages and consistent profiles so AI knows exactly who you are.' ],
-				[ 'icon' => 'lines', 'title' => 'Answer-first content', 'text' => 'We restructure key pages so AI tools can quote them clearly.' ],
-				[ 'icon' => 'chat', 'title' => 'Digital PR & credible mentions', 'text' => 'Getting you listed and quoted in the sources AI tools trust.' ],
-				[ 'icon' => 'chart', 'tone' => 'dark', 'title' => 'AI visibility reporting', 'text' => 'Share of mentions, competitor comparison and next actions, monthly.' ],
+				[
+					'icon'  => 'search',
+					'title' => 'AI visibility audit',
+					'text'  => 'We test your buyers’ questions across AI platforms and map who gets cited, and why.',
+				],
+				[
+					'icon'  => 'list',
+					'title' => 'Prompt research & tracking',
+					'text'  => 'We build your list of buyer prompts and track your share of mentions every month.',
+				],
+				[
+					'icon'  => 'person',
+					'tone'  => 'sand',
+					'title' => 'Entity & brand clarity',
+					'text'  => 'Schema, About pages and consistent profiles so AI knows exactly who you are.',
+				],
+				[
+					'icon'  => 'lines',
+					'title' => 'Answer-first content',
+					'text'  => 'We restructure key pages so AI tools can quote them clearly.',
+				],
+				[
+					'icon'  => 'chat',
+					'title' => 'Digital PR & credible mentions',
+					'text'  => 'Getting you listed and quoted in the sources AI tools trust.',
+				],
+				[
+					'icon'  => 'chart',
+					'tone'  => 'dark',
+					'title' => 'AI visibility reporting',
+					'text'  => 'Share of mentions, competitor comparison and next actions, monthly.',
+				],
 			],
 		]
 	),
@@ -157,12 +231,42 @@ $td_blocks = [
 			'intro'   => 'AI tools lean on ranked pages and credible mentions. When buyers find you there, the rest of your system takes over.',
 			'current' => '/services/ai-search-optimization/',
 			'items'   => [
-				[ 'relation' => 'Foundation', 'title' => 'SEO', 'text' => 'Ranked pages are what AI cites.', 'url' => '/services/seo/' ],
-				[ 'relation' => 'You are here', 'title' => 'AI Search', 'text' => 'Gets your brand recommended.', 'url' => '/services/ai-search-optimization/' ],
-				[ 'relation' => 'Reinforces', 'title' => 'Paid ads', 'text' => 'Retarget people who discovered you.', 'url' => '/services/paid-ads/' ],
-				[ 'relation' => 'Converts', 'title' => 'Lead generation', 'text' => 'Turn AI referrals into leads.', 'url' => '/services/lead-generation/' ],
-				[ 'relation' => 'Nurtures', 'title' => 'Email', 'text' => 'Keep researchers warm.', 'url' => '/services/email-marketing/' ],
-				[ 'relation' => 'Follows up', 'title' => 'AI automation', 'text' => 'Instant reply to every inquiry.', 'url' => '/services/marketing-automation/' ],
+				[
+					'relation' => 'Foundation',
+					'title'    => 'SEO',
+					'text'     => 'Ranked pages are what AI cites.',
+					'url'      => '/services/seo/',
+				],
+				[
+					'relation' => 'You are here',
+					'title'    => 'AI Search',
+					'text'     => 'Gets your brand recommended.',
+					'url'      => '/services/ai-search-optimization/',
+				],
+				[
+					'relation' => 'Reinforces',
+					'title'    => 'Paid ads',
+					'text'     => 'Retarget people who discovered you.',
+					'url'      => '/services/paid-ads/',
+				],
+				[
+					'relation' => 'Converts',
+					'title'    => 'Lead generation',
+					'text'     => 'Turn AI referrals into leads.',
+					'url'      => '/services/lead-generation/',
+				],
+				[
+					'relation' => 'Nurtures',
+					'title'    => 'Email',
+					'text'     => 'Keep researchers warm.',
+					'url'      => '/services/email-marketing/',
+				],
+				[
+					'relation' => 'Follows up',
+					'title'    => 'AI automation',
+					'text'     => 'Instant reply to every inquiry.',
+					'url'      => '/services/marketing-automation/',
+				],
 			],
 		]
 	),
@@ -178,10 +282,22 @@ $td_blocks = [
 							'bare'    => true,
 							'columns' => 2,
 							'items'   => [
-								[ 'title' => 'Benchmark', 'text' => 'Your share of mentions today.' ],
-								[ 'title' => 'Fix foundations', 'text' => 'Clarity, schema and answer-first pages.' ],
-								[ 'title' => 'Earn mentions', 'text' => 'Directories, PR and partner content.' ],
-								[ 'title' => 'Track & report', 'text' => 'Monthly visibility trend and next steps.' ],
+								[
+									'title' => 'Benchmark',
+									'text'  => 'Your share of mentions today.',
+								],
+								[
+									'title' => 'Fix foundations',
+									'text'  => 'Clarity, schema and answer-first pages.',
+								],
+								[
+									'title' => 'Earn mentions',
+									'text'  => 'Directories, PR and partner content.',
+								],
+								[
+									'title' => 'Track & report',
+									'text'  => 'Monthly visibility trend and next steps.',
+								],
 							],
 						]
 					),
@@ -208,11 +324,26 @@ $td_blocks = [
 		[
 			'title' => 'AI search *questions*',
 			'items' => [
-				[ 'question' => 'What are AEO and GEO?', 'answer' => 'Answer engine optimization and generative engine optimization. Both describe making your brand easy for AI tools to understand, trust and recommend.' ],
-				[ 'question' => 'Can you guarantee ChatGPT will mention us?', 'answer' => 'No. AI answers change from query to query. We improve the signals AI relies on and report your share of mentions honestly over time.' ],
-				[ 'question' => 'How do you measure AI visibility?', 'answer' => 'We track a fixed set of buyer prompts across AI platforms every month and report the share of answers that mention or cite you, alongside traffic and leads.' ],
-				[ 'question' => 'Do we still need SEO?', 'answer' => 'Yes. Many AI answers draw on ranked web pages, so strong SEO makes AI optimization more effective.' ],
-				[ 'question' => 'What is llms.txt, and do we need one?', 'answer' => 'llms.txt is a short plain-text summary of your site for AI tools: who you are, your services and key pages. It’s quick to add, and we include it in the foundations work.' ],
+				[
+					'question' => 'What are AEO and GEO?',
+					'answer'   => 'Answer engine optimization and generative engine optimization. Both describe making your brand easy for AI tools to understand, trust and recommend.',
+				],
+				[
+					'question' => 'Can you guarantee ChatGPT will mention us?',
+					'answer'   => 'No. AI answers change from query to query. We improve the signals AI relies on and report your share of mentions honestly over time.',
+				],
+				[
+					'question' => 'How do you measure AI visibility?',
+					'answer'   => 'We track a fixed set of buyer prompts across AI platforms every month and report the share of answers that mention or cite you, alongside traffic and leads.',
+				],
+				[
+					'question' => 'Do we still need SEO?',
+					'answer'   => 'Yes. Many AI answers draw on ranked web pages, so strong SEO makes AI optimization more effective.',
+				],
+				[
+					'question' => 'What is llms.txt, and do we need one?',
+					'answer'   => 'llms.txt is a short plain-text summary of your site for AI tools: who you are, your services and key pages. It’s quick to add, and we include it in the foundations work.',
+				],
 			],
 		]
 	),
