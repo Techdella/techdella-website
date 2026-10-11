@@ -116,6 +116,16 @@ Talk to TechDella about your growth plan. We'll help you see which marketing wor
 [CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
 :::
 
+## How to hire your first employees well
+
+When a role is ready to become full-time, a simple process avoids most early-hire regrets:
+
+- **Write a scorecard, not a job description.** List the three outcomes the person must deliver in their first six months.
+- **Use a paid work sample.** A short, realistic task shows more than any interview answer.
+- **Check references properly.** Ask former managers what the person needed help with, not just what they did well.
+- **Agree a 90-day plan.** Clear goals for the first three months, with a check-in every two weeks.
+- **Offer equity carefully.** If you grant shares or options, use proper documents with vesting so ownership matches contribution.
+
 ## Build culture before you hire
 
 Culture in a five-person startup is just how you work. Write it down early:

@@ -1,5 +1,5 @@
 ---
-title: "Fractional Teams for Startups: Freelancers, Agencies, Leaders"
+title: "Fractional Team for Startups: How to Build One"
 slug: fractional-team-for-startups
 type: business
 site: marketing
@@ -11,7 +11,7 @@ audience: "Early-stage founders in the US, UK and Nigeria who want senior skills
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "A fractional team for startups combines freelancers for specific tasks, agencies for ongoing execution, and fractional leaders (part-time CTO, CMO, CFO or COO) for strategy. It gives you senior skills at a fraction of full-time cost. It works when every person has a clear scope, an owner on your side and shared documentation."
-rank_math_description: "Fractional teams for startups: when to use freelancers, agencies and part-time CTOs, CMOs or CFOs, what it costs, how to manage it, and the mistakes to avoid."
+rank_math_description: "Fractional teams for startups: when to use freelancers, agencies and part-time CTOs, CMOs or CFOs, what it costs, and the mistakes to avoid."
 internal_links:
   - /book-a-discovery-call/
   - /business/how-to-build-a-startup-team/
@@ -99,6 +99,16 @@ Compare a full-time marketing head and a full-time developer at a combined loade
 :::cta "Want senior marketing direction without a full-time hire?" "Book a discovery call" /book-a-discovery-call/
 Talk to TechDella about positioning, channels and a growth plan your team and partners can execute.
 :::
+
+## How to choose the right partners
+
+Picking a freelancer, agency or fractional leader is a hiring decision, so treat it like one:
+
+- **Ask for work at your stage.** Someone who has only worked with large companies may struggle with a five-person startup's pace and budget.
+- **Check references.** Speak to two past clients and ask what went wrong as well as what went right.
+- **Start with a paid trial.** A small, scoped project shows how they communicate, meet deadlines and handle feedback.
+- **Agree how you'll measure success.** Outcomes and a reporting rhythm, written down before work starts.
+- **Plan the exit.** Notice periods, handover of files and accounts, and documentation at the end of every engagement.
 
 ## Country notes: contracts, tax and status
 
