@@ -6,6 +6,8 @@
 //
 // CSS order: tokens → base → components (assets/css/*.css) → every block's style.css.
 // JS: assets/js/main.js + every block's view.js, bundled as one IIFE.
+// Free tools (§12.1): each blocks/tool-<name>/tool.js is its own bundle (assets/build/tools/<name>.js),
+// enqueued only on that tool's page, so the shared main.js stays small.
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync, watch, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { gzipSync } from 'node:zlib';
@@ -21,6 +23,7 @@ const CHECK = args.has('--check');
 
 // §2.3 / §8.4 budgets (gzipped bytes).
 const BUDGET = { 'main.js': 25 * 1024, 'main.css': 45 * 1024, 'core.css': 20 * 1024 };
+const TOOL_BUDGET = 10 * 1024; // per tools/<name>.js; with main.js stays well under the 60 KB first-load JS budget (§8.4)
 
 // Last two years of evergreen browsers, roughly "> 0.5%, not dead".
 const targets = browserslistToTargets(['chrome 109', 'edge 109', 'firefox 115', 'safari 15.4', 'ios_saf 15.4']);
@@ -78,9 +81,9 @@ async function buildJs(entries, name) {
 
 function report(name, buf) {
   const gz = gzipSync(buf).length;
-  const budget = BUDGET[name];
+  const budget = BUDGET[name] || (name.startsWith('tools/') ? TOOL_BUDGET : 0);
   const over = budget && gz > budget;
-  console.log(`  ${over ? '✗' : '✓'} ${name.padEnd(12)} ${(buf.length / 1024).toFixed(1).padStart(6)} KB  ${(gz / 1024).toFixed(1).padStart(5)} KB gz${budget ? `  (budget ${budget / 1024} KB)` : ''}`);
+  console.log(`  ${over ? '✗' : '✓'} ${name.padEnd(name.startsWith('tools/') ? 40 : 12)} ${(buf.length / 1024).toFixed(1).padStart(6)} KB  ${(gz / 1024).toFixed(1).padStart(5)} KB gz${budget ? `  (budget ${budget / 1024} KB)` : ''}`);
   return !over;
 }
 
@@ -100,6 +103,10 @@ async function build() {
 
   const views = blockDirs().map((d) => join(d, 'view.js')).filter(existsSync);
   outputs['main.js'] = await buildJs([join(THEME, 'assets/js/main.js'), ...views].filter(existsSync), 'main.js');
+  for (const d of blockDirs()) {
+    const f = join(d, 'tool.js');
+    if (existsSync(f)) outputs[`tools/${d.split('/').pop().replace(/^tool-/, '')}.js`] = await buildJs([f], 'tool.js');
+  }
   const editorJs = join(THEME, 'assets/js/editor.js');
   if (existsSync(editorJs)) outputs['editor.js'] = await buildJs([editorJs], 'editor.js');
 
@@ -108,6 +115,7 @@ async function build() {
   console.log(`  ✓ blocks/*.css   ${Object.keys(outputs).filter((n) => n.startsWith('blocks/')).length} per-block files`);
   if (!CHECK) {
     mkdirSync(join(OUT, 'blocks'), { recursive: true });
+    mkdirSync(join(OUT, 'tools'), { recursive: true });
     for (const [name, buf] of Object.entries(outputs)) writeFileSync(join(OUT, name), buf);
     writeFileSync(
       join(OUT, 'manifest.json'),

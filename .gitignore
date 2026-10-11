@@ -23,3 +23,6 @@ docker/cache/**
 !docker/cache/plugins/.gitkeep
 docker-compose.override.yml
 previews/
+
+# Rendered lead-magnet PDFs (npm run pdf)
+pdf/out/

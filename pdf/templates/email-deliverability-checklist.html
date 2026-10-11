@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Email Deliverability Checklist: SPF, DKIM, DMARC and Sender Rules | TechDella</title>
+<meta name="author" content="TechDella">
+<meta name="description" content="A six-page checklist for B2B teams: authenticate your domain, meet the Gmail, Yahoo and Outlook bulk-sender rules, and keep complaint rates low.">
+<meta name="subject" content="Email deliverability">
+<meta name="keywords" content="SPF, DKIM, DMARC, BIMI, bulk sender requirements, email deliverability">
+<meta name="td-pdf-id" content="PDF-04">
+<meta name="td-service" content="https://techdella.com/services/email-marketing/">
+<link rel="stylesheet" href="brand.css">
+<style>
+@page{
+  @top-right{content:"Email Deliverability Checklist";font:400 7.5pt "Geist",sans-serif;color:#6B6560;vertical-align:bottom;padding-bottom:4mm;}
+  @bottom-left{content:"techdella.com/services/email-marketing/  ·  Want a second pair of eyes? Request a growth audit at techdella.com/growth-audit/";font:400 7.5pt "Geist",sans-serif;color:#6B6560;vertical-align:top;padding-top:5mm;}
+}
+</style>
+</head>
+<body>
+<main class="doc">
+
+<section class="cover" aria-label="Cover">
+  <img class="cover__logo" src="../../assets/images/brand/techdella-logo.png" alt="TechDella">
+  <div class="cover__arch">
+    <p class="cover__meta">PDF-04 · Checklist</p>
+    <h1>Email deliverability, <span class="accent">checked.</span></h1>
+    <p class="cover__sub">SPF, DKIM, DMARC and the Gmail, Yahoo and Outlook sender rules, as a checklist you can work through with whoever manages your DNS.</p>
+    <dl class="cover__facts">
+      <div><dt>For</dt><dd>B2B teams sending newsletters, nurture and sales email</dd></div>
+      <div><dt>Time</dt><dd>About 60 minutes, plus DNS changes</dd></div>
+      <div><dt>You need</dt><dd>DNS access and admin access to each sending tool</dd></div>
+    </dl>
+  </div>
+  <div class="cover__foot">
+    <span><strong>techdella.com</strong>/services/email-marketing/</span>
+    <span>Version: October 2026. Rules change: check the sources on the last page.</span>
+  </div>
+</section>
+
+<section class="pg" aria-labelledby="rules">
+  <span class="chip">Start here</span>
+  <h2 id="rules">The rules in one page</h2>
+  <p class="lead">If you send marketing email to Gmail, Yahoo or Outlook.com addresses, your domain needs SPF, DKIM and DMARC, one-click unsubscribe, and a low spam-complaint rate. Bulk senders that miss these see mail filtered to spam or rejected.</p>
+  <p>Treat the strictest column as the standard for every message you send: mailbox filters do not know which of your emails were "marketing".</p>
+
+  <table>
+    <caption>Requirements by mailbox provider</caption>
+    <thead><tr><th>Requirement</th><th>Gmail (Google)</th><th>Yahoo</th><th>Outlook.com (Microsoft)</th></tr></thead>
+    <tbody>
+      <tr><th>Who counts as a bulk sender</th><td>Close to 5,000 or more messages to personal Gmail accounts in 24 hours. Once you qualify, you stay qualified.</td><td>Applies its bulk rules to high-volume senders; no fixed public number <span class="confirm">[CONFIRM: current Yahoo threshold]</span></td><td>More than 5,000 messages a day to Outlook.com, Hotmail.com and Live.com addresses</td></tr>
+      <tr><th>SPF</th><td>All senders: SPF or DKIM. Bulk: both</td><td>Required</td><td>Required (pass)</td></tr>
+      <tr><th>DKIM</th><td>Bulk: required</td><td>Required</td><td>Required (pass)</td></tr>
+      <tr><th>DMARC</th><td>Bulk: a DMARC record, policy can be <code>p=none</code>; From domain aligned with SPF or DKIM</td><td>Required, <code>p=none</code> minimum, aligned</td><td>Required, <code>p=none</code> minimum, aligned with SPF or DKIM</td></tr>
+      <tr><th>One-click unsubscribe</th><td>Bulk marketing mail: <code>List-Unsubscribe</code> + <code>List-Unsubscribe-Post</code> (RFC 8058); honor within 2 days</td><td>Required; honor within 2 days</td><td>Functional unsubscribe link expected</td></tr>
+      <tr><th>Spam-complaint rate</th><td>Keep below 0.3% in Postmaster Tools; Google advises staying under 0.10%</td><td>Keep below 0.3%</td><td>Not published as a number</td></tr>
+      <tr><th>Other</th><td>Valid forward and reverse DNS (PTR) for sending IPs; TLS; messages formatted to RFC 5322; do not impersonate Gmail From headers</td><td>Valid PTR; RFC 5322 format</td><td>Non-compliant mail goes to Junk, then is rejected <span class="confirm">[CONFIRM: current enforcement stage]</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <p class="callout__title">What this means in practice</p>
+    <p>Your email platform and your inbox provider (Google Workspace or Microsoft 365) both send as your domain. Each needs to be in SPF, sign with DKIM on your domain, and pass DMARC alignment. The usual culprit is a tool added later and never authenticated. List every sender in the sender inventory (page 6) before you touch DNS.</p>
+  </div>
+
+</section>
+
+<section class="pg" aria-labelledby="spf">
+  <span class="chip">Authenticate</span>
+  <h2 id="spf">SPF and DKIM</h2>
+  <p class="lead">SPF lists the servers allowed to send for your domain. DKIM signs each message so the receiver can check it was not changed and really came from you. You need both.</p>
+
+  <h3>SPF checklist</h3>
+  <ul class="check">
+    <li><span class="box">☐</span> <strong>Exactly one SPF record</strong> on the domain (a TXT record starting <code>v=spf1</code>). <span class="why">Two SPF records make SPF fail with a permanent error (RFC 7208). Merge them into one.</span></li>
+    <li><span class="box">☐</span> <strong>Every sending service from your list is included</strong>, using the include value from that service's own setup guide. <span class="why">Copy it from the vendor's documentation, not from a blog post: vendors change these values.</span></li>
+    <li><span class="box">☐</span> <strong>Ten DNS lookups or fewer.</strong> <span class="why">Each <code>include</code>, <code>a</code>, <code>mx</code>, <code>ptr</code>, <code>exists</code> and <code>redirect</code> counts, including nested ones. Over ten and SPF returns an error (RFC 7208, section 4.6.4). Remove services you no longer use before you consider flattening.</span></li>
+    <li><span class="box">☐</span> <strong>The record ends in <code>~all</code> or <code>-all</code></strong>, never <code>+all</code>. <span class="why"><code>+all</code> authorizes the whole internet to send as you.</span></li>
+    <li><span class="box">☐</span> <strong>The Return-Path (envelope sender) of your marketing platform uses your domain</strong> or a subdomain of it, so SPF can align with your From address. <span class="why">Many platforms call this a "custom return path" or "custom bounce domain".</span></li>
+    <li><span class="box">☐</span> <strong>Domains that never send email have a "null" SPF record</strong>: <code>v=spf1 -all</code>. <span class="why">Pair it with a DMARC <code>p=reject</code> record so parked domains cannot be spoofed.</span></li>
+  </ul>
+  <pre>Example (replace with your vendors' values)
+example.com.  TXT  "v=spf1 include:_spf.google.com include:[your-email-platform] ~all"</pre>
+
+  <h3>DKIM checklist</h3>
+  <ul class="check">
+    <li><span class="box">☐</span> <strong>Each sending service signs with your domain</strong> (<code>d=example.com</code> or a subdomain), not the vendor's shared domain. <span class="why">This is what lets DKIM align for DMARC. Check a received message: "Show original" in Gmail shows the <code>d=</code> value.</span></li>
+    <li><span class="box">☐</span> <strong>2048-bit keys</strong> where the provider supports them. <span class="why">Google recommends 2048-bit DKIM keys in its Workspace setup guide.</span></li>
+    <li><span class="box">☐</span> <strong>One selector per service</strong>, named so you can tell them apart (for example <code>google._domainkey</code>, <code>sb1._domainkey</code>). <span class="why">You can then rotate or revoke one service's key without touching the others.</span></li>
+    <li><span class="box">☐</span> <strong>A rotation date is on the calendar</strong> for keys you manage yourself. <span class="why">Pick a cadence your team can keep (for example once a year) and write down who owns it.</span></li>
+    <li><span class="box">☐</span> <strong>Test after every change</strong>: send to a Gmail and an Outlook.com address and confirm <code>spf=pass</code>, <code>dkim=pass</code> and <code>dmarc=pass</code> in the headers.</li>
+  </ul>
+</section>
+
+<section class="pg" aria-labelledby="dmarc">
+  <span class="chip">Protect</span>
+  <h2 id="dmarc">DMARC and BIMI</h2>
+  <p class="lead">DMARC tells receivers what to do when a message claiming to be from your domain fails SPF and DKIM alignment, and sends you reports about who is sending as you. Start in monitoring mode, read the reports, then tighten.</p>
+
+  <h3>DMARC checklist</h3>
+  <ul class="check">
+    <li><span class="box">☐</span> <strong>A DMARC record exists</strong> at <code>_dmarc.example.com</code>. <span class="why">The bulk-sender rules accept <code>p=none</code>, which only monitors.</span></li>
+    <li><span class="box">☐</span> <strong>Aggregate reports go to a mailbox or tool someone reads</strong> (<code>rua=mailto:…</code>). <span class="why">Raw reports are XML. A DMARC reporting tool turns them into a list of sending sources.</span></li>
+    <li><span class="box">☐</span> <strong>Every legitimate source in the reports passes aligned SPF or DKIM.</strong> <span class="why">Fix unknown or failing sources before you move past <code>p=none</code>.</span></li>
+    <li><span class="box">☐</span> <strong>Move to <code>p=quarantine</code>, then <code>p=reject</code></strong> once reports show only legitimate, passing mail. <span class="why">You can stage the change with <code>pct=</code> (for example 25, then 100). Leave a few weeks between steps and keep reading the reports.</span></li>
+    <li><span class="box">☐</span> <strong>Subdomains are covered</strong>, either by the parent policy or their own <code>sp=</code> / record. <span class="why">Attackers often spoof subdomains you forgot existed.</span></li>
+  </ul>
+  <pre>Stage 1, monitor:   _dmarc.example.com  TXT  "v=DMARC1; p=none; rua=mailto:dmarc@example.com"
+Stage 2, quarantine: _dmarc.example.com  TXT  "v=DMARC1; p=quarantine; pct=25; rua=mailto:dmarc@example.com"
+Stage 3, reject:     _dmarc.example.com  TXT  "v=DMARC1; p=reject; rua=mailto:dmarc@example.com"</pre>
+
+  <h3>BIMI (optional, after DMARC enforcement)</h3>
+  <p>BIMI shows your logo next to messages in supporting inboxes. It is not a ranking factor for the inbox, but it does reward the work above.</p>
+  <ul class="check">
+    <li><span class="box">☐</span> <strong>DMARC is at enforcement</strong>: <code>p=quarantine</code> or <code>p=reject</code>. <span class="why">BIMI does not work with <code>p=none</code>. Check the BIMI Group's current requirements for <code>pct</code>.</span></li>
+    <li><span class="box">☐</span> <strong>Your logo is an SVG in the SVG Tiny Portable/Secure (SVG Tiny PS) profile</strong>, square, hosted over HTTPS.</li>
+    <li><span class="box">☐</span> <strong>You have decided whether you need a certificate.</strong> <span class="why">Gmail shows BIMI logos only with a Verified Mark Certificate (VMC, needs a registered trademark) or a Common Mark Certificate (CMC). <span class="confirm">[CONFIRM: current CMC eligibility rules with the certificate issuer]</span></span></li>
+    <li><span class="box">☐</span> <strong>A BIMI TXT record</strong> at <code>default._bimi.example.com</code> points to the SVG (<code>l=</code>) and certificate (<code>a=</code>).</li>
+  </ul>
+</section>
+
+<section class="pg" aria-labelledby="practice">
+  <span class="chip">Send well</span>
+  <h2 id="practice">List, content and sending practice</h2>
+  <p class="lead">Authentication proves who you are. Whether you reach the inbox after that depends mostly on whether people want your email: complaints, engagement and list quality.</p>
+
+  <div class="cols">
+    <div>
+      <h3>List quality</h3>
+      <ul class="check">
+        <li><span class="box">☐</span> <strong>Every contact opted in</strong>, and you can show when and where. <span class="why">Store the form, page and timestamp with the contact.</span></li>
+        <li><span class="box">☐</span> <strong>Marketing consent is a separate, unticked checkbox</strong> where the law requires it (for example the EU and UK).</li>
+        <li><span class="box">☐</span> <strong>No bought, rented or scraped lists.</strong></li>
+        <li><span class="box">☐</span> <strong>Hard bounces are suppressed automatically.</strong></li>
+        <li><span class="box">☐</span> <strong>A sunset rule</strong> removes or re-permissions people who have not engaged in a set period you choose (for example 6 months). <span class="why">Apple Mail Privacy Protection inflates opens, so use clicks and replies as engagement signals too.</span></li>
+        <li><span class="box">☐</span> <strong>Cold outreach runs from a separate subdomain or domain</strong>, never the domain your customers and newsletter rely on.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Sending practice</h3>
+      <ul class="check">
+        <li><span class="box">☐</span> <strong>New domains and IPs are warmed up</strong>: start with your most engaged contacts and raise volume gradually over several weeks. <span class="why">Your email platform's warm-up guide sets the exact schedule for its infrastructure.</span></li>
+        <li><span class="box">☐</span> <strong>Volume is steady.</strong> <span class="why">Sudden spikes (a quarterly blast to everyone) look like spam behavior.</span></li>
+        <li><span class="box">☐</span> <strong>Marketing and transactional mail use different subdomains or streams</strong>, so a bad campaign does not delay password resets or invoices.</li>
+        <li><span class="box">☐</span> <strong>The From name and address are consistent</strong> and a real person can receive replies.</li>
+        <li><span class="box">☐</span> <strong>Unsubscribe is one click</strong> and visible in the body as well as the header.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Monitoring</h3>
+  <ul class="check">
+    <li><span class="box">☐</span> <strong>Google Postmaster Tools</strong> is set up for your domain; someone checks the spam rate and compliance status weekly.</li>
+    <li><span class="box">☐</span> <strong>Microsoft SNDS</strong> is set up if you send from dedicated IPs.</li>
+    <li><span class="box">☐</span> <strong>Your domain and sending IPs are not on major blocklists.</strong> <span class="why">Check monthly and after any spike in bounces.</span></li>
+    <li><span class="box">☐</span> <strong>A weekly deliverability row</strong> in your reporting: sent, delivered, bounce rate, complaint rate, click rate, unsubscribes.</li>
+  </ul>
+</section>
+
+<section class="pg" aria-labelledby="inventory">
+  <span class="chip">Worksheet</span>
+  <h2 id="inventory">Sender inventory</h2>
+  <p class="lead">Everything that sends email as your domain, in one table. Fill it in before you change any DNS record, and keep it next to your DNS notes so the next tool you add gets authenticated on day one.</p>
+  <table class="fill">
+    <thead><tr><th style="width:28%">Sending service</th><th style="width:22%">What it sends</th><th>SPF include / IP</th><th>DKIM selector</th><th style="width:14%">Return-Path domain</th></tr></thead>
+    <tbody>
+      <tr><td>Inbox (Google Workspace / Microsoft 365)</td><td>1:1 email</td><td></td><td></td><td></td></tr>
+      <tr><td>Marketing email platform</td><td>Newsletters, nurture</td><td></td><td></td><td></td></tr>
+      <tr><td>CRM / sales sequences</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>Transactional (app, invoices)</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>Support desk</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>Calendar / scheduling tool</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>Other:</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>Other:</td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="pg" aria-labelledby="presend">
+  <span class="chip">Before every campaign</span>
+  <h2 id="presend">Pre-send checklist</h2>
+  <ul class="check">
+    <li><span class="box">☐</span> Sent a test to Gmail and Outlook.com seed addresses; headers show SPF, DKIM and DMARC <strong>pass</strong>.</li>
+    <li><span class="box">☐</span> The segment includes only opted-in, recently engaged contacts.</li>
+    <li><span class="box">☐</span> Subject line matches the content; no misleading "Re:" or "Fwd:".</li>
+    <li><span class="box">☐</span> Plain-text version included; images have alt text; the email reads fine with images off.</li>
+    <li><span class="box">☐</span> Links point to your own domain (or a branded tracking domain), not URL shorteners.</li>
+    <li><span class="box">☐</span> One-click unsubscribe header present; footer has the unsubscribe link and your postal address where law requires it.</li>
+    <li><span class="box">☐</span> UTM parameters on every link, so replies and form fills are attributed to this send.</li>
+    <li><span class="box">☐</span> Send time and volume are in line with your usual pattern.</li>
+  </ul>
+
+  <div class="cta">
+    <h2>Want us to check your <span class="accent">setup?</span></h2>
+    <p>We review authentication, list practice and nurture flows as part of our email marketing work, and we will tell you plainly what to fix first.</p>
+    <a class="btn" href="https://techdella.com/growth-audit/">Request a growth audit <span aria-hidden="true">→</span></a>
+    <span class="url">techdella.com/services/email-marketing/</span>
+  </div>
+
+  <h3 id="sources">Sources</h3>
+  <ol class="sources">
+    <li>Google, "Email sender guidelines", Google Workspace Admin Help. <a href="https://support.google.com/a/answer/81126">support.google.com/a/answer/81126</a></li>
+    <li>Google, "Email sender guidelines FAQ", Google Workspace Admin Help. <a href="https://support.google.com/a/answer/14229414">support.google.com/a/answer/14229414</a></li>
+    <li>Google, "Set up DKIM", Google Workspace Admin Help (2048-bit keys). <a href="https://support.google.com/a/answer/174124">support.google.com/a/answer/174124</a></li>
+    <li>Yahoo, "Sender Best Practices", Yahoo Sender Hub. <a href="https://senders.yahooinc.com/best-practices/">senders.yahooinc.com/best-practices/</a></li>
+    <li>Microsoft, "Strengthening Email Ecosystem: Outlook's New Requirements for High-Volume Senders", Microsoft Defender for Office 365 Blog, April 2025. <a href="https://techcommunity.microsoft.com/blog/microsoftdefenderforoffice365blog/strengthening-email-ecosystem-outlook%E2%80%99s-new-requirements-for-high%E2%80%90volume-senders/4399730">techcommunity.microsoft.com</a> <span class="confirm">[CONFIRM: URL and current enforcement stage]</span></li>
+    <li>IETF, RFC 7208 "Sender Policy Framework (SPF)". <a href="https://www.rfc-editor.org/rfc/rfc7208">rfc-editor.org/rfc/rfc7208</a></li>
+    <li>IETF, RFC 6376 "DomainKeys Identified Mail (DKIM) Signatures". <a href="https://www.rfc-editor.org/rfc/rfc6376">rfc-editor.org/rfc/rfc6376</a></li>
+    <li>IETF, RFC 7489 "Domain-based Message Authentication, Reporting, and Conformance (DMARC)". <a href="https://www.rfc-editor.org/rfc/rfc7489">rfc-editor.org/rfc/rfc7489</a> <span class="confirm">[CONFIRM: whether the DMARCbis update has been published as a new RFC]</span></li>
+    <li>IETF, RFC 8058 "Signaling One-Click Functionality for List Email Headers". <a href="https://www.rfc-editor.org/rfc/rfc8058">rfc-editor.org/rfc/rfc8058</a></li>
+    <li>BIMI Group, "BIMI implementation guide". <a href="https://bimigroup.org/implementation-guide/">bimigroup.org/implementation-guide/</a></li>
+    <li>Google, "Set up BIMI", Google Workspace Admin Help. <a href="https://support.google.com/a/answer/10911320">support.google.com/a/answer/10911320</a></li>
+  </ol>
+</section>
+
+</main>
+</body>
+</html>
