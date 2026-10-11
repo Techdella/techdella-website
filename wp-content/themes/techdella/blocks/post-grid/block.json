@@ -10,6 +10,7 @@
 	"render": "file:./render.php",
 	"supports": { "html": false, "anchor": true },
 	"attributes": {
+		"postType": { "type": "string", "default": "" },
 		"label": { "type": "string", "default": "" },
 		"title": { "type": "string", "default": "" },
 		"titleLevel": { "type": "integer", "enum": [ 1, 2 ], "default": 2 },

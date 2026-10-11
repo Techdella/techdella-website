@@ -2,7 +2,7 @@
 /**
  * WP-CLI: wp td media:videos <dir> — import the motion renders (§6.3) into this site's Media Library.
  *
- * Reads <scene>-<format>.mp4 / .webm / .jpg and <scene>.vtt from <dir> (normally assets/video after
+ * Reads <scene>-<format>.mp4 / .webm / .jpg (format: tall 9:16, square, wide 16:9, portrait 4:5) and <scene>.vtt from <dir> (normally assets/video after
  * `npm run motion:render`), uploads each through WordPress (never by copying into Uploads), and
  * records the attachment IDs in the `td_videos` option:
  *   [ '<scene>' => [ 'vtt' => id, '<format>' => [ 'mp4' => id, 'webm' => id, 'poster' => id ] ] ]
@@ -40,7 +40,7 @@ function td_cli_media_videos( array $args, array $assoc ): void {
 		WP_CLI::error( 'Pass the directory with the renders, e.g. /var/www/repo/assets/video.' );
 	}
 	$only  = array_filter( array_map( 'trim', explode( ',', (string) ( $assoc['only'] ?? '' ) ) ) );
-	$files = glob( $dir . '/*-{tall,square,wide}.mp4', GLOB_BRACE );
+	$files = glob( $dir . '/*-{tall,square,wide,portrait}.mp4', GLOB_BRACE );
 	$files = is_array( $files ) ? $files : [];
 	if ( ! $files ) {
 		WP_CLI::error( 'No <scene>-<format>.mp4 files in ' . $dir . '. Run `npm run motion:render` first.' );
@@ -50,7 +50,7 @@ function td_cli_media_videos( array $args, array $assoc ): void {
 	$map    = (array) get_option( 'td_videos', [] );
 	$count  = 0;
 	foreach ( $files as $mp4 ) {
-		if ( ! preg_match( '/^(.+)-(tall|square|wide)\.mp4$/', basename( $mp4 ), $m ) ) {
+		if ( ! preg_match( '/^(.+)-(tall|square|wide|portrait)\.mp4$/', basename( $mp4 ), $m ) ) {
 			continue;
 		}
 		[ , $scene, $format ] = $m;
@@ -67,7 +67,7 @@ function td_cli_media_videos( array $args, array $assoc ): void {
 			$att = td_import_featured( $folder . '/' . $scene . '-' . $format . $ext, $base, 0 );
 			if ( is_int( $att ) ) {
 				$ids[ $key ] = $att;
-			} else {
+			} elseif ( 'webm' !== $key ) { // WebM is optional for client creatives.
 				WP_CLI::warning( $scene . '-' . $format . $ext . ': ' . $att );
 			}
 		}

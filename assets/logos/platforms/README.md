@@ -13,3 +13,7 @@ official file is added: `linkedin`, `chatgpt` (OpenAI), `bing`, `copilot` (Micro
 Downloaded from each brand's own website (their published site icon), Oct 2026:
 `klaviyo.png` (klaviyo.com), `activecampaign.png` (activecampaign.com), `startbuddi.png`
 (startbuddi.com). `brevo.svg` is from Simple Icons v16.34.0. Swap in press-kit files when the team has them.
+
+Also from each brand's own website (site icon), Oct 2026: `calendly.svg`, `typeform.png`, `slack.png`,
+`linkedin.png` (also used for LinkedIn Ads and Sales Navigator), `chatgpt.png` (chatgpt.com),
+`copilot.svg` (copilot.microsoft.com) and `bing.png` (bing.com).

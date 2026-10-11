@@ -1,0 +1,6 @@
+.td-takeaways{margin:2em 0;padding:24px 26px;border-radius:var(--td-r-md);background:var(--td-sand)}
+.td-takeaways__title{margin:0 0 12px;font-family:var(--td-font-serif);font-style:italic;font-size:26px;line-height:1.1;color:var(--td-ink)}
+ul.td-takeaways__list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.td-takeaways__list li{position:relative;padding-left:20px;font-size:16.5px;line-height:1.55;color:var(--td-ink)}
+.td-takeaways__list li+li{margin-top:0}
+.td-takeaways__list li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--td-orange)}

@@ -41,6 +41,6 @@
 	},
 	"techdella": {
 		"controls": { "intro": "textarea", "items": "json" },
-		"help": "Items: ad-mock attributes ({format, platform, headline, text, overlay, cta, tag, image, slides, liveClientAd, size: tall|wide}), a real creative ({type: \"image\", image: attachment ID or key, alt, platform, live}) or a link card ({type: \"link\", eyebrow, title, cta, url}). Only mark live/liveClientAd for real client ads with permission. layout \"collage\": the Paid hero (first four items: TikTok, LinkedIn, Google search, Instagram)."
+		"help": "Items: ad-mock attributes ({format, platform, headline, text, overlay, cta, tag, image, slides, liveClientAd, size: tall|wide}), a real creative ({type: \"image\", image: attachment ID or key, alt, platform, live, client}), a real video ({type: \"video\", scene (wp td media:videos), ratio 9:16|4:5|1:1|16:9, title, duration, platform, live, client}) or a link card ({type: \"link\", eyebrow, title, cta, url}). Only mark live/liveClientAd for real client ads with permission. layout \"collage\": the Paid hero (first four items: TikTok, LinkedIn, Google search, Instagram)."
 	}
 }

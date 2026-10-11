@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/pull-quote",
+	"title": "Pull quote",
+	"category": "techdella",
+	"icon": "format-quote",
+	"description": "A verbatim quote from a real, named person (a client, our team, or a cited expert with a source link).",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"attributes": {
+		"quote": {
+			"type": "string",
+			"default": ""
+		},
+		"name": {
+			"type": "string",
+			"default": ""
+		},
+		"role": {
+			"type": "string",
+			"default": ""
+		},
+		"url": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"example": {
+		"attributes": {
+			"quote": "Techdella reframed how we were thinking about our market entirely.",
+			"name": "Levi Barbosa",
+			"role": "CEO, WezOps",
+			"url": "/case-studies/wezops/"
+		}
+	},
+	"techdella": {
+		"controls": {
+			"quote": "textarea",
+			"url": "url"
+		},
+		"help": "Verbatim only (§2.4): never edit or invent a quote. url: the source (case study, interview or article)."
+	}
+}

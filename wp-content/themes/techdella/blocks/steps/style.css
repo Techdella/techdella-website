@@ -1,0 +1,10 @@
+.td-numsteps{margin:2.2em 0}
+.td-numsteps__title{margin:0 0 14px;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--td-muted)}
+ol.td-numsteps__list{list-style:none;margin:0;padding:0;counter-reset:td-numstep;display:flex;flex-direction:column;gap:0}
+.td-numsteps__item{counter-increment:td-numstep;position:relative;padding:0 0 22px 58px}
+.td-numsteps__item+.td-numsteps__item{margin-top:0}
+.td-numsteps__item::before{content:counter(td-numstep);position:absolute;left:0;top:-2px;width:38px;height:38px;border-radius:50%;background:var(--td-ink);color:var(--td-paper);display:grid;place-items:center;font-size:15px;font-weight:600}
+.td-numsteps__item:not(:last-child)::after{content:"";position:absolute;left:18.5px;top:42px;bottom:4px;width:1px;background:var(--td-line)}
+.td-numsteps__name{margin:4px 0 0;font-size:18px;font-weight:600;letter-spacing:-.015em;color:var(--td-ink)}
+.td-numsteps__text{margin-top:4px;font-size:16px;line-height:1.6;color:var(--td-body)}
+.td-numsteps__text>*+*{margin-top:.6em}

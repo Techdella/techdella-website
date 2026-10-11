@@ -59,7 +59,8 @@
 			"enum": [
 				"16:9",
 				"1:1",
-				"9:16"
+				"9:16",
+				"4:5"
 			],
 			"default": "16:9"
 		},
@@ -129,6 +130,6 @@
 			"items": "json",
 			"intro": "textarea"
 		},
-		"help": "scene: a motion sample slug (e.g. mo-03-ai-answer-cited) imported with `wp td media:videos`; it fills mp4/webm/poster/captions in the format that matches ratio (16:9 wide, 1:1 square, 9:16 tall), and any file set here overrides it. mp4/webm/poster/captions: a Media Library ID or a URL in Uploads (render with `npm run motion:render`, then upload assets/video/<id>-<format>.*). title names the video for screen readers and VideoObject schema; description and duration (seconds) complete the schema. label: e.g. Example or Concept. Never autoplays with sound; no YouTube embeds above the fold (§6.3). items: several clips in a row, each {scene, title, description, duration, label, caption}; the other settings are shared. heading (one *accent* word), intro, chip and surface (canvas|sand|dark) wrap the video(s) in a section with a heading."
+		"help": "scene: a motion sample slug (e.g. mo-03-ai-answer-cited) imported with `wp td media:videos`; it fills mp4/webm/poster/captions in the format that matches ratio (16:9 wide, 1:1 square, 9:16 tall, 4:5 portrait), and any file set here overrides it. mp4/webm/poster/captions: a Media Library ID or a URL in Uploads (render with `npm run motion:render`, then upload assets/video/<id>-<format>.*). title names the video for screen readers and VideoObject schema; description and duration (seconds) complete the schema. label: e.g. Example or Concept. Never autoplays with sound; no YouTube embeds above the fold (§6.3). items: several clips in a row, each {scene, title, description, duration, label, caption}; the other settings are shared. heading (one *accent* word), intro, chip and surface (canvas|sand|dark) wrap the video(s) in a section with a heading."
 	}
 }

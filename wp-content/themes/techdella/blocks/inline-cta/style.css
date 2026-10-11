@@ -1,0 +1,6 @@
+.td-inlinecta{margin:2.4em 0;padding:24px 26px;border-radius:var(--td-r-lg);background:var(--td-ink);color:var(--td-paper);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.td-inlinecta__copy{flex:1 1 280px}
+.td-inlinecta__title{margin:0;font-size:22px;font-weight:600;line-height:1.25;letter-spacing:-.02em;color:var(--td-paper)}
+.td-inlinecta__text{margin:6px 0 0;font-size:15.5px;line-height:1.55;color:var(--td-on-dark)}
+.td-inlinecta__text a{color:inherit}
+.td-prose .td-inlinecta a.td-btn{text-decoration:none}

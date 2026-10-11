@@ -95,10 +95,12 @@ $td_blocks = [
 				[
 					'name' => 'Typeform',
 					'mark' => 'T',
+					'slug' => 'typeform',
 				],
 				[
 					'name' => 'Calendly',
 					'mark' => 'C',
+					'slug' => 'calendly',
 				],
 			],
 		],

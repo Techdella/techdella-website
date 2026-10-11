@@ -128,6 +128,10 @@ if ( ! function_exists( 'td_m2_accent' ) ) {
 		}
 		$parts = explode( ' ', $title );
 		$last  = (string) array_pop( $parts );
+		// Keep brackets and punctuation outside the italic: "Records)" → "*Records*)".
+		if ( preg_match( '/^(\W*)(.*?\w)(\W*)$/u', $last, $m ) ) {
+			return implode( ' ', $parts ) . ' ' . $m[1] . '*' . $m[2] . '*' . $m[3];
+		}
 		return implode( ' ', $parts ) . ' *' . $last . '*';
 	}
 }

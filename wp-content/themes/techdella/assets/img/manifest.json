@@ -107,6 +107,19 @@
     ],
     "mtime": 641100530
   },
+  "creatives/startbuddi-marketing-stop-running-in-pieces": {
+    "width": 1600,
+    "height": 2000,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1200,
+      1600
+    ],
+    "mtime": 740017059
+  },
   "people/akin-oyegoke-johan-consults": {
     "width": 553,
     "height": 831,

@@ -49,7 +49,28 @@ foreach ( $td_items as $td_i => $td_item ) {
 		}
 	}
 
-	if ( 'link' === $td_type ) {
+	if ( 'video' === $td_type && ! empty( $td_item['scene'] ) ) {
+		// A real video creative (wp td media:videos): click to play, with controls; never autoplays.
+		$td_live = ! empty( $td_item['live'] );
+		?>
+		<figure class="td-creatives__figure td-creatives__figure--video">
+			<?php
+			echo td_block( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				'video',
+				[
+					'scene'       => (string) $td_item['scene'],
+					'ratio'       => (string) ( $td_item['ratio'] ?? '9:16' ),
+					'mode'        => 'player',
+					'title'       => (string) ( $td_item['title'] ?? '' ),
+					'description' => (string) ( $td_item['description'] ?? '' ),
+					'duration'    => (int) ( $td_item['duration'] ?? 0 ),
+				]
+			);
+			?>
+			<figcaption class="<?php echo $td_live ? 'td-creatives__client' : 'td-ad__label'; ?>"><?php echo $td_live ? esc_html( (string) ( $td_item['client'] ?? $td_platform ) ) : esc_html__( 'Example', 'techdella' ); ?></figcaption>
+		</figure>
+		<?php
+	} elseif ( 'link' === $td_type ) {
 		?>
 		<a class="td-creatives__link" href="<?php echo esc_url( $td_href( (string) ( $td_item['url'] ?? '/' ) ) ); ?>">
 			<span class="td-creatives__eyebrow"><?php echo esc_html( (string) ( $td_item['eyebrow'] ?? '' ) ); ?></span>
@@ -62,7 +83,7 @@ foreach ( $td_items as $td_i => $td_item ) {
 		?>
 		<figure class="td-creatives__figure">
 			<?php echo $td_img_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-			<figcaption class="<?php echo $td_live ? 'td-sr' : 'td-ad__label'; ?>"><?php echo $td_live ? esc_html( $td_platform . ' ' . __( 'ad', 'techdella' ) ) : esc_html__( 'Example', 'techdella' ); ?></figcaption>
+			<figcaption class="<?php echo $td_live ? 'td-creatives__client' : 'td-ad__label'; ?>"><?php echo $td_live ? esc_html( (string) ( $td_item['client'] ?? $td_platform . ' ' . __( 'ad', 'techdella' ) ) ) : esc_html__( 'Example', 'techdella' ); ?></figcaption>
 		</figure>
 		<?php
 	} else {

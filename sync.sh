@@ -92,6 +92,7 @@ $WP td setup --quiet
 # one needs proc_open, which is disabled there) and leaves .htaccess alone.
 $WP rewrite flush
 $WP td media:videos "$BUNDLE/assets/video"
+$WP td media:videos "$BUNDLE/assets/creatives/video"
 
 if [ "$FIRST" = 1 ]; then
   # Drafts only: nothing here publishes (§0.4). Imported pages wait for a person in WP admin.
@@ -105,7 +106,17 @@ if [ "$REFRESH" = 1 ]; then
   [ "$($WP config get TD_ENV 2> /dev/null || true)" = staging ] || { echo "--refresh-pages only runs on staging." >&2; exit 2; }
   $WP td preview:seed --force --publish
   # Case studies, rebuilt from the published originals (content/case-studies), onto the copies.
-  $WP td import-content "$BUNDLE/content/case-studies" --status=draft --update-published
+  # Rebuilt case studies, industries, markets and (on the right site) guides, glossary and the
+  # business library, published on the private staging site for review (never on production).
+  for d in case-studies solutions locations glossary business journal; do
+    [ -d "$BUNDLE/content/$d" ] && $WP td import-content "$BUNDLE/content/$d" --status=draft --update-published --publish
+  done
+  # Article covers (title + photo in the arch) where an article has no image of its own.
+  $WP td covers:generate
+  # Old redirects that fight the new ones are switched off; old pages that are now redirected
+  # (e.g. the old service pages) are unpublished (draft, never deleted).
+  $WP td redirects import --file="$BUNDLE/data/redirects.csv"
+  $WP td legacy:retire
 fi
 
 $WP cache flush
