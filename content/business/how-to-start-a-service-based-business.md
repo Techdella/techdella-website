@@ -11,7 +11,7 @@ audience: "Freelancers and professionals in the US, UK and Nigeria starting a se
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a service-based business, choose one service for one type of client, register the business, price from your real costs and available hours, and build a client pipeline you can measure: a steady source of leads, a fast follow-up process, and proof that turns inquiries into paying clients."
-rank_math_description: "How to start a service-based business: choose one service, register it, price it properly and build a client pipeline you can predict, with simple funnel maths."
+rank_math_description: "How to start a service-based business: choose one service, register it, price it properly and build a client pipeline you can predict with funnel maths."
 internal_links:
   - /growth-audit/
   - /services/lead-generation/
@@ -154,7 +154,7 @@ Fact: Many buyers are busy, not uninterested. A polite, planned follow-up sequen
 
 ## Keep the clients you win
 
-Winning a client costs time and money. Keeping one costs much less. Strong [customer retention](/glossary/customer-retention/) comes from a few habits: regular check-ins, reporting results in plain language, fixing problems quickly and offering an ongoing plan when a project ends.
+Winning a client costs time and money. Keeping one costs much less. Strong [customer retention](/glossary/customer-retention/) comes from a few habits: regular check-ins, reporting results in plain language, fixing problems quickly and offering an ongoing plan when a project ends. Ask for feedback at the end of every project, act on it, and tell the client what you changed. Clients who feel heard stay longer and refer more.
 
 :::faq
 ### What is a service-based business?

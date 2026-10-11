@@ -11,7 +11,7 @@ audience: "First-time founders in Nigeria, the US and the UK with an idea and li
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a startup business, test your idea with the people you expect to pay before you spend money, write a one-page plan with your riskiest assumptions, register the company, build the smallest version that delivers the core promise, and launch to a small group. Then improve based on what they actually do, not what they say."
-rank_math_description: "How to start a startup business: validate the idea with real buyers, write a one-page plan, register, build an MVP and launch, with Nigeria, US and UK notes."
+rank_math_description: "How to start a startup business: validate with real buyers, write a one-page plan, register, build an MVP and launch, with Nigeria, US and UK notes."
 internal_links:
   - studios:/start/
   - studios:/services/mvp-development/
@@ -112,6 +112,16 @@ Tell TechDella Studios what you're building. We help founders scope, design and 
 :::callout note "From our work"
 [CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
 :::
+
+## Who you need on the founding team
+
+You don't need a full team to start, but someone has to cover three jobs: building the product, selling it, and running the money. Many solo founders cover one or two and borrow the rest:
+
+- **Building:** a technical co-founder, a trusted development partner, or no-code tools for the first version.
+- **Selling:** usually the founder. Nobody can explain the vision to early customers better than you.
+- **Money and admin:** a part-time bookkeeper or accountant from day one, so taxes and records never pile up.
+
+Write down who owns each job, even if it's "me, for now." Gaps you can see are gaps you can plan for.
 
 ## Common mistakes first-time founders make
 

@@ -11,7 +11,7 @@ audience: "First-time SaaS founders in Nigeria, the US and the UK, technical and
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a SaaS business, find a painful, recurring problem for a specific type of customer, validate it with paid pre-sales or pilots, build a narrow MVP that solves one job well, and price it as a subscription. Then track the numbers that decide survival: monthly recurring revenue, churn and how fast each customer pays back what it cost to win them."
-rank_math_description: "How to start a SaaS business: validate the problem, build a narrow MVP, set subscription pricing and track churn and CAC payback, with US, UK and Nigeria notes."
+rank_math_description: "How to start a SaaS business: validate the problem, build a narrow MVP, set subscription pricing and track churn and CAC payback, with country notes."
 internal_links:
   - studios:/services/mvp-development/
   - studios:/services/ui-ux-design/

@@ -33,20 +33,20 @@ Below is how to start a food truck business in the US, the UK and Nigeria, inclu
 
 ## Is a food truck business profitable?
 
-It can be, because people spend more on food away from home than at home. But the margin is made or lost on speed, food cost and pitch fees.
+It can be. In the US, more food money now goes on eating out than on groceries. But the margin is made or lost on speed, food cost and pitch fees.
 
 :::stats "Eating out is the bigger share of food spending (US)"
-58.9% | of US food spending went on food away from home in 2024, a series high | USDA Economic Research Service, 2025 | https://www.ers.usda.gov/data-products/chart-gallery/chart-detail?chartId=58364
-$2.58T | total US food spending in 2024 | USDA Economic Research Service, 2025 | https://www.ers.usda.gov/data-products/chart-gallery/chart-detail?chartId=58364
+$1.41T | spent on food away from home in the US in 2025, more than on food at home | USDA Economic Research Service, 2026 | https://www.ers.usda.gov/data-products/chart-gallery/chart-detail?chartId=58364
+$2.51T | total US food spending in 2025 | USDA Economic Research Service, 2026 | https://www.ers.usda.gov/data-products/chart-gallery/chart-detail?chartId=58364
 :::
 
-:::chart "US food spending in 2024 ($ trillion)" unit=$T highlight=0
-Food away from home | 1.52
-Food at home | 1.06
-source: USDA Economic Research Service, Food Expenditure Series, 2025 (food at home = total minus food away from home) | https://www.ers.usda.gov/data-products/chart-gallery/chart-detail?chartId=58364
+:::chart "US food spending in 2025 ($ trillion)" unit=$T highlight=0
+Food away from home | 1.41
+Food at home | 1.10
+source: USDA Economic Research Service, Food Expenditure Series chart, 2026 | https://www.ers.usda.gov/data-products/chart-gallery/chart-detail?chartId=58364
 :::
 
-The UK and Nigeria don't publish a directly comparable series, but street food is a familiar part of daily life in both. In Lagos, Abuja and Port Harcourt, the competition is often a roadside buka with very low prices, so a food truck usually wins on convenience, hygiene and a distinct menu rather than on price.
+Check local data before assuming the same pattern in the UK or Nigeria, but street food is a familiar part of daily life in both. In Lagos, Abuja and Port Harcourt, the competition is often a roadside buka with very low prices, so a food truck usually wins on convenience, hygiene and a distinct menu rather than on price.
 
 ## Step 1: Pick a concept and test it cheaply
 
