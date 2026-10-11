@@ -7,7 +7,9 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$td_items = array_values( array_filter( (array) ( $attributes['items'] ?? [] ), static fn( $i ) => is_array( $i ) && ! empty( $i['title'] ) ) );
+// No section title → item titles are the section's headings (keeps the H1 → H2 order).
+$td_item_h = empty( $attributes['title'] ) ? 'h2' : 'h3';
+$td_items  = array_values( array_filter( (array) ( $attributes['items'] ?? [] ), static fn( $i ) => is_array( $i ) && ! empty( $i['title'] ) ) );
 if ( ! $td_items ) {
 	return;
 }
@@ -100,13 +102,13 @@ else :
 				<?php elseif ( 'icon' === $td_style && ! empty( $td_item['icon'] ) ) : ?>
 					<span class="td-feature-grid__icon"><?php echo $td_icon( (string) $td_item['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 				<?php endif; ?>
-				<h3 class="td-feature-grid__item-title">
+				<<?php echo $td_item_h; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- h2|h3 literal. ?> class="td-feature-grid__item-title">
 					<?php if ( $td_url ) : ?>
 						<a href="<?php echo esc_url( $td_url ); ?>"><?php echo $td_text( $td_item['title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a>
 					<?php else : ?>
 						<?php echo $td_text( $td_item['title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					<?php endif; ?>
-				</h3>
+				</<?php echo $td_item_h; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 				<?php if ( ! empty( $td_item['text'] ) ) : ?>
 					<p class="td-feature-grid__text"><?php echo $td_text( $td_item['text'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 				<?php endif; ?>

@@ -7,6 +7,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
+// No section title → tile titles are the section's headings (keeps the H1 → H2 order).
+$td_item_h = empty( $attributes['title'] ) ? 'h2' : 'h3';
 $td_tiles = array_filter( (array) ( $attributes['tiles'] ?? [] ), 'is_array' );
 if ( ! $td_tiles ) {
 	return;
@@ -88,7 +90,7 @@ $td_wrap     = $td_style ? [ 'style' => $td_style ] : [];
 						echo '<span class="td-bento__eyebrow">' . $td_text( $td_t['eyebrow'] ) . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					}
 					if ( ! empty( $td_t['title'] ) ) {
-						echo '<h3 class="td-bento__title">' . $td_text( $td_t['title'] ) . '</h3>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo '<' . $td_item_h . ' class="td-bento__title">' . $td_text( $td_t['title'] ) . '</' . $td_item_h . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					}
 				};
 
@@ -245,7 +247,7 @@ else :
 						<?php else : ?>
 							<div class="td-bento__card">
 								<?php if ( ! empty( $td_t['title'] ) ) : ?>
-									<h3 class="td-bento__title"><?php echo $td_text( $td_t['title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h3>
+									<<?php echo $td_item_h; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- h2|h3 literal. ?> class="td-bento__title"><?php echo $td_text( $td_t['title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></<?php echo $td_item_h; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 								<?php endif; ?>
 								<?php if ( ! empty( $td_t['text'] ) ) : ?>
 									<p class="td-bento__text"><?php echo $td_text( $td_t['text'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
@@ -297,7 +299,7 @@ else :
 								<span class="td-bento__outline-chip"><?php echo esc_html( (string) $td_t['chip'] ); ?></span>
 							<?php endif; ?>
 							<?php if ( ! empty( $td_t['title'] ) ) : ?>
-								<h3 class="td-bento__title td-bento__title--sm"><?php echo $td_text( $td_t['title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h3>
+								<<?php echo $td_item_h; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- h2|h3 literal. ?> class="td-bento__title td-bento__title--sm"><?php echo $td_text( $td_t['title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></<?php echo $td_item_h; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 							<?php endif; ?>
 							<?php if ( '' !== $td_url && ! empty( $td_t['linkLabel'] ) ) : ?>
 								<a class="td-link" href="<?php echo esc_url( $td_href( $td_url ) ); ?>"><?php echo esc_html( (string) $td_t['linkLabel'] ); ?></a>
