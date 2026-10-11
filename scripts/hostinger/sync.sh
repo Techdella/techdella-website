@@ -5,9 +5,12 @@
 #
 #   bash ~/techdella-deploy/sync.sh ~/domains/staging.techdella.com/public_html --site=marketing --env=staging --first-run
 #   bash ~/techdella-deploy/sync.sh ~/domains/staging.techdella.com/public_html          (every later update)
+#   bash ~/techdella-deploy/sync.sh <staging folder> --refresh-pages                       (staging: show the new page designs)
 #
 # Every run: copies the theme and the core plugin into the site (uploads and wp-config.php are never
 # touched), activates the theme, imports the motion videos, runs `wp td setup`, clears the caches.
+# --refresh-pages (staging only): replace existing pages' content with the new designs (old content
+# stays as a revision) and publish them on the private staging site so it can be browsed.
 # --first-run also: sets TD_SITE/TD_ENV in wp-config.php (only if missing), installs the plugins
 # (§5.2), blocks search engines on staging, imports content/ and the page patterns as DRAFTS (a
 # person publishes, §10.1), imports the redirects, and records the owner's client permissions.
@@ -16,12 +19,13 @@ set -euo pipefail
 BUNDLE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SITE_DIR="${1:?usage: sync.sh <site folder> [--site=…] [--env=…] [--first-run]}"
 shift
-SITE="" ENV="" FIRST=0
+SITE="" ENV="" FIRST=0 REFRESH=0
 for a in "$@"; do
   case "$a" in
     --site=*) SITE="${a#*=}" ;;
     --env=*) ENV="${a#*=}" ;;
     --first-run) FIRST=1 ;;
+    --refresh-pages) REFRESH=1 ;;
     *) echo "Unknown option: $a" >&2; exit 2 ;;
   esac
 done
@@ -74,6 +78,15 @@ if [ "$FIRST" = 1 ]; then
   $WP rewrite structure '/%postname%/' --hard || true
 fi
 
+# LiteSpeed must not rewrite our CSS/JS (§5.1): the build already minifies, inlines critical CSS
+# and defers scripts. Its "unused CSS" and combine options strip the theme's styles.
+if $WP plugin is-active litespeed-cache 2> /dev/null; then
+  for o in optm-css_min optm-css_comb optm-ucss optm-css_async optm-js_min optm-js_comb optm-js_defer optm-html_min; do
+    $WP litespeed-option set "$o" 0 > /dev/null 2>&1 || true
+  done
+  echo "  ✓ LiteSpeed CSS/JS optimisation off (page cache stays on)"
+fi
+
 $WP td setup --quiet
 $WP td media:videos "$BUNDLE/assets/video"
 
@@ -83,6 +96,11 @@ if [ "$FIRST" = 1 ]; then
   $WP td preview:seed
   $WP td redirects import --file="$BUNDLE/data/redirects.csv" || echo "  ! redirects import failed: run it again after Rank Math is set up"
   $WP td permissions:grant --note="Joanna Okedara-Kalu confirmed all client permissions (names, numbers, quotes, logos), 11 Oct 2026"
+fi
+
+if [ "$REFRESH" = 1 ]; then
+  [ "$($WP config get TD_ENV 2> /dev/null || true)" = staging ] || { echo "--refresh-pages only runs on staging." >&2; exit 2; }
+  $WP td preview:seed --force --publish
 fi
 
 $WP cache flush

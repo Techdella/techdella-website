@@ -32,6 +32,15 @@ Clone the bundle over SSH into your home folder instead, outside every `public_h
    `--site` is `marketing`, `journal` or `studios`; `--env` is `staging` or `production`.
    On a site that isn't marked staging, `sync.sh` asks you to type its domain first.
 
+## See the new page designs on staging
+
+Staging is a copy of the live site, so pages like Home and SEO keep their old content until you
+replace it (the old content stays as a revision). On staging only:
+
+```bash
+bash ~/techdella-deploy/sync.sh <staging site folder> --refresh-pages
+```
+
 ## Every update
 
 ```bash
