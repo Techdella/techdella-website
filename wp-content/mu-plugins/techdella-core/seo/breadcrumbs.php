@@ -18,7 +18,7 @@ function td_seo_breadcrumb_hubs(): array {
 		[
 			'service'        => [ __( 'Services', 'techdella' ), '/services/' ],
 			'studio_service' => [ __( 'Services', 'techdella' ), '/services/' ],
-			'solution'       => [ __( 'Solutions', 'techdella' ), '/solution/' ],
+			'solution'       => [ __( 'Industries', 'techdella' ), '/solution/' ],
 			'location'       => [ __( 'Locations', 'techdella' ), '/locations/' ],
 			'case_study'     => [ __( 'Case studies', 'techdella' ), '/case-studies/' ],
 			'td_tool'        => [ __( 'Tools', 'techdella' ), '/tools/' ],
