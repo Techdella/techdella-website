@@ -131,7 +131,7 @@ while ( have_posts() ) :
 						'title' => __( 'More *work*', 'techdella' ),
 						'id'    => 'td-more-work',
 					]
-				); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+				);
 				?>
 				<ul class="td-case-grid__list" role="list">
 					<?php foreach ( $td_cards as $td_case ) : ?>
