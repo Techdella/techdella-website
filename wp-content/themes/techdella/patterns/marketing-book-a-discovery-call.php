@@ -108,21 +108,34 @@ $td_blocks = [
 				],
 				[
 					'title' => 'Clear next step',
-					'text'  => 'We recommend where to start, usually a Growth Audit, with defined deliverables and price. [CONFIRM]',
+					'text'  => 'We recommend where to start, usually a Growth Audit: {{price:growth_audit}}, delivered in 10 business days.',
 				],
 			],
 		]
 	),
-	$td_b(
-		'testimonial',
+	// The quote card sits in a narrow, centred container (the block is a card, not a full-bleed band).
+	$td_div(
+		'core/group',
+		'td-section',
 		[
-			'quote'   => 'Techdella reframed how we were thinking about our market entirely. We went from scattered tactics to a positioning and GTM system that actually made sense for where we were heading. The difference was immediate.',
-			'name'    => 'Levi Barbosa',
-			'role'    => 'CEO',
-			'company' => 'WezOps',
-			'image'   => 'people/levi-barbosa-wezops',
-			'logo'    => 'clients/wezops',
-			'variant' => 'arch',
+			$td_div(
+				'core/group',
+				'td-container td-container--narrow',
+				[
+					$td_b(
+						'testimonial',
+						[
+							'quote'   => 'Techdella reframed how we were thinking about our market entirely. We went from scattered tactics to a positioning and GTM system that actually made sense for where we were heading. The difference was immediate.',
+							'name'    => 'Levi Barbosa',
+							'role'    => 'CEO',
+							'company' => 'WezOps',
+							'image'   => 'people/levi-barbosa-wezops',
+							'logo'    => 'clients/wezops',
+							'variant' => 'arch',
+						]
+					),
+				]
+			),
 		]
 	),
 	$td_b(
