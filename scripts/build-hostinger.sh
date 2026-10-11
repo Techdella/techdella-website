@@ -31,7 +31,7 @@ git worktree add --detach "$WT" HEAD > /dev/null
   else
     git checkout -q --orphan "$BRANCH"
   fi
-  git rm -rq --ignore-unmatch . > /dev/null
+  git rm -rqf --ignore-unmatch . > /dev/null
   find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
 )
 
