@@ -24,7 +24,7 @@ while ( have_posts() ) :
 	echo td_block( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		'hero',
 		[
-			'parentLabel'    => __( 'Solutions', 'techdella' ),
+			'parentLabel'    => __( 'Services', 'techdella' ),
 			'parentUrl'      => '/services/',
 			'eyebrow'        => $td_industry,
 			'title'          => td_m2_accent( get_the_title(), false !== $td_first ? $td_first : '' ),
