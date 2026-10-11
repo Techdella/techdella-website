@@ -28,3 +28,4 @@ a.td-hub__card--dark:hover{color:var(--td-paper)}
   .td-hub__card{min-width:0;height:100%}
 }
 @media (prefers-reduced-motion:reduce){a.td-hub__card:hover{transform:none}}
+.td-hub__card{max-width:250px}
