@@ -125,7 +125,14 @@ while ( have_posts() ) :
 		?>
 		<section class="td-case-grid td-section td-section--canvas td-case-grid--cover" aria-labelledby="td-more-work">
 			<div class="td-container">
-				<?php echo td_section_head( [ 'title' => __( 'More *work*', 'techdella' ), 'id' => 'td-more-work' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<?php
+				echo td_section_head( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					[
+						'title' => __( 'More *work*', 'techdella' ),
+						'id'    => 'td-more-work',
+					]
+				); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+				?>
 				<ul class="td-case-grid__list" role="list">
 					<?php foreach ( $td_cards as $td_case ) : ?>
 						<li><?php echo td_a3_case_card( $td_case, 'cover', 3 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></li>

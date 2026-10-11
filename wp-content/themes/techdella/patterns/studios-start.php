@@ -37,6 +37,11 @@ $td_blocks = [
 		],
 	],
 	[
+		'core/spacer',
+		[ 'height' => '96px' ],
+		'<div style="height:96px" aria-hidden="true" class="wp-block-spacer"></div>',
+	],
+	[
 		'built-for',
 		[
 			'label' => 'Every project',
@@ -46,5 +51,5 @@ $td_blocks = [
 ];
 
 foreach ( $td_blocks as $td_block ) {
-	echo get_comment_delimited_block_content( 'techdella/' . $td_block[0], $td_block[1], '' ) . "\n\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- serialized block markup; attributes JSON-encoded by core.
+	echo get_comment_delimited_block_content( str_contains( $td_block[0], '/' ) ? $td_block[0] : 'techdella/' . $td_block[0], $td_block[1], $td_block[2] ?? '' ) . "\n\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- serialized block markup; attributes JSON-encoded by core.
 }

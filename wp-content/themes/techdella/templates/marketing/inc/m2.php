@@ -222,7 +222,7 @@ if ( ! function_exists( 'td_m2_chips' ) ) {
 	/**
 	 * Filter chips as links (works without JS). The current one carries aria-current.
 	 *
-	 * @param string                                   $label   Accessible nav label.
+	 * @param string                                                 $label   Accessible nav label.
 	 * @param array<int,array{label:string,url:string,current:bool}> $chips Chips.
 	 */
 	function td_m2_chips( string $label, array $chips ): string {

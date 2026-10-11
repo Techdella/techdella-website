@@ -54,8 +54,8 @@ $td_terms = get_posts( $td_args );
 // Group by first letter (digits and symbols under #).
 $td_groups = [];
 foreach ( $td_terms as $td_term ) {
-	$td_letter = strtoupper( substr( remove_accents( ltrim( get_the_title( $td_term ) ) ), 0, 1 ) );
-	$td_letter = preg_match( '/[A-Z]/', $td_letter ) ? $td_letter : '#';
+	$td_letter                 = strtoupper( substr( remove_accents( ltrim( get_the_title( $td_term ) ) ), 0, 1 ) );
+	$td_letter                 = preg_match( '/[A-Z]/', $td_letter ) ? $td_letter : '#';
 	$td_groups[ $td_letter ][] = $td_term;
 }
 ksort( $td_groups );
@@ -79,13 +79,13 @@ get_header();
 echo td_block( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	'hero',
 	[
-		'eyebrow'        => __( 'Glossary', 'techdella' ),
-		'title'          => __( 'The growth marketing *glossary*', 'techdella' ),
-		'lead'           => __( 'Plain-English definitions of the search, paid, email and automation terms you’ll hear from us, each with an example and what to do about it.', 'techdella' ),
-		'primaryLabel'   => __( 'Get a growth audit', 'techdella' ),
-		'primaryUrl'     => '/growth-audit/',
-		'layout'         => 'center',
-		'background'     => 'plain',
+		'eyebrow'      => __( 'Glossary', 'techdella' ),
+		'title'        => __( 'The growth marketing *glossary*', 'techdella' ),
+		'lead'         => __( 'Plain-English definitions of the search, paid, email and automation terms you’ll hear from us, each with an example and what to do about it.', 'techdella' ),
+		'primaryLabel' => __( 'Get a growth audit', 'techdella' ),
+		'primaryUrl'   => '/growth-audit/',
+		'layout'       => 'center',
+		'background'   => 'plain',
 	]
 );
 td_m2_breadcrumbs();
