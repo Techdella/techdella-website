@@ -15,15 +15,15 @@ get_header();
 echo td_block( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	'hero',
 	[
-		'parentLabel'    => __( 'Studios', 'techdella' ),
-		'parentUrl'      => '/',
-		'eyebrow'        => __( 'Work', 'techdella' ),
-		'title'          => __( 'Selected *work*', 'techdella' ),
-		'lead'           => __( 'Apps, automation, design and motion. Live projects are client work; projects labelled Concept show how we would approach a brief.', 'techdella' ),
-		'primaryLabel'   => __( 'Start a project', 'techdella' ),
-		'primaryUrl'     => '/start/',
-		'layout'         => 'center',
-		'background'     => 'plain',
+		'parentLabel'  => __( 'Studios', 'techdella' ),
+		'parentUrl'    => '/',
+		'eyebrow'      => __( 'Work', 'techdella' ),
+		'title'        => __( 'Selected *work*', 'techdella' ),
+		'lead'         => __( 'Apps, automation, design and motion. Live projects are client work; projects labelled Concept show how we would approach a brief.', 'techdella' ),
+		'primaryLabel' => __( 'Start a project', 'techdella' ),
+		'primaryUrl'   => '/start/',
+		'layout'       => 'center',
+		'background'   => 'plain',
 	]
 );
 

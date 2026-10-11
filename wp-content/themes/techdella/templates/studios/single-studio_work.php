@@ -110,7 +110,7 @@ while ( have_posts() ) :
 		</div>
 	</article>
 	<?php
-	$td_more = get_posts(
+	$td_more  = get_posts(
 		[
 			'post_type'      => 'studio_work',
 			'post_status'    => 'publish',
