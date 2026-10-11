@@ -264,7 +264,48 @@ function td_redirects_import_rank_math( array $rules, bool $dry = false ): array
 			'result' => $dry ? 'would deactivate (points away from a new page)' : 'deactivated (pointed away from a new page)',
 		];
 	}
+	// The same, in the separate "Redirection" plugin the old site also used (it answers before
+	// Rank Math, e.g. /services/ → /cmo-as-a-service/). Disabled, never deleted (Tools → Redirection).
+	foreach ( td_redirects_conflicting_redirection_plugin( array_keys( $targets ) ) as $row ) {
+		if ( ! $dry ) {
+			global $wpdb;
+			$wpdb->update( $wpdb->prefix . 'redirection_items', [ 'status' => 'disabled' ], [ 'id' => (int) $row['id'] ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		}
+		$report[] = [
+			'source' => 'old (Redirection plugin) ' . $row['pattern'],
+			'target' => $row['url_to'],
+			'result' => $dry ? 'would disable (points away from a new page)' : 'disabled (pointed away from a new page)',
+		];
+	}
 	return $report;
+}
+
+/**
+ * Enabled, non-regex items in the Redirection plugin whose source is one of our targets.
+ *
+ * @param string[] $targets Target paths without slashes, lower case.
+ * @return array<int,array{id:int,pattern:string,url_to:string}>
+ */
+function td_redirects_conflicting_redirection_plugin( array $targets ): array {
+	global $wpdb;
+	$table = $wpdb->prefix . 'redirection_items';
+	if ( ! $targets || $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $table ) ) !== $table ) { // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		return [];
+	}
+	$rows = (array) $wpdb->get_results( "SELECT id, url, action_data FROM {$table} WHERE status = 'enabled' AND regex = 0", ARRAY_A ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+	$want = array_flip( $targets );
+	$out  = [];
+	foreach ( $rows as $row ) {
+		$path = strtolower( trim( (string) wp_parse_url( (string) $row['url'], PHP_URL_PATH ), '/' ) );
+		if ( '' !== $path && isset( $want[ $path ] ) ) {
+			$out[] = [
+				'id'      => (int) $row['id'],
+				'pattern' => '/' . $path . '/',
+				'url_to'  => (string) $row['action_data'],
+			];
+		}
+	}
+	return $out;
 }
 
 /**
