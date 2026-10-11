@@ -532,7 +532,7 @@ $td_blocks = [
 							'items' => [
 								[
 									'title' => 'A monthly ad budget',
-									'text'  => 'of at least [MINIMUM SPEND]',
+									'text'  => 'of at least $2,000',
 								],
 								[
 									'title' => 'A clear offer',
@@ -561,19 +561,19 @@ $td_blocks = [
 							'items' => [
 								[
 									'title' => 'Setup & tracking:',
-									'text'  => '[PRICE] one-time',
+									'text'  => '$1,000 one-time',
 								],
 								[
 									'title' => 'One platform:',
-									'text'  => '[PRICE] / month',
+									'text'  => '$1,000 / month',
 								],
 								[
 									'title' => 'Two or more platforms:',
-									'text'  => '[PRICE] / month',
+									'text'  => '$1,800 / month',
 								],
 								[
 									'title' => 'Creative package:',
-									'text'  => 'from [PRICE]',
+									'text'  => 'from $750',
 								],
 							],
 						]
@@ -616,7 +616,7 @@ $td_blocks = [
 				],
 				[
 					'question' => 'Is there a minimum commitment?',
-					'answer'   => '[CONFIRM: minimum term] months, so campaigns have time to learn and improve.',
+					'answer'   => 'Three months, so campaigns have time to learn and improve.',
 				],
 			],
 		]

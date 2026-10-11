@@ -154,18 +154,18 @@ $td_blocks = [
 				[
 					'featured'    => true,
 					'badge'       => 'Start here',
-					'kicker'      => 'Duration [CONFIRM] weeks · [CONFIRM] revision rounds',
+					'kicker'      => '3–4 weeks · 2 revision rounds',
 					'title'       => 'MVP Discovery & Prototype',
 					'text'        => 'Validate the idea with a scoped plan and a clickable prototype.',
-					'price'       => 'From [PRICE]',
+					'price'       => 'From $3,500',
 					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
 				[
-					'kicker'      => 'Duration [CONFIRM] weeks · Discovery first',
+					'kicker'      => '8–12 weeks · Discovery first',
 					'title'       => 'MVP Build',
 					'text'        => 'A working first version, built in milestones.',
-					'price'       => 'From [PRICE]',
+					'price'       => 'From $15,000',
 					'buttonLabel' => 'Get a scope',
 					'buttonUrl'   => '/start/',
 				],
@@ -190,7 +190,7 @@ $td_blocks = [
 			'items'      => [
 				[
 					'question' => 'How long does an MVP take?',
-					'answer'   => 'It depends on scope. Discovery fixes the scope first, then we give you a timeline per milestone. [CONFIRM typical range]',
+					'answer'   => 'It depends on scope. Discovery fixes the scope first, then we give you a timeline per milestone. Most first versions take 8 to 12 weeks after discovery.',
 				],
 				[
 					'question' => 'Do I own the code?',

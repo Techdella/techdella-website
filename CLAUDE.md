@@ -141,7 +141,7 @@ Blocks must:
 - **Draft copy that still needs Joanna's sign-off before launch:**
   - Any new quote attributed to Joanna.
   - The 3 Studios "Concept" projects, which stay labelled "Concept".
-  - All prices: `[PRICE]`, `[MINIMUM SPEND]`.
+  - Prices are set (owner's request, 11 Oct 2026): see `docs/PRICING.md`.
 
 ---
 

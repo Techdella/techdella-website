@@ -97,7 +97,7 @@ $td_blocks = [
 						'feature-grid',
 						[
 							'title' => 'What’s *included*',
-							'lead'  => 'Fixed fee: [PRICE] · delivered in [CONFIRM: X] business days.',
+							'lead'  => 'Fixed fee: $1,500 · delivered in 10 business days.',
 							'style' => 'checks',
 							'bare'  => true,
 							'items' => [
