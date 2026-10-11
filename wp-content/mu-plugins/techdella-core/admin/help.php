@@ -58,6 +58,14 @@ function td_help_sections(): array {
 				__( 'Never target booking, audit, start, thank-you or tool pages. On mobile only the slide-in or top bar is allowed.', 'techdella' ),
 			],
 		],
+		'prices'     => [
+			'title' => __( 'Change a price', 'techdella' ),
+			'steps' => [
+				__( 'Growth → Prices.', 'techdella' ),
+				__( 'Type the new dollar amount. Leave naira empty to use dollars × 200 (never below ₦300,000), or type your own naira price.', 'techdella' ),
+				__( 'Save prices. Every page showing that price updates. Empty both boxes to go back to the default.', 'techdella' ),
+			],
+		],
 		'refresh'    => [
 			'title' => __( 'Refresh due list', 'techdella' ),
 			'steps' => [

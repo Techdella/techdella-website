@@ -329,7 +329,7 @@ $td_inline_blocks = [ 'techdella/button', 'techdella/label-chip', 'techdella/tes
 									'span'       => 3,
 									'spanTablet' => 3,
 									'rows'       => 2,
-									'quote'      => 'The clarity they brought to our strategy saved us months of trial and error — and probably a lot of money too…',
+									'quote'      => 'The clarity they brought to our strategy saved us months of trial and error — and probably a lot of money too. If you\'re serious about growing your startup, Techdella is the team you want in your corner from early on.',
 									'name'       => 'Akin Oyegoke',
 									'role'       => 'CEO, Johan Consults',
 									'image'      => 'people/akin-oyegoke-johan-consults',
@@ -361,7 +361,7 @@ $td_inline_blocks = [ 'techdella/button', 'techdella/label-chip', 'techdella/tes
 					echo td_block( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						'testimonial',
 						[
-							'quote'   => 'The clarity they brought to our strategy saved us months of trial and error — and probably a lot of money too…',
+							'quote'   => 'The clarity they brought to our strategy saved us months of trial and error — and probably a lot of money too. If you\'re serious about growing your startup, Techdella is the team you want in your corner from early on.',
 							'name'    => 'Akin Oyegoke',
 							'role'    => 'CEO',
 							'company' => 'Johan Consults',

@@ -275,7 +275,17 @@ function td_schema_organization(): array {
 		'@type'       => 'Organization',
 		'@id'         => td_schema_org_id(),
 		'name'        => 'TechDella',
+		'legalName'   => 'Tech Della Solutions LTD',
 		'url'         => td_url( 'marketing', '/' ),
+		'email'       => 'hello@techdella.com',
+		// Registered office (owner, 11 Oct 2026). An Organization address, not LocalBusiness (§8.2).
+		'address'     => [
+			'@type'           => 'PostalAddress',
+			'streetAddress'   => 'Office 7B, Yetmob Plaza, Elewure, off Akala Express, Oluyole',
+			'addressLocality' => 'Ibadan',
+			'addressRegion'   => 'Oyo State',
+			'addressCountry'  => 'NG',
+		],
 		'description' => 'B2B growth marketing agency: search (SEO and AI search optimization), paid ads, lead generation, email marketing and AI marketing automation, with TechDella Studios for product and brand builds.',
 		'logo'        => [
 			'@type'  => 'ImageObject',

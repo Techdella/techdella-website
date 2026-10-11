@@ -29,7 +29,7 @@ defined( 'ABSPATH' ) || exit;
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>TechDella (“we”, “us”, “our”) is a growth marketing agency headquartered in Nigeria. TechDella Studios is our design and build division. You can reach us at <a href="mailto:hello@techdella.com">hello@techdella.com</a>.</p>
+<p>TechDella (“we”, “us”, “our”) is the trading name of Tech Della Solutions LTD, a growth marketing agency registered in Nigeria, with its office at Office 7B, Yetmob Plaza, Elewure, off Akala Express, Oluyole, Ibadan, Oyo State, Nigeria. TechDella Studios is our design and build division. You can reach us at <a href="mailto:hello@techdella.com">hello@techdella.com</a>.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
@@ -259,7 +259,7 @@ defined( 'ABSPATH' ) || exit;
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Questions about these terms: <a href="mailto:hello@techdella.com">hello@techdella.com</a>. You can also reach us through our <a href="/book-a-discovery-call/">contact form</a>.</p>
+<p>Questions about these terms: <a href="mailto:hello@techdella.com">hello@techdella.com</a>. You can also reach us through our <a href="/book-a-discovery-call/">contact form</a> Post: Tech Della Solutions LTD, Office 7B, Yetmob Plaza, Elewure, off Akala Express, Oluyole, Ibadan, Oyo State, Nigeria.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->

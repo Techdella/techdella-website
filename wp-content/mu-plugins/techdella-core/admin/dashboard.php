@@ -46,6 +46,12 @@ function td_hq_quick_actions(): array {
 			'url'   => $popups,
 		];
 	}
+	if ( function_exists( 'td_prices_admin_url' ) && function_exists( 'td_price_defaults' ) && current_user_can( 'td_manage_prices' ) ) { // phpcs:ignore WordPress.WP.Capabilities.Unknown -- Added by admin/roles.php.
+		$out[] = [
+			'label' => 'Edit prices',
+			'url'   => td_prices_admin_url(),
+		];
+	}
 	return $out;
 }
 

@@ -15,9 +15,11 @@ if ( ! function_exists( 'td_cpt_definition' ) ) {
 
 require_once __DIR__ . '/Checklist.php';
 require_once __DIR__ . '/Refresh.php';
+require_once __DIR__ . '/Prices.php';
 require_once __DIR__ . '/roles.php';
 require_once __DIR__ . '/menu.php';
 require_once __DIR__ . '/dashboard.php';
 require_once __DIR__ . '/editor.php';
 require_once __DIR__ . '/branding.php';
 require_once __DIR__ . '/help.php';
+require_once __DIR__ . '/prices-admin.php';
