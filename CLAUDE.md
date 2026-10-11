@@ -129,14 +129,15 @@ Blocks must:
 - **Client countries:** Nigeria, US, Mexico, South Africa, Lebanon.
 - **Testimonials (verbatim, do not edit):**
   - **Levi Barbosa, CEO, WezOps:** "Techdella reframed how we were thinking about our market entirely. We went from scattered tactics to a positioning and GTM system that actually made sense for where we were heading. The difference was immediate."
-  - **Akin Oyegoke, CEO, Johan Consults:** "The clarity they brought to our strategy saved us months of trial and error — and probably a lot of money too…" (use the full original from the case study).
+  - **Akin Oyegoke, CEO, Johan Consults:** "The clarity they brought to our strategy saved us months of trial and error — and probably a lot of money too. If you're serious about growing your startup, Techdella is the team you want in your corner from early on."
 - **Team:**
   - Joanna Okedara-Kalu (Founder & CEO)
   - Chinedu Emmanuel Kalu (COO & Co-founder)
   - Abel Saka (Brand Designer & UI/UX)
   - Omolola Akiyode (TechDella Team)
   - Mercy Olumakinwa (TechDella Team)
-  - Olabimpe and Oyinkansola (TechDella Team; added by Joanna, 11 Oct 2026; surnames and photos `[CONFIRM]`)
+  - Olabimpe Salamin (TechDella Team)
+  - Oyinkansola Opatola (TechDella Team; both added by Joanna, 11 Oct 2026; photos `[CONFIRM]`, initials shown until then)
 - **Approved by Joanna (11 Oct 2026):** the founder letter ("Hi, I'm Joanna") as drafted, and client
   permissions for every existing case study, testimonial and logo (`wp td permissions:grant`).
 - **Draft copy that still needs Joanna's sign-off before launch:**
@@ -304,7 +305,7 @@ TD_ENV=local|staging|production
   - `wp cache flush` and `wp litespeed-purge all` over SSH;
   - Rank Math sitemap regenerates;
   - smoke tests (Playwright `@smoke`) run against the deployed URL.
-- Staging carries `X-Robots-Tag: noindex` and HTTP basic auth. Check this in CI: **staging must never be indexed.**
+- Staging carries `X-Robots-Tag: noindex`. Check this in CI: **staging must never be indexed.** (HTTP basic auth: not wanted by the owner, 11 Oct 2026; noindex stays.)
 - Rollback: `make rollback TAG=vX.Y.Z` redeploys the previous tag.
 
 ---
@@ -1036,7 +1037,7 @@ Also:
 | SMTP provider for system mail | WP Mail SMTP |
 | Prices and minimum ad spend | `[PRICE]` / `[MINIMUM SPEND]` |
 | Client permissions for logos, quotes and creatives | `permission_confirmed` fields |
-| Real addresses, if any (for `LocalBusiness`) | Location pages |
+| Real addresses, if any (for `LocalBusiness`) | Location pages. Registered office (supplied 11 Oct 2026): Tech Della Solutions LTD, Office 7B, Yetmob Plaza, Elewure, off Akala Express, Oluyole, Ibadan, Oyo State, Nigeria: on the legal pages and in `Organization` schema |
 | Social profile URLs | `sameAs` |
 | AI crawler policy | `robots.txt` |
 | US vs UK English | Voice |
