@@ -106,7 +106,11 @@ if [ "$REFRESH" = 1 ]; then
   [ "$($WP config get TD_ENV 2> /dev/null || true)" = staging ] || { echo "--refresh-pages only runs on staging." >&2; exit 2; }
   $WP td preview:seed --force --publish
   # Case studies, rebuilt from the published originals (content/case-studies), onto the copies.
-  $WP td import-content "$BUNDLE/content/case-studies" --status=draft --update-published
+  # Rebuilt case studies, industries, markets and (on the right site) guides, glossary and the
+  # business library, published on the private staging site for review (never on production).
+  for d in case-studies solutions locations glossary business journal; do
+    [ -d "$BUNDLE/content/$d" ] && $WP td import-content "$BUNDLE/content/$d" --status=draft --update-published --publish
+  done
   # Old redirects that fight the new ones are switched off; old pages that are now redirected
   # (e.g. the old service pages) are unpublished (draft, never deleted).
   $WP td redirects import --file="$BUNDLE/data/redirects.csv"

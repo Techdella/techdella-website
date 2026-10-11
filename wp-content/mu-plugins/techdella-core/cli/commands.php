@@ -61,6 +61,10 @@ function td_cli_setup( array $args, array $assoc ): void {
  * : Local and staging only: also update posts that are already published (status unchanged;
  * WordPress keeps the old content as a revision). Production never does this.
  *
+ * [--publish]
+ * : Local and staging only: publish what is imported, so the private staging site can be
+ * reviewed as a whole. Production never does this (§0.4).
+ *
  * ## EXAMPLES
  *
  *     wp td import-content /var/www/repo/content/journal --status=draft
@@ -83,6 +87,13 @@ function td_cli_import_content( array $args, array $assoc ): void {
 			WP_CLI::error( '--update-published only works on local and staging sites.' );
 		}
 		add_filter( 'td_import_update_published', '__return_true' );
+	}
+	if ( Utils\get_flag_value( $assoc, 'publish', false ) ) {
+		if ( ! in_array( td_environment(), [ 'local', 'staging' ], true ) ) {
+			WP_CLI::error( '--publish only works on local and staging sites.' );
+		}
+		add_filter( 'td_import_publish', '__return_true' );
+		add_filter( 'td_checklist_bypass', '__return_true' );
 	}
 	$files = td_import_files( $path );
 	$base  = dirname( is_dir( $path ) ? rtrim( $path, '/' ) : dirname( $path ) );

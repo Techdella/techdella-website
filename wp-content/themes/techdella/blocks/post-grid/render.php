@@ -9,11 +9,14 @@ defined( 'ABSPATH' ) || exit;
 
 require_once dirname( __DIR__ ) . '/post-card/lib.php';
 
-$td_layout   = 'list' === ( $attributes['layout'] ?? '' ) ? 'list' : 'grid';
-$td_count    = max( 1, min( 24, (int) ( $attributes['count'] ?? 6 ) ) );
-$td_current  = is_singular() ? (int) get_queried_object_id() : 0;
+$td_layout  = 'list' === ( $attributes['layout'] ?? '' ) ? 'list' : 'grid';
+$td_count   = max( 1, min( 24, (int) ( $attributes['count'] ?? 6 ) ) );
+$td_current = is_singular() ? (int) get_queried_object_id() : 0;
+// Articles of the same kind: posts on the Journal, the business library on Marketing.
+$td_type     = sanitize_key( (string) ( $attributes['postType'] ?? '' ) );
+$td_type     = '' !== $td_type ? $td_type : ( is_singular( 'business' ) ? 'business' : 'post' );
 $td_args     = [
-	'post_type'           => 'post',
+	'post_type'           => $td_type,
 	'post_status'         => 'publish',
 	'posts_per_page'      => $td_count,
 	'offset'              => max( 0, (int) ( $attributes['offset'] ?? 0 ) ),

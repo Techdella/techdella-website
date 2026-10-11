@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/myth-fact",
+	"title": "Myth vs fact",
+	"category": "techdella",
+	"icon": "editor-help",
+	"description": "Pairs of a common myth and the fact, side by side.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"items": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"example": {
+		"attributes": {
+			"title": "Myth vs fact",
+			"items": [
+				{
+					"myth": "SEO is dead because of AI answers.",
+					"fact": "AI answers draw on pages that rank and are clearly written. SEO foundations matter more, not less."
+				},
+				{
+					"myth": "More content always means more traffic.",
+					"fact": "Thin pages can drag a site down. Fewer, better pages that answer real questions win."
+				}
+			]
+		}
+	},
+	"techdella": {
+		"controls": {
+			"items": "json"
+		},
+		"help": "items: 2–5 {myth, fact}. Lead the fact with the correction, then one line of why; cite a source in the text when you state a number."
+	}
+}

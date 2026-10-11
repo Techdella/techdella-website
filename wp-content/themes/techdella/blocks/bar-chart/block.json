@@ -1,0 +1,79 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/bar-chart",
+	"title": "Bar chart",
+	"category": "techdella",
+	"icon": "chart-bar",
+	"description": "A simple horizontal bar chart for one series (shares, rankings, survey results), with a named source. Accessible: every value is printed.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"unit": {
+			"type": "string",
+			"default": ""
+		},
+		"max": {
+			"type": "number",
+			"default": 0
+		},
+		"items": {
+			"type": "array",
+			"default": []
+		},
+		"highlight": {
+			"type": "integer",
+			"default": -1
+		},
+		"source": {
+			"type": "string",
+			"default": ""
+		},
+		"url": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"example": {
+		"attributes": {
+			"title": "Where B2B buyers start research (example data)",
+			"unit": "%",
+			"items": [
+				{
+					"label": "Search engines",
+					"value": 42
+				},
+				{
+					"label": "AI assistants",
+					"value": 23
+				},
+				{
+					"label": "Peer recommendations",
+					"value": 19
+				},
+				{
+					"label": "Social media",
+					"value": 16
+				}
+			],
+			"highlight": 1,
+			"source": "Example data for the styleguide",
+			"url": ""
+		}
+	},
+	"techdella": {
+		"controls": {
+			"items": "json",
+			"url": "url"
+		},
+		"help": "items: 3–8 {label, value} of ONE measure, largest first. unit: \"%\", \"$\" or a word. max: the scale maximum (default: the largest value; use 100 for percentages). highlight: index of the one bar shown in orange (-1 = none). Always name the source."
+	}
+}

@@ -9,6 +9,7 @@
  *
  * Files:
  *   src/FrontMatter.php    YAML front-matter parser (pure)
+ *   src/Directives.php     :::article blocks in Markdown (pure)
  *   src/RedirectRules.php  CSV parsing, matcher, Rank Math mapping (pure)
  *   src/Decay.php          GSC decay + review cadence (pure)
  *   redirects.php          fallback store + runtime redirector + Rank Math import + health
@@ -21,6 +22,7 @@
 defined( 'ABSPATH' ) || exit;
 
 require_once __DIR__ . '/src/FrontMatter.php';
+require_once __DIR__ . '/src/Directives.php';
 require_once __DIR__ . '/src/RedirectRules.php';
 require_once __DIR__ . '/src/Decay.php';
 require_once __DIR__ . '/redirects.php';

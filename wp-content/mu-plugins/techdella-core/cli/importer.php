@@ -88,8 +88,16 @@ function td_import_markdown_to_blocks( string $markdown ): string {
 	if ( ! class_exists( 'Parsedown' ) ) {
 		require_once TD_CORE_DIR . '/lib/Parsedown.php';
 	}
-	$parser = new Parsedown();
-	$html   = (string) $parser->text( $markdown );
+	// Article components (:::callout, :::stats …) become techdella/* blocks; see content/README.md.
+	$directives = \TechDella\Core\Cli\Directives::extract( $markdown );
+	foreach ( $directives['errors'] as $error ) {
+		if ( class_exists( 'WP_CLI' ) ) {
+			WP_CLI::warning( 'Article block: ' . $error );
+		}
+	}
+	$markdown = $directives['markdown'];
+	$parser   = new Parsedown();
+	$html     = (string) $parser->text( $markdown );
 	// Cross-site links: (studios:/work/) → td_url( 'studios', '/work/' ), so content never hard-codes domains (§4.1).
 	$html = (string) preg_replace_callback(
 		'#href="(marketing|journal|studios):(/[^"]*)"#',
@@ -157,7 +165,15 @@ function td_import_markdown_to_blocks( string $markdown ): string {
 		}
 	}
 	// phpcs:enable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-	return implode( "\n\n", $out );
+	$content = implode( "\n\n", $out );
+	foreach ( $directives['blocks'] as $n => $block ) {
+		$content = str_replace(
+			"<!-- wp:paragraph -->\n<p>" . \TechDella\Core\Cli\Directives::PLACEHOLDER . $n . "</p>\n<!-- /wp:paragraph -->",
+			get_comment_delimited_block_content( $block['name'], $block['attrs'], '' ),
+			$content
+		);
+	}
+	return $content;
 }
 
 /**
@@ -247,6 +263,15 @@ function td_import_set_field( int $post_id, string $name, $value ): void {
 	if ( is_array( $def ) && 'repeater' === ( $def['type'] ?? '' ) && is_array( $value ) && array_is_list( $value ) && ! empty( $def['sub_fields'] ) ) {
 		$subs  = array_map( static fn( $f ) => (string) $f['name'], (array) $def['sub_fields'] );
 		$value = array_map( static fn( $v ) => is_array( $v ) ? $v : td_import_split_row( (string) $v, $subs ), $value );
+		// Sub-fields that point at posts or users take slugs/logins (e.g. services_used.service).
+		foreach ( (array) $def['sub_fields'] as $sub_field ) {
+			$sub_name = (string) $sub_field['name'];
+			foreach ( $value as $i => $row ) {
+				if ( is_array( $row ) && isset( $row[ $sub_name ] ) && '' !== $row[ $sub_name ] && ! is_numeric( $row[ $sub_name ] ) && in_array( $sub_field['type'] ?? '', [ 'post_object', 'relationship', 'user' ], true ) ) {
+					$value[ $i ][ $sub_name ] = td_import_field_value( (array) $sub_field, $row[ $sub_name ] );
+				}
+			}
+		}
 	}
 	$field = td_import_acf_fields( $post_id )[ $name ] ?? null;
 	if ( is_array( $field ) && function_exists( 'update_field' ) ) {
@@ -254,32 +279,59 @@ function td_import_set_field( int $post_id, string $name, $value ): void {
 		if ( 'repeater' === $type && is_array( $value ) && array_is_list( $value ) && ! empty( $field['sub_fields'] ) ) {
 			$sub   = (string) $field['sub_fields'][0]['name'];
 			$value = array_map( static fn( $v ) => is_array( $v ) ? $v : [ $sub => $v ], $value );
-		} elseif ( 'user' === $type ) {
-			$value = td_import_user_id( $value );
-		} elseif ( 'date_picker' === $type ) {
-			$value = str_replace( '-', '', (string) $value );
-		} elseif ( in_array( $type, [ 'relationship', 'post_object' ], true ) ) {
-			$ids = [];
-			foreach ( (array) $value as $slug ) {
-				$found = get_posts(
-					[
-						'name'           => sanitize_title( (string) $slug ),
-						'post_type'      => ! empty( $field['post_type'] ) ? (array) $field['post_type'] : 'any',
-						'post_status'    => 'any',
-						'posts_per_page' => 1,
-						'fields'         => 'ids',
-					]
-				);
-				if ( $found ) {
-					$ids[] = (int) $found[0];
+			// Sub-fields that point at posts or users take slugs/logins too (e.g. services_used.service).
+			foreach ( (array) $field['sub_fields'] as $sub_field ) {
+				$sub_name = (string) $sub_field['name'];
+				foreach ( $value as $i => $row ) {
+					if ( is_array( $row ) && isset( $row[ $sub_name ] ) && ! is_numeric( $row[ $sub_name ] ) ) {
+						$value[ $i ][ $sub_name ] = td_import_field_value( $sub_field, $row[ $sub_name ] );
+					}
 				}
 			}
-			$value = 'post_object' === $type ? ( $ids[0] ?? 0 ) : $ids;
+		} else {
+			$value = td_import_field_value( $field, $value );
 		}
 		update_field( (string) $field['key'], $value, $post_id );
 		return;
 	}
 	update_post_meta( $post_id, $name, is_array( $value ) ? $value : (string) ( is_bool( $value ) ? (int) $value : $value ) );
+}
+
+/**
+ * Convert a front-matter value for one ACF field: user logins, dates, and post slugs for
+ * relationship/post_object fields (found by slug in any status, so drafts link too).
+ *
+ * @param array<string,mixed> $field ACF field definition.
+ * @param mixed               $value Value from the front matter.
+ * @return mixed
+ */
+function td_import_field_value( array $field, $value ) {
+	$type = (string) ( $field['type'] ?? '' );
+	if ( 'user' === $type ) {
+		return td_import_user_id( $value );
+	}
+	if ( 'date_picker' === $type ) {
+		return str_replace( '-', '', (string) $value );
+	}
+	if ( ! in_array( $type, [ 'relationship', 'post_object' ], true ) ) {
+		return $value;
+	}
+	$ids = [];
+	foreach ( (array) $value as $slug ) {
+		$found = get_posts(
+			[
+				'post_name__in'  => [ sanitize_title( (string) $slug ) ],
+				'post_type'      => ! empty( $field['post_type'] ) ? (array) $field['post_type'] : 'any',
+				'post_status'    => [ 'publish', 'draft', 'pending', 'future', 'private' ],
+				'posts_per_page' => 1,
+				'fields'         => 'ids',
+			]
+		);
+		if ( $found ) {
+			$ids[] = (int) $found[0];
+		}
+	}
+	return 'post_object' === $type ? ( $ids[0] ?? 0 ) : $ids;
 }
 
 /**
@@ -455,8 +507,12 @@ function td_import_file( string $file, string $status, bool $dry, string $base )
 		$data['ID'] = $post->ID;
 	}
 	// Never publish from here, even if a filter tries (§0.4).
-	$data['post_status'] = in_array( $data['post_status'], [ 'draft', 'pending' ], true ) ? $data['post_status'] : 'draft';
-	$id                  = $post ? wp_update_post( wp_slash( $data ), true ) : wp_insert_post( wp_slash( $data ), true );
+	// Never publishes (§0.4); --update-published keeps an already-live copy's status on local/staging.
+	$data['post_status'] = in_array( $data['post_status'], [ 'draft', 'pending' ], true ) || $live ? $data['post_status'] : 'draft';
+	if ( apply_filters( 'td_import_publish', false ) && in_array( td_environment(), [ 'local', 'staging' ], true ) ) {
+		$data['post_status'] = 'publish'; // Staging preview only (wp td import-content --publish).
+	}
+	$id = $post ? wp_update_post( wp_slash( $data ), true ) : wp_insert_post( wp_slash( $data ), true );
 	if ( is_wp_error( $id ) ) {
 		$row['result'] = 'error: ' . $id->get_error_message();
 		return $row;

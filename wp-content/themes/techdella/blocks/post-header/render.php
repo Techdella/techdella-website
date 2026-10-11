@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 require_once dirname( __DIR__ ) . '/post-card/lib.php';
 
 $td_id     = (int) ( $attributes['postId'] ?? 0 );
-$td_id     = $td_id ? $td_id : ( is_singular( 'post' ) ? (int) get_queried_object_id() : 0 );
+$td_id     = $td_id ? $td_id : ( is_singular( [ 'post', 'business' ] ) ? (int) get_queried_object_id() : 0 );
 $td_post   = $td_id ? get_post( $td_id ) : null;
 $td_title  = '';
 $td_dek    = (string) ( $attributes['dek'] ?? '' );
@@ -19,7 +19,7 @@ $td_person = null;
 $td_min    = 0;
 $td_cat_n  = '';
 $td_cat_u  = '';
-if ( $td_post && 'post' === $td_post->post_type ) {
+if ( $td_post && in_array( $td_post->post_type, [ 'post', 'business' ], true ) ) {
 	$td_title  = '' !== trim( (string) ( $attributes['title'] ?? '' ) ) ? (string) $attributes['title'] : get_the_title( $td_post );
 	$td_dek    = '' !== trim( $td_dek ) ? $td_dek : ( has_excerpt( $td_post ) ? get_the_excerpt( $td_post ) : '' );
 	$td_cat    = td_a3_primary_category( $td_id );

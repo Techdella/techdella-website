@@ -92,6 +92,80 @@ Rules:
   is blocked until none are left (§10.1 step 5); `wp td audit placeholders` lists any on live pages.
 - Voice: §10.2 (US English, short sentences, no hype words). Proof: only §2.4.
 
+## Article blocks (guides, glossary, business library)
+
+Designed, reusable blocks go straight into the Markdown body. Open with `:::name` plus arguments,
+close with `:::` on its own line. The importer turns each into a techdella/* block; a malformed one
+prints a warning and is skipped. Text inside takes **bold**, *italic*, [links](/path/) and "- " lists.
+
+```markdown
+:::tldr
+Two or three sentences that answer the title's question directly. (Or use the `tldr:` field.)
+:::
+
+:::takeaways
+- One-sentence takeaway a reader can act on.
+- Another one.
+:::
+
+:::callout tip "Optional title"
+note | tip | warning | key (dark; one per article). One to three sentences or a short list.
+:::
+
+:::stats "Optional title" highlight=0
+50% | of Paycape's conversions came from inbound | TechDella case study, 2025 | /case-studies/paycape/
+71% | label for the number | Source name, year | https://source-url
+:::
+
+:::chart "What the bars show" unit=% max=100 highlight=1
+Search engines | 42
+AI assistants | 23
+source: Survey name, publisher, year | https://source-url
+:::
+
+:::myth-fact
+Myth: A common belief.
+Fact: The correction first, then one line of why.
+:::
+
+:::steps "Optional title"
+1. Step title | One or two sentences.
+2. Next step | …
+:::
+
+:::checklist "Optional title"
+- One action per line
+:::
+
+:::pros-cons "Agency" "In-house"
++ goes in the first column
+- goes in the second column
+:::
+
+:::quote "Name" "Role, Company" url=/case-studies/wezops/
+A verbatim quote only (never edited or invented).
+:::
+
+:::cta "Want help with this?" "Get a growth audit" /growth-audit/
+One line on what they get. Use marketing:/path/ or studios:/path/ across sites.
+:::
+
+:::faq "Optional title"
+### A question the way a buyer types it?
+Answer first, in 40–80 words.
+### Next question?
+…
+:::
+```
+
+Tables are ordinary Markdown tables (styled, scrollable on phones). Images: `![Alt text](/wp-content/uploads/…)`
+or a repo path in `featured_image:`.
+
+**Rules for every number:** a `stats` or `chart` line without a source is rejected. Our own numbers come
+only from the verified proof in CLAUDE.md §2.4 and link to the case study. External numbers name the
+publisher and year and link to the original source (not a blog that quotes it). Never round up, never
+invent, and mark anything you can't source as `[CONFIRM]`.
+
 ## Samples
 
 `journal/sample-ai-search-optimization.md`, `marketing/sample-growth-audit-brief.md` and

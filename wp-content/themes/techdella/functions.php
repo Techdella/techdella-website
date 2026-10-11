@@ -25,5 +25,6 @@ require_once __DIR__ . '/inc/assets.php';
 require_once __DIR__ . '/inc/media.php';
 require_once __DIR__ . '/inc/components.php';
 require_once __DIR__ . '/inc/prices.php';
+require_once __DIR__ . '/inc/article.php';
 require_once __DIR__ . '/inc/blocks.php';
 require_once __DIR__ . '/inc/templates.php';

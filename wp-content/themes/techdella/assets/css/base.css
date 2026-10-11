@@ -68,6 +68,19 @@ a:hover{color:var(--td-orange-text)}
 .td-prose pre{background:var(--td-ink);color:var(--td-paper);padding:18px 20px;border-radius:var(--td-r-sm);overflow-x:auto}
 .td-prose pre code{background:none;padding:0;color:inherit}
 .td-prose hr{border:0;border-top:1px solid var(--td-line);margin-block:2.2em}
+/* Article tables: scroll on small screens, quiet zebra, the first column reads as the row label. */
+.td-prose .wp-block-table{overflow-x:auto;border:1px solid var(--td-line);border-radius:var(--td-r-md)}
+.td-prose .wp-block-table table{min-width:520px;margin:0}
+.td-prose .wp-block-table:focus-visible{outline:2px solid var(--td-orange);outline-offset:3px}
+.td-prose .wp-block-table :is(th,td){border-bottom:1px solid var(--td-line-soft);vertical-align:top}
+.td-prose .wp-block-table tbody tr:nth-child(even){background:#FCFBF9}
+.td-prose .wp-block-table tbody tr:last-child :is(th,td){border-bottom:0}
+.td-prose .wp-block-table td:first-child{font-weight:600;color:var(--td-ink)}
+.td-prose .wp-block-table th{font-size:13px;letter-spacing:.03em;text-transform:uppercase;color:var(--td-muted)}
+/* FAQ inside an article: no section band, full column width. */
+.td-prose .td-faq{background:none;margin-top:2.2em}
+.td-prose .td-faq__inner{padding:0;max-width:none;width:auto}
+.td-prose .td-faq__title{font-size:clamp(28px,3vw,38px);text-align:left}
 
 /* Placeholders that must be resolved before launch (§0.5, §16) — visible on purpose. */
 .td-confirm{background:var(--td-orange-tint);color:var(--td-orange-text);border-radius:6px;padding:0 .3em;font-weight:500}

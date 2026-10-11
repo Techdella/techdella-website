@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/checklist",
+	"title": "Checklist",
+	"category": "techdella",
+	"icon": "yes-alt",
+	"description": "A titled checklist readers can work through (a real list, styled with check marks).",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"items": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"example": {
+		"attributes": {
+			"title": "Before you launch",
+			"items": [
+				"Conversion tracking tested end to end",
+				"Landing page answers the ad’s promise",
+				"Follow-up within one business day"
+			]
+		}
+	},
+	"techdella": {
+		"controls": {
+			"items": "json"
+		},
+		"help": "items: short strings, one action each, starting with a verb or the thing to check."
+	}
+}

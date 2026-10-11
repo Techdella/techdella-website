@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/callout",
+	"title": "Callout",
+	"category": "techdella",
+	"icon": "info-outline",
+	"description": "Article callout: a note, tip, warning or key point, with an optional title. Text takes **bold**, *italic*, [links](url) and \"- \" lists.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"attributes": {
+		"variant": {
+			"type": "string",
+			"default": "note",
+			"enum": [
+				"note",
+				"tip",
+				"warning",
+				"key"
+			]
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"text": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"example": {
+		"attributes": {
+			"variant": "tip",
+			"title": "Start with the questions buyers ask",
+			"text": "List 15–20 real questions from sales calls before you write a single page. They become your headings, FAQs and briefs."
+		}
+	},
+	"techdella": {
+		"controls": {
+			"text": "textarea"
+		},
+		"help": "variant: note (canvas), tip (sand), warning (outlined) or key (dark, one per article). Keep it to 1–3 sentences or a short list."
+	}
+}

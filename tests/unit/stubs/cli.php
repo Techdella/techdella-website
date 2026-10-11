@@ -9,7 +9,7 @@ if ( ! function_exists( 'td_cli_unit_load' ) ) {
 	 */
 	function td_cli_unit_load(): void {
 		$dir = dirname( __DIR__, 3 ) . '/wp-content/mu-plugins/techdella-core/cli/src';
-		foreach ( [ 'FrontMatter', 'RedirectRules', 'Decay' ] as $class ) {
+		foreach ( [ 'FrontMatter', 'RedirectRules', 'Decay', 'Directives' ] as $class ) {
 			require_once $dir . '/' . $class . '.php';
 		}
 	}

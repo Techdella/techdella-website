@@ -139,10 +139,12 @@ test('book a discovery call: contact form, no popups', async ({ page }) => {
   await expect(page.locator('.td-popup, [data-td-popup]')).toHaveCount(0);
 });
 
-test('legal pages are marked for legal review', async ({ page }) => {
+test('legal pages show the last-updated date and no placeholders', async ({ page }) => {
   for (const p of ['/privacy-policy/', '/terms/', '/cookies/', '/disclaimer/']) {
     await page.goto(site('marketing', p));
-    await expect(page.locator('main, body').first()).toContainText('[CONFIRM legal review]');
+    const main = page.locator('main, body').first();
+    await expect(main).toContainText('Last updated: 11 October 2026');
+    await expect(main).not.toContainText('[CONFIRM');
   }
 });
 
