@@ -97,5 +97,5 @@ defined( 'ABSPATH' ) || exit;
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Questions about this disclaimer: <a href="mailto:hello@techdella.com">hello@techdella.com</a>.</p>
+<p>Questions about this disclaimer: <a href="mailto:hello@techdella.com">hello@techdella.com</a>. Post: Tech Della Solutions LTD, Office 7B, Yetmob Plaza, Elewure, off Akala Express, Oluyole, Ibadan, Oyo State, Nigeria.</p>
 <!-- /wp:paragraph -->

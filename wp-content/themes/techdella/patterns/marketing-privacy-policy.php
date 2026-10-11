@@ -29,11 +29,11 @@ defined( 'ABSPATH' ) || exit;
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>TechDella (“we”, “us”, “our”) is a growth marketing agency headquartered in Nigeria. We run three websites: techdella.com, our Journal at blog.techdella.com, and TechDella Studios at studios.techdella.com. This policy covers all three sites and the forms and free tools on them.</p>
+<p>TechDella (“we”, “us”, “our”) is the trading name of Tech Della Solutions LTD, a growth marketing agency registered in Nigeria, with its office at Office 7B, Yetmob Plaza, Elewure, off Akala Express, Oluyole, Ibadan, Oyo State, Nigeria. We run three websites: techdella.com, our Journal at blog.techdella.com, and TechDella Studios at studios.techdella.com. This policy covers all three sites and the forms and free tools on them.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>We decide how and why your personal information is used, so we are the data controller. For any privacy question or request, email <a href="mailto:hello@techdella.com">hello@techdella.com</a>.</p>
+<p>We decide how and why your personal information is used, so Tech Della Solutions LTD is the data controller. For any privacy question or request, email <a href="mailto:hello@techdella.com">hello@techdella.com</a>.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
@@ -275,7 +275,7 @@ defined( 'ABSPATH' ) || exit;
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Questions or requests about your privacy: <a href="mailto:hello@techdella.com">hello@techdella.com</a>. You can also reach us through our <a href="/book-a-discovery-call/">contact form</a>.</p>
+<p>Questions or requests about your privacy: <a href="mailto:hello@techdella.com">hello@techdella.com</a>. You can also reach us through our <a href="/book-a-discovery-call/">contact form</a>, or write to Tech Della Solutions LTD, Office 7B, Yetmob Plaza, Elewure, off Akala Express, Oluyole, Ibadan, Oyo State, Nigeria.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
