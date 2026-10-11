@@ -31,6 +31,15 @@ function td_build_version( string $file ): string {
 }
 
 /**
+ * Point relative font/image URLs in built CSS at the theme (needed when CSS is inlined).
+ *
+ * @param string $css Built CSS.
+ */
+function td_css_fix_urls( string $css ): string {
+	return str_replace( [ '../fonts/', '../img/' ], [ get_theme_file_uri( 'assets/fonts/' ), get_theme_file_uri( 'assets/img/' ) ], $css );
+}
+
+/**
  * Inline CSS at or under this size (bytes, minified). Above it, link the file.
  */
 function td_inline_css_limit(): int {
@@ -45,16 +54,17 @@ add_action(
 		printf( '<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n", esc_url( $fonts . 'geist-500.woff2' ) );
 		printf( '<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n", esc_url( $fonts . 'instrument-serif-italic.woff2' ) );
 
-		$css_path = get_theme_file_path( 'assets/build/main.css' );
+		// Critical CSS = core.css (tokens, base, components, nav, footer), inlined. Block CSS is
+		// inlined just before each block's first render (td_block_inline_css()), so a page only
+		// carries what it uses and nothing render-blocks (§8.4). main.css is the fallback.
+		$core     = get_theme_file_path( 'assets/build/core.css' );
+		$css_path = is_readable( $core ) ? $core : get_theme_file_path( 'assets/build/main.css' );
 		if ( ! is_readable( $css_path ) ) {
 			echo "<!-- techdella: run `npm run build` -->\n";
 			return;
 		}
 		if ( filesize( $css_path ) <= td_inline_css_limit() ) {
-			$css = (string) file_get_contents( $css_path ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
-			$css = str_replace( '../fonts/', $fonts, $css );
-			$css = str_replace( '../img/', get_theme_file_uri( 'assets/img/' ), $css );
-			echo '<style id="td-css">' . $css . "</style>\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built, trusted CSS.
+			echo '<style id="td-css">' . td_css_fix_urls( (string) file_get_contents( $css_path ) ) . "</style>\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- built, trusted CSS.
 		} else {
 			printf(
 				'<link rel="stylesheet" id="td-css" href="%s">' . "\n", // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet -- printed at wp_head priority 2, before any enqueued style.

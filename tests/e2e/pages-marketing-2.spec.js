@@ -96,7 +96,7 @@ test('glossary: answer-first definition, A–Z index, byline', async ({ page }) 
   await page.goto(site('marketing', '/glossary/'));
   await expect(page.getByRole('navigation', { name: 'Jump to letter' })).toBeVisible();
   await page.goto(site('marketing', '/glossary/aeo/'));
-  const first = page.locator('.td-m2-term > *').first();
+  const first = page.locator('.td-m2-term > :not(style)').first();
   await expect(first).toHaveClass(/td-tldr/);
   await expect(page.locator('.td-m2-byline')).toContainText('Reviewed by');
 });

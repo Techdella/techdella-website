@@ -20,7 +20,7 @@ const args = new Set(process.argv.slice(2));
 const CHECK = args.has('--check');
 
 // §2.3 / §8.4 budgets (gzipped bytes).
-const BUDGET = { 'main.js': 25 * 1024, 'main.css': 45 * 1024 };
+const BUDGET = { 'main.js': 25 * 1024, 'main.css': 45 * 1024, 'core.css': 20 * 1024 };
 
 // Last two years of evergreen browsers, roughly "> 0.5%, not dead".
 const targets = browserslistToTargets(['chrome 109', 'edge 109', 'firefox 115', 'safari 15.4', 'ios_saf 15.4']);
@@ -33,6 +33,11 @@ const blockDirs = () =>
 
 const cssFiles = (dir) =>
   existsSync(dir) ? readdirSync(dir).filter((f) => f.endsWith('.css')).sort().map((f) => join(dir, f)) : [];
+
+// Core CSS (inlined in <head> on every page): everything except per-block styles.
+function coreCssSources() {
+  return cssSources().filter((f) => !f.includes('/blocks/'));
+}
 
 function cssSources() {
   const css = join(THEME, 'assets/css');
@@ -82,7 +87,14 @@ function report(name, buf) {
 async function build() {
   const t = Date.now();
   const outputs = {};
+  // main.css: the whole bundle (editor canvas + fallback). core.css + blocks/<name>.css: front end,
+  // where core.css is inlined in <head> and each block's CSS is inlined once before its first use.
   outputs['main.css'] = buildCss(cssSources(), 'main.css');
+  outputs['core.css'] = buildCss(coreCssSources(), 'core.css');
+  for (const d of blockDirs()) {
+    const f = join(d, 'style.css');
+    if (existsSync(f)) outputs[`blocks/${d.split('/').pop()}.css`] = buildCss([f], `${d.split('/').pop()}.css`);
+  }
   const editorCss = join(THEME, 'assets/css/editor.css');
   outputs['editor.css'] = buildCss([join(THEME, 'assets/css/tokens.css'), join(THEME, 'assets/css/fonts.css'), ...(existsSync(editorCss) ? [editorCss] : [])].filter(existsSync), 'editor.css');
 
@@ -92,9 +104,10 @@ async function build() {
   if (existsSync(editorJs)) outputs['editor.js'] = await buildJs([editorJs], 'editor.js');
 
   let ok = true;
-  for (const [name, buf] of Object.entries(outputs)) ok = report(name, buf) && ok;
+  for (const [name, buf] of Object.entries(outputs)) if (!name.startsWith('blocks/')) ok = report(name, buf) && ok;
+  console.log(`  ✓ blocks/*.css   ${Object.keys(outputs).filter((n) => n.startsWith('blocks/')).length} per-block files`);
   if (!CHECK) {
-    mkdirSync(OUT, { recursive: true });
+    mkdirSync(join(OUT, 'blocks'), { recursive: true });
     for (const [name, buf] of Object.entries(outputs)) writeFileSync(join(OUT, name), buf);
     writeFileSync(
       join(OUT, 'manifest.json'),

@@ -42,7 +42,7 @@ test.describe('service blocks', () => {
   test('styleguide renders every A2 block', async ({ page }) => {
     await page.goto(site('marketing', '/styleguide/'));
     for (const name of MINE) {
-      await expect(page.locator(`[data-td-block="techdella/${name}"] .td-sg__block-body > *`).first(), name).toBeVisible();
+      await expect(page.locator(`[data-td-block="techdella/${name}"] .td-sg__block-body > :not(style)`).first(), name).toBeVisible();
     }
   });
 

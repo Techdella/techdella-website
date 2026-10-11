@@ -111,3 +111,29 @@ function td_block_wrapper( string $css_class, array $extra = [] ): string {
 	}
 	return $out;
 }
+
+/**
+ * Per-block critical CSS: the first time a TechDella block renders on a page, print its CSS
+ * (assets/build/blocks/<name>.css) inline just before it. Skipped in the editor and REST
+ * previews, which load main.css instead.
+ */
+add_filter(
+	'render_block',
+	static function ( string $html, array $block ): string {
+		static $done = [];
+		$name        = (string) ( $block['blockName'] ?? '' );
+		if ( '' === $html || ! str_starts_with( $name, 'techdella/' ) || isset( $done[ $name ] ) || is_admin() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
+			return $html;
+		}
+		$done[ $name ] = true;
+		$slug          = substr( $name, 10 );
+		$file          = get_theme_file_path( "assets/build/blocks/{$slug}.css" );
+		if ( ! is_readable( $file ) || ! is_readable( get_theme_file_path( 'assets/build/core.css' ) ) ) {
+			return $html;
+		}
+		$css = td_css_fix_urls( (string) file_get_contents( $file ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+		return '<style id="td-block-' . esc_attr( $slug ) . '">' . $css . '</style>' . $html;
+	},
+	5,
+	2
+);
