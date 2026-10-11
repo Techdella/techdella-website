@@ -17,7 +17,7 @@ internal_links:
   - /glossary/market-segmentation/
   - /glossary/customer-lifetime-value/
   - /glossary/sales-funnel/
-rank_math_description: "Account-based marketing targets named high-value companies with joined-up campaigns. Learn the three ABM tiers, how it differs from inbound, and how to start."
+rank_math_description: "Account-based marketing targets named high-value companies with joined-up campaigns. Learn the three ABM tiers and how a small B2B team can start."
 ---
 
 Account-based marketing (ABM) is a B2B approach where you pick specific companies you want as customers and market to them directly, rather than casting a wide net and waiting to see who responds. Marketing and sales agree on a target account list, map the people involved in buying, and run coordinated, personalized outreach across ads, email, content, events and sales conversations. ABM treats each high-value account almost as a market of its own.
