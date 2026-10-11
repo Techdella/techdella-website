@@ -110,6 +110,14 @@ Myth: Charging per word is the professional standard.
 Fact: Per-word pricing rewards length, not results. Project pricing ties your fee to the outcome the page or email should deliver.
 :::
 
+## Where AI fits in a copywriting business
+
+Use AI tools the way a good editor uses an assistant: for research summaries, outline options, headline variations and first-pass edits. Don't hand them the parts clients pay you for: understanding the buyer, choosing the angle and checking every claim against evidence.
+
+Be open with clients about how you use these tools, and check your contracts. Some clients ban AI-generated text for confidentiality or originality reasons, and some ask you to confirm that the copy is original. Never paste confidential client material into a tool unless the client has agreed and the tool's data terms allow it.
+
+A useful positioning line: "I use AI to work faster, and I'm responsible for every word you publish." Clients are buying judgment and accountability.
+
 ## Step 5: Set up simple systems
 
 - **Intake form** that captures audience, offer, proof, tone and deadlines.

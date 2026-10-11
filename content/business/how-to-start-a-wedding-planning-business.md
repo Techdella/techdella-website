@@ -72,6 +72,12 @@ Our wider guide to [starting an event planning business](/business/event-plannin
 
 Write down what each package excludes. Extra site visits, additional events and out-of-area travel should be priced separately.
 
+### Planning multi-day and cultural weddings
+
+Many weddings aren't a single event. A Nigerian couple may hold a traditional engagement, a church or mosque ceremony and a reception, sometimes in different cities, with guests flying in from abroad. South Asian, Jewish and many other weddings in the US and UK also run over several days. If you serve these couples, price each event separately and build a master timeline that covers all of them.
+
+The skills that matter most here are family communication (there are often several decision-makers), vendor coordination across locations, and guest logistics: travel, accommodation and dress codes for each event. Hire or train assistants who understand the customs, and agree in writing who has the final say on decisions. Done well, this is a premium niche that couples recommend to their friends.
+
 ## Step 3: Register, insure and protect yourself
 
 | | United States | United Kingdom | Nigeria |

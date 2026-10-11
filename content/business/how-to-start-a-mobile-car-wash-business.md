@@ -116,6 +116,12 @@ Myth: One-off washes are the main business.
 Fact: Recurring weekly or fortnightly clients and fleet contracts provide steady income. Memberships raise [customer lifetime value](/glossary/customer-lifetime-value/).
 :::
 
+### Turn one-off washes into memberships
+
+A membership is a fixed monthly price for a set number of washes, booked on a regular schedule. It smooths your income through quiet weeks and makes route planning easier, because you know where you'll be.
+
+A simple structure: a fortnightly exterior wash for one price, a fortnightly wash and interior for a higher price, and a quarterly full valet as an add-on. Take payment by card or direct debit monthly, set a minimum term of three months, and let members skip a visit with notice. Offer households with two cars a second-vehicle discount; it's another car at the same stop.
+
 ## Step 6: Get your first customers
 
 :::steps "First 60 days"
