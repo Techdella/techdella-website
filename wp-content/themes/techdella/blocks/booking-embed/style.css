@@ -1,0 +1,10 @@
+/* techdella/booking-embed */
+.td-booking__inner{display:flex;flex-direction:column;gap:28px;align-items:center}
+.td-booking__head{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;max-width:720px}
+.td-booking__head .td-chip{align-self:center}
+.td-booking__title{font-size:clamp(32px,4vw,56px);line-height:1.06;letter-spacing:-.035em}
+.td-booking__lead{color:var(--td-body);font-size:17px}
+.td-booking__frame{width:100%;max-width:960px;border:1px solid var(--td-line);border-radius:var(--td-r-lg);background:var(--td-paper);box-shadow:var(--td-shadow);overflow:hidden;min-height:var(--td-booking-h,760px)}
+.td-booking__frame iframe{display:block;width:100%;height:var(--td-booking-h,760px);border:0}
+.td-booking__fallback{font-size:14px;color:var(--td-muted);text-align:center}
+@media (max-width:600px){.td-booking__frame{border-radius:var(--td-r-md)}}

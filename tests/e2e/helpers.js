@@ -17,6 +17,8 @@ export async function expectNoA11yViolations(page, { include, exclude } = {}) {
   let builder = new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']);
   if (include) builder = builder.include(include);
   if (exclude) builder = builder.exclude(exclude);
+  // Third-party booking pages (Startbuddi) are checked by their owner, not by our page tests.
+  builder = builder.exclude('.td-booking iframe');
   const { violations } = await builder.analyze();
   const bad = violations.filter((v) => ['serious', 'critical'].includes(v.impact));
   expect(bad.map((v) => `${v.id}: ${v.help} (${v.nodes.map((n) => n.target.join(' ')).slice(0, 3).join(', ')})`)).toEqual([]);

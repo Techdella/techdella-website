@@ -133,8 +133,13 @@ test('tool: app mount, then content; three ad positions', async ({ page }) => {
   }
 });
 
-test('book a discovery call: contact form, no popups', async ({ page }) => {
+test('book a discovery call: Startbuddi booking calendar, contact form, no popups', async ({ page }) => {
   await page.goto(site('marketing', '/book-a-discovery-call/'));
+  const frame = page.locator('.td-booking iframe');
+  await expect(frame).toHaveAttribute('src', /^https:\/\/app\.startbuddi\.com\/b\//);
+  await expect(frame).toHaveAttribute('title', /Discovery Call/);
+  await expect(frame).toHaveAttribute('loading', 'lazy');
+  await expect(page.locator('.td-booking__fallback a')).toHaveAttribute('href', /app\.startbuddi\.com/);
   await expect(page.locator('form[action*="/submit/contact"]')).toBeVisible();
   await expect(page.locator('.td-popup, [data-td-popup]')).toHaveCount(0);
 });
@@ -172,4 +177,18 @@ test.describe('naira pricing', () => {
     await expect(page.locator('.td-pricing .td-price').first()).toHaveText('₦700,000');
     await context.close();
   });
+});
+
+test('hero eyebrow sits on the headline\'s line (centered heroes and left heroes)', async ({ page }) => {
+  for (const p of ['/services/', '/solution/', '/resources/', '/pricing/', '/glossary/', '/book-a-discovery-call/', '/services/seo/']) {
+    await page.goto(site('marketing', p));
+    const offset = await page.evaluate(() => {
+      const h = document.querySelector('.td-hero h1');
+      const c = h.closest('section').querySelector('.td-chip, .td-hero__crumb');
+      const a = h.getBoundingClientRect();
+      const b = c.getBoundingClientRect();
+      return getComputedStyle(h).textAlign === 'center' ? (b.x + b.width / 2) - (a.x + a.width / 2) : b.x - a.x;
+    });
+    expect(Math.abs(offset), p).toBeLessThanOrEqual(2);
+  }
 });
