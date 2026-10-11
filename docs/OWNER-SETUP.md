@@ -81,3 +81,17 @@ For staging, create the same set as `TechDella · TEST · …` (§11.5).
 | Joanna's sign-off on the founder copy | Home, About |
 | Photo shoot (§6.2) and official platform logo files (`assets/logos/platforms/`) | `assets/` |
 | Startbuddi logo file for the logo strip (currently a text fallback) | `assets/images/clients/startbuddi.png` |
+
+## 5. Motion videos (§6.3)
+
+The seven motion samples are rendered from HTML (`motion/`, no Remotion licence needed) and are
+not stored in Git. To put one on the site:
+
+1. `npm run motion:render` (or `-- --only mo-03` for one), which writes `assets/video/`.
+2. Upload the scene's `-<format>.mp4`, `-<format>.webm`, `-<format>.jpg` and `.vtt` to the Media
+   Library on the right site.
+3. Add the **Video (self-hosted)** block where `motion/README.md` lists it: pick the files, set the
+   title, duration and the Example/Concept label.
+
+Before publishing: check every scene's copy (MO-04 uses the fictional brand "Northwind"; MO-07 shows
+concept screens only), and replace concepts with real Studios work once it's confirmed.

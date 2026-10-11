@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MO-04c LinkedIn document ad (Example)</title>
+<link rel="stylesheet" href="scene.css">
+<script type="application/json" id="scene-meta">{"id":"MO-04c","title":"Ad creative sample: LinkedIn document ad (fictional brand Northwind, Example)","duration":10,"poster":1.2,"captions":[[0.3,2.2,"5 signs your invoicing is costing you clients."],[2.2,8.2,"Late reminders. Lost invoices. No payment status. Manual follow-ups. Month-end chaos."],[8.2,10,"Download the guide. Northwind. Example ad for a fictional brand."]]}</script>
+<style>
+.stage{flex-direction:row;gap:10rem}
+.side{display:flex;flex-direction:column;gap:3rem;width:62rem;animation:rise .8s .2s both var(--ease)}
+.side .h2,.side .lead{text-align:left}
+.post{flex:none;width:78rem;border-radius:2rem;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden;animation:rise .8s both var(--ease)}
+.top{display:flex;align-items:center;gap:1.6rem;padding:2.2rem 2.6rem}
+.av{display:grid;place-items:center;width:6rem;height:6rem;border-radius:1rem;background:#1F6F5C;color:var(--paper);font-weight:600;font-size:3rem}
+.top b{display:block;font-size:2.5rem}.top small{font-size:2rem;color:var(--muted)}
+.copy{padding:0 2.6rem 2rem;font-size:2.4rem;line-height:1.4}
+.doc{position:relative;margin:0 2.6rem;aspect-ratio:4/5;background:#0F3D30;border-radius:1rem;overflow:hidden;perspective:200rem}
+.page{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:6rem 5.4rem;color:var(--paper);background:#0F3D30;backface-visibility:hidden;transform-origin:left center;animation:flip .7s both var(--ease)}
+@keyframes flip{from{transform:rotateY(0)}to{transform:rotateY(-100deg);opacity:0}}
+.page .k{font-size:2.4rem;letter-spacing:.08em;text-transform:uppercase;color:#9ED8BD}
+.page h3{font-size:7rem;line-height:1.02;letter-spacing:-.045em;font-weight:600}
+.page h3 em{color:#FFB38A}
+.page p{font-size:3rem;line-height:1.35;color:#CFE7DC}
+.page .n{font-size:16rem;line-height:1;font-weight:600;letter-spacing:-.05em;color:#2BB673}
+.page .foot{display:flex;justify-content:space-between;align-items:center;font-size:2.2rem;color:#9ED8BD}
+.page.light{background:#EAF4EF;color:#0F3D30}.page.light p{color:#2A5C4C}.page.light .foot,.page.light .k{color:#2A5C4C}
+.p7{animation:none}
+/* Pages stack in reverse order; each flips away to reveal the next. */
+.p1{z-index:7;animation-delay:2.2s}.p2{z-index:6;animation-delay:3.4s}.p3{z-index:5;animation-delay:4.6s}.p4{z-index:4;animation-delay:5.8s}.p5{z-index:3;animation-delay:7s}.p6{z-index:2;animation-delay:8.2s}
+.count{position:absolute;right:2rem;top:2rem;z-index:9;font-size:2rem;padding:.6rem 1.4rem;border-radius:999px;background:rgba(0,0,0,.55);color:var(--paper)}
+.count span{display:none}
+.count .c1{display:inline;animation:hide 0s 2.4s forwards}
+.count .c2{display:inline;animation:show 0s 2.4s both,hide 0s 3.6s forwards}
+.count .c3{display:inline;animation:show 0s 3.6s both,hide 0s 4.8s forwards}
+.count .c4{display:inline;animation:show 0s 4.8s both,hide 0s 6s forwards}
+.count .c5{display:inline;animation:show 0s 6s both,hide 0s 7.2s forwards}
+.count .c6{display:inline;animation:show 0s 7.2s both,hide 0s 8.4s forwards}
+.count .c7{display:inline;animation:show 0s 8.4s both}
+@keyframes show{from{font-size:0}to{font-size:inherit}}
+@keyframes hide{to{font-size:0}}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:2rem 2.6rem}
+.bar b{font-size:2.4rem}.bar small{display:block;font-size:2rem;color:var(--muted)}
+.bar .go{flex:none;font-size:2.4rem;font-weight:600;padding:1.2rem 2.6rem;border-radius:999px;border:2px solid #0A66C2;color:#0A66C2}
+@media (max-aspect-ratio:4/3){.side{display:none}}
+@media (min-aspect-ratio:4/3){.post{width:68rem}.doc{aspect-ratio:1/1}.page{padding:4.6rem}.page h3{font-size:5.8rem}.page .n{font-size:12rem}.page p{font-size:2.6rem}}
+@media (min-aspect-ratio:3/4) and (max-aspect-ratio:4/3){.post{width:62rem}.doc{aspect-ratio:1/1}.page{padding:4.4rem}.page h3{font-size:5.6rem}.page .n{font-size:12rem}.page p{font-size:2.6rem}}
+@media (max-aspect-ratio:3/4){.post{width:94rem}.copy,.top b{font-size:2.9rem}}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<span class="example">Example</span>
+<main class="stage">
+  <div class="side">
+    <span class="label">LinkedIn · document ad</span>
+    <h1 class="h2">Teach first,<br>then <em>ask</em></h1>
+    <p class="lead">An example creative we made for a fictional brand, Northwind.</p>
+  </div>
+  <article class="post">
+    <div class="top"><span class="av">N</span><div><b>Northwind</b><small>Promoted</small></div></div>
+    <p class="copy">If month-end feels like a chase, this is for you. Swipe through →</p>
+    <div class="doc">
+      <span class="count"><span class="c1">1 / 7</span><span class="c2">2 / 7</span><span class="c3">3 / 7</span><span class="c4">4 / 7</span><span class="c5">5 / 7</span><span class="c6">6 / 7</span><span class="c7">7 / 7</span></span>
+      <section class="page p1"><span class="k">Guide · Northwind</span><h3>5 signs your invoicing is costing you <em>clients</em></h3><span class="foot"><span>northwind.example</span><span>Swipe →</span></span></section>
+      <section class="page light p2"><span class="n">1</span><div><h3>Reminders go out late</h3><p>Or not at all, because nobody owns them.</p></div><span class="foot"><span>Northwind</span><span>2</span></span></section>
+      <section class="page p3"><span class="n">2</span><div><h3>Invoices get lost in chats</h3><p>Sent on WhatsApp, buried by Friday.</p></div><span class="foot"><span>Northwind</span><span>3</span></span></section>
+      <section class="page light p4"><span class="n">3</span><div><h3>Nobody knows who has paid</h3><p>So the same client gets chased twice.</p></div><span class="foot"><span>Northwind</span><span>4</span></span></section>
+      <section class="page p5"><span class="n">4</span><div><h3>Follow-ups are manual</h3><p>Hours a week, every week.</p></div><span class="foot"><span>Northwind</span><span>5</span></span></section>
+      <section class="page light p6"><span class="n">5</span><div><h3>Month-end is chaos</h3><p>Spreadsheets, screenshots and guesswork.</p></div><span class="foot"><span>Northwind</span><span>6</span></span></section>
+      <section class="page p7"><span class="k">Northwind</span><h3>Invoices that <em>chase</em> themselves</h3><span class="foot"><span>northwind.example</span><span>Start free</span></span></section>
+    </div>
+    <div class="bar"><div><b>Free guide: fix your invoicing</b><small>northwind.example</small></div><span class="go">Download</span></div>
+  </article>
+</main>
+</body>
+</html>

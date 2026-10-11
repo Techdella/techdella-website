@@ -57,6 +57,11 @@ view.js      optional progressive enhancement; self-inits with window.td.ready()
 - No jQuery. The page must work without JS (`<details>`, plain links, POST forms).
 - The styleguide renders every block's `example` — make examples real and spec-compliant (only verified proof, §2.4).
 - Image attributes take a theme image key (string) or an attachment ID (integer); render with `td_image()`.
+- Blocks are styled by per-block CSS that `inc/blocks.php` inlines the first time the block renders. A template or
+  helper that prints a block's markup itself must call `td_block_css( '<name>' )` first (the case-card and
+  post-card helpers do); `tests/e2e/block-css.spec.js` crawls every sitemap URL for misses.
+- Video: the `video` block (self-hosted WebM + MP4, poster, captions; loops play muted near the viewport,
+  pause button, poster only with reduced motion). Videos are rendered from `motion/` (see `motion/README.md`).
 - Orange rules (§2.1): dots, the arrow circle, one highlight per section, focus rings. Never backgrounds or body text.
   `--td-gradient` only in the logo or the final CTA arch.
 - a11y: axe clean, tap targets ≥ 44px, visible focus, `prefers-reduced-motion` respected.

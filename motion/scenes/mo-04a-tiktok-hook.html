@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MO-04a TikTok hook (Example)</title>
+<link rel="stylesheet" href="scene.css">
+<script type="application/json" id="scene-meta">{"id":"MO-04a","title":"Ad creative sample: TikTok hook (fictional brand Northwind, Example)","duration":10,"poster":2.4,"captions":[[0.3,2.6,"Still chasing invoices on WhatsApp?"],[2.8,4.4,"Northwind sends the reminders for you."],[4.6,7.6,"Send an invoice. Reminders go out. You see who paid."],[7.8,10,"Northwind. Start free. Example ad for a fictional brand."]]}</script>
+<style>
+/* The ad: 9:16. Full frame when the output is tall; a phone elsewhere. */
+.ad{position:absolute;inset:0;overflow:hidden;background:#12201C;color:var(--paper)}
+.photo{position:absolute;inset:0;background:url("../../assets/images/stock/shop-owner-checking-phone.jpg") center/cover;transform-origin:60% 40%;animation:zoom 10s linear both}
+@keyframes zoom{from{transform:scale(1.04)}to{transform:scale(1.16)}}
+.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.05) 38%,rgba(0,0,0,.15) 55%,rgba(0,0,0,.82) 100%)}
+.hook{position:absolute;left:7%;right:7%;top:12%;font-size:9.6rem;line-height:1.02;font-weight:600;letter-spacing:-.045em;text-shadow:0 .4rem 2.4rem rgba(0,0,0,.35)}
+.hook span{display:inline-block;animation:pop .45s both var(--ease)}
+.w1{animation-delay:.3s!important}.w2{animation-delay:.5s!important}.w3{animation-delay:.7s!important}.w4{animation-delay:.9s!important}.w5{animation-delay:1.1s!important}
+.hook em{color:#FFB38A}
+.hook{animation:fade-out .3s 4.4s forwards}
+.sub{position:absolute;left:7%;right:7%;top:14%;font-size:7.4rem;line-height:1.05;font-weight:600;letter-spacing:-.04em;opacity:0;animation:rise .6s 4.6s both var(--ease),fade-out .3s 7.6s forwards}
+.cap{position:absolute;left:50%;bottom:30%;translate:-50% 0;font-size:4.6rem;font-weight:600;padding:1.4rem 2.6rem;border-radius:1.6rem;background:var(--paper);color:var(--ink);white-space:nowrap;opacity:0;animation:pop .45s 2.8s both var(--ease),fade-out .3s 4.4s forwards}
+.steps{position:absolute;left:7%;right:7%;bottom:24%;display:flex;flex-direction:column;gap:2.2rem}
+.step{display:flex;align-items:center;gap:2.4rem;padding:2.4rem 3rem;border-radius:2.4rem;background:rgba(255,255,255,.94);color:var(--ink);font-size:4rem;font-weight:600;letter-spacing:-.03em;animation:rise .5s both var(--ease),fade-out .3s 7.6s forwards}
+.step i{flex:none;display:grid;place-items:center;width:6.4rem;height:6.4rem;border-radius:50%;background:#1F6F5C;color:var(--paper);font-style:normal;font-size:3.2rem}
+.s1{animation-delay:5.2s,7.6s}.s2{animation-delay:5.9s,7.6s}.s3{animation-delay:6.6s,7.6s}
+.cta{position:absolute;left:7%;right:7%;bottom:20%;display:flex;flex-direction:column;align-items:flex-start;gap:3rem;opacity:0;animation:rise .6s 7.8s both var(--ease)}
+.brand{display:flex;align-items:center;gap:2rem;font-size:6rem;font-weight:600;letter-spacing:-.04em}
+.brand b{display:grid;place-items:center;width:9rem;height:9rem;border-radius:2.4rem;background:#1F6F5C;font-size:5rem}
+.cta .go{font-size:4.2rem;font-weight:600;padding:2.4rem 4rem;border-radius:1.8rem;background:#2BB673;color:#08261A}
+.rail{position:absolute;right:3.6%;bottom:30%;display:flex;flex-direction:column;gap:4rem}
+.rail i{display:block;width:8rem;height:8rem;border-radius:50%;background:rgba(255,255,255,.22);border:2px solid rgba(255,255,255,.4)}
+.meta{position:absolute;left:5%;bottom:5%;right:22%;font-size:3.2rem;line-height:1.35}
+.meta b{display:block;font-size:3.4rem}
+.meta small{display:inline-block;margin-top:1rem;font-size:2.6rem;padding:.4rem 1.2rem;border-radius:.8rem;background:rgba(255,255,255,.2)}
+/* Square and wide: the ad sits in a phone; the side text explains it. */
+.side{display:none}
+@media (min-aspect-ratio:3/4){
+  .ad{inset:5rem auto 5rem 50%;width:calc((100vh - 10rem) * 9 / 16);translate:-50% 0;border-radius:5rem;border:1.2rem solid var(--ink);box-shadow:var(--shadow);font-size:.55em}
+  .ad{--k:.52}
+  .hook{font-size:calc(9.6rem * var(--k))}.sub{font-size:calc(7.4rem * var(--k))}.cap{font-size:calc(4.6rem * var(--k));padding:.8rem 1.6rem}
+  .step{font-size:calc(4rem * var(--k));padding:1.4rem 1.8rem;gap:1.4rem;border-radius:1.4rem}.step i{width:3.6rem;height:3.6rem;font-size:1.8rem}.steps{gap:1.2rem}
+  .brand{font-size:calc(6rem * var(--k));gap:1.2rem}.brand b{width:5rem;height:5rem;font-size:2.8rem;border-radius:1.4rem}.cta{gap:1.8rem}
+  .cta .go{font-size:calc(4.2rem * var(--k));padding:1.4rem 2.4rem;border-radius:1.2rem}
+  .rail{gap:2.2rem}.rail i{width:4.4rem;height:4.4rem}
+  .meta{font-size:1.7rem}.meta b{font-size:1.8rem}.meta small{font-size:1.4rem}
+}
+@media (min-aspect-ratio:4/3){
+  .ad{left:auto;right:20rem;translate:none}
+  .side{display:flex;position:absolute;left:16rem;top:0;bottom:0;width:70rem;flex-direction:column;justify-content:center;gap:3rem;animation:rise .8s .2s both var(--ease)}
+  .side .h2{text-align:left}
+  .side .lead{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="side">
+  <span class="label">TikTok · hook in the first second</span>
+  <h1 class="h2">Stop the scroll,<br>then <em>show</em> the product</h1>
+  <p class="lead">An example creative we made for a fictional brand, Northwind.</p>
+</div>
+<div class="ad">
+  <div class="photo"></div>
+  <p class="hook"><span class="w1">Still</span> <span class="w2">chasing</span> <span class="w3">invoices</span> <span class="w4">on</span> <span class="w5"><em>WhatsApp?</em></span></p>
+  <p class="cap">Northwind sends the reminders</p>
+  <p class="sub">Here’s how it works</p>
+  <div class="steps">
+    <div class="step s1"><i>1</i>Send an invoice</div>
+    <div class="step s2"><i>2</i>Reminders go out for you</div>
+    <div class="step s3"><i>3</i>See who has paid</div>
+  </div>
+  <div class="cta"><span class="brand"><b>N</b>Northwind</span><span class="go">Start free →</span></div>
+  <div class="rail" aria-hidden="true"><i></i><i></i><i></i></div>
+  <p class="meta"><b>@northwind</b>Invoices that chase themselves. <small>Sponsored</small></p>
+</div>
+<span class="example">Example</span>
+</body>
+</html>

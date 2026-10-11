@@ -2,7 +2,7 @@
 // Sidebar controls are generated from each block.json's attributes; the canvas
 // previews the real render.php through ServerSideRender. Hints come from the
 // "techdella.controls" key in block.json (exposed as window.TD_BLOCKS):
-//   "textarea" | "media" | "json" | "url" | "select" (uses the attribute enum)
+//   "textarea" | "media" (image) | "media:video" | "media:text" | "json" | "url" | "select" (uses the attribute enum)
 // Blocks whose render.php prints $content (e.g. the hero's right-hand slot)
 // opt in with "techdella.innerBlocks": true; they get an InnerBlocks area and
 // save their inner blocks, so editing never drops a mock passed by a pattern.
@@ -37,17 +37,20 @@ function JsonControl({ name, value, onChange }) {
 
 function control(name, schema, hint, value, set) {
   const onChange = (v) => set({ [name]: v });
-  if (hint === 'media') {
+  if (hint && hint.startsWith('media')) {
+    // "media" = image; "media:video" / "media:text" (captions) pick other file types.
+    const type = hint.split(':')[1] || 'image';
+    const noun = { image: 'image', video: 'video', text: 'file' }[type] || 'file';
     return el(
       MediaUploadCheck,
       { key: name },
       el(MediaUpload, {
         onSelect: (m) => onChange(m.id),
-        allowedTypes: ['image'],
+        allowedTypes: [type],
         value,
         render: ({ open }) => el('div', { style: { marginBottom: '16px' } },
           el('p', { style: { margin: '0 0 6px' } }, label(name)),
-          el(Button, { variant: 'secondary', onClick: open }, value ? `Replace image (#${value})` : 'Choose image'),
+          el(Button, { variant: 'secondary', onClick: open }, value ? `Replace ${noun} (#${value})` : `Choose ${noun}`),
           value ? el(Button, { variant: 'link', isDestructive: true, onClick: () => onChange(0) }, 'Remove') : null),
       }),
     );

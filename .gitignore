@@ -4,8 +4,10 @@ vendor/
 wp-content/uploads/
 *.sql
 *.sql.gz
-assets/video/*.mp4
-assets/video/*.webm
+# Motion renders (npm run motion:render): reproducible, uploaded to WordPress, never committed
+assets/video/*
+!assets/video/.gitkeep
+motion/out/
 # Build output (CI builds these before deploy)
 wp-content/themes/techdella/assets/build/
 wp-content/themes/techdella/assets/img/

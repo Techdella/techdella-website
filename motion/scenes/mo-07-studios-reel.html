@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MO-07 Studios reel</title>
+<link rel="stylesheet" href="scene.css">
+<script type="application/json" id="scene-meta">{"id":"MO-07","title":"Studios reel: UI screens, motion type, concept work","duration":20,"poster":6,"captions":[[0.3,3.4,"We design. We build. We automate."],[3.6,9,"Concept screens: today's bookings, automations, payments."],[9.2,13,"Concept website for a fictional brand."],[13.2,16.4,"MVPs, AI agents, UI/UX, websites, branding, motion."],[16.6,20,"TechDella Studios. studios.techdella.com"]]}</script>
+<style>
+body{background:var(--dark-1);color:var(--paper)}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4rem;padding:8rem}
+/* 1. Kinetic type */
+.s1{animation:fade-out .4s 3.3s forwards}
+.k{font-size:16rem;font-weight:600;letter-spacing:-.05em;line-height:1}
+.k .slot{display:block;height:1.05em;overflow:hidden}
+.k .words{display:flex;flex-direction:column;animation:kswap 3.4s var(--ease) both}
+.k .words span{height:1.05em;line-height:1.05;text-align:center}
+.k em{color:#FF9A5C}
+@keyframes kswap{0%,24%{transform:translateY(0)}33%,57%{transform:translateY(-1.05em)}66%,100%{transform:translateY(-2.1em)}}
+/* 2. Concept phones */
+.s2{opacity:0;animation:fade-in .4s 3.5s forwards,fade-out .4s 8.9s forwards}
+.phones{display:flex;gap:4rem;align-items:center}
+.phone{flex:none;width:32rem;height:64rem;padding:.9rem;border-radius:5rem;background:#000;box-shadow:0 4rem 8rem -3rem rgba(0,0,0,.8);animation:rise .8s both var(--ease)}
+.phone:nth-child(1){animation-delay:3.7s}.phone:nth-child(2){animation-delay:4.2s;transform:translateY(-4rem)}.phone:nth-child(3){animation-delay:4.7s}
+.scr{height:100%;border-radius:4.2rem;background:var(--paper);color:var(--ink);padding:5rem 2rem 2rem;display:flex;flex-direction:column;gap:1.2rem;overflow:hidden}
+.scr.sand{background:var(--canvas)}
+.scr small{font-size:1.5rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.scr h4{font-size:3rem;font-weight:600;letter-spacing:-.03em;margin-bottom:.6rem}
+.row{display:flex;align-items:center;gap:1.4rem;padding:1.6rem;border-radius:1.8rem;background:var(--canvas);font-size:1.8rem}
+.sand .row{background:var(--paper)}
+.row b{font-size:2rem;min-width:5.4rem}
+.row span{flex:1;display:flex;flex-direction:column}.row span strong{font-weight:600}.row span em{font-style:normal;color:var(--muted);font-family:inherit;letter-spacing:inherit}
+.row i{font-style:normal;font-size:1.5rem;padding:.4rem 1rem;border-radius:999px;border:1px solid var(--line);background:var(--paper)}
+.sw{flex:none;width:4.6rem;height:2.8rem;border-radius:999px;background:var(--line);position:relative}
+.sw::after{content:"";position:absolute;top:.3rem;left:.3rem;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--paper)}
+.sw.on{background:var(--ink)}.sw.on::after{left:2.1rem}
+.big{font-size:6rem;font-weight:600;letter-spacing:-.04em}
+.bars{display:flex;align-items:flex-end;gap:1rem;height:16rem;padding:1.6rem;border-radius:1.8rem;background:var(--canvas)}
+.bars i{flex:1;border-radius:.8rem .8rem .3rem .3rem;background:var(--ink);transform-origin:bottom;animation:grow-y .6s both var(--ease)}
+.bars i:nth-child(1){height:40%;animation-delay:5.2s}.bars i:nth-child(2){height:62%;animation-delay:5.35s}.bars i:nth-child(3){height:48%;animation-delay:5.5s}.bars i:nth-child(4){height:78%;animation-delay:5.65s}.bars i:nth-child(5){height:90%;animation-delay:5.8s;background:var(--orange)}
+.btnui{margin-top:auto;text-align:center;font-size:1.9rem;font-weight:500;padding:1.6rem;border-radius:999px;background:var(--ink);color:var(--paper)}
+.concept{position:absolute;right:6rem;top:6rem;font-size:1.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.8rem 1.6rem;border-radius:999px;background:var(--paper);color:var(--ink);opacity:0;animation:fade-in .3s 3.6s forwards,fade-out .3s 12.9s forwards}
+/* 3. Concept website in a browser */
+.s3{opacity:0;animation:fade-in .4s 9.1s forwards,fade-out .4s 12.9s forwards}
+.browser{width:150rem;max-width:100%;border-radius:2.4rem;overflow:hidden;background:var(--paper);box-shadow:0 4rem 9rem -3rem rgba(0,0,0,.8)}
+.chrome{display:flex;align-items:center;gap:1rem;padding:1.6rem 2rem;background:#EDEAE6}
+.chrome i{width:1.4rem;height:1.4rem;border-radius:50%;background:#CFC9C2}
+.chrome span{margin-left:2rem;font-size:1.8rem;color:var(--muted);padding:.6rem 2.4rem;border-radius:999px;background:var(--paper)}
+.view{height:68rem;overflow:hidden;position:relative}
+.page{animation:scroll 3.2s 9.6s both cubic-bezier(.65,0,.35,1)}
+@keyframes scroll{to{transform:translateY(-52rem)}}
+.hero{height:68rem;padding:7rem 8rem;display:grid;grid-template-columns:1.1fr .9fr;gap:5rem;align-items:center;background:#EAF4EF;color:#0F3D30}
+.hero h2{font-size:8rem;line-height:1;letter-spacing:-.045em;font-weight:600}
+.hero p{font-size:2.6rem;line-height:1.4;margin:2.4rem 0 3.6rem;color:#2A5C4C}
+.hero .cta{display:inline-block;font-size:2.4rem;font-weight:600;padding:1.8rem 3.2rem;border-radius:1.4rem;background:#1F6F5C;color:var(--paper)}
+.hero .shot{height:52rem;border-radius:2.4rem;background:url("../../assets/images/stock/woman-working-laptop-desk.jpg") 60% center/cover}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;padding:6rem 8rem;color:var(--ink)}
+.feat div{padding:3.4rem;border-radius:2rem;background:var(--canvas)}
+.feat b{display:block;font-size:3rem;margin-bottom:1rem}.feat p{font-size:2.2rem;color:var(--body);line-height:1.4}
+/* 4. Services */
+.s4{opacity:0;animation:fade-in .3s 13.1s forwards,fade-out .4s 16.4s forwards}
+.s4 .h2 em{color:#FF9A5C}
+.svc{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;max-width:130rem}
+.svc span{font-size:3.6rem;font-weight:500;padding:2rem 3.6rem;border-radius:999px;border:1px solid var(--dark-border);background:var(--dark-2);animation:pop .5s both var(--ease)}
+.svc span:nth-child(1){animation-delay:13.6s}.svc span:nth-child(2){animation-delay:13.85s}.svc span:nth-child(3){animation-delay:14.1s}.svc span:nth-child(4){animation-delay:14.35s}.svc span:nth-child(5){animation-delay:14.6s}.svc span:nth-child(6){animation-delay:14.85s}
+/* 5. End card (light) */
+.s5{background:var(--canvas);color:var(--ink);opacity:0;animation:fade-in .6s 16.5s forwards}
+.lock{display:flex;align-items:flex-end;gap:2.4rem;animation:pop .8s 16.9s both var(--ease)}
+.lock img{height:12rem}.lock em{font-size:9.6rem;line-height:.9;transform:translateY(-.6rem)}
+.s5 .btn{animation:rise .7s 17.6s both var(--ease)}
+.s5 .url{color:var(--muted)}
+@media (max-aspect-ratio:4/3){
+  .k{font-size:13rem}
+  .phones{gap:2.6rem}.phone{width:28rem;height:56rem}
+  .hero{grid-template-columns:1fr;padding:5rem}.hero .shot{display:none}.hero h2{font-size:7rem}
+  .feat{grid-template-columns:1fr;padding:4rem 5rem}
+  .lock{flex-direction:column;align-items:center;gap:1rem}
+}
+@media (min-aspect-ratio:3/4) and (max-aspect-ratio:4/3){.phone:nth-child(3){display:none}.phone{width:34rem;height:66rem}.svc span{font-size:3rem;padding:1.6rem 2.8rem}.view{height:62rem}}
+@media (max-aspect-ratio:3/4){.phones{flex-direction:column;gap:0}.phone{width:36rem;height:60rem}.phone:nth-child(2){transform:none}.phone:nth-child(n+2){display:none}.phone:first-child{width:56rem;height:104rem}
+  .scr{padding:7rem 3rem 3rem;gap:1.8rem}.scr h4{font-size:4.4rem}.row{font-size:2.6rem;padding:2.4rem}.row b{font-size:2.8rem;min-width:8rem}.row i{font-size:2rem}.btnui{font-size:2.6rem;padding:2.4rem}
+  .view{height:120rem}.hero{height:120rem}
+  .k{font-size:15rem}}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<section class="scene s1">
+  <span class="label">TechDella Studios</span>
+  <p class="k"><span class="slot"><span class="words"><span>We design.</span><span>We build.</span><span>We <em>automate.</em></span></span></span></p>
+</section>
+<section class="scene s2">
+  <div class="phones">
+    <div class="phone"><div class="scr"><small>Tuesday</small><h4>Today’s bookings</h4>
+      <div class="row"><b>09:00</b><span><strong>Box braids</strong><em>Ada · 3 h</em></span><i>Paid</i></div>
+      <div class="row"><b>12:30</b><span><strong>Silk press</strong><em>Tolu · 1 h</em></span><i>Reminded</i></div>
+      <div class="row"><b>15:00</b><span><strong>Consultation</strong><em>Kemi · 30 min</em></span><i>New</i></div>
+      <div class="btnui">Share booking link</div></div></div>
+    <div class="phone"><div class="scr sand"><small>Workflows</small><h4>Automations</h4>
+      <div class="row"><span><strong>Booking made</strong><em>WhatsApp confirmation</em></span><span class="sw on"></span></div>
+      <div class="row"><span><strong>24 hours before</strong><em>Reminder</em></span><span class="sw on"></span></div>
+      <div class="row"><span><strong>Deposit paid</strong><em>Receipt by email</em></span><span class="sw on"></span></div>
+      <div class="row"><span><strong>No-show</strong><em>Offer to rebook</em></span><span class="sw"></span></div></div></div>
+    <div class="phone"><div class="scr"><small>This week</small><h4>Payments</h4>
+      <div class="bars"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="row"><span><strong>Deposits</strong><em>Collected at booking</em></span><i>On</i></div></div></div>
+  </div>
+</section>
+<section class="scene s3">
+  <div class="browser"><div class="chrome"><i></i><i></i><i></i><span>northwind.example</span></div>
+    <div class="view"><div class="page">
+      <div class="hero"><div><h2>Invoices that chase themselves</h2><p>Send an invoice, and Northwind follows up on WhatsApp and email until it’s paid.</p><span class="cta">Start free</span></div><div class="shot"></div></div>
+      <div class="feat"><div><b>Send in a minute</b><p>Your logo, your terms, one link.</p></div><div><b>Automatic reminders</b><p>Polite nudges on the channels clients read.</p></div><div><b>See who paid</b><p>One list, always up to date.</p></div></div>
+    </div></div>
+  </div>
+</section>
+<section class="scene s4">
+  <h2 class="h2">One studio, <em>six</em> crafts</h2>
+  <div class="svc"><span>MVPs</span><span>AI agents</span><span>UI/UX</span><span>Websites</span><span>Branding</span><span>Motion</span></div>
+</section>
+<section class="scene s5">
+  <div class="lock"><img src="../../assets/images/brand/techdella-logo.png" alt="TechDella"><em>Studios</em></div>
+  <span class="btn">Start a project <i>↗</i></span>
+  <p class="url">studios.techdella.com</p>
+</section>
+<span class="concept">Concept</span>
+</body>
+</html>

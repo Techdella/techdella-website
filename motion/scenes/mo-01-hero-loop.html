@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MO-01 Hero loop</title>
+<link rel="stylesheet" href="scene.css">
+<script type="application/json" id="scene-meta">{"id":"MO-01","title":"Homepage hero: platform chips orbit, word swap","duration":6,"loop":true,"poster":4.6,"captions":[[0,2,"Get found."],[2,4,"Get noticed."],[4,6,"Grow."]]}</script>
+<style>
+.stage{gap:6rem}
+@media (max-aspect-ratio:3/4){.orbit{--o:88rem}.h1{font-size:13rem}.stage{gap:9rem}}
+.head{display:flex;flex-direction:column;align-items:center;gap:3.6rem}
+.swap{display:flex;align-items:baseline;justify-content:center;gap:2.6rem}
+.swap .slot{display:block;height:1.06em;overflow:hidden;text-align:left}
+.swap .words{display:flex;flex-direction:column;animation:swap 6s var(--ease) infinite}
+.swap .words span{display:block;height:1.06em;line-height:1.06;text-align:center;white-space:nowrap}
+.swap em{color:var(--orange-text)}
+@keyframes swap{
+  0%,28%{transform:translateY(0)}
+  33%,61%{transform:translateY(-1.06em)}
+  66%,94%{transform:translateY(-2.12em)}
+  100%{transform:translateY(-3.18em)}
+}
+.orbit{--o:78rem;--r:calc(var(--o) / 2);position:relative;width:var(--o);height:var(--o);flex:none}
+.orbit::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px dashed #DCD7D0}
+.orbit::after{content:"";position:absolute;inset:22%;border-radius:50%;background:radial-gradient(circle,rgba(232,71,10,.10),transparent 70%)}
+.ring{position:absolute;inset:0;animation:spin 6s linear infinite}
+.place{position:absolute;left:50%;top:50%;width:0;height:0}
+.upright{position:absolute;left:0;top:0}
+.upright .chip{position:absolute;left:0;top:0;translate:-50% -50%;animation:counter 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes counter{to{transform:rotate(-360deg)}}
+.mark{position:absolute;left:50%;top:50%;width:20rem;height:20rem;translate:-50% -50%;border-radius:5.2rem;background:var(--paper);box-shadow:0 3rem 7rem -2.8rem rgba(232,71,10,.45);display:grid;place-items:center;z-index:2}
+.mark img{width:12.4rem;height:12.4rem}
+.pulse{position:absolute;left:50%;top:50%;width:20rem;height:20rem;translate:-50% -50%;border-radius:5.2rem;border:2px solid rgba(232,71,10,.35);animation:pulse 3s ease-out infinite}
+.pulse.p2{animation-delay:1.5s}
+@keyframes pulse{from{transform:scale(1);opacity:1}to{transform:scale(1.9);opacity:0}}
+/* Wide: headline left, orbit right. */
+@media (min-aspect-ratio:4/3){
+  .stage{flex-direction:row;justify-content:space-between;padding:8rem 12rem;gap:8rem}
+  .head{align-items:flex-start}
+  .h1,.swap{text-align:left;justify-content:flex-start}
+  .swap .words span{text-align:left}
+  .h1{font-size:13rem}
+  .orbit{--o:74rem}
+}
+@media (min-aspect-ratio:3/4) and (max-aspect-ratio:4/3){
+  .stage{gap:3rem;padding-top:9rem}
+  .h1{font-size:9.6rem}
+  .orbit{--o:52rem}
+  .orbit .chip{font-size:2.2rem;padding:1.1rem 2rem}
+  .mark,.pulse{width:15rem;height:15rem;border-radius:4rem}
+  .mark img{width:9.4rem;height:9.4rem}
+}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<main class="stage">
+  <div class="head">
+    <span class="label">SEO · AI search · Paid · Email · Automation</span>
+    <h1 class="h1">
+      <span class="swap"><span class="slot"><span class="words"><span>Get found.</span><span>Get noticed.</span><span><em>Grow.</em></span><span>Get found.</span></span></span></span>
+    </h1>
+  </div>
+  <div class="orbit" aria-hidden="true">
+    <span class="pulse"></span><span class="pulse p2"></span>
+    <div class="mark"><img src="../../assets/images/brand/techdella-mark.png" alt=""></div>
+    <div class="ring">
+      <!-- 8 chips at 45° steps on the circle. -->
+      <div class="place" style="transform:rotate(-90deg) translateX(var(--r))"><div class="upright" style="transform:rotate(90deg)"><span class="chip"><img src="../../assets/logos/platforms/google-search.svg" alt="">Google Search</span></div></div>
+      <div class="place" style="transform:rotate(-45deg) translateX(var(--r))"><div class="upright" style="transform:rotate(45deg)"><span class="chip"><span class="txt-logo">AI</span>ChatGPT</span></div></div>
+      <div class="place" style="transform:rotate(0deg) translateX(var(--r))"><div class="upright" style="transform:rotate(0deg)"><span class="chip"><img src="../../assets/logos/platforms/meta.svg" alt="">Meta</span></div></div>
+      <div class="place" style="transform:rotate(45deg) translateX(var(--r))"><div class="upright" style="transform:rotate(-45deg)"><span class="chip"><img src="../../assets/logos/platforms/perplexity.svg" alt="">Perplexity</span></div></div>
+      <div class="place" style="transform:rotate(90deg) translateX(var(--r))"><div class="upright" style="transform:rotate(-90deg)"><span class="chip"><img src="../../assets/logos/platforms/tiktok.svg" alt="">TikTok</span></div></div>
+      <div class="place" style="transform:rotate(135deg) translateX(var(--r))"><div class="upright" style="transform:rotate(-135deg)"><span class="chip"><span class="txt-logo">in</span>LinkedIn</span></div></div>
+      <div class="place" style="transform:rotate(180deg) translateX(var(--r))"><div class="upright" style="transform:rotate(-180deg)"><span class="chip"><img src="../../assets/logos/platforms/google-ai-overviews.svg" alt="">AI Overviews</span></div></div>
+      <div class="place" style="transform:rotate(225deg) translateX(var(--r))"><div class="upright" style="transform:rotate(-225deg)"><span class="chip"><img src="../../assets/logos/platforms/hubspot.svg" alt="">HubSpot</span></div></div>
+    </div>
+  </div>
+</main>
+<p class="url not-wide">techdella.com</p>
+</body>
+</html>

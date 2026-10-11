@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MO-05 Workflow nodes</title>
+<link rel="stylesheet" href="scene.css">
+<script type="application/json" id="scene-meta">{"id":"MO-05","title":"Workflow nodes lighting up: form → CRM → email → Slack","duration":10,"poster":6.8,"captions":[[0.3,1.6,"A new lead, handled in seconds."],[1.4,3,"Form: new submission from Ada Obi, Example Ltd."],[3,4.6,"CRM: contact created, deal added."],[4.6,6.2,"Email: welcome email sent."],[6.2,7.8,"Slack: sales alerted."],[8,10,"AI marketing automation. techdella.com"]]}</script>
+<style>
+.stage{gap:6rem}
+.titles{display:grid;place-items:center}.titles>*{grid-area:1/1}
+.t1{animation:rise .8s .3s both var(--ease),fade-out .4s 7.6s forwards}
+.t2{animation:rise .8s 8s both var(--ease)}
+.t2 em{color:var(--orange-text)}
+.flow{display:flex;align-items:center}
+.node{flex:none;width:34rem;display:flex;flex-direction:column;gap:1.8rem;padding:3rem;border-radius:2.8rem;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);opacity:.45;filter:grayscale(1);animation:on .5s both var(--ease)}
+@keyframes on{to{opacity:1;filter:none;border-color:var(--ink)}}
+.node header{display:flex;align-items:center;gap:1.4rem;font-size:2.4rem;font-weight:600}
+.node header img,.node header .txt-logo{flex:none;width:4.4rem;height:4.4rem;border-radius:1.2rem}
+.node header .txt-logo{font-size:1.6rem}
+.txt-logo{display:inline-grid;place-items:center;background:var(--ink);color:var(--paper);font-size:2.2rem;font-weight:600}
+.status{display:flex;align-items:center;gap:1rem;font-size:2rem;color:var(--muted)}
+.status::before{content:"";width:1.2rem;height:1.2rem;border-radius:50%;background:var(--line);animation:ok .3s both;animation-delay:inherit}
+@keyframes ok{to{background:#2BB673}}
+.node p{font-size:2.6rem;line-height:1.35}
+.node p small{display:block;font-size:2.1rem;color:var(--body);margin-top:.4rem}
+.wire{position:relative;flex:1 1 6rem;min-width:6rem;height:.4rem;background:var(--line);overflow:visible}
+.wire::before{content:"";position:absolute;inset:0;background:var(--ink);transform-origin:left;transform:scaleX(0);animation:grow-x .6s both linear;animation-delay:inherit}
+.n1{animation-delay:1.4s}.w1{animation-delay:2.4s}.n2{animation-delay:3s}.w2{animation-delay:4s}.n3{animation-delay:4.6s}.w3{animation-delay:5.6s}.n4{animation-delay:6.2s}
+.n1 .status::before{animation-delay:1.6s}.n2 .status::before{animation-delay:3.2s}.n3 .status::before{animation-delay:4.8s}.n4 .status::before{animation-delay:6.4s}
+.w1::before{animation-delay:2.4s}.w2::before{animation-delay:4s}.w3::before{animation-delay:5.6s}
+@media (max-aspect-ratio:4/3){
+  .flow{flex-direction:column}
+  .node{width:80rem;flex-direction:row;align-items:center;gap:2.4rem;padding:2.6rem 3rem}
+  .node header .nm{display:none}
+  .node .body{display:flex;flex-direction:column;gap:.6rem;flex:1}
+  .wire{width:.4rem;min-width:0;height:auto;flex:0 0 5rem;min-height:5rem}
+  .wire::before{transform-origin:top;transform:scaleY(0);animation-name:grow-y}
+}
+@media (min-aspect-ratio:3/4) and (max-aspect-ratio:4/3){.stage{gap:3.6rem}.h2{font-size:6.2rem}.node{width:74rem;padding:2rem 2.6rem}.wire{flex-basis:3rem;min-height:3rem}.node p{font-size:2.4rem}}
+@media (max-aspect-ratio:3/4){.stage{gap:8rem}.h2{font-size:8.4rem}.node{width:88rem;padding:3.4rem}.node p{font-size:3rem}.wire{flex-basis:7rem;min-height:7rem}}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<main class="stage">
+  <div class="titles">
+    <h1 class="h2 t1">A new lead, handled<br>in seconds</h1>
+    <h1 class="h2 t2">AI marketing<br><em>automation</em></h1>
+  </div>
+  <div class="flow">
+    <section class="node n1"><header><span class="txt-logo">▤</span><span class="nm">Website form</span></header><div class="body"><span class="status">New submission</span><p>Ada Obi, Example Ltd<small>Wants a growth audit</small></p></div></section>
+    <span class="wire w1"></span>
+    <section class="node n2"><header><span class="txt-logo">CRM</span><span class="nm">CRM</span></header><div class="body"><span class="status">Contact created</span><p>Deal added<small>Stage: Audit requested</small></p></div></section>
+    <span class="wire w2"></span>
+    <section class="node n3"><header><img src="../../assets/logos/platforms/mailchimp.svg" alt=""><span class="nm">Email</span></header><div class="body"><span class="status">Sent</span><p>Welcome email<small>“Thanks, Ada. Here’s what happens next.”</small></p></div></section>
+    <span class="wire w3"></span>
+    <section class="node n4"><header><span class="txt-logo">#</span><span class="nm">Slack</span></header><div class="body"><span class="status">Posted</span><p>#sales alerted<small>New audit request: Example Ltd</small></p></div></section>
+  </div>
+</main>
+<span class="example">Example</span>
+<p class="url anim" style="animation:fade-in .6s 8.4s both">techdella.com</p>
+</body>
+</html>

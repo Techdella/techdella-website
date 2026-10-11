@@ -15,7 +15,7 @@
     "test:smoke": "playwright test --grep @smoke",
     "test:lighthouse": "lhci autorun --config=tests/lighthouse/lighthouserc.cjs",
     "pdf": "node pdf/render.mjs",
-    "motion:render": "npm --prefix motion run render"
+    "motion:render": "node motion/render.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.10.2",

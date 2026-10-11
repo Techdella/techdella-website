@@ -1,0 +1,72 @@
+/*
+ * TechDella motion scenes (§6.3): shared brand styles.
+ * Each scene is an HTML page animated with CSS keyframes only. motion/render.mjs pauses every
+ * animation and seeks it frame by frame (document.getAnimations()), so a scene renders the
+ * same every time and re-renders when copy changes. No Remotion (company-licence terms).
+ *
+ * Sizing: 1rem = 10 design px on the short side of the frame (1080 px), so one layout works
+ * at 1080×1920, 1080×1080 and 1920×1080. Use .tall / .wide hooks via the media queries below.
+ */
+
+@font-face{font-family:"Geist";font-weight:400;font-display:block;src:url("../../wp-content/themes/techdella/assets/fonts/geist-400.woff2") format("woff2")}
+@font-face{font-family:"Geist";font-weight:500;font-display:block;src:url("../../wp-content/themes/techdella/assets/fonts/geist-500.woff2") format("woff2")}
+@font-face{font-family:"Geist";font-weight:600;font-display:block;src:url("../../wp-content/themes/techdella/assets/fonts/geist-600.woff2") format("woff2")}
+@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:block;src:url("../../wp-content/themes/techdella/assets/fonts/instrument-serif-italic.woff2") format("woff2")}
+
+:root{
+  --ink:#0D0D0D; --paper:#FFFFFF; --canvas:#F7F5F2; --sand:#EFE7DD;
+  --body:#57534E; --muted:#6B6560; --line:#E7E4DF;
+  --dark-1:#1A1715; --dark-2:#262321; --dark-border:#2E2A27; --on-dark:#C9C4BE;
+  --orange:#E8470A; --orange-text:#C23B07; --orange-tint:#FDF0E9;
+  --gradient:linear-gradient(135deg,#D62F14 0%,#F98A0F 100%);
+  --arch:999px 999px 2.4rem 2.4rem;
+  --shadow:0 .2rem .4rem rgba(13,13,13,.04),0 1.6rem 4.8rem rgba(13,13,13,.10);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:calc(100vmin / 108)}
+html,body{width:100vw;height:100vh;overflow:hidden}
+body{font-family:"Geist",sans-serif;color:var(--ink);background:var(--canvas);-webkit-font-smoothing:antialiased;letter-spacing:-.02em}
+body.dark{background:var(--dark-1);color:var(--paper)}
+em,.serif{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+
+/* Stage: centred, safe margins; scenes lay out inside it. */
+.stage{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7rem;gap:4rem}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:9rem 9rem;opacity:.55;-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
+body.dark .grid-bg{background-image:linear-gradient(var(--dark-border) 1px,transparent 1px),linear-gradient(90deg,var(--dark-border) 1px,transparent 1px)}
+
+/* Brand furniture */
+.logo{height:4.4rem;width:auto;display:block}
+.bug{position:absolute;left:6rem;top:6rem}
+.url{position:absolute;left:0;right:0;bottom:5.5rem;text-align:center;font-size:2.6rem;font-weight:500;color:var(--muted)}
+body.dark .url{color:var(--on-dark)}
+.label{display:inline-flex;align-items:center;gap:1rem;font-size:2rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--body);padding:1rem 2rem;border:1px solid var(--line);border-radius:999px;background:var(--paper)}
+.label::before{content:"";width:1rem;height:1rem;border-radius:50%;background:var(--orange)}
+body.dark .label{background:transparent;border-color:var(--dark-border);color:var(--on-dark)}
+.example{position:absolute;right:6rem;top:6rem;font-size:1.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.8rem 1.6rem;border-radius:999px;background:var(--ink);color:var(--paper)}
+body.dark .example{background:var(--paper);color:var(--ink)}
+.h1{font-size:11rem;line-height:1.02;letter-spacing:-.045em;font-weight:600;text-align:center}
+.h2{font-size:7.6rem;line-height:1.05;letter-spacing:-.04em;font-weight:600;text-align:center}
+.lead{font-size:3.2rem;line-height:1.4;color:var(--body);text-align:center;max-width:80rem}
+body.dark .lead{color:var(--on-dark)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:2.8rem;box-shadow:var(--shadow)}
+.chip{display:inline-flex;align-items:center;gap:1.2rem;font-size:2.6rem;font-weight:500;padding:1.4rem 2.6rem;border-radius:999px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);white-space:nowrap}
+.chip img{width:3.2rem;height:3.2rem}
+.chip .txt-logo{display:inline-grid;place-items:center;width:3.2rem;height:3.2rem;border-radius:.8rem;background:var(--ink);color:var(--paper);font-size:1.6rem;font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:1.6rem;font-size:3rem;font-weight:500;padding:1.6rem 1.8rem 1.6rem 3.6rem;border-radius:999px;background:var(--ink);color:var(--paper)}
+.btn i{display:grid;place-items:center;width:5.6rem;height:5.6rem;border-radius:50%;background:var(--orange);font-style:normal}
+body.dark .btn{background:var(--paper);color:var(--ink)}
+
+/* Reusable keyframes. Scenes set animation-delay/duration per element. */
+@keyframes rise{from{opacity:0;transform:translateY(4rem)}to{opacity:1;transform:none}}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+@keyframes fade-out{from{opacity:1}to{opacity:0}}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}70%{opacity:1;transform:scale(1.04)}100%{opacity:1;transform:scale(1)}}
+@keyframes grow-x{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes grow-y{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.anim{animation-fill-mode:both;animation-timing-function:var(--ease)}
+
+/* Aspect hooks: .only-tall / .only-wide hide elements per frame shape. */
+@media (min-aspect-ratio:4/3){.only-tall,.not-wide{display:none!important}}
+@media (max-aspect-ratio:3/4){.only-wide,.not-tall{display:none!important}}
+@media (min-aspect-ratio:3/4) and (max-aspect-ratio:4/3){.only-tall,.only-wide{display:none!important}}
