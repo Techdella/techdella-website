@@ -29,7 +29,7 @@ Google Consent Mode v2 is the way your website tells Google's tags, such as Goog
 Google updated consent mode in November 2023, adding two parameters, ad_user_data and ad_personalization ([Google for Developers](https://developers.google.com/tag-platform/security/guides/consent)). Under Google's EU user consent policy, from March 2024 advertisers needed to pass these signals for users in the European Economic Area to keep using personalization and remarketing features. For example, Customer Match in the EEA needs both ad_user_data and ad_personalization granted ([Google Ads Help](https://support.google.com/google-ads/answer/14546648)).
 
 :::callout warning "What you lose without it"
-If you advertise to EEA or UK users without valid consent signals, audiences for [remarketing](/glossary/remarketing/) and personalized ads shrink, and Google warns that continued non-compliance can lead to suspension of features such as remarketing or conversion measurement ([Google Ads Help](https://support.google.com/google-ads/answer/16724512)).
+If you advertise to EEA or UK users without valid consent signals, audiences for [remarketing](/glossary/remarketing/) and personalized ads shrink, and Google warns that continued non-compliance can lead to suspension of audience features such as ad personalization and remarketing ([Google Ads Help](https://support.google.com/google-ads/answer/16724512)).
 :::
 
 ## How Consent Mode v2 works
