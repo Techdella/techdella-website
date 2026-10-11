@@ -10,6 +10,10 @@ form: lead_magnet
 # Run `npm run pdf` first: the importer uploads these from pdf/out/ to an unguessable uploads path.
 pdf: pdf/out/mvp-scoping-guide.pdf
 featured_image: pdf/out/covers/mvp-scoping-guide.jpg
+# Pages 2–3 as a preview (npm run pdf renders them).
+gallery:
+  - pdf/out/previews/mvp-scoping-guide-p2.jpg
+  - pdf/out/previews/mvp-scoping-guide-p3.jpg
 bullets:
   - "What an MVP is for, and what it isn't"
   - "Problem, user and riskiest assumptions"
@@ -19,7 +23,7 @@ bullets:
   - "A one-page MVP brief you can send to a team"
 internal_links:
   - studios:/services/mvp-development/
-  - /resources/
+  - /glossary/
 ---
 
 This MVP scoping guide takes you from an idea to a brief a build team can estimate, in eight steps. TechDella Studios uses the same process for [MVP development](studios:/services/mvp-development/); see the [Studios work](studios:/work/) or try the [MVP calculator](studios:/mvp-calculator/).

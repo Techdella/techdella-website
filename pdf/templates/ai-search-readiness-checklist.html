@@ -89,7 +89,7 @@
       <tr><th>ChatGPT-User</th><td>OpenAI</td><td>Fetches a page when a ChatGPT user or GPT asks for it.</td></tr>
       <tr><th>GPTBot</th><td>OpenAI</td><td>Collects content that may be used to train OpenAI models.</td></tr>
       <tr><th>PerplexityBot / Perplexity-User</th><td>Perplexity</td><td>Indexing for Perplexity search results / fetching pages for a user's question.</td></tr>
-      <tr><th>ClaudeBot / Claude-User / Claude-SearchBot</th><td>Anthropic</td><td>Training data collection / fetching for a user's request / search indexing. <span class="confirm">[CONFIRM: current Anthropic bot names]</span></td></tr>
+      <tr><th>ClaudeBot / Claude-User / Claude-SearchBot</th><td>Anthropic</td><td>Collects content that may be used for model training / fetches a page when a Claude user asks a question / indexes content to improve search results.</td></tr>
       <tr><th>Applebot / Applebot-Extended</th><td>Apple</td><td>Crawling for Apple search features / a token controlling use for Apple's model training.</td></tr>
     </tbody>
   </table>
@@ -99,7 +99,7 @@
     <li><span class="box">☐</span> <strong>robots.txt matches that decision</strong> and returns HTTP 200 at <code>/robots.txt</code>.</li>
     <li><span class="box">☐</span> <strong>No blanket <code>Disallow: /</code> under <code>User-agent: *</code></strong> left over from a staging site.</li>
     <li><span class="box">☐</span> <strong>Googlebot and Bingbot can fetch your key pages.</strong> <span class="why">Use URL Inspection in Search Console and the URL Inspection tool in Bing Webmaster Tools.</span></li>
-    <li><span class="box">☐</span> <strong>Your CDN or firewall's "AI bot" or "bot fight" settings match your robots.txt.</strong> <span class="why">Some CDNs offer one-click blocking of AI crawlers, and some turn it on by default for new sites. <span class="confirm">[CONFIRM: your CDN's current default]</span></span></li>
+    <li><span class="box">☐</span> <strong>Your CDN or firewall's "AI bot" or "bot fight" settings match your robots.txt.</strong> <span class="why">Some CDNs offer one-click blocking of AI crawlers. Since July 1, 2025, <a href="https://www.cloudflare.com/press-releases/2025/cloudflare-just-changed-how-ai-crawlers-scrape-the-internet-at-large/">Cloudflare</a> blocks AI crawlers by default and asks each new domain at sign-up whether to allow them. Check your CDN's dashboard.</span></li>
     <li><span class="box">☐</span> <strong>Server logs show the bots you allowed actually visiting.</strong> <span class="why">Filter access logs by the user agents above. No visits in 30 days usually means a block somewhere.</span></li>
     <li><span class="box">☐</span> <strong>Key pages return 200</strong>, not 403 or a challenge page, to non-browser clients.</li>
     <li><span class="box">☐</span> <strong>Your XML sitemap is listed in robots.txt</strong> and submitted in Search Console and Bing Webmaster Tools.</li>
@@ -196,7 +196,7 @@
   </div>
 
   <h3>About llms.txt</h3>
-  <p><code>llms.txt</code> is a proposed convention (llmstxt.org) for a plain-Markdown file at your site root that summarizes your site and links to key pages. It is cheap to add. No major answer engine has publicly documented that it uses the file for ranking or citation, and Google has said it does not use it for Search. <span class="confirm">[CONFIRM: current statements from Google, OpenAI, Anthropic and Perplexity]</span> Treat it as optional housekeeping, not a strategy.</p>
+  <p><code>llms.txt</code> is a proposed convention (llmstxt.org) for a plain-Markdown file at your site root that summarizes your site and links to key pages. It is cheap to add. Google says you don't need new machine-readable files or "AI text files" to appear in AI Overviews or AI Mode. The crawler documentation from OpenAI, Anthropic and Perplexity does not say their bots use the file. Treat it as optional housekeeping, not a strategy.</p>
   <ul class="check">
     <li><span class="box">☐</span> <strong>Optional:</strong> <code>/llms.txt</code> exists, lists your services and key guides with URLs, and is generated from your CMS so it stays current.</li>
   </ul>
@@ -209,7 +209,7 @@
   <ul class="check">
     <li><span class="box">☐</span> <strong>GA4 has a channel or segment for AI referrals</strong>: sessions with referrers such as chatgpt.com, perplexity.ai, copilot.microsoft.com, gemini.google.com and claude.ai.</li>
     <li><span class="box">☐</span> <strong>Your CRM records "How did you hear about us?"</strong> with an option for "ChatGPT / AI assistant". <span class="why">Many AI-influenced buyers arrive by typing your URL, so referrers undercount.</span></li>
-    <li><span class="box">☐</span> <strong>Search Console is reviewed monthly</strong> for impressions and clicks on your buyer-question pages. <span class="why">Google reports AI Overviews and AI Mode traffic inside the normal Performance report, not separately. <span class="confirm">[CONFIRM: current Search Console reporting]</span></span></li>
+    <li><span class="box">☐</span> <strong>Search Console is reviewed monthly</strong> for impressions and clicks on your buyer-question pages. <span class="why">Google includes AI Overviews and AI Mode traffic in the Performance report under the "Web" search type. It does not report it separately.</span></li>
     <li><span class="box">☐</span> <strong>A fixed prompt set (your 20 questions) is run monthly</strong> in Google AI Mode, ChatGPT search, Perplexity and Copilot, logged in the table below.</li>
     <li><span class="box">☐</span> <strong>You record which competitors and which of their pages are cited</strong>, not just whether you are.</li>
     <li><span class="box">☐</span> <strong>Answers about your company are checked for accuracy</strong> ("What does [Company] do?", "Who founded [Company]?").</li>
@@ -264,10 +264,10 @@
     <li>Google Search Central, "AI features and your website". <a href="https://developers.google.com/search/docs/appearance/ai-features">developers.google.com/search/docs/appearance/ai-features</a></li>
     <li>Google Search Central, "Overview of Google crawlers and fetchers (user agents)", including Google-Extended. <a href="https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers">developers.google.com/search/docs/crawling-indexing/google-common-crawlers</a></li>
     <li>Google Search Central, "Robots meta tag, data-nosnippet, and X-Robots-Tag specifications". <a href="https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag">developers.google.com/search/docs/crawling-indexing/robots-meta-tag</a></li>
-    <li>OpenAI, "Overview of OpenAI Crawlers". <a href="https://platform.openai.com/docs/bots">platform.openai.com/docs/bots</a></li>
+    <li>OpenAI, "Overview of OpenAI Crawlers". <a href="https://developers.openai.com/api/docs/bots">developers.openai.com/api/docs/bots</a></li>
     <li>Perplexity, "Perplexity Crawlers". <a href="https://docs.perplexity.ai/guides/bots">docs.perplexity.ai/guides/bots</a></li>
-    <li>Anthropic, "Does Anthropic crawl data from the web, and how can site owners block the crawler?", Anthropic Help Center. <a href="https://support.anthropic.com/">support.anthropic.com</a> <span class="confirm">[CONFIRM: exact article URL]</span></li>
-    <li>Apple, "About Applebot". <a href="https://support.apple.com/en-us/119829">support.apple.com/en-us/119829</a> <span class="confirm">[CONFIRM: URL]</span></li>
+    <li>Anthropic, "Does Anthropic crawl data from the web, and how can site owners block the crawler?", Claude Help Center. <a href="https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler">support.claude.com/en/articles/8896518</a></li>
+    <li>Apple, "About Applebot". <a href="https://support.apple.com/en-us/119829">support.apple.com/en-us/119829</a></li>
     <li>Microsoft, "Bing Webmaster Guidelines" and IndexNow. <a href="https://www.bing.com/webmasters/help/webmaster-guidelines-30fba23a">bing.com/webmasters</a>, <a href="https://www.indexnow.org/">indexnow.org</a></li>
     <li>llms.txt proposal. <a href="https://llmstxt.org/">llmstxt.org</a></li>
     <li>Schema.org, "Organization". <a href="https://schema.org/Organization">schema.org/Organization</a></li>

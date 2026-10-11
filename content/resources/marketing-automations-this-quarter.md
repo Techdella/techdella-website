@@ -10,6 +10,10 @@ form: lead_magnet
 # Run `npm run pdf` first: the importer uploads these from pdf/out/ to an unguessable uploads path.
 pdf: pdf/out/marketing-automations-this-quarter.pdf
 featured_image: pdf/out/covers/marketing-automations-this-quarter.jpg
+# Pages 2–3 as a preview (npm run pdf renders them).
+gallery:
+  - pdf/out/previews/marketing-automations-this-quarter-p2.jpg
+  - pdf/out/previews/marketing-automations-this-quarter-p3.jpg
 bullets:
   - "Form to CRM with source capture"
   - "Instant lead routing and alerts"
@@ -19,7 +23,7 @@ bullets:
   - "Lead scoring and MQL handoff, stalled-deal nudges, onboarding and re-engagement"
 internal_links:
   - /services/marketing-automation/
-  - /resources/
+  - /glossary/
 ---
 
 These marketing automations are the ten workflows we'd build first in a B2B stack, with the trigger, steps and metrics for each. See how we deliver them in [marketing automation](/services/marketing-automation/) and [lead generation](/services/lead-generation/), or start with a [growth audit](/growth-audit/).

@@ -10,6 +10,10 @@ form: lead_magnet
 # Run `npm run pdf` first: the importer uploads these from pdf/out/ to an unguessable uploads path.
 pdf: pdf/out/b2b-growth-audit-worksheet.pdf
 featured_image: pdf/out/covers/b2b-growth-audit-worksheet.jpg
+# Pages 2–3 as a preview (npm run pdf renders them).
+gallery:
+  - pdf/out/previews/b2b-growth-audit-worksheet-p2.jpg
+  - pdf/out/previews/b2b-growth-audit-worksheet-p3.jpg
 bullets:
   - "Goals and funnel numbers, from visit to closed deal"
   - "A scorecard for six channels: SEO, AI search, paid, lead gen, email and automation"
@@ -18,10 +22,10 @@ bullets:
   - "A prioritization grid that turns findings into a 90-day plan"
 internal_links:
   - /growth-audit/
-  - /resources/
+  - /glossary/
 ---
 
-This growth audit worksheet lets you audit your B2B growth engine yourself, from funnel numbers to a ranked 90-day plan. If you'd rather we run it with you, request a [growth audit](/growth-audit/), see [our services](/services/), or browse the other [free resources](/resources/).
+This growth audit worksheet lets you audit your B2B growth engine yourself, from funnel numbers to a ranked 90-day plan. If you'd rather we run it with you, request a [growth audit](/growth-audit/), see [our services](/services/), or start with the free [AI search readiness checklist](/resources/ai-search-readiness-checklist/).
 
 ## Who it's for
 

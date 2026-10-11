@@ -14,7 +14,7 @@
     "test:e2e": "playwright test",
     "test:smoke": "playwright test --grep @smoke",
     "test:lighthouse": "lhci autorun --config=tests/lighthouse/lighthouserc.cjs",
-    "pdf": "node pdf/render.mjs",
+    "pdf": "node pdf/render.mjs && bash scripts/pdf-previews.sh",
     "motion:render": "node motion/render.mjs"
   },
   "devDependencies": {

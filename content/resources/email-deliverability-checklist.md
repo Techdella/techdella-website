@@ -10,6 +10,10 @@ form: lead_magnet
 # Run `npm run pdf` first: the importer uploads these from pdf/out/ to an unguessable uploads path.
 pdf: pdf/out/email-deliverability-checklist.pdf
 featured_image: pdf/out/covers/email-deliverability-checklist.jpg
+# Pages 2–3 as a preview (npm run pdf renders them).
+gallery:
+  - pdf/out/previews/email-deliverability-checklist-p2.jpg
+  - pdf/out/previews/email-deliverability-checklist-p3.jpg
 bullets:
   - "The bulk-sender rules on one page"
   - "SPF and DKIM setup, step by step"
@@ -19,7 +23,7 @@ bullets:
   - "A pre-send checklist"
 internal_links:
   - /services/email-marketing/
-  - /resources/
+  - /glossary/
 ---
 
 This email deliverability checklist covers SPF, DKIM, DMARC and the Gmail, Yahoo and Outlook sender rules, step by step. It's the first thing we check in [email marketing](/services/email-marketing/) and [marketing automation](/services/marketing-automation/) projects, and part of every [growth audit](/growth-audit/).

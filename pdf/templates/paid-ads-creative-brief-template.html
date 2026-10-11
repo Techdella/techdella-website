@@ -194,17 +194,17 @@ Example:  li_leads_fintech-cmo_audit-offer_pain-hook_doc_v2</pre>
 <section class="pg" aria-labelledby="specs1">
   <span class="chip">Step 5</span>
   <h2 id="specs1">Format specs: Meta and TikTok</h2>
-  <p class="lead">Common, long-standing values. Platforms change limits and safe zones often, so confirm against the help-center pages in the sources before production. <span class="confirm">[CONFIRM current specs]</span></p>
+  <p class="lead">Values from Meta's Ads Guide and TikTok's Ads Manager Help Center, checked October 2026. Platforms change limits and safe zones often, so recheck the pages in the sources before production.</p>
 
   <table class="tight">
     <caption>Meta (Facebook and Instagram)</caption>
     <thead><tr><th style="width:24%">Placement / asset</th><th style="width:20%">Ratio</th><th style="width:22%">Recommended size</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><th>Feed image or video</th><td>1:1 or 4:5</td><td>1080×1080 / 1080×1350 px</td><td>4:5 takes more screen space on mobile.</td></tr>
-      <tr><th>Stories and Reels</th><td>9:16</td><td>1080×1920 px</td><td>Keep text and logos away from the top and bottom of the frame, where the interface sits. <span class="confirm">[CONFIRM: current safe-zone percentages]</span></td></tr>
-      <tr><th>Carousel cards</th><td>1:1 (or 4:5)</td><td>1080×1080 px</td><td>2 to 10 cards.</td></tr>
-      <tr><th>Primary text</th><td colspan="3">Put the message in the first line; longer text is truncated behind "See more". <span class="confirm">[CONFIRM: current truncation length]</span></td></tr>
-      <tr><th>Headline</th><td colspan="3">Short; it is truncated on many placements. <span class="confirm">[CONFIRM: recommended character count]</span></td></tr>
+      <tr><th>Feed image or video</th><td>1:1 or 4:5</td><td>4:5: 1440×1800 px</td><td>4:5 takes more screen space on mobile.</td></tr>
+      <tr><th>Stories and Reels</th><td>9:16</td><td>1440×2560 px</td><td>Keep text and logos out of the top 14%, the bottom 35% and 6% on each side, where the interface sits.</td></tr>
+      <tr><th>Carousel cards</th><td>1:1</td><td>At least 1080×1080 px</td><td>2 to 10 cards. Meta suggests about 80 characters of primary text and 20 for headlines.</td></tr>
+      <tr><th>Primary text</th><td colspan="3">Put the message in the first line; longer text is truncated behind "See more". Meta recommends 50 to 150 characters for Facebook Feed and 44 for Instagram Reels.</td></tr>
+      <tr><th>Headline</th><td colspan="3">Short; it is truncated on many placements. Meta recommends 27 characters for Facebook Feed.</td></tr>
       <tr><th>Special ad categories</th><td colspan="3">Ads about credit, employment, housing, or social issues, elections or politics must be declared, and targeting options are restricted.</td></tr>
     </tbody>
   </table>
@@ -213,10 +213,10 @@ Example:  li_leads_fintech-cmo_audit-offer_pain-hook_doc_v2</pre>
     <caption>TikTok</caption>
     <thead><tr><th style="width:24%">Asset</th><th style="width:20%">Ratio</th><th style="width:22%">Recommended size</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><th>In-feed video</th><td>9:16</td><td>1080×1920 px</td><td>Vertical, full-screen, sound on by default for many users; still caption it. <span class="confirm">[CONFIRM: recommended length range]</span></td></tr>
-      <tr><th>Ad text</th><td colspan="3">Short caption shown over the video. <span class="confirm">[CONFIRM: character limit]</span></td></tr>
+      <tr><th>In-feed video</th><td>9:16</td><td>1080×1920 px</td><td>Vertical, full-screen, sound on by default for many users; still caption it. TikTok accepts 9:16 at 540×960 px or larger. Non-Spark videos can run up to 10 minutes; TikTok's spec page gives no recommended length, so test short cuts first.</td></tr>
+      <tr><th>Ad text</th><td colspan="3">Short caption shown over the video. Up to 4 lines display, including emojis. Non-Spark captions do not support links, @ mentions or hashtags. Check the character limit in Ads Manager when you build the ad.</td></tr>
       <tr><th>Spark Ads</th><td colspan="3">Promote an existing organic TikTok post (your account or a creator's, with their authorization code). Engagement stays on the original post.</td></tr>
-      <tr><th>Safe zone</th><td colspan="3">The right side (buttons) and bottom (caption, CTA) are covered by the interface. Keep text centered. <span class="confirm">[CONFIRM: current safe-zone template]</span></td></tr>
+      <tr><th>Safe zone</th><td colspan="3">The right side (buttons) and bottom (caption, CTA) are covered by the interface. Keep text centered. The safe area shrinks as the caption gets longer. Download TikTok's safe-zone files from its In-Feed Ads spec page (standard, with anchor, and Arabic versions).</td></tr>
     </tbody>
   </table>
 </section>
@@ -224,17 +224,17 @@ Example:  li_leads_fintech-cmo_audit-offer_pain-hook_doc_v2</pre>
 <section class="pg" aria-labelledby="specs2">
   <span class="chip">Step 5, continued</span>
   <h2 id="specs2">Format specs: LinkedIn and Google</h2>
-  <p class="lead">Confirm against the platform help pages before production. <span class="confirm">[CONFIRM current specs]</span></p>
+  <p class="lead">Values from LinkedIn's and Google's help centers, checked October 2026. Recheck the pages in the sources before production.</p>
 
   <table class="tight">
     <caption>LinkedIn</caption>
     <thead><tr><th style="width:24%">Format</th><th style="width:20%">Ratio</th><th style="width:22%">Recommended size</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><th>Single image</th><td>1.91:1, 1:1, or 4:5 (mobile)</td><td>1200×627 / 1200×1200 px</td><td>Square and vertical usually take more feed space.</td></tr>
+      <tr><th>Single image</th><td>1.91:1, 1:1, or 4:5 (mobile)</td><td>1200×628 / 1200×1200 / 720×900 px</td><td>Square and vertical usually take more feed space.</td></tr>
       <tr><th>Video</th><td>16:9, 1:1, 4:5 or 9:16</td><td>Depends on ratio</td><td>Add captions (an SRT file or burned in).</td></tr>
-      <tr><th>Document ads</th><td>Any page size</td><td>PDF, PPT or DOCX</td><td>Can be gated with a Lead Gen Form. <span class="confirm">[CONFIRM: page and file-size limits]</span></td></tr>
+      <tr><th>Document ads</th><td>Any page size</td><td>PDF, PPT(X) or DOC(X)</td><td>Can be gated with a Lead Gen Form (PDF only for that objective). Up to 100 MB and 300 pages.</td></tr>
       <tr><th>Thought Leader Ads</th><td colspan="3">Promote a post from an employee's or other member's profile, with their approval.</td></tr>
-      <tr><th>Intro text and headline</th><td colspan="3">Intro text is truncated on mobile after roughly the first two lines; put the hook first. <span class="confirm">[CONFIRM: current character recommendations]</span></td></tr>
+      <tr><th>Intro text and headline</th><td colspan="3">Intro text: up to 150 characters to avoid truncation (3,000 maximum); put the hook first. Headline: up to 70 characters to avoid truncation (200 maximum).</td></tr>
     </tbody>
   </table>
 
@@ -243,10 +243,10 @@ Example:  li_leads_fintech-cmo_audit-offer_pain-hook_doc_v2</pre>
     <thead><tr><th style="width:24%">Format</th><th colspan="3">Assets</th></tr></thead>
     <tbody>
       <tr><th>Responsive search ads</th><td colspan="3">Up to 15 headlines (30 characters each) and up to 4 descriptions (90 characters each). Write headlines that make sense in any order; pin only when legally required.</td></tr>
-      <tr><th>Responsive display ads</th><td colspan="3">Landscape image 1.91:1 (1200×628 px), square image 1:1 (1200×1200 px), square logo 1:1 and optional landscape logo 4:1; short headline (30 characters), long headline (90 characters), description (90 characters).</td></tr>
-      <tr><th>Performance Max / Demand Gen</th><td colspan="3">Supply the full asset set: images in landscape, square and portrait, logos, video (Google may auto-generate video if you supply none), headlines and descriptions. <span class="confirm">[CONFIRM: current asset requirements]</span></td></tr>
+      <tr><th>Responsive display ads</th><td colspan="3">Landscape image 1.91:1 (1200×628 px), square image 1:1 (600×600 px recommended), optional square logo 1:1 (1200×1200 px) and landscape logo 4:1 (1200×300 px); 1 to 5 short headlines (30 characters), 1 long headline (90 characters), 1 to 5 descriptions (90 characters), business name (25 characters).</td></tr>
+      <tr><th>Performance Max / Demand Gen</th><td colspan="3">Performance Max minimum: 3 headlines (30 characters, one of 15 or fewer), 1 long headline (90), 2 descriptions (90), a business name (25), a landscape 1.91:1 image (1200×628 px), a square 1:1 image (1200×1200 px) and a square logo. Recommended: 11+ headlines, 4+ descriptions, vertical 4:5 images (960×1200 px), and your own 16:9, 1:1 and 9:16 videos of 10 seconds or more. If you add no video, Google may generate one.</td></tr>
       <tr><th>YouTube</th><td colspan="3">Horizontal 16:9 and vertical 9:16 (Shorts) versions. Front-load the brand and the point.</td></tr>
-      <tr><th>Financial services</th><td colspan="3">In many countries Google requires financial services verification before you can run ads for financial products. <span class="confirm">[CONFIRM: requirement for your markets]</span></td></tr>
+      <tr><th>Financial services</th><td colspan="3">Google requires financial services verification in specific countries, including the UK, Australia, India and most of the EEA. Where required, it covers all ad formats and assets. Check the country list on Google's verification page before you target a market.</td></tr>
     </tbody>
   </table>
 </section>
@@ -282,16 +282,16 @@ Example:  li_leads_fintech-cmo_audit-offer_pain-hook_doc_v2</pre>
   <h2 id="sources">Sources</h2>
   <p>Specs and policies in this template come from the platforms' own help centers. Check each page before production; they change without notice.</p>
   <ol class="sources">
-    <li>Meta, "Meta Ads Guide" (format and placement specs). <a href="https://www.facebook.com/business/ads-guide">facebook.com/business/ads-guide</a> <span class="confirm">[CONFIRM current specs]</span></li>
-    <li>Meta Business Help Center, "About Special Ad Categories". <a href="https://www.facebook.com/business/help/298000447747885">facebook.com/business/help/298000447747885</a> <span class="confirm">[CONFIRM: URL]</span></li>
-    <li>TikTok Ads Manager Help Center, "In-Feed Ads" and "Video ads specifications". <a href="https://ads.tiktok.com/help/">ads.tiktok.com/help/</a> <span class="confirm">[CONFIRM current specs]</span></li>
-    <li>TikTok Ads Manager Help Center, "About Spark Ads". <a href="https://ads.tiktok.com/help/">ads.tiktok.com/help/</a></li>
-    <li>LinkedIn Marketing Solutions, "Ad specs and guidelines". <a href="https://business.linkedin.com/marketing-solutions/success/ads-guide">business.linkedin.com/marketing-solutions/success/ads-guide</a> <span class="confirm">[CONFIRM current specs]</span></li>
+    <li>Meta, "Meta Ads Guide" (format and placement specs). <a href="https://www.facebook.com/business/ads-guide">facebook.com/business/ads-guide</a> (Facebook Feed, carousel, Instagram Stories and Reels pages)</li>
+    <li>Meta Business Help Center, "How to Choose a Special Ad Category". <a href="https://www.facebook.com/business/help/298000447747885">facebook.com/business/help/298000447747885</a></li>
+    <li>TikTok Ads Manager Help Center, "TikTok Auction In-Feed Ads" (specs and safe-zone files, updated June 2026). <a href="https://ads.tiktok.com/help/article/tiktok-auction-in-feed-ads?lang=en">ads.tiktok.com/help/article/tiktok-auction-in-feed-ads</a></li>
+    <li>TikTok Ads Manager Help Center, "About Spark Ads". <a href="https://ads.tiktok.com/help/article/spark-ads">ads.tiktok.com/help/article/spark-ads</a></li>
+    <li>LinkedIn Help, "Single image ads advertising specifications" and "Document ads advertising specifications". <a href="https://www.linkedin.com/help/lms/answer/a426534">linkedin.com/help/lms/answer/a426534</a>, <a href="https://www.linkedin.com/help/lms/answer/a493903">linkedin.com/help/lms/answer/a493903</a></li>
     <li>LinkedIn Help, "Thought Leader Ads". <a href="https://www.linkedin.com/help/lms/">linkedin.com/help/lms/</a></li>
     <li>Google Ads Help, "About responsive search ads". <a href="https://support.google.com/google-ads/answer/7684791">support.google.com/google-ads/answer/7684791</a></li>
-    <li>Google Ads Help, "About responsive display ads" (image and text specs). <a href="https://support.google.com/google-ads/answer/6363750">support.google.com/google-ads/answer/6363750</a> <span class="confirm">[CONFIRM current specs]</span></li>
-    <li>Google Ads Help, "About Performance Max campaigns". <a href="https://support.google.com/google-ads/answer/10724817">support.google.com/google-ads/answer/10724817</a></li>
-    <li>Google Advertising Policies Help, "Financial services verification". <a href="https://support.google.com/adspolicy/answer/10717898">support.google.com/adspolicy/answer/10717898</a> <span class="confirm">[CONFIRM: URL]</span></li>
+    <li>Google Ads Help, "Responsive display ads specs and format requirements". <a href="https://support.google.com/google-ads/answer/17090561">support.google.com/google-ads/answer/17090561</a></li>
+    <li>Google Ads Help, "Performance Max campaigns specs and format requirements". <a href="https://support.google.com/google-ads/answer/17091269">support.google.com/google-ads/answer/17091269</a></li>
+    <li>Google Advertising Policies Help, "Financial Services Verification" (country pages). <a href="https://support.google.com/adspolicy/answer/15332527">support.google.com/adspolicy/answer/15332527</a></li>
     <li>TechDella, Paycape case study (published). <a href="https://techdella.com/case-studies/paycape/">techdella.com/case-studies/paycape/</a>. Re-confirm numbers with the client before use in ads.</li>
   </ol>
 </section>

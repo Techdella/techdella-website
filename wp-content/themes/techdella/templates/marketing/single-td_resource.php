@@ -113,18 +113,43 @@ while ( have_posts() ) :
 					<p style="margin-top:14px;color:var(--td-body)"><?php esc_html_e( 'Each guide uses the same clear layout: short sections, checklists you can tick off, and a next step at the end.', 'techdella' ); ?></p>
 					<p style="margin-top:24px"><?php echo td_button( __( 'Get the PDF', 'techdella' ), '#get', 'primary' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 				</div>
-				<figure style="margin:0">
-					<div class="td-m2-page" role="img" aria-label="<?php esc_attr_e( 'Illustration of a guide page layout', 'techdella' ); ?>">
-						<span class="td-m2-page__bar td-m2-page__bar--h"></span>
-						<span class="td-m2-page__bar"></span>
-						<span class="td-m2-page__bar" style="width:85%"></span>
-						<span class="td-m2-page__box"></span>
-						<span class="td-m2-page__bar"></span>
-						<span class="td-m2-page__bar" style="width:60%"></span>
-						<span class="td-m2-page__box"></span>
-					</div>
-					<figcaption class="td-muted" style="font-size:14px;margin-top:10px"><?php esc_html_e( 'Layout preview, not the actual page', 'techdella' ); ?></figcaption>
-				</figure>
+				<?php
+				$td_previews = array_slice( array_filter( td_m2_ids( td_field( 'gallery', $td_id ) ) ), 0, 2 );
+				if ( $td_previews ) :
+					?>
+					<figure class="td-m2-spread" style="margin:0">
+						<div class="td-m2-spread__pages">
+							<?php foreach ( $td_previews as $td_n => $td_pid ) : ?>
+								<div class="td-m2-spread__page">
+									<?php
+									echo td_image( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+										(int) $td_pid,
+										[
+											/* translators: 1: page number, 2: guide title */
+											'alt'   => sprintf( __( 'Page %1$d of %2$s', 'techdella' ), $td_n + 2, get_the_title() ),
+											'sizes' => '(min-width: 1024px) 300px, 45vw',
+										]
+									);
+									?>
+								</div>
+							<?php endforeach; ?>
+						</div>
+						<figcaption class="td-muted" style="font-size:14px;margin-top:14px"><?php esc_html_e( 'Two pages from the guide', 'techdella' ); ?></figcaption>
+					</figure>
+				<?php else : ?>
+					<figure style="margin:0">
+						<div class="td-m2-page" role="img" aria-label="<?php esc_attr_e( 'Illustration of a guide page layout', 'techdella' ); ?>">
+							<span class="td-m2-page__bar td-m2-page__bar--h"></span>
+							<span class="td-m2-page__bar"></span>
+							<span class="td-m2-page__bar" style="width:85%"></span>
+							<span class="td-m2-page__box"></span>
+							<span class="td-m2-page__bar"></span>
+							<span class="td-m2-page__bar" style="width:60%"></span>
+							<span class="td-m2-page__box"></span>
+						</div>
+						<figcaption class="td-muted" style="font-size:14px;margin-top:10px"><?php esc_html_e( 'Layout preview, not the actual page', 'techdella' ); ?></figcaption>
+					</figure>
+				<?php endif; ?>
 			</div>
 		</section>
 	</article>
