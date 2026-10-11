@@ -82,7 +82,7 @@ final class Registry {
 				'singular'  => 'Solution',
 				'plural'    => 'Solutions',
 				'slug'      => 'solution', // Live base (not td_solution / solutions).
-				'archive'   => 'solution', // /solution/ industries hub.
+				'archive'   => false, // No hub page (owner): the nav lists the industries.
 				'cap'       => $money,
 				'menu'      => 'td-growth',
 				'supports'  => $editor,
@@ -147,7 +147,7 @@ final class Registry {
 				'singular'  => 'Resource',
 				'plural'    => 'Resources',
 				'slug'      => 'resources',
-				'archive'   => 'resources',
+				'archive'   => false, // No hub page (owner): the nav's Resources menu lists the guides.
 				'cap'       => [ 'td_resource', 'td_resources' ],
 				'menu'      => 'td-content',
 				'supports'  => $editor,

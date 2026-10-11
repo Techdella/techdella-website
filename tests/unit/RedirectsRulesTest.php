@@ -29,7 +29,7 @@ final class RedirectsRulesTest extends TestCase {
 	public function test_real_csv_parses_without_errors(): void {
 		$parsed = RedirectRules::parse_csv( (string) file_get_contents( dirname( __DIR__, 2 ) . '/data/redirects.csv' ) );
 		$this->assertSame( [], $parsed['errors'] );
-		$this->assertCount( 66, $parsed['rules'] );
+		$this->assertCount( 70, $parsed['rules'] );
 		$this->assertCount( 6, array_filter( $parsed['rules'], static fn( $r ) => $r['conditional'] ) );
 	}
 
@@ -62,8 +62,9 @@ final class RedirectsRulesTest extends TestCase {
 	}
 
 	public function test_prefix_keeps_remainder(): void {
-		$this->assertSame( '/solution/', self::target( '/solutions/' ) );
+		$this->assertSame( '/services/', self::target( '/solutions/' ) );
 		$this->assertSame( '/solution/fintech-marketing-agency/', self::target( '/solutions/fintech-marketing-agency/' ) );
+		$this->assertSame( '/services/marketing-automation/', self::target( '/solution/ai-marketing-agency/' ) );
 		$prefix = RedirectRules::make_rule( '/old/', '/new-page', '301', 'prefix' );
 		$this->assertSame( '/new-page', RedirectRules::match( [ $prefix ], '/old/deep/x/' )['target'] );
 	}

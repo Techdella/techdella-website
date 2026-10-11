@@ -336,7 +336,7 @@ thank-you,draft,Founder's Perk PDF,/?post_type=thank-you&p=19978,noindex,,Keep o
 solution,publish,Logistics Marketing Agency,/solution/logistics-marketing-agency/,rebuild,,Keep live slug; rebuild on solution template,0
 solution,publish,Cybersecurity Marketing Agency,/solution/cybersecurity-marketing-agency/,rebuild,,Keep live slug; rebuild on solution template,0
 solution,publish,EdTech Marketing Agency,/solution/edtech-marketing-agency/,rebuild,,Keep live slug; rebuild on solution template,0
-solution,publish,AI Marketing Agency,/solution/ai-marketing-agency/,rebuild,,Keep live slug; rebuild on solution template,0
+solution,publish,AI Marketing Agency,/solution/ai-marketing-agency/,redirect,/services/marketing-automation/,Removed (owner 11 Oct 2026): 301 to AI marketing automation,0
 solution,publish,PropTech Marketing Agency,/solution/real-estate-marketing-agency/,rebuild,,Keep live slug; rebuild on solution template,0
 solution,publish,FMCG Marketing Agency,/solution/fmcg-marketing-agency/,rebuild,,Keep live slug; rebuild on solution template,0
 solution,publish,Whitelabel Marketing Agency,/solution/whitelabel-marketing-agency/,rebuild,,Keep live slug; rebuild on solution template,0

@@ -15,7 +15,7 @@ rank_math_description: "How to start an e-learning business: pre-sell a course, 
 internal_links:
   - /services/email-marketing/
   - /services/marketing-automation/
-  - /resources/
+  - /glossary/
   - /glossary/sales-funnel/
   - /glossary/landing-page/
   - /growth-audit/
@@ -139,7 +139,7 @@ Fact: Marketplaces have huge competition and control your pricing. Your own audi
 [CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
 :::
 
-A course launch is an email campaign. Offer a free guide or mini-lesson, welcome new subscribers with a short sequence, then open enrolment with a clear deadline. Our [email marketing](/services/email-marketing/) and [marketing automation](/services/marketing-automation/) teams build exactly these sequences, and our [resources](/resources/) show what a lead magnet can look like.
+A course launch is an email campaign. Offer a free guide or mini-lesson, welcome new subscribers with a short sequence, then open enrolment with a clear deadline. Our [email marketing](/services/email-marketing/) and [marketing automation](/services/marketing-automation/) teams build exactly these sequences, and our [free guides](/resources/b2b-growth-audit-worksheet/) show what a lead magnet can look like.
 
 :::cta "Need a course website that sells?" "Start a Studios brief" studios:/start/
 TechDella Studios designs course and education websites with landing pages, checkout and email capture that work on mobile.

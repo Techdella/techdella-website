@@ -84,7 +84,7 @@ test.describe('phone width', () => {
 test('services mega-menu: keyboard opens it, Esc closes and returns focus @smoke', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(site('marketing', '/styleguide/'));
-  const toggle = page.locator('[data-td-mega-toggle]');
+  const toggle = page.locator('[data-td-mega-toggle][aria-controls="td-mega"]');
   const panel = page.locator('#td-mega');
   await expect(toggle).toBeVisible();
   await toggle.focus();
@@ -98,6 +98,18 @@ test('services mega-menu: keyboard opens it, Esc closes and returns focus @smoke
   await page.keyboard.press('Escape');
   await expect(panel).toBeHidden();
   await expect(toggle).toBeFocused();
+
+  // Industries and Resources: label-only dropdowns, one open at a time.
+  for (const id of ['td-mega-industries', 'td-mega-resources']) {
+    const btn = page.locator(`[aria-controls="${id}"]`);
+    await btn.focus();
+    await page.keyboard.press('Enter');
+    await expect(page.locator(`#${id}`)).toBeVisible();
+    await expect(page.locator(`#${id} a`).first()).toBeVisible();
+    await expect(panel).toBeHidden();
+    await page.keyboard.press('Escape');
+    await expect(page.locator(`#${id}`)).toBeHidden();
+  }
 });
 
 test('nav gets the scrolled (blurred) state', async ({ page }) => {
@@ -124,7 +136,7 @@ test.describe('without JavaScript', () => {
 
     const services = page.locator('.td-nav__item--mega > a.td-nav__link');
     await expect(services).toHaveAttribute('href', /\/services\/$/);
-    await expect(page.locator('[data-td-mega-toggle]')).toBeHidden();
+    await expect(page.locator('[data-td-mega-toggle]:visible')).toHaveCount(0);
 
     await page.setViewportSize({ width: 390, height: 844 });
     const summary = page.locator('.td-nav__menu > summary');

@@ -60,7 +60,11 @@ source,target,code,condition,notes
 /service/landing-page-design/,https://studios.techdella.com/services/website-design/,301,,Legacy redirect carried from old theme (fixed targets)
 /service/branding-and-design/,https://studios.techdella.com/services/branding/,301,,Legacy redirect carried from old theme (fixed targets)
 /service/conversion-rate-optimization/,/services/lead-generation/,301,,Legacy redirect carried from old theme (fixed targets)
-/solutions/,/solution/,301,prefix,Legacy redirect carried from old theme (fixed targets)
+/solutions/,/services/,301,,Old solutions index; industries have no hub page (owner, 11 Oct 2026)
+/solutions/*,/solution/$1,301,regex ^/solutions/(.+)$,Legacy /solutions/<page>/ to the live /solution/ base
+/solution/,/services/,301,,Industries have no hub page (owner, 11 Oct 2026): the nav lists them
+/solution/ai-marketing-agency/,/services/marketing-automation/,301,,AI marketing page removed (owner, 11 Oct 2026)
+/resources/,https://blog.techdella.com/,301,,Resources has no hub page (owner, 11 Oct 2026): guides are in the nav
 /case-study/,/case-studies/,301,,Legacy redirect carried from old theme (fixed targets)
 /founder-dashboard/,https://hub.techdella.com/,301,,Legacy redirect carried from old theme (fixed targets)
 /guide/,https://blog.techdella.com/,301,prefix,Legacy redirect carried from old theme (fixed targets)
