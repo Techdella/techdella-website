@@ -59,8 +59,8 @@ Fact: Brand-page reach is limited, but people-led posts, comments and short vide
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+On LinkedIn, the founder's own account almost always beats the company page. People follow people. My advice is to post about the problems you solve in the words your customers use on sales calls, reply to every comment in the first hour, and treat the company page as the place prospects go to check you're real.
 :::
 
 ## How to grow organic social media

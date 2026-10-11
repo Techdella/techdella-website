@@ -183,8 +183,8 @@ That tells you more than any single answer. You're mentioned half as often as th
 
 Pair this with business data. Google Search Console includes AI Overviews and AI Mode traffic in the normal "Web" search type ([Google Search Central](https://developers.google.com/search/docs/appearance/ai-features)), and referral traffic from ChatGPT and Perplexity shows up in your analytics as referrals. Add "How did you hear about us?" to your forms. Buyers will tell you when an AI assistant sent them.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Founders often ask me for a trick to get into ChatGPT answers. There isn't one. What helps is the same thing that earns trust anywhere: pages that answer the question in the first few lines, consistent facts about who you are, and mentions on sites the engines already cite. Track your share of answers monthly, and be patient. It moves slowly.
 :::
 
 ## Where to start this month

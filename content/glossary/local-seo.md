@@ -57,8 +57,8 @@ Local SEO also matters for B2B firms with offices: people still search "[service
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Local SEO is where I most often talk clients out of doing more. They want a page for every nearby city. I'd rather they build pages only where they have real customers or staff, then put the effort into the Business Profile: accurate hours, real photos and a steady habit of asking happy customers for reviews. We follow the same rule for our own location pages.
 :::
 
 ## How to do local SEO

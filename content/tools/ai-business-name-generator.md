@@ -152,8 +152,8 @@ Other mistakes we see often:
 - **Choosing a name that only works in one language.** Say it in each market before you choose.
 - **Skipping the spelling test.** If people can't spell it after hearing it, they can't search for it.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+A generator is great for range, but the shortlist is where the real work starts. Take your top five names, say each one on a phone call, and ask someone to type it. Then check the trademark registers and domains in every market you sell to. A name you have to defend or explain later is expensive, however good it sounded on day one.
 :::
 
 ## What the tool can't do

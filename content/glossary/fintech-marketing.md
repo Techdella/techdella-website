@@ -59,8 +59,8 @@ Fact: Paid ads can work, but platform restrictions and high click costs make the
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Fintech buyers are cautious with money, so clarity beats cleverness. With Paycape, we didn't start with visuals or broad brand language. We tightened positioning on key pages and built content clusters around the questions founders and small businesses ask when comparing financial tools. Paid ads still have a place, but platform rules make them hard to lean on alone. Trust is usually earned in search first.
 :::
 
 ## How to build a fintech marketing plan

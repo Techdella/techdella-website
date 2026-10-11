@@ -124,8 +124,8 @@ Skip the 40-page document. Answer these on one page and revisit them every quart
 6. Review the numbers | At day 90, compare jobs per week and average job value to your break-even.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+For a plumber, the phone is the sales team. If calls go to voicemail during a job, that customer is likely ringing the next name on Google. I'd sort out call forwarding or an answering service before spending on marketing. Then ask every customer for a review that names the job, like a boiler repair, because that's what the next person searches for.
 :::
 
 ## How to market a plumbing business

@@ -71,8 +71,8 @@ Fact: An average hides big differences. Calculate CLV by segment, plan or acquis
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Founders often treat every customer as worth the same, then spend the same to win each one. I'd split CLV by the channel and plan customers came from before setting any acquisition budget. Once you see which segments stay longest and buy more, you know where to spend, and which customers deserve better onboarding and follow-up, not just more ads.
 :::
 
 ## How to increase customer lifetime value

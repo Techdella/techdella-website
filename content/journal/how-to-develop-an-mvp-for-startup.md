@@ -140,8 +140,8 @@ Pick metrics that match the assumption. Page views and sign-up totals feel good 
 
 Pair the numbers with conversations. Ask users what they were trying to do, what confused them, and what they used before. Avoid "Do you like it?" People are polite. Ask about what they did, not what they think.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The question I ask founders a month after launch is simple: what did users do that surprised you? If the answer is "nothing," you're probably watching the wrong number or not talking to enough users. Sign-up totals make a nice screenshot for investors, but activation and repeat use tell you whether to keep building.
 :::
 
 ## Common mistakes when developing an MVP

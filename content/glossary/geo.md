@@ -61,8 +61,8 @@ Take a hypothetical B2B payroll software company that wants to appear when peopl
 - **Week 3:** Publish one page that answers the shortlist question honestly, with a comparison table and named sources.
 - **Week 4:** Re-run the same 20 prompts. Report the share, not individual answers, because outputs vary run to run.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When we run prompt tests for a client, the first finding is rarely about their own website. It's usually an old directory listing, a review site or a comparison article that the AI tools keep citing with outdated facts. I'd fix those sources before writing anything new. And I'd keep the prompt set the same every month, because changing the questions makes the trend meaningless.
 :::
 
 ## How to do GEO

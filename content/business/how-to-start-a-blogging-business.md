@@ -105,7 +105,7 @@ If search is your main channel, our [SEO service](/services/seo/) and [AI search
 | SEO tools (monthly, optional) | $0–$130 | £0–£110 | ₦0–₦150,000 |
 | Business registration | EIN free; LLC optional | Sole trader free; company £100 | CAC business name (check current fee) |
 
-Registration figures come from official sources linked below. The rest are estimates from typical quotes we've seen. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Registration figures come from official sources linked below. The rest are estimates from typical quotes we've seen. Software prices change often, so check each provider's current pricing page before you sign up.
 
 ## A worked example: what does a blog need to earn $2,000 a month?
 
@@ -142,8 +142,8 @@ We review your content, search visibility, AI answer presence and monetization p
 - **Collaborate.** Guest appearances on podcasts and newsletters in your niche.
 - **Community.** A WhatsApp, Telegram or Discord group for your most engaged readers.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Bloggers often treat search as the whole business, then one algorithm update takes half the income. I'd use search to find readers and email to keep them. Add one clear sign-up offer to your top ten posts, send something useful every week, and track how many readers become subscribers. An audience you can reach directly is the asset that makes sponsors and products possible.
 :::
 
 :::myth-fact

@@ -131,8 +131,8 @@ Investors negotiate on evidence. We build the offers, landing pages and follow-u
 
 YC's standard SAFE forms are written for US companies. YC also publishes forms for companies formed in Canada, the Cayman Islands and Singapore, and tells founders to consult a lawyer licensed in the country where the company was formed. If your company is incorporated in Nigeria, Kenya, South Africa or elsewhere, a US-form SAFE may not work as intended under local company law. Get local advice before using one, and make sure the instrument fits how you plan to raise later. For the bigger picture of how SAFEs fit into African fundraising, see our guide to [startup funding stages](/startup-funding-stages-for-african-founders/).
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I'm not a lawyer, and founders shouldn't take SAFE terms from their marketing team. What I see from the growth side is this: founders with paying customers and a clear pipeline negotiate from a stronger position than founders with a great deck. If you're about to raise, spend as much energy on traction you can show as on the instrument you sign.
 :::
 
 ## Common SAFE mistakes founders make

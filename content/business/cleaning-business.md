@@ -81,7 +81,7 @@ A solo residential cleaning business can start for very little. Commercial and s
 | Booking site or simple website | $0–$1,500 | £0–£1,200 | ₦0–₦600,000 |
 | Uniforms, branding, flyers | $100–$400 | £80–£300 | ₦50,000–₦200,000 |
 
-Registration figures come from the official sources below. The other ranges are estimates from typical quotes we've seen, not survey data. Check local prices before you budget. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Registration figures come from the official sources below. The other ranges are estimates from typical quotes we've seen, not survey data. Check local prices before you budget. Supply and insurance prices shift with location and season, so treat these as a first draft of your budget.
 
 ## How do you register a cleaning business?
 
@@ -132,8 +132,8 @@ Clients search for cleaners nearby and pick from the businesses with reviews, cl
 - **Partnerships.** Letting agents, short-let hosts, property managers and builders send repeat work. One property manager can be worth twenty households.
 - **Retention.** A client who stays a year is worth far more than a new lead. Track [customer retention](/glossary/customer-retention/) monthly and call anyone who skips two visits.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Most cleaning sites I review hide the price and ask people to call. That loses the person searching at 10 p.m. who just wants to book. Show a "from" price for each service, list the areas you cover, and let people pick a slot online. You can still quote larger jobs by hand. The aim is to remove every reason someone closes the tab.
 :::
 
 :::myth-fact

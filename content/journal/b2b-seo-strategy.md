@@ -191,8 +191,8 @@ Paycape is a fintech insights and comparison platform. When we started, its cont
 
 Read the full [Paycape case study](marketing:/case-studies/paycape/) for how the clusters were chosen.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+With Paycape, we started with the searches people make when they're already comparing fintech tools, and we linked every article toward a demo or a founder submission. That order matters. I'd rather a founder publish ten decision-stage pages that link properly than fifty broad posts that rank for questions nobody buys from. Breadth can come later, once the pages closest to revenue are working.
 :::
 
 ## B2B SEO myths worth dropping

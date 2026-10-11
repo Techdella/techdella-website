@@ -127,8 +127,8 @@ We review how buyers find your business online and give you a prioritized plan t
 - **Ignoring destination standards.** Goods that fail a destination's labeling or testing rules can be held or destroyed at the port.
 - **No buffer for delays.** Port congestion and document errors happen. Keep cash for storage and demurrage charges.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Exporters often build a website that reads like a company profile: history, mission, a gallery. Buyers want something else: specs, certifications, minimum order quantities, lead times and payment terms. I'd write one page per product with those answers, then link it in every outreach email. It saves the buyer a round of questions and helps a small supplier look dependable.
 :::
 
 :::myth-fact

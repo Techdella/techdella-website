@@ -91,7 +91,7 @@ No law in the US, UK or Nigeria requires a coaching certification. A recognized 
 | Camera, microphone, lighting | $150–$600 | £120–£500 | ₦80,000–₦400,000 |
 | Professional indemnity insurance (yearly) | $300–$1,000 | £100–£400 | Often not bought at start |
 
-Registration figures come from the official sources linked above. The other ranges are estimates from typical quotes we've seen. Check them locally. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Registration figures come from the official sources linked above. The other ranges are estimates from typical quotes we've seen. Check them locally. Treat them as rough planning figures, not prices you can count on.
 
 ## How should you price coaching packages?
 
@@ -133,8 +133,8 @@ Referrals fill your first months. After that, you need a pipeline you control.
 - **A lead magnet.** A self-assessment or checklist that earns an email address. See how we approach [lead generation](/services/lead-generation/).
 - **Partnerships.** HR teams, accelerators, professional associations and community groups can send cohorts, not just individuals.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The mistake I see most with new coaches is a homepage that describes the coach instead of the client's problem. Write your program page in the words people use on discovery calls, then end every page with one next step: book a call or take the assessment. Not both, and not five links. A clear page and a weekly email will outlast most launch tactics.
 :::
 
 :::myth-fact

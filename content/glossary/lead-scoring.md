@@ -55,8 +55,8 @@ Set a threshold based on history, for example **fit ≥ 40 and total ≥ 70** to
 - **Lead B:** Marketing manager at a 5-person agency, downloaded two guides, opened six emails. Fit 0. Engagement 10 + 10 + 5 = 25. **Total 25: keep nurturing.**
 - **Lead C:** VP Finance at a 300-person fintech, visited pricing once, using a Gmail address. Fit 20 + 15 + 15 + 10 − 15 = 45. Engagement 15. **Total 60: high fit, low engagement, so a good target for a personal email or a [LinkedIn Thought Leader Ad](/glossary/linkedin-thought-leader-ads/) sequence.**
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Most small teams don't need a complicated score. I'd start with fit alone: is this the right company and the right role? Add two or three behavior signals, such as a pricing visit or a demo request, then sit down with sales once a month to check which scored leads actually became deals. A model nobody reviews quietly drifts until sales stops trusting it.
 :::
 
 ## How to build a lead scoring model

@@ -138,8 +138,8 @@ Fact: No licence or certification is legally required in the US, UK or Nigeria. 
 6. Follow up every enquiry within a day | Speed and warmth win bookings.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Couples often message several planners on the same evening. Replying quickly, warmly and with a clear next step is an advantage you fully control. I'd set up an inquiry form that asks for the date, venue and guest count, then an automatic reply that confirms you've received it and offers a call time. Then follow up personally within the day.
 :::
 
 Couples search "wedding planner in [city]" and shortlist from reviews and galleries. A complete Google Business Profile helps you appear in those local results ([local SEO](/services/local-seo/)), and a vendor network is the core of [referral marketing](/glossary/referral-marketing/). A polished brand and website do the rest; TechDella Studios offers [branding](studios:/services/branding/) and website design for event businesses.

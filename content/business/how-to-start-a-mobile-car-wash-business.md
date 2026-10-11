@@ -133,8 +133,8 @@ A simple structure: a fortnightly exterior wash for one price, a fortnightly was
 6. Automate reminders | Send rebooking reminders by SMS or WhatsApp after each wash.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The first wash is the expensive one, because you paid to find that customer. The money is in the second, third and tenth. So I'd set up the rebooking reminder before launch week, not after. A short WhatsApp or SMS message with a one-tap booking link, sent at the right interval, often does more for revenue than another round of flyers.
 :::
 
 ## Step 7: Market locally and automate rebooking

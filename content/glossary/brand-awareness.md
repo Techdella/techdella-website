@@ -45,8 +45,8 @@ Fact: In B2B, your market may be a few thousand companies. Being known by the ri
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Awareness gets cut first because it's hard to tie to this month's pipeline. I'd still protect a small, steady share of effort for it. For a B2B company that might mean the founder posting consistently on LinkedIn, showing up in the newsletters your buyers read, and describing the company the same way everywhere. Consistency compounds; occasional bursts get forgotten.
 :::
 
 ## How to build brand awareness

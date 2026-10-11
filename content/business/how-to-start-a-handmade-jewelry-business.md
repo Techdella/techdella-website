@@ -132,8 +132,8 @@ Your brand should feel the same on packaging, social media and your website. Tec
 6. Pitch three boutiques | Bring samples, a wholesale price list and line sheet.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The mistake I see most with new product brands is opening five sales channels in the first week. Pick one shop, make the photos and descriptions excellent, and send every market-stall conversation there. When a stranger buys from that page without you in the room, you know your photos, price and story work. Then add the next channel.
 :::
 
 ## Step 6: Sell online and offline

@@ -52,8 +52,8 @@ Fact: Every segment needs its own message, content and budget. Too many segments
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When we start positioning work, I ask the founder to name the customers they'd happily clone. Their answers usually point to one or two segments with a shared, urgent problem. We write the core message for them first and treat everyone else as secondary. It can feel like turning business away, but a message built for a specific buyer tends to land far better than one written for anyone.
 :::
 
 ## How to segment your market

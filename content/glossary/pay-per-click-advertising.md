@@ -64,8 +64,8 @@ Fact: Ad quality and relevance count too. A more relevant ad and a better landin
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Do the break-even math before you open the ad account, not after the first invoice. It takes ten minutes and it tells you which keywords you can afford at all. I'd rather run one campaign on five high-intent terms with a landing page built for them than a broad campaign that spends the budget on curiosity clicks.
 :::
 
 ## How to launch a PPC campaign

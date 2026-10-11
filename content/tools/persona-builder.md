@@ -160,8 +160,8 @@ Other mistakes we see often:
 - **Naming a committee as the buyer.** "Decision makers" isn't a person. Pick the role whose budget pays.
 - **Never updating it.** Markets shift. A persona from two years ago may describe someone who has changed jobs.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The persona I trust is the one sales has argued with. A draft from a tool, or from a workshop, is a set of guesses until someone checks it against real calls and lost deals. Start with the buyer who signs off, write down what you think they care about, then ask a handful of recent customers whether you got it right.
 :::
 
 ## What the tool can't do

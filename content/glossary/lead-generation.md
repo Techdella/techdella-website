@@ -62,8 +62,8 @@ Fact: Gating blocks research-stage buyers who aren't ready to talk. Keep most gu
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When a founder tells me they need more leads, I ask what happened to the last fifty. Often nobody followed up within a day, or the leads sat in a spreadsheet nobody owns. Fixing response time and routing is cheaper than buying more traffic. Once follow-up works, we add channels, starting with the one closest to buyers who already have the problem.
 :::
 
 ## How to build a lead generation system

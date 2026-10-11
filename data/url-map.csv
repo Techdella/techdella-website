@@ -247,17 +247,17 @@ em-glossary,publish,Market Segmentation,/glossary/market-segmentation/,refresh-p
 em-glossary,publish,Digital Advertising,/glossary/digital-advertising/,refresh-priority,,"Core term: refresh, link to service page",994
 em-glossary,publish,Account-Based Marketing,/glossary/account-based-marketing/,refresh-priority,,"Core term: refresh, link to service page",884
 em-glossary,publish,Product-Market Fit,/glossary/product-market-fit/,refresh,,Adjacent business/startup term,2797
-location,publish,Lagos,/locations/lagos-nigeria/,rebuild,,"Market page: unique proof, no city-swap copy",0
+location,publish,Lagos,/locations/lagos-nigeria/,redirect,/locations/nigeria/,"Merged into the Nigeria page (owner, 11 Oct 2026)",0
 location,publish,Ibadan,/locations/ibadan-nigeria/,merge-review,/locations/nigeria/,"301 only if <20 clicks/12mo in GSC, else rebuild",0
 location,publish,Abuja,/locations/abuja-nigeria/,merge-review,/locations/nigeria/,"301 only if <20 clicks/12mo in GSC, else rebuild",0
-location,publish,Canada,/locations/canada/,rebuild,,"Market page: unique proof, no city-swap copy",0
-location,publish,USA,/locations/usa/,rebuild,,"Market page: unique proof, no city-swap copy",0
-location,publish,Dubai,/locations/dubai-uae/,rebuild,,"Market page: unique proof, no city-swap copy",0
+location,publish,Canada,/locations/canada/,redirect,/services/,"Only Nigeria keeps a market page (owner, 11 Oct 2026): no staffed presence or local proof here",0
+location,publish,USA,/locations/usa/,redirect,/services/,"Only Nigeria keeps a market page (owner, 11 Oct 2026): no staffed presence or local proof here",0
+location,publish,Dubai,/locations/dubai-uae/,redirect,/services/,"Only Nigeria keeps a market page (owner, 11 Oct 2026): no staffed presence or local proof here",0
 location,publish,India,/locations/mumbai-india/,merge-review,/services/,"301 only if <20 clicks/12mo in GSC, else rebuild",0
-location,publish,UK,/locations/uk/,rebuild,,"Market page: unique proof, no city-swap copy",0
-location,publish,Germany,/locations/germany/,merge-review,/locations/europe/,"301 only if <20 clicks/12mo in GSC, else rebuild",0
-location,publish,Nigeria,/locations/nigeria/,rebuild,,"Market page: unique proof, no city-swap copy",0
-location,publish,Europe,/locations/europe/,rebuild,,"Market page: unique proof, no city-swap copy",0
+location,publish,UK,/locations/uk/,redirect,/services/,"Only Nigeria keeps a market page (owner, 11 Oct 2026): no staffed presence or local proof here",0
+location,publish,Germany,/locations/germany/,merge-review,/services/,"301 only if <20 clicks/12mo in GSC, else rebuild",0
+location,publish,Nigeria,/locations/nigeria/,rebuild,,"The one market page: real Ibadan office, local proof, naira prices, sourced market data",0
+location,publish,Europe,/locations/europe/,redirect,/services/,"Only Nigeria keeps a market page (owner, 11 Oct 2026): no staffed presence or local proof here",0
 em-glossary,publish,Growth Hacking,/glossary/growth-hacking/,refresh-priority,,"Core term: refresh, link to service page",838
 em-glossary,publish,Marketing Attribution,/glossary/marketing-attribution/,refresh-priority,,"Core term: refresh, link to service page",759
 em-glossary,publish,Minimum Viable Product,/glossary/minimum-viable-product/,refresh,,Adjacent business/startup term,935
@@ -266,7 +266,7 @@ em-glossary,publish,Pre-Seed Funding,/glossary/pre-seed-funding/,refresh,,Adjace
 em-glossary,publish,SAFE Agreement,/glossary/safe-agreement/,refresh,,Adjacent business/startup term,907
 em-glossary,publish,Fractional CMO,/glossary/fractional-cmo/,refresh,,Adjacent business/startup term,1130
 em-glossary,publish,SaaS Business,/glossary/saas-business/,refresh,,Adjacent business/startup term,936
-location,publish,New York,/locations/new-york/,merge-review,/locations/usa/,"301 only if <20 clicks/12mo in GSC, else rebuild",0
+location,publish,New York,/locations/new-york/,merge-review,/services/,"301 only if <20 clicks/12mo in GSC, else rebuild",0
 location,publish,Pakistan,/locations/pakistan/,merge-review,/services/,"301 only if <20 clicks/12mo in GSC, else rebuild",0
 page,publish,Privacy Policy,/privacy-policy/,keep,,,0
 page,publish,Terms of use,/terms/,keep,,,0

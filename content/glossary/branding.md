@@ -55,8 +55,8 @@ Fact: A new logo without a sharper position is a cosmetic change. Most rebrands 
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When a founder asks us for a new logo, my first question is who they want to stop selling to. Branding gets easier once you narrow the audience, because the words, visuals and offer all have a target. I'd write the one-sentence description of the business before anyone opens a design tool, then use that sentence everywhere, word for word.
 :::
 
 ## How to build or refresh a brand

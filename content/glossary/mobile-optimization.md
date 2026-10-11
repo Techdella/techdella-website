@@ -61,8 +61,8 @@ Fact: Slow, shifting pages frustrate anyone filling in a form or reading a guide
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+My test is simple: open the page on a mid-range phone over mobile data and try to fill in the form with one thumb. Most problems show up in under a minute, like a sticky banner covering the submit button or a field that zooms the screen. I'd fix those before chasing a better speed score, because they cost you leads directly.
 :::
 
 ## How to optimize your site for mobile

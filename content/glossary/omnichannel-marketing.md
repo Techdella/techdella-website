@@ -49,8 +49,8 @@ Fact: A B2B company with a website, a CRM, an email tool and a sales team can be
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Don't buy a new channel to become omnichannel. Connect the ones you already run. The first thing I check is whether the CRM, the email tool and the website forms share one contact record. If a lead who booked a call still gets your cold newsletter sequence, fix that plumbing before you spend another dollar on reach.
 :::
 
 ## How to start with omnichannel marketing

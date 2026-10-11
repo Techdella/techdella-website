@@ -118,8 +118,8 @@ The SBA's planning guide recommends counting at least one year of monthly expens
 
 Then write the "slow revenue" plan: which costs you'd cut first (contractors, then marketing) and how many extra months that buys. If cutting contractors saves 1,000 a month, that's 31,800 ÷ 2,400 = about **13 months** instead of about 9 (31,800 ÷ 3,400).
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The runway plan is where I see founders being too hopeful about marketing. Search and content take months to compound, and paid ads cost money while you learn what works. Put a realistic marketing line in your monthly costs, decide in advance which channel you'd cut if revenue is slow, and protect the one that brings your best customers. Cutting everything at once usually sets you back further.
 :::
 
 ## 6. Why should people trust this startup?

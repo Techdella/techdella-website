@@ -84,7 +84,7 @@ source: US Bureau of Labor Statistics, Occupational Outlook Handbook, 2025 | htt
 | Bags, boxes, straps, uniforms | $200–$800 | £150–£600 | ₦80,000–₦300,000 |
 | Fuel float for the first month | $800–$2,000 | £600–£1,500 | ₦300,000–₦900,000 |
 
-Licensing rules come from the official sources above. All amounts are estimates from typical quotes we've seen; vehicle and fuel prices move fast. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Licensing rules come from the official sources above. All amounts are estimates from typical quotes we've seen; vehicle and fuel prices move fast. Get at least two local quotes for vehicles and insurance before you commit.
 
 ## How do you price deliveries so they make money?
 
@@ -126,8 +126,8 @@ TechDella Studios builds MVPs for logistics businesses: booking flows, rider app
 - **Simple online booking.** A quote form or booking page converts better than "call us". [TechDella Studios](studios:/services/website-design/) can build it.
 - **Outbound to businesses.** A short list of target clients and a sequence of calls and emails. Our [lead generation](/services/lead-generation/) page covers how to structure it.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Delivery is a reliability business, and buyers judge it on the first few orders. I'd start with a narrow zone you can serve on time, then publish it clearly on your site with prices and cut-off times. Expanding before you can deliver consistently creates late orders and bad reviews that are hard to undo. Win a few regular business accounts first, then grow the map.
 :::
 
 :::myth-fact

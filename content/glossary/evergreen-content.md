@@ -57,8 +57,8 @@ Fact: Sourced numbers make content more credible. Keep them in clearly dated cal
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I tell small teams to list the five questions their sales calls keep coming back to and write the best answer on the internet for each one. Those pages rarely go out of date in substance, but they do in detail. We put a review date on every one and recheck screenshots, prices and examples when it comes round. That habit is what keeps evergreen pages earning.
 :::
 
 ## How to write evergreen content

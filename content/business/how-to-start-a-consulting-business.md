@@ -128,8 +128,8 @@ That's normal. If the first five prospects all say yes immediately, your price i
 We review your website, search visibility and lead flow, and give you a prioritized plan.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+New consultants often list ten services because they're afraid to say no. Buyers hire someone for one problem. Before building a website, I'd write a single sentence that names who you help, the problem you fix and what changes afterward. Test it on five people in your network. If they can repeat it back and name someone who needs it, you're ready to market.
 :::
 
 ## Myths about starting a consulting business

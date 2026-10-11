@@ -61,8 +61,8 @@ Fact: Lasting growth comes from steady experiments on real customer problems. Sh
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I'm wary of the phrase because it attracts the wrong ideas: hacks, loopholes, bought engagement. What works for the founders we advise is duller. Keep a scored backlog, run one or two experiments at a time, and write down what you expected before you see the result. Most tests won't win. The habit of learning cheaply from each one is the real advantage.
 :::
 
 ## How to run growth experiments

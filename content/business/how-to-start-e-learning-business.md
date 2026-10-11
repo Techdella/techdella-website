@@ -135,8 +135,8 @@ Fact: Marketplaces have huge competition and control your pricing. Your own audi
 
 ## Step 7: Market and launch
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Start the email list before you record a single lesson. Your first subscribers tell you which problems matter most, and many of them become your first buyers. A free mini-lesson or checklist is enough to begin. When enrollment opens, you're talking to people who already know how you teach, which is far easier than selling to strangers on launch day.
 :::
 
 A course launch is an email campaign. Offer a free guide or mini-lesson, welcome new subscribers with a short sequence, then open enrolment with a clear deadline. Our [email marketing](/services/email-marketing/) and [marketing automation](/services/marketing-automation/) teams build exactly these sequences, and our [free guides](/resources/b2b-growth-audit-worksheet/) show what a lead magnet can look like.

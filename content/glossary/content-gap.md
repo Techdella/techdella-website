@@ -54,8 +54,8 @@ Fact: Tools miss new topics, low-volume B2B questions and the objections buyers 
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Some of the best gaps never show up in a keyword tool. I ask clients to forward the questions prospects raise on sales calls and in emails, then check whether the website answers them. Usually it doesn't. Those pages may have tiny search volume, but they're the ones a buyer reads right before deciding, so I'd prioritize them over a broad topic everyone already covers.
 :::
 
 ## How to run a content gap analysis

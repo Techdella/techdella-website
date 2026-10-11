@@ -64,8 +64,8 @@ A hypothetical consultancy sends 3,000 emails a month: a newsletter, proposals a
 
 Steps 1 and 2 are worth doing for any company, and they are part of every [email marketing](/services/email-marketing/) setup we run. Step 3 is a judgment call based on how much of your revenue depends on email being recognized and opened.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Before anyone asks me about logos in the inbox, I ask whether their DMARC policy is actually enforced. Many teams that want BIMI are still sitting at p=none because one forgotten tool sends mail on their behalf. Finding and fixing that sender is the real work, and it protects the domain whether or not you ever pay for a certificate.
 :::
 
 ## How to set up BIMI

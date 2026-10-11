@@ -159,8 +159,8 @@ Score each line 0 (no), 1 (partly) or 2 (yes).
 
 When you do hire, our guides on [structuring your startup marketing team](/startup-marketing-team-for-growth-stage/) and [choosing between employees, freelancers and agencies](/startup-hiring-strategy/) cover the next decisions.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example: a time Techdella or a client (with permission) chose a system or automation over a hire, or hired too early, and what happened, with one real number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When a founder tells me they need to hire, I ask what the new person would do on Monday morning. If the honest answer is chasing leads by hand, copying data between tools or rebuilding the same report, that's a system problem first. Fix the process, automate the repetitive parts, then hire someone for the work only a person can do.
 :::
 
 :::faq

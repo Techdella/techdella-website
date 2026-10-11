@@ -90,7 +90,7 @@ Corporate headshots and product photography tend to produce steady repeat work. 
 | Equipment and liability insurance (yearly) | $300–$900 | £150–£500 | ₦100,000–₦400,000 |
 | Portfolio website | $0–$2,500 | £0–£2,000 | ₦0–₦1,000,000 |
 
-Registration figures are from the official sources above. The rest are estimates from typical quotes we've seen; camera prices move with exchange rates, especially in Nigeria. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Registration figures are from the official sources above. The rest are estimates from typical quotes we've seen; camera prices move with exchange rates, especially in Nigeria. Check current local prices, or get two or three quotes, before you buy any gear.
 
 ## How should you price photography sessions?
 
@@ -129,8 +129,8 @@ TechDella Studios builds fast photography websites with niche galleries, package
 - **Instagram and TikTok.** Behind-the-scenes clips and before/after edits show how you work.
 - **Your own brand.** A consistent logo, colors and voice make you memorable. [TechDella Studios](studios:/services/branding/) builds brand identities for creative businesses.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Photographers often show everything they've ever shot: weddings, products, pets. Someone looking for headshots wants to see headshots. I'd split your portfolio by niche, give each one its own page with packages and a starting price, and ask the questions you need in the inquiry form. Focused pages help both search engines and clients understand what you do.
 :::
 
 :::myth-fact

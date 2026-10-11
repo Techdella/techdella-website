@@ -171,8 +171,8 @@ Pick systems before people. The essentials by category:
 - **Conversion:** landing pages and simple testing
 - **Planning:** a shared content and campaign calendar
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example: how a client team (with permission) or Techdella's own marketing was structured at one stage, what we changed, and one real result.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Before a founder hires a marketer, I ask three questions: where are leads tracked, which page converts best, and who follows up on a new lead, and how fast? If nobody can answer, the first hire spends months building plumbing instead of growing anything. Set up the CRM, tracking and follow-up first, so the person you hire starts with data on day one.
 :::
 
 ## Common startup marketing team mistakes

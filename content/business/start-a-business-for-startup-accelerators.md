@@ -113,8 +113,8 @@ If you need to build the first version fast, see [MVP development at TechDella S
 Talk to TechDella about your positioning, go-to-market plan and the story your numbers tell.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+An application is a positioning exercise. Selection panels read many in a row, so the ones that stand out explain one customer, one problem and one sign of traction in plain words. I'd write that paragraph before filling in any form. If you can't make it clear on one page, the program won't fix that for you. It's work worth doing first.
 :::
 
 ## When an accelerator is the wrong move

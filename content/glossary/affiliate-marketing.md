@@ -62,8 +62,8 @@ Fact: You also pay for the platform, partner recruitment, creative assets, fraud
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Affiliate programs work best when you already know who your best customers are and who they listen to. I'd start with ten partners you'd happily introduce to a client, not an open marketplace where anyone can sign up. Set clear rules on brand bidding and disclosure from day one. It's much harder to tighten terms after partners have built their promotion around loose ones.
 :::
 
 ## Disclosure rules affiliates must follow

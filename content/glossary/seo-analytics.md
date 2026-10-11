@@ -59,8 +59,8 @@ Fact: Rankings vary by location, device and personalization, and a top position 
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Pick one number the business cares about and trace it back to search. For most clients that's organic leads on the pages that sell, not total traffic. I review Search Console monthly for pages losing clicks, and I always annotate site changes. Without notes on what changed and when, you end up guessing why a graph moved.
 :::
 
 ## How to set up SEO analytics

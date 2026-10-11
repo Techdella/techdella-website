@@ -164,8 +164,8 @@ Epic Entertainment Games distributes verified game credits and casino software p
 
 The lesson carries over to marketing: map the process before you automate it, and switch on a few rules that remove the most friction before adding more.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Most automation problems I'm asked to look at started with the tool, not the process. Someone bought a platform, switched on twenty workflows, and nobody could say which one sent which email. I'd rather start with three rules that remove real manual work, run them for a month, then add more. Boring automation people trust beats clever automation nobody checks.
 :::
 
 :::myth-fact

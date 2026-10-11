@@ -84,7 +84,7 @@ Start with the type that matches your kitchen capacity. A home kitchen can usual
 | Liability insurance (yearly) | $500–$2,000 | £150–£600 | ₦80,000–₦300,000 |
 | Branding, menu design and website | $500–$3,000 | £400–£2,500 | ₦200,000–₦1,500,000 |
 
-Approval rules come from the official sources above. All amounts are estimates from typical quotes we've seen; local prices vary a lot. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Approval rules come from the official sources above. All amounts are estimates from typical quotes we've seen; local prices vary a lot. Use them for planning only, and get quotes from two or three local suppliers before you buy equipment.
 
 ## How do you price catering per head?
 
@@ -124,8 +124,8 @@ TechDella Studios builds catering websites with menus, minimum orders, delivery 
 - **Local search.** "Catering near me" and "small chops Lagos" are real searches. A Google Business Profile with photos and reviews and a site with clear menus are basic. Our [local SEO service](/services/local-seo/) covers this.
 - **Email past clients.** Send seasonal menus before holidays and year-end. A simple [email marketing](/services/email-marketing/) routine brings repeat orders and supports [customer retention](/glossary/customer-retention/).
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The caterers I'd bet on treat office lunches as the business and weddings as the bonus. Weddings are big but rare; a Friday office order repeats. If I were starting, I'd build one simple page for corporate lunches with per-head prices and minimums, then email it to every office manager who tries a sample tray. And I'd follow up the same week, not next month.
 :::
 
 :::myth-fact

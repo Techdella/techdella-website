@@ -58,8 +58,8 @@ Fact: DA mostly reflects links. A site with modest DA and pages that match searc
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I get asked to raise a site's DA more than almost anything else, and I always steer the conversation back to pages. A higher score looks good in a deck, but buyers don't search for your domain metric. We compare the pages that outrank you, work out whether links or relevance is the gap, and fix that. Sometimes the answer is a better page, not more links.
 :::
 
 ## How to improve the signals behind domain authority

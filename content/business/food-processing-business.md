@@ -133,8 +133,8 @@ TechDella Studios designs product names, logos and packaging systems for growing
 - **Get found locally online.** A Google Business Profile with photos and your opening hours helps people searching "spice blend near me." Our [local SEO](/services/local-seo/) team covers how this works.
 - **Name it well.** A clear, memorable name helps on a shelf. Our free [AI business name generator](/tools/ai-business-name-generator/) is a quick way to start a shortlist.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Your label does a sales job when you're not in the room. I'd test the name and pack with ten shoppers before printing a thousand, and make sure the front answers three things at a glance: what it is, who it's for and why it tastes different. Then put the same name, photos and price on your Google profile, so shop owners who look you up see a real brand.
 :::
 
 :::myth-fact

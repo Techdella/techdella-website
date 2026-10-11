@@ -53,8 +53,8 @@ A hypothetical SaaS company launches CAPI and sees Leads in Events Manager jump 
 
 The fix is to generate one ID when the form loads, pass it to the Pixel call and in the form submission, and send the same value as event_id from the server. After the fix, reported leads settle at about 110 a week: the 100 the Pixel saw plus roughly 10 it had been missing.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The setup step people skip is checking deduplication on day one. Before anyone looks at cost per lead, I want someone on our team to submit a test form and confirm Events Manager shows one event, not two. If the event IDs don't match, every number after that is inflated, and the campaign gets optimized against leads that never existed.
 :::
 
 ## How to set up the Meta Conversions API

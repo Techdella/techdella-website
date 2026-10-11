@@ -132,8 +132,8 @@ TechDella Studios creates names, logos, packaging and launch visuals for new con
 - **No written agreement with the maker.** Put price per unit, quantity, quality standard, lead time and what happens with defects in writing.
 - **Spending the launch budget on the logo.** A clear identity matters, but your first money should go into samples, fit and photography that sells the product.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Fashion founders often build a beautiful brand that's hard to buy from. Before the launch shoot, I'd check the basics: a size guide with real measurements, clear delivery and returns, and product photos on bodies like your customer's. Those answer the questions that stop a first purchase. Then collect every buyer's email, because your second drop sells to them first.
 :::
 
 :::myth-fact

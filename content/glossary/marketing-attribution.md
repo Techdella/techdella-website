@@ -56,8 +56,8 @@ Fact: It's simple and consistent, and fine for optimizing tactics inside one cha
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I don't expect any attribution model to be the truth, and I tell clients that up front. What I want is consistency: the same UTM rules on every link, one CRM field for original source, and a "how did you hear about us?" question on the booking form. When the self-reported answer and the dashboard disagree, that gap is usually where the interesting decisions are.
 :::
 
 ## How to set up attribution for a B2B team

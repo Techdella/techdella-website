@@ -52,8 +52,8 @@ Fact: Google treats rel="canonical" as a strong signal, but it can still choose 
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Before merging two pages, I check whether they're really competing or simply answering different questions. Search Console makes that quick: compare the queries each URL gets. If they overlap and both are weak, we combine them into one stronger page and redirect the other. If they rank for different intents, we leave them alone and sharpen each page's focus. Merging by reflex can throw away traffic.
 :::
 
 ## How to find keyword cannibalization

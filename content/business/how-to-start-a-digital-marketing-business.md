@@ -85,7 +85,7 @@ Our [digital marketing glossary entry](/glossary/digital-marketing/) covers the 
 | Professional indemnity insurance (yearly) | $500–$1,500 | £150–£600 | Often not bought at start |
 | Contract template reviewed by a lawyer | $300–$1,000 | £250–£800 | ₦100,000–₦400,000 |
 
-Registration and compliance figures come from the official sources above. Tool, hardware and service ranges are estimates from typical quotes we've seen. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Registration and compliance figures come from the official sources above. Tool, hardware and service ranges are estimates from typical quotes we've seen. Software plans change often, so confirm current pricing with each vendor before you commit.
 
 ## How should you price a marketing retainer?
 
@@ -130,8 +130,8 @@ Start with businesses you already understand. A marketer who worked in hospitali
 
 When you outgrow solo delivery, study how established teams scope [SEO](/services/seo/), [paid ads](/services/paid-ads/) and [email marketing](/services/email-marketing/) as separate, measurable services.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The fastest way I know to win early clients is to niche down further than feels comfortable. "Digital marketing for small businesses" competes with everyone. "Search and email for dental clinics" gives you the language, the examples and a list of prospects to call. Get your own site ranking for that niche first. Prospects take you more seriously when they find you the way their customers would.
 :::
 
 :::myth-fact

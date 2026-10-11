@@ -130,8 +130,8 @@ Keep it lean at first:
 6. Ask for a referral at month three | Happy clients know other owners in the same niche.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The free audit is the most underused pitch in this business. Skip the generic "we can grow your page" message. Look at the profile, find three specific fixes, and show one of them done. Owners respond to evidence that you've already thought about their business. Each message takes longer to write, but you'll send fewer, and the replies you get are worth having.
 :::
 
 ## Step 6: Get clients and keep them

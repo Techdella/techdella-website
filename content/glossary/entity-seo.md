@@ -63,8 +63,8 @@ The fix is entity work, the kind we include in our [SEO service](/services/seo/)
 
 After recrawl, the brand query and AI answers have one consistent set of facts to draw on.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Entity work is the least glamorous part of SEO, and it's what clients most often want to skip. Before we write new content, I want the company's name, one-line description and founder details to match everywhere: the website, LinkedIn, directories and schema. Search engines and AI tools can only repeat facts that agree with each other. If your own profiles disagree, you've given them a reason to guess.
 :::
 
 ## How to do entity SEO

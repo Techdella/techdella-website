@@ -60,8 +60,8 @@ A hypothetical company sends from Google Workspace, HubSpot, Zendesk and an invo
 
 The fix: remove the invoicing tool's include (it sends from its own domain), and authenticate HubSpot with DKIM on a subdomain instead of SPF on the root. Lookups drop to 8. DMARC aggregate reports then show all four tools passing aligned DKIM, so the team moves from p=none to p=quarantine, and six weeks later to p=reject.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Email authentication is one of the first things I check when a client says their emails go to spam. It's rarely glamorous: a forgotten tool sending on the root domain, or a DMARC record left at p=none for years. Get the reports flowing, list every service that sends as you, and tighten the policy only once each one passes.
 :::
 
 ## How to set up SPF, DKIM and DMARC

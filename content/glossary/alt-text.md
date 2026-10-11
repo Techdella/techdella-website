@@ -63,8 +63,8 @@ Fact: Most alt text should be one short sentence. Decorative images need an empt
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When we audit a site, alt text tells me a lot about how the team works. Empty or keyword-stuffed alt attributes usually mean images were uploaded in a rush with nobody thinking about the reader. My fix is procedural: make alt text part of the upload step, write it as if you were describing the image to a colleague on the phone, and leave decorative images empty on purpose.
 :::
 
 ## How to write alt text

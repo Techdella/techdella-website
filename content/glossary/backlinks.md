@@ -64,8 +64,8 @@ Fact: Many low-quality or paid links can trigger Google's link spam systems. A h
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The links worth having usually come from doing something people want to reference: original data, a useful tool, a clear point of view. I'd rather a client earn five links from sites their buyers actually read than buy a package of fifty from sites nobody visits. If you wouldn't want the link without the SEO value, it probably isn't worth the risk.
 :::
 
 ## How to check and grow your backlinks

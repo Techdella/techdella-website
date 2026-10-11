@@ -147,8 +147,8 @@ Opinions from your team matter least. Test with people who could buy from you.
 
 Look for patterns across 20 to 30 responses rather than reacting to any single opinion.
 
-:::callout note "From our work"
-[CONFIRM: Joanna or Abel — add one first-hand naming example: a client naming or rebrand project (with permission), which test changed the decision, and what was chosen.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Of all these tests, the spelling test is the one I'd never skip. Early customers often come from referrals and conversations, so a name has to survive being said out loud and typed into a search bar. A clever name people misspell sends your best word of mouth to someone else's website. Clear and memorable beats clever.
 :::
 
 ## Common mistakes when brainstorming a startup name

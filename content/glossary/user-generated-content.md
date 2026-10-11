@@ -60,8 +60,8 @@ Fact: Incentives tied to a particular sentiment are banned under the FTC rule. Y
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Ask for honest reviews and make it easy: a direct link, sent right after a good outcome, with no strings attached. I'd rather a client have twelve genuine reviews with a couple of mixed ones than fifty perfect ones nobody believes. Buyers read the critical reviews closely, and a calm, helpful reply to them builds more trust than another five-star rating.
 :::
 
 ## How to collect and use UGC

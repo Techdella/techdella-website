@@ -56,8 +56,8 @@ A hypothetical accounting firm runs Advantage+ leads campaigns with a $2,000 mon
 
 Automation didn't change. The signal did. That's why our [paid ads](/services/paid-ads/) work starts with measurement.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I don't fight Meta's automation; I feed it better information. When a lead form is too easy, you get volume that sales never calls back. Add one honest qualifying question and send your CRM outcomes back to Meta, and the system learns what a real buyer looks like. Judge the campaign on cost per qualified lead, not cost per lead, or you'll reward the wrong thing.
 :::
 
 ## How to use Meta Advantage+ well

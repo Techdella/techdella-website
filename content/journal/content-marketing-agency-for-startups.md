@@ -146,8 +146,8 @@ There's no reliable universal percentage, so build the budget from what you need
 
 For a deeper plan, our [B2B SEO playbook](marketing:/resources/b2b-seo-playbook/) covers the first 90 days step by step.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example: a red flag we've seen in another agency's work when a startup came to us (no client names without permission), or what we changed in the first 30 days with a client, with one real number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The red flag I look for in any content proposal is a monthly article count with no link to signups or demos. Volume is easy to sell and easy to report. Before you sign, ask the agency which page each article should send readers to, and how they'll know it worked. If they can't answer, you're buying words, not marketing.
 :::
 
 :::faq

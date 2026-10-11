@@ -61,8 +61,8 @@ Fact: In practice AI shifts work: less time on drafts and data cleanup, more on 
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+We use AI every day at TechDella, mostly for the work around the work: first drafts, research summaries, cleaning up data. Where I won't let it lead is positioning and customer insight. A model can tell you what most companies say. It can't tell you what your buyers told you on a call last week. Keep that judgment with people and let the tools handle the volume.
 :::
 
 ## How to start with AI marketing

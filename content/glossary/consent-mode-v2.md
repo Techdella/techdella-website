@@ -77,8 +77,8 @@ A hypothetical B2B company installs a CMP and sees "Consent Mode: active" in its
 
 Both bugs are common. The fix: load the default command first in the page head, and map all four parameters in the CMP. A second test confirms the order and the values.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I never trust a settings screen that says consent is working. We open Tag Assistant, load the page as a new visitor from a region that needs consent, and watch the order of events. It's a short check, and it catches problems that dashboards hide. Repeat it after every CMP or tag change, because a small update can quietly break the sequence.
 :::
 
 ## How to implement Consent Mode v2

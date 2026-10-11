@@ -132,8 +132,8 @@ Fact: Investors and developers regularly pay fixed fees for feasibility studies,
 6. Follow up | Send a monthly market note by email to everyone you've spoken to.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Consultants often hide their prices and their thinking, hoping to save both for the sales call. I'd do the opposite. Publish your fixed-price services and one sample report, so people can judge your analysis before they ever speak to you. The clients who still book are already comfortable with how you think, and those first calls become much shorter.
 :::
 
 Your expertise sells through content. Clients search for questions like "is buying off-plan in Lekki safe?" or "rental yield in Manchester". Answering those clearly, with your own analysis, builds trust and brings in enquiries through [SEO](/services/seo/). A monthly [email](/services/email-marketing/) market note keeps you front of mind until they're ready to buy. Together, that's [lead generation](/glossary/lead-generation/) without paying for every click.

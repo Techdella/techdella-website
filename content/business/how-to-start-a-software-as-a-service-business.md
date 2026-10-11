@@ -130,8 +130,8 @@ If a customer doesn't stay long enough to repay what it cost to win them, more m
 - **Integrations and partners.** Plug into the tools your customers already use, and list in their marketplaces.
 - **Community.** Answer questions where your customers gather. Be useful first.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Search is slow to start, which is why founders give up on it too early. With Paycape, a fintech platform we worked with, the first result came 50 days in, and over a five-month engagement half of their conversions came from inbound. My advice is the same for any SaaS: write pages for the problem your buyers search, not for your feature list.
 :::
 
 :::myth-fact

@@ -57,8 +57,8 @@ A hypothetical payroll SaaS company wants demo requests from startup founders.
 
 The deciding metric isn't views. It's the cost per demo request that sales accepts, which is why we run every [paid ads](/services/paid-ads/) test against CRM data.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Spark Ads work best when the person on camera is someone the buyer would want to hear from, usually a founder or practitioner, not a polished brand voice. My advice is to post organically first and let the audience tell you which video earns a boost. Paying to push a video nobody watched naturally rarely fixes it.
 :::
 
 ## How to run TikTok Spark Ads

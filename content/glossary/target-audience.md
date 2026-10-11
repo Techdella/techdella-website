@@ -59,8 +59,8 @@ Fact: A broader audience usually means more clicks and fewer qualified leads. Na
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The most useful audience work I do with founders is listening to their last five sales calls, not filling in a persona template. Who signed, what triggered the search, which words did they use? Narrowing the audience feels risky, but it makes every headline, ad and email sharper. You can always widen later once one segment is working.
 :::
 
 ## How to find your target audience

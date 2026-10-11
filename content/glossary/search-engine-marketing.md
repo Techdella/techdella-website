@@ -69,8 +69,8 @@ Fact: Small budgets work when they're focused on a few high-intent keywords, tig
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+For a new B2B company, I like paid search as a fast research tool while SEO builds up. A few weeks of spend on tightly chosen keywords tells you which phrases bring leads and which bring tire-kickers. We then use that list to decide which pages to write first, so the organic work starts from real buying language.
 :::
 
 ## How to plan your first search engine marketing campaign

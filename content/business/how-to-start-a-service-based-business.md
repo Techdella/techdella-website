@@ -129,8 +129,8 @@ We review your website, search visibility and follow-up, then give you a priorit
 - **Partnerships.** Other service providers who serve your clients but don't compete with you.
 - **Email.** A simple monthly email to past clients and inquiries keeps you top of mind when they're ready. See [email marketing](/services/email-marketing/).
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Service founders often try every channel at once and do none of them well. I'd pick two: referrals, because they're already in front of you, and one channel you can build, like search or outbound. Give each a weekly habit and a simple way to track where inquiries came from. A few months of that consistency will teach you more than any plan.
 :::
 
 :::myth-fact

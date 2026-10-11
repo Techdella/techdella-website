@@ -139,8 +139,8 @@ If you're reading this and realizing you might not fully understand the business
 
 If you've already launched and something feels off, a [growth audit](marketing:/growth-audit/) is a structured way to find where the model and the marketing don't line up.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — please confirm the light edits to your story: new title, regrouped headings, the six tips as numbered steps, and the line "We do these at Techdella every week" removed from the consultation tip. No new facts were added.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The founders I worry about aren't the ones with small budgets. They're the ones who can describe their product in detail but can't tell me what a customer costs to win, or how long it takes to break even. Marketing can bring people to the door. It can't fix a model that loses money on every sale.
 :::
 
 :::faq

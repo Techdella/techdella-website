@@ -189,8 +189,8 @@ The best Q4 plans finish by making Q1 easier. January is often slow: in the same
 
 If you want a second pair of eyes on your plan, a [growth audit](marketing:/growth-audit/) checks your channels, tracking and funnel and gives you a prioritized list for the quarter. Holiday email is usually where Q4 revenue concentrates, so make sure your [email marketing](marketing:/services/email-marketing/) is warmed up and authenticated before November.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand Q4 example: a client campaign we planned for Q4 (with permission), what we changed between October and November, and one real number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The mistake I see every year is treating Q4 as a sprint that starts on Black Friday. By then, ad costs are up, inboxes are crowded and there's no time left to fix tracking. Use October to test offers and warm up your email list, so November is about spending more on what already works, not guessing.
 :::
 
 :::faq

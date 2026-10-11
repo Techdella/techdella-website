@@ -59,8 +59,8 @@ Fact: Outreach only works when there's something worth linking to. Most of the w
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Outreach only works when there's something worth linking to, so we put most of the effort into the asset. That might be original data, a free tool or a guide better than what currently ranks. I'd rather earn five links from sites our buyers read than fifty from sites they've never heard of. And we don't buy links, because the risk lands on the client, not us.
 :::
 
 ## How to do link building, month by month

@@ -89,6 +89,206 @@
             "max": ""
         },
         {
+            "key": "field_td_location_market_stats",
+            "label": "Market stats",
+            "name": "market_stats",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "4 facts about this market, each from a source you opened (publisher + year + link). Never rounded up.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Add stat",
+            "collapsed": "",
+            "min": 0,
+            "max": 6,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_location_market_stats_value",
+                    "label": "Value",
+                    "name": "value",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "e.g. 107 million",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_location_market_stats"
+                },
+                {
+                    "key": "field_td_location_market_stats_label",
+                    "label": "What it measures",
+                    "name": "label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "e.g. internet users in Nigeria",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_location_market_stats"
+                },
+                {
+                    "key": "field_td_location_market_stats_source",
+                    "label": "Source",
+                    "name": "source",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Publisher and year",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_location_market_stats"
+                },
+                {
+                    "key": "field_td_location_market_stats_url",
+                    "label": "Source link",
+                    "name": "url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "The original page",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_location_market_stats"
+                }
+            ]
+        },
+        {
+            "key": "field_td_location_local_services",
+            "label": "Services in this market",
+            "name": "local_services",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Six rows, one per service (slug: seo, ai-search-optimization, paid-ads, lead-generation, email-marketing, marketing-automation). Title as people here search it.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Add service",
+            "collapsed": "",
+            "min": 0,
+            "max": 6,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_location_local_services_service",
+                    "label": "Service slug",
+                    "name": "service",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "seo, paid-ads …",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_location_local_services"
+                },
+                {
+                    "key": "field_td_location_local_services_title",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "e.g. SEO services in Nigeria",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_location_local_services"
+                },
+                {
+                    "key": "field_td_location_local_services_text",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "1–2 sentences specific to this market.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_location_local_services"
+                }
+            ]
+        },
+        {
+            "key": "field_td_location_areas",
+            "label": "Areas served",
+            "name": "areas",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Cities or states where clients are (names only).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Add area",
+            "collapsed": "",
+            "min": 0,
+            "max": 12,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_location_areas_area",
+                    "label": "City or state",
+                    "name": "area",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "One city or state per row, e.g. Lagos.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_location_areas"
+                }
+            ]
+        },
+        {
             "key": "field_td_location_local_channels",
             "label": "Local channels",
             "name": "local_channels",
@@ -235,5 +435,5 @@
     "active": true,
     "description": "Fields for location entries (CLAUDE.md §7). Also registered as post meta by techdella-core/cpt.",
     "show_in_rest": 0,
-    "modified": 1791590400
+    "modified": 1791763300
 }

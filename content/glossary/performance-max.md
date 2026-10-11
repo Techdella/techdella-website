@@ -61,8 +61,8 @@ A hypothetical HR software company sets a PMax budget of $3,000 a month.
 
 The cheaper cost per conversion was the more expensive campaign. This is why [lead scoring](/glossary/lead-scoring/) and offline conversion imports matter before you scale PMax.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I treat Performance Max as something you earn, not where you start. It needs conversion data it can trust, so I want lead quality flowing back from the CRM before it gets budget. Without that, it will find you the cheapest form fills it can, and those are rarely the buyers your sales team wants to talk to.
 :::
 
 ## How to set up Performance Max

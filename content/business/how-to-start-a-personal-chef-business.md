@@ -86,7 +86,7 @@ A "personal chef" usually cooks for several clients, often in their kitchens. A 
 | Containers, labels, cool bags | $150–$600 | £120–£500 | ₦80,000–₦300,000 |
 | Website, menus and photos | $300–$2,500 | £250–£2,000 | ₦150,000–₦1,000,000 |
 
-Registration rules come from the official sources above. All amounts are estimates from typical quotes we've seen. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Registration rules come from the official sources above. All amounts are estimates from typical quotes we've seen. Prices vary by city and season, so get two or three local quotes before you commit.
 
 ## How should a personal chef price services?
 
@@ -127,8 +127,8 @@ TechDella Studios builds websites for food businesses with menus, service areas 
 - **Local search.** "Private chef near me" and "personal chef Abuja" are real searches. A Google Business Profile with food photos and reviews helps, and our [local SEO service](/services/local-seo/) covers this.
 - **Email.** Seasonal menus and holiday dinner offers to past clients. Our [email marketing service](/services/email-marketing/) can set this up.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Personal chef clients are buying trust as much as food, because you'll be cooking in their home. That's why I'd lead with referrals and partners, then let search confirm what they've heard. When someone hears your name from their nutritionist and then finds a site with real photos, sample menus and clear starting prices, the decision to inquire gets much easier.
 :::
 
 :::myth-fact

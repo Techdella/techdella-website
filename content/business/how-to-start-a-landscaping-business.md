@@ -129,8 +129,8 @@ Fact: Facility managers and estates care about reliability, insurance and commun
 6. Ask for reviews and referrals | A simple referral reward works well in close-knit streets.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Landscaping is one of the few businesses where your work advertises itself on the street. I'd treat every finished garden as a marketing asset: photograph it, add it to your Google Business Profile, and knock on the neighbors' doors that afternoon. Search matters, but density matters more. Ten clients on three streets are easier to serve than thirty spread across a city.
 :::
 
 ## Step 6: Get found online

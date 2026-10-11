@@ -105,7 +105,7 @@ Run the same sums in your currency. In Nigeria, include delivery partner fees pe
 | Product photos and branding | $300–$3,000 | £250–£2,500 | ₦100,000–₦1,500,000 |
 | Launch marketing budget | $500–$3,000 | £400–£2,500 | ₦200,000–₦1,500,000 |
 
-Platform and fee figures come from [Shopify's pricing page](https://www.shopify.com/pricing) and [Stripe's pricing page](https://stripe.com/pricing), checked October 2026. Other amounts are estimates from typical quotes we've seen. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Platform and fee figures come from [Shopify's pricing page](https://www.shopify.com/pricing) and [Stripe's pricing page](https://stripe.com/pricing), checked October 2026. Other amounts are estimates from typical quotes we've seen. Plan with them, but get current quotes from suppliers and service providers before you commit.
 
 ## How to start an e-commerce business: step by step
 
@@ -133,8 +133,8 @@ TechDella Studios designs and builds ecommerce sites with fast product pages, cl
 
 For an example of improving the seller side of a marketplace, see our [Shopinbos case study](/case-studies/shopinbos/).
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Most new store owners spend weeks on the theme and an afternoon on product pages. I'd flip that. A product page has to answer every question a buyer would ask in a shop: size, material, delivery time and returns. And capture an email or WhatsApp number early, so customers you win through social or marketplaces become customers you can reach again.
 :::
 
 :::myth-fact

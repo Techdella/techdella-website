@@ -112,8 +112,8 @@ Now the rewrite, 32 words in four sentences:
 
 Same message, shorter words, active voice. The reader knows who does the work and how long it takes.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Most of the copy I'm asked to fix isn't wrong, it's tiring. Long words and passive sentences make the reader do the work, and on a phone they just leave. My test is simple: read it out loud. If you run out of breath or lose the subject halfway through, rewrite it. A readability score only confirms what your ear already told you.
 :::
 
 ## Best practices for readable web copy

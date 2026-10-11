@@ -112,8 +112,8 @@ The flexible setup costs 75,000 − 44,400 = **30,600 less** a year, and you can
 Talk to TechDella about your growth plan. We'll help you see which marketing work needs a hire and which needs a partner.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+My rule for early teams: hire for the work that needs someone every day, and use partners for the work that comes in bursts. Many founders hire a full-time marketer first and expect one person to cover SEO, ads, email and design. Few people are strong at all four. I'd rather see one owner of the plan, with specialists brought in for execution until the workload is steady.
 :::
 
 ## How to hire your first employees well

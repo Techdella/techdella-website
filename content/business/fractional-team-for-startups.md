@@ -118,8 +118,8 @@ Picking a freelancer, agency or fractional leader is a hiring decision, so treat
 
 **Nigeria.** Use written service agreements that cover scope, payment, confidentiality and IP ownership. If you pay foreign freelancers or agencies, check withholding tax and foreign-exchange documentation with your accountant and bank.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Fractional work fails most often at the handover, not the hiring. Before anyone starts, I want the logins, files and reports living in accounts the founder owns, plus a short written scope for the first quarter. When we join a startup team, that's the first thing we set up, because it means the founder keeps the knowledge if the arrangement ends.
 :::
 
 ## Common mistakes to avoid

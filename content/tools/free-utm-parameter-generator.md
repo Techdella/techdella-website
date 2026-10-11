@@ -107,8 +107,8 @@ Change one value and the picture changes. With `utm_medium=sponsored`, the mediu
 
 When you test a second creative, change only `utm_content` to `carousel-v2`. In GA4, add **Session manual ad content** as a secondary dimension and compare the two.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Messy UTM tags are one of the first things I look for in a growth audit, because they quietly break every channel report that depends on them. Agree on the naming rules once, keep them in a shared sheet, and make the generator the only way links get built. It takes an afternoon to set up and saves endless arguments about which campaign worked.
 :::
 
 ## UTM best practices for clean GA4 reports

@@ -132,8 +132,8 @@ Fact: Room sound, good microphone technique and clean editing matter more than p
 6. Book guests with audiences | Ask each guest to share their episode.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Downloads don't help much if you can't reach your listeners directly. From the first episode, I'd give people a reason to join your email list: show notes, a resource, a checklist from a guest. Sponsorships and your own products both depend on an audience you can contact. The apps own the feed; your list is the part of the business you actually own.
 :::
 
 Podcasts are hard to discover inside the apps, so build discovery outside them. Publish each episode on your website with a written summary and transcript, which helps search engines and AI tools find and cite your ideas; that's where [SEO](/services/seo/) helps. Send each episode to your [email list](/services/email-marketing/), and read our [podcast marketing glossary entry](/glossary/podcast-marketing/) for more channels. Short motion clips and audiograms help too; TechDella Studios offers [motion design](studios:/services/motion-design/) for branded clip templates.

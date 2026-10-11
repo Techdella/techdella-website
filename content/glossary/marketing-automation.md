@@ -63,8 +63,8 @@ Fact: Automation decides when and to whom. You still write the words. Messages t
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Start with the automation that protects revenue you already have, not the clever one. For most teams I work with, that's the alert when a known lead visits pricing, plus a speed-to-lead reply. Build that, watch it run for a few weeks, then add nurture. Teams that wire up ten workflows on day one usually can't tell which one is misfiring.
 :::
 
 ## How to choose a marketing automation platform

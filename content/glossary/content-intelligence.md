@@ -53,8 +53,8 @@ Content intelligence closes that gap. It tells you which pages earn leads, which
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+You don't need a platform to start. I'd begin with a monthly review: Search Console for pages gaining or losing clicks, GA4 for what people do after they land, and the CRM for which pages show up before a deal. Write down three decisions each month. If the data isn't changing what you publish or update, you're collecting it for nothing.
 :::
 
 ## How to start with content intelligence

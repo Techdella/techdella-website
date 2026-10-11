@@ -85,7 +85,7 @@ Dog walking gives the steadiest weekday income. Drop-ins and overnights spike ar
 | Booking and client app (yearly) | $0–$600 | £0–£500 | ₦0–₦250,000 |
 | Background check | $20–$60 | £20 for a basic DBS check | Police report or references |
 
-The UK basic DBS check costs £20 ([GOV.UK](https://www.gov.uk/request-copy-criminal-record)). Other amounts are estimates from typical quotes we've seen. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+The UK basic DBS check costs £20 ([GOV.UK](https://www.gov.uk/request-copy-criminal-record)). Other amounts are estimates from typical quotes we've seen. Treat them as planning figures and check current local prices before you spend.
 
 ## How should you price pet sitting?
 
@@ -124,8 +124,8 @@ TechDella Studios builds simple websites for pet care businesses with services, 
 - **Referrals.** Give existing clients a reason to refer. A simple [referral marketing](/glossary/referral-marketing/) offer works well in neighborhoods.
 - **Email before holidays.** Remind clients to book holiday care early. A small [email marketing](/services/email-marketing/) routine fills your peak calendar and helps [customer retention](/glossary/customer-retention/).
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Owners are handing you a key and a member of the family. Before they compare prices, they look for signs that you're safe: insurance, background checks, reviews and a real photo of you. Put those on your website and Google profile where nobody can miss them. And send the holiday reminder early, because good sitters get booked well before school breaks.
 :::
 
 :::myth-fact

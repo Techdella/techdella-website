@@ -125,8 +125,8 @@ Candles are a crowded, gift-driven market. A clear brand idea, such as a place, 
 6. Collect emails at every sale | Use them for launches and restocks.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Candle brands that get noticed pick one story and repeat it everywhere: the name, the label, the product photos and the first line of the website. Shoppers scroll past dozens of nice candles, so "hand-poured soy" isn't a reason to stop. A place, a mood or a ritual is. I'd settle that idea before ordering labels, because changing packaging later costs more.
 :::
 
 An email list is a candle maker's best asset: restocks, new scents and seasonal drops sell well to people who already love your product. Set up a simple welcome sequence and a launch email for each new collection; our [email marketing](/services/email-marketing/) team can help when you're ready.

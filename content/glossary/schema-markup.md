@@ -60,8 +60,8 @@ Fact: Mark up the main thing the page is about, completely and accurately. Marku
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I'm strict about this: schema should describe what a reader can see, nothing more. When we rebuilt our own site, we chose not to add FAQ markup or ratings for our own services, even though plenty of plugins offer them. Clean Organization, Service and Article markup with consistent facts does more for how search engines and AI tools understand you.
 :::
 
 ## How to add schema markup

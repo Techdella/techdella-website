@@ -2,8 +2,8 @@ source,target,code,condition,notes
 /locations/ibadan-nigeria/,/locations/nigeria/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
 /locations/abuja-nigeria/,/locations/nigeria/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
 /locations/mumbai-india/,/services/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
-/locations/germany/,/locations/europe/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
-/locations/new-york/,/locations/usa/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
+/locations/germany/,/services/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
+/locations/new-york/,/services/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
 /locations/pakistan/,/services/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
 /guides/,https://blog.techdella.com/,301,,Guides index moves to the Journal
 /guide/email-marketing-setup-problems/,https://blog.techdella.com/email-marketing-setup-problems/,301,,Guide moves to Journal (see D1)
@@ -70,3 +70,9 @@ source,target,code,condition,notes
 /guide/,https://blog.techdella.com/,301,prefix,Legacy redirect carried from old theme (fixed targets)
 /guide/*,https://blog.techdella.com/$1,301,regex ^/guide/(.+)$,Catch-all for any guide not listed
 /locations/,/services/,301,,Locations have no hub page (owner, 11 Oct 2026): the nav and footer list the markets
+/locations/lagos-nigeria/,/locations/nigeria/,301,,"Merged into the Nigeria page (owner, 11 Oct 2026)"
+/locations/usa/,/services/,301,,"Only Nigeria keeps a market page; no staffed presence or local proof here (owner, 11 Oct 2026; doorway-page policy)"
+/locations/uk/,/services/,301,,"Only Nigeria keeps a market page; no staffed presence or local proof here (owner, 11 Oct 2026; doorway-page policy)"
+/locations/canada/,/services/,301,,"Only Nigeria keeps a market page; no staffed presence or local proof here (owner, 11 Oct 2026; doorway-page policy)"
+/locations/dubai-uae/,/services/,301,,"Only Nigeria keeps a market page; no staffed presence or local proof here (owner, 11 Oct 2026; doorway-page policy)"
+/locations/europe/,/services/,301,,"Only Nigeria keeps a market page; no staffed presence or local proof here (owner, 11 Oct 2026; doorway-page policy)"

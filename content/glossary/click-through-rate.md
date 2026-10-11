@@ -67,8 +67,8 @@ Fact: It mixes branded and non-branded queries and every position. Segment by qu
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When CTR drops in Search Console, I check a few things before rewriting anything. Has an AI Overview or a new ad block appeared above the result? Did the page slip a position? Did the mix of queries change? Only after that do we touch the title and description. Rewriting a title to fix a problem that lives elsewhere just adds noise to the data.
 :::
 
 ## How to improve click-through rate

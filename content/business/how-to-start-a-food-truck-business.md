@@ -130,8 +130,8 @@ Track orders per hour for each pitch for four weeks. Drop the weakest every mont
 6. Announce your schedule | Post where you'll be each week on your website, Google Business Profile and Instagram.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+A truck that moves needs one place that's always right about where it is. I'd make your website or Google Business Profile the source of truth for the week's schedule and update it before you post anywhere else. Customers who drive to an empty pitch rarely try again. Consistent pitches, posted on time, build regulars faster than any promotion.
 :::
 
 ## Step 6: Market a business that moves

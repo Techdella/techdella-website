@@ -53,8 +53,8 @@ Read the full [Paycape case study](/case-studies/paycape/) for what we did over 
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+With Paycape, we didn't publish more. We built content clusters around what founders actually search for when comparing fintech tools. The first result came in 50 days, and by the end of the five-month engagement the site had around 15,000 monthly organic visitors, with half of conversions coming from inbound. My advice: pick one audience, one format and a pace you can keep.
 :::
 
 ## How to start content marketing

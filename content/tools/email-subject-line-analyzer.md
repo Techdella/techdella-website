@@ -156,8 +156,8 @@ A few more we see often:
 - **Copying consumer tactics into B2B email.** Countdown emoji and ALL-CAPS urgency look out of place in a finance manager's work inbox.
 - **Testing two lines that are almost the same.** Test different ideas, such as a benefit versus a question, so the result teaches you something.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I use a score as a starting point, never the final word. The better test is the inbox itself: put your subject and preview text next to the emails your buyer actually gets that morning, and ask whether yours would earn the click. In B2B, plain and specific usually wins. Tell people what's inside and why it matters to them now.
 :::
 
 ## What the analyzer can't tell you

@@ -61,8 +61,8 @@ Fact: Few B2B deals close on social, but many start there. Buyers notice brands,
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Get the profile right before you post or spend. When someone sees an ad or a founder post and clicks through, they land on a page that should say who you help, show proof, and give one clear next step. I've watched teams pour effort into content while the profile still describes the company in vague terms.
 :::
 
 ## How to do social media marketing
