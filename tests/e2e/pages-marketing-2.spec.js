@@ -6,7 +6,7 @@ import { site, expectNoA11yViolations, expectNoHorizontalScroll } from './helper
 
 // The feature-grid "01–04" numbers are aria-hidden decoration (WCAG 1.4.3 exempts pure
 // decoration); axe still flags their contrast. Reported to the integrator (block owner).
-const AXE = { exclude: ['.td-feature-grid__num'] };
+const AXE = {};
 
 const PAGES = [
   { path: '/case-studies/', schema: 'CollectionPage' },

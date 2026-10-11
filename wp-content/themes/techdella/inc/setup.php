@@ -75,3 +75,26 @@ add_filter(
 		return $classes;
 	}
 );
+
+/**
+ * Outside production, make [CONFIRM]/[PRICE]… tokens in page content visible (§0.5, §16), so
+ * reviewers spot them on local and staging. Only text between tags is touched, never attributes.
+ */
+if ( ! td_is_production() ) {
+	add_filter(
+		'the_content',
+		static function ( string $html ): string {
+			if ( ! str_contains( $html, '[' ) ) {
+				return $html;
+			}
+			$parts = preg_split( '/(<[^>]*>)/', $html, -1, PREG_SPLIT_DELIM_CAPTURE );
+			foreach ( (array) $parts as $i => $part ) {
+				if ( '' !== $part && '<' !== $part[0] && ! str_contains( $part, 'td-confirm' ) ) {
+					$parts[ $i ] = td_mark_placeholders( $part );
+				}
+			}
+			return implode( '', (array) $parts );
+		},
+		30
+	);
+}

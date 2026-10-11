@@ -104,7 +104,7 @@ $td_list_id = wp_unique_id( 'td-people-' );
 			<div class="td-arch-people__scroller" role="region" tabindex="0" aria-label="<?php esc_attr_e( 'Team members', 'techdella' ); ?>">
 				<ul class="td-arch-people__list" role="list">
 					<?php foreach ( $td_people as $td_p ) : ?>
-						<li class="td-arch-people__person">
+						<li class="td-arch-people__person" id="<?php echo esc_attr( sanitize_title( (string) ( $td_p['name'] ?? '' ) ) ); ?>">
 							<div class="td-arch td-arch-people__photo">
 								<?php
 								$td_img = ! empty( $td_p['image'] ) ? td_image(

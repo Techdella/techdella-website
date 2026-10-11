@@ -19,7 +19,7 @@ const PAGES = [
 
 // The numbered feature-grid digits (aria-hidden, 30px, --td-num) are under 3:1; the fix belongs
 // in blocks/feature-grid/style.css (same exclusion as pages-marketing.spec.js until it lands).
-const AXE_EXCLUDE = ['.td-feature-grid__num'];
+const AXE_EXCLUDE = [];
 
 async function check(page, url, { axe = true } = {}) {
   const res = await page.goto(url);
