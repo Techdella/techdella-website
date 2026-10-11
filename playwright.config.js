@@ -14,7 +14,9 @@ export default defineConfig({
     trace: 'retain-on-failure',
   },
   projects: [
-    { name: 'desktop', use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } } },
-    { name: 'mobile', use: { ...devices['Pixel 7'] }, grep: /@mobile|@smoke/ },
+    { name: 'desktop', use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } }, testIgnore: /editor-validity/ },
+    { name: 'mobile', use: { ...devices['Pixel 7'] }, grep: /@mobile|@smoke/, testIgnore: /editor-validity/ },
+    // The block editor is heavy: check it after the other projects, with nothing else hitting the stack.
+    { name: 'editor', use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } }, testMatch: /editor-validity/, dependencies: ['desktop', 'mobile'] },
   ],
 });

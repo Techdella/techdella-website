@@ -28,7 +28,7 @@ for (const p of PAGES) {
       expect(res.status()).toBe(200);
       await expect(page.locator('h1')).toHaveCount(1);
       expect(norm(await page.locator('h1').innerText())).toMatch(p.h1);
-      const headings = (await page.locator('h2, h3').allInnerTexts()).map(norm);
+      const headings = (await page.locator('h2, h3').allTextContents()).map(norm); // textContent: below-the-fold sections skip rendering (content-visibility), so innerText is empty until scrolled
       for (const h of p.headings) {
         expect(headings.some((t) => t.includes(h)), `heading "${h}"`).toBe(true);
       }

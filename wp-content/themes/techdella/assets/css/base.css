@@ -75,3 +75,9 @@ a:hover{color:var(--td-orange-text)}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+/* Skip rendering work for page sections until they near the viewport (§8.4 LCP/INP).
+   On-screen sections render as normal; `auto` remembers each section's real height once seen. */
+main > section,
+.td-page--blocks > section,
+.td-page--blocks > [class*="wp-block-techdella-"]{content-visibility:auto;contain-intrinsic-size:auto 720px}

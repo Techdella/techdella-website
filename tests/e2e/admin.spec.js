@@ -2,7 +2,7 @@
 // live URL bases, roles. Needs the local Docker stack (WP-CLI via docker compose).
 import { test, expect } from '@playwright/test';
 import { execFileSync } from 'node:child_process';
-import { site } from './helpers.js';
+import { site, wpLogin } from './helpers.js';
 
 const ADMIN = { user: process.env.WP_ADMIN_USER || 'admin', pass: process.env.WP_ADMIN_PASS || 'admin' };
 
@@ -14,12 +14,7 @@ function wp(name, args) {
   }).trim();
 }
 
-async function login(page, name, user = ADMIN.user, pass = ADMIN.pass) {
-  await page.goto(site(name, '/wp-login.php'));
-  await page.fill('#user_login', user);
-  await page.fill('#user_pass', pass);
-  await Promise.all([page.waitForURL(/wp-admin/), page.click('#wp-submit')]);
-}
+const login = (page, name, user = ADMIN.user, pass = ADMIN.pass) => wpLogin(page, name, user, pass);
 
 /** REST nonce for the logged-in user of this page's context. */
 async function restNonce(page, name) {

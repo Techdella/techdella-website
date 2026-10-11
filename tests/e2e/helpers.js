@@ -34,3 +34,18 @@ export const sbMock = {
   async log(request, key) { return (await request.get(`${SB_MOCK}/_log${key ? `?key=${key}` : ''}`)).json(); },
   async fail(request, key, times = 1, status = 503) { await request.post(`${SB_MOCK}/_fail`, { data: { key, times, status } }); },
 };
+
+/**
+ * Log in to WordPress. Waits for the login page's scripts to settle and checks both fields hold
+ * their values before submitting: wp-login.php can reset the password field while it initialises.
+ */
+export async function wpLogin(page, name, user, pass) {
+  await page.goto(site(name, '/wp-login.php'), { waitUntil: 'load' });
+  const userField = page.locator('#user_login');
+  const passField = page.locator('#user_pass');
+  await userField.fill(user);
+  await passField.fill(pass);
+  await expect(userField).toHaveValue(user);
+  await expect(passField).toHaveValue(pass);
+  await Promise.all([page.waitForURL(/wp-admin/), page.click('#wp-submit')]);
+}
