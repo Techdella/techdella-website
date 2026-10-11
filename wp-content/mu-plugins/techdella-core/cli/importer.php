@@ -505,6 +505,12 @@ function td_import_file( string $file, string $status, bool $dry, string $base )
 	}
 	if ( $post ) {
 		$data['ID'] = $post->ID;
+		// A page template left by the old theme makes wp_update_post fail ("Invalid page template"):
+		// fall back to this theme's template for the post type.
+		$tpl = (string) get_post_meta( $post->ID, '_wp_page_template', true );
+		if ( '' !== $tpl && 'default' !== $tpl && ! isset( wp_get_theme()->get_page_templates( $post, $post->post_type )[ $tpl ] ) ) {
+			$data['page_template'] = 'default';
+		}
 	}
 	// Never publish from here, even if a filter tries (§0.4).
 	// Never publishes (§0.4); --update-published keeps an already-live copy's status on local/staging.
