@@ -308,8 +308,38 @@ function td_cli_legacy_retire( array $args, array $assoc ): void {
 			'result' => $dry ? 'would unpublish' : 'unpublished (draft)',
 		];
 	}
+	// Old pages on a hub address (/case-studies/, /glossary/, /business/ …) hide the new hub
+	// template, which serves the same URL: unpublish the page so the hub shows.
+	foreach ( get_post_types( [ 'public' => true ], 'objects' ) as $pto ) {
+		if ( ! $pto->has_archive ) {
+			continue;
+		}
+		$base = is_string( $pto->has_archive ) ? $pto->has_archive : (string) ( $pto->rewrite['slug'] ?? $pto->name );
+		$page = get_page_by_path( $base, OBJECT, 'page' );
+		if ( ! $page instanceof WP_Post || 'publish' !== $page->post_status ) {
+			continue;
+		}
+		if ( ! $dry ) {
+			$tpl  = (string) get_post_meta( $page->ID, '_wp_page_template', true );
+			$data = [
+				'ID'          => (int) $page->ID,
+				'post_status' => 'draft',
+			];
+			if ( '' !== $tpl && 'default' !== $tpl && ! isset( wp_get_theme()->get_page_templates( $page, 'page' )[ $tpl ] ) ) {
+				$data['page_template'] = 'default';
+			}
+			wp_update_post( $data );
+		}
+		$rows[] = [
+			'id'     => $page->ID,
+			'type'   => 'page',
+			'path'   => '/' . $base . '/',
+			'target' => '(new ' . $pto->labels->name . ' hub)',
+			'result' => $dry ? 'would unpublish' : 'unpublished (draft)',
+		];
+	}
 	Utils\format_items( 'table', $rows, [ 'id', 'type', 'path', 'target', 'result' ] );
-	WP_CLI::success( sprintf( '%d redirected page(s) %s.', count( $rows ), $dry ? 'would be unpublished' : 'unpublished' ) );
+	WP_CLI::success( sprintf( '%d old page(s) %s.', count( $rows ), $dry ? 'would be unpublished' : 'unpublished' ) );
 }
 
 WP_CLI::add_command( 'td legacy:retire', 'td_cli_legacy_retire' );
