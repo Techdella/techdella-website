@@ -24,14 +24,22 @@ $td_b   = static fn( string $name, array $attrs = [], array $inner = [] ): array
 	'innerHTML'    => '',
 	'innerContent' => array_fill( 0, count( $inner ), null ),
 ];
-$td_div = static function ( string $block, string $css_class, array $inner, string $style = '' ): array {
+$td_div = static function ( string $block, string $css_class, array $inner, array $extra = [] ): array {
 	$base  = [
 		'core/group'   => 'wp-block-group',
 		'core/columns' => 'wp-block-columns',
 		'core/column'  => 'wp-block-column',
 	][ $block ];
-	$open  = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
-	$attrs = $css_class ? [ 'className' => $css_class ] : [];
+	$attrs = array_merge( $css_class ? [ 'className' => $css_class ] : [], $extra );
+	// Inline style exactly as core's save() writes it for these attributes (column width, group padding).
+	$style = '';
+	if ( isset( $attrs['width'] ) ) {
+		$style = 'flex-basis:' . $attrs['width'];
+	}
+	foreach ( $attrs['style']['spacing']['padding'] ?? [] as $side => $value ) {
+		$style .= ( $style ? ';' : '' ) . 'padding-' . $side . ':' . $value;
+	}
+	$open = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
 	return [
 		'blockName'    => $block,
 		'attrs'        => $attrs,
@@ -40,20 +48,20 @@ $td_div = static function ( string $block, string $css_class, array $inner, stri
 		'innerContent' => array_merge( [ $open ], array_fill( 0, count( $inner ), null ), [ '</div>' ] ),
 	];
 };
-// A full-width section with a container: optional surface (canvas|sand|dark) and inline style.
-$td_section = static fn( array $inner, string $surface = '', string $style = '' ): array => $td_div(
+// A full-width section with a container: optional surface (canvas|sand|dark) and extra group attributes.
+$td_section = static fn( array $inner, string $surface = '', array $extra = [] ): array => $td_div(
 	'core/group',
 	trim( 'td-section ' . ( $surface ? 'td-section--' . $surface : '' ) ),
 	[ $td_div( 'core/group', 'td-container', $inner ) ],
-	$style
+	$extra
 );
-// Two columns (left, right); widths as flex-basis percentages.
+// Two columns (left, right); widths as column `width` attributes (core saves them as flex-basis).
 $td_cols = static fn( array $left, array $right, int $left_pct = 58 ): array => $td_div(
 	'core/columns',
 	'td-cols',
 	[
-		$td_div( 'core/column', '', $left, 'flex-basis:' . $left_pct . '%' ),
-		$td_div( 'core/column', '', $right, 'flex-basis:' . ( 100 - $left_pct ) . '%' ),
+		$td_div( 'core/column', '', $left, [ 'width' => $left_pct . '%' ] ),
+		$td_div( 'core/column', '', $right, [ 'width' => ( 100 - $left_pct ) . '%' ] ),
 	]
 );
 
@@ -147,7 +155,16 @@ $td_blocks = [
 				]
 			),
 		],
-		'padding-block:8px 24px'
+		[
+			'style' => [
+				'spacing' => [
+					'padding' => [
+						'top'    => '8px',
+						'bottom' => '24px',
+					],
+				],
+			],
+		]
 	),
 	$td_b(
 		'feature-grid',
