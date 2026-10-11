@@ -11,7 +11,7 @@ audience: "Aspiring online store owners in Nigeria, the US and the UK"
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start an e-commerce business, pick a product and a fulfillment model, check the unit economics on every product, register the business, follow online selling rules (UK distance selling, US FTC shipping rules, Nigerian consumer protection), build a fast store and start with one customer acquisition channel."
-rank_math_description: "How to start an e-commerce business in the US, UK or Nigeria: product choice, unit economics, store costs, online selling rules and getting your first customers."
+rank_math_description: "How to start an e-commerce business in the US, UK or Nigeria: product choice, unit economics, store costs, selling rules and your first customers."
 internal_links:
   - /services/seo/
   - /services/paid-ads/

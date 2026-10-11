@@ -11,7 +11,7 @@ audience: "Professionals in Nigeria, the US and the UK turning a skill into a fr
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a freelancing business, choose a niche you can prove, register for tax (US EIN and Schedule C, UK Self Assessment over £1,000, Nigeria CAC business name), price by project or retainer, sign a contract for every job, and build a pipeline you own alongside marketplaces like Upwork or Fiverr."
-rank_math_description: "Start a freelancing business in the US, UK or Nigeria: niche, tax registration, pricing maths, contracts, getting paid across borders and finding steady clients."
+rank_math_description: "Start a freelancing business in the US, UK or Nigeria: niche, tax registration, pricing maths, contracts, cross-border payments and steady clients."
 internal_links:
   - /services/lead-generation/
   - /growth-audit/

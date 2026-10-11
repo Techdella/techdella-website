@@ -11,7 +11,7 @@ audience: "Chefs and skilled home cooks in Nigeria, the US and the UK starting a
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a personal chef business, choose a service model (weekly meal prep in clients' kitchens, private dinners, or meal delivery from an approved kitchen), get food safety training and insurance, check whether your model needs food business registration or a health permit, charge a service fee plus groceries, and grow through referrals from a small, loyal client base."
-rank_math_description: "How to start a personal chef business in the US, UK or Nigeria: service models, food safety rules, insurance, pricing with groceries on top, and getting clients."
+rank_math_description: "How to start a personal chef business in the US, UK or Nigeria: service models, food safety rules, insurance, pricing with groceries and clients."
 internal_links:
   - /services/local-seo/
   - /services/email-marketing/

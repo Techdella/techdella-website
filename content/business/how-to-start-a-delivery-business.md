@@ -11,7 +11,7 @@ audience: "Aspiring courier and delivery business owners in Nigeria, the US and 
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a delivery business, choose a niche (local same-day parcels, food, B2B supplies or ecommerce last mile), register the business, get the right vehicle licensing and goods-in-transit insurance, price per drop from your true cost per mile, and win contract clients who ship every week."
-rank_math_description: "How to start a delivery business in the US, UK or Nigeria: niches, vehicle licensing, insurance, cost-per-drop pricing and how to win steady contract clients."
+rank_math_description: "How to start a delivery business in the US, UK or Nigeria: niches, vehicle licensing, insurance, cost-per-drop pricing and steady contract clients."
 internal_links:
   - /services/local-seo/
   - /services/lead-generation/

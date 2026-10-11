@@ -11,7 +11,7 @@ audience: "Home cooks and chefs in Nigeria, the US and the UK planning to start 
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a catering business, choose a niche, register the business, meet food safety rules (UK food business registration, a US health department permit, Nigerian state and NAFDAC rules where they apply), cost every menu per head, and build repeat clients such as offices and venues."
-rank_math_description: "How to start a catering business in the US, UK or Nigeria: food safety approvals, startup costs, pricing per head and how to win repeat event and office clients."
+rank_math_description: "How to start a catering business in the US, UK or Nigeria: food safety approvals, startup costs, pricing per head and winning repeat event clients."
 internal_links:
   - /services/local-seo/
   - /services/email-marketing/

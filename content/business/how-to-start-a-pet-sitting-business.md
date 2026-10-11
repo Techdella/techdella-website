@@ -11,7 +11,7 @@ audience: "Animal lovers in Nigeria, the US and the UK starting a pet sitting or
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a pet sitting business, choose your services (drop-in visits, dog walking, overnight house sitting or home boarding), check licensing, buy pet business insurance with care, custody and key cover, price per visit with surcharges, and win trust through a meet-and-greet, reviews and reliable updates."
-rank_math_description: "How to start a pet sitting business in the US, UK or Nigeria: services, licences, insurance, pricing per visit and building trust with pet owners. 2026 guide."
+rank_math_description: "How to start a pet sitting business in the US, UK or Nigeria: services, licences, insurance, pricing per visit and earning pet owners' trust."
 internal_links:
   - /services/local-seo/
   - /services/email-marketing/

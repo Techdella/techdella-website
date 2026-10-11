@@ -11,7 +11,7 @@ audience: "Aspiring online sellers in Nigeria, the US and the UK considering dro
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a dropshipping business, pick a niche with real demand, vet suppliers on quality and shipping time, check margins after ads, fees and refunds, register the business, follow shipping and returns law (FTC's 30-day rule in the US, a 14-day cancellation right in the UK), and test with a small ad budget before scaling."
-rank_math_description: "How to start a dropshipping business in 2026: niche and supplier vetting, real margin maths, store costs, US and UK consumer rules, and when dropshipping fits Nigeria."
+rank_math_description: "How to start a dropshipping business in 2026: supplier vetting, real margin maths, store costs, US and UK consumer rules, and when it fits Nigeria."
 internal_links:
   - /services/paid-ads/
   - /services/email-marketing/
