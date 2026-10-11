@@ -13,7 +13,7 @@ export default [
     languageOptions: { ecmaVersion: 2022, sourceType: 'module', globals: { ...globals.node } },
   },
   {
-    files: ['tests/**/*.js'],
+    files: ['tests/**/*.js', 'pdf/**/*.mjs'],
     languageOptions: { globals: { ...globals.node, ...globals.browser } },
   },
   { files: ['tools/sb-mock/**/*.js', '**/*.cjs'], languageOptions: { sourceType: 'commonjs' } },
