@@ -45,8 +45,9 @@ function pdfTitle( buf ) {
 		}
 		return b.toString( 'latin1' );
 	}
-	const lit = s.match( /\/Title\s*\(((?:\\.|[^\\)])*)\)/ );
-	return lit ? lit[ 1 ] : '';
+	// The document title, not an outline entry: outline items also carry /Title.
+	const all = [ ...s.matchAll( /\/Title\s*\(((?:\\.|[^\\)])*)\)/g ) ].map( ( m ) => m[ 1 ] );
+	return all.find( ( t ) => t.includes( 'TechDella' ) ) || all[ 0 ] || '';
 }
 
 const files = ( await readdir( TEMPLATES ) )
@@ -95,6 +96,15 @@ for ( const file of files ) {
 	}
 	if ( info.images.length ) {
 		errors.push( `${ slug }: images failed to load: ${ info.images.join( ', ' ) }` );
+	}
+
+	// Cover image for the resource page (§13.2): the PDF's first page as a JPEG.
+	const cover = page.locator( '.cover' ).first();
+	if ( await cover.count() ) {
+		await mkdir( path.join( OUT, 'covers' ), { recursive: true } );
+		await cover.screenshot( { path: path.join( OUT, 'covers', `${ slug }.jpg` ), type: 'jpeg', quality: 82 } );
+	} else {
+		errors.push( `${ slug }: no .cover section for the cover image` );
 	}
 
 	const target = path.join( OUT, `${ slug }.pdf` );

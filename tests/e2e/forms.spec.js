@@ -5,6 +5,9 @@ import { execFileSync } from 'node:child_process';
 import { site, sbMock, expectNoA11yViolations, expectNoHorizontalScroll } from './helpers.js';
 
 test.describe.configure({ mode: 'serial' });
+// The sb-mock log is shared: two projects clearing and reading it at once race.
+// Run once, on desktop (the 390px checks set their own viewport).
+test.skip(({ isMobile }) => isMobile, 'Shares the sb-mock log; runs on desktop only.');
 
 const SITE_OF = {
   contact: 'marketing', audit: 'marketing', studios_brief: 'studios', newsletter: 'journal', lead_magnet: 'marketing',

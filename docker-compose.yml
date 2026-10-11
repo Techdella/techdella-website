@@ -55,6 +55,8 @@ services:
       - ./data:/var/www/repo/data:ro
       - ./content:/var/www/repo/content:ro
       - ./docker/cache:/var/www/repo/cache:ro
+      - ./assets:/var/www/repo/assets:ro
+      - ./pdf/out:/var/www/repo/pdf/out:ro
   wp-journal:
     <<: *wordpress
     ports: ["8082:8082"]
@@ -74,6 +76,8 @@ services:
       - ./data:/var/www/repo/data:ro
       - ./content:/var/www/repo/content:ro
       - ./docker/cache:/var/www/repo/cache:ro
+      - ./assets:/var/www/repo/assets:ro
+      - ./pdf/out:/var/www/repo/pdf/out:ro
   wp-studios:
     <<: *wordpress
     ports: ["8083:8083"]
@@ -93,6 +97,8 @@ services:
       - ./data:/var/www/repo/data:ro
       - ./content:/var/www/repo/content:ro
       - ./docker/cache:/var/www/repo/cache:ro
+      - ./assets:/var/www/repo/assets:ro
+      - ./pdf/out:/var/www/repo/pdf/out:ro
 
   mailpit:
     image: axllent/mailpit:latest

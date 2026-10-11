@@ -33,7 +33,7 @@ function td_import_folder_map(): array {
 /**
  * Keys handled by the importer itself (everything else becomes a field).
  */
-const TD_IMPORT_RESERVED = [ 'title', 'slug', 'type', 'site', 'excerpt', 'status', 'format', 'author', 'reviewer', 'featured_image', 'image', 'categories', 'tags', 'taxonomies', 'parent', 'menu_order', 'template', 'date' ];
+const TD_IMPORT_RESERVED = [ 'title', 'slug', 'type', 'site', 'excerpt', 'status', 'format', 'author', 'reviewer', 'featured_image', 'image', 'pdf', 'categories', 'tags', 'taxonomies', 'parent', 'menu_order', 'template', 'date' ];
 
 /**
  * Markdown files under a path (a file or a directory, recursive), README excluded.
@@ -90,6 +90,12 @@ function td_import_markdown_to_blocks( string $markdown ): string {
 	}
 	$parser = new Parsedown();
 	$html   = (string) $parser->text( $markdown );
+	// Cross-site links: (studios:/work/) → td_url( 'studios', '/work/' ), so content never hard-codes domains (§4.1).
+	$html = (string) preg_replace_callback(
+		'#href="(marketing|journal|studios):(/[^"]*)"#',
+		static fn( array $m ): string => 'href="' . esc_url( td_url( $m[1], $m[2] ) ) . '"',
+		$html
+	);
 	if ( '' === trim( $html ) ) {
 		return '';
 	}
@@ -277,14 +283,16 @@ function td_import_set_field( int $post_id, string $name, $value ): void {
 }
 
 /**
- * Sideload a featured image from the repo.
+ * Sideload a file from the repo (featured image, or a resource PDF). Reuses the
+ * attachment from an earlier import while the file is unchanged.
  *
- * @param string $rel     Path relative to the repo root (e.g. assets/images/x.jpg).
- * @param string $base    Repo root.
- * @param int    $post_id Post ID.
+ * @param string $rel          Path relative to the repo root (e.g. assets/images/x.jpg).
+ * @param string $base         Repo root.
+ * @param int    $post_id      Post ID.
+ * @param bool   $private_path Upload under uploads/td-files/<random>/ (PDF lead magnets: URL not guessable, §13.2).
  * @return int|string Attachment ID or error message.
  */
-function td_import_featured( string $rel, string $base, int $post_id ) {
+function td_import_featured( string $rel, string $base, int $post_id, bool $private_path = false ) {
 	$rel  = ltrim( str_replace( '..', '', $rel ), '/' );
 	$file = '';
 	foreach ( [ $base . '/' . $rel, '/var/www/repo/' . $rel ] as $candidate ) {
@@ -294,8 +302,9 @@ function td_import_featured( string $rel, string $base, int $post_id ) {
 		}
 	}
 	if ( '' === $file ) {
-		return 'image not found: ' . $rel;
+		return 'file not found: ' . $rel;
 	}
+	$hash     = (string) md5_file( $file );
 	$existing = get_posts(
 		[
 			'post_type'      => 'attachment',
@@ -305,7 +314,8 @@ function td_import_featured( string $rel, string $base, int $post_id ) {
 			'fields'         => 'ids',
 		]
 	);
-	if ( $existing ) {
+	$old_hash = $existing ? (string) get_post_meta( (int) $existing[0], '_td_source_hash', true ) : '';
+	if ( $existing && ( '' === $old_hash || $old_hash === $hash ) ) {
 		return (int) $existing[0];
 	}
 	require_once ABSPATH . 'wp-admin/includes/file.php';
@@ -313,6 +323,16 @@ function td_import_featured( string $rel, string $base, int $post_id ) {
 	require_once ABSPATH . 'wp-admin/includes/image.php';
 	$tmp = wp_tempnam( basename( $file ) );
 	copy( $file, $tmp );
+	$dir_filter = static function ( array $dirs ): array {
+		$sub            = '/td-files/' . bin2hex( random_bytes( 16 ) );
+		$dirs['path']   = $dirs['basedir'] . $sub;
+		$dirs['url']    = $dirs['baseurl'] . $sub;
+		$dirs['subdir'] = $sub;
+		return $dirs;
+	};
+	if ( $private_path ) {
+		add_filter( 'upload_dir', $dir_filter );
+	}
 	$id = media_handle_sideload(
 		[
 			'name'     => basename( $file ),
@@ -320,11 +340,16 @@ function td_import_featured( string $rel, string $base, int $post_id ) {
 		],
 		$post_id
 	);
+	remove_filter( 'upload_dir', $dir_filter );
 	if ( is_wp_error( $id ) ) {
 		wp_delete_file( $tmp );
 		return $id->get_error_message();
 	}
 	update_post_meta( (int) $id, '_td_source_file', $rel );
+	update_post_meta( (int) $id, '_td_source_hash', $hash );
+	if ( $existing ) {
+		wp_delete_attachment( (int) $existing[0], true ); // Replaced by the new version.
+	}
 	return (int) $id;
 }
 
@@ -474,6 +499,17 @@ function td_import_file( string $file, string $status, bool $dry, string $base )
 	}
 	update_post_meta( $id, '_td_import_source', $row['file'] );
 	update_post_meta( $id, '_td_confirm_count', $row['confirm'] );
+
+	// Resource PDF (§13.2): uploaded under an unguessable path, stored in the `pdf` field.
+	$pdf = (string) ( $meta['pdf'] ?? '' );
+	if ( '' !== $pdf ) {
+		$att = str_ends_with( strtolower( $pdf ), '.pdf' ) ? td_import_featured( $pdf, $base, $id, true ) : 'pdf must be a .pdf file: ' . $pdf;
+		if ( is_int( $att ) ) {
+			td_import_set_field( $id, 'pdf', $att );
+		} else {
+			$notes[] = $att;
+		}
+	}
 
 	$image = (string) ( $meta['featured_image'] ?? ( $meta['image'] ?? '' ) );
 	if ( '' !== $image ) {

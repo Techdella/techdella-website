@@ -80,6 +80,10 @@ Rules:
   one level deep (with lists inside). No anchors, tags or `{inline: maps}`.
 - The body is Markdown (converted to blocks: paragraphs, headings, lists, quotes, tables, images). The title
   is the page's only H1, so start the body with `##`.
+- Link to another site with a site prefix: `[Studios work](studios:/work/)` becomes the right domain
+  on each environment (localhost ports in dev). Never type a full techdella.com URL.
+- Resources: `pdf: pdf/out/<slug>.pdf` (run `npm run pdf` first) uploads the PDF under an unguessable
+  path; `featured_image: pdf/out/covers/<slug>.jpg` sets the cover.
 - Put `[CONFIRM]` wherever a fact, number, quote or claim needs a person, `[PRICE]` for prices. Publishing
   is blocked until none are left (§10.1 step 5); `wp td audit placeholders` lists any on live pages.
 - Voice: §10.2 (US English, short sentences, no hype words). Proof: only §2.4.
