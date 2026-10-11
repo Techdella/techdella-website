@@ -167,11 +167,6 @@ $td_blocks = [
 					'image' => 'team/abel-saka',
 				],
 				[
-					'name'  => 'Akeem Feysupo',
-					'role'  => 'Growth Strategist',
-					'image' => 'team/akeem-feysupo',
-				],
-				[
 					'name'  => 'Omolola Akiyode',
 					'role'  => 'TechDella Team',
 					'image' => 'team/omolola-akiyode',

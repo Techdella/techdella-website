@@ -220,7 +220,7 @@ $td_inline_blocks = [ 'techdella/button', 'techdella/label-chip', 'techdella/tes
 						<div class="td-arch td-arch--sm">
 						<?php
 						echo td_picture( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-							'team/akeem-feysupo',
+							'team/abel-saka',
 							[
 								'alt'   => '',
 								'sizes' => '90px',

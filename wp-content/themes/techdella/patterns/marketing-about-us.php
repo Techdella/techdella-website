@@ -35,8 +35,23 @@ $td_blocks = [
 			'primaryUrl'     => '/book-a-discovery-call/',
 			'secondaryLabel' => 'See case studies',
 			'secondaryUrl'   => '/case-studies/',
-			'image'          => 'photos/techdella-team-group',
-			'imageAlt'       => 'The TechDella team',
+			'imageSet'       => [
+				[
+					'image' => 'team/joanna-okedara-kalu',
+					'name'  => 'Joanna Okedara-Kalu',
+					'role'  => 'Founder & CEO',
+				],
+				[
+					'image' => 'team/chinedu-emmanuel-kalu',
+					'name'  => 'Chinedu Emmanuel Kalu',
+					'role'  => 'COO & Co-founder',
+				],
+				[
+					'image' => 'team/abel-saka',
+					'name'  => 'Abel Saka',
+					'role'  => 'Brand Designer & UI/UX',
+				],
+			],
 			'background'     => 'plain',
 		]
 	),
@@ -146,11 +161,6 @@ $td_blocks = [
 					'name'  => 'Chinedu Emmanuel Kalu',
 					'role'  => 'COO & Co-founder',
 					'image' => 'team/chinedu-emmanuel-kalu',
-				],
-				[
-					'name'  => 'Akeem Feysupo',
-					'role'  => 'Growth Strategist',
-					'image' => 'team/akeem-feysupo',
 				],
 				[
 					'name'  => 'Abel Saka',

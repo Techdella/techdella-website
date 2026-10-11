@@ -25,3 +25,13 @@
 .td-hero--center .td-hero__copy{align-items:center;max-width:880px}
 .td-hero--center .td-hero__ctas,.td-hero--center .td-hero__badges{justify-content:center}
 @media (max-width:600px){.td-hero__inner{padding-block:48px 64px;gap:32px}.td-hero__copy,.td-hero__aside{flex-basis:100%}}
+/* imageSet: arch portrait mosaic (About pages). Middle column sits lower. */
+.td-hero__mosaic{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 12px;align-items:start}
+.td-hero__mosaic-item{display:flex;flex-direction:column;gap:8px;min-width:0}
+.td-hero__mosaic-item:nth-child(3n+2){transform:translateY(36px)}
+.td-hero__mosaic-photo{aspect-ratio:4/5;border-radius:var(--td-arch);overflow:hidden;background:var(--td-sand)}
+.td-hero__mosaic-photo picture,.td-hero__mosaic-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+.td-hero__mosaic-name{margin:0;font-size:13px;font-weight:600;line-height:1.3;color:var(--td-ink)}
+.td-hero__mosaic-name span{display:block;font-weight:400;color:var(--td-muted)}
+.td-hero__mosaic--6{padding-bottom:36px}
+@media (max-width:600px){.td-hero__mosaic{gap:10px 8px}.td-hero__mosaic-name{font-size:12px}.td-hero__mosaic-name span{display:none}.td-hero__mosaic-item:nth-child(3n+2){transform:translateY(20px)}.td-hero__mosaic--6{padding-bottom:20px}}

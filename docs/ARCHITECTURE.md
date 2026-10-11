@@ -36,7 +36,7 @@ house rules (how it is built). Keep both up to date.
 
 Theme image keys (source in `assets/images/`, run `npm run images`):
 `brand/techdella-logo`, `brand/techdella-logo-white`, `brand/techdella-mark`,
-`team/joanna-okedara-kalu`, `team/chinedu-emmanuel-kalu`, `team/akeem-feysupo`, `team/abel-saka`,
+`team/joanna-okedara-kalu`, `team/chinedu-emmanuel-kalu`, `team/abel-saka`,
 `team/omolola-akiyode`, `team/mercy-olumakinwa`, `people/levi-barbosa-wezops`, `people/akin-oyegoke-johan-consults`,
 `photos/techdella-team-group`, `clients/paycape`, `clients/johan-consults`, `clients/wezops`, `clients/shopinbos`, `clients/jollomy`.
 (No startbuddi logo file yet → text fallback.)

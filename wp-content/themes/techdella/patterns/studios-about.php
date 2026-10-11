@@ -28,8 +28,23 @@ $td_blocks = [
 			'primaryUrl'     => '/start/',
 			'secondaryLabel' => 'See our work',
 			'secondaryUrl'   => '/work/',
-			'image'          => 'photos/techdella-team-group',
-			'imageAlt'       => 'The TechDella team together',
+			'imageSet'       => [
+				[
+					'image' => 'team/joanna-okedara-kalu',
+					'name'  => 'Joanna Okedara-Kalu',
+					'role'  => 'Founder & CEO',
+				],
+				[
+					'image' => 'team/chinedu-emmanuel-kalu',
+					'name'  => 'Chinedu Emmanuel Kalu',
+					'role'  => 'COO & Co-founder',
+				],
+				[
+					'image' => 'team/abel-saka',
+					'name'  => 'Abel Saka',
+					'role'  => 'Brand Designer & UI/UX',
+				],
+			],
 			'layout'         => 'split',
 			'background'     => 'grid',
 		],

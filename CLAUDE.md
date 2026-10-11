@@ -133,7 +133,6 @@ Blocks must:
 - **Team:**
   - Joanna Okedara-Kalu (Founder & CEO)
   - Chinedu Emmanuel Kalu (COO & Co-founder)
-  - Akeem Feysupo (Growth Strategist)
   - Abel Saka (Brand Designer & UI/UX)
   - Omolola Akiyode (TechDella Team)
   - Mercy Olumakinwa (TechDella Team)

@@ -16,7 +16,9 @@ $td_image  = $td_a['image'] ?? '';
 $td_layout = 'center' === ( $td_a['layout'] ?? '' ) ? 'center' : 'split';
 $td_bg     = in_array( $td_a['background'] ?? '', [ 'grid', 'plain', 'canvas' ], true ) ? $td_a['background'] : 'grid';
 $td_plats  = array_filter( (array) ( $td_a['platforms'] ?? [] ), 'is_array' );
-$td_aside  = '' !== $td_slot || ( '' !== $td_image && 0 !== $td_image && 'center' !== $td_layout );
+$td_set    = array_slice( array_values( array_filter( (array) ( $td_a['imageSet'] ?? [] ), static fn( $p ) => is_array( $p ) && ! empty( $p['image'] ) ) ), 0, 6 );
+$td_set    = count( $td_set ) >= 3 && 'center' !== $td_layout ? $td_set : [];
+$td_aside  = '' !== $td_slot || $td_set || ( '' !== $td_image && 0 !== $td_image && 'center' !== $td_layout );
 $td_class  = 'td-hero td-hero--' . $td_layout . ' td-hero--bg-' . $td_bg . ( $td_aside ? ' td-hero--has-aside' : '' );
 ?>
 <section <?php echo td_block_wrapper( $td_class ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
@@ -67,6 +69,32 @@ $td_class  = 'td-hero td-hero--' . $td_layout . ' td-hero--bg-' . $td_bg . ( $td
 			<div class="td-hero__aside">
 				<?php if ( '' !== $td_slot ) : ?>
 					<?php echo $td_slot; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- rendered block/template markup. ?>
+				<?php elseif ( $td_set ) : ?>
+					<ul class="td-hero__mosaic td-hero__mosaic--<?php echo count( $td_set ); ?>" role="list">
+						<?php foreach ( $td_set as $td_i => $td_p ) : ?>
+							<li class="td-hero__mosaic-item">
+								<div class="td-hero__mosaic-photo">
+									<?php
+									echo td_image( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+										$td_p['image'],
+										[
+											'alt'      => '',
+											'sizes'    => '(max-width: 900px) 30vw, 180px',
+											'priority' => $td_i < 3,
+										]
+									);
+									?>
+								</div>
+								<?php if ( ! empty( $td_p['name'] ) ) : ?>
+									<p class="td-hero__mosaic-name"><?php echo esc_html( (string) $td_p['name'] ); ?>
+										<?php if ( ! empty( $td_p['role'] ) ) : ?>
+											<span><?php echo esc_html( (string) $td_p['role'] ); ?></span>
+										<?php endif; ?>
+									</p>
+								<?php endif; ?>
+							</li>
+						<?php endforeach; ?>
+					</ul>
 				<?php else : ?>
 					<figure class="td-hero__media<?php echo 'arch' === ( $td_a['imageShape'] ?? '' ) ? ' td-hero__media--arch' : ''; ?>">
 						<?php
