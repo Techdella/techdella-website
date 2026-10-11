@@ -150,6 +150,6 @@
 			"primaryUrl": "url",
 			"secondaryUrl": "url"
 		},
-		"help": "One H1 per page: this block renders it. Wrap one word in *asterisks* for the accent. Templates can pass a right-hand slot (e.g. a SERP mock) as inner content; otherwise the image shows. Platforms: {name, mark, ink, slug}; official logo files are used when present. imageSet: 3–6 portraits [{image, name, role}] shown as an arch mosaic instead of a single image (About pages)."
+		"help": "One H1 per page: this block renders it. Wrap one word in *asterisks* for the accent. Templates can pass a right-hand slot (e.g. a SERP mock) as inner content; otherwise the image shows. Platforms: {name, mark, ink, slug}; official logo files are used when present. imageSet: 2–6 portraits [{image, name, role}] shown as an arch mosaic instead of a single image (About pages)."
 	}
 }

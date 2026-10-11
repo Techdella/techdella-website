@@ -13,6 +13,21 @@ $td_pill  = static function ( array $s, string $mod = '' ): string {
 	return '<li class="td-stat-pills__pill' . ( $mod ? ' td-stat-pills__pill--' . $mod : '' ) . '"><strong class="td-stat-pills__value">' . esc_html( (string) ( $s['value'] ?? '' ) ) . '</strong><span class="td-stat-pills__label">' . td_mark_placeholders( esc_html( (string) ( $s['label'] ?? '' ) ) ) . '</span></li>';
 };
 $td_deco  = static fn( string $mod = '' ): string => '<li class="td-stat-pills__deco' . ( $mod ? ' td-stat-pills__deco--' . $mod : '' ) . '" aria-hidden="true">' . ( 'dot' === $mod ? '<span class="td-dot"></span>' : '' ) . '</li>';
+// Optional fills for the outline pills: a client logo (first) and a product/site shot (last).
+$td_media = static function ( $image, string $alt, string $mod ) use ( $td_deco ): string {
+	if ( empty( $image ) ) {
+		return $td_deco();
+	}
+	$html = td_image(
+		$image,
+		[
+			'alt'       => $alt,
+			'sizes'     => 'logo' === $mod ? '160px' : '220px',
+			'img_class' => 'td-stat-pills__img',
+		]
+	);
+	return '<li class="td-stat-pills__deco td-stat-pills__deco--' . $mod . '"' . ( '' === $alt ? ' aria-hidden="true"' : '' ) . '>' . $html . '</li>';
+};
 $td_url   = (string) ( $td_a['linkUrl'] ?? '' );
 $td_url   = str_starts_with( $td_url, '/' ) ? home_url( $td_url ) : $td_url;
 ?>
@@ -31,9 +46,9 @@ $td_url   = str_starts_with( $td_url, '/' ) ? home_url( $td_url ) : $td_url;
 			<div class="td-stat-pills__rows">
 				<ul class="td-stat-pills__row" role="list">
 					<?php
-					echo $td_deco(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo $td_media( $td_a['logo'] ?? '', (string) ( $td_a['logoAlt'] ?? '' ), 'logo' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					echo $td_pill( $td_stats[0], 'wide' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					echo $td_deco(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo $td_media( $td_a['image'] ?? '', (string) ( $td_a['imageAlt'] ?? '' ), 'image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					?>
 				</ul>
 				<?php if ( count( $td_stats ) > 1 ) : ?>

@@ -114,6 +114,15 @@ $td_list_id = wp_unique_id( 'td-people-' );
 										'sizes' => '240px',
 									]
 								) : '';
+								if ( '' === $td_img ) {
+									// No photo yet: initials on the arch, never a stock face.
+									$td_words = preg_split( '/\s+/', trim( (string) ( $td_p['name'] ?? '' ) ) );
+									$td_init  = '';
+									foreach ( array_slice( (array) $td_words, 0, 2 ) as $td_w ) {
+										$td_init .= mb_strtoupper( mb_substr( (string) $td_w, 0, 1 ) );
+									}
+									$td_img = '<span class="td-arch-people__initials" aria-hidden="true">' . esc_html( $td_init ) . '</span>';
+								}
 								echo $td_img; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 								?>
 							</div>

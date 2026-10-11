@@ -95,14 +95,22 @@ $td_blocks = [
 				[
 					'name' => 'Klaviyo',
 					'mark' => 'K',
+					'slug' => 'klaviyo',
 				],
 				[
 					'name' => 'Brevo',
 					'mark' => 'B',
+					'slug' => 'brevo',
 				],
 				[
 					'name' => 'ActiveCampaign',
 					'mark' => 'A',
+					'slug' => 'activecampaign',
+				],
+				[
+					'name' => 'startbuddi',
+					'mark' => 'S',
+					'slug' => 'startbuddi',
 				],
 			],
 		],
@@ -140,7 +148,7 @@ $td_blocks = [
 							'title' => 'Book a call',
 						],
 					],
-					'reply'         => 'Reply: “Can we talk next week?”',
+					'reply'         => '“Can we talk next week?”',
 					'image'         => 'stock/product-flatlay-notebook-candle-square',
 					'imageAlt'      => '',
 					'imageCaption'  => 'Copy & design in-house',

@@ -47,6 +47,9 @@
 .td-m2-story__step h2 { font-size: clamp(26px, 3vw, 36px); line-height: 1.15; margin: 10px 0 0; }
 .td-m2-story__body { font-size: var(--td-text); line-height: 1.7; color: var(--td-ink-soft); }
 .td-m2-story__body > * + * { margin-top: 1em; }
+.td-m2-story__body ul { margin: 0; padding-left: 1.2em; }
+.td-m2-story__body .td-m2-story__sub { font-size: 19px; line-height: 1.3; letter-spacing: -.02em; margin-top: 1.6em; color: var(--td-ink); }
+.td-m2-story__body li + li { margin-top: .4em; }
 @media (min-width: 900px) { .td-m2-story__step { grid-template-columns: 4fr 8fr; } }
 
 .td-m2-services { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0; padding: 0; list-style: none; }

@@ -17,7 +17,7 @@ $td_layout = 'center' === ( $td_a['layout'] ?? '' ) ? 'center' : 'split';
 $td_bg     = in_array( $td_a['background'] ?? '', [ 'grid', 'plain', 'canvas' ], true ) ? $td_a['background'] : 'grid';
 $td_plats  = array_filter( (array) ( $td_a['platforms'] ?? [] ), 'is_array' );
 $td_set    = array_slice( array_values( array_filter( (array) ( $td_a['imageSet'] ?? [] ), static fn( $p ) => is_array( $p ) && ! empty( $p['image'] ) ) ), 0, 6 );
-$td_set    = count( $td_set ) >= 3 && 'center' !== $td_layout ? $td_set : [];
+$td_set    = count( $td_set ) >= 2 && 'center' !== $td_layout ? $td_set : [];
 $td_aside  = '' !== $td_slot || $td_set || ( '' !== $td_image && 0 !== $td_image && 'center' !== $td_layout );
 $td_class  = 'td-hero td-hero--' . $td_layout . ' td-hero--bg-' . $td_bg . ( $td_aside ? ' td-hero--has-aside' : '' );
 ?>

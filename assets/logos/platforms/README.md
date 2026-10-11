@@ -9,3 +9,7 @@ press/brand page when the team downloads them, and follow each brand's clear-spa
 
 Not available in Simple Icons (the brands asked to be removed), so these show the text badge until an
 official file is added: `linkedin`, `chatgpt` (OpenAI), `bing`, `copilot` (Microsoft), `slack`, `ahrefs`.
+
+Downloaded from each brand's own website (their published site icon), Oct 2026:
+`klaviyo.png` (klaviyo.com), `activecampaign.png` (activecampaign.com), `startbuddi.png`
+(startbuddi.com). `brevo.svg` is from Simple Icons v16.34.0. Swap in press-kit files when the team has them.

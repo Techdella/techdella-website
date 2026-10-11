@@ -15,6 +15,7 @@ define( 'TD_CORE_URL', content_url( 'mu-plugins/techdella-core' ) );
 require_once __DIR__ . '/inc/config.php';
 require_once __DIR__ . '/inc/helpers.php';
 require_once __DIR__ . '/inc/dev.php';
+require_once __DIR__ . '/inc/litespeed.php';
 
 /**
  * Modules, in load order. Filterable for tests.
