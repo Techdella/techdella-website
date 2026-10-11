@@ -2,6 +2,7 @@
 .td-video{margin:0;display:flex;flex-direction:column;gap:12px}
 .td-video__frame{position:relative;border-radius:var(--td-r-lg);overflow:hidden;background:var(--td-sand) center/cover no-repeat;aspect-ratio:16/9}
 .td-video--r1x1 .td-video__frame{aspect-ratio:1/1}
+.td-video--r4x5 .td-video__frame{aspect-ratio:4/5}
 .td-video--r9x16 .td-video__frame{aspect-ratio:9/16;max-width:420px;margin-inline:auto;width:100%}
 .td-video__el{display:block;width:100%;height:100%;object-fit:cover;background:transparent}
 .td-video .td-label-example{z-index:1}

@@ -92,6 +92,7 @@ $WP td setup --quiet
 # one needs proc_open, which is disabled there) and leaves .htaccess alone.
 $WP rewrite flush
 $WP td media:videos "$BUNDLE/assets/video"
+$WP td media:videos "$BUNDLE/assets/creatives/video"
 
 if [ "$FIRST" = 1 ]; then
   # Drafts only: nothing here publishes (§0.4). Imported pages wait for a person in WP admin.
@@ -106,6 +107,10 @@ if [ "$REFRESH" = 1 ]; then
   $WP td preview:seed --force --publish
   # Case studies, rebuilt from the published originals (content/case-studies), onto the copies.
   $WP td import-content "$BUNDLE/content/case-studies" --status=draft --update-published
+  # Old redirects that fight the new ones are switched off; old pages that are now redirected
+  # (e.g. the old service pages) are unpublished (draft, never deleted).
+  $WP td redirects import --file="$BUNDLE/data/redirects.csv"
+  $WP td legacy:retire
 fi
 
 $WP cache flush

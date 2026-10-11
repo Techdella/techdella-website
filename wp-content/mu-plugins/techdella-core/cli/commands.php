@@ -236,3 +236,69 @@ WP_CLI::add_command( 'td redirects:verify', [ new TD_CLI_Redirects(), 'verify' ]
 WP_CLI::add_command( 'td audit', 'TD_CLI_Audit' );
 WP_CLI::add_command( 'td og:generate', 'td_cli_og_generate' );
 WP_CLI::add_command( 'td permissions:grant', 'td_cli_permissions_grant' );
+
+/**
+ * Unpublish old pages that the redirects already send elsewhere (status → draft, never deleted),
+ * so a copy of the old site doesn't keep them in sitemaps, menus and search.
+ *
+ * ## OPTIONS
+ *
+ * [--dry-run]
+ * : List what would change.
+ *
+ * [--production]
+ * : Required on production, as a deliberate step at launch.
+ *
+ * ## EXAMPLES
+ *
+ *     wp td legacy:retire --dry-run
+ *
+ * @param string[]             $args  Unused.
+ * @param array<string,string> $assoc Options.
+ */
+function td_cli_legacy_retire( array $args, array $assoc ): void {
+	$dry = (bool) Utils\get_flag_value( $assoc, 'dry-run', false );
+	if ( td_is_production() && ! $dry && ! Utils\get_flag_value( $assoc, 'production', false ) ) {
+		WP_CLI::error( 'On production, add --production (after a --dry-run).' );
+	}
+	$rules = td_redirect_rules();
+	if ( ! $rules ) {
+		WP_CLI::error( 'No redirect rules loaded: run wp td redirects import first.' );
+	}
+	$types = array_values( array_filter( [ 'page', 'service', 'solution', 'location', 'case_study', 'td_tool' ], 'post_type_exists' ) );
+	$ids   = get_posts(
+		[
+			'post_type'      => $types,
+			'post_status'    => 'publish',
+			'posts_per_page' => -1,
+			'fields'         => 'ids',
+		]
+	);
+	$rows  = [];
+	foreach ( $ids as $id ) {
+		$path = (string) wp_parse_url( (string) get_permalink( $id ), PHP_URL_PATH );
+		$hit  = \TechDella\Core\Cli\RedirectRules::match( $rules, $path );
+		if ( ! $hit || trim( (string) wp_parse_url( $hit['target'], PHP_URL_PATH ), '/' ) === trim( $path, '/' ) ) {
+			continue;
+		}
+		if ( ! $dry ) {
+			wp_update_post(
+				[
+					'ID'          => (int) $id,
+					'post_status' => 'draft',
+				]
+			);
+		}
+		$rows[] = [
+			'id'     => $id,
+			'type'   => get_post_type( $id ),
+			'path'   => $path,
+			'target' => $hit['target'],
+			'result' => $dry ? 'would unpublish' : 'unpublished (draft)',
+		];
+	}
+	Utils\format_items( 'table', $rows, [ 'id', 'type', 'path', 'target', 'result' ] );
+	WP_CLI::success( sprintf( '%d redirected page(s) %s.', count( $rows ), $dry ? 'would be unpublished' : 'unpublished' ) );
+}
+
+WP_CLI::add_command( 'td legacy:retire', 'td_cli_legacy_retire' );

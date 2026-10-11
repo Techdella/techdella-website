@@ -242,7 +242,65 @@ function td_redirects_import_rank_math( array $rules, bool $dry = false ): array
 		}
 		update_option( 'td_redirects_rank_math_ids', array_values( array_unique( $ids ) ), false );
 	}
+	// Older redirects (from the old site) that send one of our destination pages somewhere else
+	// make chains or loops, e.g. /services/ → /cmo-as-a-service/ while we send that back to
+	// /services/. Deactivate them (reversible in Rank Math → Redirections), never delete.
+	$targets = [];
+	foreach ( $rules as $rule ) {
+		$path = trim( (string) wp_parse_url( (string) $rule['target'], PHP_URL_PATH ), '/' );
+		$host = (string) wp_parse_url( (string) $rule['target'], PHP_URL_HOST );
+		if ( '' !== $path && ( '' === $host || (string) wp_parse_url( home_url(), PHP_URL_HOST ) === $host ) ) {
+			$targets[ strtolower( $path ) ] = true;
+		}
+	}
+	foreach ( td_redirects_conflicting_rank_math( array_keys( $targets ), $ids ) as $row ) {
+		if ( ! $dry ) {
+			global $wpdb;
+			$wpdb->update( $wpdb->prefix . 'rank_math_redirections', [ 'status' => 'inactive' ], [ 'id' => (int) $row['id'] ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		}
+		$report[] = [
+			'source' => 'old ' . $row['pattern'],
+			'target' => $row['url_to'],
+			'result' => $dry ? 'would deactivate (points away from a new page)' : 'deactivated (pointed away from a new page)',
+		];
+	}
 	return $report;
+}
+
+/**
+ * Active Rank Math redirections we did not create whose exact source is one of our targets.
+ *
+ * @param string[] $targets Target paths without slashes, lower case.
+ * @param int[]    $ours    IDs created by our import.
+ * @return array<int,array{id:int,pattern:string,url_to:string}>
+ */
+function td_redirects_conflicting_rank_math( array $targets, array $ours ): array {
+	global $wpdb;
+	$table = $wpdb->prefix . 'rank_math_redirections';
+	if ( ! $targets || $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $table ) ) !== $table ) { // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		return [];
+	}
+	$ours = array_flip( array_merge( $ours, array_map( 'intval', (array) get_option( 'td_redirects_rank_math_ids', [] ) ) ) );
+	$rows = (array) $wpdb->get_results( "SELECT id, sources, url_to FROM {$table} WHERE status = 'active'", ARRAY_A ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+	$want = array_flip( $targets );
+	$out  = [];
+	foreach ( $rows as $row ) {
+		if ( isset( $ours[ (int) $row['id'] ] ) ) {
+			continue;
+		}
+		foreach ( (array) maybe_unserialize( $row['sources'] ) as $src ) {
+			$pattern = strtolower( trim( (string) ( $src['pattern'] ?? '' ), '/' ) );
+			if ( 'exact' === ( $src['comparison'] ?? '' ) && isset( $want[ $pattern ] ) ) {
+				$out[] = [
+					'id'      => (int) $row['id'],
+					'pattern' => '/' . $pattern . '/',
+					'url_to'  => (string) $row['url_to'],
+				];
+				break;
+			}
+		}
+	}
+	return $out;
 }
 
 /**

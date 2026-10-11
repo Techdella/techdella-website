@@ -30,7 +30,7 @@ if ( ! function_exists( 'td_video_figure' ) ) {
 			$v = trim( (string) $v );
 			return ( '' !== $v && ( str_starts_with( $v, 'http' ) || str_starts_with( $v, '/' ) ) ) ? $v : '';
 		};
-		$ratio = in_array( $a['ratio'] ?? '', [ '16:9', '1:1', '9:16' ], true ) ? (string) $a['ratio'] : '16:9';
+		$ratio = in_array( $a['ratio'] ?? '', [ '16:9', '1:1', '9:16', '4:5' ], true ) ? (string) $a['ratio'] : '16:9';
 		$scene = sanitize_key( (string) ( $a['scene'] ?? '' ) );
 		if ( '' !== $scene ) {
 			$set = (array) ( ( (array) get_option( 'td_videos', [] ) )[ $scene ] ?? [] );
@@ -38,6 +38,7 @@ if ( ! function_exists( 'td_video_figure' ) ) {
 				'16:9' => 'wide',
 				'1:1'  => 'square',
 				'9:16' => 'tall',
+				'4:5'  => 'portrait',
 			][ $ratio ];
 			foreach ( [ 'mp4', 'webm', 'poster' ] as $key ) {
 				if ( empty( $a[ $key ] ) && ! empty( $set[ $fmt ][ $key ] ) ) {
@@ -63,6 +64,7 @@ if ( ! function_exists( 'td_video_figure' ) ) {
 			'16:9' => [ 1920, 1080 ],
 			'1:1'  => [ 1080, 1080 ],
 			'9:16' => [ 1080, 1920 ],
+			'4:5'  => [ 1080, 1350 ],
 		][ $ratio ];
 		$title = trim( (string) ( $a['title'] ?? '' ) );
 
@@ -138,7 +140,7 @@ $td_surf  = in_array( $td_a['surface'] ?? '', [ 'canvas', 'sand', 'dark' ], true
 
 if ( ! $td_items && '' === $td_head ) {
 	// One clip, no section: the figure is the block wrapper (as before).
-	$td_ratio = in_array( $td_a['ratio'] ?? '', [ '16:9', '1:1', '9:16' ], true ) ? (string) $td_a['ratio'] : '16:9';
+	$td_ratio = in_array( $td_a['ratio'] ?? '', [ '16:9', '1:1', '9:16', '4:5' ], true ) ? (string) $td_a['ratio'] : '16:9';
 	$td_mode  = 'player' === ( $td_a['mode'] ?? '' ) ? 'player' : 'loop';
 	echo td_video_figure( $td_a, td_block_wrapper( 'td-video td-video--' . $td_mode . ' td-video--r' . str_replace( ':', 'x', $td_ratio ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped inside.
 	return;
