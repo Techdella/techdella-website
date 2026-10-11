@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer (marketing): brand + tagline, Services / Company / Social columns,
+ * Footer (marketing): brand + tagline, Services / Explore / Company / Social columns,
  * copyright + legal links (Main.dc.html).
  */
 
@@ -23,6 +23,14 @@ $td_company  = td_footer_links(
 		__( 'TechDella Studios', 'techdella' ) => td_url( 'studios', '/' ),
 	]
 );
+$td_explore  = [
+	__( 'Industries', 'techdella' )      => td_url( 'marketing', '/solution/' ),
+	__( 'Locations', 'techdella' )       => td_url( 'marketing', '/locations/' ),
+	__( 'Free guides', 'techdella' )     => td_url( 'marketing', '/resources/' ),
+	__( 'Glossary', 'techdella' )        => td_url( 'marketing', '/glossary/' ),
+	__( 'Free tools', 'techdella' )      => td_url( 'marketing', '/tools/' ),
+	__( 'Business guides', 'techdella' ) => td_url( 'marketing', '/business/' ),
+];
 $td_services = td_footer_links( 'footer-1', $td_services );
 $td_social   = td_social_links();
 ?>
@@ -36,6 +44,10 @@ $td_social   = td_social_links();
 			<nav class="td-footer__col" aria-labelledby="td-footer-services">
 				<h2 class="td-footer__heading" id="td-footer-services"><?php esc_html_e( 'Services', 'techdella' ); ?></h2>
 				<ul role="list"><?php echo td_footer_list( $td_services ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></ul>
+			</nav>
+			<nav class="td-footer__col" aria-labelledby="td-footer-explore">
+				<h2 class="td-footer__heading" id="td-footer-explore"><?php esc_html_e( 'Explore', 'techdella' ); ?></h2>
+				<ul role="list"><?php echo td_footer_list( $td_explore ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></ul>
 			</nav>
 			<nav class="td-footer__col" aria-labelledby="td-footer-company">
 				<h2 class="td-footer__heading" id="td-footer-company"><?php esc_html_e( 'Company', 'techdella' ); ?></h2>

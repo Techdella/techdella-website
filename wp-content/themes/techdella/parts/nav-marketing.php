@@ -12,9 +12,9 @@ $td_services  = td_nav_services();
 $td_hub       = td_url( 'marketing', '/services/' );
 $td_cta       = td_button( __( 'Get an audit', 'techdella' ), td_url( 'marketing', '/growth-audit/' ), 'primary', [ 'size' => 'sm' ] );
 $td_links     = [
-	[ __( 'Paid ads', 'techdella' ), td_url( 'marketing', '/services/paid-ads/' ) ],
-	[ __( 'How we work', 'techdella' ), td_url( 'marketing', '/#how' ) ],
+	[ __( 'Industries', 'techdella' ), td_url( 'marketing', '/solution/' ) ],
 	[ __( 'Customers', 'techdella' ), td_url( 'marketing', '/case-studies/' ) ],
+	[ __( 'Resources', 'techdella' ), td_url( 'marketing', '/resources/' ) ],
 	[ __( 'Journal', 'techdella' ), td_url( 'journal', '/' ) ],
 	[ __( 'Studios', 'techdella' ), td_url( 'studios', '/' ) ],
 ];
