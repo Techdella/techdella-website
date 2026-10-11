@@ -15,14 +15,6 @@ get_header();
 while ( have_posts() ) :
 	the_post();
 	?>
-	<style>
-		.td-article__figure{margin:0 auto 48px}
-		.td-article__figure img{display:block;width:100%;height:auto;max-height:560px;object-fit:cover;border-radius:var(--td-r-lg)}
-		.td-article__layout{display:grid;grid-template-columns:minmax(0,1fr);gap:32px;padding-bottom:var(--td-space)}
-		.td-article__main{min-width:0;max-width:720px;display:flex;flex-direction:column;gap:32px}
-		.td-article__main>*{margin-block:0}
-		@media (min-width:1024px){.td-article__layout{grid-template-columns:230px minmax(0,1fr);gap:64px}}
-	</style>
 	<article <?php post_class( 'td-article' ); ?>>
 		<?php echo td_block( 'post-header' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		<?php if ( has_post_thumbnail() ) : ?>

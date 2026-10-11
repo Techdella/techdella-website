@@ -27,16 +27,6 @@ $td_photo  = $td_person && $td_person['photo'] ? td_image(
 ) : '';
 $td_photo  = str_starts_with( $td_photo, '<!--' ) ? '' : $td_photo;
 ?>
-<style>
-	.td-author-head{display:grid;gap:24px 40px;align-items:center;padding-bottom:48px}
-	@media (min-width:760px){.td-author-head{grid-template-columns:160px minmax(0,1fr)}}
-	.td-author-head__photo{width:160px;aspect-ratio:4/5;margin:0;border-radius:var(--td-arch);overflow:hidden;background:var(--td-sand)}
-	.td-author-head__photo img{display:block;width:100%;height:100%;object-fit:cover}
-	.td-author-head h1{margin:8px 0 6px}
-	.td-author-head__role{margin:0 0 12px;color:var(--td-muted);font-weight:500}
-	.td-author-head__bio{margin:0;max-width:640px}
-	.td-author-head__links{margin:16px 0 0}
-</style>
 <header class="td-container td-section td-author-head">
 	<?php if ( '' !== $td_photo ) : ?>
 		<figure class="td-author-head__photo"><?php echo $td_photo; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></figure>

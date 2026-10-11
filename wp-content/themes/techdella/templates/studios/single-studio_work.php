@@ -40,20 +40,6 @@ while ( have_posts() ) :
 		$td_gallery[] = (int) get_post_thumbnail_id();
 	}
 	?>
-	<style>
-		.td-work-single__head{padding-bottom:40px}
-		.td-work-single__status{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 18px}
-		.td-work-single__title{margin:0 0 16px}
-		.td-work-single__meta{display:flex;flex-wrap:wrap;gap:12px 40px;margin:28px 0 0;padding:20px 0 0;border-top:1px solid var(--td-line)}
-		.td-work-single__meta dt{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--td-muted)}
-		.td-work-single__meta dd{margin:4px 0 0;color:var(--td-ink);font-weight:500}
-		.td-work-single__gallery{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));margin:0 0 56px;padding:0;list-style:none}
-		.td-work-single__gallery li:first-child{grid-column:1/-1}
-		.td-work-single__gallery figure{margin:0;border-radius:var(--td-r-md);overflow:hidden;background:var(--td-canvas)}
-		.td-work-single__gallery img{display:block;width:100%;height:auto}
-		.td-work-single__gallery li:not(:first-child) img{max-height:640px;object-fit:contain}
-		.td-work-single__body{padding-bottom:var(--td-space)}
-	</style>
 	<article <?php post_class( 'td-work-single' ); ?>>
 		<header class="td-container td-section td-work-single__head">
 			<?php
