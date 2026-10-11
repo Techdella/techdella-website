@@ -69,7 +69,7 @@ while ( have_posts() ) :
 					<span class="td-chip"><?php esc_html_e( 'Live project', 'techdella' ); ?></span>
 				<?php endif; ?>
 			</p>
-			<h1 class="td-work-single__title"><?php the_title(); ?></h1>
+			<h1 class="td-h1 td-work-single__title"><?php the_title(); ?></h1>
 			<?php if ( has_excerpt() ) : ?>
 				<p class="td-lead"><?php echo td_mark_placeholders( esc_html( get_the_excerpt() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
@@ -125,7 +125,7 @@ while ( have_posts() ) :
 		?>
 		<section class="td-case-grid td-section td-section--canvas td-case-grid--cover" aria-labelledby="td-more-work">
 			<div class="td-container">
-				<div class="td-section-head"><h2 class="td-section-head__title" id="td-more-work"><?php echo td_accent( __( 'More *work*', 'techdella' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2></div>
+				<?php echo td_section_head( [ 'title' => __( 'More *work*', 'techdella' ), 'id' => 'td-more-work' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				<ul class="td-case-grid__list" role="list">
 					<?php foreach ( $td_cards as $td_case ) : ?>
 						<li><?php echo td_a3_case_card( $td_case, 'cover', 3 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></li>

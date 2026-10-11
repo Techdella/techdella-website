@@ -43,7 +43,7 @@ $td_photo  = str_starts_with( $td_photo, '<!--' ) ? '' : $td_photo;
 	<?php endif; ?>
 	<div>
 		<?php echo td_chip( __( 'Author', 'techdella' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-		<h1><?php echo esc_html( $td_name ); ?></h1>
+		<h1 class="td-h1"><?php echo esc_html( $td_name ); ?></h1>
 		<?php if ( $td_person && '' !== $td_person['role'] ) : ?>
 			<p class="td-author-head__role"><?php echo esc_html( $td_person['role'] ); ?></p>
 		<?php endif; ?>

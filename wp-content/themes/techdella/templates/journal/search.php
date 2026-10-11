@@ -11,7 +11,7 @@ get_header();
 ?>
 <header class="td-container td-section" style="padding-bottom:40px">
 	<?php echo td_chip( __( 'Search', 'techdella' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-	<h1>
+	<h1 class="td-h1">
 		<?php
 		/* translators: %s: search terms */
 		printf( esc_html__( 'Results for “%s”', 'techdella' ), esc_html( get_search_query() ) );

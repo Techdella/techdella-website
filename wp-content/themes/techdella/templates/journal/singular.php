@@ -33,7 +33,7 @@ while ( have_posts() ) :
 				td_breadcrumbs();
 			}
 			?>
-			<h1><?php the_title(); ?></h1>
+			<h1 class="td-h1"><?php the_title(); ?></h1>
 		</header>
 		<div class="td-container td-container--narrow td-prose" style="padding-bottom:var(--td-space)">
 			<?php the_content(); ?>
