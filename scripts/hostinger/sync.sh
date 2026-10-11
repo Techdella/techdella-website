@@ -111,6 +111,8 @@ if [ "$REFRESH" = 1 ]; then
   for d in case-studies solutions locations glossary business journal; do
     [ -d "$BUNDLE/content/$d" ] && $WP td import-content "$BUNDLE/content/$d" --status=draft --update-published --publish
   done
+  # Article covers (title + photo in the arch) where an article has no image of its own.
+  $WP td covers:generate
   # Old redirects that fight the new ones are switched off; old pages that are now redirected
   # (e.g. the old service pages) are unpublished (draft, never deleted).
   $WP td redirects import --file="$BUNDLE/data/redirects.csv"
