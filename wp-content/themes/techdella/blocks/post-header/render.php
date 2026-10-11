@@ -46,7 +46,12 @@ if ( '' === $td_title ) {
 }
 $td_posts_page = (int) get_option( 'page_for_posts' );
 $td_journal    = $td_posts_page ? (string) get_permalink( $td_posts_page ) : home_url( '/' );
-$td_avatar     = $td_person && ! empty( $td_person['photo'] ) ? td_image(
+$td_crumb      = __( 'Journal', 'techdella' );
+if ( $td_post && 'business' === $td_post->post_type ) { // Business library lives on Marketing under /business/.
+	$td_journal = (string) get_post_type_archive_link( 'business' );
+	$td_crumb   = __( 'Business guides', 'techdella' );
+}
+$td_avatar = $td_person && ! empty( $td_person['photo'] ) ? td_image(
 	$td_person['photo'],
 	[
 		'alt'       => '',
@@ -55,8 +60,8 @@ $td_avatar     = $td_person && ! empty( $td_person['photo'] ) ? td_image(
 		'width'     => 44,
 	]
 ) : '';
-$td_avatar     = str_starts_with( $td_avatar, '<!--' ) ? '' : $td_avatar;
-$td_sub        = array_filter(
+$td_avatar = str_starts_with( $td_avatar, '<!--' ) ? '' : $td_avatar;
+$td_sub    = array_filter(
 	[
 		$td_person ? (string) ( $td_person['role'] ?? '' ) : '',
 		/* translators: %d: minutes */
@@ -67,7 +72,7 @@ $td_sub        = array_filter(
 <header <?php echo td_block_wrapper( 'td-post-header' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<div class="td-container td-post-header__inner">
 		<nav class="td-post-header__crumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'techdella' ); ?>">
-			<a href="<?php echo esc_url( $td_journal ); ?>"><?php esc_html_e( 'Journal', 'techdella' ); ?></a>
+			<a href="<?php echo esc_url( $td_journal ); ?>"><?php echo esc_html( $td_crumb ); ?></a>
 			<?php if ( '' !== $td_cat_n ) : ?>
 				<span aria-hidden="true">/</span>
 				<?php if ( '' !== $td_cat_u ) : ?>

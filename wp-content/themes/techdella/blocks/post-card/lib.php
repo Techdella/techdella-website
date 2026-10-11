@@ -14,7 +14,24 @@ if ( ! function_exists( 'td_a3_reading_time' ) ) {
 	 * @param int $post_id Post ID.
 	 */
 	function td_a3_reading_time( int $post_id ): int {
-		$words = str_word_count( wp_strip_all_tags( (string) get_post_field( 'post_content', $post_id ) ) );
+		$raw   = (string) get_post_field( 'post_content', $post_id );
+		$words = str_word_count( wp_strip_all_tags( $raw ) );
+		// Article blocks (callout, faq, steps …) keep their text in the block comment's JSON attributes.
+		if ( preg_match_all( '/<!-- wp:techdella\/[a-z0-9-]+ (\{.*?\}) \/?-->/s', $raw, $m ) ) {
+			foreach ( $m[1] as $json ) {
+				$attrs = json_decode( $json, true );
+				if ( is_array( $attrs ) ) {
+					array_walk_recursive(
+						$attrs,
+						static function ( $v ) use ( &$words ) {
+							if ( is_string( $v ) && str_contains( $v, ' ' ) ) {
+								$words += str_word_count( wp_strip_all_tags( $v ) );
+							}
+						}
+					);
+				}
+			}
+		}
 		return max( 1, (int) round( $words / 230 ) );
 	}
 }
