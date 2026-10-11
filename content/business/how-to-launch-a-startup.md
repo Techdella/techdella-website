@@ -46,6 +46,12 @@ Year 5 | 51.5
 source: US Bureau of Labor Statistics, Business Employment Dynamics, Table 7, 2025 | https://www.bls.gov/bdm/us_age_naics_00_table7.txt
 :::
 
+:::stats
+79.2% | of US private establishments opened in the year to March 2019 were still open a year later | US Bureau of Labor Statistics, Business Employment Dynamics, 2025 | https://www.bls.gov/bdm/us_age_naics_00_table7.txt
+51.5% | of that same group were still open five years later | US Bureau of Labor Statistics, Business Employment Dynamics, 2025 | https://www.bls.gov/bdm/us_age_naics_00_table7.txt
+1 year | of monthly expenses: the minimum the SBA suggests counting when you plan startup costs | US Small Business Administration, 2026 | https://www.sba.gov/business-guide/plan-your-business/calculate-your-startup-costs
+:::
+
 These are all kinds of establishments, not only tech startups, but the lesson carries: the first years are the riskiest, and every month of runway buys you another chance to find what works.
 
 ## What to set up before launching a startup

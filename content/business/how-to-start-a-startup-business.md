@@ -55,6 +55,12 @@ SMEs: uninsured | 63.9
 source: NBS and SMEDAN, MSME National Survey 2017 | https://www.nigerianstat.gov.ng/pdfuploads/SMEDAN%20REPORT%20Launch%20Presentation%202017.pdf
 :::
 
+:::stats "Starting points in numbers"
+41,543,028 | enterprises counted in Nigeria's 2017 national MSME survey, 99.8% of them micro businesses | NBS and SMEDAN, MSME National Survey 2017 | https://www.nigerianstat.gov.ng/pdfuploads/SMEDAN%20REPORT%20Launch%20Presentation%202017.pdf
+Under $300 | typical total cost to register a business in the US, depending on state and structure | US Small Business Administration, 2026 | https://www.sba.gov/business-guide/launch-your-business/register-your-business
+£100 | to register a UK limited company online, usually within 24 hours | GOV.UK, 2026 | https://www.gov.uk/limited-company-formation/register-your-company
+:::
+
 The survey report itself links low business planning and low formalization to failure and to investors' reluctance to provide capital. You don't need a thick plan. You need a short one that you actually use, and a registered business that can sign contracts and take payments.
 
 ## How to start a startup business, step by step
