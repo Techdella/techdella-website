@@ -63,8 +63,10 @@ if ( ! function_exists( 'td_nav_services' ) ) {
 		);
 		return array_map(
 			static fn( WP_Post $p ): array => [
-				// "Fintech Marketing Agency" reads as "Fintech" in a menu headed "Industries".
-				'label' => trim( (string) preg_replace( '/\s+Marketing Agency$/i', '', get_the_title( $p ) ) ),
+				// "Fintech Marketing Agency" reads as "Fintech" under "Industries"; a market page by its market.
+				'label' => 'location' === $type && function_exists( 'td_field' ) && '' !== trim( (string) td_field( 'market', $p->ID ) )
+					? trim( (string) td_field( 'market', $p->ID ) )
+					: trim( (string) preg_replace( '/\s+Marketing Agency$/i', '', get_the_title( $p ) ) ),
 				'url'   => (string) get_permalink( $p ),
 			],
 			$posts

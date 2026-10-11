@@ -1,17 +1,17 @@
 source,target,code,condition,notes
 /locations/ibadan-nigeria/,/locations/nigeria/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
 /locations/abuja-nigeria/,/locations/nigeria/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
-/locations/mumbai-india/,/locations/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
+/locations/mumbai-india/,/services/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
 /locations/germany/,/locations/europe/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
 /locations/new-york/,/locations/usa/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
-/locations/pakistan/,/locations/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
+/locations/pakistan/,/services/,301,GSC check first,"301 only if <20 clicks/12mo in GSC, else rebuild"
 /guides/,https://blog.techdella.com/,301,,Guides index moves to the Journal
 /guide/email-marketing-setup-problems/,https://blog.techdella.com/email-marketing-setup-problems/,301,,Guide moves to Journal (see D1)
 /free-tools/,/tools/,301,,Duplicate of /tools/ archive
 /startup-quiz/,/growth-audit/,301,,Replaced by Growth Audit
 /cmo-as-a-service/,/services/,301,,Retired offer
 /vibe-marketing/,/services/marketing-automation/,301,,Folded into AI automation
-/global-expansion/,/locations/,301,,Folded into markets hub
+/global-expansion/,/services/,301,,Markets have no hub page (owner, 11 Oct 2026): the nav lists them
 /studio/,https://studios.techdella.com/,301,,Studios moves to subdomain
 /mvp-calculator/,https://studios.techdella.com/mvp-calculator/,301,,Studios tool
 /services/content-marketing/,/services/seo/,301,,
@@ -69,3 +69,4 @@ source,target,code,condition,notes
 /founder-dashboard/,https://hub.techdella.com/,301,,Legacy redirect carried from old theme (fixed targets)
 /guide/,https://blog.techdella.com/,301,prefix,Legacy redirect carried from old theme (fixed targets)
 /guide/*,https://blog.techdella.com/$1,301,regex ^/guide/(.+)$,Catch-all for any guide not listed
+/locations/,/services/,301,,Locations have no hub page (owner, 11 Oct 2026): the nav and footer list the markets

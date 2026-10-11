@@ -36,6 +36,7 @@ $td_defaults = [
 	'form'          => 'paper',
 	'sequence'      => 'canvas',
 	'flow'          => 'dark',
+	'text'          => 'paper',
 ];
 $td_tablet   = [
 	1 => 2,
@@ -255,6 +256,20 @@ else :
 							</div>
 							<?php
 						endif;
+						break;
+
+					case 'text':
+						?>
+						<?php if ( ! empty( $td_t['value'] ) ) : ?>
+							<span class="td-bento__num" aria-hidden="true"><?php echo esc_html( (string) $td_t['value'] ); ?></span>
+						<?php endif; ?>
+						<div class="td-bento__textbody">
+							<?php $td_head(); ?>
+							<?php if ( ! empty( $td_t['text'] ) ) : ?>
+								<p class="td-bento__text"><?php echo $td_text( $td_t['text'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+							<?php endif; ?>
+						</div>
+						<?php
 						break;
 
 					case 'quote':

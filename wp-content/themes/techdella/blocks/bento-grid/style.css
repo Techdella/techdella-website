@@ -149,3 +149,12 @@ a.td-bento__tile:focus-visible{outline:2px solid var(--td-orange);outline-offset
   .td-bento__tile--search .td-bento__title,.td-bento__tile--platform-list .td-bento__title{font-size:26px}
 }
 @media (prefers-reduced-motion:reduce){a.td-bento__tile:hover{transform:none}}
+
+/* text tile: a short point (number, eyebrow, title, text), no image. */
+.td-bento__tile--text{justify-content:space-between;gap:20px}
+.td-bento__tile--text .td-bento__num{font-family:var(--td-font-serif);font-style:italic;font-size:30px;line-height:1;color:var(--td-muted)}
+.td-bento__tile--dark.td-bento__tile--text .td-bento__num{color:var(--td-orange)}
+.td-bento__textbody{display:flex;flex-direction:column;gap:8px}
+.td-bento__tile--text .td-bento__title{font-size:19px;line-height:1.25;letter-spacing:-.02em}
+.td-bento__tile--text .td-bento__text{font-size:14.5px;line-height:1.55}
+.td-bento:not(.td-bento--fixed-rows) .td-bento__tile--text{min-height:210px}
