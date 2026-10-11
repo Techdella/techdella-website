@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 // No section title → tile titles are the section's headings (keeps the H1 → H2 order).
 $td_item_h = empty( $attributes['title'] ) ? 'h2' : 'h3';
-$td_tiles = array_filter( (array) ( $attributes['tiles'] ?? [] ), 'is_array' );
+$td_tiles  = array_filter( (array) ( $attributes['tiles'] ?? [] ), 'is_array' );
 if ( ! $td_tiles ) {
 	return;
 }
@@ -85,7 +85,7 @@ $td_wrap     = $td_style ? [ 'style' => $td_style ] : [];
 				}
 				echo '<' . $td_tag . $td_attrs . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- tag is a/div, attrs escaped above.
 
-				$td_head = static function () use ( $td_t, $td_text ): void {
+				$td_head = static function () use ( $td_t, $td_text, $td_item_h ): void {
 					if ( ! empty( $td_t['eyebrow'] ) ) {
 						echo '<span class="td-bento__eyebrow">' . $td_text( $td_t['eyebrow'] ) . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					}
