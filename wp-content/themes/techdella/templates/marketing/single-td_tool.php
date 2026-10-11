@@ -53,7 +53,6 @@ while ( have_posts() ) :
 	$td_component = sanitize_title( (string) td_field( 'tool_component', $td_id ) );
 	$td_component = '' !== $td_component ? $td_component : preg_replace( '/^free-/', '', (string) get_post_field( 'post_name', $td_id ) );
 	$td_gate      = 'email' === td_field( 'gate', $td_id );
-	$td_ai        = in_array( $td_component, [ 'persona-builder', 'ai-business-name-generator' ], true );
 	$td_related   = td_m2_tool_related( (string) $td_component );
 	$td_svc_path  = (string) $td_related['service'][1];
 	$td_svc_url   = str_starts_with( $td_svc_path, 'studios:' ) ? td_url( 'studios', substr( $td_svc_path, 8 ) ) : home_url( $td_svc_path );
@@ -77,26 +76,21 @@ while ( have_posts() ) :
 		<div class="td-container td-m2-tool-layout">
 			<div>
 				<section class="td-m2-tool" data-td-tool="<?php echo esc_attr( (string) $td_component ); ?>" aria-label="<?php echo esc_attr( get_the_title() ); ?>">
-					<div class="td-m2-tool__placeholder"><?php esc_html_e( 'Tool loads here', 'techdella' ); ?></div>
-					<?php if ( $td_ai ) : ?>
-						<p class="td-muted" style="font-size:14px;margin-top:14px"><?php esc_html_e( 'Results are AI-generated. Check them before you use them.', 'techdella' ); ?></p>
-					<?php endif; ?>
-				</section>
-
-				<?php if ( $td_gate ) : ?>
-					<div style="margin-top:32px">
-						<?php
+					<?php
+					// The tool app block renders the form, the email gate (gate=email) and the results.
+					if ( WP_Block_Type_Registry::get_instance()->is_registered( 'techdella/tool-' . $td_component ) ) {
 						echo td_block( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-							'form',
+							'tool-' . $td_component,
 							[
-								'formKey' => 'tool_gate',
-								'variant' => 'light',
-								'hidden'  => [ 'tool_slug' => (string) get_post_field( 'post_name', $td_id ) ],
+								'gate' => $td_gate,
+								'slug' => (string) get_post_field( 'post_name', $td_id ),
 							]
 						);
-						?>
-					</div>
-				<?php endif; ?>
+					} else {
+						echo '<p class="td-m2-tool__placeholder">' . esc_html__( 'This tool is not available yet.', 'techdella' ) . '</p>';
+					}
+					?>
+				</section>
 
 				<?php // Result unit: ≥ 150px below the tool's buttons and inputs (§12.2). ?>
 				<div class="td-m2-tool-result"><?php echo td_block( 'ad-slot', [ 'position' => 'result' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>

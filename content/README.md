@@ -74,7 +74,8 @@ Rules:
 
 - Every other key becomes a field: through ACF when the field exists (repeaters, user, date and
   relationship fields are mapped: lists → rows, logins → users, `2026-10-10` → date, slugs → posts),
-  otherwise post meta.
+  otherwise post meta. A repeater row with several sub-fields is one line split on ` | `, in field
+  order: `- "What score should I aim for? | Aim for grade 8 or lower."` fills `question` and `answer`.
 - YAML support is deliberately small: scalars, quoted strings, `[inline, lists]`, `- block lists`, and maps
   one level deep (with lists inside). No anchors, tags or `{inline: maps}`.
 - The body is Markdown (converted to blocks: paragraphs, headings, lists, quotes, tables, images). The title

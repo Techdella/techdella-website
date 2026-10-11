@@ -263,7 +263,7 @@ final class AiTools {
 	 */
 	public static function validate_output( string $tool, array $data ): ?array {
 		$str = static function ( $v, int $max ): string {
-			$v = is_scalar( $v ) ? trim( (string) preg_replace( '/\s+/u', ' ', strip_tags( (string) $v ) ) ) : '';
+			$v = is_scalar( $v ) ? trim( (string) preg_replace( '/\s+/u', ' ', strip_tags( (string) $v ) ) ) : ''; // phpcs:ignore WordPress.WP.AlternativeFunctions.strip_tags_strip_tags -- pure PHP, unit-tested without WordPress.
 			return function_exists( 'mb_substr' ) ? mb_substr( $v, 0, $max ) : substr( $v, 0, $max );
 		};
 		if ( 'ai-business-name-generator' === $tool ) {

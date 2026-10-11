@@ -78,3 +78,7 @@
 .td-tool__mock-subject{font-weight:600;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .td-tool__mock-pre{font-size:14px;color:var(--td-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media (prefers-reduced-motion:reduce){.td-tool__input,.td-tool *{transition:none!important}}
+.td-tool__lead{margin:0;font-weight:500;color:var(--td-ink)}
+.td-tool__names{margin:0;padding:0;list-style:none;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.td-tool__name{padding:14px 16px;border:1px solid var(--td-line);border-radius:var(--td-r-sm);background:var(--td-paper)}
+.td-tool__name .td-tool__badge{margin-left:6px;vertical-align:middle}

@@ -146,11 +146,11 @@ final class Ssrf {
 		}
 		if ( ! preg_match( '#^[a-z][a-z0-9+.-]*://#i', $url ) ) {
 			if ( preg_match( '#^[a-z][a-z0-9+.-]*:#i', $url ) && ! preg_match( '#^[^:/]+:\d+#', $url ) ) {
-				return $fail( 'scheme' ); // javascript:, file:, data: …
+				return $fail( 'scheme' ); // Blocks the javascript, file and data schemes.
 			}
 			$url = 'https://' . ltrim( $url, '/' );
 		}
-		$parts = parse_url( $url ); // phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url -- pure class, no WordPress.
+		$parts  = parse_url( $url ); // phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url -- pure class, no WordPress.
 		$scheme = strtolower( (string) ( is_array( $parts ) ? ( $parts['scheme'] ?? '' ) : strtok( $url, ':' ) ) );
 		if ( ! in_array( $scheme, [ 'http', 'https' ], true ) ) {
 			return $fail( 'scheme' );
@@ -220,8 +220,8 @@ final class Ssrf {
 	 * Resolve a host and vet every address. One private address blocks the host
 	 * (so a DNS answer can't smuggle an internal address in next to a public one).
 	 *
-	 * @param string                          $host     Host (name or IP literal).
-	 * @param callable(string):array<string> $resolver Returns the A/AAAA addresses for a name.
+	 * @param string   $host     Host (name or IP literal).
+	 * @param callable $resolver fn(string $host): string[], the A/AAAA addresses for a name.
 	 * @return array{ok:bool,error:string,ip:string,ips:string[]}
 	 */
 	public static function resolve( string $host, callable $resolver ): array {
@@ -291,22 +291,22 @@ final class Ssrf {
 	 * [ 'status' => int, 'headers' => array<string,string> (lowercase), 'body' => string ]
 	 * or [ 'error' => 'timeout'|'unreachable' ].
 	 *
-	 * @param string                          $url           Start URL.
-	 * @param callable(string):array<string> $resolver      DNS resolver.
-	 * @param callable                        $http          Pinned transport.
-	 * @param float                           $timeout       Seconds for all hops together.
-	 * @param int[]                           $ports         Allowed ports.
-	 * @param int                             $max_redirects Max redirects.
+	 * @param string   $url           Start URL.
+	 * @param callable $resolver      DNS resolver: fn(string $host): string[].
+	 * @param callable $http          Pinned transport.
+	 * @param float    $timeout       Seconds for all hops together.
+	 * @param int[]    $ports         Allowed ports.
+	 * @param int      $max_redirects Max redirects.
 	 * @return array{ok:bool,error:string,status:int,headers:array<string,string>,body:string,url:string,redirects:int}
 	 */
 	public static function fetch( string $url, callable $resolver, callable $http, float $timeout = 5.0, array $ports = [ 80, 443 ], int $max_redirects = 3 ): array {
-		$out      = static fn( bool $ok, string $error, string $final = '', int $hops = 0, int $status = 0, array $headers = [], string $body = '' ): array => [
+		$out      = static fn( bool $ok, string $error, string $final_url = '', int $hops = 0, int $status = 0, array $headers = [], string $body = '' ): array => [
 			'ok'        => $ok,
 			'error'     => $error,
 			'status'    => $status,
 			'headers'   => $headers,
 			'body'      => $body,
-			'url'       => $final,
+			'url'       => $final_url,
 			'redirects' => $hops,
 		];
 		$deadline = microtime( true ) + $timeout;

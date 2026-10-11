@@ -108,7 +108,7 @@ test('resource: lead_magnet form carries the resource slug', async ({ page }) =>
 
 test('tool: app mount, then content; three ad positions', async ({ page }) => {
   await page.goto(site('marketing', '/tools/free-utm-parameter-generator/'));
-  await expect(page.locator('[data-td-tool="utm-parameter-generator"]')).toContainText('Tool loads here');
+  await expect(page.locator('[data-td-tool="utm-parameter-generator"] [data-td-tool-app="utm-parameter-generator"]')).toBeVisible();
   for (const pos of ['result', 'content', 'sidebar']) {
     await expect(page.locator(`[data-td-ad="${pos}"]`)).toHaveCount(1);
   }

@@ -208,6 +208,23 @@ function td_import_acf_fields( int $post_id ): array {
 }
 
 /**
+ * Split a front-matter repeater row "a | b | c" across sub-field names, in order.
+ * Extra parts join the last sub-field; missing ones stay empty.
+ *
+ * @param string            $row  Row text.
+ * @param array<int,string> $subs Sub-field names.
+ * @return array<string,string>
+ */
+function td_import_split_row( string $row, array $subs ): array {
+	$parts = array_map( 'trim', explode( ' | ', $row, max( 1, count( $subs ) ) ) );
+	$out   = [];
+	foreach ( $subs as $i => $sub ) {
+		$out[ $sub ] = $parts[ $i ] ?? '';
+	}
+	return $out;
+}
+
+/**
  * Write one field: ACF (with light type mapping) when it knows the field,
  * else post meta.
  *
@@ -216,7 +233,15 @@ function td_import_acf_fields( int $post_id ): array {
  * @param mixed  $value   Value from front matter.
  */
 function td_import_set_field( int $post_id, string $name, $value ): void {
-	$name  = sanitize_key( $name );
+	$name = sanitize_key( $name );
+	// Repeater rows written as "a | b" fill the sub-fields in order (e.g. faq:
+	// "Question? | Answer."). Uses the JSON field definitions, so it works with
+	// free ACF too, where repeaters are saved as plain meta.
+	$def = function_exists( 'td_cpt_fields' ) ? ( td_cpt_fields()->fields( (string) get_post_type( $post_id ) )[ $name ] ?? null ) : null;
+	if ( is_array( $def ) && 'repeater' === ( $def['type'] ?? '' ) && is_array( $value ) && array_is_list( $value ) && ! empty( $def['sub_fields'] ) ) {
+		$subs  = array_map( static fn( $f ) => (string) $f['name'], (array) $def['sub_fields'] );
+		$value = array_map( static fn( $v ) => is_array( $v ) ? $v : td_import_split_row( (string) $v, $subs ), $value );
+	}
 	$field = td_import_acf_fields( $post_id )[ $name ] ?? null;
 	if ( is_array( $field ) && function_exists( 'update_field' ) ) {
 		$type = (string) ( $field['type'] ?? '' );

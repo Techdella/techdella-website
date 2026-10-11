@@ -88,7 +88,8 @@ function td_field( string $name, ?int $post_id = null ) {
 	}
 	if ( function_exists( 'get_field' ) ) {
 		$value = get_field( $name, $post_id );
-		if ( null !== $value && false !== $value && '' !== $value ) {
+		// [] too: free ACF has no repeater type, so rows saved as plain meta read back empty.
+		if ( null !== $value && false !== $value && '' !== $value && [] !== $value ) {
 			return $value;
 		}
 	}

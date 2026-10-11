@@ -64,7 +64,7 @@ a:hover{color:var(--td-orange-text)}
 .td-prose table{width:100%;border-collapse:collapse;font-size:15px}
 .td-prose :is(th,td){text-align:left;padding:12px 14px;border-bottom:1px solid var(--td-line)}
 .td-prose th{font-weight:600;background:var(--td-canvas)}
-.td-prose code{font-family:var(--td-font-mono);font-size:.9em;background:var(--td-canvas);padding:.1em .35em;border-radius:6px}
+.td-prose code{font-family:var(--td-font-mono);font-size:.9em;background:var(--td-canvas);padding:.1em .35em;border-radius:6px;overflow-wrap:anywhere}
 .td-prose pre{background:var(--td-ink);color:var(--td-paper);padding:18px 20px;border-radius:var(--td-r-sm);overflow-x:auto}
 .td-prose pre code{background:none;padding:0;color:inherit}
 .td-prose hr{border:0;border-top:1px solid var(--td-line);margin-block:2.2em}

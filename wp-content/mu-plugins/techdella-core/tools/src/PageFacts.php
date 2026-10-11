@@ -9,6 +9,8 @@ namespace TechDella\Core\Tools;
 
 defined( 'ABSPATH' ) || exit;
 
+// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- DOMDocument's own property names.
+
 /**
  * HTML + robots.txt parsing.
  */
@@ -34,8 +36,8 @@ final class PageFacts {
 		libxml_use_internal_errors( $prev );
 		$xp = new \DOMXPath( $doc );
 
-		$text = static fn( ?\DOMNode $n ): string => null === $n ? '' : trim( (string) preg_replace( '/\s+/u', ' ', (string) $n->textContent ) );
-		$attr = static function ( string $query, string $name ) use ( $xp ): string {
+		$text  = static fn( ?\DOMNode $n ): string => null === $n ? '' : trim( (string) preg_replace( '/\s+/u', ' ', (string) $n->textContent ) );
+		$attr  = static function ( string $query, string $name ) use ( $xp ): string {
 			$n = $xp->query( $query );
 			if ( false === $n || 0 === $n->length ) {
 				return '';
