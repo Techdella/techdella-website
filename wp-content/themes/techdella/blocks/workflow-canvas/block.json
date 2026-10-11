@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/workflow-canvas",
+	"title": "Workflow canvas",
+	"category": "techdella",
+	"icon": "networking",
+	"description": "Automation workflow mock: nodes joined by SVG lines that light up in sequence (static under reduced motion). An ordered list for screen readers; always labelled as an example. Bare by default so it can sit in a hero's right-hand slot.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"caption": { "type": "string", "default": "Example workflow" },
+		"steps": { "type": "array", "default": [] },
+		"bubble": { "type": "object", "default": {} },
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"animate": { "type": "boolean", "default": true },
+		"contained": { "type": "boolean", "default": false }
+	},
+	"example": {
+		"attributes": {
+			"caption": "Example workflow",
+			"steps": [
+				{ "kind": "trigger", "label": "Trigger", "title": "New form submission" },
+				{ "kind": "ai", "label": "AI step", "title": "Score, summarize, draft reply" },
+				{ "kind": "branch", "branches": [
+					{ "label": "If hot", "title": "WhatsApp reply + Slack alert to sales", "hot": true },
+					{ "label": "If warm", "title": "Start email nurture sequence" }
+				] },
+				{ "kind": "crm", "label": "CRM", "title": "Contact, score & owner saved" }
+			],
+			"bubble": { "meta": "WhatsApp · 2 min after form", "text": "Hi Ada, thanks for reaching out about SOC 2. Here’s a link to book a call with our team." },
+			"contained": true
+		}
+	},
+	"techdella": {
+		"controls": { "steps": "json", "bubble": "json", "intro": "textarea" },
+		"help": "steps: [{kind: trigger|ai|crm|step|branch, label, title}] — a branch step takes branches: [{label, title, hot}]. bubble: {meta, text} (optional message preview). Set a title to render it as its own section; leave it empty to drop it into a hero slot (td_block('hero', $attrs, td_block('workflow-canvas', …)))."
+	}
+}

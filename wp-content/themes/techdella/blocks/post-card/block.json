@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/post-card",
+	"title": "Post card",
+	"category": "techdella",
+	"icon": "media-document",
+	"description": "One Journal post: cover (featured image, or the template cover with the category in type), category · read time, title link.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"postId": { "type": "integer", "default": 0 },
+		"meta": { "type": "string", "enum": [ "read", "date" ], "default": "read" },
+		"tone": { "type": "integer", "default": 0 },
+		"item": { "type": "object", "default": {} }
+	},
+	"example": {
+		"attributes": {
+			"item": { "title": "AEO vs SEO vs GEO", "category": "AI Search", "cover": "SEO *vs* GEO" },
+			"tone": 0
+		}
+	},
+	"techdella": {
+		"controls": { "item": "json" },
+		"help": "postId: a published post. Without one, the inline item {title, category, cover, minutes, url, image} renders with an 'Example' label (for previews only; use post ideas from the content calendar, not invented articles). tone 0–3 picks the cover surface."
+	}
+}

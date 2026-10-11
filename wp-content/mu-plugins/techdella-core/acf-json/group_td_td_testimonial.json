@@ -1,0 +1,119 @@
+{
+    "key": "group_td_td_testimonial",
+    "title": "TechDella · Testimonial",
+    "fields": [
+        {
+            "key": "field_td_td_testimonial_permission_confirmed",
+            "label": "Permission confirmed",
+            "name": "permission_confirmed",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Tick only when the person has approved this exact wording and attribution in writing. The testimonial cannot be published until this is ticked.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "ui": 1,
+            "default_value": 0,
+            "message": "Approved in writing"
+        },
+        {
+            "key": "field_td_td_testimonial_quote",
+            "label": "Quote",
+            "name": "quote",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Verbatim. Copy it exactly from the source; never edit, shorten or \"tidy\" it.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 4
+        },
+        {
+            "key": "field_td_td_testimonial_name",
+            "label": "Name",
+            "name": "name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Full name as they write it.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_td_testimonial_role",
+            "label": "Role",
+            "name": "role",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "e.g. \"CEO\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_td_testimonial_company",
+            "label": "Company",
+            "name": "company",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "e.g. \"WezOps\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_td_testimonial_source_url",
+            "label": "Source URL",
+            "name": "source_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Where the quote was published (case study, review, post), so anyone can verify it.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "td_testimonial"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for testimonial entries (CLAUDE.md §7). Also registered as post meta by techdella-core/cpt.",
+    "show_in_rest": 0,
+    "modified": 1791590400
+}

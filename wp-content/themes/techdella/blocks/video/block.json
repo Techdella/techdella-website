@@ -1,0 +1,134 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/video",
+	"title": "Video (self-hosted)",
+	"category": "techdella",
+	"icon": "video-alt3",
+	"description": "Self-hosted video from Uploads (§6.3): WebM + MP4 sources, poster, captions. Loop mode plays muted only near the viewport, has a pause button, and shows the poster only for visitors who prefer reduced motion. Player mode shows controls and never autoplays.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"multiple": true
+	},
+	"attributes": {
+		"scene": {
+			"type": "string",
+			"default": ""
+		},
+		"mp4": {
+			"type": [
+				"integer",
+				"string"
+			],
+			"default": ""
+		},
+		"webm": {
+			"type": [
+				"integer",
+				"string"
+			],
+			"default": ""
+		},
+		"poster": {
+			"type": [
+				"integer",
+				"string"
+			],
+			"default": ""
+		},
+		"captions": {
+			"type": [
+				"integer",
+				"string"
+			],
+			"default": ""
+		},
+		"mode": {
+			"type": "string",
+			"enum": [
+				"loop",
+				"player"
+			],
+			"default": "loop"
+		},
+		"ratio": {
+			"type": "string",
+			"enum": [
+				"16:9",
+				"1:1",
+				"9:16"
+			],
+			"default": "16:9"
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"description": {
+			"type": "string",
+			"default": ""
+		},
+		"duration": {
+			"type": "integer",
+			"default": 0
+		},
+		"label": {
+			"type": "string",
+			"default": ""
+		},
+		"caption": {
+			"type": "string",
+			"default": ""
+		},
+		"items": {
+			"type": "array",
+			"default": []
+		},
+		"heading": {
+			"type": "string",
+			"default": ""
+		},
+		"intro": {
+			"type": "string",
+			"default": ""
+		},
+		"chip": {
+			"type": "string",
+			"default": ""
+		},
+		"surface": {
+			"type": "string",
+			"enum": [
+				"",
+				"canvas",
+				"sand",
+				"dark"
+			],
+			"default": ""
+		}
+	},
+	"example": {
+		"attributes": {
+			"mode": "loop",
+			"ratio": "16:9",
+			"title": "How a new lead is handled",
+			"label": "Example"
+		}
+	},
+	"techdella": {
+		"controls": {
+			"mp4": "media:video",
+			"webm": "media:video",
+			"poster": "media",
+			"captions": "media:text",
+			"description": "textarea",
+			"caption": "textarea",
+			"items": "json",
+			"intro": "textarea"
+		},
+		"help": "scene: a motion sample slug (e.g. mo-03-ai-answer-cited) imported with `wp td media:videos`; it fills mp4/webm/poster/captions in the format that matches ratio (16:9 wide, 1:1 square, 9:16 tall), and any file set here overrides it. mp4/webm/poster/captions: a Media Library ID or a URL in Uploads (render with `npm run motion:render`, then upload assets/video/<id>-<format>.*). title names the video for screen readers and VideoObject schema; description and duration (seconds) complete the schema. label: e.g. Example or Concept. Never autoplays with sound; no YouTube embeds above the fold (§6.3). items: several clips in a row, each {scene, title, description, duration, label, caption}; the other settings are shared. heading (one *accent* word), intro, chip and surface (canvas|sand|dark) wrap the video(s) in a section with a heading."
+	}
+}

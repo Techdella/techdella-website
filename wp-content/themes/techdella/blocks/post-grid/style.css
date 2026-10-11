@@ -1,0 +1,24 @@
+/* techdella/post-grid */
+.td-post-grid{padding-block:64px 96px}
+.td-post-grid--canvas{padding-block:88px}
+.td-post-grid__inner{display:flex;flex-direction:column;gap:28px}
+.td-post-grid__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px}
+.td-post-grid__heading{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.td-post-grid__title{font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-.05em}
+.td-post-grid--list .td-post-grid__title,.td-post-grid--canvas .td-post-grid__title{font-size:clamp(28px,3vw,32px);letter-spacing:-.045em}
+.td-post-grid__filters ul{margin:0;padding:4px;list-style:none;display:flex;flex-wrap:wrap;gap:4px;background:var(--td-canvas);border-radius:var(--td-r-pill)}
+.td-post-grid__filters a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;font-size:14px;font-weight:500;padding:9px 16px;border-radius:var(--td-r-pill)}
+.td-post-grid__filters a:hover{background:var(--td-paper);color:var(--td-ink)}
+.td-post-grid__filters a.is-active{background:var(--td-ink);color:var(--td-paper)}
+.td-post-grid__cards{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:40px 22px}
+.td-post-grid--canvas .td-post-grid__cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.td-post-grid__rows{margin:0;padding:0;list-style:none;border-top:1px solid var(--td-line-soft)}
+.td-post-grid__row{position:relative;display:flex;flex-wrap:wrap;gap:6px 24px;align-items:baseline;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--td-line-soft)}
+.td-post-grid__row-title{flex:1 1 480px;font-size:17px;font-weight:500;line-height:1.4;letter-spacing:-.01em}
+.td-post-grid__row-title a{text-decoration:none}
+.td-post-grid__row-title a::after{content:"";position:absolute;inset:0}
+.td-post-grid__row:hover .td-post-grid__row-title a{text-decoration:underline}
+.td-post-grid__row-meta{font-size:13.5px;color:var(--td-muted)}
+.td-post-grid__example{margin-left:6px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.td-post-grid__more{align-self:center;margin-top:10px}
+@media (max-width:760px){.td-post-grid__filters ul{border-radius:22px}}

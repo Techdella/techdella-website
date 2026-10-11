@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/timeline",
+	"title": "Timeline",
+	"category": "techdella",
+	"icon": "backup",
+	"description": "Vertical alternating timeline (Options B \"How we work\"): numbered steps, each with a card and a short serif note or an image on the other side. Single column on phones.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"items": { "type": "array", "default": [] }
+	},
+	"example": {
+		"attributes": {
+			"title": "From first call to *results*",
+			"intro": "Five clear steps. You always know what’s happening and what you’ll get.",
+			"items": [
+				{ "title": "Discovery call", "text": "Goals, market, budget and what’s been tried.", "result": "A fit check", "note": "day one" },
+				{ "title": "Audit & strategy", "text": "Search, ads, funnel and tracking reviewed and ranked by impact.", "result": "A growth plan", "note": "understand first" },
+				{ "title": "Scope & setup", "text": "Fixed scope, then tracking, accounts, CRM and creative briefs.", "result": "Tracking that works", "note": "agreed in writing" },
+				{ "title": "Create & launch", "text": "We write, design and build the pages, creatives, emails and automations.", "result": "Live campaigns", "image": "photos/techdella-team-group", "imageAlt": "The TechDella team planning a launch" },
+				{ "title": "Optimize & report", "text": "Testing and improving every week, reporting on leads and revenue.", "result": "A monthly report", "note": "then we repeat", "dark": true }
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "intro": "textarea", "items": "json" },
+		"help": "Items: [{title, text, result (shown as \"You get: …\"), note (serif aside) or image + imageAlt, dark}]. Cards alternate sides; the first step number is the section's one orange highlight."
+	}
+}

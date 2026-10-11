@@ -1,0 +1,21 @@
+/* techdella/serp-mock */
+.td-serp-mock{margin:0;display:flex;flex-direction:column;gap:10px;border-radius:30px;padding:26px}
+.td-serp-mock--sand{background-color:var(--td-sand);background-image:radial-gradient(45% 50% at 70% 30%,rgba(255,255,255,.65),transparent 70%)}
+.td-serp-mock--plain{background:var(--td-canvas);border-radius:var(--td-r-md);padding:18px}
+.td-serp-mock p.td-serp-mock__query{display:flex;align-items:center;gap:8px;font-size:13px;background:var(--td-paper);border-radius:var(--td-r-pill);padding:8px 14px;color:var(--td-body);align-self:flex-start;max-width:100%}
+.td-serp-mock__query svg{flex:0 0 auto}
+.td-serp-mock__results{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
+.td-serp-mock__result{display:flex;gap:14px;align-items:flex-start;border-radius:18px;padding:14px 16px;min-width:0}
+.td-serp-mock__result--hl{background:var(--td-paper);box-shadow:var(--td-shadow-lift)}
+.td-serp-mock__result--muted{background:rgba(255,255,255,.6);margin-left:30px;padding-block:12px}
+.td-serp-mock--plain .td-serp-mock__result--muted{background:var(--td-paper);margin-left:0}
+.td-serp-mock__rank{font-size:28px;font-weight:600;letter-spacing:-.04em;line-height:1}
+.td-serp-mock__body{display:flex;flex-direction:column;gap:2px;min-width:0}
+.td-serp-mock__url{font-size:12px;color:var(--td-muted);overflow-wrap:anywhere}
+.td-serp-mock__url strong{color:var(--td-ink)}
+.td-serp-mock__title{font-size:16px;font-weight:600;color:#1A0DAB;line-height:1.3}
+.td-serp-mock__result--muted .td-serp-mock__title{font-size:14px;font-weight:400;color:var(--td-ink-soft)}
+.td-serp-mock__text{font-size:13px;color:var(--td-body)}
+.td-serp-mock__sitelinks{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;color:#1A0DAB;margin-top:4px}
+.td-serp-mock__caption{font-size:11.5px;color:var(--td-body);align-self:flex-end}
+@media (max-width:480px){.td-serp-mock{padding:18px}.td-serp-mock__result--muted{margin-left:12px}}

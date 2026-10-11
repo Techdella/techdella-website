@@ -1,0 +1,52 @@
+/* TechDella HQ dashboard, help page and field fallback box (§14.2). */
+.td-hq__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+.td-hq__actions li { margin: 0; }
+.wp-core-ui .td-hq__action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+}
+.td-hq__crm { font-size: 14px; font-weight: 600; }
+.td-hq__crm a { display: inline-flex; align-items: center; min-height: 44px; }
+.td-hq__list li { margin: 0 0 8px; }
+.td-hq__list a { font-weight: 500; }
+.td-hq__meta { color: #6B6560; }
+.td-hq__sub { margin: 16px 0 8px; font-size: 13px; }
+.td-hq__health { margin: 0; }
+.td-hq__health-item {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin: 0 0 6px;
+}
+.td-hq__health-item strong {
+  flex: none;
+  min-width: 48px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  text-align: center;
+  background: #EFEDE9;
+  color: #0D0D0D;
+}
+.td-hq__health-item--ok strong { background: #0D0D0D; color: #FFFFFF; }
+.td-hq__health-item--bad strong { background: #FDF0E9; color: #C23B07; }
+
+.td-help { max-width: 820px; }
+.td-help__card {
+  background: #FFFFFF;
+  border: 1px solid #E7E4DF;
+  border-radius: 20px;
+  padding: 8px 24px 16px;
+  margin: 0 0 16px;
+}
+.td-help__card ol { margin-left: 1.4em; }
+.td-help__card li { margin-bottom: 6px; }
+.td-confirm { background: #FDF0E9; color: #C23B07; padding: 0 4px; border-radius: 4px; }

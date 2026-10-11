@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/post-featured",
+	"title": "Featured post",
+	"category": "techdella",
+	"icon": "star-filled",
+	"description": "Journal FEATURED panel: sand fade, a large serif cover word, the post's summary, named author with read time, CTAs and an arch portrait of the author with question chips.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"postId": { "type": "integer", "default": 0 },
+		"label": { "type": "string", "default": "Featured guide" },
+		"word": { "type": "string", "default": "" },
+		"summary": { "type": "string", "default": "" },
+		"ctaLabel": { "type": "string", "default": "Read the guide" },
+		"chips": { "type": "array", "default": [] },
+		"image": { "type": [ "string", "integer" ], "default": "" },
+		"item": { "type": "object", "default": {} }
+	},
+	"example": {
+		"attributes": {
+			"label": "Featured guide",
+			"word": "Visible",
+			"chips": [ "Is our brand mentioned?", "Who gets cited instead?" ],
+			"item": {
+				"title": "What is AI search optimization, and why should businesses care?",
+				"category": "AI Search",
+				"excerpt": "How AI answers choose which brands to mention, and what you can realistically influence.",
+				"author": "Joanna Okedara-Kalu",
+				"role": "Founder & CEO",
+				"image": "team/joanna-okedara-kalu"
+			}
+		}
+	},
+	"techdella": {
+		"controls": { "summary": "textarea", "chips": "json", "image": "media", "item": "json" },
+		"help": "postId 0 = the newest sticky post, else the newest post. word: the big serif cover word (defaults to the category). The portrait is the author's td_team photo unless image is set. item is a preview-only example."
+	}
+}

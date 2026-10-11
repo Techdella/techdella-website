@@ -1,0 +1,100 @@
+/* techdella/ad-mock */
+.td-ad{--td-ad-w:280px;position:relative;margin:0;width:var(--td-ad-w);max-width:100%;overflow:hidden;background:var(--td-paper);color:var(--td-ink);border-radius:20px;box-shadow:0 30px 60px -26px rgba(13,13,13,.45);font-size:12.5px;line-height:1.45}
+.td-ad--fluid{width:100%;height:100%}
+.td-ad__label{position:absolute;top:10px;right:10px;z-index:3;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:rgba(13,13,13,.78);color:var(--td-paper);border-radius:var(--td-r-pill);padding:3px 9px;line-height:1.4}
+.td-ad__media{position:relative;overflow:hidden;background:var(--td-sand)}
+.td-ad__media :is(picture,img){width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.td-ad__placeholder{position:absolute;inset:0;background:linear-gradient(160deg,var(--td-sand),var(--td-canvas))}
+.td-ad__shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,13,.2),transparent 30%,transparent 55%,rgba(13,13,13,.85))}
+.td-ad__tag{position:absolute;left:12px;top:12px;z-index:2;font-size:10.5px;font-weight:600;color:var(--td-paper);background:rgba(13,13,13,.55);border-radius:var(--td-r-pill);padding:3px 9px}
+.td-ad__tag--light{background:var(--td-paper);color:var(--td-ink);font-size:11.5px;padding:4px 10px}
+.td-ad__tag--bottom{top:auto;bottom:12px}
+.td-ad__cta{align-self:flex-start;font-size:11px;font-weight:600;background:var(--td-paper);color:var(--td-ink);border-radius:6px;padding:4px 8px}
+.td-ad__cta--signal{background:var(--td-orange-text);color:var(--td-paper)}
+/* TikTok / reel (9:16) */
+.td-ad--tiktok,.td-ad--reel{--td-ad-w:220px;aspect-ratio:9/16;background:var(--td-ink);border-radius:30px;color:var(--td-paper)}
+.td-ad--reel{--td-ad-w:260px;border-radius:var(--td-r-lg)}
+.td-ad--tiktok .td-ad__media,.td-ad--reel .td-ad__media{position:absolute;inset:0}
+.td-ad--reel .td-ad__shade{background:linear-gradient(180deg,transparent 50%,rgba(13,13,13,.8))}
+.td-ad--reel .td-ad__tag{background:var(--td-paper);color:var(--td-ink);font-size:11.5px;padding:4px 10px}
+.td-ad__sticker{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);z-index:2;width:72%;text-align:center;font-size:16px;font-weight:700;line-height:1.2;color:var(--td-ink);background:var(--td-paper);border-radius:8px;padding:6px 10px}
+.td-ad__actions{position:absolute;right:10px;bottom:100px;z-index:2;display:flex;flex-direction:column;gap:14px;font-size:16px;text-align:center}
+.td-ad__bottom{position:absolute;left:12px;right:44px;bottom:16px;z-index:2;display:flex;flex-direction:column;gap:6px}
+.td-ad--reel .td-ad__bottom{right:16px}
+.td-ad--reel .td-ad__headline{font-size:19px;line-height:1.15;letter-spacing:-.02em}
+.td-ad__headline{font-size:14px;line-height:1.2}
+/* Instagram (1:1) */
+.td-ad--instagram{--td-ad-w:170px;border-radius:18px}
+.td-ad--instagram .td-ad__media{aspect-ratio:1/1;background:var(--td-ink)}
+.td-ad__tag--dark{top:8px;left:8px;font-size:10px;padding:2px 8px}
+.td-ad__bar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 13px;font-size:12px}
+.td-ad--instagram .td-ad__bar{padding:8px 10px;font-size:11px}
+.td-ad__bar-text{color:var(--td-body);font-weight:500}
+.td-ad__button{flex:0 0 auto;font-weight:600;border:1px solid var(--td-ink);border-radius:var(--td-r-pill);padding:4px 10px;background:var(--td-paper)}
+/* Meta / LinkedIn */
+.td-ad__head{display:flex;align-items:center;gap:9px;padding:11px 13px}
+.td-ad__avatar{width:30px;height:30px;border-radius:8px;background:var(--td-ink);color:var(--td-paper);font-weight:700;font-size:13px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.td-ad--meta .td-ad__avatar{border-radius:50%}
+.td-ad__who{display:flex;flex-direction:column;line-height:1.2}
+.td-ad__who span{font-size:10.5px;color:var(--td-muted)}
+.td-ad p.td-ad__copy{padding:0 13px 10px;color:var(--td-ink-soft)}
+.td-ad--meta .td-ad__media{aspect-ratio:1/1}
+.td-ad--meta .td-ad__bar{background:var(--td-canvas)}
+.td-ad--meta .td-ad__bar-text{color:var(--td-ink);font-weight:600}
+.td-ad--meta .td-ad__button{border-color:var(--td-line);border-radius:8px;padding:6px 10px}
+.td-ad--linkedin{--td-ad-w:270px}
+.td-ad--linkedin .td-ad__media{aspect-ratio:1.91/1}
+.td-ad__overlay{position:absolute;left:10px;bottom:10px;right:10px;width:max-content;max-width:calc(100% - 20px);font-size:14px;font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--td-paper);background:rgba(13,13,13,.7);border-radius:8px;padding:5px 9px}
+.td-ad--meta .td-ad__overlay{font-size:18px;padding:6px 10px;border-radius:10px;letter-spacing:-.03em}
+.td-ad--linkedin-document{--td-ad-w:300px}
+.td-ad__doc{display:flex;gap:8px;padding:18px;background:var(--td-canvas)}
+.td-ad__page{flex:1;aspect-ratio:3/4;background:var(--td-paper);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:1.2}
+.td-ad__page small{font-size:11px;color:var(--td-muted)}
+.td-ad__page i{display:block;height:6px;width:90%;background:var(--td-line-soft);border-radius:3px}
+.td-ad__page i.td-ad__line--short{width:60%}
+.td-ad__page b{display:block;margin-top:auto;height:34px;background:var(--td-ink);border-radius:6px}
+.td-ad__page b.td-ad__block--sand{margin-top:0;height:40px;background:var(--td-sand)}
+/* Google search */
+.td-ad--google-search{--td-ad-w:300px;padding:14px 16px;border-radius:18px;display:flex;flex-direction:column;gap:10px;box-shadow:0 24px 50px -26px rgba(13,13,13,.4)}
+.td-ad--google-search .td-ad__label{top:auto;bottom:10px}
+.td-ad p.td-ad__query{display:flex;align-items:center;gap:8px;font-size:13px;background:var(--td-canvas);border-radius:var(--td-r-pill);padding:8px 14px;color:var(--td-body);align-self:flex-start;max-width:calc(100% - 70px)}
+.td-ad__result{display:flex;flex-direction:column;gap:3px}
+.td-ad__url{font-size:11.5px;overflow-wrap:anywhere}
+.td-ad--google-search .td-ad__headline{font-size:15px;color:#1A0DAB;line-height:1.3}
+.td-ad--google-search .td-ad__text{font-size:12px;color:var(--td-ink-soft)}
+.td-ad__sitelinks{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:#1A0DAB;margin-top:4px;padding-bottom:18px}
+/* Display, carousel, video, motion tiles (creative gallery) */
+.td-ad--google-display,.td-ad--motion{padding:20px;display:flex;flex-direction:column;gap:10px;border-radius:var(--td-r-lg);box-shadow:none;min-height:214px}
+.td-ad__kind{font-size:11.5px;color:var(--td-muted)}
+.td-ad__banner{flex:1;background:var(--td-ink);border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px;color:var(--td-paper);font-size:15px;line-height:1.15}
+.td-ad--carousel{background:var(--td-ink);color:var(--td-paper);padding:24px;display:flex;flex-direction:column;gap:12px;border-radius:var(--td-r-lg);box-shadow:none;min-height:214px}
+.td-ad--carousel .td-ad__kind{color:var(--td-on-dark)}
+.td-ad__slides{flex:1;display:flex;gap:8px;margin:0;padding:0;list-style:none}
+.td-ad__slide{flex:1;min-width:0;border-radius:14px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;gap:12px;font-size:14px;line-height:1.2}
+.td-ad__slide span{font-size:11px}
+.td-ad__slide--0{background:var(--td-paper);color:var(--td-ink)}
+.td-ad__slide--0 strong{font-size:16px;letter-spacing:-.02em}
+.td-ad__slide--0 span{color:var(--td-muted)}
+.td-ad__slide--1{background:var(--td-sand);color:var(--td-ink)}
+.td-ad__slide--1 span{color:var(--td-body)}
+.td-ad__slide--2{background:var(--td-dark-2);color:var(--td-paper)}
+.td-ad__slide--2 span{color:var(--td-on-dark)}
+.td-ad--video{border-radius:var(--td-r-lg);box-shadow:none;min-height:214px;background:var(--td-sand)}
+.td-ad--video .td-ad__media{position:absolute;inset:0}
+.td-ad__motion{flex:1;position:relative;background:var(--td-sand);border-radius:14px;color:var(--td-ink);display:flex;align-items:center;justify-content:center;min-height:120px}
+.td-ad__motion svg{width:70px;height:84px}
+.td-ad__motion-bar{stroke:var(--td-orange)}
+@media (prefers-reduced-motion:no-preference){
+  .td-ad__motion-bar{stroke-dasharray:102;animation:td-ad-draw 2.4s ease-in-out infinite alternate}
+  @keyframes td-ad-draw{from{stroke-dashoffset:102}to{stroke-dashoffset:0}}
+}
+@media (max-width:420px){.td-ad__slide:nth-child(n+3){display:none}}
+/* Label placement where a platform tag sits top-left: stack label, then tag. */
+.td-ad:is(.td-ad--tiktok,.td-ad--reel,.td-ad--instagram) .td-ad__label{right:auto;left:12px;top:12px}
+.td-ad:is(.td-ad--tiktok,.td-ad--reel) .td-ad__tag{top:40px}
+.td-ad--instagram .td-ad__label{left:8px;top:8px}
+.td-ad--instagram .td-ad__tag--dark{top:34px}
+.td-ad.td-ad--google-search .td-ad__label{top:12px;bottom:auto}
+.td-ad--google-search .td-ad__url{padding-right:72px}
+.td-ad--google-search .td-ad__query+.td-ad__result .td-ad__url{padding-right:0}
+.td-ad--google-search .td-ad__sitelinks{padding-bottom:0}

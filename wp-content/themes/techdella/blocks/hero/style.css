@@ -1,0 +1,37 @@
+/* techdella/hero (service, solution, location pages) */
+.td-hero{position:relative;overflow:hidden}
+.td-hero--bg-canvas{background:var(--td-canvas)}
+.td-hero__grid{position:absolute;inset:0;background-image:linear-gradient(rgba(13,13,13,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(13,13,13,.05) 1px,transparent 1px);background-size:72px 72px;-webkit-mask-image:radial-gradient(ellipse 60% 70% at 25% 30%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 60% 70% at 25% 30%,#000 30%,transparent 75%)}
+.td-hero__inner{position:relative;padding-block:72px 96px;display:flex;flex-wrap:wrap;gap:48px;align-items:center}
+.td-hero__copy{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.td-hero__aside{flex:1.1 1 500px;min-width:0}
+.td-hero__crumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13.5px;color:var(--td-muted)}
+.td-hero__crumb a{color:var(--td-muted);display:inline-flex;align-items:center;min-height:24px}
+.td-hero__crumb-current{display:inline-flex;align-items:center;gap:7px;color:var(--td-ink);font-weight:500}
+.td-hero__crumb-current .td-dot{width:6px;height:6px}
+.td-hero__title{font-size:clamp(44px,5.6vw,76px);line-height:.98;letter-spacing:-.055em}
+.td-hero__lead{font-size:18.5px;color:var(--td-body);max-width:540px}
+.td-hero__ctas{display:flex;flex-wrap:wrap;gap:10px}
+.td-hero__platforms{display:flex;flex-direction:column;gap:10px}
+.td-hero__platforms-label{font-size:12.5px;color:var(--td-muted)}
+.td-hero__badges{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.td-hero__badges .td-badge{border-color:var(--td-line);border-radius:var(--td-r-sm);padding:6px 12px 6px 6px;font-size:13.5px}
+.td-hero__badges .td-badge__mark{width:24px;height:24px;border-radius:7px;font-size:11px}
+.td-hero__media{position:relative;border-radius:30px;overflow:hidden;background:var(--td-sand);aspect-ratio:6/5}
+.td-hero__media--arch{border-radius:var(--td-arch);aspect-ratio:4/5;max-width:440px;margin-inline:auto}
+.td-hero__media picture,.td-hero__media img{width:100%;height:100%;object-fit:cover}
+.td-hero__caption{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.92);border-radius:var(--td-r-pill);padding:5px 12px;font-size:12.5px;font-weight:500}
+.td-hero--center .td-hero__inner{justify-content:center;text-align:center}
+.td-hero--center .td-hero__copy{align-items:center;max-width:880px}
+.td-hero--center .td-hero__ctas,.td-hero--center .td-hero__badges{justify-content:center}
+@media (max-width:600px){.td-hero__inner{padding-block:48px 64px;gap:32px}.td-hero__copy,.td-hero__aside{flex-basis:100%}}
+/* imageSet: arch portrait mosaic (About pages). Middle column sits lower. */
+.td-hero__mosaic{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 12px;align-items:start}
+.td-hero__mosaic-item{display:flex;flex-direction:column;gap:8px;min-width:0}
+.td-hero__mosaic-item:nth-child(3n+2){transform:translateY(36px)}
+.td-hero__mosaic-photo{aspect-ratio:4/5;border-radius:var(--td-arch);overflow:hidden;background:var(--td-sand)}
+.td-hero__mosaic-photo picture,.td-hero__mosaic-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+.td-hero__mosaic-name{margin:0;font-size:13px;font-weight:600;line-height:1.3;color:var(--td-ink)}
+.td-hero__mosaic-name span{display:block;font-weight:400;color:var(--td-muted)}
+.td-hero__mosaic--6{padding-bottom:36px}
+@media (max-width:600px){.td-hero__mosaic{gap:10px 8px}.td-hero__mosaic-name{font-size:12px}.td-hero__mosaic-name span{display:none}.td-hero__mosaic-item:nth-child(3n+2){transform:translateY(20px)}.td-hero__mosaic--6{padding-bottom:20px}}

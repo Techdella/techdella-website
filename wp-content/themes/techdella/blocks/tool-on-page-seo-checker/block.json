@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/tool-on-page-seo-checker",
+	"title": "Tool: On-Page SEO Checker",
+	"category": "techdella",
+	"icon": "chart-bar",
+	"description": "Fetches a public URL server-side (SSRF-guarded) and checks title, meta, headings, schema, images and AI-crawler access. Free tool app (§12.1); used by the td_tool template via tool_component.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": false,
+		"multiple": false
+	},
+	"attributes": {
+		"gate": {
+			"type": "boolean",
+			"default": false
+		},
+		"slug": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"example": {
+		"attributes": {
+			"gate": false
+		}
+	},
+	"techdella": {
+		"controls": {
+			"slug": "hidden"
+		},
+		"help": "gate: true shows results only after the tool_gate email form succeeds (the tool page's gate field = email). slug: the tool page slug sent as tool_slug."
+	}
+}

@@ -1,0 +1,197 @@
+{
+  "main.css": {
+    "version": "731240320"
+  },
+  "core.css": {
+    "version": "731240328"
+  },
+  "blocks/ad-mock.css": {
+    "version": "731240328"
+  },
+  "blocks/ad-slot.css": {
+    "version": "731240328"
+  },
+  "blocks/ai-answer-mock.css": {
+    "version": "731240328"
+  },
+  "blocks/arch-people.css": {
+    "version": "731240328"
+  },
+  "blocks/author-box.css": {
+    "version": "731240328"
+  },
+  "blocks/before-after.css": {
+    "version": "731240328"
+  },
+  "blocks/bento-grid.css": {
+    "version": "731240328"
+  },
+  "blocks/built-for.css": {
+    "version": "731240328"
+  },
+  "blocks/button.css": {
+    "version": "731240328"
+  },
+  "blocks/case-card.css": {
+    "version": "731240328"
+  },
+  "blocks/case-grid.css": {
+    "version": "731240328"
+  },
+  "blocks/connected-services.css": {
+    "version": "731240328"
+  },
+  "blocks/creative-gallery.css": {
+    "version": "731240328"
+  },
+  "blocks/cta-dark.css": {
+    "version": "731240328"
+  },
+  "blocks/email-mock.css": {
+    "version": "731240328"
+  },
+  "blocks/faq.css": {
+    "version": "731240328"
+  },
+  "blocks/feature-grid.css": {
+    "version": "731240328"
+  },
+  "blocks/form.css": {
+    "version": "731240328"
+  },
+  "blocks/founder.css": {
+    "version": "731240332"
+  },
+  "blocks/funnel.css": {
+    "version": "731240332"
+  },
+  "blocks/hero.css": {
+    "version": "731240332"
+  },
+  "blocks/hero-orbit.css": {
+    "version": "731240332"
+  },
+  "blocks/hub-spoke.css": {
+    "version": "731240332"
+  },
+  "blocks/journey.css": {
+    "version": "731240336"
+  },
+  "blocks/label-chip.css": {
+    "version": "731240336"
+  },
+  "blocks/lead-mock.css": {
+    "version": "731240336"
+  },
+  "blocks/logo-strip.css": {
+    "version": "731240336"
+  },
+  "blocks/newsletter.css": {
+    "version": "731240336"
+  },
+  "blocks/photo-cards.css": {
+    "version": "731240336"
+  },
+  "blocks/platform-badges.css": {
+    "version": "731240336"
+  },
+  "blocks/popup.css": {
+    "version": "731240336"
+  },
+  "blocks/post-card.css": {
+    "version": "731240336"
+  },
+  "blocks/post-cta.css": {
+    "version": "731240336"
+  },
+  "blocks/post-featured.css": {
+    "version": "731240336"
+  },
+  "blocks/post-grid.css": {
+    "version": "731240336"
+  },
+  "blocks/post-header.css": {
+    "version": "731240336"
+  },
+  "blocks/pricing-cards.css": {
+    "version": "731240336"
+  },
+  "blocks/report-mock.css": {
+    "version": "731240336"
+  },
+  "blocks/section-head.css": {
+    "version": "731240336"
+  },
+  "blocks/serp-mock.css": {
+    "version": "731240336"
+  },
+  "blocks/service-switcher.css": {
+    "version": "731240336"
+  },
+  "blocks/stat-pills.css": {
+    "version": "731240336"
+  },
+  "blocks/steps-fold.css": {
+    "version": "731240336"
+  },
+  "blocks/studio-hero.css": {
+    "version": "731240336"
+  },
+  "blocks/tabs.css": {
+    "version": "731240336"
+  },
+  "blocks/testimonial.css": {
+    "version": "731240336"
+  },
+  "blocks/timeline.css": {
+    "version": "731240340"
+  },
+  "blocks/tldr.css": {
+    "version": "731240340"
+  },
+  "blocks/toc.css": {
+    "version": "731240340"
+  },
+  "blocks/tool-kit.css": {
+    "version": "731240340"
+  },
+  "blocks/video.css": {
+    "version": "731240340"
+  },
+  "blocks/workflow-canvas.css": {
+    "version": "731240340"
+  },
+  "editor.css": {
+    "version": "731240340"
+  },
+  "main.js": {
+    "version": "731240340"
+  },
+  "tools/ai-business-name-generator.js": {
+    "version": "731240340"
+  },
+  "tools/email-subject-line-analyzer.js": {
+    "version": "731240340"
+  },
+  "tools/hashtag-generator.js": {
+    "version": "731240340"
+  },
+  "tools/keyword-density-checker.js": {
+    "version": "731240340"
+  },
+  "tools/on-page-seo-checker.js": {
+    "version": "731240340"
+  },
+  "tools/persona-builder.js": {
+    "version": "731240340"
+  },
+  "tools/readability-checker.js": {
+    "version": "731240340"
+  },
+  "tools/utm-parameter-generator.js": {
+    "version": "731240340"
+  },
+  "editor.js": {
+    "version": "731240340"
+  }
+}

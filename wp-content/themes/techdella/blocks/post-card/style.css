@@ -1,0 +1,23 @@
+/* techdella/post-card (shared by post-grid, post-featured "keep reading") */
+.td-post-card-block{max-width:420px}
+.td-post-card{position:relative;display:flex;flex-direction:column;gap:12px}
+.td-post-card__media{position:relative;height:230px;border-radius:24px;overflow:hidden;background:var(--td-canvas)}
+.td-post-card--sm .td-post-card__media{height:190px;border-radius:22px}
+.td-post-card__media picture,.td-post-card__media img{width:100%;height:100%;object-fit:cover}
+.td-post-card__meta{font-size:13px;color:var(--td-muted)}
+.td-post-card__title{font-size:21px;font-weight:600;line-height:1.2;letter-spacing:-.03em}
+.td-post-card--sm .td-post-card__title{font-size:19px;line-height:1.25}
+.td-post-card__link{text-decoration:none;color:inherit}
+.td-post-card__link::after{content:"";position:absolute;inset:0}
+.td-post-card__link:focus-visible{outline:none}
+.td-post-card:has(.td-post-card__link:focus-visible){outline:2px solid var(--td-orange);outline-offset:4px;border-radius:24px}
+.td-post-card:hover .td-post-card__title{text-decoration:underline;text-underline-offset:4px}
+/* Template cover (IMG-12): category in type on a neutral surface */
+.td-post-cover{display:flex;align-items:center;justify-content:center;width:100%;height:100%;padding:24px;text-align:center}
+.td-post-cover__word{font-size:34px;font-weight:600;letter-spacing:-.045em;line-height:1.05}
+.td-post-cover__word .td-accent{font-weight:400;color:var(--td-muted);font-size:.9em}
+.td-post-cover--ink{background:var(--td-ink);color:var(--td-paper)}
+.td-post-cover--ink .td-accent{color:var(--td-on-dark)}
+.td-post-cover--sand{background:var(--td-sand)}
+.td-post-cover--canvas{background:var(--td-canvas)}
+.td-post-cover--line{background:var(--td-paper);border:1px solid var(--td-line);border-radius:inherit}

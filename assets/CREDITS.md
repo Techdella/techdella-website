@@ -1,0 +1,18 @@
+# Image credits
+
+Stock is used only where we have no real photo yet (§6.1). One source (Unsplash, Unsplash License:
+free for commercial use, no attribution required — credited here anyway), lightly warm-graded to the palette.
+Replace with the photo shoot (§6.2) and real creatives (`assets/creatives/`) when they exist.
+
+| File | Use | Source |
+|---|---|---|
+| `images/stock/designer-drawing-tablet-studio.jpg` | Home bento "Creative" tile | TourBox (@tourbox), https://unsplash.com/photos/artist-works-on-a-digital-tablet-in-her-studio-GTYPaQyspYA |
+| `images/stock/creator-recording-video-vertical.jpg` | Paid tile vertical ad thumb (labelled Example) | Vitaly Gariev (@silverkblack), https://unsplash.com/photos/woman-recording-a-video-in-a-stylish-room-theClRb3XB4 — cropped to 9:16 |
+
+Own images (TechDella / clients): `images/team/*`, `images/people/*`, `images/brand/*`, `images/clients/*`,
+`images/work/shopinbos-store-builder-hot-sauce.jpg` (Shopinbos product, from the techdella.com media library).
+| `images/stock/product-flatlay-notebook-candle-square.jpg` | Meta / Instagram ad mocks (Example) | Nadiia Shuran, https://unsplash.com/photos/a-table-with-a-notebook-candle-and-sweater-on-it (photo-1694754920848-8855ee3ff364) — cropped 1:1 |
+| `images/stock/designer-desk-swatches-wide.jpg` | LinkedIn ad mock (Example) | Theme Photos (@themephotos), https://unsplash.com/photos/designer-using-tablet-and-laptop-workspace-CGpifH3FjOA — cropped 1.91:1 |
+| `images/stock/shop-owner-checking-phone.jpg` | Studios MVP development hero; "Booking & payments MVP" concept | Ali Mkumbwa, https://unsplash.com/ (photo-1687422808248-f807f4ea2a2e) — warm-balanced |
+| `images/stock/woman-working-laptop-desk.jpg` | Studios AI automation hero; "Customer support assistant" concept | Daniel Thomas, https://unsplash.com/ (photo-1604933762021-54a5858c9832) — warm-balanced |
+| `images/stock/website-wireframe-sketches.jpg` | Studios website design hero | Hal Gatewood, https://unsplash.com/ (photo-1522542550221-31fd19575a2d) |

@@ -1,0 +1,178 @@
+{
+    "key": "group_td_studio_work",
+    "title": "TechDella · Studio work",
+    "fields": [
+        {
+            "key": "field_td_studio_work_client",
+            "label": "Client",
+            "name": "client",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The client's name, or the fictional brand for a concept.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_studio_work_status",
+            "label": "Status",
+            "name": "status",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Live = shipped for a real client. Concept = our own exploration; the page shows a visible \"Concept\" label. When unsure, choose Concept.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Live": "Live",
+                "Concept": "Concept"
+            },
+            "default_value": "Concept",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_td_studio_work_primary_kw",
+            "label": "Primary keyword",
+            "name": "primary_kw",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The one search phrase this page should rank for, validated in Ahrefs/Semrush/GSC first. Good: \"b2b seo services\". It must appear in the H1/title and in the first paragraph, or the pre-publish checklist blocks publishing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_studio_work_disciplines",
+            "label": "Disciplines",
+            "name": "disciplines",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "What we did, e.g. \"UI/UX design\", \"MVP development\", \"Motion\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add discipline",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_studio_work_disciplines_discipline",
+                    "label": "Discipline",
+                    "name": "discipline",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "One discipline, e.g. \"UI/UX design\".",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_studio_work_disciplines"
+                }
+            ]
+        },
+        {
+            "key": "field_td_studio_work_gallery",
+            "label": "Gallery",
+            "name": "gallery",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "Real screens or concept frames. Each image needs alt text that describes what is shown.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "preview_size": "medium",
+            "insert": "append",
+            "min": 0,
+            "max": 12
+        },
+        {
+            "key": "field_td_studio_work_video",
+            "label": "Video",
+            "name": "video",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "Self-hosted MP4 or WebM under 2.5 MB, with a poster. Never autoplay with sound; add captions where there is speech or text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "mime_types": "mp4,webm"
+        },
+        {
+            "key": "field_td_studio_work_case_study",
+            "label": "Case study",
+            "name": "case_study",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "The full case study, if one exists.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "case_study"
+            ],
+            "return_format": "id",
+            "allow_null": 1,
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "studio_work"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for studio work entries (CLAUDE.md §7). Also registered as post meta by techdella-core/cpt.",
+    "show_in_rest": 0,
+    "modified": 1791590400
+}

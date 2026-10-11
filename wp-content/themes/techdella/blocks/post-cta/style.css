@@ -1,0 +1,8 @@
+/* techdella/post-cta */
+.td-post-cta{background:var(--td-ink);color:var(--td-paper);border-radius:26px;padding:32px;display:flex;flex-wrap:wrap;gap:20px 28px;align-items:center;justify-content:space-between}
+.td-post-cta__copy{flex:1 1 320px;display:flex;flex-direction:column;gap:6px}
+.td-post-cta__title{font-size:22px;font-weight:600;letter-spacing:-.03em;line-height:1.25;color:var(--td-paper)}
+.td-post-cta__text{font-size:15.5px;line-height:1.6;color:var(--td-on-dark)}
+.td-prose .td-post-cta{margin-block:1.8em}
+.td-prose .td-post-cta a{text-decoration:none;color:var(--td-ink)}
+@media (max-width:480px){.td-post-cta{padding:24px}}

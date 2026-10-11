@@ -1,0 +1,259 @@
+<?php
+/**
+ * Title: Marketing · Pricing
+ * Slug: techdella/marketing-pricing
+ * Categories: techdella
+ * Description: Pricing / ways to start (Main "Ways to start" + Paid FIT + PRICING): hero, offers, paid ads fit and pricing, what every engagement includes, FAQ, CTA. Prices are starting points in US dollars, set Oct 2026 against market rates.
+ * Inserter: no
+ * TD Site: marketing
+ * TD Post Type: page
+ * TD Slug: pricing
+ * TD Title: Pricing
+ * TD Description: How to work with TechDella: start with a one-time Growth Audit, then a fixed-scope Growth Sprint or monthly Growth Management with clear deliverables.
+ *
+ * @package techdella
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+// Block array builders (serialized with serialize_blocks() at the end; core JSON-encodes the attributes).
+$td_b   = static fn( string $name, array $attrs = [], array $inner = [] ): array => [
+	'blockName'    => str_contains( $name, '/' ) ? $name : 'techdella/' . $name,
+	'attrs'        => $attrs,
+	'innerBlocks'  => $inner,
+	'innerHTML'    => '',
+	'innerContent' => array_fill( 0, count( $inner ), null ),
+];
+$td_div = static function ( string $block, string $css_class, array $inner, array $extra = [] ): array {
+	$base  = [
+		'core/group'   => 'wp-block-group',
+		'core/columns' => 'wp-block-columns',
+		'core/column'  => 'wp-block-column',
+	][ $block ];
+	$attrs = array_merge( $css_class ? [ 'className' => $css_class ] : [], $extra );
+	// Inline style exactly as core's save() writes it for these attributes (column width, group padding).
+	$style = '';
+	if ( isset( $attrs['width'] ) ) {
+		$style = 'flex-basis:' . $attrs['width'];
+	}
+	foreach ( $attrs['style']['spacing']['padding'] ?? [] as $side => $value ) {
+		$style .= ( $style ? ';' : '' ) . 'padding-' . $side . ':' . $value;
+	}
+	$open = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
+	return [
+		'blockName'    => $block,
+		'attrs'        => $attrs,
+		'innerBlocks'  => $inner,
+		'innerHTML'    => $open . '</div>',
+		'innerContent' => array_merge( [ $open ], array_fill( 0, count( $inner ), null ), [ '</div>' ] ),
+	];
+};
+// A full-width section with a container: optional surface (canvas|sand|dark) and extra group attributes.
+$td_section = static fn( array $inner, string $surface = '', array $extra = [] ): array => $td_div(
+	'core/group',
+	trim( 'td-section ' . ( $surface ? 'td-section--' . $surface : '' ) ),
+	[ $td_div( 'core/group', 'td-container', $inner ) ],
+	$extra
+);
+// Two columns (left, right); widths as column `width` attributes (core saves them as flex-basis).
+$td_cols = static fn( array $left, array $right, int $left_pct = 58 ): array => $td_div(
+	'core/columns',
+	'td-cols',
+	[
+		$td_div( 'core/column', '', $left, [ 'width' => $left_pct . '%' ] ),
+		$td_div( 'core/column', '', $right, [ 'width' => ( 100 - $left_pct ) . '%' ] ),
+	]
+);
+
+$td_blocks = [
+	$td_b(
+		'hero',
+		[
+			'eyebrow'        => 'Pricing',
+			'title'          => 'Clear ways to *start*',
+			'lead'           => 'Most clients start with a one-time Growth Audit, then move to a fixed-scope Growth Sprint or monthly Growth Management. Every offer has defined deliverables, and there are no open-ended retainers.',
+			'primaryLabel'   => 'Get a growth audit',
+			'primaryUrl'     => '/growth-audit/',
+			'secondaryLabel' => 'Book a call',
+			'secondaryUrl'   => '/book-a-discovery-call/',
+			'layout'         => 'center',
+		]
+	),
+	$td_b(
+		'pricing-cards',
+		[
+			'label' => 'Ways to start',
+			'title' => "Start with an audit.\nGrow from *there*.",
+			'intro' => 'Clear offers with defined deliverables. No open-ended retainers.',
+			'cards' => [
+				[
+					'featured'    => true,
+					'kicker'      => 'One-time',
+					'badge'       => 'Start here',
+					'title'       => 'Growth Audit',
+					'text'        => 'Search, AI visibility, ads, funnel and tracking reviewed, with a prioritized plan.',
+					'price'       => '$1,500',
+					'buttonLabel' => 'Get started',
+					'buttonUrl'   => '/growth-audit/',
+				],
+				[
+					'kicker'      => 'Fixed scope',
+					'title'       => 'Growth Sprint',
+					'text'        => 'We implement the top priorities: SEO fixes, a campaign launch, an email sequence or an automation.',
+					'price'       => 'From $3,500',
+					'buttonLabel' => 'Talk to us',
+					'buttonUrl'   => '/book-a-discovery-call/',
+				],
+				[
+					'kicker'      => 'Monthly',
+					'title'       => 'Growth Management',
+					'text'        => 'Ongoing search, paid, email and automation work with contracted monthly deliverables.',
+					'price'       => 'From $2,500 / month',
+					'buttonLabel' => 'Talk to us',
+					'buttonUrl'   => '/book-a-discovery-call/',
+				],
+			],
+		]
+	),
+	$td_section(
+		[
+			$td_cols(
+				[
+					$td_b(
+						'feature-grid',
+						[
+							'title' => 'Is paid right for you *yet?*',
+							'lead'  => 'We take on paid ads when we’re confident they’ll pay back. You’re a good fit if you have:',
+							'style' => 'checks',
+							'bare'  => true,
+							'items' => [
+								[
+									'title' => 'A monthly ad budget',
+									'text'  => 'of at least $2,000',
+								],
+								[
+									'title' => 'A clear offer',
+									'text'  => 'people already want',
+								],
+								[
+									'title' => 'Conversion tracking,',
+									'text'  => 'or you’re happy for us to set it up',
+								],
+								[
+									'title' => 'Someone to follow up',
+									'text'  => 'leads quickly',
+								],
+							],
+						]
+					),
+				],
+				[
+					$td_b(
+						'feature-grid',
+						[
+							'title' => 'Paid ads *management*',
+							'lead'  => 'Transparent pricing. Ad spend is paid directly to the platforms.',
+							'style' => 'checks',
+							'bare'  => true,
+							'items' => [
+								[
+									'title' => 'Setup & tracking:',
+									'text'  => '$1,000 one-time',
+								],
+								[
+									'title' => 'One platform:',
+									'text'  => '$1,000 / month',
+								],
+								[
+									'title' => 'Two or more platforms:',
+									'text'  => '$1,800 / month',
+								],
+								[
+									'title' => 'Creative package:',
+									'text'  => 'from $750',
+								],
+							],
+						]
+					),
+					$td_b(
+						'button',
+						[
+							'label'   => 'See paid ads',
+							'url'     => '/services/paid-ads/',
+							'variant' => 'secondary',
+						]
+					),
+				],
+				50
+			),
+		]
+	),
+	$td_b(
+		'feature-grid',
+		[
+			'title'   => 'In every *engagement*',
+			'intro'   => 'Whichever way you start, these come as standard.',
+			'style'   => 'icon',
+			'surface' => 'canvas',
+			'columns' => 3,
+			'items'   => [
+				[
+					'icon'  => 'chart',
+					'title' => 'Shared dashboard',
+					'text'  => 'Leads, cost per lead and revenue by channel, updated automatically.',
+				],
+				[
+					'icon'  => 'chat',
+					'title' => 'Monthly review call',
+					'text'  => 'What we did, what it produced and what comes next.',
+				],
+				[
+					'icon'  => 'check',
+					'tone'  => 'dark',
+					'title' => 'You own every account',
+					'text'  => 'Ads, analytics, CRM and content stay yours if we ever part ways.',
+				],
+			],
+		]
+	),
+	$td_b(
+		'faq',
+		[
+			'title'      => 'Pricing *questions*',
+			'background' => 'paper',
+			'items'      => [
+				[
+					'question' => 'Why start with an audit?',
+					'answer'   => 'Because it tells us both where the money should go. The audit ranks every opportunity by impact and effort, so a Sprint or monthly plan starts with the work most likely to pay back.',
+				],
+				[
+					'question' => 'Is ad spend included in your fees?',
+					'answer'   => 'No. Ad spend is paid directly to Google, Meta, TikTok or LinkedIn from your own accounts. Our fees cover strategy, creatives and management.',
+				],
+				[
+					'question' => 'Is there a minimum commitment?',
+					'answer'   => 'The audit and Sprints are one-off. Monthly management has a minimum term of three months, so campaigns and content have time to work.',
+				],
+				[
+					'question' => 'Are these prices fixed?',
+					'answer'   => 'They are starting points in US dollars. Your scope sets the final price, and we agree it in writing before any work starts.',
+				],
+				[
+					'question' => 'Can we change scope later?',
+					'answer'   => 'Yes. We review scope with you every month and agree any change in writing before it starts.',
+				],
+			],
+		]
+	),
+	$td_b(
+		'cta-dark',
+		[
+			'title'       => 'Start with *clarity*',
+			'lead'        => 'Get a growth audit and a prioritized plan for what to fix first.',
+			'buttonLabel' => 'Get a growth audit',
+			'buttonUrl'   => '/growth-audit/',
+		]
+	),
+];
+
+echo serialize_blocks( $td_blocks ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- block markup; attributes are JSON-encoded by core.

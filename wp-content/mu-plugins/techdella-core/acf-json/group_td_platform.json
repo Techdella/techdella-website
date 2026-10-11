@@ -1,0 +1,73 @@
+{
+    "key": "group_td_platform",
+    "title": "TechDella · Platform",
+    "fields": [
+        {
+            "key": "field_td_platform_name",
+            "label": "Name",
+            "name": "name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Official name and capitalisation, e.g. \"LinkedIn\", \"TikTok\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_platform_logo_svg",
+            "label": "Logo (SVG)",
+            "name": "logo_svg",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "The official SVG from the platform's brand page. Never recolour or redraw it. Leave empty to use the text badge.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "mime_types": "svg"
+        },
+        {
+            "key": "field_td_platform_brand_rules_url",
+            "label": "Brand rules URL",
+            "name": "brand_rules_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "The platform's brand-guidelines page, so the rules can be checked.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "platform"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for platform entries (CLAUDE.md §7). Also registered as post meta by techdella-core/cpt.",
+    "show_in_rest": 0,
+    "modified": 1791590400
+}

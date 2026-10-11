@@ -1,0 +1,11 @@
+/* techdella/service-switcher */
+.td-service-switcher{border-bottom:1px solid var(--td-line-soft);background:var(--td-paper)}
+.td-service-switcher__list{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:6px 0;list-style:none}
+.td-service-switcher__link{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:var(--td-r-pill);background:var(--td-canvas);color:var(--td-ink);font-size:13.5px;font-weight:500;text-decoration:none;white-space:nowrap;transition:background-color .15s}
+.td-service-switcher__link:hover{background:var(--td-line-soft);color:var(--td-ink)}
+.td-service-switcher__link[aria-current="page"]{background:var(--td-ink);color:var(--td-paper)}
+@media (max-width:760px){
+  .td-service-switcher__list{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x proximity;margin-inline:calc(var(--td-gutter)*-1);padding-inline:var(--td-gutter)}
+  .td-service-switcher__list::-webkit-scrollbar{display:none}
+  .td-service-switcher__list li{scroll-snap-align:start;flex:0 0 auto}
+}

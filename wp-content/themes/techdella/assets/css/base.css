@@ -1,0 +1,83 @@
+/* Base: reset, type scale, layout primitives (§2.2). */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:88px}
+body{margin:0;background:var(--td-paper);color:var(--td-ink);font-family:var(--td-font);font-size:var(--td-text);line-height:var(--td-text-lh);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img,svg,video,picture{display:block;max-width:100%}
+img,video{height:auto}
+picture img{width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+p,ul,ol,figure,blockquote,dl{margin:0}
+:where(ul,ol)[role=list]{list-style:none;padding:0}
+
+h1,h2,h3,h4,.td-h1,.td-h2,.td-h3{margin:0;font-weight:600;color:var(--td-ink);text-wrap:balance}
+h1,.td-h1{font-size:var(--td-h1);line-height:var(--td-h1-lh);letter-spacing:var(--td-track-tight)}
+h2,.td-h2{font-size:var(--td-h2);line-height:var(--td-h2-lh);letter-spacing:-0.045em}
+h3,.td-h3{font-size:var(--td-h3);line-height:var(--td-h3-lh);letter-spacing:-0.03em}
+h4{font-size:19px;line-height:1.3;letter-spacing:-0.02em}
+small,.td-small{font-size:var(--td-small);line-height:var(--td-small-lh)}
+.td-lead{font-size:19px;color:var(--td-body);max-width:620px}
+.td-body{color:var(--td-body)}
+.td-muted{color:var(--td-muted)}
+
+/* One serif-italic accent word per headline (§2.2). Stays ink-coloured. */
+.td-accent,h1 em,h2 em,h3 em{font-family:var(--td-font-serif);font-style:italic;font-weight:400;letter-spacing:-0.02em}
+
+a{color:var(--td-ink);text-underline-offset:4px;text-decoration-thickness:1px}
+a:hover{color:var(--td-orange-text)}
+:focus-visible{outline:2px solid var(--td-orange);outline-offset:3px;border-radius:4px}
+
+/* Layout */
+.td-container{width:100%;max-width:calc(var(--td-max) + var(--td-gutter)*2);margin-inline:auto;padding-inline:var(--td-gutter)}
+.td-container--narrow{max-width:calc(760px + var(--td-gutter)*2)}
+.td-section{padding-block:var(--td-space)}
+.td-section--canvas{background:var(--td-canvas)}
+.td-section--sand{background:var(--td-sand)}
+.td-section--dark{background:var(--td-ink);color:var(--td-paper)}
+.td-section--dark :is(h1,h2,h3,h4){color:var(--td-paper)}
+.td-section--dark .td-body,.td-section--dark p,.td-section--dark .td-section-head p{color:var(--td-on-dark)}
+.td-section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:40px}
+.td-section-head__title{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.td-section-head p{font-size:16.5px;color:var(--td-body);max-width:400px}
+.td-section-head--center{flex-direction:column;align-items:center;text-align:center}
+.td-section-head--center .td-section-head__title{align-items:center}
+.td-stack{display:flex;flex-direction:column;gap:var(--td-stack-gap,16px)}
+.td-cluster{display:flex;flex-wrap:wrap;gap:var(--td-cluster-gap,10px);align-items:center}
+
+/* Accessibility */
+.screen-reader-text,.td-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.td-skip{position:absolute;left:12px;top:-60px;z-index:1000;background:var(--td-ink);color:var(--td-paper);padding:12px 18px;border-radius:var(--td-r-pill);text-decoration:none;font-weight:500}
+.td-skip:focus{top:12px;color:var(--td-paper)}
+
+/* Prose (post/page content) */
+.td-prose{font-size:var(--td-text);line-height:1.7;color:var(--td-ink-soft)}
+.td-prose>*+*{margin-top:1.1em}
+.td-prose :is(h2,h3,h4){margin-top:1.8em;color:var(--td-ink)}
+.td-prose h2{font-size:clamp(28px,3vw,38px)}
+.td-prose :is(ul,ol){padding-left:1.3em}
+.td-prose li+li{margin-top:.4em}
+.td-prose a{color:var(--td-ink);text-decoration:underline}
+.td-prose a:hover{color:var(--td-orange-text)}
+.td-prose blockquote{border-left:3px solid var(--td-ink);padding-left:20px;font-family:var(--td-font-serif);font-style:italic;font-size:24px;line-height:1.35;color:var(--td-ink)}
+.td-prose figure img{border-radius:var(--td-r-md)}
+.td-prose figcaption{font-size:var(--td-small);color:var(--td-muted);margin-top:8px}
+.td-prose table{width:100%;border-collapse:collapse;font-size:15px}
+.td-prose :is(th,td){text-align:left;padding:12px 14px;border-bottom:1px solid var(--td-line)}
+.td-prose th{font-weight:600;background:var(--td-canvas)}
+.td-prose code{font-family:var(--td-font-mono);font-size:.9em;background:var(--td-canvas);padding:.1em .35em;border-radius:6px;overflow-wrap:anywhere}
+.td-prose pre{background:var(--td-ink);color:var(--td-paper);padding:18px 20px;border-radius:var(--td-r-sm);overflow-x:auto}
+.td-prose pre code{background:none;padding:0;color:inherit}
+.td-prose hr{border:0;border-top:1px solid var(--td-line);margin-block:2.2em}
+
+/* Placeholders that must be resolved before launch (§0.5, §16) — visible on purpose. */
+.td-confirm{background:var(--td-orange-tint);color:var(--td-orange-text);border-radius:6px;padding:0 .3em;font-weight:500}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+/* Skip rendering work for page sections until they near the viewport (§8.4 LCP/INP).
+   On-screen sections render as normal; `auto` remembers each section's real height once seen. */
+main > section,
+.td-page--blocks > section,
+.td-page--blocks > [class*="wp-block-techdella-"]{content-visibility:auto;contain-intrinsic-size:auto 720px}

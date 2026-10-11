@@ -1,0 +1,15 @@
+/* techdella/post-header */
+.td-post-header__inner{max-width:calc(880px + var(--td-gutter)*2);padding-block:72px 40px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px}
+.td-post-header__crumb{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center;font-size:13.5px;color:var(--td-muted)}
+.td-post-header__crumb>a:not(.td-chip){color:var(--td-muted);display:inline-flex;align-items:center;min-height:44px}
+.td-post-header__crumb a.td-chip{text-decoration:none;min-height:32px}
+.td-post-header__title{font-size:clamp(38px,5vw,64px);line-height:1.02;letter-spacing:-.05em}
+.td-post-header__dek{font-size:19px;color:var(--td-body);max-width:640px}
+.td-post-header__byline{display:flex;align-items:center;gap:12px;text-align:left}
+.td-post-header__byline .td-avatar,.td-post-header__byline picture{width:44px;height:44px;border-radius:50%;overflow:hidden;flex:0 0 44px}
+.td-post-header__byline img{width:44px;height:44px;object-fit:cover}
+.td-post-header__who{display:flex;flex-direction:column;line-height:1.3}
+.td-post-header__name{font-size:14.5px;font-weight:600;text-decoration:none}
+a.td-post-header__name:hover{text-decoration:underline}
+.td-post-header__sub{font-size:13px;color:var(--td-muted)}
+@media (max-width:600px){.td-post-header__inner{padding-block:48px 28px}}

@@ -1,0 +1,384 @@
+{
+  "brand/techdella-character-waving": {
+    "width": 1024,
+    "height": 1536,
+    "alpha": true,
+    "fallback": "png",
+    "widths": [
+      480,
+      768,
+      1024
+    ],
+    "mtime": 648097390
+  },
+  "brand/techdella-logo-white": {
+    "width": 139,
+    "height": 32,
+    "alpha": true,
+    "fallback": "png",
+    "widths": [
+      139
+    ],
+    "mtime": 641101262
+  },
+  "brand/techdella-logo": {
+    "width": 1588,
+    "height": 360,
+    "alpha": true,
+    "fallback": "png",
+    "widths": [
+      480,
+      768,
+      1200,
+      1588
+    ],
+    "mtime": 641100994
+  },
+  "brand/techdella-mark": {
+    "width": 360,
+    "height": 360,
+    "alpha": true,
+    "fallback": "png",
+    "widths": [
+      360
+    ],
+    "mtime": 641101254
+  },
+  "clients/johan-consults": {
+    "width": 1168,
+    "height": 360,
+    "alpha": true,
+    "fallback": "png",
+    "widths": [
+      480,
+      768,
+      1168
+    ],
+    "mtime": 641100394
+  },
+  "clients/jollomy": {
+    "width": 500,
+    "height": 500,
+    "alpha": true,
+    "fallback": "png",
+    "widths": [
+      480,
+      500
+    ],
+    "mtime": 641100762
+  },
+  "clients/paycape": {
+    "width": 2311,
+    "height": 595,
+    "alpha": true,
+    "fallback": "png",
+    "widths": [
+      480,
+      768,
+      1200,
+      1600,
+      2311
+    ],
+    "mtime": 641100218
+  },
+  "clients/shopinbos": {
+    "width": 3297,
+    "height": 324,
+    "alpha": true,
+    "fallback": "png",
+    "widths": [
+      480,
+      768,
+      1200,
+      1600,
+      2400
+    ],
+    "mtime": 641100706
+  },
+  "clients/wezops": {
+    "width": 828,
+    "height": 187,
+    "alpha": true,
+    "fallback": "png",
+    "widths": [
+      480,
+      768,
+      828
+    ],
+    "mtime": 641100530
+  },
+  "people/akin-oyegoke-johan-consults": {
+    "width": 553,
+    "height": 831,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      553
+    ],
+    "mtime": 641099846
+  },
+  "people/levi-barbosa-wezops": {
+    "width": 400,
+    "height": 400,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      400
+    ],
+    "mtime": 641099834
+  },
+  "photos/techdella-team-group": {
+    "width": 390,
+    "height": 346,
+    "alpha": true,
+    "fallback": "png",
+    "widths": [
+      390
+    ],
+    "mtime": 641100018
+  },
+  "stock/creator-recording-video-vertical": {
+    "width": 506,
+    "height": 900,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      506
+    ],
+    "mtime": 648370984
+  },
+  "stock/designer-desk-swatches-wide": {
+    "width": 1600,
+    "height": 837,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1200,
+      1600
+    ],
+    "mtime": 648754014
+  },
+  "stock/designer-drawing-tablet-studio": {
+    "width": 1600,
+    "height": 2000,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1200,
+      1600
+    ],
+    "mtime": 648370958
+  },
+  "stock/product-flatlay-notebook-candle-square": {
+    "width": 1600,
+    "height": 1600,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1200,
+      1600
+    ],
+    "mtime": 648753966
+  },
+  "stock/shop-owner-checking-phone": {
+    "width": 1800,
+    "height": 1200,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1200,
+      1600,
+      1800
+    ],
+    "mtime": 715948653
+  },
+  "stock/website-wireframe-sketches": {
+    "width": 1800,
+    "height": 1200,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1200,
+      1600,
+      1800
+    ],
+    "mtime": 716278688
+  },
+  "stock/woman-working-laptop-desk": {
+    "width": 1800,
+    "height": 1197,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1200,
+      1600,
+      1800
+    ],
+    "mtime": 715948569
+  },
+  "team/abel-saka": {
+    "width": 1122,
+    "height": 1402,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1122
+    ],
+    "mtime": 641099654
+  },
+  "team/chinedu-emmanuel-kalu": {
+    "width": 1254,
+    "height": 1254,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1200,
+      1254
+    ],
+    "mtime": 641099486
+  },
+  "team/joanna-okedara-kalu": {
+    "width": 1254,
+    "height": 1254,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1200,
+      1254
+    ],
+    "mtime": 641099410
+  },
+  "team/mercy-olumakinwa": {
+    "width": 1086,
+    "height": 1448,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1086
+    ],
+    "mtime": 641099826
+  },
+  "team/omolola-akiyode": {
+    "width": 1086,
+    "height": 1448,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1086
+    ],
+    "mtime": 641099730
+  },
+  "work/epic-entertainment-website-desktop": {
+    "width": 1440,
+    "height": 1500,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1200,
+      1440
+    ],
+    "mtime": 725221343
+  },
+  "work/epic-entertainment-website-phone": {
+    "width": 1170,
+    "height": 2532,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1170
+    ],
+    "mtime": 725246859
+  },
+  "work/paycape-website-desktop": {
+    "width": 1440,
+    "height": 1500,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1200,
+      1440
+    ],
+    "mtime": 664992945
+  },
+  "work/paycape-website-phone": {
+    "width": 1170,
+    "height": 2457,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1170
+    ],
+    "mtime": 665017444
+  },
+  "work/shopinbos-store-builder-hot-sauce": {
+    "width": 1672,
+    "height": 941,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1200,
+      1600,
+      1672
+    ],
+    "mtime": 648150907
+  },
+  "work/startbuddi-website-desktop": {
+    "width": 1440,
+    "height": 1500,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1200,
+      1440
+    ],
+    "mtime": 664992677
+  },
+  "work/startbuddi-website-phone": {
+    "width": 1170,
+    "height": 2532,
+    "alpha": false,
+    "fallback": "jpg",
+    "widths": [
+      480,
+      768,
+      1170
+    ],
+    "mtime": 664994432
+  }
+}

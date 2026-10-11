@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-10-11T10:42:42.748Z",
+  "release": false,
+  "pdfs": [
+    {
+      "id": "PDF-01",
+      "slug": "ai-search-readiness-checklist",
+      "title": "AI Search Readiness Checklist (2026) | TechDella",
+      "pdf_title": "AI Search Readiness Checklist \\(2026\\) | TechDella",
+      "pages": 8,
+      "bytes": 432883,
+      "mb": 0.41,
+      "confirm_tokens": 6,
+      "price_tokens": 0,
+      "fonts_loaded": 4,
+      "file": "pdf/out/ai-search-readiness-checklist.pdf"
+    },
+    {
+      "id": "PDF-05",
+      "slug": "b2b-growth-audit-worksheet",
+      "title": "B2B Growth Audit Worksheet | TechDella",
+      "pdf_title": "B2B Growth Audit Worksheet | TechDella",
+      "pages": 8,
+      "bytes": 347117,
+      "mb": 0.33,
+      "confirm_tokens": 0,
+      "price_tokens": 0,
+      "fonts_loaded": 4,
+      "file": "pdf/out/b2b-growth-audit-worksheet.pdf"
+    },
+    {
+      "id": "PDF-02",
+      "slug": "b2b-seo-playbook",
+      "title": "B2B SEO Playbook: 90 Days to Pipeline | TechDella",
+      "pdf_title": "Days 1–14",
+      "pages": 20,
+      "bytes": 596772,
+      "mb": 0.57,
+      "confirm_tokens": 0,
+      "price_tokens": 0,
+      "fonts_loaded": 4,
+      "file": "pdf/out/b2b-seo-playbook.pdf"
+    },
+    {
+      "id": "PDF-04",
+      "slug": "email-deliverability-checklist",
+      "title": "Email Deliverability Checklist: SPF, DKIM, DMARC and Sender Rules | TechDella",
+      "pdf_title": "Email Deliverability Checklist: SPF, DKIM, DMARC and Sender Rules | TechDella",
+      "pages": 7,
+      "bytes": 416287,
+      "mb": 0.4,
+      "confirm_tokens": 5,
+      "price_tokens": 0,
+      "fonts_loaded": 4,
+      "file": "pdf/out/email-deliverability-checklist.pdf"
+    },
+    {
+      "id": "PDF-06",
+      "slug": "marketing-automations-this-quarter",
+      "title": "10 Marketing Automations to Set Up This Quarter | TechDella",
+      "pdf_title": "10 Marketing Automations to Set Up This Quarter | TechDella",
+      "pages": 13,
+      "bytes": 396657,
+      "mb": 0.38,
+      "confirm_tokens": 1,
+      "price_tokens": 0,
+      "fonts_loaded": 4,
+      "file": "pdf/out/marketing-automations-this-quarter.pdf"
+    },
+    {
+      "id": "PDF-07",
+      "slug": "mvp-scoping-guide",
+      "title": "MVP Scoping Guide | TechDella Studios",
+      "pdf_title": "MVP Scoping Guide | TechDella Studios",
+      "pages": 11,
+      "bytes": 400377,
+      "mb": 0.38,
+      "confirm_tokens": 0,
+      "price_tokens": 0,
+      "fonts_loaded": 4,
+      "file": "pdf/out/mvp-scoping-guide.pdf"
+    },
+    {
+      "id": "PDF-03",
+      "slug": "paid-ads-creative-brief-template",
+      "title": "Paid Ads Creative Brief Template: Meta, TikTok, LinkedIn, Google | TechDella",
+      "pdf_title": "Paid Ads Creative Brief Template: Meta, TikTok, LinkedIn, Google | TechDella",
+      "pages": 10,
+      "bytes": 417003,
+      "mb": 0.4,
+      "confirm_tokens": 18,
+      "price_tokens": 0,
+      "fonts_loaded": 4,
+      "file": "pdf/out/paid-ads-creative-brief-template.pdf"
+    }
+  ],
+  "errors": []
+}

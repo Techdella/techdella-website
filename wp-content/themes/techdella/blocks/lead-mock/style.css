@@ -1,0 +1,30 @@
+/* techdella/lead-mock */
+.td-lead-mock{margin:0;display:flex;flex-wrap:wrap;gap:12px}
+.td-lead-mock__top{flex:1 1 100%;border-radius:30px;padding:26px;display:flex;flex-wrap:wrap;gap:14px;background-color:var(--td-sand);background-image:radial-gradient(45% 50% at 70% 30%,rgba(255,255,255,.65),transparent 70%)}
+.td-lead-mock__page{flex:1.2 1 240px;background:var(--td-paper);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:9px;box-shadow:0 18px 40px -24px rgba(13,13,13,.3)}
+.td-lead-mock__url{font-size:11px;color:var(--td-muted)}
+.td-lead-mock__offer{font-size:19px;letter-spacing:-.03em;line-height:1.15}
+.td-lead-mock__field{height:34px;border:1px solid var(--td-line);border-radius:9px;font-size:12px;color:var(--td-muted);display:flex;align-items:center;padding:0 10px}
+.td-lead-mock__button{height:36px;background:var(--td-ink);color:var(--td-paper);border-radius:9px;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.td-lead-mock__leads{flex:1 1 200px;background:var(--td-ink);color:var(--td-paper);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:8px;font-size:12.5px}
+.td-lead-mock__leads-title{font-size:13.5px}
+.td-lead-mock__leads ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.td-lead-mock__leads li{display:flex;justify-content:space-between;gap:8px;background:var(--td-dark-1);border-radius:10px;padding:9px 11px}
+.td-lead-mock__status{color:var(--td-num)}
+.td-lead-mock__status--hot{color:var(--td-orange-on-dark)}
+.td-lead-mock__caption{margin-top:auto;font-size:12px;color:var(--td-num)}
+.td-lead-mock__caption--alone{flex:1 1 100%;color:var(--td-muted)}
+.td-lead-mock__funnel{flex:1 1 220px;background:var(--td-canvas);border-radius:26px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.td-lead-mock__funnel-label{font-size:12px;color:var(--td-muted)}
+.td-lead-mock__bars{margin:6px 0 0;padding:0;list-style:none;display:flex;gap:8px;align-items:stretch}
+.td-lead-mock__bars li{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0}
+.td-lead-mock__bar{display:block;height:90px;position:relative}
+.td-lead-mock__bar::before{content:"";position:absolute;left:0;right:0;bottom:0;height:var(--td-bar);border-radius:6px;background:#A8A29E}
+.td-lead-mock__bars li:first-child .td-lead-mock__bar::before{background:#D6D1CA}
+.td-lead-mock__bars li:nth-child(3) .td-lead-mock__bar::before{background:var(--td-body)}
+.td-lead-mock__bar--last::before{background:var(--td-orange)!important}
+.td-lead-mock__stage{font-size:11px;color:var(--td-muted);overflow-wrap:anywhere}
+.td-lead-mock__photo{flex:1 1 220px;position:relative;border-radius:26px;overflow:hidden;min-height:170px;background:var(--td-sand)}
+.td-lead-mock__photo picture,.td-lead-mock__photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.td-lead-mock__photo-cap{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.92);border-radius:var(--td-r-pill);padding:5px 12px;font-size:12.5px;font-weight:500}
+@media (max-width:480px){.td-lead-mock__top{padding:18px}}

@@ -1,0 +1,375 @@
+{
+    "key": "group_td_case_study",
+    "title": "TechDella · Case study",
+    "fields": [
+        {
+            "key": "field_td_case_study_permission_confirmed",
+            "label": "Client permission confirmed",
+            "name": "permission_confirmed",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Tick only when the client has approved, in writing, the name, numbers, quote and logo on this page. The case study cannot be published until this is ticked.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "ui": 1,
+            "default_value": 0,
+            "message": "The client approved this page in writing"
+        },
+        {
+            "key": "field_td_case_study_client",
+            "label": "Client",
+            "name": "client",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The client's name exactly as they write it, e.g. \"Paycape\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_case_study_industry",
+            "label": "Industry",
+            "name": "industry",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Saved as the Industry term, so solution pages can find this proof.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "td_industry",
+            "field_type": "select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_td_case_study_country",
+            "label": "Country",
+            "name": "country",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Where the client is based, e.g. \"Nigeria\". Location pages use this for local proof.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_case_study_primary_kw",
+            "label": "Primary keyword",
+            "name": "primary_kw",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The one search phrase this page should rank for, validated in Ahrefs/Semrush/GSC first. Good: \"b2b seo services\". It must appear in the H1/title and in the first paragraph, or the pre-publish checklist blocks publishing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_case_study_services",
+            "label": "Services used",
+            "name": "services",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "The services that did the work. They are linked from the page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "service",
+                "studio_service"
+            ],
+            "filters": [
+                "search",
+                "post_type"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": ""
+        },
+        {
+            "key": "field_td_case_study_metric_1_num",
+            "label": "Metric 1: number",
+            "name": "metric_1_num",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "A number the client has confirmed, e.g. \"50%\". Remove it if they cannot confirm it.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_case_study_metric_1_label",
+            "label": "Metric 1: label",
+            "name": "metric_1_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "What it measures, in under 8 words, e.g. \"of conversions from inbound\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_case_study_metric_2_num",
+            "label": "Metric 2: number",
+            "name": "metric_2_num",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Optional. Client-confirmed only; leave empty rather than guess.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_case_study_metric_2_label",
+            "label": "Metric 2: label",
+            "name": "metric_2_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "What the number measures, in under 8 words.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_case_study_metric_3_num",
+            "label": "Metric 3: number",
+            "name": "metric_3_num",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Optional. Client-confirmed only; leave empty rather than guess.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_case_study_metric_3_label",
+            "label": "Metric 3: label",
+            "name": "metric_3_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "What the number measures, in under 8 words.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_case_study_timeframe",
+            "label": "Timeframe",
+            "name": "timeframe",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Engagement length and period, e.g. \"5 months (Q3 2025)\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_case_study_challenge",
+            "label": "Challenge",
+            "name": "challenge",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Where the client started: the problem in their words, 2–4 sentences.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 4
+        },
+        {
+            "key": "field_td_case_study_approach",
+            "label": "Approach",
+            "name": "approach",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "What we did and in which order. Name the platforms and tactics.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 4
+        },
+        {
+            "key": "field_td_case_study_results",
+            "label": "Results",
+            "name": "results",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "What changed, with confirmed numbers and the timeframe. No adjectives without a number.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 4
+        },
+        {
+            "key": "field_td_case_study_quote",
+            "label": "Quote",
+            "name": "quote",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Verbatim, exactly as the client wrote or said it. Never edit or \"tidy\" a quote.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3
+        },
+        {
+            "key": "field_td_case_study_quote_author",
+            "label": "Quote author",
+            "name": "quote_author",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Full name.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_case_study_quote_role",
+            "label": "Quote role",
+            "name": "quote_role",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Role and company, e.g. \"CEO, WezOps\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_case_study_gallery",
+            "label": "Gallery",
+            "name": "gallery",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "Up to 12 images of real work (screens, creatives). Each image needs alt text that describes what is shown.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "preview_size": "medium",
+            "insert": "append",
+            "min": 0,
+            "max": 12
+        },
+        {
+            "key": "field_td_case_study_video",
+            "label": "Video",
+            "name": "video",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "Self-hosted MP4 or WebM under 2.5 MB, with a poster. Never autoplay with sound; add captions where there is speech or text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "mime_types": "mp4,webm"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "case_study"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for case study entries (CLAUDE.md §7). Also registered as post meta by techdella-core/cpt.",
+    "show_in_rest": 0,
+    "modified": 1791590400
+}

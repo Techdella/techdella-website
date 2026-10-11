@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/report-mock",
+	"title": "Report mock",
+	"category": "techdella",
+	"icon": "chart-bar",
+	"description": "Monthly report card mock (KPIs + bars) labelled \"Example report\", with illustrative numbers only. With a title it renders the Paid \"Everything visible\" section: heading and what-we-manage tiles on the left, the report on the right, on a dark grid.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"title": { "type": "string", "default": "" },
+		"label": { "type": "string", "default": "" },
+		"items": { "type": "array", "default": [] },
+		"cardTitle": { "type": "string", "default": "Monthly report" },
+		"badge": { "type": "string", "default": "Example report" },
+		"kpis": { "type": "array", "default": [] },
+		"barsLabel": { "type": "string", "default": "" },
+		"bars": { "type": "array", "default": [] },
+		"note": { "type": "string", "default": "Illustrative numbers only. Your report shows your live data." },
+		"contained": { "type": "boolean", "default": false }
+	},
+	"example": {
+		"attributes": {
+			"title": "Everything managed, *everything* visible",
+			"items": [
+				{ "title": "Setup & tracking", "text": "Pixels, APIs, GA4, CRM" },
+				{ "title": "Strategy", "text": "Budget split by platform" },
+				{ "title": "Creatives", "text": "Video, static, copy" },
+				{ "title": "Weekly testing", "text": "Hooks, audiences, bids" }
+			],
+			"cardTitle": "Paid ads report",
+			"badge": "Example report",
+			"kpis": [
+				{ "label": "Spend", "value": "$6,000" },
+				{ "label": "Leads", "value": "120" },
+				{ "label": "Cost per lead", "value": "$50", "highlight": true }
+			],
+			"barsLabel": "Leads by platform",
+			"bars": [
+				{ "label": "Google", "value": "54" },
+				{ "label": "LinkedIn", "value": "30" },
+				{ "label": "Meta", "value": "24" },
+				{ "label": "TikTok", "value": "12", "highlight": true }
+			],
+			"note": "Illustrative numbers only. Your report shows your live data."
+		}
+	},
+	"techdella": {
+		"controls": { "items": "json", "kpis": "json", "bars": "json" },
+		"help": "Never real-looking client data: keep round illustrative numbers, the \"Example report\" badge and the note. kpis: [{label, value, highlight}] (one highlight = dark tile). bars: [{label, value, highlight}] — widths are relative to the largest value. Leave title empty to render only the card (e.g. inside a bento or tab)."
+	}
+}

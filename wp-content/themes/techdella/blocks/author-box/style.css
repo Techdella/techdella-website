@@ -1,0 +1,18 @@
+/* techdella/author-box */
+.td-author-box{border-top:1px solid var(--td-line-soft);padding-top:28px;display:flex;gap:18px;align-items:flex-start;font-size:15px;line-height:1.5}
+.td-prose .td-author-box{margin-top:2.4em}
+.td-author-box__photo{flex:0 0 64px;width:64px;height:80px;border-radius:999px 999px 14px 14px;overflow:hidden;background:var(--td-sand)}
+.td-author-box__photo picture,.td-author-box__photo img{width:100%!important;height:100%!important;object-fit:cover}
+.td-author-box__body{display:flex;flex-direction:column;gap:6px;min-width:0}
+.td-author-box__name{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:0}
+.td-author-box__k{width:100%;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--td-muted)}
+.td-author-box__name a,.td-author-box__name strong{font-weight:600;color:var(--td-ink)}
+.td-author-box__role{color:var(--td-body)}
+.td-author-box__example{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;background:var(--td-canvas);border-radius:var(--td-r-pill);padding:2px 8px}
+.td-author-box__bio{color:var(--td-body);margin:0}
+.td-author-box__links{margin:0}
+.td-author-box__review{margin:6px 0 0;display:flex;flex-wrap:wrap;gap:6px 24px;font-size:14px;color:var(--td-body)}
+.td-author-box__review div{display:flex;gap:6px}
+.td-author-box__review dt{font-weight:500;color:var(--td-ink)}
+.td-author-box__review dd{margin:0}
+.td-author-box__review dt::after{content:":"}

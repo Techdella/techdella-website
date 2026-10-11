@@ -1,0 +1,55 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/steps-fold",
+	"title": "Steps (fold-out)",
+	"category": "techdella",
+	"icon": "list-view",
+	"description": "\"Clear steps\" accordion built on <details>/<summary>: works without JavaScript.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "How we work" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"image": { "type": [ "string", "integer" ], "default": "" },
+		"imageAlt": { "type": "string", "default": "" },
+		"cardImage": { "type": [ "string", "integer" ], "default": "" },
+		"cardTitle": { "type": "string", "default": "" },
+		"cardText": { "type": "string", "default": "" },
+		"steps": { "type": "array", "default": [] },
+		"openFirst": { "type": "boolean", "default": true },
+		"lastDark": { "type": "boolean", "default": true },
+		"pills": { "type": "array", "default": [] },
+		"background": { "type": "string", "enum": [ "canvas", "paper" ], "default": "canvas" }
+	},
+	"example": {
+		"attributes": {
+			"label": "How we work",
+			"title": "Clear steps.\n*No guesswork.*",
+			"intro": "Every engagement follows the same five steps, so you always know what’s happening and what you’ll get.",
+			"image": "photos/techdella-team-group",
+			"imageAlt": "The TechDella team",
+			"cardImage": "team/joanna-okedara-kalu",
+			"cardTitle": "One point of contact",
+			"cardText": "from discovery to reporting",
+			"steps": [
+				{ "title": "Discovery call", "deliverable": "You get: a fit check and next steps", "body": "A 30-minute call to understand your goals, market, budget and what you’ve already tried. If we’re not the right fit, we’ll tell you.", "tags": [ "Goals", "Budget", "Timeline" ] },
+				{ "title": "Audit & strategy", "deliverable": "You get: a prioritized growth plan", "body": "We review your search visibility, ads, landing pages, email and tracking, then rank every opportunity by impact and effort." },
+				{ "title": "Scope & setup", "deliverable": "You get: fixed scope and working tracking", "body": "We agree deliverables and timelines in writing, then set up accounts, analytics, pixels, CRM and creative briefs." },
+				{ "title": "Create & launch", "deliverable": "You get: live campaigns and content", "body": "Our team writes, designs and builds: pages, ad creatives, videos, emails and automations, then launches in priority order." },
+				{ "title": "Optimize & report", "deliverable": "You get: a monthly report and review call", "body": "We test, improve and report on leads and revenue, not vanity metrics. Then we plan the next month together." }
+			],
+			"pills": [
+				{ "icon": "dashboard", "label": "Shared dashboard" },
+				{ "icon": "chat", "label": "Monthly review call" },
+				{ "icon": "lock", "label": "You own every account" }
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "intro": "textarea", "image": "media", "cardImage": "media", "steps": "json", "pills": "json", "title": "textarea" },
+		"help": "Steps: {title, deliverable, body, tags[]}. A line break in the title becomes <br>. Pills: {icon (dashboard|chat|lock|check), label}. The last step is the dark one when 'Last dark' is on."
+	}
+}

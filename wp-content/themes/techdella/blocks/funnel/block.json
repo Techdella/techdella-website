@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/funnel",
+	"title": "Funnel",
+	"category": "techdella",
+	"icon": "filter",
+	"description": "Paid \"one funnel\" section: ordered stages (reach → target → capture → convert → nurture), each with the channels that do that job as chips (linked when they have a page).",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"items": { "type": "array", "default": [] }
+	},
+	"example": {
+		"attributes": {
+			"title": "One funnel, every platform *in its place*",
+			"intro": "Paid ads work best when they’re connected to search, landing pages, email and automation.",
+			"items": [
+				{ "stage": "Reach", "title": "Get seen", "text": "Short video and social ads to new audiences.", "chips": [ { "label": "TikTok" }, { "label": "Meta" } ] },
+				{ "stage": "Target", "title": "Reach decision-makers", "text": "Job-title and account targeting.", "chips": [ { "label": "LinkedIn" } ] },
+				{ "stage": "Capture", "title": "Win the search", "text": "Be there when they’re ready to compare.", "chips": [ { "label": "Google Ads" }, { "label": "SEO", "url": "/services/seo/" } ] },
+				{ "stage": "Convert", "title": "Turn clicks into leads", "text": "Landing pages and in-platform lead forms.", "tone": "sand", "chips": [ { "label": "Lead generation", "url": "/services/lead-generation/" } ] },
+				{ "stage": "Nurture", "title": "Follow up automatically", "text": "Email and AI automation hand warm leads to sales.", "tone": "dark", "chips": [ { "label": "Email", "url": "/services/email-marketing/" }, { "label": "AI automation", "url": "/services/marketing-automation/" } ] }
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "intro": "textarea", "items": "json" },
+		"help": "Items: [{stage, title, text, tone (canvas|sand|dark), chips: [{label, url}]}]. Chips with a URL link to that service page; others name the platform."
+	}
+}
