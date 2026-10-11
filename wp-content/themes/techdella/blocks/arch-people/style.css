@@ -33,3 +33,5 @@
 .td-arch-people__name a:hover{text-decoration:underline}
 .td-arch-people__role{padding:0 6px;font-size:13.5px;color:var(--td-body);line-height:1.35}
 @media (max-width:600px){.td-arch-people__person{flex-basis:200px}.td-arch-people__photo{width:200px;height:266px}.td-arch-people__aside{flex-basis:100%}}
+.td-arch-people__photo:has(.td-arch-people__initials){display:grid;place-items:center;background:var(--td-sand)}
+.td-arch-people__initials{font-size:clamp(40px,5vw,64px);font-weight:500;letter-spacing:-.04em;color:var(--td-body)}

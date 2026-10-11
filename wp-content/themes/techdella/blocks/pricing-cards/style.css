@@ -20,3 +20,9 @@
 .td-pricing__card--featured .td-pricing__foot{border-top-color:var(--td-dark-2)}
 .td-pricing__price{font-size:18px}
 .td-pricing__card--featured .td-btn--light:focus-visible{box-shadow:0 0 0 3px var(--td-ink),0 0 0 5px var(--td-orange)}
+.td-currency{display:flex;align-items:center;gap:6px;margin:0 0 14px;font-size:14px;color:var(--td-body)}
+.td-currency[hidden]{display:none}
+.td-currency__label{margin-right:4px}
+.td-currency__btn{min-height:44px;padding:0 16px;border:1px solid var(--td-line);border-radius:var(--td-r-pill);background:var(--td-paper);color:var(--td-ink);font:inherit;font-weight:500;cursor:pointer}
+.td-currency__btn[aria-pressed="true"]{background:var(--td-ink);border-color:var(--td-ink);color:var(--td-paper)}
+.td-currency__btn:focus-visible{outline:2px solid var(--td-orange);outline-offset:2px}

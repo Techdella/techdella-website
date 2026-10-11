@@ -5,7 +5,44 @@ each client's scope sets the final quote, agreed in writing before work starts (
 in the lower-middle of published market ranges: below US agency medians, above freelancer rates,
 which suits a senior team serving startups and SMBs in Nigeria, the US and beyond.
 
-Change a price in its pattern (`wp-content/themes/techdella/patterns/`), then re-seed or edit the page.
+Every price lives in one table, `wp-content/themes/techdella/inc/prices.php` (USD and NGN). Page text
+uses tokens like `From {{price:growth_sprint}} / month`; change the table and every page updates.
+
+## Naira pricing (Nigeria)
+
+Visitors whose device is set to Nigeria's time zone (Africa/Lagos) see naira; everyone else sees US
+dollars, and the switch on pricing cards lets anyone change it (remembered on that device). There is
+no IP lookup or third-party call. Search engines and the page cache see US dollars.
+
+Rule: **NGN = USD × 200, never below ₦300,000** (the owner set the Growth Audit at ₦300,000), rounded.
+
+| Key | USD | NGN |
+|---|---|---|
+| growth_audit | $1,500 | ₦300,000 |
+| growth_sprint | from $3,500 | from ₦700,000 |
+| growth_mgmt | from $2,500 / month | from ₦500,000 / month |
+| ads_setup | $1,000 | ₦300,000 |
+| ads_one | $1,000 / month | ₦300,000 / month |
+| ads_multi | $1,800 / month | ₦450,000 / month |
+| ads_creative | from $750 | from ₦300,000 |
+| ads_min_budget | $2,000 / month | ₦500,000 / month |
+| mvp_discovery | from $3,500 | from ₦700,000 |
+| mvp_build | from $15,000 | from ₦3,000,000 |
+| ai_setup | from $2,500 | from ₦500,000 |
+| ai_assistant | from $5,000 | from ₦1,000,000 |
+| uiux_sprint | from $3,000 | from ₦600,000 |
+| design_system | from $6,000 | from ₦1,200,000 |
+| landing_page | from $1,500 | from ₦300,000 |
+| website | from $5,000 | from ₦1,000,000 |
+| brand_identity | from $3,000 | from ₦600,000 |
+| brand_refresh | from $1,800 | from ₦400,000 |
+| motion_package | from $1,500 | from ₦300,000 |
+| launch_film | from $4,000 | from ₦800,000 |
+| creative_assets | from $800 | from ₦300,000 |
+| pitch_deck | from $1,200 | from ₦300,000 |
+
+`[CONFIRM]` the naira figures with Joanna: the ×200 rule makes the floor bite on small items
+(creative and asset packages, landing pages and pitch decks all start at ₦300,000).
 
 ## Marketing (techdella.com)
 

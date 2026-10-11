@@ -564,7 +564,7 @@ $td_blocks = [
 							'items' => [
 								[
 									'title' => 'A monthly ad budget',
-									'text'  => 'of at least $2,000',
+									'text'  => 'of at least {{price:ads_min_budget}}',
 								],
 								[
 									'title' => 'A clear offer',
@@ -593,19 +593,19 @@ $td_blocks = [
 							'items' => [
 								[
 									'title' => 'Setup & tracking:',
-									'text'  => '$1,000 one-time',
+									'text'  => '{{price:ads_setup}} one-time',
 								],
 								[
 									'title' => 'One platform:',
-									'text'  => '$1,000 / month',
+									'text'  => '{{price:ads_one}} / month',
 								],
 								[
 									'title' => 'Two or more platforms:',
-									'text'  => '$1,800 / month',
+									'text'  => '{{price:ads_multi}} / month',
 								],
 								[
 									'title' => 'Creative package:',
-									'text'  => 'from $750',
+									'text'  => 'from {{price:ads_creative}}',
 								],
 							],
 						]

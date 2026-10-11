@@ -25,6 +25,12 @@ $td_title = implode( '<br>', array_map( 'td_accent', explode( "\n", (string) ( $
 				<p><?php echo td_mark_placeholders( esc_html( (string) $td_a['intro'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div>
+		<?php
+		$td_has_price = (bool) array_filter( $td_cards, static fn( $c ) => str_contains( (string) ( $c['price'] ?? '' ), '{{price:' ) );
+		if ( $td_has_price ) {
+			echo td_currency_switch(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped inside.
+		}
+		?>
 		<ul class="td-pricing__grid" role="list">
 			<?php foreach ( $td_cards as $td_c ) : ?>
 				<?php

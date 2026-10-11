@@ -3,7 +3,7 @@
  * Title: Marketing · Pricing
  * Slug: techdella/marketing-pricing
  * Categories: techdella
- * Description: Pricing / ways to start (Main "Ways to start" + Paid FIT + PRICING): hero, offers, paid ads fit and pricing, what every engagement includes, FAQ, CTA. Prices are starting points in US dollars, set Oct 2026 against market rates.
+ * Description: Pricing / ways to start (Main "Ways to start" + Paid FIT + PRICING): hero, offers, paid ads fit and pricing, what every engagement includes, FAQ, CTA. Prices are starting points in US dollars and naira ({{price:key}} tokens, inc/prices.php), set Oct 2026.
  * Inserter: no
  * TD Site: marketing
  * TD Post Type: page
@@ -92,7 +92,7 @@ $td_blocks = [
 					'badge'       => 'Start here',
 					'title'       => 'Growth Audit',
 					'text'        => 'Search, AI visibility, ads, funnel and tracking reviewed, with a prioritized plan.',
-					'price'       => '$1,500',
+					'price'       => '{{price:growth_audit}}',
 					'buttonLabel' => 'Get started',
 					'buttonUrl'   => '/growth-audit/',
 				],
@@ -100,7 +100,7 @@ $td_blocks = [
 					'kicker'      => 'Fixed scope',
 					'title'       => 'Growth Sprint',
 					'text'        => 'We implement the top priorities: SEO fixes, a campaign launch, an email sequence or an automation.',
-					'price'       => 'From $3,500',
+					'price'       => 'From {{price:growth_sprint}}',
 					'buttonLabel' => 'Talk to us',
 					'buttonUrl'   => '/book-a-discovery-call/',
 				],
@@ -108,7 +108,7 @@ $td_blocks = [
 					'kicker'      => 'Monthly',
 					'title'       => 'Growth Management',
 					'text'        => 'Ongoing search, paid, email and automation work with contracted monthly deliverables.',
-					'price'       => 'From $2,500 / month',
+					'price'       => 'From {{price:growth_mgmt}} / month',
 					'buttonLabel' => 'Talk to us',
 					'buttonUrl'   => '/book-a-discovery-call/',
 				],
@@ -129,7 +129,7 @@ $td_blocks = [
 							'items' => [
 								[
 									'title' => 'A monthly ad budget',
-									'text'  => 'of at least $2,000',
+									'text'  => 'of at least {{price:ads_min_budget}}',
 								],
 								[
 									'title' => 'A clear offer',
@@ -158,19 +158,19 @@ $td_blocks = [
 							'items' => [
 								[
 									'title' => 'Setup & tracking:',
-									'text'  => '$1,000 one-time',
+									'text'  => '{{price:ads_setup}} one-time',
 								],
 								[
 									'title' => 'One platform:',
-									'text'  => '$1,000 / month',
+									'text'  => '{{price:ads_one}} / month',
 								],
 								[
 									'title' => 'Two or more platforms:',
-									'text'  => '$1,800 / month',
+									'text'  => '{{price:ads_multi}} / month',
 								],
 								[
 									'title' => 'Creative package:',
-									'text'  => 'from $750',
+									'text'  => 'from {{price:ads_creative}}',
 								],
 							],
 						]
@@ -236,7 +236,7 @@ $td_blocks = [
 				],
 				[
 					'question' => 'Are these prices fixed?',
-					'answer'   => 'They are starting points in US dollars. Your scope sets the final price, and we agree it in writing before any work starts.',
+					'answer'   => 'They are starting points, shown in US dollars or, for clients in Nigeria, in naira. Your scope sets the final price, and we agree it in writing before any work starts.',
 				],
 				[
 					'question' => 'Can we change scope later?',

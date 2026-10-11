@@ -126,3 +126,29 @@ test('legal pages are marked for legal review', async ({ page }) => {
     await expect(page.locator('main, body').first()).toContainText('[CONFIRM legal review]');
   }
 });
+
+test.describe('naira pricing', () => {
+  test('USD by default; the switch shows naira and is remembered', async ({ page }) => {
+    await page.goto(site('marketing', '/pricing/'));
+    const audit = page.locator('.td-pricing__card').first().locator('.td-price');
+    await expect(audit).toHaveText('$1,500');
+    const ngn = page.locator('[data-td-currency] [data-currency="ngn"]');
+    await expect(ngn).toBeVisible();
+    await ngn.click();
+    await expect(audit).toHaveText('₦300,000');
+    await expect(ngn).toHaveAttribute('aria-pressed', 'true');
+    await page.reload();
+    await expect(audit).toHaveText('₦300,000');
+    expect(await page.content()).not.toContain('{{price:');
+  });
+
+  test('a device in Nigeria (Africa/Lagos) sees naira on its first visit', async ({ browser }) => {
+    const context = await browser.newContext({ timezoneId: 'Africa/Lagos' });
+    const page = await context.newPage();
+    await page.goto(site('marketing', '/services/paid-ads/'));
+    await expect(page.locator('.td-price').first()).toHaveText(/^₦/);
+    await page.goto(site('studios', '/'));
+    await expect(page.locator('.td-pricing .td-price').first()).toHaveText('₦700,000');
+    await context.close();
+  });
+});

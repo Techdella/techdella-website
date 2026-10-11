@@ -35,3 +35,6 @@
 .td-hero__mosaic-name span{display:block;font-weight:400;color:var(--td-muted)}
 .td-hero__mosaic--6{padding-bottom:36px}
 @media (max-width:600px){.td-hero__mosaic{gap:10px 8px}.td-hero__mosaic-name{font-size:12px}.td-hero__mosaic-name span{display:none}.td-hero__mosaic-item:nth-child(3n+2){transform:translateY(20px)}.td-hero__mosaic--6{padding-bottom:20px}}
+.td-hero__mosaic--2{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px;max-width:520px;margin-left:auto;padding-bottom:36px}
+.td-hero__mosaic--2 .td-hero__mosaic-item:nth-child(2){transform:translateY(36px)}
+@media (max-width:600px){.td-hero__mosaic--2{padding-bottom:20px}.td-hero__mosaic--2 .td-hero__mosaic-item:nth-child(2){transform:translateY(20px)}}

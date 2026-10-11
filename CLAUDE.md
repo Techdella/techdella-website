@@ -136,6 +136,7 @@ Blocks must:
   - Abel Saka (Brand Designer & UI/UX)
   - Omolola Akiyode (TechDella Team)
   - Mercy Olumakinwa (TechDella Team)
+  - Olabimpe and Oyinkansola (TechDella Team; added by Joanna, 11 Oct 2026; surnames and photos `[CONFIRM]`)
 - **Approved by Joanna (11 Oct 2026):** the founder letter ("Hi, I'm Joanna") as drafted, and client
   permissions for every existing case study, testimonial and logo (`wp td permissions:grant`).
 - **Draft copy that still needs Joanna's sign-off before launch:**

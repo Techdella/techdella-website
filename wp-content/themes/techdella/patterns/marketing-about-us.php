@@ -46,11 +46,6 @@ $td_blocks = [
 					'name'  => 'Chinedu Emmanuel Kalu',
 					'role'  => 'COO & Co-founder',
 				],
-				[
-					'image' => 'team/abel-saka',
-					'name'  => 'Abel Saka',
-					'role'  => 'Brand Designer & UI/UX',
-				],
 			],
 			'background'     => 'plain',
 		]
@@ -175,6 +170,14 @@ $td_blocks = [
 					'name'  => 'Mercy Olumakinwa',
 					'role'  => 'TechDella Team',
 					'image' => 'team/mercy-olumakinwa',
+				],
+				[
+					'name' => 'Olabimpe',
+					'role' => 'TechDella Team',
+				],
+				[
+					'name' => 'Oyinkansola',
+					'role' => 'TechDella Team',
 				],
 			],
 		]

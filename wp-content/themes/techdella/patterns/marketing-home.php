@@ -324,6 +324,10 @@ $td_blocks = [
 			],
 			'linkLabel' => 'Read the Paycape case study',
 			'linkUrl'   => '/case-studies/paycape/',
+			'logo'      => 'clients/paycape',
+			'logoAlt'   => 'Paycape',
+			'image'     => 'work/paycape-website-desktop',
+			'imageAlt'  => 'Paycape website home page',
 		]
 	),
 	$td_b(
@@ -400,7 +404,7 @@ $td_blocks = [
 					'badge'       => 'Start here',
 					'title'       => 'Growth Audit',
 					'text'        => 'Search, AI visibility, ads, funnel and tracking reviewed, with a prioritized plan.',
-					'price'       => '$1,500',
+					'price'       => '{{price:growth_audit}}',
 					'buttonLabel' => 'Get started',
 					'buttonUrl'   => '/growth-audit/',
 				],
@@ -408,13 +412,13 @@ $td_blocks = [
 					'kicker' => 'Fixed scope',
 					'title'  => 'Growth Sprint',
 					'text'   => 'We implement the top priorities: SEO fixes, a campaign launch, an email sequence or an automation.',
-					'price'  => 'From $3,500',
+					'price'  => 'From {{price:growth_sprint}}',
 				],
 				[
 					'kicker' => 'Monthly',
 					'title'  => 'Growth Management',
 					'text'   => 'Ongoing search, paid, email and automation work with contracted monthly deliverables.',
-					'price'  => 'From $2,500 / month',
+					'price'  => 'From {{price:growth_mgmt}} / month',
 				],
 			],
 		]

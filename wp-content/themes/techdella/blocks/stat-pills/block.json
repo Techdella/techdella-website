@@ -15,7 +15,11 @@
 		"meta": { "type": "string", "default": "" },
 		"stats": { "type": "array", "default": [] },
 		"linkLabel": { "type": "string", "default": "" },
-		"linkUrl": { "type": "string", "default": "" }
+		"linkUrl": { "type": "string", "default": "" },
+		"logo": { "type": ["integer", "string"], "default": "" },
+		"logoAlt": { "type": "string", "default": "" },
+		"image": { "type": ["integer", "string"], "default": "" },
+		"imageAlt": { "type": "string", "default": "" }
 	},
 	"example": {
 		"attributes": {
@@ -32,7 +36,7 @@
 		}
 	},
 	"techdella": {
-		"controls": { "stats": "json", "linkUrl": "url" },
-		"help": "Exactly three stats {value, label}: the first sits on the top row, the third is the dark pill. Verified numbers only (§2.4); anything else needs [CONFIRM]. The outline pills are decoration and hidden from screen readers."
+		"controls": { "stats": "json", "linkUrl": "url", "logo": "media", "image": "media" },
+		"help": "Exactly three stats {value, label}: the first sits on the top row, the third is the dark pill. Verified numbers only (§2.4); anything else needs [CONFIRM]. logo fills the first outline pill (a permissioned client logo) and image the last (a product or site shot); without them they stay empty outlines, hidden from screen readers."
 	}
 }
