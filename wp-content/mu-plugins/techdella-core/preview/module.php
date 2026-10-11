@@ -70,7 +70,11 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 	 * ## OPTIONS
 	 *
 	 * [--force]
-	 * : Local only — overwrite content even if the post was edited after seeding.
+	 * : Local and staging only — overwrite content even if the post was edited after seeding
+	 * (WordPress keeps the old content as a revision). Never on production.
+	 *
+	 * [--publish]
+	 * : Staging only — publish the pattern pages so the private staging site can be browsed.
 	 *
 	 * [--dry-run]
 	 * : List what would happen.
@@ -78,11 +82,16 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 	WP_CLI::add_command(
 		'td preview:seed',
 		static function ( array $args, array $assoc ) {
-			$local  = 'local' === td_environment();
-			$status = $local ? 'publish' : 'draft';
-			$force  = $local && ! empty( $assoc['force'] );
-			$dry    = ! empty( $assoc['dry-run'] );
-			$rows   = [];
+			$local   = 'local' === td_environment();
+			$staging = 'staging' === td_environment();
+			$publish = $local || ( $staging && ! empty( $assoc['publish'] ) );
+			$status  = $publish ? 'publish' : 'draft';
+			$force   = ( $local || $staging ) && ! empty( $assoc['force'] );
+			if ( ! $local && ! $staging && ( ! empty( $assoc['force'] ) || ! empty( $assoc['publish'] ) ) ) {
+				WP_CLI::error( '--force and --publish only work on local and staging sites.' );
+			}
+			$dry  = ! empty( $assoc['dry-run'] );
+			$rows = [];
 			foreach ( td_preview_patterns() as $p ) {
 				if ( ! post_type_exists( $p['type'] ) ) {
 					$rows[] = [ $p['file'], $p['type'], $p['slug'], 'skipped: no post type' ];
@@ -126,16 +135,16 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 						continue;
 					}
 					$data['ID'] = $existing->ID;
-					if ( ! $local ) {
-						$data['post_status'] = $existing->post_status; // Never change status off local.
+					if ( ! $publish ) {
+						$data['post_status'] = $existing->post_status; // Never change status on production.
 					}
 				}
 				if ( $dry ) {
 					$rows[] = [ $p['file'], $p['type'], $p['slug'], $existing ? 'would update' : 'would create ' . $status ];
 					continue;
 				}
-				// Seeding is a system action: bypass the editorial gates on local only.
-				if ( $local ) {
+				// Seeding is a system action: bypass the editorial gates where it may publish (local, staging).
+				if ( $publish ) {
 					add_filter( 'td_checklist_bypass', '__return_true' );
 				}
 				$id = wp_insert_post( wp_slash( $data ), true );

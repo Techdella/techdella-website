@@ -6,32 +6,47 @@ replaces them. `BUILD.txt` says which commit it was built from.
 It holds what the servers need and nothing else: the theme (with its built CSS, JS and images), the
 core plugin, the content sources, redirects, PDFs, and the motion videos.
 
-## First time (per site)
+## Never use hPanel's Git deployment for this
 
-1. hPanel → **Websites → the site → Advanced → GIT**. Repository
-   `git@github.com:Techdella/techdella-website.git`, branch `hostinger`, an empty folder such as
-   `techdella-deploy`. Copy the SSH key hPanel shows into GitHub → repo **Settings → Deploy keys**
-   (read-only), then **Deploy**.
-2. hPanel → **Advanced → SSH Access** → open the terminal and run (with your own folders):
+hPanel's GitHub/Git deployment writes the repository into the site's root folder and replaced
+techdella.com's files on 11 Oct 2026 (the site went down until it was restored from a backup).
+Clone the bundle over SSH into your home folder instead, outside every `public_html`.
+
+## First time
+
+1. hPanel → **Advanced → SSH Access** → open the terminal. Make a key for GitHub:
+   `ssh-keygen -t ed25519 -f ~/.ssh/techdella_deploy -N ""` then `cat ~/.ssh/techdella_deploy.pub`.
+   Add that line in GitHub → repo **Settings → Deploy keys** (read-only).
+2. Clone the bundle into your home folder:
 
    ```bash
-   bash ~/domains/<domain>/public_html/techdella-deploy/sync.sh ~/domains/<domain>/public_html \
-     --site=marketing --env=staging --first-run
+   GIT_SSH_COMMAND="ssh -i ~/.ssh/techdella_deploy" git clone --branch hostinger --single-branch \
+     git@github.com:Techdella/techdella-website.git ~/techdella-deploy
+   ```
+3. Install into a site (start with staging):
+
+   ```bash
+   bash ~/techdella-deploy/sync.sh <staging site folder> --site=marketing --env=staging --first-run
    ```
 
    `--site` is `marketing`, `journal` or `studios`; `--env` is `staging` or `production`.
+   On a site that isn't marked staging, `sync.sh` asks you to type its domain first.
 
-## Only one site can use hPanel → GIT?
+## See the new page designs on staging
 
-Clone the bundle once on that site (e.g. the main site, into `techdella-deploy`): every site on the
-account shares the same SSH user, so `sync.sh` installs into any of them. Point it at the staging
-folder, not the live one. On any site not marked staging, `sync.sh` asks you to type its domain
-before it changes anything.
+Staging is a copy of the live site, so pages like Home and SEO keep their old content until you
+replace it (the old content stays as a revision). On staging only:
+
+```bash
+bash ~/techdella-deploy/sync.sh <staging site folder> --refresh-pages
+```
 
 ## Every update
 
-Click **Deploy** in hPanel → GIT (or add hPanel's webhook URL in GitHub → **Settings → Webhooks**
-so it pulls by itself), then run the same `sync.sh` line without `--site`, `--env` and `--first-run`.
+```bash
+cd ~/techdella-deploy && GIT_SSH_COMMAND="ssh -i ~/.ssh/techdella_deploy" git pull
+bash ~/techdella-deploy/sync.sh <site folder>
+```
 
 ## Safe by design
 
