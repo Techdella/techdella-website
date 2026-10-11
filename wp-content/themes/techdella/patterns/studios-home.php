@@ -29,10 +29,9 @@ $td_blocks = [
 			'secondaryUrl'   => '#work',
 			'screens'        => [
 				[
-					'title' => 'startbuddi',
-					'image' => 'work/startbuddi-website-phone',
-					'alt'   => 'The startbuddi.com website on a phone',
-					'note'  => '[CONFIRM Studios build]',
+					'title' => 'Epic Entertainment',
+					'image' => 'work/epic-entertainment-website-phone',
+					'alt'   => 'The Epic Entertainment website on a phone',
 				],
 				[
 					'title'   => 'Bookings',
