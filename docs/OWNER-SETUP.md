@@ -37,6 +37,24 @@ Secrets: `HOSTINGER_SSH_KEY`, `HOSTINGER_SSH_HOST`, `HOSTINGER_SSH_PORT`, `HOSTI
 `PATH_JOURNAL`, `PATH_STUDIOS`, `PATH_STAGING`, `STAGING_URL`, `STAGING_BASIC_AUTH` (`user:pass`).
 Create a `production` environment with required reviewers (the manual approval step for `v*` tags).
 
+### 2b. Without GitHub Actions: hPanel → GIT
+
+While Actions can't run, deploy from inside Hostinger instead. `scripts/build-hostinger.sh` (run by
+Claude Code or a developer after the tests pass) commits a ready-to-install bundle to the
+`hostinger` branch: the theme with its built files, the core plugin, content, redirects, PDFs and
+videos. In hPanel:
+
+1. **Websites → the site → Advanced → GIT**: repository `git@github.com:Techdella/techdella-website.git`,
+   branch `hostinger`, folder `techdella-deploy`. Add the SSH key hPanel shows to GitHub → repo
+   **Settings → Deploy keys** (read-only). Click **Deploy**.
+2. **Advanced → SSH Access** → terminal, once per site:
+   `bash ~/domains/<domain>/public_html/techdella-deploy/sync.sh ~/domains/<domain>/public_html --site=marketing --env=staging --first-run`
+3. Each update: **Deploy** in hPanel → GIT (or add hPanel's webhook URL in GitHub → Settings →
+   Webhooks), then the same line without `--site`, `--env` and `--first-run`.
+
+The bundle folder blocks web access, and `sync.sh` never touches uploads or `wp-config.php` secrets.
+Staging's password protection (hPanel → **Password protect directories**) is a manual step on this route.
+
 ## 3. Startbuddi (§11.1)
 
 The connected workspace is **startbuddi**. `[CONFIRM: use it, or create a separate TechDella workspace]`.

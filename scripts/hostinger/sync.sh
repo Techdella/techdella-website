@@ -57,7 +57,7 @@ $WP theme activate techdella
 
 if [ "$FIRST" = 1 ]; then
   for p in seo-by-rank-math advanced-custom-fields safe-svg litespeed-cache; do
-    $WP plugin is-installed "$p" || $WP plugin install "$p"
+    $WP plugin is-installed "$p" || $WP plugin install "$p" || { echo "  ! couldn't install $p: install it from WP admin → Plugins"; continue; }
     $WP plugin activate "$p" || true
   done
   if [ "$ENV" = staging ]; then $WP option update blog_public 0; fi
