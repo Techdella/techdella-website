@@ -35,17 +35,31 @@ defined( 'ABSPATH' ) || exit;
 <h2 class="wp-block-heading">Strictly necessary and functional</h2>
 <!-- /wp:heading -->
 
-<!-- wp:table -->
-<figure class="wp-block-table"><table><thead><tr><th>Name</th><th>Set by</th><th>Purpose</th><th>Duration</th></tr></thead><tbody><tr><td>td_utm_first, td_utm_last</td><td>techdella.com (first party)</td><td>Remembers the first and latest campaign (UTM) parameters, sent with a form so we know which campaign brought you</td><td>90 days</td></tr><tr><td>td_popup_&lt;id&gt;</td><td>first party (browser storage, cookie fallback)</td><td>Remembers that you closed or answered a popup, so it is not shown again too soon</td><td>Up to 1 year</td></tr><tr><td>td_pv</td><td>first party (browser storage, cookie fallback)</td><td>Counts pages viewed this visit so popups wait before appearing</td><td>30 days</td></tr><tr><td>Cloudflare Turnstile</td><td>challenges.cloudflare.com</td><td>Spam protection on our forms [CONFIRM cookie names]</td><td>[CONFIRM]</td></tr><tr><td>Consent choice (e.g. FCCDCF, FCNEC)</td><td>Google Privacy &amp; messaging (CMP)</td><td>Stores your consent choice [CONFIRM CMP and names]</td><td>[CONFIRM]</td></tr><tr><td>wordpress_*, wp-settings-*</td><td>WordPress</td><td>Only for logged-in team members</td><td>Session / 1 year</td></tr></tbody></table></figure>
-<!-- /wp:table -->
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>td_utm_first, td_utm_last</strong> (techdella.com (first party)): Remembers the first and latest campaign (UTM) parameters, sent with a form so we know which campaign brought you. Duration: 90 days.</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>td_popup_&lt;id&gt;</strong> (first party (browser storage, cookie fallback)): Remembers that you closed or answered a popup, so it is not shown again too soon. Duration: Up to 1 year.</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>td_pv</strong> (first party (browser storage, cookie fallback)): Counts pages viewed this visit so popups wait before appearing. Duration: 30 days.</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>Cloudflare Turnstile</strong> (challenges.cloudflare.com): Spam protection on our forms [CONFIRM cookie names]. Duration: [CONFIRM].</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>Consent choice (e.g. FCCDCF, FCNEC)</strong> (Google Privacy &amp; messaging (CMP)): Stores your consent choice [CONFIRM CMP and names]. Duration: [CONFIRM].</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>wordpress_*, wp-settings-*</strong> (WordPress): Only for logged-in team members. Duration: Session / 1 year.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
 
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Analytics (after consent)</h2>
 <!-- /wp:heading -->
 
-<!-- wp:table -->
-<figure class="wp-block-table"><table><thead><tr><th>Name</th><th>Set by</th><th>Purpose</th><th>Duration</th></tr></thead><tbody><tr><td>_ga, _ga_&lt;ID&gt;</td><td>Google Analytics 4</td><td>Measures visits and which pages and campaigns work</td><td>Up to 2 years</td></tr></tbody></table></figure>
-<!-- /wp:table -->
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>_ga, _ga_&lt;ID&gt;</strong> (Google Analytics 4): Measures visits and which pages and campaigns work. Duration: Up to 2 years.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
 
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Advertising (after consent, free tool pages only)</h2>
@@ -55,9 +69,13 @@ defined( 'ABSPATH' ) || exit;
 <p>Ads appear only on our free tool pages and the tools hub.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:table -->
-<figure class="wp-block-table"><table><thead><tr><th>Name</th><th>Set by</th><th>Purpose</th><th>Duration</th></tr></thead><tbody><tr><td>__gads, __gpi, __eoi</td><td>Google AdSense</td><td>Ad delivery and frequency capping</td><td>Up to 13 months [CONFIRM]</td></tr><tr><td>IDE, DSID (personalized ads only)</td><td>Google (doubleclick.net)</td><td>Ad personalization</td><td>Up to 13 months [CONFIRM]</td></tr></tbody></table></figure>
-<!-- /wp:table -->
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>__gads, __gpi, __eoi</strong> (Google AdSense): Ad delivery and frequency capping. Duration: Up to 13 months [CONFIRM].</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>IDE, DSID (personalized ads only)</strong> (Google (doubleclick.net)): Ad personalization. Duration: Up to 13 months [CONFIRM].</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
 
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Changing your choice</h2>
