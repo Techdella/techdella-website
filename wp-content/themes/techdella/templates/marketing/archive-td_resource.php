@@ -70,6 +70,39 @@ td_m2_breadcrumbs();
 		<?php endif; ?>
 	</div>
 </section>
+<section class="td-section td-section--canvas" aria-labelledby="td-m2-more-h">
+	<div class="td-container">
+		<div class="td-m2-section-head">
+			<?php echo td_chip( __( 'More free resources', 'techdella' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<h2 class="td-m2-h2" id="td-m2-more-h"><?php echo td_accent( __( 'Keep *learning*', 'techdella' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
+		</div>
+		<ul class="td-m2-grid" role="list">
+			<?php
+			$td_more = [
+				[ __( 'Journal', 'techdella' ), __( 'B2B marketing guides', 'techdella' ), __( 'In-depth guides on SEO, AI search, paid ads, lead generation, email and automation.', 'techdella' ), td_url( 'journal', '/' ) ],
+				[ __( 'Glossary', 'techdella' ), __( 'Marketing glossary', 'techdella' ), __( 'Plain-English definitions of the terms you meet in search, ads, email and growth.', 'techdella' ), '/glossary/' ],
+				[ __( 'Free tools', 'techdella' ), __( 'Free marketing tools', 'techdella' ), __( 'UTM builder, readability and keyword checks, subject line analyzer and more.', 'techdella' ), '/tools/' ],
+				[ __( 'Business guides', 'techdella' ), __( 'How to start a business', 'techdella' ), __( 'Approvals, costs, pricing and first customers for founders in the US, UK and Nigeria.', 'techdella' ), '/business/' ],
+			];
+			foreach ( $td_more as $td_i => $td_m ) :
+				?>
+				<li>
+					<?php
+					echo td_m2_card( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						[
+							'kicker' => $td_m[0],
+							'title'  => $td_m[1],
+							'text'   => $td_m[2],
+							'url'    => $td_m[3],
+							'tone'   => 'paper',
+						]
+					);
+					?>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+	</div>
+</section>
 <?php
 echo td_block( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	'cta-dark',

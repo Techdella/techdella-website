@@ -82,7 +82,7 @@ final class Registry {
 				'singular'  => 'Solution',
 				'plural'    => 'Solutions',
 				'slug'      => 'solution', // Live base (not td_solution / solutions).
-				'archive'   => false,
+				'archive'   => 'solution', // /solution/ industries hub.
 				'cap'       => $money,
 				'menu'      => 'td-growth',
 				'supports'  => $editor,

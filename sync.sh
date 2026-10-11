@@ -107,8 +107,9 @@ if [ "$REFRESH" = 1 ]; then
   $WP td preview:seed --force --publish
   # Case studies, rebuilt from the published originals (content/case-studies), onto the copies.
   # Rebuilt case studies, industries, markets and (on the right site) guides, glossary and the
-  # business library, published on the private staging site for review (never on production).
-  for d in case-studies solutions locations glossary business journal; do
+  # business library and the PDF resource pages, published on the private staging site for review
+  # (never on production).
+  for d in case-studies solutions locations resources glossary business journal; do
     [ -d "$BUNDLE/content/$d" ] && $WP td import-content "$BUNDLE/content/$d" --status=draft --update-published --publish
   done
   # Article covers (title + photo in the arch) where an article has no image of its own.
