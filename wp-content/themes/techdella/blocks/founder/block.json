@@ -30,7 +30,6 @@
 			"stats": [ { "value": "11", "label": "Published case studies" }, { "value": "5", "label": "Client countries" } ],
 			"image": "team/joanna-okedara-kalu",
 			"imageAlt": "Joanna Okedara-Kalu, Founder and CEO",
-			"note": "[CONFIRM founder sign-off]",
 			"quote": "Techdella reframed how we were thinking about our market entirely. We went from scattered tactics to a positioning and GTM system that actually made sense for where we were heading. The difference was immediate.",
 			"quoteName": "Levi Barbosa",
 			"quoteRole": "CEO, WezOps",
@@ -39,6 +38,6 @@
 	},
 	"techdella": {
 		"controls": { "body": "textarea", "stats": "json", "image": "media", "quote": "textarea", "quoteImage": "media" },
-		"help": "The letter is draft copy and needs Joanna's sign-off before launch (§2.4): keep the note '[CONFIRM founder sign-off]' until she approves, then clear it. Blank lines in the body start new paragraphs. The quote strip takes verbatim §2.4 quotes only."
+		"help": "Joanna approved the founder letter (Oct 2026). Any new quote attributed to her still needs her sign-off: add a note such as '[CONFIRM founder sign-off]' until she approves. Blank lines in the body start new paragraphs. The quote strip takes verbatim §2.4 quotes only."
 	}
 }

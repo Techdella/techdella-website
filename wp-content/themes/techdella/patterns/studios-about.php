@@ -93,7 +93,7 @@ $td_blocks = [
 		[
 			'label'      => 'From the founder',
 			'title'      => 'Hi, I’m *Joanna*.',
-			'body'       => "[CONFIRM founder sign-off] I started TechDella to help companies become easier to understand, easier to trust and easier to choose. Studios is where we build the products, sites and automations that make that possible.\n\nWe only promise what we can control: clear scope, quality work and honest timelines.",
+			'body'       => "I started TechDella to help companies become easier to understand, easier to trust and easier to choose. Studios is where we build the products, sites and automations that make that possible.\n\nWe only promise what we can control: clear scope, quality work and honest timelines.",
 			'stats'      => [
 				[
 					'value' => '11',
@@ -106,7 +106,6 @@ $td_blocks = [
 			],
 			'image'      => 'team/joanna-okedara-kalu',
 			'imageAlt'   => 'Joanna Okedara-Kalu, Founder and CEO',
-			'note'       => '[CONFIRM founder sign-off]',
 			'quote'      => 'Techdella reframed how we were thinking about our market entirely. We went from scattered tactics to a positioning and GTM system that actually made sense for where we were heading. The difference was immediate.',
 			'quoteName'  => 'Levi Barbosa',
 			'quoteRole'  => 'CEO, WezOps',

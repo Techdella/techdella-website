@@ -26,5 +26,10 @@ for P in "${PATHS[@]}"; do
   rsync -az --delete -e "ssh -p $PORT" \
     wp-content/mu-plugins/techdella-core/ "$HOSTINGER_SSH_USER@$HOSTINGER_SSH_HOST:$P/wp-content/mu-plugins/techdella-core/"
   $SSH "cd $P && wp theme activate techdella && wp cache flush && (wp litespeed-purge all || true) && (wp rankmath sitemap generate || true) && wp td setup --quiet"
+  # First run only: record the owner's confirmation that every existing case study and
+  # testimonial is cleared (Oct 2026). Later ones get permission_confirmed one by one in WP.
+  if [ "${FIRST_RUN:-}" = true ] && [ -n "${TD_PERMISSIONS_NOTE:-}" ]; then
+    $SSH "cd $P && wp td permissions:grant --note=$(printf %q "$TD_PERMISSIONS_NOTE")"
+  fi
 done
 echo "✓ deployed to $TARGET"

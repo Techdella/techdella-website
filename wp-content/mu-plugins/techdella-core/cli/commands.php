@@ -1,6 +1,6 @@
 <?php
 /**
- * WP-CLI command registration: wp td setup | import-content | redirects | audit | og:generate.
+ * WP-CLI command registration: wp td setup | import-content | redirects | audit | og:generate | permissions:grant.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -153,6 +153,71 @@ function td_cli_og_generate( array $args, array $assoc ): void {
 	WP_CLI::success( sprintf( '%d OG image(s) ready.', $done ) );
 }
 
+/**
+ * Record the owner's written confirmation that clients approved their names, numbers, quotes and
+ * logos, by setting permission_confirmed on every case study and testimonial (or the given IDs).
+ * Logs who confirmed it and when, on each post (_td_permission_log). Publishing stays manual.
+ *
+ * ## OPTIONS
+ *
+ * [<id>...]
+ * : Post IDs. Default: every case_study and td_testimonial.
+ *
+ * --note=<note>
+ * : Who confirmed and how, e.g. "Joanna Okedara-Kalu confirmed all client permissions, 11 Oct 2026".
+ *
+ * [--dry-run]
+ * : List what would change.
+ *
+ * ## EXAMPLES
+ *
+ *     wp td permissions:grant --note="Owner confirmed all client permissions, 11 Oct 2026"
+ *
+ * @param string[]             $args  Post IDs.
+ * @param array<string,string> $assoc Options.
+ */
+function td_cli_permissions_grant( array $args, array $assoc ): void {
+	$note = trim( (string) ( $assoc['note'] ?? '' ) );
+	if ( '' === $note ) {
+		WP_CLI::error( 'Say who confirmed the permissions: --note="…".' );
+	}
+	$ids  = $args ? array_map( 'intval', $args ) : get_posts(
+		[
+			'post_type'      => array_filter( [ 'case_study', 'td_testimonial' ], 'post_type_exists' ),
+			'post_status'    => 'any',
+			'posts_per_page' => -1,
+			'fields'         => 'ids',
+		]
+	);
+	$dry  = (bool) Utils\get_flag_value( $assoc, 'dry-run', false );
+	$done = 0;
+	foreach ( $ids as $id ) {
+		$type = (string) get_post_type( $id );
+		if ( ! in_array( $type, [ 'case_study', 'td_testimonial' ], true ) ) {
+			WP_CLI::warning( sprintf( '#%d is a %s, skipped.', $id, $type ) );
+			continue;
+		}
+		WP_CLI::log( sprintf( '%s #%d %s', $dry ? 'would grant' : 'granted', $id, get_the_title( $id ) ) );
+		if ( ! $dry ) {
+			if ( function_exists( 'update_field' ) ) {
+				update_field( 'permission_confirmed', 1, $id );
+			}
+			update_post_meta( $id, 'permission_confirmed', 1 );
+			add_post_meta(
+				$id,
+				'_td_permission_log',
+				[
+					'note' => $note,
+					'by'   => get_current_user_id(),
+					'time' => gmdate( 'c' ),
+				]
+			);
+			++$done;
+		}
+	}
+	WP_CLI::success( sprintf( '%d post(s) %s.', $dry ? count( $ids ) : $done, $dry ? 'would change' : 'updated' ) );
+}
+
 WP_CLI::add_command( 'td setup', 'td_cli_setup' );
 WP_CLI::add_command( 'td import-content', 'td_cli_import_content' );
 WP_CLI::add_command( 'td redirects', 'TD_CLI_Redirects' );
@@ -160,3 +225,4 @@ WP_CLI::add_command( 'td redirects:import', [ new TD_CLI_Redirects(), 'import' ]
 WP_CLI::add_command( 'td redirects:verify', [ new TD_CLI_Redirects(), 'verify' ] );
 WP_CLI::add_command( 'td audit', 'TD_CLI_Audit' );
 WP_CLI::add_command( 'td og:generate', 'td_cli_og_generate' );
+WP_CLI::add_command( 'td permissions:grant', 'td_cli_permissions_grant' );

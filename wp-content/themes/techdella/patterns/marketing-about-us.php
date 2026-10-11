@@ -131,7 +131,6 @@ $td_blocks = [
 			],
 			'image'      => 'team/joanna-okedara-kalu',
 			'imageAlt'   => 'Joanna Okedara-Kalu, Founder and CEO',
-			'note'       => '[CONFIRM founder sign-off]',
 			'quote'      => 'Techdella reframed how we were thinking about our market entirely. We went from scattered tactics to a positioning and GTM system that actually made sense for where we were heading. The difference was immediate.',
 			'quoteName'  => 'Levi Barbosa',
 			'quoteRole'  => 'CEO, WezOps',
