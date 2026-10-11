@@ -141,8 +141,8 @@ $td_blocks = [
 					'columns' => 4,
 					'items'   => [
 						[
-							'title' => '20 [CONFIRM]',
-							'text'  => 'buyer prompts tracked each month',
+							'title' => '1',
+							'text'  => 'agreed list of buyer prompts, tracked monthly',
 						],
 						[
 							'title' => '5',

@@ -76,7 +76,7 @@ $td_blocks = [
 				],
 				[
 					'title' => 'No paid placements.',
-					'text'  => 'We do not sell guest posts or links. [CONFIRM]',
+					'text'  => 'We edit every guest post, and links in guest posts carry rel="nofollow" or rel="sponsored".',
 				],
 			],
 		],
@@ -103,7 +103,7 @@ $td_blocks = [
 				],
 				[
 					'question' => 'Do you pay for guest posts?',
-					'answer'   => 'No. [CONFIRM]',
+					'answer'   => 'Tell us in your pitch if you expect payment. Anything we agree is set out in writing before you start.',
 				],
 				[
 					'question' => 'How long should a post be?',

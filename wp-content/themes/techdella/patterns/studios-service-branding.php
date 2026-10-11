@@ -198,11 +198,11 @@ $td_blocks = [
 				],
 				[
 					'question' => 'Do you name companies?',
-					'answer'   => 'Not as a standalone service. [CONFIRM]',
+					'answer'   => 'Ask in your brief. Naming is scoped and priced separately from identity work.',
 				],
 				[
 					'question' => 'Who owns the brand?',
-					'answer'   => 'You do. Full rights transfer on final payment. [CONFIRM contract terms]',
+					'answer'   => 'You do. Rights transfer on final payment, as set out in your contract.',
 				],
 			],
 			'background' => 'paper',

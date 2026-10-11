@@ -1,5 +1,6 @@
 ---
 title: Shopinbos
+hold: true # Studios scope not confirmed yet: stays a draft until Joanna confirms (CLAUDE.md §10.5)
 slug: shopinbos-store-builder
 menu_order: 3
 excerpt: "Product imagery for the Shopinbos store builder. [CONFIRM: Studios scope for Shopinbos]"

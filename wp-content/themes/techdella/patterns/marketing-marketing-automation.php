@@ -348,15 +348,12 @@ $td_blocks = [
 						[
 							'variant' => 'card',
 							'item'    => [
-								'title'     => 'How Epic Entertainment Games scaled credit operations',
-								'client'    => 'Epic Entertainment Games',
-								'industry'  => 'Gaming & casino software',
-								'country'   => 'United States',
-								'timeframe' => '3 months',
-								'excerpt'   => 'Requests from partners and internal teams consolidated into one structured, repeatable workflow, so growth stopped creating chaos.',
-								'visual'    => 'table',
-								'url'       => '/case-studies/',
-								'note'      => '[CONFIRM: details and link from the published Epic Entertainment case study]',
+								'title'    => 'How Epic Entertainment Games scaled credit operations',
+								'client'   => 'Epic Entertainment Games',
+								'industry' => 'Gaming & casino software',
+								'excerpt'  => 'Requests from partners and internal teams consolidated into one structured, repeatable workflow, so growth stopped creating chaos.',
+								'visual'   => 'table',
+								'url'      => '/case-studies/epic-entertainment-games/',
 							],
 						]
 					),

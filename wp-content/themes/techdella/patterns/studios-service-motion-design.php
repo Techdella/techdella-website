@@ -226,7 +226,7 @@ $td_blocks = [
 				],
 				[
 					'question' => 'Do you do voiceover?',
-					'answer'   => '[CONFIRM: voiceover options and languages]',
+					'answer'   => 'Tell us in your brief. We confirm voice, language and licensing options in your quote.',
 				],
 				[
 					'question' => 'Which formats do I get?',

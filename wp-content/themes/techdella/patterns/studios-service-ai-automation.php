@@ -190,7 +190,7 @@ $td_blocks = [
 			'items'      => [
 				[
 					'question' => 'Which tools do you work with?',
-					'answer'   => 'Most CRMs, help desks, email platforms and Slack. Tell us your stack in the brief. [CONFIRM supported tools list]',
+					'answer'   => 'Most CRMs, help desks, email platforms and Slack. Tell us your stack in the brief and we confirm fit before quoting.',
 				],
 				[
 					'question' => 'Will the AI make mistakes?',
@@ -198,7 +198,7 @@ $td_blocks = [
 				],
 				[
 					'question' => 'Is my data safe?',
-					'answer'   => 'We only connect the data the workflow needs, and you keep ownership of every account. [CONFIRM data-processing terms]',
+					'answer'   => 'We only connect the data the workflow needs, and you keep ownership of every account. Data-processing terms are agreed in writing before we connect anything.',
 				],
 				[
 					'question' => 'Can you automate marketing too?',

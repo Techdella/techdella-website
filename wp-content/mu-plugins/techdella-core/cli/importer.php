@@ -33,7 +33,7 @@ function td_import_folder_map(): array {
 /**
  * Keys handled by the importer itself (everything else becomes a field).
  */
-const TD_IMPORT_RESERVED = [ 'title', 'slug', 'type', 'site', 'excerpt', 'status', 'format', 'author', 'reviewer', 'featured_image', 'image', 'pdf', 'gallery', 'fields', 'categories', 'tags', 'taxonomies', 'parent', 'menu_order', 'template', 'date' ];
+const TD_IMPORT_RESERVED = [ 'title', 'slug', 'type', 'site', 'excerpt', 'status', 'hold', 'format', 'author', 'reviewer', 'featured_image', 'image', 'pdf', 'gallery', 'fields', 'categories', 'tags', 'taxonomies', 'parent', 'menu_order', 'template', 'date' ];
 
 /**
  * Markdown files under a path (a file or a directory, recursive), README excluded.
@@ -520,6 +520,10 @@ function td_import_file( string $file, string $status, bool $dry, string $base )
 	$data['post_status'] = in_array( $data['post_status'], [ 'draft', 'pending' ], true ) || $live ? $data['post_status'] : 'draft';
 	if ( apply_filters( 'td_import_publish', false ) && in_array( td_environment(), [ 'local', 'staging' ], true ) ) {
 		$data['post_status'] = 'publish'; // Staging preview only (wp td import-content --publish).
+	}
+	// `hold: true` keeps unverified items (e.g. a claimed project) off every site until a person confirms them.
+	if ( ! empty( $meta['hold'] ) ) {
+		$data['post_status'] = 'draft';
 	}
 	$id = $post ? wp_update_post( wp_slash( $data ), true ) : wp_insert_post( wp_slash( $data ), true );
 	if ( is_wp_error( $id ) ) {

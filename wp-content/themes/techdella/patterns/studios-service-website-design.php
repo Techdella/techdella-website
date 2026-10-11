@@ -94,7 +94,7 @@ $td_blocks = [
 				],
 				[
 					'title' => 'Build',
-					'text'  => 'A fast, accessible site on WordPress or another CMS you can edit. [CONFIRM platforms]',
+					'text'  => 'A fast, accessible site on WordPress or another CMS you can edit.',
 					'icon'  => 'nodes',
 				],
 				[
@@ -198,7 +198,7 @@ $td_blocks = [
 				],
 				[
 					'question' => 'Do you write the copy?',
-					'answer'   => 'We can. Our marketing team writes conversion and SEO copy. [CONFIRM: included or extra]',
+					'answer'   => 'We can. Our marketing team writes conversion and SEO copy. Your quote says whether copy is included.',
 				],
 				[
 					'question' => 'How fast will the site be?',
