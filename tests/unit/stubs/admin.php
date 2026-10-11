@@ -11,4 +11,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 $td_core = dirname( __DIR__, 3 ) . '/wp-content/mu-plugins/techdella-core';
 require_once $td_core . '/admin/Checklist.php';
 require_once $td_core . '/admin/Refresh.php';
+require_once $td_core . '/admin/Prices.php';
 unset( $td_core );

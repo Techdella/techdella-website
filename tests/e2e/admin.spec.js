@@ -175,3 +175,21 @@ test('a Writer cannot publish', async ({ browser }) => {
     wp('journal', ['user', 'delete', login_, '--yes']);
   }
 });
+
+test('Growth → Prices: an edited price shows on the site, naira filled automatically', async ({ page }) => {
+  wp('marketing', ['option', 'delete', 'td_prices']);
+  try {
+    await login(page, 'marketing');
+    await page.goto(site('marketing', '/wp-admin/admin.php?page=td-prices'));
+    await expect(page.getByRole('heading', { name: 'Prices', level: 1 })).toBeVisible();
+    await page.getByLabel('Growth Audit (one-time)', { exact: true }).fill('1,800');
+    await Promise.all([page.waitForURL(/td_msg=saved/), page.getByRole('button', { name: 'Save prices' }).click()]);
+    const saved = JSON.parse(wp('marketing', ['option', 'get', 'td_prices', '--format=json']));
+    expect(saved.growth_audit).toEqual({ usd: 1800, ngn: null });
+    const res = await page.request.get(site('marketing', '/pricing/'));
+    const html = await res.text();
+    expect(html).toContain('data-usd="$1,800" data-ngn="₦360,000"');
+  } finally {
+    wp('marketing', ['option', 'delete', 'td_prices']);
+  }
+});

@@ -5,7 +5,7 @@
  *
  *  Admin     everything (all custom caps).
  *  Editor    core editor caps + every CPT cap (publish everything),
- *            td_edit_menus (menus only — see below), td_manage_popups,
+ *            td_edit_menus (menus only — see below), td_manage_popups, td_manage_prices,
  *            td_manage_media. No plugins/themes/settings (core editor has none).
  *  Writer    td_writer: own drafts of guides (post), glossary terms and case
  *            studies; upload media; "Submit for review". No publish caps.
@@ -57,7 +57,7 @@ function td_caps_for( string $plural, array $keys ): array {
 function td_role_definitions(): array {
 	$own_drafts = [ 'edit_posts', 'delete_posts' ];
 	$others     = [ 'edit_posts', 'edit_others_posts', 'edit_published_posts', 'delete_posts' ];
-	$extra      = [ 'td_edit_menus', 'td_manage_popups', 'td_manage_media' ];
+	$extra      = [ 'td_edit_menus', 'td_manage_popups', 'td_manage_prices', 'td_manage_media' ];
 
 	$defs = [
 		'administrator' => [

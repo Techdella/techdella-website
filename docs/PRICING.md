@@ -5,8 +5,12 @@ each client's scope sets the final quote, agreed in writing before work starts (
 in the lower-middle of published market ranges: below US agency medians, above freelancer rates,
 which suits a senior team serving startups and SMBs in Nigeria, the US and beyond.
 
-Every price lives in one table, `wp-content/themes/techdella/inc/prices.php` (USD and NGN). Page text
-uses tokens like `From {{price:growth_sprint}} / month`; change the table and every page updates.
+**To change a price:** WordPress admin → **Growth → Prices** (admins and editors). Type the dollar
+amount; leave naira empty to use the rule below, or type your own. Save, and every page that shows
+that price updates (the page cache is cleared). Each site (techdella.com, Studios, Journal) keeps its
+own prices. Leaving a box empty goes back to the default in
+`wp-content/themes/techdella/inc/prices.php`. Page text uses tokens like
+`From {{price:growth_sprint}} / month`; the screen shows each price's token.
 
 ## Naira pricing (Nigeria)
 
@@ -41,7 +45,7 @@ Rule: **NGN = USD × 200, never below ₦300,000** (the owner set the Growth Aud
 | creative_assets | from $800 | from ₦300,000 |
 | pitch_deck | from $1,200 | from ₦300,000 |
 
-`[CONFIRM]` the naira figures with Joanna: the ×200 rule makes the floor bite on small items
+Naira prices approved by Joanna (11 Oct 2026). The ×200 rule makes the floor bite on small items
 (creative and asset packages, landing pages and pitch decks all start at ₦300,000).
 
 ## Marketing (techdella.com)
