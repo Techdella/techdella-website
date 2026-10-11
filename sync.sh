@@ -30,7 +30,17 @@ WP="wp --path=$SITE_DIR"
 $WP core is-installed || { echo "WordPress is not installed in $SITE_DIR. Install it from hPanel first." >&2; exit 1; }
 case "$SITE_DIR/" in "$BUNDLE"/*) echo "The site folder can't be inside the bundle." >&2; exit 1 ;; esac
 
-echo "▸ TechDella $(cat "$BUNDLE/BUILD.txt" | head -1) → $SITE_DIR"
+echo "▸ TechDella $(head -1 "$BUNDLE/BUILD.txt") → $SITE_DIR"
+
+# A live site changes the moment this runs (new theme, new plugin), so production needs a typed yes.
+CURRENT_ENV="$($WP config get TD_ENV 2> /dev/null || true)"
+if [ "${ENV:-$CURRENT_ENV}" != staging ]; then
+  HOME_URL="$($WP option get home)"
+  HOST="${HOME_URL#*://}"; HOST="${HOST%%/*}"
+  echo "  This is ${HOME_URL} and it is not marked as staging. Visitors will see the change at once."
+  read -r -p "  Type ${HOST} to continue: " ANSWER < /dev/tty
+  [ "$ANSWER" = "$HOST" ] || { echo "Stopped. Nothing was changed."; exit 1; }
+fi
 
 if [ "$FIRST" = 1 ]; then
   [[ "$SITE" =~ ^(marketing|journal|studios)$ ]] || { echo "--first-run needs --site=marketing|journal|studios" >&2; exit 2; }

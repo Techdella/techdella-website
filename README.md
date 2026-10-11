@@ -21,6 +21,13 @@ core plugin, the content sources, redirects, PDFs, and the motion videos.
 
    `--site` is `marketing`, `journal` or `studios`; `--env` is `staging` or `production`.
 
+## Only one site can use hPanel → GIT?
+
+Clone the bundle once on that site (e.g. the main site, into `techdella-deploy`): every site on the
+account shares the same SSH user, so `sync.sh` installs into any of them. Point it at the staging
+folder, not the live one. On any site not marked staging, `sync.sh` asks you to type its domain
+before it changes anything.
+
 ## Every update
 
 Click **Deploy** in hPanel → GIT (or add hPanel's webhook URL in GitHub → **Settings → Webhooks**
