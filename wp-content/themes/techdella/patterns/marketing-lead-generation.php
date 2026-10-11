@@ -24,12 +24,12 @@ $td_b   = static fn( string $name, array $attrs = [], array $inner = [] ): array
 	'innerContent' => array_fill( 0, count( $inner ), null ),
 ];
 $td_div = static function ( string $block, string $css_class, array $inner, string $style = '' ): array {
-	$base = [
+	$base  = [
 		'core/group'   => 'wp-block-group',
 		'core/columns' => 'wp-block-columns',
 		'core/column'  => 'wp-block-column',
 	][ $block ];
-	$open = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
+	$open  = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
 	$attrs = $css_class ? [ 'className' => $css_class ] : [];
 	return [
 		'blockName'    => $block,
@@ -72,10 +72,25 @@ $td_blocks = [
 			'secondaryUrl'   => '#included',
 			'platformsLabel' => 'Tools we connect',
 			'platforms'      => [
-				[ 'name' => 'HubSpot', 'mark' => 'H', 'slug' => 'hubspot', 'ink' => true ],
-				[ 'name' => 'Sales Navigator', 'mark' => 'in', 'slug' => 'linkedin' ],
-				[ 'name' => 'Typeform', 'mark' => 'T' ],
-				[ 'name' => 'Calendly', 'mark' => 'C' ],
+				[
+					'name' => 'HubSpot',
+					'mark' => 'H',
+					'slug' => 'hubspot',
+					'ink'  => true,
+				],
+				[
+					'name' => 'Sales Navigator',
+					'mark' => 'in',
+					'slug' => 'linkedin',
+				],
+				[
+					'name' => 'Typeform',
+					'mark' => 'T',
+				],
+				[
+					'name' => 'Calendly',
+					'mark' => 'C',
+				],
 			],
 		],
 		[
@@ -87,9 +102,20 @@ $td_blocks = [
 					'fields'  => [ 'Work email', 'Company size' ],
 					'button'  => 'Get the checklist',
 					'leads'   => [
-						[ 'who' => 'Head of IT · 80 staff', 'status' => 'Hot', 'hot' => true ],
-						[ 'who' => 'CTO · 45 staff', 'status' => 'Hot', 'hot' => true ],
-						[ 'who' => 'Student', 'status' => 'Nurture' ],
+						[
+							'who'    => 'Head of IT · 80 staff',
+							'status' => 'Hot',
+							'hot'    => true,
+						],
+						[
+							'who'    => 'CTO · 45 staff',
+							'status' => 'Hot',
+							'hot'    => true,
+						],
+						[
+							'who'    => 'Student',
+							'status' => 'Nurture',
+						],
 					],
 					'stages'  => [ 'Visits', 'Leads', 'Qualified', 'Calls' ],
 					'caption' => 'Example lead view',
@@ -127,12 +153,39 @@ $td_blocks = [
 			'style'   => 'icon',
 			'columns' => 3,
 			'items'   => [
-				[ 'icon' => 'target', 'tone' => 'canvas', 'title' => 'Offers & lead magnets', 'text' => 'Checklists, benchmarks, calculators and audits your buyers actually want.' ],
-				[ 'icon' => 'lines', 'title' => 'Landing pages & forms', 'text' => 'One page per campaign, one clear action, and forms that qualify as they capture.' ],
-				[ 'icon' => 'chat', 'title' => 'Outbound outreach', 'text' => 'Personalized LinkedIn and email outreach to accounts that match your ideal customer.' ],
-				[ 'icon' => 'chart', 'tone' => 'sand', 'title' => 'Lead scoring & qualification', 'text' => 'Fit and intent scores so sales calls the right people first.' ],
-				[ 'icon' => 'nodes', 'title' => 'CRM setup & routing', 'text' => 'Every lead lands in your CRM with source, score and owner.' ],
-				[ 'icon' => 'search', 'tone' => 'dark', 'title' => 'Source tracking', 'text' => 'Know which channel, ad and page produced every qualified lead.' ],
+				[
+					'icon'  => 'target',
+					'tone'  => 'canvas',
+					'title' => 'Offers & lead magnets',
+					'text'  => 'Checklists, benchmarks, calculators and audits your buyers actually want.',
+				],
+				[
+					'icon'  => 'lines',
+					'title' => 'Landing pages & forms',
+					'text'  => 'One page per campaign, one clear action, and forms that qualify as they capture.',
+				],
+				[
+					'icon'  => 'chat',
+					'title' => 'Outbound outreach',
+					'text'  => 'Personalized LinkedIn and email outreach to accounts that match your ideal customer.',
+				],
+				[
+					'icon'  => 'chart',
+					'tone'  => 'sand',
+					'title' => 'Lead scoring & qualification',
+					'text'  => 'Fit and intent scores so sales calls the right people first.',
+				],
+				[
+					'icon'  => 'nodes',
+					'title' => 'CRM setup & routing',
+					'text'  => 'Every lead lands in your CRM with source, score and owner.',
+				],
+				[
+					'icon'  => 'search',
+					'tone'  => 'dark',
+					'title' => 'Source tracking',
+					'text'  => 'Know which channel, ad and page produced every qualified lead.',
+				],
 			],
 		]
 	),
@@ -142,11 +195,26 @@ $td_blocks = [
 			'title'     => 'From stranger to *sales call*',
 			'intro'     => 'Every lead follows a clear path, and we measure each step.',
 			'stages'    => [
-				[ 'title' => 'Sees an ad or article', 'text' => 'Paid, SEO or AI search' ],
-				[ 'title' => 'Lands on an offer', 'text' => 'Focused landing page' ],
-				[ 'title' => 'Becomes a lead', 'text' => 'Form or booking' ],
-				[ 'title' => 'Scored & routed', 'text' => 'AI automation' ],
-				[ 'title' => 'Nurtured or called', 'text' => 'Email or sales' ],
+				[
+					'title' => 'Sees an ad or article',
+					'text'  => 'Paid, SEO or AI search',
+				],
+				[
+					'title' => 'Lands on an offer',
+					'text'  => 'Focused landing page',
+				],
+				[
+					'title' => 'Becomes a lead',
+					'text'  => 'Form or booking',
+				],
+				[
+					'title' => 'Scored & routed',
+					'text'  => 'AI automation',
+				],
+				[
+					'title' => 'Nurtured or called',
+					'text'  => 'Email or sales',
+				],
 			],
 			'highlight' => 3,
 		]
@@ -158,12 +226,42 @@ $td_blocks = [
 			'intro'   => 'Search and ads bring the traffic. Lead gen turns it into names. Email and automation turn names into meetings.',
 			'current' => '/services/lead-generation/',
 			'items'   => [
-				[ 'relation' => 'Traffic', 'title' => 'SEO', 'text' => 'Organic visitors with intent.', 'url' => '/services/seo/' ],
-				[ 'relation' => 'Traffic', 'title' => 'AI Search', 'text' => 'Referrals from AI answers.', 'url' => '/services/ai-search-optimization/' ],
-				[ 'relation' => 'Traffic', 'title' => 'Paid ads', 'text' => 'Targeted clicks to each offer.', 'url' => '/services/paid-ads/' ],
-				[ 'relation' => 'You are here', 'title' => 'Lead generation', 'text' => 'Turns visitors into leads.', 'url' => '/services/lead-generation/' ],
-				[ 'relation' => 'Next', 'title' => 'Email', 'text' => 'Nurtures leads not ready yet.', 'url' => '/services/email-marketing/' ],
-				[ 'relation' => 'Next', 'title' => 'AI automation', 'text' => 'Scores and routes in minutes.', 'url' => '/services/marketing-automation/' ],
+				[
+					'relation' => 'Traffic',
+					'title'    => 'SEO',
+					'text'     => 'Organic visitors with intent.',
+					'url'      => '/services/seo/',
+				],
+				[
+					'relation' => 'Traffic',
+					'title'    => 'AI Search',
+					'text'     => 'Referrals from AI answers.',
+					'url'      => '/services/ai-search-optimization/',
+				],
+				[
+					'relation' => 'Traffic',
+					'title'    => 'Paid ads',
+					'text'     => 'Targeted clicks to each offer.',
+					'url'      => '/services/paid-ads/',
+				],
+				[
+					'relation' => 'You are here',
+					'title'    => 'Lead generation',
+					'text'     => 'Turns visitors into leads.',
+					'url'      => '/services/lead-generation/',
+				],
+				[
+					'relation' => 'Next',
+					'title'    => 'Email',
+					'text'     => 'Nurtures leads not ready yet.',
+					'url'      => '/services/email-marketing/',
+				],
+				[
+					'relation' => 'Next',
+					'title'    => 'AI automation',
+					'text'     => 'Scores and routes in minutes.',
+					'url'      => '/services/marketing-automation/',
+				],
 			],
 		]
 	),
@@ -179,10 +277,22 @@ $td_blocks = [
 							'bare'    => true,
 							'columns' => 2,
 							'items'   => [
-								[ 'title' => 'Define your ICP', 'text' => 'Who buys, why, and what “qualified” means.' ],
-								[ 'title' => 'Build the offer', 'text' => 'Lead magnet, page and form.' ],
-								[ 'title' => 'Drive traffic', 'text' => 'Ads, search and outreach.' ],
-								[ 'title' => 'Qualify & hand off', 'text' => 'Scored leads straight to sales.' ],
+								[
+									'title' => 'Define your ICP',
+									'text'  => 'Who buys, why, and what “qualified” means.',
+								],
+								[
+									'title' => 'Build the offer',
+									'text'  => 'Lead magnet, page and form.',
+								],
+								[
+									'title' => 'Drive traffic',
+									'text'  => 'Ads, search and outreach.',
+								],
+								[
+									'title' => 'Qualify & hand off',
+									'text'  => 'Scored leads straight to sales.',
+								],
 							],
 						]
 					),
@@ -209,11 +319,26 @@ $td_blocks = [
 		[
 			'title' => 'Lead generation *questions*',
 			'items' => [
-				[ 'question' => 'What counts as a qualified lead?', 'answer' => 'We define it with you before we start: company size, role, need and timing. Only leads that match are counted and passed to sales.' ],
-				[ 'question' => 'Do you buy or sell lead lists?', 'answer' => 'No. We build your own pipeline through offers, content, ads and personalized outreach.' ],
-				[ 'question' => 'How quickly will we see leads?', 'answer' => 'Paid and outbound can start producing leads soon after launch; SEO-driven leads build over months. We’ll set realistic expectations in your plan.' ],
-				[ 'question' => 'Which CRM do you work with?', 'answer' => 'HubSpot, Pipedrive, Zoho and most CRMs with an API. If you don’t have one, we’ll help you set it up.' ],
-				[ 'question' => 'Do you write the lead magnets?', 'answer' => 'Yes. We research, write and design checklists, guides and worksheets with your team’s expertise, and build the landing page and follow-up emails around each one.' ],
+				[
+					'question' => 'What counts as a qualified lead?',
+					'answer'   => 'We define it with you before we start: company size, role, need and timing. Only leads that match are counted and passed to sales.',
+				],
+				[
+					'question' => 'Do you buy or sell lead lists?',
+					'answer'   => 'No. We build your own pipeline through offers, content, ads and personalized outreach.',
+				],
+				[
+					'question' => 'How quickly will we see leads?',
+					'answer'   => 'Paid and outbound can start producing leads soon after launch; SEO-driven leads build over months. We’ll set realistic expectations in your plan.',
+				],
+				[
+					'question' => 'Which CRM do you work with?',
+					'answer'   => 'HubSpot, Pipedrive, Zoho and most CRMs with an API. If you don’t have one, we’ll help you set it up.',
+				],
+				[
+					'question' => 'Do you write the lead magnets?',
+					'answer'   => 'Yes. We research, write and design checklists, guides and worksheets with your team’s expertise, and build the landing page and follow-up emails around each one.',
+				],
 			],
 		]
 	),

@@ -24,12 +24,12 @@ $td_b   = static fn( string $name, array $attrs = [], array $inner = [] ): array
 	'innerContent' => array_fill( 0, count( $inner ), null ),
 ];
 $td_div = static function ( string $block, string $css_class, array $inner, string $style = '' ): array {
-	$base = [
+	$base  = [
 		'core/group'   => 'wp-block-group',
 		'core/columns' => 'wp-block-columns',
 		'core/column'  => 'wp-block-column',
 	][ $block ];
-	$open = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
+	$open  = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
 	$attrs = $css_class ? [ 'className' => $css_class ] : [];
 	return [
 		'blockName'    => $block,
@@ -72,12 +72,37 @@ $td_blocks = [
 			'secondaryUrl'   => '#included',
 			'platformsLabel' => 'Tools we build with',
 			'platforms'      => [
-				[ 'name' => 'Zapier', 'mark' => 'Z', 'slug' => 'zapier', 'ink' => true ],
-				[ 'name' => 'Make', 'mark' => 'M', 'slug' => 'make' ],
-				[ 'name' => 'n8n', 'mark' => 'n8', 'slug' => 'n8n' ],
-				[ 'name' => 'HubSpot', 'mark' => 'H', 'slug' => 'hubspot' ],
-				[ 'name' => 'Slack', 'mark' => 'S', 'slug' => 'slack' ],
-				[ 'name' => 'WhatsApp Business', 'mark' => 'W', 'slug' => 'whatsapp' ],
+				[
+					'name' => 'Zapier',
+					'mark' => 'Z',
+					'slug' => 'zapier',
+					'ink'  => true,
+				],
+				[
+					'name' => 'Make',
+					'mark' => 'M',
+					'slug' => 'make',
+				],
+				[
+					'name' => 'n8n',
+					'mark' => 'n8',
+					'slug' => 'n8n',
+				],
+				[
+					'name' => 'HubSpot',
+					'mark' => 'H',
+					'slug' => 'hubspot',
+				],
+				[
+					'name' => 'Slack',
+					'mark' => 'S',
+					'slug' => 'slack',
+				],
+				[
+					'name' => 'WhatsApp Business',
+					'mark' => 'W',
+					'slug' => 'whatsapp',
+				],
 			],
 		],
 		[
@@ -86,18 +111,40 @@ $td_blocks = [
 				[
 					'caption' => 'Example workflow',
 					'steps'   => [
-						[ 'kind' => 'trigger', 'label' => 'Trigger', 'title' => 'New form submission' ],
-						[ 'kind' => 'ai', 'label' => 'AI step', 'title' => 'Score, summarize, draft reply' ],
+						[
+							'kind'  => 'trigger',
+							'label' => 'Trigger',
+							'title' => 'New form submission',
+						],
+						[
+							'kind'  => 'ai',
+							'label' => 'AI step',
+							'title' => 'Score, summarize, draft reply',
+						],
 						[
 							'kind'     => 'branch',
 							'branches' => [
-								[ 'label' => 'If hot', 'title' => 'WhatsApp reply + Slack alert to sales', 'hot' => true ],
-								[ 'label' => 'If warm', 'title' => 'Start email nurture sequence' ],
+								[
+									'label' => 'If hot',
+									'title' => 'WhatsApp reply + Slack alert to sales',
+									'hot'   => true,
+								],
+								[
+									'label' => 'If warm',
+									'title' => 'Start email nurture sequence',
+								],
 							],
 						],
-						[ 'kind' => 'crm', 'label' => 'CRM', 'title' => 'Contact, score & owner saved' ],
+						[
+							'kind'  => 'crm',
+							'label' => 'CRM',
+							'title' => 'Contact, score & owner saved',
+						],
 					],
-					'bubble'  => [ 'meta' => 'WhatsApp · 2 min after form', 'text' => 'Hi Ada, thanks for reaching out about SOC 2. Here’s a link to book a call with our team.' ],
+					'bubble'  => [
+						'meta' => 'WhatsApp · 2 min after form',
+						'text' => 'Hi Ada, thanks for reaching out about SOC 2. Here’s a link to book a call with our team.',
+					],
 				]
 			),
 		]
@@ -132,12 +179,39 @@ $td_blocks = [
 			'style'   => 'icon',
 			'columns' => 3,
 			'items'   => [
-				[ 'icon' => 'chat', 'tone' => 'canvas', 'title' => 'Instant lead follow-up', 'text' => 'Every new lead gets a personal reply on email or WhatsApp within minutes, with a link to book.' ],
-				[ 'icon' => 'target', 'title' => 'AI lead scoring & summaries', 'text' => 'Each lead summarized and scored, so sales knows who to call first.' ],
-				[ 'icon' => 'nodes', 'title' => 'CRM sync & routing', 'text' => 'Forms, ads and inboxes synced to your CRM, with the right owner assigned.' ],
-				[ 'icon' => 'person', 'tone' => 'sand', 'title' => 'AI website assistant', 'text' => 'Answers common questions and books calls, trained on your own content.' ],
-				[ 'icon' => 'check', 'title' => 'Built, tested and maintained', 'text' => 'We document every workflow and monitor it, so nothing silently breaks.' ],
-				[ 'icon' => 'chart', 'tone' => 'dark', 'title' => 'Automated reporting', 'text' => 'Weekly numbers posted to Slack or email, no spreadsheets.' ],
+				[
+					'icon'  => 'chat',
+					'tone'  => 'canvas',
+					'title' => 'Instant lead follow-up',
+					'text'  => 'Every new lead gets a personal reply on email or WhatsApp within minutes, with a link to book.',
+				],
+				[
+					'icon'  => 'target',
+					'title' => 'AI lead scoring & summaries',
+					'text'  => 'Each lead summarized and scored, so sales knows who to call first.',
+				],
+				[
+					'icon'  => 'nodes',
+					'title' => 'CRM sync & routing',
+					'text'  => 'Forms, ads and inboxes synced to your CRM, with the right owner assigned.',
+				],
+				[
+					'icon'  => 'person',
+					'tone'  => 'sand',
+					'title' => 'AI website assistant',
+					'text'  => 'Answers common questions and books calls, trained on your own content.',
+				],
+				[
+					'icon'  => 'check',
+					'title' => 'Built, tested and maintained',
+					'text'  => 'We document every workflow and monitor it, so nothing silently breaks.',
+				],
+				[
+					'icon'  => 'chart',
+					'tone'  => 'dark',
+					'title' => 'Automated reporting',
+					'text'  => 'Weekly numbers posted to Slack or email, no spreadsheets.',
+				],
 			],
 		]
 	),
@@ -165,12 +239,42 @@ $td_blocks = [
 			'intro'       => 'It’s the glue between channels: every lead from search, ads and outreach gets the right next step automatically.',
 			'current'     => '/services/marketing-automation/',
 			'items'       => [
-				[ 'relation' => 'Input', 'title' => 'SEO', 'text' => 'Contact forms from organic visitors.', 'url' => '/services/seo/' ],
-				[ 'relation' => 'Input', 'title' => 'AI Search', 'text' => 'Inquiries from AI referrals.', 'url' => '/services/ai-search-optimization/' ],
-				[ 'relation' => 'Input', 'title' => 'Paid ads', 'text' => 'Meta, TikTok and LinkedIn lead forms.', 'url' => '/services/paid-ads/' ],
-				[ 'relation' => 'Input', 'title' => 'Lead generation', 'text' => 'Downloads and outreach replies.', 'url' => '/services/lead-generation/' ],
-				[ 'relation' => 'Output', 'title' => 'Email', 'text' => 'Sequences triggered automatically.', 'url' => '/services/email-marketing/' ],
-				[ 'relation' => 'You are here', 'title' => 'AI automation', 'text' => 'Connects it all, in minutes.', 'url' => '/services/marketing-automation/' ],
+				[
+					'relation' => 'Input',
+					'title'    => 'SEO',
+					'text'     => 'Contact forms from organic visitors.',
+					'url'      => '/services/seo/',
+				],
+				[
+					'relation' => 'Input',
+					'title'    => 'AI Search',
+					'text'     => 'Inquiries from AI referrals.',
+					'url'      => '/services/ai-search-optimization/',
+				],
+				[
+					'relation' => 'Input',
+					'title'    => 'Paid ads',
+					'text'     => 'Meta, TikTok and LinkedIn lead forms.',
+					'url'      => '/services/paid-ads/',
+				],
+				[
+					'relation' => 'Input',
+					'title'    => 'Lead generation',
+					'text'     => 'Downloads and outreach replies.',
+					'url'      => '/services/lead-generation/',
+				],
+				[
+					'relation' => 'Output',
+					'title'    => 'Email',
+					'text'     => 'Sequences triggered automatically.',
+					'url'      => '/services/email-marketing/',
+				],
+				[
+					'relation' => 'You are here',
+					'title'    => 'AI automation',
+					'text'     => 'Connects it all, in minutes.',
+					'url'      => '/services/marketing-automation/',
+				],
 			],
 			'footerLabel' => 'Need a custom AI agent or app? TechDella Studios builds them',
 			'footerUrl'   => 'studios:/',
@@ -188,10 +292,22 @@ $td_blocks = [
 							'bare'    => true,
 							'columns' => 2,
 							'items'   => [
-								[ 'title' => 'Map the workflow', 'text' => 'Where leads come from and where they stall.' ],
-								[ 'title' => 'Build & connect', 'text' => 'On your CRM and existing tools.' ],
-								[ 'title' => 'Test with people', 'text' => 'Every AI step reviewed before launch.' ],
-								[ 'title' => 'Monitor & improve', 'text' => 'Documented, monitored and handed over.' ],
+								[
+									'title' => 'Map the workflow',
+									'text'  => 'Where leads come from and where they stall.',
+								],
+								[
+									'title' => 'Build & connect',
+									'text'  => 'On your CRM and existing tools.',
+								],
+								[
+									'title' => 'Test with people',
+									'text'  => 'Every AI step reviewed before launch.',
+								],
+								[
+									'title' => 'Monitor & improve',
+									'text'  => 'Documented, monitored and handed over.',
+								],
 							],
 						]
 					),
@@ -223,11 +339,26 @@ $td_blocks = [
 		[
 			'title' => 'AI automation *questions*',
 			'items' => [
-				[ 'question' => 'Will AI reply to customers without anyone checking?', 'answer' => 'Only where you’re comfortable. We use templates and guardrails for routine replies, and route anything sensitive to a person.' ],
-				[ 'question' => 'Which tools do you use?', 'answer' => 'Zapier, Make or n8n for workflows, your CRM, Slack and WhatsApp Business, with AI models for scoring and drafting.' ],
-				[ 'question' => 'Is our customer data safe?', 'answer' => 'We build inside your accounts, limit access to what each workflow needs, and document where every piece of data goes.' ],
-				[ 'question' => 'How is this different from TechDella Studios?', 'answer' => 'Here we automate marketing and sales workflows on existing tools. Studios builds custom apps and AI agents from scratch.' ],
-				[ 'question' => 'What happens if a workflow breaks?', 'answer' => 'We monitor every workflow and get an alert when a step fails. Failed runs are retried or flagged to a person, so no lead is lost silently.' ],
+				[
+					'question' => 'Will AI reply to customers without anyone checking?',
+					'answer'   => 'Only where you’re comfortable. We use templates and guardrails for routine replies, and route anything sensitive to a person.',
+				],
+				[
+					'question' => 'Which tools do you use?',
+					'answer'   => 'Zapier, Make or n8n for workflows, your CRM, Slack and WhatsApp Business, with AI models for scoring and drafting.',
+				],
+				[
+					'question' => 'Is our customer data safe?',
+					'answer'   => 'We build inside your accounts, limit access to what each workflow needs, and document where every piece of data goes.',
+				],
+				[
+					'question' => 'How is this different from TechDella Studios?',
+					'answer'   => 'Here we automate marketing and sales workflows on existing tools. Studios builds custom apps and AI agents from scratch.',
+				],
+				[
+					'question' => 'What happens if a workflow breaks?',
+					'answer'   => 'We monitor every workflow and get an alert when a step fails. Failed runs are retried or flagged to a person, so no lead is lost silently.',
+				],
 			],
 		]
 	),

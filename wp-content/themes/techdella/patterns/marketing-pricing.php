@@ -24,12 +24,12 @@ $td_b   = static fn( string $name, array $attrs = [], array $inner = [] ): array
 	'innerContent' => array_fill( 0, count( $inner ), null ),
 ];
 $td_div = static function ( string $block, string $css_class, array $inner, string $style = '' ): array {
-	$base = [
+	$base  = [
 		'core/group'   => 'wp-block-group',
 		'core/columns' => 'wp-block-columns',
 		'core/column'  => 'wp-block-column',
 	][ $block ];
-	$open = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
+	$open  = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
 	$attrs = $css_class ? [ 'className' => $css_class ] : [];
 	return [
 		'blockName'    => $block,
@@ -77,9 +77,32 @@ $td_blocks = [
 			'title' => "Start with an audit.\nGrow from *there*.",
 			'intro' => 'Clear offers with defined deliverables. No open-ended retainers.',
 			'cards' => [
-				[ 'featured' => true, 'kicker' => 'One-time', 'badge' => 'Start here', 'title' => 'Growth Audit', 'text' => 'Search, AI visibility, ads, funnel and tracking reviewed, with a prioritized plan.', 'price' => '[PRICE]', 'buttonLabel' => 'Get started', 'buttonUrl' => '/growth-audit/' ],
-				[ 'kicker' => 'Fixed scope', 'title' => 'Growth Sprint', 'text' => 'We implement the top priorities: SEO fixes, a campaign launch, an email sequence or an automation.', 'price' => 'From [PRICE]', 'buttonLabel' => 'Talk to us', 'buttonUrl' => '/book-a-discovery-call/' ],
-				[ 'kicker' => 'Monthly', 'title' => 'Growth Management', 'text' => 'Ongoing search, paid, email and automation work with contracted monthly deliverables.', 'price' => '[PRICE] / month', 'buttonLabel' => 'Talk to us', 'buttonUrl' => '/book-a-discovery-call/' ],
+				[
+					'featured'    => true,
+					'kicker'      => 'One-time',
+					'badge'       => 'Start here',
+					'title'       => 'Growth Audit',
+					'text'        => 'Search, AI visibility, ads, funnel and tracking reviewed, with a prioritized plan.',
+					'price'       => '[PRICE]',
+					'buttonLabel' => 'Get started',
+					'buttonUrl'   => '/growth-audit/',
+				],
+				[
+					'kicker'      => 'Fixed scope',
+					'title'       => 'Growth Sprint',
+					'text'        => 'We implement the top priorities: SEO fixes, a campaign launch, an email sequence or an automation.',
+					'price'       => 'From [PRICE]',
+					'buttonLabel' => 'Talk to us',
+					'buttonUrl'   => '/book-a-discovery-call/',
+				],
+				[
+					'kicker'      => 'Monthly',
+					'title'       => 'Growth Management',
+					'text'        => 'Ongoing search, paid, email and automation work with contracted monthly deliverables.',
+					'price'       => '[PRICE] / month',
+					'buttonLabel' => 'Talk to us',
+					'buttonUrl'   => '/book-a-discovery-call/',
+				],
 			],
 		]
 	),
@@ -95,10 +118,22 @@ $td_blocks = [
 							'style' => 'checks',
 							'bare'  => true,
 							'items' => [
-								[ 'title' => 'A monthly ad budget', 'text' => 'of at least [MINIMUM SPEND]' ],
-								[ 'title' => 'A clear offer', 'text' => 'people already want' ],
-								[ 'title' => 'Conversion tracking,', 'text' => 'or you’re happy for us to set it up' ],
-								[ 'title' => 'Someone to follow up', 'text' => 'leads quickly' ],
+								[
+									'title' => 'A monthly ad budget',
+									'text'  => 'of at least [MINIMUM SPEND]',
+								],
+								[
+									'title' => 'A clear offer',
+									'text'  => 'people already want',
+								],
+								[
+									'title' => 'Conversion tracking,',
+									'text'  => 'or you’re happy for us to set it up',
+								],
+								[
+									'title' => 'Someone to follow up',
+									'text'  => 'leads quickly',
+								],
 							],
 						]
 					),
@@ -112,14 +147,33 @@ $td_blocks = [
 							'style' => 'checks',
 							'bare'  => true,
 							'items' => [
-								[ 'title' => 'Setup & tracking:', 'text' => '[PRICE] one-time' ],
-								[ 'title' => 'One platform:', 'text' => '[PRICE] / month' ],
-								[ 'title' => 'Two or more platforms:', 'text' => '[PRICE] / month' ],
-								[ 'title' => 'Creative package:', 'text' => 'from [PRICE]' ],
+								[
+									'title' => 'Setup & tracking:',
+									'text'  => '[PRICE] one-time',
+								],
+								[
+									'title' => 'One platform:',
+									'text'  => '[PRICE] / month',
+								],
+								[
+									'title' => 'Two or more platforms:',
+									'text'  => '[PRICE] / month',
+								],
+								[
+									'title' => 'Creative package:',
+									'text'  => 'from [PRICE]',
+								],
 							],
 						]
 					),
-					$td_b( 'button', [ 'label' => 'See paid ads', 'url' => '/services/paid-ads/', 'variant' => 'secondary' ] ),
+					$td_b(
+						'button',
+						[
+							'label'   => 'See paid ads',
+							'url'     => '/services/paid-ads/',
+							'variant' => 'secondary',
+						]
+					),
 				],
 				50
 			),
@@ -134,9 +188,22 @@ $td_blocks = [
 			'surface' => 'canvas',
 			'columns' => 3,
 			'items'   => [
-				[ 'icon' => 'chart', 'title' => 'Shared dashboard', 'text' => 'Leads, cost per lead and revenue by channel, updated automatically.' ],
-				[ 'icon' => 'chat', 'title' => 'Monthly review call', 'text' => 'What we did, what it produced and what comes next.' ],
-				[ 'icon' => 'check', 'tone' => 'dark', 'title' => 'You own every account', 'text' => 'Ads, analytics, CRM and content stay yours if we ever part ways.' ],
+				[
+					'icon'  => 'chart',
+					'title' => 'Shared dashboard',
+					'text'  => 'Leads, cost per lead and revenue by channel, updated automatically.',
+				],
+				[
+					'icon'  => 'chat',
+					'title' => 'Monthly review call',
+					'text'  => 'What we did, what it produced and what comes next.',
+				],
+				[
+					'icon'  => 'check',
+					'tone'  => 'dark',
+					'title' => 'You own every account',
+					'text'  => 'Ads, analytics, CRM and content stay yours if we ever part ways.',
+				],
 			],
 		]
 	),
@@ -146,10 +213,22 @@ $td_blocks = [
 			'title'      => 'Pricing *questions*',
 			'background' => 'paper',
 			'items'      => [
-				[ 'question' => 'Why start with an audit?', 'answer' => 'Because it tells us both where the money should go. The audit ranks every opportunity by impact and effort, so a Sprint or monthly plan starts with the work most likely to pay back.' ],
-				[ 'question' => 'Is ad spend included in your fees?', 'answer' => 'No. Ad spend is paid directly to Google, Meta, TikTok or LinkedIn from your own accounts. Our fees cover strategy, creatives and management.' ],
-				[ 'question' => 'Is there a minimum commitment?', 'answer' => 'The audit and Sprints are one-off. Monthly management has a minimum term of [CONFIRM: minimum term] months, so campaigns and content have time to work.' ],
-				[ 'question' => 'Can we change scope later?', 'answer' => 'Yes. We review scope with you every month and agree any change in writing before it starts.' ],
+				[
+					'question' => 'Why start with an audit?',
+					'answer'   => 'Because it tells us both where the money should go. The audit ranks every opportunity by impact and effort, so a Sprint or monthly plan starts with the work most likely to pay back.',
+				],
+				[
+					'question' => 'Is ad spend included in your fees?',
+					'answer'   => 'No. Ad spend is paid directly to Google, Meta, TikTok or LinkedIn from your own accounts. Our fees cover strategy, creatives and management.',
+				],
+				[
+					'question' => 'Is there a minimum commitment?',
+					'answer'   => 'The audit and Sprints are one-off. Monthly management has a minimum term of [CONFIRM: minimum term] months, so campaigns and content have time to work.',
+				],
+				[
+					'question' => 'Can we change scope later?',
+					'answer'   => 'Yes. We review scope with you every month and agree any change in writing before it starts.',
+				],
 			],
 		]
 	),

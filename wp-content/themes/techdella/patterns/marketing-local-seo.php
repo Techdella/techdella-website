@@ -24,12 +24,12 @@ $td_b   = static fn( string $name, array $attrs = [], array $inner = [] ): array
 	'innerContent' => array_fill( 0, count( $inner ), null ),
 ];
 $td_div = static function ( string $block, string $css_class, array $inner, string $style = '' ): array {
-	$base = [
+	$base  = [
 		'core/group'   => 'wp-block-group',
 		'core/columns' => 'wp-block-columns',
 		'core/column'  => 'wp-block-column',
 	][ $block ];
-	$open = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
+	$open  = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
 	$attrs = $css_class ? [ 'className' => $css_class ] : [];
 	return [
 		'blockName'    => $block,
@@ -57,10 +57,22 @@ $td_cols = static fn( array $left, array $right, int $left_pct = 58 ): array => 
 );
 
 $td_seo_family = [
-	[ 'label' => 'SEO', 'url' => '/services/seo/' ],
-	[ 'label' => 'Technical SEO', 'url' => '/services/technical-seo/' ],
-	[ 'label' => 'Local SEO', 'url' => '/services/local-seo/' ],
-	[ 'label' => 'AI Search', 'url' => '/services/ai-search-optimization/' ],
+	[
+		'label' => 'SEO',
+		'url'   => '/services/seo/',
+	],
+	[
+		'label' => 'Technical SEO',
+		'url'   => '/services/technical-seo/',
+	],
+	[
+		'label' => 'Local SEO',
+		'url'   => '/services/local-seo/',
+	],
+	[
+		'label' => 'AI Search',
+		'url'   => '/services/ai-search-optimization/',
+	],
 ];
 
 $td_blocks = [
@@ -86,10 +98,27 @@ $td_blocks = [
 			'secondaryUrl'   => '#included',
 			'platformsLabel' => 'Platforms we work in',
 			'platforms'      => [
-				[ 'name' => 'Google Search', 'mark' => 'G', 'slug' => 'google-search', 'ink' => true ],
-				[ 'name' => 'Google Search Console', 'mark' => 'G', 'slug' => 'google-search-console' ],
-				[ 'name' => 'GA4', 'mark' => 'GA', 'slug' => 'ga4' ],
-				[ 'name' => 'Bing', 'mark' => 'B', 'slug' => 'bing' ],
+				[
+					'name' => 'Google Search',
+					'mark' => 'G',
+					'slug' => 'google-search',
+					'ink'  => true,
+				],
+				[
+					'name' => 'Google Search Console',
+					'mark' => 'G',
+					'slug' => 'google-search-console',
+				],
+				[
+					'name' => 'GA4',
+					'mark' => 'GA',
+					'slug' => 'ga4',
+				],
+				[
+					'name' => 'Bing',
+					'mark' => 'B',
+					'slug' => 'bing',
+				],
 			],
 		],
 		[
@@ -98,8 +127,17 @@ $td_blocks = [
 				[
 					'query'   => 'it support company near me',
 					'results' => [
-						[ 'rank' => '#1', 'url' => 'yourcompany.com › lagos', 'title' => 'IT Support for Businesses in Lagos | YourCo', 'text' => 'Managed IT and helpdesk for offices on the Island and Mainland. Book an on-site visit…', 'highlight' => true ],
-						[ 'url' => 'directory.example', 'title' => 'IT companies in Lagos | Listings' ],
+						[
+							'rank'      => '#1',
+							'url'       => 'yourcompany.com › lagos',
+							'title'     => 'IT Support for Businesses in Lagos | YourCo',
+							'text'      => 'Managed IT and helpdesk for offices on the Island and Mainland. Book an on-site visit…',
+							'highlight' => true,
+						],
+						[
+							'url'   => 'directory.example',
+							'title' => 'IT companies in Lagos | Listings',
+						],
 					],
 					'caption' => 'Example result',
 					'variant' => 'sand',
@@ -118,9 +156,18 @@ $td_blocks = [
 					'bare'    => true,
 					'columns' => 3,
 					'items'   => [
-						[ 'title' => 'Google Business Profile', 'text' => 'Set up, verified and kept current.' ],
-						[ 'title' => 'Consistent details', 'text' => 'The same name, address and phone everywhere.' ],
-						[ 'title' => 'Real local pages', 'text' => 'Local proof and detail, not a swapped city name.' ],
+						[
+							'title' => 'Google Business Profile',
+							'text'  => 'Set up, verified and kept current.',
+						],
+						[
+							'title' => 'Consistent details',
+							'text'  => 'The same name, address and phone everywhere.',
+						],
+						[
+							'title' => 'Real local pages',
+							'text'  => 'Local proof and detail, not a swapped city name.',
+						],
 					],
 				]
 			),
@@ -136,12 +183,39 @@ $td_blocks = [
 			'style'   => 'icon',
 			'columns' => 3,
 			'items'   => [
-				[ 'icon' => 'target', 'tone' => 'canvas', 'title' => 'Google Business Profile', 'text' => 'Categories, services, photos, hours and posts set up so your profile answers the questions buyers ask before they call.' ],
-				[ 'icon' => 'list', 'title' => 'Citations & listings', 'text' => 'Your business details made consistent across directories, maps and industry listings.' ],
-				[ 'icon' => 'chat', 'title' => 'Reviews process', 'text' => 'A simple way to ask happy clients for reviews, and a plan for replying to every review, good or bad.' ],
-				[ 'icon' => 'lines', 'tone' => 'sand', 'title' => 'Location pages', 'text' => 'One page per real market, with local clients, working hours, channels and FAQs. No city-swap templates.' ],
-				[ 'icon' => 'search', 'title' => 'Local keyword research', 'text' => 'The “near me” and city searches that bring calls and visits, mapped to the right pages.' ],
-				[ 'icon' => 'chart', 'tone' => 'dark', 'title' => 'Local rank & call tracking', 'text' => 'Map and local rankings, profile views, calls and direction requests, reported monthly.' ],
+				[
+					'icon'  => 'target',
+					'tone'  => 'canvas',
+					'title' => 'Google Business Profile',
+					'text'  => 'Categories, services, photos, hours and posts set up so your profile answers the questions buyers ask before they call.',
+				],
+				[
+					'icon'  => 'list',
+					'title' => 'Citations & listings',
+					'text'  => 'Your business details made consistent across directories, maps and industry listings.',
+				],
+				[
+					'icon'  => 'chat',
+					'title' => 'Reviews process',
+					'text'  => 'A simple way to ask happy clients for reviews, and a plan for replying to every review, good or bad.',
+				],
+				[
+					'icon'  => 'lines',
+					'tone'  => 'sand',
+					'title' => 'Location pages',
+					'text'  => 'One page per real market, with local clients, working hours, channels and FAQs. No city-swap templates.',
+				],
+				[
+					'icon'  => 'search',
+					'title' => 'Local keyword research',
+					'text'  => 'The “near me” and city searches that bring calls and visits, mapped to the right pages.',
+				],
+				[
+					'icon'  => 'chart',
+					'tone'  => 'dark',
+					'title' => 'Local rank & call tracking',
+					'text'  => 'Map and local rankings, profile views, calls and direction requests, reported monthly.',
+				],
 			],
 		]
 	),
@@ -154,8 +228,16 @@ $td_blocks = [
 			'surface'    => 'canvas',
 			'afterStyle' => 'paper',
 			'strike'     => true,
-			'before'     => [ 'label' => 'Before', 'title' => 'IT Support in {city}', 'text' => 'We are the leading IT support company in {city}. Contact us today.' ],
-			'after'      => [ 'label' => 'After', 'title' => 'IT Support for Businesses in Lagos | YourCo', 'text' => 'On-site visits on the Island and Mainland, a local helpdesk from 8am to 6pm WAT, and three Lagos client stories.' ],
+			'before'     => [
+				'label' => 'Before',
+				'title' => 'IT Support in {city}',
+				'text'  => 'We are the leading IT support company in {city}. Contact us today.',
+			],
+			'after'      => [
+				'label' => 'After',
+				'title' => 'IT Support for Businesses in Lagos | YourCo',
+				'text'  => 'On-site visits on the Island and Mainland, a local helpdesk from 8am to 6pm WAT, and three Lagos client stories.',
+			],
 		]
 	),
 	$td_b(
@@ -165,12 +247,42 @@ $td_blocks = [
 			'intro'   => 'Local rankings bring calls and visits. The rest of your system makes sure each one is followed up.',
 			'current' => '/services/local-seo/',
 			'items'   => [
-				[ 'relation' => 'Part of', 'title' => 'SEO', 'text' => 'Content and keywords for every market.', 'url' => '/services/seo/' ],
-				[ 'relation' => 'You are here', 'title' => 'Local SEO', 'text' => 'Puts you on the map where buyers search.', 'url' => '/services/local-seo/' ],
-				[ 'relation' => 'Feeds', 'title' => 'AI Search', 'text' => 'Consistent details AI tools can trust.', 'url' => '/services/ai-search-optimization/' ],
-				[ 'relation' => 'Reinforces', 'title' => 'Paid ads', 'text' => 'Location targeting on Google and Meta.', 'url' => '/services/paid-ads/' ],
-				[ 'relation' => 'Converts', 'title' => 'Lead generation', 'text' => 'Local offers and booking forms.', 'url' => '/services/lead-generation/' ],
-				[ 'relation' => 'Follows up', 'title' => 'AI automation', 'text' => 'Missed calls and forms answered fast.', 'url' => '/services/marketing-automation/' ],
+				[
+					'relation' => 'Part of',
+					'title'    => 'SEO',
+					'text'     => 'Content and keywords for every market.',
+					'url'      => '/services/seo/',
+				],
+				[
+					'relation' => 'You are here',
+					'title'    => 'Local SEO',
+					'text'     => 'Puts you on the map where buyers search.',
+					'url'      => '/services/local-seo/',
+				],
+				[
+					'relation' => 'Feeds',
+					'title'    => 'AI Search',
+					'text'     => 'Consistent details AI tools can trust.',
+					'url'      => '/services/ai-search-optimization/',
+				],
+				[
+					'relation' => 'Reinforces',
+					'title'    => 'Paid ads',
+					'text'     => 'Location targeting on Google and Meta.',
+					'url'      => '/services/paid-ads/',
+				],
+				[
+					'relation' => 'Converts',
+					'title'    => 'Lead generation',
+					'text'     => 'Local offers and booking forms.',
+					'url'      => '/services/lead-generation/',
+				],
+				[
+					'relation' => 'Follows up',
+					'title'    => 'AI automation',
+					'text'     => 'Missed calls and forms answered fast.',
+					'url'      => '/services/marketing-automation/',
+				],
 			],
 		]
 	),
@@ -186,10 +298,22 @@ $td_blocks = [
 							'bare'    => true,
 							'columns' => 2,
 							'items'   => [
-								[ 'title' => 'Audit', 'text' => 'Profile, listings, local pages and competitors.' ],
-								[ 'title' => 'Fix the basics', 'text' => 'Profile, categories and consistent details.' ],
-								[ 'title' => 'Build local pages', 'text' => 'One real page per market you serve.' ],
-								[ 'title' => 'Grow & report', 'text' => 'Reviews, posts and monthly local reporting.' ],
+								[
+									'title' => 'Audit',
+									'text'  => 'Profile, listings, local pages and competitors.',
+								],
+								[
+									'title' => 'Fix the basics',
+									'text'  => 'Profile, categories and consistent details.',
+								],
+								[
+									'title' => 'Build local pages',
+									'text'  => 'One real page per market you serve.',
+								],
+								[
+									'title' => 'Grow & report',
+									'text'  => 'Reviews, posts and monthly local reporting.',
+								],
 							],
 						]
 					),
@@ -216,11 +340,26 @@ $td_blocks = [
 		[
 			'title' => 'Local SEO *questions*',
 			'items' => [
-				[ 'question' => 'What is local SEO?', 'answer' => 'Local SEO helps your business appear when people nearby search for what you offer, in Google Maps, the local pack and city searches. It covers your Google Business Profile, listings, reviews and location pages.' ],
-				[ 'question' => 'Do we need a physical address?', 'answer' => 'For a Google Business Profile, you need a real address or a defined service area. We never create addresses or offices that don’t exist.' ],
-				[ 'question' => 'Can you create pages for every city we want to reach?', 'answer' => 'Only for markets where you have something real to say: clients, staff, working hours or local channels. Thin city-swap pages can hurt the whole site.' ],
-				[ 'question' => 'Do you write fake reviews?', 'answer' => 'No. We help you ask real clients for reviews and reply to them. Fake reviews break Google’s rules and put your profile at risk.' ],
-				[ 'question' => 'How long does local SEO take?', 'answer' => 'Profile and listing fixes can show up within weeks; location pages and reviews build over months. We set expectations in your plan.' ],
+				[
+					'question' => 'What is local SEO?',
+					'answer'   => 'Local SEO helps your business appear when people nearby search for what you offer, in Google Maps, the local pack and city searches. It covers your Google Business Profile, listings, reviews and location pages.',
+				],
+				[
+					'question' => 'Do we need a physical address?',
+					'answer'   => 'For a Google Business Profile, you need a real address or a defined service area. We never create addresses or offices that don’t exist.',
+				],
+				[
+					'question' => 'Can you create pages for every city we want to reach?',
+					'answer'   => 'Only for markets where you have something real to say: clients, staff, working hours or local channels. Thin city-swap pages can hurt the whole site.',
+				],
+				[
+					'question' => 'Do you write fake reviews?',
+					'answer'   => 'No. We help you ask real clients for reviews and reply to them. Fake reviews break Google’s rules and put your profile at risk.',
+				],
+				[
+					'question' => 'How long does local SEO take?',
+					'answer'   => 'Profile and listing fixes can show up within weeks; location pages and reviews build over months. We set expectations in your plan.',
+				],
 			],
 		]
 	),
