@@ -17,7 +17,7 @@ internal_links:
   - /glossary/a-b-testing/
   - /glossary/conversion-rate-optimization/
   - /glossary/referral-marketing/
-rank_math_description: "Growth hacking is experiment-led growth, not tricks. Learn what it involves, how to score ideas with ICE, and a weekly test loop a small team can actually run."
+rank_math_description: "Growth hacking is experiment-led growth, not tricks. Learn what it involves, how to score ideas with ICE, and a weekly test loop a small team can run."
 ---
 
 Growth hacking is an experiment-led approach to growth: you form a hypothesis, run a small, cheap test, measure the result and scale what works. The term came from startups, where small teams had to find growth without big budgets. Today the method is usually called growth marketing, and it covers the whole customer journey, from how people find you, to how quickly they get value, to whether they stay and refer others.

@@ -17,7 +17,7 @@ internal_links:
   - /glossary/paid-advertising/
   - /glossary/marketing-attribution/
   - /glossary/brand-awareness/
-rank_math_description: "Digital advertising spans search, social, video, display and audio. See how each format works, how ads are bought, and how to measure results with less tracking."
+rank_math_description: "Digital advertising spans search, social, video, display and audio. See how each format works, how ads are bought, and how to measure results in 2026."
 ---
 
 Digital advertising is paid promotion delivered online: search ads, social media ads, video ads, display banners, native ads, podcast and streaming audio ads, and ads on connected TV. It's bought in real-time auctions, through direct deals with publishers, or through programmatic platforms that buy across thousands of sites at once. Digital advertising stands out from traditional media because it can be targeted precisely, changed in hours, and measured, though measurement is harder than it used to be.

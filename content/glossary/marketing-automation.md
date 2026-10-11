@@ -17,7 +17,7 @@ internal_links:
   - /resources/marketing-automations-this-quarter/
   - /glossary/email-marketing/
   - /glossary/lead-generation/
-rank_math_description: "Marketing automation runs follow-ups, lead scoring and routing on triggers. Learn how it works, the five workflows to build first, and how to keep it personal."
+rank_math_description: "Marketing automation runs follow-ups, lead scoring and routing on triggers. Learn how it works, the five workflows to build first, and common mistakes."
 ---
 
 Marketing automation is the use of software to run repeatable marketing tasks automatically, based on rules and triggers. When someone fills in a form, downloads a guide, visits your pricing page or goes quiet for 60 days, the system does the next step: sends the right email, updates the CRM, scores the lead, alerts sales or adds them to an ad audience. Marketing automation makes sure every lead gets a timely, relevant follow-up, even when your team is busy.

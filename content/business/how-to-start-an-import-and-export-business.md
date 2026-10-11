@@ -120,6 +120,13 @@ We review how buyers find your business online and give you a prioritized plan t
 - **Build a short B2B outreach list.** Twenty well-researched buyers beat 500 cold emails. Our [lead generation](/services/lead-generation/) team covers how to build one.
 - **Show proof.** Lab results, certifications, photos of your packing and references from past shipments reduce buyer risk.
 
+## Common mistakes to avoid
+
+- **Paying 100% up front to an unverified supplier.** Use staged payments, escrow or a letter of credit until trust is earned.
+- **Guessing the commodity code.** The wrong code can mean the wrong duty rate, delays or penalties. Confirm it with your broker or customs authority.
+- **Ignoring destination standards.** Goods that fail a destination's labeling or testing rules can be held or destroyed at the port.
+- **No buffer for delays.** Port congestion and document errors happen. Keep cash for storage and demurrage charges.
+
 :::callout note "From our work"
 [CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
 :::

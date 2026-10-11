@@ -17,7 +17,7 @@ internal_links:
   - /services/ai-search-optimization/
   - /glossary/marketing-automation/
   - /glossary/ai-writing-tools/
-rank_math_description: "AI marketing helps teams plan, create, target and measure faster. See where AI really helps in 2026, where it falls short, and a safe way for small teams to start."
+rank_math_description: "AI marketing helps teams plan, create, target and measure faster. See where AI really helps in 2026, where it falls short, and how small teams can start."
 ---
 
 AI marketing is the use of artificial intelligence to do marketing work faster or better: drafting content, analyzing data, scoring leads, personalizing emails, setting ad bids, answering chat questions and spotting patterns people would miss. It includes older machine learning (like ad platforms' bidding systems) and newer generative AI (like ChatGPT, Claude and Gemini). AI marketing works best when people set the strategy and judge the output, and AI handles volume and speed.

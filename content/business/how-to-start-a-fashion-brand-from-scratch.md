@@ -11,7 +11,7 @@ audience: "Aspiring fashion founders in the US, UK and Nigeria launching their f
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a fashion brand from scratch, define who you dress and why they'd pick you, launch a small first collection of three to six pieces, produce a short run with a tested manufacturer or tailor, and price from your landed cost per piece. Sell through pre-orders or small drops so stock never sinks the business."
-rank_math_description: "How to start a fashion brand from scratch: positioning, small-batch production, label rules, startup costs and pricing maths for US, UK and Nigerian founders."
+rank_math_description: "How to start a fashion brand from scratch: positioning, small-batch production, label rules, costs and pricing maths for US, UK and Nigerian founders."
 internal_links:
   - studios:/services/branding/
   - studios:/services/website-design/
@@ -124,6 +124,13 @@ TechDella Studios creates names, logos, packaging and launch visuals for new con
 - **Run small paid tests.** Spend a little on two or three ad variations, keep the winner, and scale it. Our [paid ads](/services/paid-ads/) team covers how to structure tests.
 - **Hashtags help discovery on some platforms.** Use specific ones over generic ones. Our free [hashtag generator](/tools/free-hashtag-generator/) gives you a starting list.
 - **Own the customer list.** Collect emails and phone numbers at every sale. Drops sell faster to people who already bought.
+
+## Common mistakes new fashion founders make
+
+- **Ordering every size in every color.** Start with your best-selling colorway and core sizes, then expand based on sales data.
+- **Skipping the wash test.** Shrinkage and color bleed generate returns and bad reviews. Wash every sample at least twice.
+- **No written agreement with the maker.** Put price per unit, quantity, quality standard, lead time and what happens with defects in writing.
+- **Spending the launch budget on the logo.** A clear identity matters, but your first money should go into samples, fit and photography that sells the product.
 
 :::callout note "From our work"
 [CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]

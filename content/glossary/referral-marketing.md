@@ -17,7 +17,7 @@ internal_links:
   - /services/marketing-automation/
   - /glossary/affiliate-marketing/
   - /glossary/customer-lifetime-value/
-rank_math_description: "Referral marketing turns happy customers into new ones. Learn why recommendations work, how to set a fair reward with simple math, and how to start a program."
+rank_math_description: "Referral marketing turns happy customers into new ones. Learn why recommendations work, how to set a fair reward with simple math, and how to start."
 ---
 
 Referral marketing is the practice of encouraging existing customers to recommend you to people they know, in a structured, trackable way. It takes the word of mouth you already get and makes it repeatable: you ask at the right moment, make sharing easy, track who referred whom, and thank or reward the referrer. Referral marketing works because a recommendation from someone you trust skips most of the doubt a stranger's ad has to overcome.

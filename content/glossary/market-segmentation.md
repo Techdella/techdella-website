@@ -17,7 +17,7 @@ internal_links:
   - /glossary/target-audience/
   - /glossary/customer-lifetime-value/
   - /tools/persona-builder/
-rank_math_description: "Market segmentation helps you choose who to focus on. Learn the main types, how B2B segmentation differs, and a step-by-step method to pick your best segments."
+rank_math_description: "Market segmentation helps you choose who to focus on. Learn the main types, how B2B segmentation differs, and a step-by-step way to pick segments."
 ---
 
 Market segmentation is the process of dividing a broad market into smaller groups of buyers who share similar needs, characteristics or behaviors. Once you see the segments, you can choose which ones to focus on, shape your offer for them, and speak to each in its own language. Market segmentation is what turns "everyone who could buy" into a clear decision about who you're really for.

@@ -17,7 +17,7 @@ internal_links:
   - /glossary/pay-per-click-advertising/
   - /glossary/customer-acquisition-cost/
   - /resources/paid-ads-creative-brief-template/
-rank_math_description: "Paid advertising buys reach you control. Compare CPC, CPM and CPA pricing, see how to set a test budget with real math, and avoid the mistakes that waste spend."
+rank_math_description: "Paid advertising buys reach you control. Compare CPC, CPM and CPA pricing, see how to set a test budget with simple math, and avoid wasted spend."
 ---
 
 Paid advertising is any marketing where you pay a platform to show your message to people you choose. It includes search ads on Google and Bing, social ads on LinkedIn, Meta and TikTok, video ads on YouTube, display ads across websites and apps, and sponsorships. The appeal is control: you decide who sees it, when, and how much you spend, and you can usually see results within days. The catch is that results stop when spending stops.
