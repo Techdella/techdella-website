@@ -109,7 +109,7 @@ Yes. Google indexes the mobile version of your pages, so missing mobile content 
 ### Do I need a mobile app instead of a mobile site?
 For most B2B companies, no. A fast responsive website covers search, ads and shared links. Apps make sense when customers use your product daily and need features a browser can't offer.
 ### What is the difference between responsive and adaptive design?
-Responsive design uses one layout that flexes smoothly to any screen width. Adaptive design serves a few fixed layouts for set screen sizes. Google recommends responsive design as the easiest pattern to implement and maintain.
+Responsive design uses one layout that flexes smoothly to any screen width. Adaptive design serves a few fixed layouts for set screen sizes. Responsive design is usually simpler to maintain, because every visitor gets the same URL and the same HTML.
 :::
 
 ## How TechDella can help

@@ -19,10 +19,10 @@ internal_links:
   - /glossary/intent-data/
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-rank_math_description: "MQL vs SQL explained: clear definitions, a side-by-side table, the SAL stage, a funnel example with conversion math, and how to write a handoff agreement sales trusts."
+rank_math_description: "MQL vs SQL explained: clear definitions, a side-by-side table, the SAL stage, a funnel example with conversion math, and a handoff agreement sales trusts."
 ---
 
-The difference between an MQL and an SQL is who has qualified the lead and how far. A **marketing-qualified lead (MQL)** is a lead that marketing's rules say is worth sales' attention: they fit your ideal customer and have shown interest. A **sales-qualified lead (SQL)** is a lead a salesperson has spoken to or reviewed and confirmed as a real opportunity: right need, right authority, realistic timing. Every SQL was an MQL first. Most MQLs never become SQLs, and that's normal.
+MQL vs SQL comes down to who has qualified the lead and how far. A **marketing-qualified lead (MQL)** is a lead that marketing's rules say is worth sales' attention: they fit your ideal customer and have shown interest. A **sales-qualified lead (SQL)** is a lead a salesperson has spoken to or reviewed and confirmed as a real opportunity: right need, right authority, realistic timing. Every SQL was an MQL first. Most MQLs never become SQLs, and that's normal.
 
 ## Why the MQL vs SQL distinction matters
 
@@ -32,7 +32,7 @@ Most friction between marketing and sales comes from undefined handoffs. Marketi
 6sense's 2024 Buyer Experience Report, a survey of 2,509 recent B2B buyers, found that 81% already have a preferred vendor at first contact and that buyers initiate first contact more than 80% of the time ([6sense, 2024](https://6sense.com/science-of-b2b/2024-buyer-experience-report/)). By the time a lead becomes an SQL, much of the decision has been made, so the MQL stage is where marketing earns its place on the shortlist.
 :::
 
-Clear definitions let you measure each stage, fix the weakest one, and send the right conversion signal to ad platforms.
+Clear definitions let you measure each stage of [lead generation](/services/lead-generation/), fix the weakest one, and send the right conversion signal to ad platforms.
 
 ## How MQLs and SQLs differ
 

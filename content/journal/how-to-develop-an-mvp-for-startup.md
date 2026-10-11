@@ -13,7 +13,7 @@ reviewer: joanna-okedara-kalu
 tldr: "To develop an MVP, write down the assumption most likely to kill your idea, pick the cheapest product that tests it with real users, build only the features that test needs, then launch to a small group and measure behavior. The MVP's job is learning, not looking finished."
 categories: [startups]
 cta_service: lead-generation
-rank_math_description: "How to develop an MVP in 10 steps: find your riskiest assumption, cut scope with a worked example, choose the right MVP type, launch small and measure what matters."
+rank_math_description: "How to develop an MVP in 10 steps: find your riskiest assumption, cut scope with a worked example, pick the right MVP type, then launch small and measure."
 internal_links:
   - studios:/services/mvp-development/
   - studios:/start/

@@ -32,7 +32,7 @@ The Pixel depends on the browser. Ad blockers, browser privacy features and shor
 Since 2019, Safari's Intelligent Tracking Prevention has capped the expiry of client-side cookies at seven days. In 2020 WebKit added that other script-writable storage is deleted after seven days of Safari use without interaction on the site ([WebKit](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/)). A buyer who clicks your ad and converts two weeks later may not be connected to the click by browser data alone.
 :::
 
-For B2B, CAPI matters for a second reason: your best conversions happen offline. A demo becomes a sales-qualified lead in your CRM days later. CAPI lets you send that event back to Meta so campaigns learn what a valuable lead looks like.
+For B2B, CAPI matters for a second reason: your best conversions happen offline, often several stages into your [marketing automation](/services/marketing-automation/) flow. A demo becomes a sales-qualified lead in your CRM days later. CAPI lets you send that event back to Meta so campaigns learn what a valuable lead looks like.
 
 ## How CAPI works with the Pixel
 
@@ -45,7 +45,7 @@ Meta's recommended setup runs both. The Pixel catches what the browser can; CAPI
 | 3. Meta receives both | It matches the Pixel's eventID and event to the server's event_id and event_name |
 | 4. Deduplication | Meta keeps one event, if the duplicate arrives within 48 hours of the first |
 
-Source: [Meta deduplication guide](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events). Meta also documents a fallback method that matches on event_name plus fbp or external_id, but it generally only works when the browser event arrives first. Use event_id.
+Source: [Meta deduplication guide](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events). Meta also documents a fallback method that matches on event_name plus fbp or external_id, but it generally only works when the browser event arrives first. Use event_id. If you route events through a tag server, see [server-side tracking](/glossary/server-side-tracking/).
 
 ## Example: a deduplication bug
 

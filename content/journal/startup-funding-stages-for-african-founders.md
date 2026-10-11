@@ -13,7 +13,7 @@ reviewer: joanna-okedara-kalu
 tldr: "Startup funding stages run from bootstrapping and pre-seed through seed, Series A, Series B and growth rounds, with debt and grants alongside. Each stage is defined by the proof you can show, not the amount you want: pre-seed buys proof of the problem, seed buys proof of demand, and Series A buys proof that growth repeats."
 categories: [startups]
 cta_service: lead-generation
-rank_math_description: "Startup funding stages explained for African founders: what pre-seed, seed and Series A investors expect, 2025 Africa funding data, and how to know which stage you're in."
+rank_math_description: "Startup funding stages for African founders: what pre-seed, seed and Series A investors expect, 2025 Africa funding data, and how to find your stage."
 internal_links:
   - /safe-note-guide/
   - /finding-startup-grants-in-africa/

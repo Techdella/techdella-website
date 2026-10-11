@@ -34,7 +34,7 @@ Search results increasingly end with an answer, not a list. When the answer is g
 2B+ | monthly users of AI Overviews, per Alphabet's Q2 2025 earnings call | Google, 2025 | https://blog.google/inside-google/message-ceo/alphabet-earnings-q2-2025/
 :::
 
-Fewer clicks per search means the brand named inside the answer gets the attention. AEO is how you become that brand for the questions your buyers ask.
+Fewer clicks per search means the brand named inside the answer gets the attention. AEO is how you become that brand for the questions your buyers ask. Google's version of this is [AI Overviews](/glossary/ai-overviews/).
 
 ## How AEO works
 

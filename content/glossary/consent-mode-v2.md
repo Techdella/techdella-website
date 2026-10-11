@@ -19,10 +19,10 @@ internal_links:
   - /glossary/performance-max/
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-rank_math_description: "Google Consent Mode v2 explained: the four parameters, basic vs advanced mode, the default code, EEA and UK requirements, and a checklist to verify it works."
+rank_math_description: "Google Consent Mode v2 explained: the four parameters, basic vs advanced mode, the default code, EEA and UK requirements, and how to verify it works."
 ---
 
-Google Consent Mode v2 is the way your website tells Google's tags, such as Google Analytics 4, Google Ads and Floodlight, what each visitor has agreed to in your cookie banner. It uses four consent parameters: **ad_storage**, **analytics_storage**, **ad_user_data** and **ad_personalization**. Tags read those values and change their behavior, for example not setting advertising cookies when a visitor declines. Consent Mode doesn't collect consent itself; your consent management platform (CMP) does that and passes the result on.
+Google Consent Mode v2 is the way your website tells Google's tags, such as Google Analytics 4, Google Ads and Floodlight, what each visitor has agreed to in your cookie banner. It uses four consent parameters: **ad_storage**, **analytics_storage**, **ad_user_data** and **ad_personalization**. Tags read those values and change their behavior, for example not setting advertising cookies when a visitor declines. Consent Mode doesn't collect consent itself; your consent management platform (CMP) does that and passes the result on. Without it, [paid ads](/services/paid-ads/) in Europe lose much of their measurement and targeting.
 
 ## Why Consent Mode v2 matters
 
@@ -42,6 +42,8 @@ If you advertise to EEA or UK users without valid consent signals, audiences for
 | analytics_storage | Storage, such as cookies, related to analytics, for example visit duration |
 | ad_user_data | Consent for sending user data to Google for online advertising |
 | ad_personalization | Consent for personalized advertising, such as remarketing |
+
+Campaigns that rely on modeled conversions, like [Performance Max](/glossary/performance-max/), depend on these signals being right.
 
 **Basic vs advanced mode:**
 

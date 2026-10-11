@@ -1,12 +1,12 @@
 ---
-title: "What is Server-Side Tracking? How It Works and When to Use It"
+title: "What is Server-Side Tracking? How It Works, When to Use It"
 slug: server-side-tracking
 excerpt: "Server-side tracking sends analytics and ad events through a server you control instead of straight from the visitor's browser. Here is what it fixes, what it doesn't, and how to set it up."
 primary_kw: server-side tracking
 secondary_kws: [server-side tagging, server-side gtm, sgtm, first-party tracking, client-side vs server-side tracking]
 intent: informational
 audience: "Marketing leads and developers responsible for analytics and ads"
-short_definition: "Server-side tracking is a measurement setup where the browser sends event data to a server you control, which then processes it and forwards it to tools like Google Analytics, Google Ads or Meta, instead of each tool collecting data directly in the browser."
+short_definition: "Server-side tracking is a measurement setup where the browser sends event data to a server you control, which processes it and forwards it to tools like Google Analytics, Google Ads or Meta."
 taxonomies:
   glossary_category: [analytics]
   td_service_tag: [marketing-automation]
@@ -19,7 +19,7 @@ internal_links:
   - /glossary/attribution-modelling/
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-rank_math_description: "Server-side tracking explained: client-side vs server-side, how server-side GTM works, what it fixes and what it doesn't, consent rules, and a setup checklist."
+rank_math_description: "Server-side tracking explained: client-side vs server-side, how server-side GTM works, what it fixes and what it doesn't, consent, and a setup checklist."
 ---
 
 Server-side tracking is a way of collecting analytics and advertising data where the visitor's browser sends events to a server you control, and that server decides what to forward to Google Analytics, Google Ads, Meta and other tools. In a traditional client-side setup, every tool loads its own script in the browser and sends data straight to its vendor. Server-side tracking puts one controlled step in between.
@@ -32,7 +32,7 @@ Client-side tracking is getting less reliable and heavier.
 WebKit announced in 2019 that Safari's Intelligent Tracking Prevention caps the expiry of client-side cookies at seven days, and in 2020 extended deletion to other script-writable storage after seven days of Safari use without interaction ([WebKit](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/)). For B2B sales cycles measured in weeks or months, a seven-day cookie can break attribution.
 :::
 
-Each extra vendor script also adds weight and slows the page. Moving tags to a server can reduce the JavaScript the browser runs, which helps Core Web Vitals.
+Each extra vendor script also adds weight and slows the page, a common finding in [technical SEO](/services/technical-seo/) audits. Moving tags to a server can reduce the JavaScript the browser runs, which helps Core Web Vitals.
 
 Google's documentation for server-side tagging highlights data control in particular: only you have access to the data on your server until you choose to send it elsewhere ([Google Tag Manager](https://developers.google.com/tag-platform/tag-manager/server-side/intro)).
 

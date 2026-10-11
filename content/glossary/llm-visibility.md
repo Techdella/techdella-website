@@ -32,7 +32,7 @@ AI assistants are now part of how buyers research. They are not yet a replacemen
 Google reports more than 2 billion monthly users of AI Overviews ([Alphabet Q2 2025](https://blog.google/inside-google/message-ceo/alphabet-earnings-q2-2025/)). At the same time, a January 2026 Gartner consumer survey found only about one-third of consumers say GenAI tools rival search engines for learning, and advised marketers to optimize for both ([Gartner, 2026](https://www.gartner.com/en/newsroom/press-releases/gartner-survey-finds-only-one-third-of-consumers-say-genai-rivals-search-engines-marketers-must-optimize-for-both-ai-driven-and-traditional-search)).
 :::
 
-For a B2B company the risk is quiet. A buyer asks an assistant for "the best fractional CMO agencies in Lagos", gets a shortlist without you on it, and never reaches your site. No analytics tool records the lost visit.
+For a B2B company the risk is quiet, and it starts with the same pages that power [AI Overviews](/glossary/ai-overviews/). A buyer asks an assistant for "the best fractional CMO agencies in Lagos", gets a shortlist without you on it, and never reaches your site. No analytics tool records the lost visit.
 
 ## How LLM visibility is measured
 
@@ -54,7 +54,7 @@ Say you track 25 prompts across 3 tools, running each prompt twice to smooth out
 - Your site is linked in 12 answers: 12 ÷ 150 = **8% citation rate**.
 - 4 of the 27 mentions describe a service you stopped offering: 23 ÷ 27 = **85% accuracy**.
 
-Next month you fix the outdated directory listing the tools keep citing. If accuracy rises and mentions hold, the fix worked. Single answers vary run to run, so only compare totals across the same prompt set.
+Next month you fix the outdated directory listing the tools keep citing, and tighten the [answer-first copy](/glossary/aeo/) on your services page. If accuracy rises and mentions hold, the fix worked. Single answers vary run to run, so only compare totals across the same prompt set.
 
 :::callout note "From our work"
 [CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]

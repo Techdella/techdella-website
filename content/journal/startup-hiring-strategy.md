@@ -13,7 +13,7 @@ reviewer: joanna-okedara-kalu
 tldr: "Hire employees for work that is ongoing, core to your advantage and needs daily collaboration. Use contractors for defined projects, fractional leaders for senior judgment you need a few days a month, and an agency when one outcome needs several specialists. Check the employment-status rules where you operate: calling someone a contractor doesn't make them one."
 categories: [startups]
 cta_service: lead-generation
-rank_math_description: "Build a startup hiring strategy: when to hire employees, contractors, fractional leaders or an agency, the true cost of each, and US, UK and Nigeria classification rules."
+rank_math_description: "Startup hiring strategy: when to hire employees, contractors, fractional leaders or an agency, what each costs, and US, UK and Nigeria status rules."
 internal_links:
   - /startup-funding-stages-for-african-founders/
   - /mvp-development-for-startups/
@@ -104,7 +104,7 @@ The Labour Act (Cap L1, Laws of the Federation of Nigeria 2004) sets minimum ter
 If you set someone's hours, tell them how to do the work, give them your tools and expect them to work only for you, treat them as an employee until a qualified advisor tells you otherwise.
 :::
 
-## How to build your startup hiring plan
+## How to build your startup hiring strategy
 
 :::steps
 1. List the work, not the job titles | Write down every recurring task and project for the next six months. Titles come later.

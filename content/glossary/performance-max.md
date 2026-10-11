@@ -26,7 +26,7 @@ Performance Max (PMax) is a Google Ads campaign type that lets one campaign serv
 
 ## Why Performance Max matters
 
-For many advertisers, PMax is now the default way to reach Google's non-search inventory. It also competes in Search auctions alongside your Search campaigns. That makes it powerful and risky in equal measure.
+For many advertisers, PMax is now the default way to reach Google's non-search inventory, alongside classic [pay-per-click advertising](/glossary/pay-per-click-advertising/) on Search. It also competes in Search auctions alongside your Search campaigns. That makes it powerful and risky in equal measure.
 
 :::callout key "The trade-off in one sentence"
 Performance Max trades control for reach: it optimizes toward exactly the conversion you give it, so it is only as good as your conversion tracking and the signals you feed it.
@@ -44,13 +44,13 @@ A PMax campaign is built from asset groups. Google describes an asset group as a
 | Long headlines | 1–5, 90 characters max | Yes |
 | Descriptions | 2–5, 90 characters max | Yes |
 | Business name | 25 characters max | Yes |
-| Landscape (1.91:1) and square (1:1) images | Up to 20 each | Yes |
+| Horizontal (1.91:1) and square (1:1) images | Up to 20 each | Yes |
 | Square logo | Up to 5 | Yes |
 | Videos (16:9, 1:1, 9:16) | Up to 15 in total | No, but Google may auto-generate one if none is added |
 
 Source: [Performance Max specs, Google Ads Help](https://support.google.com/google-ads/answer/17091269). Limits change; check the page before you build.
 
-Around the assets you add **audience signals** (your customer lists, website visitors, custom segments) that guide Google's learning, and you decide whether to allow **final URL expansion**, which lets Google send traffic to a more relevant landing page than the one you set.
+Around the assets you add **audience signals** (your customer lists, [remarketing](/glossary/remarketing/) lists of website visitors, custom segments) that guide Google's learning, and you decide whether to allow **final URL expansion**, which lets Google send traffic to a more relevant landing page than the one you set.
 
 ## Example: PMax for a B2B SaaS lead campaign
 

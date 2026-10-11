@@ -19,7 +19,7 @@ internal_links:
   - /services/marketing-automation/
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-rank_math_description: "Lead scoring explained: fit vs engagement scores, a copyable B2B scoring model with point values, thresholds for MQL handoff, decay, and how to test the model."
+rank_math_description: "Lead scoring explained: fit vs engagement scores, a copyable B2B model with point values, thresholds for MQL handoff, score decay, and how to test it."
 ---
 
 Lead scoring is a way to rank your leads by giving each one points: points for **fit** (how closely they match your ideal customer) and points for **engagement** (what they've done, like visiting pricing or requesting a demo). When a lead passes a threshold, it moves to the next stage, usually from marketing to sales. The aim is simple: your sales team spends its time on the leads most likely to buy.

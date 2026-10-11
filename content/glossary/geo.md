@@ -36,9 +36,9 @@ Read that number carefully. It is a maximum across tested methods in a research 
 
 ## Why GEO matters for B2B
 
-B2B buyers now ask AI tools for shortlists: "best HubSpot partner for SaaS", "who does technical SEO for fintech". The answer usually names three to five companies. If you are not one of them, you are not considered, and you will never see that search in your analytics.
+B2B buyers now ask AI tools for shortlists: "best HubSpot partner for SaaS", "who does technical SEO for fintech". The answer usually names three to five companies. If you are not one of them, you are not considered, and you will never see that search in your analytics. Our [AI search optimization](/services/ai-search-optimization/) work starts with exactly these shortlist prompts.
 
-GEO also protects accuracy. Models repeat what the web says about you. Outdated pricing, a retired product name or a competitor's comparison page can end up in the answer.
+GEO also protects accuracy, which is what [LLM visibility](/glossary/llm-visibility/) tracking measures. Models repeat what the web says about you. Outdated pricing, a retired product name or a competitor's comparison page can end up in the answer.
 
 ## How GEO works
 

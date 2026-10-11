@@ -19,7 +19,7 @@ internal_links:
   - /glossary/llm-visibility/
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-rank_math_description: "Entity SEO explained: how Google's Knowledge Graph works, the facts that define your brand entity, sameAs schema, and a consistency audit you can run in an afternoon."
+rank_math_description: "Entity SEO explained: how the Knowledge Graph works, the facts that define your brand, sameAs schema, and a consistency audit you can run in an afternoon."
 ---
 
 Entity SEO is the practice of helping search engines and AI systems recognize your brand, your people and your products as distinct, well-understood "things", each with consistent facts and clear relationships to other things. Keywords tell Google what a page is about. Entities tell it who is behind the page and how that connects to everything else it knows.
@@ -33,7 +33,7 @@ Google moved from matching words to understanding things over a decade ago. When
 3.5B+ | facts about and relationships between those objects | Google, 2012 | https://blog.google/products/search/introducing-knowledge-graph-things-not/
 :::
 
-Two reasons this matters more now. First, AI answers name brands, not pages: if a model can't tell your company from a similarly named one, you won't be recommended accurately. Second, consistent entity facts are a trust signal. Conflicting founders, addresses or service lists across the web make you look less certain.
+Two reasons this matters more now. First, AI answers name brands, not pages: if a model can't tell your company from a similarly named one, you won't be recommended accurately (see [LLM visibility](/glossary/llm-visibility/) and [GEO](/glossary/geo/)). Second, consistent entity facts are a trust signal. Conflicting founders, addresses or service lists across the web make you look less certain.
 
 ## How entity SEO works
 
@@ -54,7 +54,7 @@ Structured data is the most direct way to declare these facts. Google documents 
 
 Imagine a hypothetical agency called "Apex Growth" in Lagos. There are dozens of companies named Apex worldwide. Searching the brand shows a US logistics firm's knowledge panel. An AI assistant asked about "Apex Growth's services" mixes the two.
 
-The fix is entity work, not more keywords:
+The fix is entity work, the kind we include in our [SEO service](/services/seo/), not more keywords:
 
 - Use the full name "Apex Growth Partners" consistently, with the same description.
 - Add Organization schema with sameAs links to the official LinkedIn and Instagram pages.

@@ -19,7 +19,7 @@ internal_links:
   - /glossary/intent-data/
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-rank_math_description: "LinkedIn Thought Leader Ads explained: who can be sponsored, approval rules, eligible post types, objectives, and a founder-led B2B campaign plan with numbers."
+rank_math_description: "LinkedIn Thought Leader Ads explained: who can be sponsored, approval rules, eligible post types, objectives, and a founder-led B2B campaign plan."
 ---
 
 LinkedIn Thought Leader Ads let a company sponsor posts written by individual LinkedIn members, such as its founders, employees, creators or other members, so the post reaches a targeted paid audience while still appearing under the person's name. LinkedIn describes them as a way to promote content from LinkedIn members, creators or employees ([LinkedIn Help](https://www.linkedin.com/help/lms/answer/a1399568)). The author must approve each sponsorship.

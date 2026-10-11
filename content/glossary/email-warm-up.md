@@ -19,7 +19,7 @@ internal_links:
   - /glossary/marketing-automation/
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-rank_math_description: "Email warm-up explained: why new domains and IPs need it, what Google's sender guidelines say, a sample 4-week schedule with numbers, and when automated warm-up tools backfire."
+rank_math_description: "Email warm-up explained: why new domains need it, what Google's sender rules say, a sample 4-week schedule, and when automated warm-up tools backfire."
 ---
 
 Email warm-up is the practice of starting a new sending domain or IP address at low volume and increasing it step by step, beginning with the people most likely to open and reply. Mailbox providers like Gmail and Outlook judge senders on their history. A new domain has none, so a sudden blast of thousands of emails looks exactly like a spammer. Warm-up builds that history deliberately.

@@ -19,7 +19,7 @@ internal_links:
   - studios:/services/branding/
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-rank_math_description: "BIMI explained: the DMARC enforcement it requires, VMC vs CMC certificates, the SVG Tiny PS logo format, an example record, and when BIMI is worth the cost."
+rank_math_description: "BIMI explained: the DMARC enforcement it requires, VMC vs CMC certificates, the SVG Tiny PS logo format, an example record, and when BIMI is worth it."
 ---
 
 BIMI (Brand Indicators for Message Identification) is a standard that lets email providers display your brand's logo next to messages from your domain, instead of a generic initial. To qualify, your domain must already pass strict email authentication: DMARC at an enforcement policy. Then you publish a BIMI record in DNS that points to your logo and, for most major inboxes, a mark certificate that proves you own it.
@@ -62,7 +62,7 @@ A hypothetical consultancy sends 3,000 emails a month: a newsletter, proposals a
 - **Step 2, free:** publish a BIMI record and SVG logo. Yahoo may now show the logo for qualifying mail.
 - **Step 3, paid:** buy a CMC for Gmail and Apple Mail. The logo has been on its website for years, so it qualifies without a trademark.
 
-Steps 1 and 2 are worth doing for any company. Step 3 is a judgment call based on how much of your revenue depends on email being recognized and opened.
+Steps 1 and 2 are worth doing for any company, and they are part of every [email marketing](/services/email-marketing/) setup we run. Step 3 is a judgment call based on how much of your revenue depends on email being recognized and opened.
 
 :::callout note "From our work"
 [CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]

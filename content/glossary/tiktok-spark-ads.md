@@ -1,5 +1,5 @@
 ---
-title: "What are TikTok Spark Ads? How They Work and When to Use Them"
+title: "What are TikTok Spark Ads? How They Work and When to Use"
 slug: tiktok-spark-ads
 excerpt: "TikTok Spark Ads turn organic TikTok posts, yours or a creator's, into ads that keep the original account, comments and engagement. Here is how authorization works."
 primary_kw: tiktok spark ads
@@ -19,7 +19,7 @@ internal_links:
   - studios:/services/motion-design/
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-rank_math_description: "TikTok Spark Ads explained: how they differ from regular in-feed ads, how creator authorization codes work, a B2B test plan, and the mistakes that waste budget."
+rank_math_description: "TikTok Spark Ads explained: how they differ from regular in-feed ads, how creator authorization codes work, a B2B test plan and mistakes that waste budget."
 ---
 
 TikTok Spark Ads are ads made from real organic TikTok posts. Instead of uploading a video that only exists as an ad, you promote a post that already lives on a TikTok account: yours, an employee's or a creator's who has given permission. TikTok describes them as a native ad format that uses organic posts and their features in advertising ([TikTok Ads Help](https://ads.tiktok.com/help/article/spark-ads)).
@@ -55,7 +55,7 @@ A hypothetical payroll SaaS company wants demo requests from startup founders.
 3. The team runs a $1,500 test split evenly across the three, optimizing for website visits to the demo page.
 4. After two weeks the compliance video has the lowest cost per landing page view and the most saves. It gets the remaining budget and becomes the template for the next three posts.
 
-The deciding metric isn't views. It's the cost per demo request that sales accepts.
+The deciding metric isn't views. It's the cost per demo request that sales accepts, which is why we run every [paid ads](/services/paid-ads/) test against CRM data.
 
 :::callout note "From our work"
 [CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]

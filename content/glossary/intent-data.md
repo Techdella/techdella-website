@@ -1,5 +1,5 @@
 ---
-title: "What is Intent Data? First-, Second- and Third-Party Explained"
+title: "What is Intent Data? First, Second and Third-Party Explained"
 slug: intent-data
 excerpt: "Intent data shows which companies are researching topics related to what you sell, often before they ever contact you. Here is how it works and how to use it without wasting sales time."
 primary_kw: intent data
@@ -19,7 +19,7 @@ internal_links:
   - /glossary/mql-vs-sql/
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-rank_math_description: "Intent data explained: first-, second- and third-party sources, what B2B buyer research shows about timing, a worked account-prioritization example, and privacy rules."
+rank_math_description: "Intent data explained: first, second and third-party sources, what B2B buyer research shows about timing, an account prioritization example, and privacy."
 ---
 
 Intent data is evidence that a person or company is researching something related to what you sell. It might be your own website visits (a company viewing your pricing page three times this week), activity on a review site (comparing vendors in your category), or a third-party provider's estimate that an account's reading on a topic like "SOC 2 compliance" has spiked. Sales and marketing teams use intent data to decide which accounts to focus on now, rather than waiting for a form fill.
@@ -34,7 +34,7 @@ B2B buyers do most of their research before they speak to anyone.
 11 | people in the average B2B buying group | 6sense Buyer Experience Report, 2024 | https://6sense.com/newsroom/6sense-launches-2024-buyer-experience-report-unveiling-global-b2b-buyer-trends/
 :::
 
-These are figures from a vendor that sells intent data, so treat them as directional. The pattern, though, matches what most B2B sales teams see: by the time someone fills in your form, the shortlist is largely set. Intent data is an attempt to see that research phase and show up during it.
+These are figures from a vendor that sells intent data, so treat them as directional. The pattern, though, matches what most B2B sales teams see: by the time someone fills in your form, the shortlist is largely set. Intent data is an attempt to see that research phase and show up during it, before a lead ever reaches the [MQL vs SQL](/glossary/mql-vs-sql/) handoff.
 
 ## How intent data works
 

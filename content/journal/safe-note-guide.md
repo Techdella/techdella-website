@@ -13,7 +13,7 @@ reviewer: joanna-okedara-kalu
 tldr: "A SAFE (simple agreement for future equity) is an investment that converts into shares at a later priced round, created by Y Combinator in 2013 and standardized as the post-money SAFE in 2018. It is not debt: no interest and no maturity date. The valuation cap sets the investor's ownership up front (investment ÷ post-money cap), so you can calculate your dilution before you sign."
 categories: [startups]
 cta_service: lead-generation
-rank_math_description: "SAFE note guide for founders: how YC's post-money SAFE works, valuation caps, discounts, MFN and pro rata rights, plus worked dilution math to run before you sign."
+rank_math_description: "SAFE note guide: how YC's post-money SAFE works, valuation caps, discounts, MFN and pro rata rights, plus worked dilution math to run before you sign."
 internal_links:
   - /startup-funding-stages-for-african-founders/
   - /finding-startup-grants-in-africa/

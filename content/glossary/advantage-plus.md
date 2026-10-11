@@ -19,14 +19,14 @@ internal_links:
   - /glossary/lead-scoring/
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-rank_math_description: "Meta Advantage+ explained: what Advantage+ campaigns automate, which controls you keep, a B2B lead quality example, and a setup checklist for Facebook and Instagram ads."
+rank_math_description: "Meta Advantage+ explained: what Advantage+ campaigns automate, which controls you keep, a B2B lead quality example, and a setup checklist for Meta ads."
 ---
 
 Meta Advantage+ is the name Meta gives to its AI-automated advertising products for Facebook, Instagram, Messenger and the Audience Network. It covers whole campaign types, such as Advantage+ sales, app and leads campaigns, and individual settings, such as Advantage+ audience, Advantage+ placements and Advantage+ creative. In each case, you give Meta a goal and inputs, and its systems make more of the targeting, placement, budget and creative decisions ([Meta Business Help Center](https://www.facebook.com/business/help/733979527611858)).
 
 ## Why Meta Advantage+ matters
 
-Meta has steadily moved its defaults toward automation. Many settings now start in Advantage+ mode unless you switch them off, and Advantage+ shopping campaigns were renamed Advantage+ sales campaigns as the approach spread across objectives ([Meta](https://www.facebook.com/business/ads/meta-advantage-plus/sales-campaigns)).
+Meta has steadily moved its defaults toward automation, much as Google did with [Performance Max](/glossary/performance-max/). Many settings now start in Advantage+ mode unless you switch them off, and Advantage+ shopping campaigns were renamed Advantage+ sales campaigns as the approach spread across objectives ([Meta](https://www.facebook.com/business/ads/meta-advantage-plus/sales-campaigns)).
 
 :::callout key "What automation can't fix"
 Advantage+ optimizes toward the events you send Meta. If those events are incomplete or low quality, automation scales the wrong outcome faster. Meta itself recommends connecting the Pixel and the [Conversions API](/glossary/meta-conversions-api/) for this reason.
@@ -52,9 +52,9 @@ The important distinction is between **suggestions** and **controls**. With Adva
 A hypothetical accounting firm runs Advantage+ leads campaigns with a $2,000 monthly budget and an instant form.
 
 - **Month 1:** 160 leads at $12.50 each. Sales reaches 40 and qualifies 6. That's $2,000 ÷ 6 = **$333 per qualified lead**.
-- **Month 2:** The team adds a qualifying question to the form, switches to the "higher intent" form type, and sends CRM stage updates back to Meta through the Conversions API. Leads drop to 70 at $28.57 each, but 12 qualify: $2,000 ÷ 12 = **$167 per qualified lead**.
+- **Month 2:** The team adds a qualifying question to the form, switches to the "higher intent" form type, and sends CRM stage updates back to Meta through the [Conversions API](/glossary/meta-conversions-api/). Leads drop to 70 at $28.57 each, but 12 qualify: $2,000 ÷ 12 = **$167 per qualified lead**.
 
-Automation didn't change. The signal did.
+Automation didn't change. The signal did. That's why our [paid ads](/services/paid-ads/) work starts with measurement.
 
 :::callout note "From our work"
 [CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]

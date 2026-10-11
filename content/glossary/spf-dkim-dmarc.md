@@ -1,5 +1,5 @@
 ---
-title: "SPF, DKIM and DMARC Explained (With Examples)"
+title: "SPF, DKIM, DMARC Explained (With Example Records)"
 slug: spf-dkim-dmarc
 excerpt: "SPF, DKIM and DMARC are the three DNS records that prove your email is really from you. Here is what each does, example records, and a safe rollout to p=reject."
 primary_kw: spf dkim dmarc
@@ -22,7 +22,7 @@ reviewer: chinedu-emmanuel-kalu
 rank_math_description: "SPF, DKIM and DMARC explained with example records, the Gmail, Yahoo and Outlook sender rules, and a safe step-by-step rollout from p=none to p=reject."
 ---
 
-SPF, DKIM and DMARC are three DNS-based standards that let mailbox providers check whether an email claiming to be from your domain really is. **SPF** lists the servers allowed to send for your domain. **DKIM** adds a cryptographic signature to each message. **DMARC** ties the two to the visible From address, tells receivers what to do when a message fails, and sends you reports. Together, SPF, DKIM and DMARC are now the minimum for reliable inbox placement.
+SPF, DKIM, DMARC: these are three DNS-based standards that let mailbox providers check whether an email claiming to be from your domain really is. **SPF** lists the servers allowed to send for your domain. **DKIM** adds a cryptographic signature to each message. **DMARC** ties the two to the visible From address, tells receivers what to do when a message fails, and sends you reports. Together, SPF, DKIM and DMARC are now the minimum for reliable inbox placement.
 
 ## Why SPF, DKIM and DMARC matter
 
@@ -34,9 +34,9 @@ Since February 1, 2024, Gmail has required senders of 5,000 or more messages a d
 1024-bit | minimum DKIM key length for personal Gmail accounts; 2048-bit recommended | Google, 2024 | https://support.google.com/a/answer/81126
 :::
 
-Even below 5,000 a day, unauthenticated mail is more likely to land in spam, and your domain is easier to spoof in phishing attacks.
+Even below 5,000 a day, unauthenticated mail is more likely to land in spam, and your domain is easier to spoof in phishing attacks. It is the first thing we check in any [email marketing](/services/email-marketing/) engagement.
 
-## How SPF, DKIM and DMARC work
+## How SPF, DKIM, DMARC work together
 
 | Standard | DNS record (example) | What it checks | Watch out for |
 |---|---|---|---|
@@ -44,7 +44,7 @@ Even below 5,000 a day, unauthenticated mail is more likely to land in spam, and
 | DKIM | A public key at `selector._domainkey.example.com` | The signature matches, so the message wasn't altered | Each sending tool needs its own selector and key |
 | DMARC | `v=DMARC1; p=none; rua=mailto:dmarc@example.com` at `_dmarc.example.com` | SPF or DKIM passes **and** aligns with the From domain | p=none only monitors; it doesn't protect |
 
-**Alignment** is the part people miss. A newsletter tool can pass SPF for its own domain, but DMARC only passes if the passing domain matches your From domain. That's why each tool needs a custom DKIM domain or custom return-path.
+**Alignment** is the part people miss. A newsletter tool can pass SPF for its own domain, but DMARC only passes if the passing domain matches your From domain. That's why each tool in your [email marketing](/glossary/email-marketing/) stack needs a custom DKIM domain or custom return-path.
 
 **DMARC policies** ([RFC 9989](https://www.rfc-editor.org/rfc/rfc9989.html), which replaced RFC 7489 in May 2026):
 

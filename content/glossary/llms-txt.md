@@ -34,7 +34,7 @@ The limits matter just as much.
 Google's guidance on AI features states: "You don't need to create new machine readable files, AI text files, or markup to appear in these features." It also says there are no additional technical requirements for AI Overviews or AI Mode ([Google Search Central](https://developers.google.com/search/docs/appearance/ai-features)).
 :::
 
-So llms.txt will not get you into Google's AI Overviews. Its value is with tools and agents that choose to read it, such as coding assistants reading developer docs. For most B2B marketing sites it is a low-cost, low-certainty addition.
+So llms.txt will not get you into Google's [AI Overviews](/glossary/ai-overviews/). Its value is with tools and agents that choose to read it, such as coding assistants reading developer docs. For most B2B marketing sites it is a low-cost, low-certainty addition.
 
 ## How llms.txt works
 

@@ -19,7 +19,7 @@ internal_links:
   - /services/seo/
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-rank_math_description: "Google AI Overviews explained: how they pick sources, what Pew found about clicks, Google's official guidance, and how to make your pages eligible to be cited."
+rank_math_description: "Google AI Overviews explained: how they pick sources, what Pew found about clicks, Google's official guidance, and how to get your pages cited."
 ---
 
 Google AI Overviews are AI-generated summaries that appear above the regular results for some searches. They answer the question in a few sentences or bullets and show links to the pages Google used to support the answer. Google launched them to everyone in the US on May 14, 2024 ([Google](https://blog.google/products/search/generative-ai-google-search-may-2024/)) and has since expanded them to more than 200 countries and territories.
