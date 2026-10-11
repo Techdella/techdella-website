@@ -37,23 +37,16 @@ Secrets: `HOSTINGER_SSH_KEY`, `HOSTINGER_SSH_HOST`, `HOSTINGER_SSH_PORT`, `HOSTI
 `PATH_JOURNAL`, `PATH_STUDIOS`, `PATH_STAGING`, `STAGING_URL`, `STAGING_BASIC_AUTH` (`user:pass`).
 Create a `production` environment with required reviewers (the manual approval step for `v*` tags).
 
-### 2b. Without GitHub Actions: hPanel → GIT
+### 2b. Without GitHub Actions: clone over SSH (not hPanel's Git deployment)
 
-While Actions can't run, deploy from inside Hostinger instead. `scripts/build-hostinger.sh` (run by
-Claude Code or a developer after the tests pass) commits a ready-to-install bundle to the
-`hostinger` branch: the theme with its built files, the core plugin, content, redirects, PDFs and
-videos. In hPanel:
+While Actions can't run, `scripts/build-hostinger.sh` commits a ready-to-install bundle to the
+`hostinger` branch (theme with built files, core plugin, content, redirects, PDFs, videos,
+`sync.sh`). Clone it over SSH into the home folder and install it with `sync.sh`: the steps are in
+`scripts/hostinger/README.md`.
 
-1. **Websites → the site → Advanced → GIT**: repository `git@github.com:Techdella/techdella-website.git`,
-   branch `hostinger`, folder `techdella-deploy`. Add the SSH key hPanel shows to GitHub → repo
-   **Settings → Deploy keys** (read-only). Click **Deploy**.
-2. **Advanced → SSH Access** → terminal, once per site:
-   `bash ~/domains/<domain>/public_html/techdella-deploy/sync.sh ~/domains/<domain>/public_html --site=marketing --env=staging --first-run`
-3. Each update: **Deploy** in hPanel → GIT (or add hPanel's webhook URL in GitHub → Settings →
-   Webhooks), then the same line without `--site`, `--env` and `--first-run`.
-
-The bundle folder blocks web access, and `sync.sh` never touches uploads or `wp-config.php` secrets.
-Staging's password protection (hPanel → **Password protect directories**) is a manual step on this route.
+**Don't connect the repo with hPanel's Git/GitHub deployment.** It deploys into the site's root
+folder: on 11 Oct 2026 it replaced techdella.com's files (403, then a missing `wp-config.php`) and
+the site was restored from Hostinger's backup.
 
 ## 3. Startbuddi (§11.1)
 
