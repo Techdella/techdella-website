@@ -18,7 +18,7 @@ internal_links:
   - /glossary/schema-markup/
   - /glossary/mobile-optimization/
   - /tools/on-page-seo-checker/
-rank_math_description: "Technical SEO explained: crawling, indexing, Core Web Vitals and site structure, with a prioritized checklist and the 2026 thresholds Google uses."
+rank_math_description: "Technical SEO explained: crawling, indexing, Core Web Vitals and site structure, with a prioritized checklist and the thresholds Google uses today."
 ---
 
 Technical SEO is the part of search engine optimization that deals with how your site is built rather than what it says. If Google can't crawl a page, render it or decide which URL is the real one, the page can't rank, no matter how good the writing is. Technical SEO removes those blockers.

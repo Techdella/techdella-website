@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Photography Business (2026 Guide)"
+title: "How to Start a Photography Business ({{year}} Guide)"
 slug: photography-business
 type: business
 site: marketing

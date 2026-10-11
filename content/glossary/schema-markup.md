@@ -18,7 +18,7 @@ internal_links:
   - /services/ai-search-optimization/
   - /glossary/technical-seo/
   - /glossary/local-seo/
-rank_math_description: "Schema markup explained: what structured data does, which schema types still earn rich results in 2026, and how to add and test JSON-LD safely."
+rank_math_description: "Schema markup explained: what structured data does, which schema types still earn rich results in {{year}}, and how to add and test JSON-LD safely."
 ---
 
 Schema markup is a block of code that tells search engines, in plain labels, what your page is about: this is an organization, this is its logo, this article was written by this person on this date. People never see it, but Google uses it to understand the page and to decide whether it qualifies for rich results such as review stars, breadcrumbs or product details.

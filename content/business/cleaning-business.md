@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Cleaning Business (2026 Guide)"
+title: "How to Start a Cleaning Business ({{year}} Guide)"
 slug: cleaning-business
 type: business
 site: marketing

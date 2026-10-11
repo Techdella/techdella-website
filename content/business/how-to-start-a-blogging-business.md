@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Blogging Business (2026 Guide)"
+title: "How to Start a Blogging Business ({{year}} Guide)"
 slug: how-to-start-a-blogging-business
 type: business
 site: marketing
@@ -11,7 +11,7 @@ audience: "Writers and creators in Nigeria, the US and the UK who want to turn a
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a blogging business, choose a topic where you have first-hand experience, publish genuinely helpful articles that answer real searches, build an email list from day one, and earn from several streams (ads, affiliate links, sponsorships, your own products or services). Disclose affiliate links and register for tax once income starts."
-rank_math_description: "How to start a blogging business in 2026: pick a topic, write for search and AI answers, monetize with ads, affiliates and products, and stay compliant."
+rank_math_description: "How to start a blogging business in {{year}}: pick a topic, write for search and AI answers, monetize with ads, affiliates and products, and stay compliant."
 internal_links:
   - /services/seo/
   - /services/ai-search-optimization/

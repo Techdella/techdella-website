@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Pet Sitting Business (2026 Guide)"
+title: "How to Start a Pet Sitting Business ({{year}} Guide)"
 slug: how-to-start-a-pet-sitting-business
 type: business
 site: marketing

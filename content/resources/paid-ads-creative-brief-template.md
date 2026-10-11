@@ -10,6 +10,10 @@ form: lead_magnet
 # Run `npm run pdf` first: the importer uploads these from pdf/out/ to an unguessable uploads path.
 pdf: pdf/out/paid-ads-creative-brief-template.pdf
 featured_image: pdf/out/covers/paid-ads-creative-brief-template.jpg
+# Pages 2–3 as a preview (npm run pdf renders them).
+gallery:
+  - pdf/out/previews/paid-ads-creative-brief-template-p2.jpg
+  - pdf/out/previews/paid-ads-creative-brief-template-p3.jpg
 bullets:
   - "A one-page brief you can fill in"
   - "Message: problem, promise, proof"
@@ -19,7 +23,7 @@ bullets:
   - "A pre-launch checklist"
 internal_links:
   - /services/paid-ads/
-  - /resources/
+  - /glossary/
 ---
 
 This creative brief template gives you one brief for Meta, TikTok, LinkedIn and Google: audience, message, hooks, test plan and format specs. It's the brief we use in [paid ads](/services/paid-ads/) work; pair it with the [UTM generator](/tools/free-utm-parameter-generator/) and a [growth audit](/growth-audit/).

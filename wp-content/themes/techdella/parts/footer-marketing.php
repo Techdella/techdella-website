@@ -24,9 +24,8 @@ $td_company  = td_footer_links(
 	]
 );
 $td_explore  = [
-	__( 'Industries', 'techdella' )      => td_url( 'marketing', '/solution/' ),
+	__( 'Case studies', 'techdella' )    => td_url( 'marketing', '/case-studies/' ),
 	__( 'Locations', 'techdella' )       => td_url( 'marketing', '/locations/' ),
-	__( 'Free guides', 'techdella' )     => td_url( 'marketing', '/resources/' ),
 	__( 'Glossary', 'techdella' )        => td_url( 'marketing', '/glossary/' ),
 	__( 'Free tools', 'techdella' )      => td_url( 'marketing', '/tools/' ),
 	__( 'Business guides', 'techdella' ) => td_url( 'marketing', '/business/' ),

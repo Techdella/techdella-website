@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Handmade Jewelry Business (2026)"
+title: "How to Start a Handmade Jewelry Business ({{year}})"
 slug: how-to-start-a-handmade-jewelry-business
 type: business
 site: marketing

@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Fitness Business (2026 Guide)"
+title: "How to Start a Fitness Business ({{year}} Guide)"
 slug: how-to-start-a-fitness-business
 type: business
 site: marketing

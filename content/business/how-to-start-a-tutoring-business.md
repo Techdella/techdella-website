@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Tutoring Business (2026 Guide)"
+title: "How to Start a Tutoring Business ({{year}} Guide)"
 slug: how-to-start-a-tutoring-business
 type: business
 site: marketing

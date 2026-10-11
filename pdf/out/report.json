@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T10:42:42.748Z",
+  "generated_at": "2026-10-11T21:17:34.421Z",
   "release": false,
   "pdfs": [
     {
@@ -8,9 +8,9 @@
       "title": "AI Search Readiness Checklist (2026) | TechDella",
       "pdf_title": "AI Search Readiness Checklist \\(2026\\) | TechDella",
       "pages": 8,
-      "bytes": 432883,
-      "mb": 0.41,
-      "confirm_tokens": 6,
+      "bytes": 420856,
+      "mb": 0.4,
+      "confirm_tokens": 0,
       "price_tokens": 0,
       "fonts_loaded": 4,
       "file": "pdf/out/ai-search-readiness-checklist.pdf"
@@ -47,9 +47,9 @@
       "title": "Email Deliverability Checklist: SPF, DKIM, DMARC and Sender Rules | TechDella",
       "pdf_title": "Email Deliverability Checklist: SPF, DKIM, DMARC and Sender Rules | TechDella",
       "pages": 7,
-      "bytes": 416287,
-      "mb": 0.4,
-      "confirm_tokens": 5,
+      "bytes": 410998,
+      "mb": 0.39,
+      "confirm_tokens": 0,
       "price_tokens": 0,
       "fonts_loaded": 4,
       "file": "pdf/out/email-deliverability-checklist.pdf"
@@ -60,9 +60,9 @@
       "title": "10 Marketing Automations to Set Up This Quarter | TechDella",
       "pdf_title": "10 Marketing Automations to Set Up This Quarter | TechDella",
       "pages": 13,
-      "bytes": 396657,
-      "mb": 0.38,
-      "confirm_tokens": 1,
+      "bytes": 390790,
+      "mb": 0.37,
+      "confirm_tokens": 0,
       "price_tokens": 0,
       "fonts_loaded": 4,
       "file": "pdf/out/marketing-automations-this-quarter.pdf"
@@ -86,9 +86,9 @@
       "title": "Paid Ads Creative Brief Template: Meta, TikTok, LinkedIn, Google | TechDella",
       "pdf_title": "Paid Ads Creative Brief Template: Meta, TikTok, LinkedIn, Google | TechDella",
       "pages": 10,
-      "bytes": 417003,
-      "mb": 0.4,
-      "confirm_tokens": 18,
+      "bytes": 403674,
+      "mb": 0.38,
+      "confirm_tokens": 0,
       "price_tokens": 0,
       "fonts_loaded": 4,
       "file": "pdf/out/paid-ads-creative-brief-template.pdf"

@@ -38,6 +38,54 @@ if ( ! function_exists( 'td_nav_services' ) ) {
 	}
 
 	/**
+	 * Published posts of a type for a mega-menu (label, url), by menu order then title.
+	 * Empty when the type doesn't exist on this site.
+	 *
+	 * @param string $type  Post type.
+	 * @param int    $limit Max items.
+	 * @return array<int,array{label:string,url:string}>
+	 */
+	function td_nav_posts( string $type, int $limit = 24 ): array {
+		if ( ! post_type_exists( $type ) ) {
+			return [];
+		}
+		$posts = get_posts(
+			[
+				'post_type'      => $type,
+				'post_status'    => 'publish',
+				'posts_per_page' => $limit,
+				'no_found_rows'  => true,
+				'orderby'        => [
+					'menu_order' => 'ASC',
+					'title'      => 'ASC',
+				],
+			]
+		);
+		return array_map(
+			static fn( WP_Post $p ): array => [
+				// "Fintech Marketing Agency" reads as "Fintech" in a menu headed "Industries".
+				'label' => trim( (string) preg_replace( '/\s+Marketing Agency$/i', '', get_the_title( $p ) ) ),
+				'url'   => (string) get_permalink( $p ),
+			],
+			$posts
+		);
+	}
+
+	/**
+	 * A mega-menu list of links (label + url, optional desc), escaped.
+	 *
+	 * @param array<int,array{label:string,url:string,desc?:string}> $links Links.
+	 * @param string                                                 $list_class List class.
+	 */
+	function td_nav_mega_links( array $links, string $list_class = 'td-mega__list' ): string {
+		$out = '<ul class="' . esc_attr( $list_class ) . '" role="list">';
+		foreach ( $links as $l ) {
+			$out .= '<li><a class="td-mega__item" href="' . esc_url( $l['url'] ) . '"' . ( td_nav_is_current( $l['url'] ) ? ' aria-current="page"' : '' ) . '>' . esc_html( $l['label'] ) . '</a></li>';
+		}
+		return $out . '</ul>';
+	}
+
+	/**
 	 * Top-level items of the menu assigned to a location (empty when none).
 	 *
 	 * @param string $location Menu location.

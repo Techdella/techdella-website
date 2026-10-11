@@ -1,4 +1,4 @@
-// Site navigation (§2.3): blur-on-scroll, services mega-menu, mobile sheet.
+// Site navigation (§2.3): blur-on-scroll, mega-menus (Services, Industries, Resources), mobile sheet.
 // Progressive enhancement only: without JS, Services is a plain link to
 // /services/ and the mobile menu is a <details> element.
 const td = (window.td = window.td || {});
@@ -16,41 +16,46 @@ function initScroll(nav) {
 }
 
 function initMega(nav) {
-  const item = nav.querySelector('[data-td-mega]');
-  const toggle = item && item.querySelector('[data-td-mega-toggle]');
-  const panel = item && item.querySelector('[data-td-mega-panel]');
-  if (!toggle || !panel) return;
-  toggle.hidden = false;
-  let closeTimer;
+  const items = [...nav.querySelectorAll('[data-td-mega]')];
+  const closers = [];
+  items.forEach((item) => {
+    const toggle = item.querySelector('[data-td-mega-toggle]');
+    const panel = item.querySelector('[data-td-mega-panel]');
+    if (!toggle || !panel) return;
+    toggle.hidden = false;
+    let closeTimer;
 
-  const isOpen = () => toggle.getAttribute('aria-expanded') === 'true';
-  const open = () => {
-    clearTimeout(closeTimer);
-    toggle.setAttribute('aria-expanded', 'true');
-    panel.hidden = false;
-  };
-  const close = (returnFocus = false) => {
-    clearTimeout(closeTimer);
-    if (!isOpen()) return;
-    toggle.setAttribute('aria-expanded', 'false');
-    panel.hidden = true;
-    if (returnFocus) toggle.focus();
-  };
+    const isOpen = () => toggle.getAttribute('aria-expanded') === 'true';
+    const close = (returnFocus = false) => {
+      clearTimeout(closeTimer);
+      if (!isOpen()) return;
+      toggle.setAttribute('aria-expanded', 'false');
+      panel.hidden = true;
+      if (returnFocus) toggle.focus();
+    };
+    const open = () => {
+      clearTimeout(closeTimer);
+      closers.forEach((c) => { if (c !== close) c(); }); // One menu open at a time.
+      toggle.setAttribute('aria-expanded', 'true');
+      panel.hidden = false;
+    };
+    closers.push(close);
 
-  toggle.addEventListener('click', () => (isOpen() ? close() : open()));
-  // Hover opens on pointer devices; a short delay avoids flicker.
-  const hover = window.matchMedia('(hover: hover) and (pointer: fine)');
-  item.addEventListener('mouseenter', () => { if (hover.matches) open(); });
-  item.addEventListener('mouseleave', () => {
-    if (hover.matches) closeTimer = setTimeout(() => close(), 180);
+    toggle.addEventListener('click', () => (isOpen() ? close() : open()));
+    // Hover opens on pointer devices; a short delay avoids flicker.
+    const hover = window.matchMedia('(hover: hover) and (pointer: fine)');
+    item.addEventListener('mouseenter', () => { if (hover.matches) open(); });
+    item.addEventListener('mouseleave', () => {
+      if (hover.matches) closeTimer = setTimeout(() => close(), 180);
+    });
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen()) { e.preventDefault(); close(true); }
+    });
+    item.addEventListener('focusout', (e) => {
+      if (!item.contains(e.relatedTarget)) close();
+    });
+    document.addEventListener('click', (e) => { if (!item.contains(e.target)) close(); });
   });
-  item.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isOpen()) { e.preventDefault(); close(true); }
-  });
-  item.addEventListener('focusout', (e) => {
-    if (!item.contains(e.relatedTarget)) close();
-  });
-  document.addEventListener('click', (e) => { if (!item.contains(e.target)) close(); });
 }
 
 function initSheet(nav) {

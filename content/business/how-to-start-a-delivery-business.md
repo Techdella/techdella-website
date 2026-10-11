@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Delivery Business (2026 Guide)"
+title: "How to Start a Delivery Business ({{year}} Guide)"
 slug: how-to-start-a-delivery-business
 type: business
 site: marketing

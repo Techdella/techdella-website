@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Personal Chef Business (2026 Guide)"
+title: "How to Start a Personal Chef Business ({{year}} Guide)"
 slug: how-to-start-a-personal-chef-business
 type: business
 site: marketing

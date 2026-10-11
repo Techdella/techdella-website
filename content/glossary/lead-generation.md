@@ -1,5 +1,5 @@
 ---
-title: "What Is Lead Generation? B2B Strategies That Work in 2026"
+title: "What Is Lead Generation? B2B Strategies That Work in {{year}}"
 slug: lead-generation
 excerpt: "Lead generation attracts potential buyers and captures their details so you can follow up. Here is how it works in B2B today, which channels to use, and how to measure lead quality."
 primary_kw: lead generation
@@ -18,7 +18,7 @@ internal_links:
   - /case-studies/paycape/
   - /glossary/landing-page/
   - /glossary/lead-scoring/
-rank_math_description: "Lead generation explained for B2B: how buyers research in 2026, inbound vs outbound, the channels that work, and how to measure lead quality, not volume."
+rank_math_description: "Lead generation explained for B2B: how buyers research in {{year}}, inbound vs outbound, the channels that work, and how to measure lead quality, not volume."
 ---
 
 Lead generation is how a business finds people who might buy and starts a conversation with them. In practice, it's a system: something attracts the right people (content, search, ads, events, referrals), something gives them a reason to share their details (a useful resource, a tool, a consultation), and a process follows up and decides who is worth a sales conversation.

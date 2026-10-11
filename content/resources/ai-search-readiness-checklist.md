@@ -10,6 +10,10 @@ form: lead_magnet
 # Run `npm run pdf` first: the importer uploads these from pdf/out/ to an unguessable uploads path.
 pdf: pdf/out/ai-search-readiness-checklist.pdf
 featured_image: pdf/out/covers/ai-search-readiness-checklist.jpg
+# Pages 2–3 as a preview (npm run pdf renders them).
+gallery:
+  - pdf/out/previews/ai-search-readiness-checklist-p2.jpg
+  - pdf/out/previews/ai-search-readiness-checklist-p3.jpg
 bullets:
   - "Crawler access: robots.txt rules for AI search and training bots"
   - "Indexing and rendering: content that exists without JavaScript"
@@ -19,10 +23,10 @@ bullets:
   - "A scoring sheet to pick your first three fixes"
 internal_links:
   - /services/ai-search-optimization/
-  - /resources/
+  - /glossary/
 ---
 
-This AI search readiness checklist walks you through fifty checks so AI answer engines can reach your pages, understand who you are and quote you. It pairs with our [AI search optimization](/services/ai-search-optimization/) service and the [growth audit](/growth-audit/), and sits alongside our other [free resources](/resources/).
+This AI search readiness checklist walks you through fifty checks so AI answer engines can reach your pages, understand who you are and quote you. It pairs with our [AI search optimization](/services/ai-search-optimization/) service and the [growth audit](/growth-audit/), and sits alongside our [email deliverability checklist](/resources/email-deliverability-checklist/).
 
 ## Who it's for
 

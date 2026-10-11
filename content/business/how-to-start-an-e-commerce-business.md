@@ -1,5 +1,5 @@
 ---
-title: "How to Start an E-Commerce Business (2026 Guide)"
+title: "How to Start an E-Commerce Business ({{year}} Guide)"
 slug: how-to-start-an-e-commerce-business
 type: business
 site: marketing

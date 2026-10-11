@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Freelancing Business (2026 Guide)"
+title: "How to Start a Freelancing Business ({{year}} Guide)"
 slug: freelancing-business
 type: business
 site: marketing

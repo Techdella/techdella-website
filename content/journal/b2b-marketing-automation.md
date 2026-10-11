@@ -1,5 +1,5 @@
 ---
-title: "B2B Marketing Automation: What to Automate in 2026"
+title: "B2B Marketing Automation: What to Automate in {{year}}"
 slug: b2b-marketing-automation
 excerpt: "A practical guide to B2B marketing automation: the ten workflows worth running, how to score and route leads, where AI agents genuinely help today, and the guardrails that keep automation from annoying buyers."
 primary_kw: b2b marketing automation

@@ -1,230 +1,230 @@
 {
   "main.css": {
-    "version": "751047916"
+    "version": "754012396"
   },
   "core.css": {
-    "version": "751047916"
+    "version": "754012400"
   },
   "blocks/ad-mock.css": {
-    "version": "751047916"
+    "version": "754012400"
   },
   "blocks/ad-slot.css": {
-    "version": "751047916"
+    "version": "754012400"
   },
   "blocks/ai-answer-mock.css": {
-    "version": "751047920"
+    "version": "754012400"
   },
   "blocks/arch-people.css": {
-    "version": "751047920"
+    "version": "754012400"
   },
   "blocks/author-box.css": {
-    "version": "751047920"
+    "version": "754012400"
   },
   "blocks/bar-chart.css": {
-    "version": "751047920"
+    "version": "754012400"
   },
   "blocks/before-after.css": {
-    "version": "751047920"
+    "version": "754012400"
   },
   "blocks/bento-grid.css": {
-    "version": "751047920"
+    "version": "754012400"
   },
   "blocks/booking-embed.css": {
-    "version": "751047920"
+    "version": "754012400"
   },
   "blocks/built-for.css": {
-    "version": "751047920"
+    "version": "754012400"
   },
   "blocks/button.css": {
-    "version": "751047920"
+    "version": "754012400"
   },
   "blocks/callout.css": {
-    "version": "751047920"
+    "version": "754012400"
   },
   "blocks/case-card.css": {
-    "version": "751047920"
+    "version": "754012400"
   },
   "blocks/case-grid.css": {
-    "version": "751047920"
+    "version": "754012400"
   },
   "blocks/checklist.css": {
-    "version": "751047920"
+    "version": "754012400"
   },
   "blocks/connected-services.css": {
-    "version": "751047920"
+    "version": "754012404"
   },
   "blocks/creative-gallery.css": {
-    "version": "751047920"
+    "version": "754012404"
   },
   "blocks/cta-dark.css": {
-    "version": "751047924"
+    "version": "754012408"
   },
   "blocks/email-mock.css": {
-    "version": "751047924"
+    "version": "754012408"
   },
   "blocks/faq.css": {
-    "version": "751047924"
+    "version": "754012408"
   },
   "blocks/feature-grid.css": {
-    "version": "751047924"
+    "version": "754012408"
   },
   "blocks/form.css": {
-    "version": "751047924"
+    "version": "754012408"
   },
   "blocks/founder.css": {
-    "version": "751047924"
+    "version": "754012408"
   },
   "blocks/funnel.css": {
-    "version": "751047924"
+    "version": "754012408"
   },
   "blocks/hero.css": {
-    "version": "751047924"
+    "version": "754012408"
   },
   "blocks/hero-orbit.css": {
-    "version": "751047924"
+    "version": "754012408"
   },
   "blocks/hub-spoke.css": {
-    "version": "751047924"
+    "version": "754012408"
   },
   "blocks/inline-cta.css": {
-    "version": "751047924"
+    "version": "754012408"
   },
   "blocks/journey.css": {
-    "version": "751047924"
+    "version": "754012408"
   },
   "blocks/label-chip.css": {
-    "version": "751047924"
+    "version": "754012408"
   },
   "blocks/lead-mock.css": {
-    "version": "751047924"
+    "version": "754012412"
   },
   "blocks/logo-strip.css": {
-    "version": "751047924"
+    "version": "754012412"
   },
   "blocks/myth-fact.css": {
-    "version": "751047924"
+    "version": "754012412"
   },
   "blocks/newsletter.css": {
-    "version": "751047924"
+    "version": "754012412"
   },
   "blocks/photo-cards.css": {
-    "version": "751047924"
+    "version": "754012412"
   },
   "blocks/platform-badges.css": {
-    "version": "751047924"
+    "version": "754012412"
   },
   "blocks/popup.css": {
-    "version": "751047924"
+    "version": "754012412"
   },
   "blocks/post-card.css": {
-    "version": "751047924"
+    "version": "754012412"
   },
   "blocks/post-cta.css": {
-    "version": "751047928"
+    "version": "754012412"
   },
   "blocks/post-featured.css": {
-    "version": "751047928"
+    "version": "754012412"
   },
   "blocks/post-grid.css": {
-    "version": "751047928"
+    "version": "754012412"
   },
   "blocks/post-header.css": {
-    "version": "751047928"
+    "version": "754012412"
   },
   "blocks/pricing-cards.css": {
-    "version": "751047928"
+    "version": "754012412"
   },
   "blocks/pros-cons.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/pull-quote.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/report-mock.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/section-head.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/serp-mock.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/service-switcher.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/stat-pills.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/stats.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/steps.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/steps-fold.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/studio-hero.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/tabs.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/takeaways.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/testimonial.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/timeline.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/tldr.css": {
-    "version": "751047928"
+    "version": "754012416"
   },
   "blocks/toc.css": {
-    "version": "751047932"
+    "version": "754012416"
   },
   "blocks/tool-kit.css": {
-    "version": "751047932"
+    "version": "754012416"
   },
   "blocks/video.css": {
-    "version": "751047932"
+    "version": "754012416"
   },
   "blocks/workflow-canvas.css": {
-    "version": "751047932"
+    "version": "754012416"
   },
   "editor.css": {
-    "version": "751047932"
+    "version": "754012416"
   },
   "main.js": {
-    "version": "751047932"
+    "version": "754012420"
   },
   "tools/ai-business-name-generator.js": {
-    "version": "751047932"
+    "version": "754012420"
   },
   "tools/email-subject-line-analyzer.js": {
-    "version": "751047932"
+    "version": "754012420"
   },
   "tools/hashtag-generator.js": {
-    "version": "751047932"
+    "version": "754012420"
   },
   "tools/keyword-density-checker.js": {
-    "version": "751047932"
+    "version": "754012420"
   },
   "tools/on-page-seo-checker.js": {
-    "version": "751047932"
+    "version": "754012420"
   },
   "tools/persona-builder.js": {
-    "version": "751047932"
+    "version": "754012420"
   },
   "tools/readability-checker.js": {
-    "version": "751047932"
+    "version": "754012420"
   },
   "tools/utm-parameter-generator.js": {
-    "version": "751047932"
+    "version": "754012420"
   },
   "editor.js": {
-    "version": "751047932"
+    "version": "754012420"
   }
 }

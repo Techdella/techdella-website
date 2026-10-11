@@ -15,7 +15,7 @@ cta_service: email-marketing
 taxonomies:
   td_service_tag: [email-marketing]
 tldr: "Email deliverability is whether your messages reach the inbox rather than spam or nowhere. For B2B senders that now means SPF, DKIM and an aligned DMARC record, one-click unsubscribe on marketing email, a user-reported spam rate kept below 0.3% (ideally under 0.1%), and lists of people who actually asked to hear from you."
-rank_math_description: "B2B email deliverability in 2026: Gmail, Yahoo and Outlook sender rules side by side, SPF, DKIM, DMARC, one-click unsubscribe and the 0.3% spam limit."
+rank_math_description: "B2B email deliverability in {{year}}: Gmail, Yahoo and Outlook sender rules side by side, SPF, DKIM, DMARC, one-click unsubscribe and the 0.3% spam limit."
 internal_links:
   - /services/email-marketing/
   - /resources/email-deliverability-checklist/

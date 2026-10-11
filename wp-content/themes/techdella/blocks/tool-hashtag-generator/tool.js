@@ -30,10 +30,10 @@ const LIST = {
 };
 
 // Suggested set size per platform (editorial guidance, not a platform rule).
-const SIZE = { linkedin: 5, instagram: 15, tiktok: 6, x: 3 };
+const SIZE = { linkedin: 5, instagram: 5, tiktok: 6, x: 3 };
 const NOTE = {
   linkedin: 'On LinkedIn, a few specific hashtags at the end of the post read better than a long list.',
-  instagram: 'Instagram allows up to 30 hashtags. Mix broad and niche tags and rotate them between posts.',
+  instagram: 'Instagram now caps captions at five hashtags. Pick the most specific ones and rotate them between posts.',
   tiktok: 'On TikTok, pair one or two broad tags with specific ones that describe the video.',
   x: 'On X, one to three hashtags keep the post readable.',
 };

@@ -1,7 +1,7 @@
 ---
 title: "What Is Search Engine Marketing (SEM)? How It Works"
 slug: search-engine-marketing
-excerpt: "Search engine marketing usually means paid search ads on Google and Bing. Here is how the auction works, what it costs in 2026, and how to plan a first campaign."
+excerpt: "Search engine marketing usually means paid search ads on Google and Bing. Here is how the auction works, what it costs in {{year}}, and how to plan a first campaign."
 primary_kw: search engine marketing
 secondary_kws: [sem, paid search, google ads, ppc advertising, ad rank]
 intent: informational

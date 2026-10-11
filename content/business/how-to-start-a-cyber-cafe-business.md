@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Cyber Cafe Business in 2026"
+title: "How to Start a Cyber Cafe Business in {{year}}"
 slug: how-to-start-a-cyber-cafe-business
 type: business
 site: marketing
@@ -11,7 +11,7 @@ audience: "Small business founders, mainly in Nigeria and other markets with une
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a cyber cafe business in 2026, treat it as a digital services center, not a browsing room. Pick a location near schools, offices or government offices, budget for reliable power and two internet links, and earn from printing, scanning, online registrations, CV and document services, and paid work desks."
-rank_math_description: "How to start a cyber cafe business in 2026: location, equipment, power and internet, services that actually make money, startup costs and revenue maths."
+rank_math_description: "How to start a cyber cafe business in {{year}}: location, equipment, power and internet, services that actually make money, startup costs and revenue maths."
 internal_links:
   - /services/local-seo/
   - /growth-audit/

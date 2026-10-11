@@ -53,7 +53,7 @@ function td_og_label( WP_Post $post ): string {
  * @param WP_Post $post Post.
  */
 function td_og_hash( WP_Post $post ): string {
-	return md5( TD_OG_TEMPLATE_VERSION . '|' . td_site() . '|' . $post->ID . '|' . $post->post_title . '|' . td_og_label( $post ) );
+	return md5( TD_OG_TEMPLATE_VERSION . '|' . td_site() . '|' . $post->ID . '|' . td_year_tokens( $post->post_title ) . '|' . td_og_label( $post ) );
 }
 
 /**
@@ -196,13 +196,13 @@ function td_og_generate( int $post_id, bool $force = false ) {
 	$dir     = trailingslashit( $uploads['basedir'] ) . 'td-og';
 	wp_mkdir_p( $dir );
 	$file = $dir . '/' . $hash . '.png';
-	if ( ! td_og_render( $post->post_title, td_og_label( $post ), $file ) ) {
+	if ( ! td_og_render( td_year_tokens( $post->post_title ), td_og_label( $post ), $file ) ) {
 		return new WP_Error( 'td_og', 'GD with FreeType is required.' );
 	}
 	$att = wp_insert_attachment(
 		[
 			'post_mime_type' => 'image/png',
-			'post_title'     => 'OG: ' . $post->post_title,
+			'post_title'     => 'OG: ' . td_year_tokens( $post->post_title ),
 			'post_status'    => 'inherit',
 			'post_parent'    => $post_id,
 		],
@@ -223,7 +223,7 @@ function td_og_generate( int $post_id, bool $force = false ) {
 			'sizes'  => [],
 		]
 	);
-	update_post_meta( (int) $att, '_wp_attachment_image_alt', $post->post_title );
+	update_post_meta( (int) $att, '_wp_attachment_image_alt', td_year_tokens( $post->post_title ) );
 	update_post_meta( (int) $att, '_td_og_hash', $hash );
 	update_post_meta( (int) $att, '_td_noindex', 1 );
 	update_post_meta( $post_id, '_td_og_image', (int) $att );

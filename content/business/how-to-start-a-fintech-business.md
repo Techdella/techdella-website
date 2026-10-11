@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Fintech Business (2026 Guide)"
+title: "How to Start a Fintech Business ({{year}} Guide)"
 slug: how-to-start-a-fintech-business
 type: business
 site: marketing

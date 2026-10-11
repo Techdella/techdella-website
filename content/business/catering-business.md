@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Catering Business (2026 Guide)"
+title: "How to Start a Catering Business ({{year}} Guide)"
 slug: catering-business
 type: business
 site: marketing

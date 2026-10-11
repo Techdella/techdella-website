@@ -1,5 +1,5 @@
 ---
-title: "How to Start an Event Planning Business (2026)"
+title: "How to Start an Event Planning Business ({{year}})"
 slug: event-planning-business
 type: business
 site: marketing
@@ -11,7 +11,7 @@ audience: "Aspiring event planners in Nigeria, the US and the UK, including peop
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start an event planning business, pick one event type (weddings, corporate, or social celebrations), register and insure the business, build a reliable vendor list, and use contracts with non-refundable deposits. You can start from home; your real assets are your vendor network and a portfolio of past events."
-rank_math_description: "Start an event planning business in the US, UK or Nigeria: pick a niche, register, insure, price with deposits and build a vendor network. 2026 guide."
+rank_math_description: "Start an event planning business in the US, UK or Nigeria: pick a niche, register, insure, price with deposits and build a vendor network. {{year}} guide."
 internal_links:
   - /services/local-seo/
   - /services/paid-ads/

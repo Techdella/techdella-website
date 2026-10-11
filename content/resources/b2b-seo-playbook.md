@@ -10,6 +10,10 @@ form: lead_magnet
 # Run `npm run pdf` first: the importer uploads these from pdf/out/ to an unguessable uploads path.
 pdf: pdf/out/b2b-seo-playbook.pdf
 featured_image: pdf/out/covers/b2b-seo-playbook.jpg
+# Pages 2–3 as a preview (npm run pdf renders them).
+gallery:
+  - pdf/out/previews/b2b-seo-playbook-p2.jpg
+  - pdf/out/previews/b2b-seo-playbook-p3.jpg
 bullets:
   - "Why B2B SEO should be judged on pipeline, and how to measure it"
   - "A technical health check, plus speed, structure and markup"
@@ -19,7 +23,7 @@ bullets:
   - "Authority and conversion work for weeks 9 to 13"
 internal_links:
   - /services/seo/
-  - /resources/
+  - /glossary/
 ---
 
 This B2B SEO playbook is a week-by-week, 90-day plan for teams that need search to bring in qualified leads. It's how we approach [SEO](/services/seo/) projects; see the results in our [case studies](/case-studies/) or start with a [growth audit](/growth-audit/).
