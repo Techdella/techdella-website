@@ -98,7 +98,7 @@
 .td-m2-terms p { font-size: 14.5px; color: var(--td-body); margin: 4px 0 0; line-height: 1.5; }
 
 /* Glossary term */
-.td-m2-term { display: grid; gap: 32px; }
+.td-m2-term { display: grid; gap: 32px; grid-template-columns: minmax(0, 1fr); }
 .td-m2-term .td-prose { max-width: 720px; }
 .td-m2-related { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
 .td-m2-related a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 1px solid var(--td-line); border-radius: var(--td-r-pill); color: var(--td-ink); text-decoration: none; }
