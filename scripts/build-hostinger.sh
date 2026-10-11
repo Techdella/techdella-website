@@ -28,6 +28,8 @@ git worktree add --detach "$WT" HEAD > /dev/null
   cd "$WT"
   if git fetch -q origin "$BRANCH" 2> /dev/null; then
     git checkout -q -B "$BRANCH" FETCH_HEAD
+  elif git show-ref -q --verify "refs/heads/$BRANCH"; then
+    git checkout -q "$BRANCH" # built with --no-push before, never pushed
   else
     git checkout -q --orphan "$BRANCH"
   fi
