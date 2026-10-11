@@ -31,6 +31,9 @@ add_action(
 			'optm-js_comb_ext_inl',
 			'optm-js_defer',
 			'optm-html_min',
+			// "Remove query strings" drops ?ver= from our assets, so browsers and the CDN keep an
+			// old main.js after a deploy (new menus never switch on). Keep versions in the URL.
+			'optm-qs_rm',
 			'guest',
 			'guest_optm',
 		];
