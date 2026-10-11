@@ -41,6 +41,46 @@
             }
         },
         {
+            "key": "field_td_solution_secondary_kws",
+            "label": "Secondary keywords",
+            "name": "secondary_kws",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "5–8 phrases buyers in this industry search (e.g. \"fintech seo agency\"). Each keyword section below targets one.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add keyword",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_solution_secondary_kws_keyword",
+                    "label": "Keyword",
+                    "name": "keyword",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "One phrase, lowercase, as people search it.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_solution_secondary_kws"
+                }
+            ]
+        },
+        {
             "key": "field_td_solution_pains",
             "label": "Industry pains",
             "name": "pains",
@@ -154,6 +194,174 @@
                         "id": ""
                     },
                     "parent_repeater": "field_td_solution_services_used"
+                }
+            ]
+        },
+        {
+            "key": "field_td_solution_outcomes",
+            "label": "How we help (outcomes)",
+            "name": "outcomes",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "4 outcomes for the business, in plain words. No numbers unless sourced; never promise results.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 4,
+            "button_label": "Add outcome",
+            "collapsed": "",
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_solution_outcomes_title",
+                    "label": "Outcome",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Under 8 words.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_solution_outcomes"
+                },
+                {
+                    "key": "field_td_solution_outcomes_text",
+                    "label": "Detail",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "1–2 sentences.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_solution_outcomes"
+                }
+            ]
+        },
+        {
+            "key": "field_td_solution_keyword_sections",
+            "label": "Keyword sections",
+            "name": "keyword_sections",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "4–5 sections. Heading = one secondary keyword as people search it (\"Fintech SEO\"); text answers it first, 90–140 words.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 6,
+            "button_label": "Add section",
+            "collapsed": "",
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_solution_keyword_sections_heading",
+                    "label": "Heading (H2)",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "The keyword phrase, naturally.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_solution_keyword_sections"
+                },
+                {
+                    "key": "field_td_solution_keyword_sections_text",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Answer-first paragraph, 90–140 words.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_solution_keyword_sections"
+                }
+            ]
+        },
+        {
+            "key": "field_td_solution_process",
+            "label": "Process",
+            "name": "process",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "4 steps specific to this industry.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 4,
+            "button_label": "Add step",
+            "collapsed": "",
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_solution_process_title",
+                    "label": "Step",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Under 6 words.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_solution_process"
+                },
+                {
+                    "key": "field_td_solution_process_text",
+                    "label": "Detail",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "1–2 sentences.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_solution_process"
                 }
             ]
         },
@@ -272,5 +480,5 @@
     "active": true,
     "description": "Fields for solution entries (CLAUDE.md §7). Also registered as post meta by techdella-core/cpt.",
     "show_in_rest": 0,
-    "modified": 1791590400
+    "modified": 1791763200
 }

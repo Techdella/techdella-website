@@ -18,7 +18,6 @@ const PAGES = [
   { path: '/locations/nigeria/', schema: 'Service' },
   { path: '/glossary/', schema: 'DefinedTermSet' },
   { path: '/glossary/aeo/', schema: 'DefinedTerm' },
-  { path: '/resources/', schema: 'CollectionPage' },
   { path: '/resources/ai-search-readiness-checklist/', schema: 'DigitalDocument' },
   { path: '/tools/', schema: 'CollectionPage', ads: true },
   { path: '/tools/free-utm-parameter-generator/', schema: 'SoftwareApplication', ads: true },
@@ -99,10 +98,12 @@ test.describe('solution without proof', () => {
     if (id) wp(['post', 'delete', id, '--force']);
     try { wp(['term', 'delete', 'td_industry', 'e2e-healthcare', '--by=slug']); } catch (e) { /* already gone */ }
   });
-  test('shows the honest first steps, not a case study', async ({ page }) => {
+  test('shows verbatim client quotes and real case studies, never an invented industry one', async ({ page }) => {
     await page.goto(site('marketing', '/solution/e2e-healthcare-marketing-agency/'));
-    await expect(page.getByRole('heading', { name: /What we’d do first/ })).toBeVisible();
-    await expect(page.locator('.td-case-card')).toHaveCount(0);
+    await expect(page.getByRole('heading', { name: /What our clients say/ })).toBeVisible();
+    await expect(page.locator('.td-m2-quote').first()).toContainText('Techdella reframed how we were thinking');
+    await expect(page.locator('.td-m2-scroller')).toHaveAttribute('tabindex', '0');
+    await expect(page.locator('main')).not.toContainText('Proof:');
   });
 });
 
@@ -180,7 +181,7 @@ test.describe('naira pricing', () => {
 });
 
 test('hero eyebrow sits on the headline\'s line (centered heroes and left heroes)', async ({ page }) => {
-  for (const p of ['/services/', '/solution/', '/resources/', '/pricing/', '/glossary/', '/book-a-discovery-call/', '/services/seo/']) {
+  for (const p of ['/services/', '/locations/', '/case-studies/', '/pricing/', '/glossary/', '/book-a-discovery-call/', '/services/seo/']) {
     await page.goto(site('marketing', p));
     const offset = await page.evaluate(() => {
       const h = document.querySelector('.td-hero h1');
@@ -191,4 +192,13 @@ test('hero eyebrow sits on the headline\'s line (centered heroes and left heroes
     });
     expect(Math.abs(offset), p).toBeLessThanOrEqual(2);
   }
+});
+
+test('year token: titles and meta show the current year, never {{year}}', async ({ page }) => {
+  const year = String(new Date().getFullYear());
+  await page.goto(site('marketing', '/business/catering-business/'));
+  await expect(page).toHaveTitle(new RegExp(`\\(${year} Guide\\)`));
+  await expect(page.locator('h1')).toContainText(year);
+  await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content', new RegExp(year));
+  expect(await page.content()).not.toContain('{{year}}');
 });

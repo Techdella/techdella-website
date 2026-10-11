@@ -285,3 +285,52 @@ if ( ! function_exists( 'td_m2_service_link' ) ) {
 		];
 	}
 }
+
+if ( ! function_exists( 'td_m2_quotes' ) ) {
+	/**
+	 * Client quotes for scrollers: published, permission-confirmed Testimonial posts, else the
+	 * verified verbatim quotes (CLAUDE.md §2.4). Never edited, never invented.
+	 *
+	 * @return array<int,array{quote:string,name:string,role:string,company:string}>
+	 */
+	function td_m2_quotes(): array {
+		$out = [];
+		if ( post_type_exists( 'td_testimonial' ) ) {
+			foreach ( get_posts(
+				[
+					'post_type'      => 'td_testimonial',
+					'post_status'    => 'publish',
+					'posts_per_page' => 6,
+					'no_found_rows'  => true,
+				]
+			) as $p ) {
+				$quote = trim( (string) td_field( 'quote', $p->ID ) );
+				if ( '' !== $quote && td_field( 'permission_confirmed', $p->ID ) ) {
+					$out[] = [
+						'quote'   => $quote,
+						'name'    => (string) td_field( 'name', $p->ID ),
+						'role'    => (string) td_field( 'role', $p->ID ),
+						'company' => (string) td_field( 'company', $p->ID ),
+					];
+				}
+			}
+		}
+		if ( $out ) {
+			return $out;
+		}
+		return [
+			[
+				'quote'   => 'Techdella reframed how we were thinking about our market entirely. We went from scattered tactics to a positioning and GTM system that actually made sense for where we were heading. The difference was immediate.',
+				'name'    => 'Levi Barbosa',
+				'role'    => 'CEO',
+				'company' => 'WezOps',
+			],
+			[
+				'quote'   => 'The clarity they brought to our strategy saved us months of trial and error — and probably a lot of money too. If you\'re serious about growing your startup, Techdella is the team you want in your corner from early on.',
+				'name'    => 'Akin Oyegoke',
+				'role'    => 'CEO',
+				'company' => 'Johan Consults',
+			],
+		];
+	}
+}

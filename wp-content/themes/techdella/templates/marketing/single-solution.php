@@ -1,9 +1,9 @@
 <?php
 /**
- * Solution (industry) page (§10.4): industry pains, which services apply and
- * why (in the editor's order), proof from a linked case study in that
- * industry — or an honest "what we'd do first" when there is none (never an
- * invented one) — compliance and channel notes, industry FAQ, CTA.
+ * Industry page (§10.4): answer-first intro, industry pains, how we help (outcomes), the
+ * services in the editor's order, keyword sections (one H2 per search phrase), the process,
+ * a scroller of verbatim client quotes and case studies (this industry's first; never invented),
+ * compliance and channel notes, industry FAQ, CTA.
  *
  * @package techdella
  */
@@ -24,8 +24,6 @@ while ( have_posts() ) :
 	echo td_block( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		'hero',
 		[
-			'parentLabel'    => __( 'Services', 'techdella' ),
-			'parentUrl'      => '/services/',
 			'eyebrow'        => $td_industry,
 			'title'          => td_m2_accent( get_the_title(), false !== $td_first ? $td_first : '' ),
 			'lead'           => td_m2_lead( $td_id, 40 ),
@@ -38,6 +36,15 @@ while ( have_posts() ) :
 		]
 	);
 	td_m2_breadcrumbs();
+
+	// Answer-first intro (the body).
+	if ( '' !== trim( (string) get_post_field( 'post_content', $td_id ) ) ) :
+		?>
+		<section class="td-section td-section--tight">
+			<div class="td-container td-container--narrow td-prose td-m2-intro"><?php the_content(); ?></div>
+		</section>
+		<?php
+	endif;
 
 	// 1. Industry pains.
 	$td_pains = [];
@@ -61,7 +68,30 @@ while ( have_posts() ) :
 		);
 	}
 
-	// 2. Services that apply, and why — in the industry-specific order the editor set.
+	// 2. How we help: what changes for the business.
+	$td_outcomes = [];
+	foreach ( td_m2_rows( td_field( 'outcomes', $td_id ) ) as $td_row ) {
+		$td_outcomes[] = [
+			'title' => (string) ( $td_row['title'] ?? '' ),
+			'text'  => (string) ( $td_row['text'] ?? '' ),
+		];
+	}
+	if ( $td_outcomes ) {
+		echo td_block( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			'feature-grid',
+			[
+				'label'   => __( 'How we help', 'techdella' ),
+				/* translators: %s: industry */
+				'title'   => sprintf( __( 'How we help %s businesses *grow*', 'techdella' ), $td_industry ),
+				'style'   => 'checks',
+				'surface' => 'canvas',
+				'columns' => 2,
+				'items'   => $td_outcomes,
+			]
+		);
+	}
+
+	// 3. Services that apply, and why — in the industry-specific order the editor set.
 	$td_services = [];
 	foreach ( td_m2_rows( td_field( 'services_used', $td_id ) ) as $td_row ) {
 		$td_link = td_m2_service_link( (int) ( td_m2_ids( $td_row['service'] ?? 0 )[0] ?? 0 ) );
@@ -78,12 +108,11 @@ while ( have_posts() ) :
 		echo td_block( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			'feature-grid',
 			[
-				'label'   => __( 'How we help', 'techdella' ),
+				'label'   => __( 'Services', 'techdella' ),
 				/* translators: %s: industry */
 				'title'   => sprintf( __( 'The services that move %s *forward*', 'techdella' ), $td_industry ),
 				'intro'   => __( 'In the order we usually run them for teams like yours.', 'techdella' ),
 				'style'   => 'numbered',
-				'surface' => 'canvas',
 				'columns' => min( 3, count( $td_services ) ),
 				'items'   => $td_services,
 			]
@@ -91,45 +120,108 @@ while ( have_posts() ) :
 		echo '</div>';
 	}
 
-	// 3. Proof: linked case studies (permission-confirmed only), else the honest first steps.
-	$td_proof = array_values(
+	// 4. Keyword sections: one H2 per phrase buyers search, answered first.
+	$td_kw = array_values(
+		array_filter(
+			td_m2_rows( td_field( 'keyword_sections', $td_id ) ),
+			static fn( $r ) => '' !== trim( (string) ( $r['heading'] ?? '' ) ) && '' !== trim( (string) ( $r['text'] ?? '' ) )
+		)
+	);
+	if ( $td_kw ) :
+		?>
+		<section class="td-section" aria-labelledby="td-m2-kw-h">
+			<div class="td-container">
+				<div class="td-m2-section-head">
+					<?php echo td_chip( sprintf( /* translators: %s: industry */ __( '%s marketing', 'techdella' ), $td_industry ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<p class="td-m2-h2" id="td-m2-kw-h"><?php echo td_accent( sprintf( /* translators: %s: industry */ __( 'Every channel %s buyers *use*', 'techdella' ), $td_industry ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				</div>
+				<div class="td-m2-kw">
+					<?php foreach ( $td_kw as $td_row ) : ?>
+						<article class="td-m2-kw__row">
+							<h2 class="td-m2-kw__h"><?php echo esc_html( (string) $td_row['heading'] ); ?></h2>
+							<p class="td-m2-kw__text"><?php echo td_lite_inline( (string) $td_row['text'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+						</article>
+					<?php endforeach; ?>
+				</div>
+			</div>
+		</section>
+		<?php
+	endif;
+
+	// 5. Process.
+	$td_steps = [];
+	foreach ( td_m2_rows( td_field( 'process', $td_id ) ) as $td_row ) {
+		$td_steps[] = [
+			'title' => (string) ( $td_row['title'] ?? '' ),
+			'text'  => (string) ( $td_row['text'] ?? '' ),
+		];
+	}
+	if ( $td_steps ) {
+		echo td_block( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			'feature-grid',
+			[
+				'label'   => __( 'How we work', 'techdella' ),
+				/* translators: %s: industry */
+				'title'   => sprintf( __( 'Our %s marketing *process*', 'techdella' ), $td_industry ),
+				'style'   => 'numbered',
+				'surface' => 'canvas',
+				'columns' => min( 4, count( $td_steps ) ),
+				'items'   => $td_steps,
+			]
+		);
+	}
+
+	// 6. Client voices: verbatim quotes and case studies (this industry's first), in a scroller.
+	$td_related = array_values(
 		array_filter(
 			td_m2_ids( td_field( 'proof', $td_id ) ),
 			static fn( $pid ) => 'publish' === get_post_status( $pid ) && td_field( 'permission_confirmed', $pid )
 		)
 	);
-	?>
-	<section class="td-section" aria-labelledby="td-m2-proof-h">
-		<div class="td-container">
-			<div class="td-m2-section-head">
-				<?php echo td_chip( __( 'Proof', 'techdella' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-				<?php if ( $td_proof ) : ?>
-					<h2 class="td-m2-h2" id="td-m2-proof-h"><?php echo td_accent( sprintf( /* translators: %s: industry */ __( 'Work with %s *teams*', 'techdella' ), $td_industry ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
-				<?php else : ?>
-					<h2 class="td-m2-h2" id="td-m2-proof-h"><?php echo td_accent( __( 'What we’d do *first*', 'techdella' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
-					<p><?php echo esc_html( sprintf( /* translators: %s: industry */ __( 'We don’t have a published %s case study yet, so here is the honest version: the first steps we’d take with you.', 'techdella' ), $td_industry ) ); ?></p>
-				<?php endif; ?>
-			</div>
-			<?php if ( $td_proof ) : ?>
-				<ul class="td-m2-grid" role="list">
-					<?php foreach ( $td_proof as $td_pid ) : ?>
-						<li><?php echo td_block( 'case-card', [ 'postId' => (int) $td_pid ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></li>
+	$td_others  = get_posts(
+		[
+			'post_type'      => 'case_study',
+			'post_status'    => 'publish',
+			'posts_per_page' => 8,
+			'fields'         => 'ids',
+			'no_found_rows'  => true,
+			'post__not_in'   => $td_related ? $td_related : [ 0 ],
+		]
+	);
+	$td_cases   = array_slice(
+		array_merge( $td_related, array_values( array_filter( $td_others, static fn( $pid ) => (bool) td_field( 'permission_confirmed', (int) $pid ) ) ) ),
+		0,
+		6
+	);
+	$td_quotes  = td_m2_quotes();
+	if ( $td_cases || $td_quotes ) :
+		?>
+		<section class="td-section" aria-labelledby="td-m2-voices-h">
+			<div class="td-container">
+				<div class="td-m2-section-head">
+					<?php echo td_chip( __( 'Clients', 'techdella' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<h2 class="td-m2-h2" id="td-m2-voices-h"><?php echo td_accent( __( 'What our clients *say*', 'techdella' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
+				</div>
+				<ul class="td-m2-scroller" role="list" tabindex="0" aria-label="<?php esc_attr_e( 'Client quotes and case studies (scroll sideways)', 'techdella' ); ?>">
+					<?php foreach ( $td_quotes as $td_q ) : ?>
+						<li class="td-m2-scroller__item">
+							<figure class="td-m2-quote">
+								<blockquote><p><?php echo esc_html( $td_q['quote'] ); ?></p></blockquote>
+								<figcaption><strong><?php echo esc_html( $td_q['name'] ); ?></strong><span><?php echo esc_html( trim( $td_q['role'] . ', ' . $td_q['company'], ', ' ) ); ?></span></figcaption>
+							</figure>
+						</li>
+					<?php endforeach; ?>
+					<?php foreach ( $td_cases as $td_pid ) : ?>
+						<li class="td-m2-scroller__item"><?php echo td_block( 'case-card', [ 'postId' => (int) $td_pid ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></li>
 					<?php endforeach; ?>
 				</ul>
-			<?php else : ?>
-				<ol class="td-m2-checks">
-					<li><?php esc_html_e( 'A growth audit: search, AI visibility, ads, funnel and tracking, with a prioritized plan.', 'techdella' ); ?></li>
-					<?php foreach ( array_slice( $td_services, 0, 2 ) as $td_s ) : ?>
-						<li><a class="td-link" href="<?php echo esc_url( $td_s['url'] ); ?>"><?php echo esc_html( $td_s['title'] ); ?></a><?php echo '' !== $td_s['text'] ? ': ' . td_mark_placeholders( esc_html( $td_s['text'] ) ) : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></li>
-					<?php endforeach; ?>
-					<li><?php esc_html_e( 'Monthly reporting on rankings, traffic and the leads it brings.', 'techdella' ); ?></li>
-				</ol>
-			<?php endif; ?>
-		</div>
-	</section>
-	<?php
+				<p class="td-m2-scroller__more"><a class="td-link" href="<?php echo esc_url( home_url( '/case-studies/' ) ); ?>"><?php esc_html_e( 'All case studies', 'techdella' ); ?></a></p>
+			</div>
+		</section>
+		<?php
+	endif;
 
-	// 4. Compliance and channel quirks.
+	// 7. Compliance and channel quirks.
 	$td_notes = td_m2_paras( td_field( 'compliance_notes', $td_id ) );
 	if ( '' !== $td_notes ) :
 		?>
@@ -141,14 +233,6 @@ while ( have_posts() ) :
 				</div>
 				<div class="td-m2-story__body"><?php echo $td_notes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
 			</div>
-		</section>
-		<?php
-	endif;
-
-	if ( '' !== trim( (string) get_post_field( 'post_content', $td_id ) ) ) :
-		?>
-		<section class="td-section">
-			<div class="td-container td-container--narrow td-prose"><?php the_content(); ?></div>
 		</section>
 		<?php
 	endif;
