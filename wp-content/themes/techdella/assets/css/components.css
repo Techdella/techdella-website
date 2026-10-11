@@ -22,6 +22,8 @@
 
 /* label-chip: orange dot + label (§2.3) */
 .td-chip{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;line-height:1.4;border:1px solid var(--td-line);background:var(--td-paper);color:var(--td-ink);border-radius:var(--td-r-pill);padding:5px 12px 5px 10px;align-self:flex-start}
+/* In centered headers the chip sits on the headline's center line. */
+.td-hero--center .td-chip,.td-hero--center .td-hero__crumb,.td-arch-people__head .td-chip{align-self:center}
 .td-chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--td-orange);flex:0 0 auto}
 .td-chip--upper{text-transform:uppercase;font-size:12px;letter-spacing:.08em}
 .td-chip--plain::before{display:none}
