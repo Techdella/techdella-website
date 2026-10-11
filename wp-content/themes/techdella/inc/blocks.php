@@ -116,26 +116,38 @@ function td_block_wrapper( string $css_class, array $extra = [] ): string {
 }
 
 /**
- * Per-block critical CSS: the first time a TechDella block renders on a page, print its CSS
- * (assets/build/blocks/<name>.css) inline just before it. Skipped in the editor and REST
- * previews, which load main.css instead.
+ * Per-block critical CSS (assets/build/blocks/<slug>.css) as an inline <style>, once per page.
+ * Returns '' when already printed, in the editor/REST (they load main.css), or when the
+ * build is missing. Templates that print a block's markup by hand (not through td_block())
+ * call this first: echo td_block_css( 'case-grid' );
+ *
+ * @param string $slug Block slug without the "techdella/" prefix.
+ */
+function td_block_css( string $slug ): string {
+	static $done = [];
+	if ( isset( $done[ $slug ] ) || is_admin() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
+		return '';
+	}
+	$done[ $slug ] = true;
+	$file          = get_theme_file_path( "assets/build/blocks/{$slug}.css" );
+	if ( ! is_readable( $file ) || ! is_readable( get_theme_file_path( 'assets/build/core.css' ) ) ) {
+		return '';
+	}
+	$css = td_css_fix_urls( (string) file_get_contents( $file ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+	return '<style id="td-block-' . esc_attr( $slug ) . '">' . $css . '</style>';
+}
+
+/**
+ * The first time a TechDella block renders on a page, print its CSS just before it.
  */
 add_filter(
 	'render_block',
 	static function ( string $html, array $block ): string {
-		static $done = [];
-		$name        = (string) ( $block['blockName'] ?? '' );
-		if ( '' === $html || ! str_starts_with( $name, 'techdella/' ) || isset( $done[ $name ] ) || is_admin() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
+		$name = (string) ( $block['blockName'] ?? '' );
+		if ( '' === $html || ! str_starts_with( $name, 'techdella/' ) ) {
 			return $html;
 		}
-		$done[ $name ] = true;
-		$slug          = substr( $name, 10 );
-		$file          = get_theme_file_path( "assets/build/blocks/{$slug}.css" );
-		if ( ! is_readable( $file ) || ! is_readable( get_theme_file_path( 'assets/build/core.css' ) ) ) {
-			return $html;
-		}
-		$css = td_css_fix_urls( (string) file_get_contents( $file ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
-		return '<style id="td-block-' . esc_attr( $slug ) . '">' . $css . '</style>' . $html;
+		return td_block_css( substr( $name, 10 ) ) . $html;
 	},
 	5,
 	2

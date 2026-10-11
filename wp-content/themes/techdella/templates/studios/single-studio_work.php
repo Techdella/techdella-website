@@ -109,6 +109,7 @@ while ( have_posts() ) :
 	$td_cards = array_filter( array_map( static fn( $p ) => td_a3_case_from_post( (int) $p ), $td_more ) );
 	if ( $td_cards ) :
 		?>
+		<?php echo td_block_css( 'case-grid' ) . td_block_css( 'case-card' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		<section class="td-case-grid td-section td-section--canvas td-case-grid--cover" aria-labelledby="td-more-work">
 			<div class="td-container">
 				<?php

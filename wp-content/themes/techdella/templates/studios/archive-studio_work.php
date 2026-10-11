@@ -36,6 +36,7 @@ while ( have_posts() ) {
 	}
 }
 ?>
+<?php echo td_block_css( 'case-grid' ) . td_block_css( 'case-card' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 <section class="td-case-grid td-section td-case-grid--cover" style="padding-top:0" aria-label="<?php esc_attr_e( 'Projects', 'techdella' ); ?>">
 	<div class="td-container">
 		<?php if ( $td_cards ) : ?>

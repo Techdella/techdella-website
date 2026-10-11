@@ -20,6 +20,7 @@ while ( have_posts() ) {
 	}
 }
 ?>
+<?php echo td_block_css( 'post-grid' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 <section class="td-post-grid td-post-grid--grid td-section" style="padding-top:0" aria-label="<?php echo esc_attr( (string) ( $td_grid_label ?? __( 'Posts', 'techdella' ) ) ); ?>">
 	<div class="td-container td-post-grid__inner">
 		<?php if ( $td_cards ) : ?>

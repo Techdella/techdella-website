@@ -102,8 +102,28 @@ if ( ! function_exists( 'td_a3_case_from_post' ) ) {
 			$image   = is_array( $first ) ? (int) ( $first['ID'] ?? $first['id'] ?? 0 ) : (int) $first;
 		}
 		$status = '';
+		$frame  = '';
+		$phone  = 0;
 		if ( 'studio_work' === $type ) {
 			$status = 'Live' === td_field( 'status', $post_id ) ? 'Live' : 'Concept';
+			// A full-page website screenshot (tall) shows in a browser frame, with a
+			// portrait gallery image beside it as the phone view.
+			$ids       = array_map( static fn( $g ) => is_array( $g ) ? (int) ( $g['ID'] ?? $g['id'] ?? 0 ) : (int) $g, array_values( (array) td_field( 'gallery', $post_id ) ) );
+			$size      = static function ( int $id ): array {
+				$m = wp_get_attachment_metadata( $id );
+				return [ (int) ( $m['width'] ?? 0 ), (int) ( $m['height'] ?? 0 ) ];
+			};
+			[ $w, $h ] = $image ? $size( $image ) : [ 0, 0 ];
+			if ( $w > 0 && $h >= $w * 0.8 ) {
+				$frame = 'browser';
+				foreach ( $ids as $id ) {
+					[ $pw, $ph ] = $size( $id );
+					if ( $id !== $image && $pw > 0 && $ph >= $pw * 1.6 ) {
+						$phone = $id;
+						break;
+					}
+				}
+			}
 		}
 		return [
 			'type'        => $type,
@@ -120,8 +140,8 @@ if ( ! function_exists( 'td_a3_case_from_post' ) ) {
 			'image'       => $image,
 			'imageAlt'    => '',
 			'visual'      => '',
-			'frame'       => '',
-			'imagePhone'  => '',
+			'frame'       => $frame,
+			'imagePhone'  => $phone ? $phone : '',
 			'site'        => '',
 			'note'        => '',
 		];
@@ -258,6 +278,8 @@ if ( ! function_exists( 'td_a3_case_card' ) ) {
 		if ( '' === trim( (string) $c['title'] ) ) {
 			return '';
 		}
+		// The card's CSS lives with the case-card block; print it once for any caller (case-grid, templates).
+		$css     = function_exists( 'td_block_css' ) ? td_block_css( 'case-card' ) : '';
 		$level   = in_array( $level, [ 2, 3, 4 ], true ) ? $level : 3;
 		$concept = 'Concept' === $c['status'];
 		$url     = (string) $c['url'];
@@ -288,7 +310,7 @@ if ( ! function_exists( 'td_a3_case_card' ) ) {
 			if ( '' !== (string) ( $c['note'] ?? '' ) ) {
 				$out .= '<p class="td-case-card__note">' . td_a3_text( $c['note'] ) . '</p>';
 			}
-			return $out . '</article>';
+			return $css . $out . '</article>';
 		}
 
 		$label = 'studio_work' === $c['type'] ? __( 'Work', 'techdella' ) : __( 'Case study', 'techdella' );
@@ -317,6 +339,6 @@ if ( ! function_exists( 'td_a3_case_card' ) ) {
 		if ( $meta ) {
 			$out .= '<p class="td-case-card__meta">' . td_a3_text( implode( ' · ', $meta ) ) . '</p>';
 		}
-		return $out . '</article>';
+		return $css . $out . '</article>';
 	}
 }

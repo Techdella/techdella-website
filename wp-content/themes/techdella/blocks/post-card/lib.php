@@ -181,7 +181,7 @@ if ( ! function_exists( 'td_a3_post_card' ) ) {
 		) : '';
 		$img = str_starts_with( $img, '<!--' ) ? '' : $img;
 
-		$out  = '<article class="td-post-card td-post-card--' . ( 'sm' === ( $args['size'] ?? 'md' ) ? 'sm' : 'md' ) . '">';
+		$out  = ( function_exists( 'td_block_css' ) ? td_block_css( 'post-card' ) : '' ) . '<article class="td-post-card td-post-card--' . ( 'sm' === ( $args['size'] ?? 'md' ) ? 'sm' : 'md' ) . '">';
 		$out .= '<div class="td-post-card__media">' . ( '' !== $img ? $img : td_a3_post_cover( $p, $tone ) );
 		if ( ! empty( $p['example'] ) ) {
 			$out .= '<span class="td-label-example">' . esc_html__( 'Example', 'techdella' ) . '</span>';

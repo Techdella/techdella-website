@@ -200,6 +200,9 @@ add_action(
 				$popups
 			),
 		];
+		if ( function_exists( 'td_block_css' ) ) {
+			echo td_block_css( 'popup' ) . td_block_css( 'form' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- theme CSS.
+		}
 		foreach ( $popups as $popup ) {
 			echo td_popup_markup( $popup ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in td_popup_markup().
 		}
