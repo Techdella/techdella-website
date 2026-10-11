@@ -35,7 +35,7 @@ if ( '' !== $td_category && ! in_array( $td_category, $td_valid, true ) ) {
 $td_args = [
 	'post_type'      => 'em-glossary',
 	'post_status'    => 'publish',
-	'posts_per_page' => 500,
+	'posts_per_page' => 500, // phpcs:ignore WordPress.WP.PostsPerPage.posts_per_page_posts_per_page -- the A–Z hub lists every term (~110).
 	'no_found_rows'  => true,
 	'orderby'        => 'title',
 	'order'          => 'ASC',

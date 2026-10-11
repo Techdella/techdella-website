@@ -16,7 +16,7 @@
 
   /* Derived (prototype values that are not in the core list) */
   --td-ink-soft:#3D3A36;          /* secondary text on sand */
-  --td-num:#A8A29E;               /* inactive step numbers */
+  --td-num:#8C857E;               /* inactive step numbers (≥3:1 on canvas for large text) */
   --td-orange-on-dark:#FF7A3D;    /* one highlighted word/stat on ink */
   --td-r-xl:32px;
   --td-gutter:20px;

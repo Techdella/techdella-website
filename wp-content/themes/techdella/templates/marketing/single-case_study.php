@@ -88,6 +88,7 @@ while ( have_posts() ) :
 
 	$td_story = array_filter(
 		[
+			/* translators: %s: client name */
 			[ __( 'The challenge', 'techdella' ), __( 'Where *%s* started', 'techdella' ), td_field( 'challenge', $td_id ) ],
 			[ __( 'Our approach', 'techdella' ), __( 'What we *did*', 'techdella' ), td_field( 'approach', $td_id ) ],
 			[ __( 'The results', 'techdella' ), __( 'What *changed*', 'techdella' ), td_field( 'results', $td_id ) ],

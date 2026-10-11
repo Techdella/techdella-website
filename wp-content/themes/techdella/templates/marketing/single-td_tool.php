@@ -15,35 +15,35 @@ defined( 'ABSPATH' ) || exit;
 require_once __DIR__ . '/inc/m2.php';
 td_m2_styles();
 
-/**
- * Related service + Journal guide per tool app (§12.1 "related guide and service").
- * Filter `td_tool_related` to change a mapping without editing the template.
- *
- * @param string $component tool_component value.
- * @return array{service:array{0:string,1:string},guide:array{0:string,1:string}}
- */
 if ( ! function_exists( 'td_m2_tool_related' ) ) :
-function td_m2_tool_related( string $component ): array {
-	$map = [
-		'utm-parameter-generator'     => [ [ 'Paid ads', '/services/paid-ads/' ], [ 'Startup marketing playbook: 30 days to your first 100 customers', '/how-to-get-your-first-100-customers/' ] ],
-		'hashtag-generator'           => [ [ 'Paid ads', '/services/paid-ads/' ], [ 'How to launch a new product', '/how-to-launch-a-new-product/' ] ],
-		'readability-checker'         => [ [ 'SEO', '/services/seo/' ], [ 'Why most content marketing agencies fail startups', '/content-marketing-agency-for-startups/' ] ],
-		'keyword-density-checker'     => [ [ 'SEO', '/services/seo/' ], [ 'Why most content marketing agencies fail startups', '/content-marketing-agency-for-startups/' ] ],
-		'email-subject-line-analyzer' => [ [ 'Email marketing', '/services/email-marketing/' ], [ 'What no one tells you about email marketing tools', '/email-marketing-setup-problems/' ] ],
-		'on-page-seo-checker'         => [ [ 'SEO', '/services/seo/' ], [ 'Why most content marketing agencies fail startups', '/content-marketing-agency-for-startups/' ] ],
-		'persona-builder'             => [ [ 'Lead generation', '/services/lead-generation/' ], [ 'Startup marketing playbook: 30 days to your first 100 customers', '/how-to-get-your-first-100-customers/' ] ],
-		'ai-business-name-generator'  => [ [ 'Branding (TechDella Studios)', 'studios:/services/branding/' ], [ 'How to brainstorm a startup name that converts', '/how-to-brainstorm-a-startup-name/' ] ],
-	];
-	$row = $map[ $component ] ?? [ [ 'SEO', '/services/seo/' ], [ 'The Journal', '/' ] ];
-	return (array) apply_filters(
-		'td_tool_related',
-		[
-			'service' => $row[0],
-			'guide'   => $row[1],
-		],
-		$component
-	);
-}
+	/**
+	 * Related service + Journal guide per tool app (§12.1 "related guide and service").
+	 * Filter `td_tool_related` to change a mapping without editing the template.
+	 *
+	 * @param string $component tool_component value.
+	 * @return array{service:array{0:string,1:string},guide:array{0:string,1:string}}
+	 */
+	function td_m2_tool_related( string $component ): array {
+		$map = [
+			'utm-parameter-generator'     => [ [ 'Paid ads', '/services/paid-ads/' ], [ 'Startup marketing playbook: 30 days to your first 100 customers', '/how-to-get-your-first-100-customers/' ] ],
+			'hashtag-generator'           => [ [ 'Paid ads', '/services/paid-ads/' ], [ 'How to launch a new product', '/how-to-launch-a-new-product/' ] ],
+			'readability-checker'         => [ [ 'SEO', '/services/seo/' ], [ 'Why most content marketing agencies fail startups', '/content-marketing-agency-for-startups/' ] ],
+			'keyword-density-checker'     => [ [ 'SEO', '/services/seo/' ], [ 'Why most content marketing agencies fail startups', '/content-marketing-agency-for-startups/' ] ],
+			'email-subject-line-analyzer' => [ [ 'Email marketing', '/services/email-marketing/' ], [ 'What no one tells you about email marketing tools', '/email-marketing-setup-problems/' ] ],
+			'on-page-seo-checker'         => [ [ 'SEO', '/services/seo/' ], [ 'Why most content marketing agencies fail startups', '/content-marketing-agency-for-startups/' ] ],
+			'persona-builder'             => [ [ 'Lead generation', '/services/lead-generation/' ], [ 'Startup marketing playbook: 30 days to your first 100 customers', '/how-to-get-your-first-100-customers/' ] ],
+			'ai-business-name-generator'  => [ [ 'Branding (TechDella Studios)', 'studios:/services/branding/' ], [ 'How to brainstorm a startup name that converts', '/how-to-brainstorm-a-startup-name/' ] ],
+		];
+		$row = $map[ $component ] ?? [ [ 'SEO', '/services/seo/' ], [ 'The Journal', '/' ] ];
+		return (array) apply_filters(
+			'td_tool_related',
+			[
+				'service' => $row[0],
+				'guide'   => $row[1],
+			],
+			$component
+		);
+	}
 endif;
 
 get_header();

@@ -24,10 +24,12 @@ test('every techdella block renders on the styleguide @smoke', async ({ page }) 
   const sections = page.locator('[data-td-block^="techdella/"]');
   const names = await sections.evaluateAll((els) => els.map((e) => e.dataset.tdBlock));
   for (const b of CORE_BLOCKS) expect(names).toContain(`techdella/${b}`);
-  // Every block section (including other workers' blocks) produced markup.
+  // Every block section (including other workers' blocks) produced markup — except ad-slot,
+  // which by design renders nothing outside the tools pages (§12.2).
   const empty = await sections.evaluateAll((els) => els
     .filter((e) => !e.querySelector('.td-sg__block-body')?.children.length)
-    .map((e) => e.dataset.tdBlock));
+    .map((e) => e.dataset.tdBlock)
+    .filter((n) => n !== 'techdella/ad-slot'));
   expect(empty).toEqual([]);
   // Prices are placeholders, founder letter carries its sign-off marker (§2.4).
   await expect(page.locator('#block-pricing-cards .td-confirm').first()).toHaveText(/\[PRICE\]/);

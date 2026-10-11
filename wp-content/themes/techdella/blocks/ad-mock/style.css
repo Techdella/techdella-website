@@ -78,7 +78,7 @@
 .td-ad__slide--1{background:var(--td-sand);color:var(--td-ink)}
 .td-ad__slide--1 span{color:var(--td-body)}
 .td-ad__slide--2{background:var(--td-dark-2);color:var(--td-paper)}
-.td-ad__slide--2 span{color:var(--td-num)}
+.td-ad__slide--2 span{color:var(--td-on-dark)}
 .td-ad--video{border-radius:var(--td-r-lg);box-shadow:none;min-height:214px;background:var(--td-sand)}
 .td-ad--video .td-ad__media{position:absolute;inset:0}
 .td-ad__motion{flex:1;position:relative;background:var(--td-sand);border-radius:14px;color:var(--td-ink);display:flex;align-items:center;justify-content:center;min-height:120px}

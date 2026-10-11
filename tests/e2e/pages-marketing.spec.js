@@ -19,11 +19,6 @@ const PAGES = [
   { name: 'pricing', path: '/pricing/', h1: /Clear ways to start/, headings: ['Start with an audit.', 'Paid ads management'] },
 ];
 
-// The numbered feature-grid digits (aria-hidden, 30px) use --td-num (#A8A29E), which is
-// under 3:1 on the canvas cards. The fix belongs in blocks/feature-grid/style.css
-// (use #8C857E, as steps-fold does); until it lands, those digits are excluded here.
-const AXE_EXCLUDE = ['.td-feature-grid__num'];
-
 const norm = (s) => s.replace(/\s+/g, ' ').trim();
 
 for (const p of PAGES) {
@@ -37,7 +32,7 @@ for (const p of PAGES) {
       for (const h of p.headings) {
         expect(headings.some((t) => t.includes(h)), `heading "${h}"`).toBe(true);
       }
-      await expectNoA11yViolations(page, { exclude: AXE_EXCLUDE });
+      await expectNoA11yViolations(page);
     });
 
     test(`${p.path} has no horizontal scroll at 390px`, async ({ page }) => {

@@ -10,10 +10,15 @@ get_header();
 while ( have_posts() ) :
 	the_post();
 	// Pages built from TechDella blocks/patterns are full-bleed: each block brings its own container.
-	if ( str_contains( (string) get_post_field( 'post_content' ), '<!-- wp:techdella/' ) ) :
+	$td_raw = (string) get_post_field( 'post_content' );
+	if ( str_contains( $td_raw, '<!-- wp:techdella/' ) ) :
+		// Hero-type blocks render the page H1 themselves; keep exactly one H1 (§8.5).
+		$td_has_h1 = (bool) preg_match( '#<!-- wp:techdella/(?:hero|hero-orbit|studio-hero|post-header)[\s/]#', $td_raw );
 		?>
 		<article <?php post_class( 'td-page--blocks' ); ?>>
-			<h1 class="td-sr"><?php the_title(); ?></h1>
+			<?php if ( ! $td_has_h1 ) : ?>
+				<h1 class="td-sr"><?php the_title(); ?></h1>
+			<?php endif; ?>
 			<?php the_content(); ?>
 		</article>
 		<?php
