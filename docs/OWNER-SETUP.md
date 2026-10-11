@@ -85,13 +85,14 @@ For staging, create the same set as `TechDella · TEST · …` (§11.5).
 ## 5. Motion videos (§6.3)
 
 The seven motion samples are rendered from HTML (`motion/`, no Remotion licence needed) and are
-not stored in Git. To put one on the site:
+not stored in Git. The Deploy workflow renders them (cached until `motion/` changes), uploads them
+to `~/td-video/` on Hostinger and imports them on each site with `wp td media:videos`; the pages
+already name their scene, so nothing else is needed. To do it by hand:
 
 1. `npm run motion:render` (or `-- --only mo-03` for one), which writes `assets/video/`.
-2. Upload the scene's `-<format>.mp4`, `-<format>.webm`, `-<format>.jpg` and `.vtt` to the Media
-   Library on the right site.
-3. Add the **Video (self-hosted)** block where `motion/README.md` lists it: pick the files, set the
-   title, duration and the Example/Concept label.
+2. Copy `assets/video/` to the server and run `wp td media:videos <that folder>` in each site.
+3. To add a video elsewhere, use the **Video (self-hosted)** block with `scene` set (see
+   `motion/README.md`).
 
 Before publishing: check every scene's copy (MO-04 uses the fictional brand "Northwind"; MO-07 shows
 concept screens only), and replace concepts with real Studios work once it's confirmed.

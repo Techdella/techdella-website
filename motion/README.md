@@ -40,10 +40,20 @@ never real clients' data, and carry an Example or Concept label.
 
 ## Put a video on a page
 
-1. Upload `<scene>-<format>.mp4`, `.webm`, `.jpg` and `<scene>.vtt` to the Media Library.
-2. Add the **Video (self-hosted)** block: pick the four files, set `mode` (`loop` for silent
-   animations, `player` for anything with controls), the ratio, a `title` (screen readers and
-   VideoObject schema), `duration`, and `label` (Example / Concept) where it applies.
+1. Import the renders into each site's Media Library: `wp td media:videos <dir>` (locally
+   `/var/www/repo/assets/video`; the staging/production deploy renders them, uploads them to
+   `~/td-video/` and runs this for you). It is idempotent and records the files per scene.
+2. Add the **Video (self-hosted)** block and set `scene` (e.g. `mo-03-ai-answer-cited`): the ratio
+   picks the format (16:9 wide, 1:1 square, 9:16 tall). Set `mode` (`loop` for silent animations,
+   `player` for controls), a `title` (screen readers and VideoObject schema), `duration`, and
+   `label` (Example / Concept) where the video doesn't carry one already. `items` puts several
+   clips in a row (swipeable on phones); `heading`/`intro`/`chip` add a section heading.
+   You can still pick files by hand: they override the scene.
+
+Where they are today: Services hub (MO-02), AI search (MO-03), Paid ads and Studios motion design
+(MO-04 a/b/c, 9:16), Marketing automation (MO-05), Studios home (MO-07). MO-01 stays off the home
+hero (LCP budget, §8.4) and MO-06 off the pages (the gradient is used once per page, §2.1): both
+are in the Media Library for social.
 
 The block never autoplays with sound, plays loops only near the viewport, shows the poster only
 to visitors who prefer reduced motion, and gives loops a pause button.

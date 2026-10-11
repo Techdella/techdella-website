@@ -128,6 +128,19 @@ $td_blocks = [
 		],
 	],
 	[
+		'video',
+		[
+			'heading'     => 'Studios in *motion*',
+			'intro'       => 'Interface design, motion type and product screens from our studio. Concept work is labelled Concept on the work pages.',
+			'chip'        => 'Reel',
+			'scene'       => 'mo-07-studios-reel',
+			'title'       => 'TechDella Studios reel',
+			'description' => 'A 20-second reel of TechDella Studios work: interface screens, motion type and product shots, including concept work.',
+			'duration'    => 20,
+			'surface'     => 'canvas',
+		],
+	],
+	[
 		'case-grid',
 		[
 			'anchor'  => 'work',

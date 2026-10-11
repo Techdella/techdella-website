@@ -41,7 +41,8 @@ test('loop markup: muted, no autoplay, preload none, poster, sources, captions',
   const video = page.locator('video[data-td-video="loop"]');
   await expect(video).toHaveCount(1);
   await expect(video).toHaveAttribute('preload', /none|auto/);
-  await expect(video).toHaveAttribute('poster', /mo-05-workflow-wide/);
+  // Loop posters are the frame background (lazy via content-visibility), not the poster attribute.
+  await expect(page.locator('.td-video__frame').first()).toHaveAttribute('style', /mo-05-workflow-wide/);
   await expect(video).toHaveAttribute('aria-label', 'How a new lead is handled');
   expect(await video.evaluate((v) => [v.muted, v.loop, v.hasAttribute('autoplay'), v.hasAttribute('controls')])).toEqual([true, true, false, false]);
   await expect(video.locator('source')).toHaveCount(2);
@@ -84,8 +85,20 @@ test('VideoObject in the schema graph', async ({ page }) => {
   const video = nodes.find((n) => n['@type'] === 'VideoObject');
   expect(video).toBeTruthy();
   expect(video.name).toBe('How a new lead is handled');
-  expect(video.contentUrl).toMatch(/mo-05-workflow-wide\.mp4$/);
-  expect(video.thumbnailUrl).toMatch(/mo-05-workflow-wide\.jpg$/);
+  expect(video.contentUrl).toMatch(/mo-05-workflow-wide(-\d+)?\.mp4$/);
+  expect(video.thumbnailUrl).toMatch(/mo-05-workflow-wide(-\d+)?\.jpg$/);
   expect(video.duration).toBe('PT10S');
   expect(video.uploadDate).toBeTruthy();
+});
+
+test('scene videos from td_videos: paid ads row of three Example clips', async ({ page }) => {
+  await page.goto(site('marketing', '/services/paid-ads/'));
+  const clips = page.locator('.td-video-section .td-video-row .td-video');
+  await expect(clips).toHaveCount(3);
+  for (const clip of await clips.all()) {
+    await expect(clip.locator('source[type="video/mp4"]')).toHaveAttribute('src', /-tall\.mp4$/);
+    // The renders carry their own Example badge; the caption says it in text too.
+    await expect(clip.locator('figcaption')).toHaveText(/^Example · /);
+  }
+  await expect(page.locator('.td-video-section h2')).toContainText('Creative in');
 });

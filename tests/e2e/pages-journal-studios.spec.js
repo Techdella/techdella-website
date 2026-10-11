@@ -57,8 +57,9 @@ test.describe('Journal + Studios pages', () => {
     const concept = page.locator('.td-case-card--concept');
     const n = await concept.count();
     for (let i = 0; i < n; i++) await expect(concept.nth(i)).toContainText('Concept');
-    // Prices stay placeholders until the owner supplies them.
-    await expect(page.locator('#packages')).toContainText('[PRICE]');
+    // Prices are set (docs/PRICING.md); no placeholders left on the page.
+    await expect(page.locator('#packages')).toContainText(/From \$[\d,]+/);
+    await expect(page.locator('#packages')).not.toContainText('[PRICE]');
   });
 
   test('journal post: header, toc, tldr, author box, related', async ({ page }) => {

@@ -396,6 +396,38 @@ $td_blocks = [
 		]
 	),
 	$td_b(
+		'video',
+		[
+			'heading' => 'Creative in *motion*',
+			'intro'   => 'Three short ad samples, one per platform. Each is an example we made for a fictional brand, so you can see our approach without a client’s data.',
+			'chip'    => 'Examples',
+			'ratio'   => '9:16',
+			'items'   => [
+				[
+					'scene'       => 'mo-04a-tiktok-hook',
+					'title'       => 'TikTok hook ad (example for a fictional brand)',
+					'description' => 'A 10-second TikTok ad sample: a one-second hook, the product in three steps, then the call to action. Made for the fictional brand Northwind.',
+					'duration'    => 10,
+					'caption'     => 'Example · TikTok: hook in the first second.',
+				],
+				[
+					'scene'       => 'mo-04b-meta-carousel',
+					'title'       => 'Meta carousel ad (example for a fictional brand)',
+					'description' => 'A 10-second Meta carousel ad sample, one benefit per card. Made for the fictional brand Northwind.',
+					'duration'    => 10,
+					'caption'     => 'Example · Meta: one benefit per card.',
+				],
+				[
+					'scene'       => 'mo-04c-linkedin-document',
+					'title'       => 'LinkedIn document ad (example for a fictional brand)',
+					'description' => 'A 10-second LinkedIn document ad sample that teaches before it sells. Made for the fictional brand Northwind.',
+					'duration'    => 10,
+					'caption'     => 'Example · LinkedIn: teach first, then ask.',
+				],
+			],
+		]
+	),
+	$td_b(
 		'funnel',
 		[
 			'title' => 'One funnel, every platform *in its place*',

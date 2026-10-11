@@ -31,9 +31,10 @@ test('every techdella block renders on the styleguide @smoke', async ({ page }) 
     .map((e) => e.dataset.tdBlock)
     .filter((n) => n !== 'techdella/ad-slot'));
   expect(empty).toEqual([]);
-  // Prices are placeholders, founder letter carries its sign-off marker (§2.4).
+  // The styleguide example still shows a price placeholder; the founder letter is signed off (§2.4).
   await expect(page.locator('#block-pricing-cards .td-confirm').first()).toHaveText(/\[PRICE\]/);
-  await expect(page.locator('#block-founder .td-confirm')).toContainText('[CONFIRM founder sign-off]');
+  await expect(page.locator('#block-founder')).toBeVisible();
+  await expect(page.locator('#block-founder .td-confirm')).toHaveCount(0);
   // FAQ never emits FAQPage schema (§8.2).
   expect(await page.content()).not.toContain('FAQPage');
 });

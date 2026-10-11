@@ -261,6 +261,18 @@ $td_blocks = [
 		]
 	),
 	$td_b(
+		'video',
+		[
+			'heading'     => 'How the system *connects*',
+			'intro'       => 'Search brings the visit, ads bring the reach, the lead form captures it, email nurtures it and automation routes it to your team.',
+			'chip'        => 'In 15 seconds',
+			'scene'       => 'mo-02-connected-system',
+			'title'       => 'How search, ads, leads, email and automation connect',
+			'description' => 'A 15-second explainer: a search visit and an ad click become a lead, the lead gets an email sequence, and automation hands it to sales.',
+			'duration'    => 15,
+		]
+	),
+	$td_b(
 		'feature-grid',
 		[
 			'title'   => 'More ways to *get found*',

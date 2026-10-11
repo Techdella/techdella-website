@@ -298,6 +298,18 @@ $td_blocks = [
 			'footerUrl'   => 'studios:/',
 		]
 	),
+	$td_b(
+		'video',
+		[
+			'heading'     => 'One lead, handled in *seconds*',
+			'intro'       => 'A form is submitted. The contact lands in your CRM, the right email goes out and your team gets a Slack alert.',
+			'chip'        => 'In 10 seconds',
+			'scene'       => 'mo-05-workflow',
+			'title'       => 'A lead moving through an automated workflow',
+			'description' => 'A 10-second animation: form, CRM, email and Slack nodes light up as a new lead is handled automatically.',
+			'duration'    => 10,
+		]
+	),
 	$td_section(
 		[
 			$td_cols(

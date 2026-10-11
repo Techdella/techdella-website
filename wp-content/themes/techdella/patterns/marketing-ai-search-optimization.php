@@ -288,6 +288,19 @@ $td_blocks = [
 			],
 		]
 	),
+	$td_b(
+		'video',
+		[
+			'heading'     => 'What getting *cited* looks like',
+			'intro'       => 'Someone asks an AI assistant a question in your category. The answer names your brand and links to your page as a source.',
+			'chip'        => 'In 12 seconds',
+			'scene'       => 'mo-03-ai-answer-cited',
+			'title'       => 'An AI answer that cites the brand',
+			'description' => 'A 12-second animation: a search result and an AI answer appear, and the brand is cited as a source.',
+			'duration'    => 12,
+			'surface'     => 'canvas',
+		]
+	),
 	$td_section(
 		[
 			$td_cols(
