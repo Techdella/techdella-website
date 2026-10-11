@@ -149,3 +149,10 @@
 .td-m2-search button:focus-visible { outline: 3px solid var(--td-focus, var(--td-orange)); outline-offset: 3px; }
 
 @media (prefers-reduced-motion: reduce) { .td-m2-card { transition: none; } .td-m2-card:hover { transform: none; } }
+
+/* Case studies hub hero: real client site in device frames (Paycape, published case study). */
+.td-m2-hero-work { margin: 0; display: flex; flex-direction: column; gap: 18px; }
+.td-m2-hero-work .td-device-stack { padding: 8px 0 24px; }
+.td-m2-hero-work .td-device-group { width: 100%; max-width: 520px; }
+.td-m2-hero-work__caption { align-self: center; font-size: 14px; line-height: 1.45; color: var(--td-body); background: var(--td-paper); border: 1px solid var(--td-line); border-radius: var(--td-r-pill); padding: 8px 16px; }
+.td-m2-hero-work__caption strong { color: var(--td-ink); font-weight: 600; margin-right: 4px; }

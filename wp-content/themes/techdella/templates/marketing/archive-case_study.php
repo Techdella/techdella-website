@@ -63,6 +63,16 @@ foreach ( $td_inds as $td_slug => $td_name ) {
 }
 
 get_header();
+// Hero visual: the real Paycape site (published case study) in browser + phone frames.
+require_once get_theme_file_path( 'blocks/case-card/lib.php' );
+$td_hero_visual = td_block_css( 'case-card' )
+	. '<figure class="td-m2-hero-work">'
+	. '<div class="td-device-stack td-device-stack--pair td-device-stack--browser"><div class="td-device-group">'
+	. td_a3_device( 'work/paycape-website-desktop', 'browser', __( 'The paycape.com home page', 'techdella' ), 'paycape.com', '(max-width: 900px) 90vw, 560px', true )
+	. td_a3_device( 'work/paycape-website-phone', 'phone', __( 'paycape.com on a phone', 'techdella' ), '', '140px' )
+	. '</div></div>'
+	. '<figcaption class="td-m2-hero-work__caption"><strong>' . esc_html__( 'Paycape', 'techdella' ) . '</strong> ' . esc_html__( '50% of conversions came from inbound, in a 5-month engagement.', 'techdella' ) . '</figcaption>'
+	. '</figure>';
 echo td_block( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	'hero',
 	[
@@ -73,8 +83,9 @@ echo td_block( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		'primaryUrl'     => '/growth-audit/',
 		'secondaryLabel' => __( 'Book a discovery call', 'techdella' ),
 		'secondaryUrl'   => '/book-a-discovery-call/',
-		'layout'         => 'center',
-	]
+		'layout'         => 'split',
+	],
+	$td_hero_visual
 );
 td_m2_breadcrumbs();
 ?>

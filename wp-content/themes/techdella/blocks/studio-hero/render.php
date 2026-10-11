@@ -17,7 +17,22 @@ $td_screens = array_slice( array_values( array_filter( (array) ( $attributes['sc
  * @param string $kind list|dashboard|toggle.
  */
 $td_placeholder = static function ( string $kind ): string {
+	$row    = static fn( string $a, string $b, string $c, string $tag = '' ): string => '<span class="td-ui__row"><b>' . esc_html( $a ) . '</b><span><strong>' . esc_html( $b ) . '</strong><em>' . esc_html( $c ) . '</em></span>' . ( '' !== $tag ? '<i class="td-ui__tag">' . esc_html( $tag ) . '</i>' : '' ) . '</span>';
+	$toggle = static fn( string $a, string $b, bool $on ): string => '<span class="td-ui__row td-ui__row--toggle"><span><strong>' . esc_html( $a ) . '</strong><em>' . esc_html( $b ) . '</em></span><i class="td-ui__switch' . ( $on ? ' is-on' : '' ) . '"></i></span>';
 	switch ( $kind ) {
+		// Concept screens: illustrative UI with sample text, always labelled Concept.
+		case 'bookings':
+			return '<span class="td-ui__kicker">' . esc_html__( 'Tuesday', 'techdella' ) . '</span><span class="td-ui__title">' . esc_html__( 'Today’s bookings', 'techdella' ) . '</span>'
+				. $row( '09:00', __( 'Box braids', 'techdella' ), __( 'Ada · 3 h', 'techdella' ), __( 'Paid', 'techdella' ) )
+				. $row( '12:30', __( 'Silk press', 'techdella' ), __( 'Tolu · 1 h', 'techdella' ), __( 'Reminded', 'techdella' ) )
+				. $row( '15:00', __( 'Consultation', 'techdella' ), __( 'Kemi · 30 min', 'techdella' ), __( 'New', 'techdella' ) )
+				. '<span class="td-ui__button">' . esc_html__( 'Share booking link', 'techdella' ) . '</span>';
+		case 'automations':
+			return '<span class="td-ui__kicker">' . esc_html__( 'Workflows', 'techdella' ) . '</span><span class="td-ui__title">' . esc_html__( 'Automations', 'techdella' ) . '</span>'
+				. $toggle( __( 'Booking made', 'techdella' ), __( 'WhatsApp confirmation', 'techdella' ), true )
+				. $toggle( __( '24 hours before', 'techdella' ), __( 'Reminder', 'techdella' ), true )
+				. $toggle( __( 'Deposit paid', 'techdella' ), __( 'Receipt by email', 'techdella' ), true )
+				. $toggle( __( 'No-show', 'techdella' ), __( 'Offer to rebook', 'techdella' ), false );
 		case 'dashboard':
 			return '<span class="td-phone__search"></span><span class="td-phone__pills"><i class="is-on"></i><i></i><i></i></span><span class="td-phone__panel"><i></i><b></b></span><span class="td-phone__grid"><i></i><i></i></span>';
 		case 'toggle':
@@ -62,7 +77,8 @@ $td_placeholder = static function ( string $kind ): string {
 							]
 						) : '';
 						$td_img = str_starts_with( $td_img, '<!--' ) ? '' : $td_img;
-						$td_cls = 'td-phone td-phone--' . ( $td_i + 1 ) . ( ! empty( $td_s['concept'] ) ? ' td-phone--concept' : '' ) . ( '' === $td_img ? ' td-phone--placeholder' : '' );
+						$td_ui  = '' === $td_img && in_array( $td_s['kind'] ?? '', [ 'bookings', 'automations' ], true );
+						$td_cls = 'td-phone td-phone--' . ( $td_i + 1 ) . ( ! empty( $td_s['concept'] ) ? ' td-phone--concept' : '' ) . ( $td_ui ? ' td-phone--ui' : ( '' === $td_img ? ' td-phone--placeholder' : '' ) );
 						?>
 						<li class="<?php echo esc_attr( $td_cls ); ?>">
 							<?php if ( ! empty( $td_s['concept'] ) ) : ?>
@@ -70,6 +86,9 @@ $td_placeholder = static function ( string $kind ): string {
 							<?php endif; ?>
 							<?php if ( '' !== $td_img ) : ?>
 								<?php echo $td_img; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<?php elseif ( $td_ui ) : ?>
+								<span class="td-sr"><?php echo esc_html( sprintf( /* translators: %s: screen name. */ __( 'Concept screen: %s', 'techdella' ), (string) ( $td_s['title'] ?? '' ) ) ); ?></span>
+								<span class="td-phone__screen td-ui" aria-hidden="true"><?php echo $td_placeholder( (string) $td_s['kind'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped above. ?></span>
 							<?php else : ?>
 								<span class="td-phone__head"><strong><?php echo esc_html( (string) ( $td_s['title'] ?? '' ) ); ?></strong><span class="td-sr"> <?php esc_html_e( '(placeholder screen)', 'techdella' ); ?></span></span>
 								<span class="td-phone__ui" aria-hidden="true"><?php echo $td_placeholder( (string) ( $td_s['kind'] ?? 'list' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static markup. ?></span>

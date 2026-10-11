@@ -30,6 +30,7 @@ $td_blocks = [
 			'secondaryUrl'   => '#packages',
 			'image'          => 'stock/creator-recording-video-vertical',
 			'imageAlt'       => 'A presenter recording a video to camera',
+			'imageShape'     => 'arch',
 			'layout'         => 'split',
 			'background'     => 'grid',
 		],

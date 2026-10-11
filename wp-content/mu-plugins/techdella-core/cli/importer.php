@@ -33,7 +33,7 @@ function td_import_folder_map(): array {
 /**
  * Keys handled by the importer itself (everything else becomes a field).
  */
-const TD_IMPORT_RESERVED = [ 'title', 'slug', 'type', 'site', 'excerpt', 'status', 'format', 'author', 'reviewer', 'featured_image', 'image', 'pdf', 'categories', 'tags', 'taxonomies', 'parent', 'menu_order', 'template', 'date' ];
+const TD_IMPORT_RESERVED = [ 'title', 'slug', 'type', 'site', 'excerpt', 'status', 'format', 'author', 'reviewer', 'featured_image', 'image', 'pdf', 'gallery', 'fields', 'categories', 'tags', 'taxonomies', 'parent', 'menu_order', 'template', 'date' ];
 
 /**
  * Markdown files under a path (a file or a directory, recursive), README excluded.
@@ -497,8 +497,26 @@ function td_import_file( string $file, string $status, bool $dry, string $base )
 		}
 		td_import_set_field( $id, (string) $key, $value );
 	}
+	// `fields:` sets fields whose names are reserved keys above (e.g. studio_work `status`).
+	foreach ( (array) ( $meta['fields'] ?? [] ) as $key => $value ) {
+		td_import_set_field( $id, (string) $key, $value );
+	}
 	update_post_meta( $id, '_td_import_source', $row['file'] );
 	update_post_meta( $id, '_td_confirm_count', $row['confirm'] );
+
+	// Gallery: repo image paths → attachment IDs in the `gallery` field (studio_work, case_study).
+	if ( ! empty( $meta['gallery'] ) && is_array( $meta['gallery'] ) ) {
+		$ids = [];
+		foreach ( $meta['gallery'] as $rel ) {
+			$att = td_import_featured( (string) $rel, $base, $id );
+			if ( is_int( $att ) ) {
+				$ids[] = $att;
+			} else {
+				$notes[] = $att;
+			}
+		}
+		td_import_set_field( $id, 'gallery', $ids );
+	}
 
 	// Resource PDF (§13.2): uploaded under an unguessable path, stored in the `pdf` field.
 	$pdf = (string) ( $meta['pdf'] ?? '' );

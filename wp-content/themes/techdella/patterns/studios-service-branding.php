@@ -30,6 +30,7 @@ $td_blocks = [
 			'secondaryUrl'   => '#packages',
 			'image'          => 'stock/product-flatlay-notebook-candle-square',
 			'imageAlt'       => 'A notebook and products laid out on a table',
+			'imageShape'     => 'arch',
 			'layout'         => 'split',
 			'background'     => 'grid',
 		],

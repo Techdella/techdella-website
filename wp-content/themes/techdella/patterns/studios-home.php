@@ -36,12 +36,12 @@ $td_blocks = [
 				],
 				[
 					'title'   => 'Bookings',
-					'kind'    => 'dashboard',
+					'kind'    => 'bookings',
 					'concept' => true,
 				],
 				[
 					'title'   => 'Automations',
-					'kind'    => 'toggle',
+					'kind'    => 'automations',
 					'concept' => true,
 				],
 			],

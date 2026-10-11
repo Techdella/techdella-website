@@ -82,6 +82,10 @@ Rules:
   is the page's only H1, so start the body with `##`.
 - Link to another site with a site prefix: `[Studios work](studios:/work/)` becomes the right domain
   on each environment (localhost ports in dev). Never type a full techdella.com URL.
+- A field named like a reserved key (`status`, `title`…) goes under `fields:`, e.g. Studios work
+  `fields:` then `  status: Live` (Live or Concept). `menu_order:` sets the order on /work/.
+- `gallery:` is a list of repo image paths, uploaded and stored in the `gallery` field. A tall
+  website screenshot first, then a phone screenshot, shows as a browser + phone pair on Studios.
 - Resources: `pdf: pdf/out/<slug>.pdf` (run `npm run pdf` first) uploads the PDF under an unguessable
   path; `featured_image: pdf/out/covers/<slug>.jpg` sets the cover.
 - Put `[CONFIRM]` wherever a fact, number, quote or claim needs a person, `[PRICE]` for prices. Publishing

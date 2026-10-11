@@ -182,6 +182,26 @@ add_action(
 );
 
 /**
+ * Studios work archive: editor's order first (menu_order: Live client work before
+ * Concepts), then newest.
+ */
+add_action(
+	'pre_get_posts',
+	static function ( WP_Query $query ) {
+		if ( is_admin() || ! $query->is_main_query() || ! $query->is_post_type_archive( 'studio_work' ) ) {
+			return;
+		}
+		$query->set(
+			'orderby',
+			[
+				'menu_order' => 'ASC',
+				'date'       => 'DESC',
+			]
+		);
+	}
+);
+
+/**
  * A single case study on Studios must be in the studios division, otherwise 404.
  */
 add_action(

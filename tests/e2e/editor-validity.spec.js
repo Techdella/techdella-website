@@ -31,7 +31,7 @@ for (const name of ['marketing', 'journal', 'studios']) {
     const bad = [];
     for (const id of patternPages(name)) {
       await page.goto(site(name, `/wp-admin/post.php?post=${id}&action=edit`));
-      await page.waitForFunction(() => window.wp?.data?.select('core/block-editor')?.getBlocks().length > 0, null, { timeout: 30000 });
+      await page.waitForFunction(() => window.wp?.data?.select('core/block-editor')?.getBlocks().length > 0, null, { timeout: 60000 }); // the editor boots slowly while the other worker runs
       const invalid = await page.evaluate(() => {
         const out = [];
         const walk = (blocks) => blocks.forEach((b) => { if (!b.isValid) out.push(b.name); walk(b.innerBlocks || []); });

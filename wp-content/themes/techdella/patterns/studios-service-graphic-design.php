@@ -30,6 +30,7 @@ $td_blocks = [
 			'secondaryUrl'   => '#packages',
 			'image'          => 'stock/designer-desk-swatches-wide',
 			'imageAlt'       => 'A designer working on a laptop and tablet with color swatches',
+			'imageShape'     => 'arch',
 			'layout'         => 'split',
 			'background'     => 'grid',
 		],

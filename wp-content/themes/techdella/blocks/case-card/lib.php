@@ -106,15 +106,15 @@ if ( ! function_exists( 'td_a3_case_from_post' ) ) {
 		$phone  = 0;
 		if ( 'studio_work' === $type ) {
 			$status = 'Live' === td_field( 'status', $post_id ) ? 'Live' : 'Concept';
-			// A full-page website screenshot (tall) shows in a browser frame, with a
-			// portrait gallery image beside it as the phone view.
+			// A gallery whose first image is a full-page website screenshot (tall) shows in a
+			// browser frame, with a portrait gallery image beside it as the phone view.
 			$ids       = array_map( static fn( $g ) => is_array( $g ) ? (int) ( $g['ID'] ?? $g['id'] ?? 0 ) : (int) $g, array_values( (array) td_field( 'gallery', $post_id ) ) );
 			$size      = static function ( int $id ): array {
 				$m = wp_get_attachment_metadata( $id );
 				return [ (int) ( $m['width'] ?? 0 ), (int) ( $m['height'] ?? 0 ) ];
 			};
 			[ $w, $h ] = $image ? $size( $image ) : [ 0, 0 ];
-			if ( $w > 0 && $h >= $w * 0.8 ) {
+			if ( count( $ids ) > 0 && $w > 0 && $h >= $w * 0.8 ) {
 				$frame = 'browser';
 				foreach ( $ids as $id ) {
 					[ $pw, $ph ] = $size( $id );
@@ -192,14 +192,16 @@ if ( ! function_exists( 'td_a3_device' ) ) {
 	 * @param string     $kind  browser|phone.
 	 * @param string     $alt   Alt text.
 	 * @param string     $site  Address shown in the browser bar.
-	 * @param string     $sizes sizes attribute.
+	 * @param string     $sizes    sizes attribute.
+	 * @param bool       $priority Above the fold (hero): fetchpriority=high, no lazy-load.
 	 */
-	function td_a3_device( $image, string $kind, string $alt = '', string $site = '', string $sizes = '600px' ): string {
+	function td_a3_device( $image, string $kind, string $alt = '', string $site = '', string $sizes = '600px', bool $priority = false ): string {
 		$img = td_image(
 			$image,
 			[
-				'alt'   => $alt,
-				'sizes' => $sizes,
+				'alt'      => $alt,
+				'sizes'    => $sizes,
+				'priority' => $priority,
 			]
 		);
 		if ( '' === $img || str_starts_with( $img, '<!--' ) ) {

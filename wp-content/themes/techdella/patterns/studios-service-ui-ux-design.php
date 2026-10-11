@@ -30,6 +30,7 @@ $td_blocks = [
 			'secondaryUrl'   => '#packages',
 			'image'          => 'stock/designer-drawing-tablet-studio',
 			'imageAlt'       => 'A designer sketching an interface on a drawing tablet',
+			'imageShape'     => 'arch',
 			'layout'         => 'split',
 			'background'     => 'grid',
 		],
