@@ -10,7 +10,7 @@ angle: "Puts the official Gmail, Yahoo and Microsoft rules side by side from the
 proof: "Google, Yahoo and Microsoft sender guidelines; Validity 2025 Email Deliverability Benchmark."
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-categories: [email-marketing]
+categories: [email]
 cta_service: email-marketing
 taxonomies:
   td_service_tag: [email-marketing]

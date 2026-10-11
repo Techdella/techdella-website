@@ -94,7 +94,7 @@ Work it out from time, not from what a big agency charges. Worked example (illus
 - Monthly SEO retainer for a local business: 20 hours of your time.
 - Your target rate: $60 an hour → 20 × $60 = $1,200.
 - Tools and reporting software allocated to this client: $100.
-- Profit margin for growth and slow months: 20% of $1,300 = $260.
+- Markup for profit and slow months: 20% of $1,300 = $260.
 - Retainer: $1,200 + $100 + $260 = **$1,560**, rounded to **$1,500–$1,600**.
 
 Six clients at $1,500 is 6 × $1,500 × 12 = **$108,000** in yearly revenue, using about 120 client hours a month. That leaves room for sales and admin. Ten clients at that rate would need help: a contractor or your first hire.

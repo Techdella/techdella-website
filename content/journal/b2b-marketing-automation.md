@@ -10,12 +10,12 @@ angle: "Ten workflows ranked by impact with owners and metrics, a worked lead-sc
 proof: "Gartner 2025 martech and AI agent research; Epic Entertainment Games case study (qualitative)."
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-categories: [marketing-automation]
+categories: [automation]
 cta_service: marketing-automation
 taxonomies:
   td_service_tag: [marketing-automation]
 tldr: "B2B marketing automation uses software to run the repeatable parts of marketing and handoff: capturing, enriching, scoring and routing leads, sending stage-matched nurture, and syncing outcomes to your CRM and ad platforms. Start with speed-to-lead routing and clean data, add nurture and scoring next, and use AI agents for drafting, research and triage with a human approving anything a buyer sees."
-rank_math_description: "B2B marketing automation that helps sales: ten workflows worth running, lead scoring and routing, realistic AI agent uses and the guardrails to put in place."
+rank_math_description: "B2B marketing automation that helps sales: ten workflows worth running, lead scoring and routing, realistic AI agent uses and the guardrails to set."
 internal_links:
   - /services/marketing-automation/
   - /resources/marketing-automations-this-quarter/
@@ -92,7 +92,7 @@ Workflow 8 matters more than it looks. Mailing people who stopped engaging raise
 
 Lead scoring adds up two kinds of evidence: **fit** (is this the kind of company and person we sell to?) and **behavior** (are they showing buying intent?). Keep it simple enough that sales can explain any score.
 
-A worked example with an illustrative model. MQL threshold: 60 points.
+A worked example with an illustrative model. MQL threshold: 60 points or more.
 
 | Signal | Points |
 |---|---|

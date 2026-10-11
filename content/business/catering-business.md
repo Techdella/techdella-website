@@ -94,7 +94,7 @@ Use food cost as the base, then add labor, overheads and profit. Worked example 
 - Staff: 3 people × 6 hours × £13 = **£234**.
 - Packaging, fuel, hire items and gas: **£90**.
 - Total cost: £300 + £234 + £90 = **£624**, or £12.48 per guest.
-- Add a 30% margin: £624 × 1.30 = **£811.20**, so about **£16.25 per head**.
+- Add a 30% markup: £624 × 1.30 = **£811.20**, or £16.22 per guest. Quote **£16.25 per head**.
 
 Check your food cost percentage: £300 ÷ £811.20 = 37%. If ingredients drift above 40% of the price, revise the menu or the price.
 

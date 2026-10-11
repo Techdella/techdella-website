@@ -10,7 +10,7 @@ angle: "Treats each platform as a job (capture, target, retarget), compares them
 proof: "LocaliQ and WordStream 2026 search benchmarks; LinkedIn and Meta official figures and help docs; Google Ads help docs."
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-categories: [paid-ads]
+categories: [paid]
 cta_service: paid-ads
 taxonomies:
   td_service_tag: [paid-ads]

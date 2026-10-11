@@ -10,7 +10,7 @@ angle: "Starts from the revenue target and works backward with plain arithmetic,
 proof: "Paycape (verified figures in CLAUDE.md 2.4); WezOps verbatim quote; Three Cat Agency case study (qualitative); 6sense 2025, Gartner 2025, Forrester 2026."
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
-categories: [lead-generation]
+categories: [lead-gen]
 cta_service: lead-generation
 taxonomies:
   td_service_tag: [lead-generation]
