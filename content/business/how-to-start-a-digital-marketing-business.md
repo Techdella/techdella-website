@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Digital Marketing Business (2026)"
+title: "How to Start a Digital Marketing Business ({{year}})"
 slug: how-to-start-a-digital-marketing-business
 type: business
 site: marketing

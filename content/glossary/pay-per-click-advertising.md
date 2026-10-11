@@ -1,5 +1,5 @@
 ---
-title: "Pay-Per-Click (PPC) Advertising: How It Works in 2026"
+title: "Pay-Per-Click (PPC) Advertising: How It Works in {{year}}"
 slug: pay-per-click-advertising
 excerpt: "Pay-per-click advertising charges you only when someone clicks your ad. Here's how the ad auction and Quality Score work, how to set a budget with simple math, and where PPC fits."
 primary_kw: pay per click advertising

@@ -1,7 +1,7 @@
 ---
 title: "Email Marketing: What It Is and How to Do It Well"
 slug: email-marketing
-excerpt: "Email marketing is sending planned messages to people who agreed to hear from you. Here's how it works in 2026, the sender rules you must meet, and which emails to set up first."
+excerpt: "Email marketing is sending planned messages to people who agreed to hear from you. Here's how it works in {{year}}, the sender rules you must meet, and which emails to set up first."
 primary_kw: email marketing
 secondary_kws: [b2b email marketing, email deliverability, email marketing best practices]
 intent: informational
@@ -17,7 +17,7 @@ internal_links:
   - /resources/email-deliverability-checklist/
   - /glossary/email-marketing-campaign/
   - /tools/email-subject-line-analyzer/
-rank_math_description: "Email marketing turns subscribers into customers. Learn Gmail's 2026 sender rules, which emails to set up first, and the metrics that still mean something."
+rank_math_description: "Email marketing turns subscribers into customers. Learn Gmail's sender rules, which emails to set up first, and the metrics that still mean something."
 ---
 
 Email marketing is sending planned messages to people who have agreed to hear from you, to build a relationship, move leads toward a sale and keep customers coming back. It covers newsletters, welcome series, nurture sequences, product updates, offers and re-engagement emails. Unlike social or search, you own the list: no algorithm decides whether your subscribers see you. That's why email marketing remains one of the steadiest channels in B2B.

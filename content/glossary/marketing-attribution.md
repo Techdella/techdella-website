@@ -1,5 +1,5 @@
 ---
-title: "What Is Marketing Attribution? Methods That Hold Up in 2026"
+title: "What Is Marketing Attribution? Methods That Hold Up in {{year}}"
 slug: marketing-attribution
 excerpt: "Marketing attribution tries to answer which marketing caused your sales. Here are the four main methods, what each can and can't tell you, and a practical setup for B2B teams."
 primary_kw: marketing attribution

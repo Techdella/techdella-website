@@ -1,7 +1,7 @@
 ---
 title: "Digital Marketing Jargon: 26 Key Terms Explained Plainly"
 slug: digital-marketing-jargon
-excerpt: "Digital marketing jargon is the shorthand marketers use for channels, metrics and methods. Here are the terms you'll hear most in 2026, in plain English, with the ones that matter most."
+excerpt: "Digital marketing jargon is the shorthand marketers use for channels, metrics and methods. Here are the terms you'll hear most in {{year}}, in plain English, with the ones that matter most."
 primary_kw: digital marketing jargon
 secondary_kws: [digital marketing terms, marketing acronyms, digital marketing glossary]
 intent: informational

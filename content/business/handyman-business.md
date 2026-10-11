@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Handyman Business (2026 Guide)"
+title: "How to Start a Handyman Business ({{year}} Guide)"
 slug: handyman-business
 type: business
 site: marketing

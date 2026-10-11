@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Coaching Business (2026 Guide)"
+title: "How to Start a Coaching Business ({{year}} Guide)"
 slug: coaching-business
 type: business
 site: marketing
@@ -11,7 +11,7 @@ audience: "Aspiring coaches in Nigeria, the US and the UK, including people movi
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a coaching business, pick a niche where you can promise a specific outcome, register as a sole trader, LLC or CAC business name, sell packages instead of single sessions, and build one reliable channel for discovery calls. Credentials help, but proof of results sells."
-rank_math_description: "Start a coaching business in the US, UK or Nigeria: choose a niche, register, price packages, and build a steady pipeline of discovery calls. 2026 guide."
+rank_math_description: "Start a coaching business in the US, UK or Nigeria: choose a niche, register, price packages, and build a steady pipeline of discovery calls. {{year}} guide."
 internal_links:
   - /services/email-marketing/
   - /services/lead-generation/

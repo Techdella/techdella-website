@@ -11,7 +11,7 @@ audience: "Content creators in Nigeria, the US and the UK turning their audience
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a social media influencer business, choose a niche you can create for every week, focus on one or two platforms, register the business, and earn from brand deals, affiliate links and your own products. Every paid or gifted post must be clearly labelled as an ad, and in Nigeria, ARCON says sponsored content needs approval before it's published."
-rank_math_description: "How to start a social media influencer business: niche, platforms, rate maths, brand deals and ad disclosure rules from the FTC, ASA and ARCON. 2026 guide."
+rank_math_description: "How to start a social media influencer business: niche, platforms, rate maths, brand deals and ad disclosure rules from the FTC, ASA and ARCON. {{year}} guide."
 internal_links:
   - /glossary/affiliate-marketing/
   - /glossary/user-generated-content/

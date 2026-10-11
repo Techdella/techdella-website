@@ -141,6 +141,62 @@ function td_cover_render( string $title, string $label, string $photo, string $f
 }
 
 /**
+ * Draw (or redraw) one post's generated cover. An editor's own featured image always wins.
+ * The title's {{year}} token is drawn as the current year; the hash includes it, so a new year
+ * redraws the cover.
+ *
+ * @param int      $id     Post ID.
+ * @param bool     $force  Redraw even when unchanged.
+ * @param string[] $photos Photo pool (td_cover_photos()).
+ * @return string 'drawn', 'skipped' or 'error'.
+ */
+function td_cover_generate( int $id, bool $force = false, array $photos = [] ): string {
+	$thumb = (int) get_post_thumbnail_id( $id );
+	$ours  = (int) get_post_meta( $id, '_td_cover', true );
+	$post  = get_post( $id );
+	if ( ! $post instanceof WP_Post || ( $thumb && $thumb !== $ours ) || ! function_exists( 'imagettftext' ) ) {
+		return 'skipped';
+	}
+	$photos = $photos ? $photos : td_cover_photos();
+	$title  = wp_strip_all_tags( td_year_tokens( $post->post_title ) );
+	$label  = td_og_label( $post );
+	$hash   = md5( TD_COVER_VERSION . '|' . $title . '|' . $label );
+	if ( $ours && ! $force && get_post_meta( $ours, '_td_cover_hash', true ) === $hash ) {
+		return 'skipped';
+	}
+	$up  = wp_upload_dir();
+	$dir = trailingslashit( $up['basedir'] ) . 'td-covers';
+	wp_mkdir_p( $dir );
+	$photo = $photos ? $photos[ abs( crc32( (string) $post->post_name ) ) % count( $photos ) ] : '';
+	$file  = $dir . '/' . $post->post_name . '-' . substr( $hash, 0, 8 ) . '.jpg';
+	if ( ! td_cover_render( $title, $label, $photo, $file ) ) {
+		return 'error';
+	}
+	$att = wp_insert_attachment(
+		[
+			'post_mime_type' => 'image/jpeg',
+			'post_title'     => $title . ' cover',
+			'post_status'    => 'inherit',
+		],
+		$file,
+		$id
+	);
+	if ( is_wp_error( $att ) || ! $att ) {
+		return 'error';
+	}
+	require_once ABSPATH . 'wp-admin/includes/image.php';
+	wp_update_attachment_metadata( $att, wp_generate_attachment_metadata( $att, $file ) );
+	update_post_meta( $att, '_wp_attachment_image_alt', '' );
+	update_post_meta( $att, '_td_cover_hash', $hash );
+	set_post_thumbnail( $id, $att );
+	update_post_meta( $id, '_td_cover', $att );
+	if ( $ours ) {
+		wp_delete_attachment( $ours, true );
+	}
+	return 'drawn';
+}
+
+/**
  * Generate covers and set them as featured images where an article has none of its own.
  *
  * ## OPTIONS
@@ -170,53 +226,18 @@ function td_cli_covers_generate( array $args, array $assoc ): void {
 			'fields'         => 'ids',
 		]
 	) : [];
-	$up     = wp_upload_dir();
-	$dir    = trailingslashit( $up['basedir'] ) . 'td-covers';
-	wp_mkdir_p( $dir );
-	$done = 0;
+	$done   = 0;
 	foreach ( $ids as $id ) {
-		$id    = (int) $id;
-		$thumb = (int) get_post_thumbnail_id( $id );
-		$ours  = (int) get_post_meta( $id, '_td_cover', true );
-		if ( $thumb && $thumb !== $ours ) {
-			continue; // An editor's own image wins.
-		}
-		$post  = get_post( $id );
-		$label = td_og_label( $post );
-		$hash  = md5( TD_COVER_VERSION . '|' . $post->post_title . '|' . $label );
-		if ( $ours && ! $force && get_post_meta( $ours, '_td_cover_hash', true ) === $hash ) {
-			continue;
-		}
-		$photo = $photos ? $photos[ abs( crc32( (string) $post->post_name ) ) % count( $photos ) ] : '';
-		$file  = $dir . '/' . $post->post_name . '-' . substr( $hash, 0, 8 ) . '.jpg';
-		if ( ! td_cover_render( wp_strip_all_tags( $post->post_title ), $label, $photo, $file ) ) {
+		$result = td_cover_generate( (int) $id, $force, $photos );
+		if ( 'error' === $result ) {
 			WP_CLI::warning( '#' . $id . ': could not draw the cover.' );
-			continue;
+		} elseif ( 'drawn' === $result ) {
+			++$done;
 		}
-		$att = wp_insert_attachment(
-			[
-				'post_mime_type' => 'image/jpeg',
-				'post_title'     => $post->post_title . ' cover',
-				'post_status'    => 'inherit',
-			],
-			$file,
-			$id
-		);
-		if ( is_wp_error( $att ) || ! $att ) {
-			continue;
-		}
-		require_once ABSPATH . 'wp-admin/includes/image.php';
-		wp_update_attachment_metadata( $att, wp_generate_attachment_metadata( $att, $file ) );
-		update_post_meta( $att, '_wp_attachment_image_alt', '' );
-		update_post_meta( $att, '_td_cover_hash', $hash );
-		set_post_thumbnail( $id, $att );
-		update_post_meta( $id, '_td_cover', $att );
-		if ( $ours ) {
-			wp_delete_attachment( $ours, true );
-		}
-		++$done;
 	}
 	WP_CLI::success( sprintf( '%d cover(s) drawn.', $done ) );
 }
 
-WP_CLI::add_command( 'td covers:generate', 'td_cli_covers_generate' );
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	WP_CLI::add_command( 'td covers:generate', 'td_cli_covers_generate' );
+}

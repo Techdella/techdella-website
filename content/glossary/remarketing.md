@@ -1,7 +1,7 @@
 ---
 title: "Remarketing: How It Works and How to Use It Well"
 slug: remarketing
-excerpt: "Remarketing shows ads or messages to people who already visited your site or app. Here's how it works on Google and social platforms in 2026, the rules, and how to avoid wasting budget."
+excerpt: "Remarketing shows ads or messages to people who already visited your site or app. Here's how it works on Google and social platforms in {{year}}, the rules, and how to avoid wasting budget."
 primary_kw: remarketing
 secondary_kws: [retargeting, remarketing vs retargeting, google ads remarketing]
 intent: informational
@@ -17,7 +17,7 @@ internal_links:
   - /glossary/pay-per-click-advertising/
   - /glossary/landing-page/
   - /glossary/marketing-attribution/
-rank_math_description: "Remarketing brings back people who already visited you. Learn how audience lists work on Google and social, the 2026 privacy rules, and what to avoid."
+rank_math_description: "Remarketing brings back people who already visited you. Learn how audience lists work on Google and social, the current privacy rules, and what to avoid."
 ---
 
 Remarketing is advertising to people who already know you: visitors to your site, app users, video viewers, or contacts on your email list. Instead of reaching strangers, you show a relevant follow-up to someone who's already shown interest, such as a case study to a pricing-page visitor or a reminder to someone who started a sign-up. Remarketing is usually the most efficient part of a paid program because the audience is warm.

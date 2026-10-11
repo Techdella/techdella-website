@@ -18,7 +18,7 @@ internal_links:
   - /services/paid-ads/
   - /glossary/seo-analytics/
   - /tools/email-subject-line-analyzer/
-rank_math_description: "Click-through rate explained: the CTR formula, organic and paid benchmarks for 2026, how AI summaries affect clicks, and practical ways to raise CTR."
+rank_math_description: "Click-through rate explained: the CTR formula, organic and paid benchmarks for {{year}}, how AI summaries affect clicks, and practical ways to raise CTR."
 ---
 
 Click-through rate, or CTR, tells you how often people who see your link actually click it. If your page appears in Google 1,000 times and gets 50 clicks, its CTR is 5%. The same idea applies to ads, emails and buttons. CTR is a measure of how appealing and relevant your listing is to the people who see it.

@@ -1,7 +1,7 @@
 ---
 title: "Organic Social Media: What It Is and How to Grow It"
 slug: organic-social-media
-excerpt: "Organic social media is everything you post and do on social platforms without paying to promote it. Here's what it's good for, its limits, and how to grow it in 2026."
+excerpt: "Organic social media is everything you post and do on social platforms without paying to promote it. Here's what it's good for, its limits, and how to grow it in {{year}}."
 primary_kw: organic social media
 secondary_kws: [organic social, organic vs paid social, organic social media strategy]
 intent: informational
@@ -17,7 +17,7 @@ internal_links:
   - /services/paid-ads/
   - /glossary/social-media-marketing-strategy/
   - /tools/free-hashtag-generator/
-rank_math_description: "Organic social media builds trust and community without ad spend. Learn what it's good for, where it falls short, and a weekly routine to grow it in 2026."
+rank_math_description: "Organic social media builds trust and community without ad spend. Learn what it's good for, where it falls short, and a weekly routine to grow it in {{year}}."
 ---
 
 Organic social media is the unpaid side of social: the posts, videos, comments, replies and conversations you share on platforms like LinkedIn, Instagram, TikTok, YouTube and X without paying to boost them. People see it because they follow you, because someone shared it, or because the platform's feed decided it was worth showing. Organic social builds trust and relationships. It rarely builds reach on its own.

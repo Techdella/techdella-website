@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Virtual Assistant Business (2026)"
+title: "How to Start a Virtual Assistant Business ({{year}})"
 slug: virtual-assistant-business
 type: business
 site: marketing

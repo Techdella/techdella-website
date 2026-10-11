@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Graphic Design Business (2026 Guide)"
+title: "How to Start a Graphic Design Business ({{year}} Guide)"
 slug: how-to-start-a-graphic-design-business
 type: business
 site: marketing
@@ -11,7 +11,7 @@ audience: "Designers in Nigeria, the US and the UK turning freelance work into a
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start a graphic design business, pick a niche, register as a sole trader or company, build a focused portfolio, price by project, and sell retainers. Startup costs are low: mostly a capable computer, software and a portfolio site."
-rank_math_description: "Start a graphic design business in the US, UK or Nigeria: registration, startup costs, pricing maths and how to win retainer clients. Sourced 2026 guide."
+rank_math_description: "Start a graphic design business in the US, UK or Nigeria: registration, startup costs, pricing maths and how to win retainer clients. Sourced {{year}} guide."
 internal_links:
   - studios:/services/branding/
   - studios:/services/website-design/

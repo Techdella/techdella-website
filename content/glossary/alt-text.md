@@ -18,7 +18,7 @@ internal_links:
   - /glossary/technical-seo/
   - /glossary/schema-markup/
   - /tools/on-page-seo-checker/
-rank_math_description: "Alt text explained: why it matters for accessibility and image SEO, good and bad examples, when to use empty alt, and the most common mistakes in 2026."
+rank_math_description: "Alt text explained: why it matters for accessibility and image SEO, good and bad examples, when to use empty alt, and the most common mistakes in {{year}}."
 ---
 
 Alt text is the written description attached to an image on a web page. If someone uses a screen reader, they hear the alt text instead of seeing the image. If the image fails to load, the alt text appears in its place. Search engines read it too, as one of the main clues to what an image shows. Good alt text is short, specific and describes what matters about the image in its context.

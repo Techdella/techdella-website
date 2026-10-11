@@ -1,5 +1,5 @@
 ---
-title: "What Is Mobile Optimization? A 2026 Checklist"
+title: "What Is Mobile Optimization? A {{year}} Checklist"
 slug: mobile-optimization
 excerpt: "Mobile optimization makes your site fast and easy to use on a phone. Since Google indexes the mobile version of your site, here is what to check and fix."
 primary_kw: mobile optimization

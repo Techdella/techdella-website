@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Mobile Car Wash Business (2026 Guide)"
+title: "How to Start a Mobile Car Wash Business ({{year}} Guide)"
 slug: how-to-start-a-mobile-car-wash-business
 type: business
 site: marketing

@@ -1,5 +1,5 @@
 ---
-title: "B2B SEO Strategy: A 2026 Playbook for Pipeline"
+title: "B2B SEO Strategy: A {{year}} Playbook for Pipeline"
 slug: b2b-seo-strategy
 excerpt: "A B2B SEO strategy that starts with buyer questions, builds bottom-of-funnel pages first, and measures pipeline instead of traffic. With a 90-day plan and worked math."
 primary_kw: b2b seo strategy

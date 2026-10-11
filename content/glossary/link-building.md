@@ -1,7 +1,7 @@
 ---
 title: "What Is Link Building? Safe Tactics That Work"
 slug: link-building
-excerpt: "Link building is the work of getting other sites to link to yours. Here are the tactics that still work in 2026, the ones that break Google's rules, and how to choose."
+excerpt: "Link building is the work of getting other sites to link to yours. Here are the tactics that still work in {{year}}, the ones that break Google's rules, and how to choose."
 primary_kw: link building
 secondary_kws: [link building strategies, digital pr, broken link building, link spam]
 intent: informational

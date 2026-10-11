@@ -1,5 +1,5 @@
 ---
-title: "What Is Vibe Coding? A Founder's Guide for 2026"
+title: "What Is Vibe Coding? A Founder's Guide for {{year}}"
 slug: what-is-vibe-coding
 excerpt: "Vibe coding means building software by prompting AI and judging the result, not the code. Here's where it helps founders build an MVP, and where it quietly breaks."
 primary_kw: what is vibe coding
@@ -13,7 +13,7 @@ reviewer: chinedu-emmanuel-kalu
 tldr: "Vibe coding is building software by describing what you want to an AI tool and accepting what it generates without reading the code closely. It is a fast way to make a prototype you can put in front of users, but it is not yet a safe way to ship a product that handles payments or personal data."
 categories: [startups]
 cta_service: lead-generation
-rank_math_description: "What is vibe coding? A 2026 guide for founders: where the term came from, which AI tools to use, the real security risks, and how to build an MVP with it."
+rank_math_description: "What is vibe coding? A {{year}} guide for founders: where the term came from, which AI tools to use, the real security risks, and how to build an MVP with it."
 internal_links:
   - studios:/services/mvp-development/
   - studios:/start/

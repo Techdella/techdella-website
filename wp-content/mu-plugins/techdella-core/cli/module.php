@@ -27,6 +27,7 @@ require_once __DIR__ . '/src/RedirectRules.php';
 require_once __DIR__ . '/src/Decay.php';
 require_once __DIR__ . '/redirects.php';
 require_once __DIR__ . '/og.php';
+require_once __DIR__ . '/covers.php'; // td_cover_generate() for the yearly title roll-over; CLI command inside.
 require_once __DIR__ . '/setup.php';
 
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
@@ -36,5 +37,4 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 	require_once __DIR__ . '/class-audit-command.php';
 	require_once __DIR__ . '/commands.php';
 	require_once __DIR__ . '/videos.php';
-	require_once __DIR__ . '/covers.php';
 }
