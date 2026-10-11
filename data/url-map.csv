@@ -253,7 +253,7 @@ location,publish,Abuja,/locations/abuja-nigeria/,merge-review,/locations/nigeria
 location,publish,Canada,/locations/canada/,rebuild,,"Market page: unique proof, no city-swap copy",0
 location,publish,USA,/locations/usa/,rebuild,,"Market page: unique proof, no city-swap copy",0
 location,publish,Dubai,/locations/dubai-uae/,rebuild,,"Market page: unique proof, no city-swap copy",0
-location,publish,India,/locations/mumbai-india/,merge-review,/locations/,"301 only if <20 clicks/12mo in GSC, else rebuild",0
+location,publish,India,/locations/mumbai-india/,merge-review,/services/,"301 only if <20 clicks/12mo in GSC, else rebuild",0
 location,publish,UK,/locations/uk/,rebuild,,"Market page: unique proof, no city-swap copy",0
 location,publish,Germany,/locations/germany/,merge-review,/locations/europe/,"301 only if <20 clicks/12mo in GSC, else rebuild",0
 location,publish,Nigeria,/locations/nigeria/,rebuild,,"Market page: unique proof, no city-swap copy",0
@@ -267,7 +267,7 @@ em-glossary,publish,SAFE Agreement,/glossary/safe-agreement/,refresh,,Adjacent b
 em-glossary,publish,Fractional CMO,/glossary/fractional-cmo/,refresh,,Adjacent business/startup term,1130
 em-glossary,publish,SaaS Business,/glossary/saas-business/,refresh,,Adjacent business/startup term,936
 location,publish,New York,/locations/new-york/,merge-review,/locations/usa/,"301 only if <20 clicks/12mo in GSC, else rebuild",0
-location,publish,Pakistan,/locations/pakistan/,merge-review,/locations/,"301 only if <20 clicks/12mo in GSC, else rebuild",0
+location,publish,Pakistan,/locations/pakistan/,merge-review,/services/,"301 only if <20 clicks/12mo in GSC, else rebuild",0
 page,publish,Privacy Policy,/privacy-policy/,keep,,,0
 page,publish,Terms of use,/terms/,keep,,,0
 page,publish,Guides,/guides/,redirect,https://blog.techdella.com/,Guides index moves to the Journal,0
@@ -285,7 +285,7 @@ page,publish,Cookies,/cookies/,keep,,,0
 post,draft,You Ship in Days. Your Marketing Should Too.,/?p=21940,draft,,Unpublished draft,1798
 page,publish,CMO-as-a-Service,/cmo-as-a-service/,redirect,/services/,Retired offer,0
 page,publish,Vibe Marketing,/vibe-marketing/,redirect,/services/marketing-automation/,Folded into AI automation,0
-page,publish,Global Expansion,/global-expansion/,redirect,/locations/,Folded into markets hub,0
+page,publish,Global Expansion,/global-expansion/,redirect,/services/,Markets have no hub page (owner 11 Oct 2026),0
 page,publish,Studio,/studio/,redirect,https://studios.techdella.com/,Studios moves to subdomain,0
 page,publish,MVP Calculator,/mvp-calculator/,redirect,https://studios.techdella.com/mvp-calculator/,Studios tool,0
 page,publish,Founders Hub Waitlist,/founders-hub-waitlist/,confirm,,Founders Hub still running? keep or 301 → hub.techdella.com,0

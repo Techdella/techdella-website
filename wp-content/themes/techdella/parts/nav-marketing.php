@@ -29,6 +29,7 @@ foreach ( $td_services as $td_s ) {
 	);
 }
 $td_industries = td_nav_posts( 'solution' );
+$td_markets    = td_nav_posts( 'location', 12 );
 $td_guides     = td_nav_posts( 'td_resource', 12 );
 $td_tools      = td_nav_posts( 'td_tool', 12 );
 $td_learn      = [
@@ -68,7 +69,8 @@ $td_side_card      = static function ( string $label, string $title, string $tex
 		. '<span class="td-mega__studios-go" aria-hidden="true">' . td_icon( 'arrow-up-right' ) . '</span></a>';
 };
 $td_ind_panel      = $td_industries ? '<div class="td-mega__col"><p class="td-mega__label">' . esc_html__( 'Industries we work with', 'techdella' ) . '</p>'
-	. td_nav_mega_links( $td_industries, 'td-mega__list td-mega__list--3' ) . '</div>'
+	. td_nav_mega_links( $td_industries, 'td-mega__list td-mega__list--3' )
+	. ( $td_markets ? '<p class="td-mega__label td-mega__label--gap">' . esc_html__( 'Markets we serve', 'techdella' ) . '</p>' . td_nav_mega_links( $td_markets, 'td-mega__list td-mega__list--4' ) : '' ) . '</div>'
 	. $td_side_card( __( 'Not sure where to start?', 'techdella' ), __( 'Get a growth *audit*', 'techdella' ), __( 'We review your search, ads and funnel and tell you what to fix first.', 'techdella' ), td_url( 'marketing', '/growth-audit/' ) ) : '';
 $td_res_panel      = '<div class="td-mega__col td-mega__col--split">'
 	. ( $td_guides ? '<div><p class="td-mega__label">' . esc_html__( 'Free guides (PDF)', 'techdella' ) . '</p>' . td_nav_mega_links( $td_guides ) . '</div>' : '' )
@@ -131,6 +133,7 @@ foreach ( $td_services as $td_s ) {
 			$td_sheet_items  = '<ul class="td-sheet__list" role="list">';
 			$td_sheet_items .= '<li><a class="td-sheet__link" href="' . esc_url( $td_hub ) . '">' . esc_html__( 'Services', 'techdella' ) . '</a><ul class="td-sheet__sub" role="list">' . $td_sheet_services . '</ul></li>';
 			$td_sheet_items .= $td_sheet_sub( __( 'Industries', 'techdella' ), $td_industries );
+			$td_sheet_items .= $td_sheet_sub( __( 'Markets', 'techdella' ), $td_markets );
 			$td_sheet_items .= $td_sheet_sub( __( 'Resources', 'techdella' ), array_merge( $td_learn, $td_guides, $td_tools ) );
 			$td_sheet_items .= td_nav_primary_items( $td_links, 'sheet' );
 			$td_sheet_items .= '</ul>';

@@ -14,7 +14,6 @@ const PAGES = [
   { path: '/case-studies/paycape/', schema: 'Article' },
   { path: '/solution/fintech-marketing-agency/', schema: 'Service' },
   { path: '/solution/saas-marketing-agency/', schema: 'Service' },
-  { path: '/locations/', schema: 'CollectionPage' },
   { path: '/locations/nigeria/', schema: 'Service' },
   { path: '/glossary/', schema: 'DefinedTermSet' },
   { path: '/glossary/aeo/', schema: 'DefinedTerm' },
@@ -181,7 +180,7 @@ test.describe('naira pricing', () => {
 });
 
 test('hero eyebrow sits on the headline\'s line (centered heroes and left heroes)', async ({ page }) => {
-  for (const p of ['/services/', '/locations/', '/case-studies/', '/pricing/', '/glossary/', '/book-a-discovery-call/', '/services/seo/']) {
+  for (const p of ['/services/', '/locations/nigeria/', '/case-studies/', '/pricing/', '/glossary/', '/book-a-discovery-call/', '/services/seo/']) {
     await page.goto(site('marketing', p));
     const offset = await page.evaluate(() => {
       const h = document.querySelector('.td-hero h1');

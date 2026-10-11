@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer (marketing): brand + tagline, Services / Explore / Company / Social columns,
+ * Footer (marketing): brand + tagline, Services / Explore / Markets / Company / Social columns,
  * copyright + legal links (Main.dc.html).
  */
 
@@ -12,7 +12,7 @@ $td_services = [];
 foreach ( td_nav_services() as $td_s ) {
 	$td_services[ $td_s['label'] ] = $td_s['url'];
 }
-$td_company  = td_footer_links(
+$td_company = td_footer_links(
 	'footer-2',
 	[
 		__( 'How we work', 'techdella' )       => td_url( 'marketing', '/#how' ),
@@ -23,13 +23,16 @@ $td_company  = td_footer_links(
 		__( 'TechDella Studios', 'techdella' ) => td_url( 'studios', '/' ),
 	]
 );
-$td_explore  = [
+$td_explore = [
 	__( 'Case studies', 'techdella' )    => td_url( 'marketing', '/case-studies/' ),
-	__( 'Locations', 'techdella' )       => td_url( 'marketing', '/locations/' ),
 	__( 'Glossary', 'techdella' )        => td_url( 'marketing', '/glossary/' ),
 	__( 'Free tools', 'techdella' )      => td_url( 'marketing', '/tools/' ),
 	__( 'Business guides', 'techdella' ) => td_url( 'marketing', '/business/' ),
 ];
+$td_markets = [];
+foreach ( td_nav_posts( 'location', 12 ) as $td_l ) {
+	$td_markets[ $td_l['label'] ] = $td_l['url'];
+}
 $td_services = td_footer_links( 'footer-1', $td_services );
 $td_social   = td_social_links();
 ?>
@@ -48,6 +51,12 @@ $td_social   = td_social_links();
 				<h2 class="td-footer__heading" id="td-footer-explore"><?php esc_html_e( 'Explore', 'techdella' ); ?></h2>
 				<ul role="list"><?php echo td_footer_list( $td_explore ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></ul>
 			</nav>
+			<?php if ( $td_markets ) : ?>
+				<nav class="td-footer__col" aria-labelledby="td-footer-markets">
+					<h2 class="td-footer__heading" id="td-footer-markets"><?php esc_html_e( 'Markets', 'techdella' ); ?></h2>
+					<ul role="list"><?php echo td_footer_list( $td_markets ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></ul>
+				</nav>
+			<?php endif; ?>
 			<nav class="td-footer__col" aria-labelledby="td-footer-company">
 				<h2 class="td-footer__heading" id="td-footer-company"><?php esc_html_e( 'Company', 'techdella' ); ?></h2>
 				<ul role="list"><?php echo td_footer_list( $td_company ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></ul>

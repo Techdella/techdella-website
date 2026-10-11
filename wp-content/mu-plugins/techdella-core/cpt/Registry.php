@@ -95,7 +95,7 @@ final class Registry {
 				'singular'  => 'Location',
 				'plural'    => 'Locations',
 				'slug'      => 'locations',
-				'archive'   => 'locations',
+				'archive'   => false, // No hub page (owner): the nav and footer list the markets.
 				'cap'       => $money,
 				'menu'      => 'td-growth',
 				'supports'  => $editor,
