@@ -1,5 +1,6 @@
 ---
 title: startbuddi
+hold: true # Studios scope not confirmed yet: stays a draft until Joanna confirms (CLAUDE.md §10.5)
 slug: startbuddi-website
 menu_order: 1
 excerpt: "The startbuddi.com marketing site, on desktop and mobile. [CONFIRM: Studios build credit for startbuddi]"

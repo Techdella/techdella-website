@@ -84,6 +84,8 @@ Rules:
   on each environment (localhost ports in dev). Never type a full techdella.com URL.
 - A field named like a reserved key (`status`, `title`…) goes under `fields:`, e.g. Studios work
   `fields:` then `  status: Live` (Live or Concept). `menu_order:` sets the order on /work/.
+- `hold: true` keeps an item a draft everywhere, even in the staging preview, until a person has
+  confirmed it (used for Studios work whose scope is not verified yet).
 - `gallery:` is a list of repo image paths, uploaded and stored in the `gallery` field. A tall
   website screenshot first, then a phone screenshot, shows as a browser + phone pair on Studios.
 - Resources: `pdf: pdf/out/<slug>.pdf` (run `npm run pdf` first) uploads the PDF under an unguessable

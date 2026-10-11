@@ -397,7 +397,7 @@ $td_blocks = [
 				],
 				[
 					'question' => 'How long does a technical SEO audit take?',
-					'answer'   => 'It depends on the size of the site. We confirm the timeline in your scoping email. [CONFIRM typical turnaround]',
+					'answer'   => 'It depends on the size of the site. We confirm the timeline in your scoping email.',
 				],
 			],
 		]

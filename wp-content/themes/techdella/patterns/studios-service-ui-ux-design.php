@@ -190,7 +190,7 @@ $td_blocks = [
 			'items'      => [
 				[
 					'question' => 'Which design tools do you use?',
-					'answer'   => 'We design in Figma and hand over organized files your developers can work from. [CONFIRM]',
+					'answer'   => 'We design in Figma and hand over organized files your developers can work from.',
 				],
 				[
 					'question' => 'Can you redesign an existing product?',

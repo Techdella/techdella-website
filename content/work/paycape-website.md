@@ -1,5 +1,6 @@
 ---
 title: Paycape
+hold: true # Studios scope not confirmed yet: stays a draft until Joanna confirms (CLAUDE.md §10.5)
 slug: paycape-website
 menu_order: 2
 excerpt: "The paycape.com website. [CONFIRM: Studios scope for Paycape — the published case study covers search marketing]"

@@ -202,7 +202,7 @@ $td_blocks = [
 				],
 				[
 					'question' => 'How quickly can you turn work around?',
-					'answer'   => 'It depends on the package and queue. [CONFIRM turnaround]',
+					'answer'   => 'It depends on the package and queue. We confirm turnaround in your quote, before work starts.',
 				],
 			],
 			'background' => 'paper',

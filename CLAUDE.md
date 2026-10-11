@@ -33,7 +33,7 @@
 | D6 | Redirects | Stored in `data/redirects.csv`, imported into Rank Math Redirections. Old theme code in `td_redirects()` is **deleted** | The old function uses `strpos` substring matching and sends live URLs to pages that don't exist (see §9.2) |
 | D7 | Forms | Every form posts to our own REST route. WordPress validates it, then forwards it server-side to the Startbuddi endpoint for that form. **WordPress stores nothing permanently.** | Hides endpoints, blocks spam, retries if Startbuddi is down. CRM and automations live in Startbuddi only. |
 | D8 | Ads | AdSense only on `/tools/*` pages, with manual ad units, a certified CMP, and no Auto ads | Keeps service pages clean and protects Core Web Vitals |
-| D9 | Location pages | Keep 7 market pages. Merge 6 thin city/country pages, but only after a GSC check | Google's doorway-page policy. Pages must carry unique proof, not a swapped city name. |
+| D9 | Location pages | One market page, Nigeria (real office + local proof). The other market and city pages 301 (owner, 11 Oct 2026; §10.4) | Google's doorway-page policy. Pages must carry unique proof, not a swapped city name. |
 | D10 | Positioning | Marketing = search + paid + lead gen + email + AI automation, with search as the lead offer. Studios = build. | This is the expanded scope the owner chose in October. It goes beyond the original brief's search-only positioning. |
 
 ---
@@ -547,7 +547,7 @@ Validate every template with the Rich Results Test and the Schema.org validator 
   - `type`, `status`, `title`, `old_url`
   - `action` (keep / rebuild / redirect / move / merge-review / keep-review / refresh / refresh-priority / prune-review / noindex / private-noindex / confirm)
   - `new_url`, `notes`, `words`
-- `data/redirects.csv`: 71 rules. Includes legacy rules from the old theme, with **corrected targets**.
+- `data/redirects.csv`: 77 rules. Includes legacy rules from the old theme, with **corrected targets**.
 
 ### 9.2 Bugs in the current `td_redirects()` (delete the function)
 

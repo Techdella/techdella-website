@@ -15,8 +15,15 @@ gallery:
 
 ## The brief
 
-[CONFIRM: the brief, from the published case study]
+Epic Entertainment Games distributes verified game credits and casino software platforms. Demand wasn't the problem. Requests arrived through several tools and chat channels, reconciliation was manual, and the team spent more time chasing updates than solving partner problems. Epic needed one repeatable way to take in and track credit requests as it grew.
 
 ## What we built
 
-A structured credit-request workflow for the team behind epicentertainmentgames.com. [CONFIRM: tools used]
+A structured credit-request workflow for the team behind epicentertainmentgames.com. We mapped how requests moved through Epic's teams, then built one system that connects communication, task tracking and reporting:
+
+- A clear partner onboarding flow
+- A central dashboard for credit-posting status, aligned with Epic's existing dashboards
+- Automated alerts for exceptions instead of manual checks
+- Staff training and simple partner guides, so people understood the system, not just the tools
+
+Read the full [Epic Entertainment Games case study](marketing:/case-studies/epic-entertainment-games/).
