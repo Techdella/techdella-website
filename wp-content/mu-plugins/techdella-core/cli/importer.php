@@ -403,16 +403,23 @@ function td_import_file( string $file, string $status, bool $dry, string $base )
 
 	$existing = get_posts(
 		[
-			'name'           => $slug,
+			// post_name__in, not `name`: a `name` query is "singular" and hides drafts from WP-CLI
+			// (no user), which would create a duplicate draft on every run.
+			'post_name__in'  => [ $slug ],
 			'post_type'      => $type,
 			'post_status'    => [ 'publish', 'future', 'private', 'draft', 'pending' ],
 			'posts_per_page' => 1,
 		]
 	);
 	$post     = $existing ? $existing[0] : null;
-	if ( $post && in_array( $post->post_status, [ 'publish', 'future', 'private' ], true ) ) {
+	$live     = $post && in_array( $post->post_status, [ 'publish', 'future', 'private' ], true );
+	// --update-published (local/staging only): refresh a published copy, keeping its status.
+	if ( $live && ! apply_filters( 'td_import_update_published', false ) ) {
 		$row['result'] = 'skipped: already ' . $post->post_status . ' (edit it in WordPress)';
 		return $row;
+	}
+	if ( $live ) {
+		$status = $post->post_status;
 	}
 
 	$content = 'blocks' === ( $meta['format'] ?? '' ) ? trim( $body ) : td_import_markdown_to_blocks( $body );

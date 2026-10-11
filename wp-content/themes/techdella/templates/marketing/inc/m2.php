@@ -143,7 +143,33 @@ if ( ! function_exists( 'td_m2_paras' ) ) {
 		if ( '' === $text ) {
 			return '';
 		}
-		return td_mark_placeholders( wpautop( esc_html( $text ) ) );
+		// Lines starting with "- " become a list; everything else is paragraphs.
+		$out   = '';
+		$items = [];
+		foreach ( preg_split( '/\n{2,}/', str_replace( "\r", '', $text ) ) as $block ) {
+			$lines = array_map( 'trim', explode( "\n", trim( $block ) ) );
+			foreach ( $lines as $line ) {
+				if ( str_starts_with( $line, '- ' ) ) {
+					$items[] = '<li>' . esc_html( substr( $line, 2 ) ) . '</li>';
+					continue;
+				}
+				if ( $items ) {
+					$out  .= '<ul>' . implode( '', $items ) . '</ul>';
+					$items = [];
+				}
+				if ( preg_match( '/^[A-Z][^.!?]{2,40}:$/u', $line ) ) {
+					// A short "Heading:" line (e.g. "Key Takeaway:") is a subheading.
+					$out .= '<h3 class="td-m2-story__sub">' . esc_html( rtrim( $line, ':' ) ) . '</h3>';
+				} elseif ( '' !== $line ) {
+					$out .= '<p>' . esc_html( $line ) . '</p>';
+				}
+			}
+			if ( $items ) {
+				$out  .= '<ul>' . implode( '', $items ) . '</ul>';
+				$items = [];
+			}
+		}
+		return td_mark_placeholders( $out );
 	}
 }
 

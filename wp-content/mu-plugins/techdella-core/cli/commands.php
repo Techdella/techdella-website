@@ -57,6 +57,10 @@ function td_cli_setup( array $args, array $assoc ): void {
  * [--dry-run]
  * : Report only.
  *
+ * [--update-published]
+ * : Local and staging only: also update posts that are already published (status unchanged;
+ * WordPress keeps the old content as a revision). Production never does this.
+ *
  * ## EXAMPLES
  *
  *     wp td import-content /var/www/repo/content/journal --status=draft
@@ -73,7 +77,13 @@ function td_cli_import_content( array $args, array $assoc ): void {
 	if ( '' === $path || ! file_exists( $path ) ) {
 		WP_CLI::error( 'Pass the content directory or file: wp td import-content /var/www/repo/content/journal (in Docker). --path is WP-CLI\'s own option.' );
 	}
-	$dry   = (bool) Utils\get_flag_value( $assoc, 'dry-run', false );
+	$dry = (bool) Utils\get_flag_value( $assoc, 'dry-run', false );
+	if ( Utils\get_flag_value( $assoc, 'update-published', false ) ) {
+		if ( ! in_array( td_environment(), [ 'local', 'staging' ], true ) ) {
+			WP_CLI::error( '--update-published only works on local and staging sites.' );
+		}
+		add_filter( 'td_import_update_published', '__return_true' );
+	}
 	$files = td_import_files( $path );
 	$base  = dirname( is_dir( $path ) ? rtrim( $path, '/' ) : dirname( $path ) );
 	// Repo root: the folder that holds content/.

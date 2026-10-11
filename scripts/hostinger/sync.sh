@@ -9,8 +9,8 @@
 #
 # Every run: copies the theme and the core plugin into the site (uploads and wp-config.php are never
 # touched), activates the theme, imports the motion videos, runs `wp td setup`, clears the caches.
-# --refresh-pages (staging only): replace existing pages' content with the new designs (old content
-# stays as a revision) and publish them on the private staging site so it can be browsed.
+# --refresh-pages (staging only): replace existing pages' and case studies' content with the new
+# designs (old content stays as a revision) and publish them on the private staging site.
 # --first-run also: sets TD_SITE/TD_ENV in wp-config.php (only if missing), installs the plugins
 # (§5.2), blocks search engines on staging, imports content/ and the page patterns as DRAFTS (a
 # person publishes, §10.1), imports the redirects, and records the owner's client permissions.
@@ -88,6 +88,9 @@ if $WP plugin is-active litespeed-cache 2> /dev/null; then
 fi
 
 $WP td setup --quiet
+# New post types and pages need fresh rewrite rules. A soft flush works on Hostinger (the --hard
+# one needs proc_open, which is disabled there) and leaves .htaccess alone.
+$WP rewrite flush
 $WP td media:videos "$BUNDLE/assets/video"
 
 if [ "$FIRST" = 1 ]; then
@@ -101,6 +104,8 @@ fi
 if [ "$REFRESH" = 1 ]; then
   [ "$($WP config get TD_ENV 2> /dev/null || true)" = staging ] || { echo "--refresh-pages only runs on staging." >&2; exit 2; }
   $WP td preview:seed --force --publish
+  # Case studies, rebuilt from the published originals (content/case-studies), onto the copies.
+  $WP td import-content "$BUNDLE/content/case-studies" --status=draft --update-published
 fi
 
 $WP cache flush

@@ -2,6 +2,7 @@
 // resources, tools, About, Book a call, legal pages, 404.
 // Relies on the local fixtures (see the T3 report) or real content at these URLs.
 import { test, expect } from '@playwright/test';
+import { execFileSync } from 'node:child_process';
 import { site, expectNoA11yViolations, expectNoHorizontalScroll } from './helpers.js';
 
 // The feature-grid "01–04" numbers are aria-hidden decoration (WCAG 1.4.3 exempts pure
@@ -70,21 +71,39 @@ test('404 is helpful: search, links, audit CTA @smoke', async ({ page }) => {
   await expectNoA11yViolations(page);
 });
 
-test('case study: verified Paycape metrics, services linked, no unpermissioned cases on the hub', async ({ page }) => {
+test('case study: verified Paycape metrics, story sections, the 11 permissioned cases on the hub', async ({ page }) => {
   await page.goto(site('marketing', '/case-studies/paycape/'));
   const pills = page.locator('.td-stat-pills');
   await expect(pills).toContainText('50%');
   await expect(pills).toContainText('50 days');
+  await page.goto(site('marketing', '/case-studies/wezops/'));
+  await expect(page.locator('.td-m2-story__step')).toHaveCount(3);
+  await expect(page.locator('.td-m2-story__body ul').first()).toBeVisible();
+  await expect(page.getByText('Levi Barbosa')).toBeVisible();
   await page.goto(site('marketing', '/case-studies/'));
-  // Drafts / permission_confirmed=false never show.
-  await expect(page.locator('a[href*="/case-studies/wezops/"]')).toHaveCount(0);
+  await expect(page.locator('.td-case-card a[href*="/case-studies/"]')).toHaveCount(11);
   await expect(page.locator('.td-m2-chips a[aria-current="page"]')).toHaveText(/All industries/);
 });
 
-test('solution without permissioned proof shows the honest first steps, not a case study', async ({ page }) => {
-  await page.goto(site('marketing', '/solution/saas-marketing-agency/'));
-  await expect(page.getByRole('heading', { name: /What we’d do first/ })).toBeVisible();
-  await expect(page.locator('.td-case-card')).toHaveCount(0);
+test.describe('solution without proof', () => {
+  const wp = (args) => execFileSync('docker', ['compose', 'exec', '-T', '-u', 'www-data', 'wp-marketing', 'wp', ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
+  let id = '';
+  test.beforeAll(() => {
+    id = wp(['post', 'create', '--post_type=solution', '--post_status=draft', '--post_title=E2E healthcare marketing agency', '--post_name=e2e-healthcare-marketing-agency', '--porcelain']);
+    wp(['post', 'term', 'set', id, 'td_industry', 'e2e-healthcare']);
+    // The pre-publish checklist blocks a bare page; an admin override (logged) publishes it.
+    wp(['post', 'meta', 'update', id, '_td_checklist_override', '1']);
+    wp(['post', 'update', id, '--post_status=publish', '--user=admin']);
+  });
+  test.afterAll(() => {
+    if (id) wp(['post', 'delete', id, '--force']);
+    try { wp(['term', 'delete', 'td_industry', 'e2e-healthcare', '--by=slug']); } catch (e) { /* already gone */ }
+  });
+  test('shows the honest first steps, not a case study', async ({ page }) => {
+    await page.goto(site('marketing', '/solution/e2e-healthcare-marketing-agency/'));
+    await expect(page.getByRole('heading', { name: /What we’d do first/ })).toBeVisible();
+    await expect(page.locator('.td-case-card')).toHaveCount(0);
+  });
 });
 
 test('location shows only proof from its own market', async ({ page }) => {
