@@ -6,7 +6,7 @@ primary_kw: content gap
 secondary_kws: [content gap analysis, keyword gap, competitor content analysis, content audit]
 intent: informational
 audience: "Content and SEO leads planning what to publish next"
-short_definition: "A content gap is a topic, question or keyword your target audience searches for that your website doesn't cover, or covers less well than competitors. A content gap analysis finds these gaps so you can prioritize what to create or improve."
+short_definition: "A content gap is a topic, question or keyword your audience searches for that your website doesn't cover, or covers less well than competitors. A content gap analysis finds these gaps so you can prioritize what to create."
 taxonomies:
   glossary_category: [content-marketing]
 related_terms: [keyword-research, topic-clusters, content-decay, content-marketing, sales-funnel]

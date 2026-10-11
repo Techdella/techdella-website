@@ -63,7 +63,7 @@ Fact: Google's testing guidance says small variations generally don't affect sea
 [CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
 :::
 
-## How to run an A/B test
+## How to run A/B testing, step by step
 
 :::steps "From idea to decision"
 1. Start from evidence | Base the hypothesis on data: analytics drop-off, recordings, customer feedback.

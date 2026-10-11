@@ -6,7 +6,7 @@ primary_kw: domain authority
 secondary_kws: [moz da, domain rating, authority score, website authority]
 intent: informational
 audience: "Marketers and founders comparing SEO metrics and agency reports"
-short_definition: "Domain authority (DA) is a 1 to 100 score created by Moz that predicts how likely a website is to rank in search results compared with other sites. It's based mainly on backlink data and is not a Google ranking factor."
+short_definition: "Domain authority (DA) is a 1 to 100 score created by Moz that predicts how likely a website is to rank compared with other sites. It's based mainly on backlink data and is not a Google ranking factor."
 taxonomies:
   glossary_category: [seo]
 related_terms: [backlinks, link-building, seo-analytics, black-hat-seo]

@@ -6,7 +6,7 @@ primary_kw: mobile optimization
 secondary_kws: [mobile-first indexing, responsive design, mobile page speed, mobile seo]
 intent: informational
 audience: "Founders and marketers whose website brings in leads or sales"
-short_definition: "Mobile optimization is the practice of designing and building a website so it loads fast, reads clearly and is easy to use on smartphones, with the same content as desktop, because Google primarily crawls and indexes the mobile version of pages."
+short_definition: "Mobile optimization is the practice of building a website so it loads fast, reads clearly and is easy to use on smartphones, with the same content as desktop, because Google primarily indexes the mobile version of pages."
 taxonomies:
   glossary_category: [seo]
 related_terms: [technical-seo, landing-page, conversion-rate-optimization, local-seo, alt-text]
@@ -18,7 +18,7 @@ internal_links:
   - /glossary/technical-seo/
   - /glossary/landing-page/
   - /glossary/conversion-rate-optimization/
-rank_math_description: "Mobile optimization explained: what mobile-first indexing means for your rankings, the speed and usability thresholds to hit, and a checklist for B2B sites."
+rank_math_description: "Mobile optimization explained: what mobile-first indexing means for rankings, the speed and usability thresholds to hit, and a checklist for B2B sites."
 ---
 
 Mobile optimization means your website works properly on a phone: it loads quickly, the text is readable without zooming, buttons are easy to tap, and nothing important is hidden. For SEO, the stakes are simple. Google now crawls almost all sites with a smartphone crawler, so the mobile version of your page is the version Google ranks.

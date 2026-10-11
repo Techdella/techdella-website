@@ -18,7 +18,7 @@ internal_links:
   - /glossary/evergreen-content/
   - /glossary/seo-analytics/
   - /glossary/keyword-cannibalization/
-rank_math_description: "Content decay explained: how to find pages losing traffic in Search Console, the five usual causes, and a decision table for refreshing, merging or retiring them."
+rank_math_description: "Content decay explained: how to find pages losing traffic in Search Console, the five usual causes, and when to refresh, merge or retire a page."
 ---
 
 Content decay is what happens when a page that once brought steady traffic starts to slide. Clicks drop month after month, often so slowly that nobody notices until a quarterly report. The page didn't break. The world around it moved: facts aged, competitors improved, and the search results page itself changed.

@@ -18,7 +18,7 @@ internal_links:
   - /glossary/content-decay/
   - /glossary/topic-clusters/
   - /glossary/keyword-research/
-rank_math_description: "Evergreen content explained: how to spot an evergreen topic, how to write so a page ages slowly, real B2B examples, and a review routine that keeps it accurate."
+rank_math_description: "Evergreen content explained: how to spot an evergreen topic, write pages that age slowly, B2B examples, and a review routine that keeps them accurate."
 ---
 
 Evergreen content is content that keeps earning traffic and trust long after you publish it. It answers questions that don't expire: what something is, how to do it, how to choose between options. News, trend roundups and launch announcements are the opposite. They spike and fade. A good content program uses both, but evergreen pages are the ones that keep working while you sleep.

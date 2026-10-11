@@ -6,7 +6,7 @@ primary_kw: call to action
 secondary_kws: [cta, cta examples, cta button, call to action examples]
 intent: informational
 audience: "Marketers, founders and writers creating pages, ads and emails"
-short_definition: "A call to action (CTA) is a prompt, usually a button or link, that tells a reader exactly what to do next, such as book a call, download a guide or start a trial, and makes that step easy to take."
+short_definition: "A call to action (CTA) is a prompt, usually a button or link, that tells a reader exactly what to do next, such as book a call, download a guide or start a trial, and makes that step easy."
 taxonomies:
   glossary_category: [lead-generation]
 related_terms: [landing-page, conversion-rate-optimization, a-b-testing, copywriting, digital-marketing-funnel]
@@ -73,7 +73,7 @@ Fact: Several competing goals split attention. Repeat the same primary CTA down 
 [CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
 :::
 
-## How to create and place CTAs
+## How to write and place a call to action
 
 :::steps "Write, place and check a CTA"
 1. Define the one action | Decide what the reader should do next on this page, given where they are in the funnel.

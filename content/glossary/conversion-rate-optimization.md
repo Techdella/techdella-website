@@ -18,7 +18,7 @@ internal_links:
   - /glossary/a-b-testing/
   - /glossary/landing-page/
   - /growth-audit/
-rank_math_description: "Conversion rate optimization explained: the CRO formula, a five-step research-first process, a scoring model for test ideas, and the math of why CRO lowers acquisition cost."
+rank_math_description: "Conversion rate optimization explained: the CRO formula, a research-first process, a scoring model for test ideas, and how CRO lowers acquisition cost."
 ---
 
 Conversion rate optimization (CRO) is the work of getting more value from the visitors you already have. Instead of buying more traffic, you find out why people leave without acting, fix what stops them, and measure the effect. Good CRO starts with research, not with guessing which button color to test.

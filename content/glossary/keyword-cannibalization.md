@@ -18,7 +18,7 @@ internal_links:
   - /glossary/topic-clusters/
   - /glossary/keyword-research/
   - /glossary/content-decay/
-rank_math_description: "Keyword cannibalization explained: how to confirm it in Search Console, when it actually hurts, and how to choose between merging, redirecting and rewriting pages."
+rank_math_description: "Keyword cannibalization explained: how to confirm it in Search Console, when it actually hurts, and when to merge, redirect or rewrite competing pages."
 ---
 
 Keyword cannibalization happens when several pages on your site try to answer the same search. Instead of one clear page that Google can rank, you give it two or three similar options. Rankings often flip between them, neither page collects all the links and engagement, and the result is usually lower than one combined page would achieve.

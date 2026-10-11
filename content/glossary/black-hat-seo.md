@@ -18,7 +18,7 @@ internal_links:
   - /glossary/link-building/
   - /glossary/guest-posting/
   - /growth-audit/
-rank_math_description: "Black hat SEO explained: the tactics Google's 2026 spam policies name, how penalties work, red flags in agency proposals, and the white hat alternative for each."
+rank_math_description: "Black hat SEO explained: the tactics Google's spam policies name, how penalties work, red flags in agency proposals, and a safer alternative for each."
 ---
 
 Black hat SEO is any tactic that tries to rank a page by fooling search engines rather than by being the best answer. It includes old tricks such as hidden text and keyword stuffing, and newer ones such as mass-producing AI pages or renting space on a trusted site. Google lists these practices in its spam policies, and its systems and reviewers act on them. Some black hat tactics work briefly. Few last, and the cleanup often costs more than the gain.

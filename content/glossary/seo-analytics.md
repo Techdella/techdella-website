@@ -18,7 +18,7 @@ internal_links:
   - /glossary/click-through-rate/
   - /glossary/marketing-attribution/
   - /tools/free-utm-parameter-generator/
-rank_math_description: "SEO analytics explained: the five metrics that tie search to revenue, how to use Search Console and GA4 together, and a one-page monthly SEO report template."
+rank_math_description: "SEO analytics explained: the five metrics that tie search to revenue, how to use Search Console and GA4 together, and a one-page monthly report template."
 ---
 
 SEO analytics is how you find out whether search is working for your business. It connects what happens in Google (impressions, clicks, rankings) with what happens on your site (visits, sign-ups, leads, revenue). The goal isn't a dashboard full of numbers. It's a small set of measures that tell you what to do next.

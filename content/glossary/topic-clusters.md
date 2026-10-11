@@ -21,7 +21,7 @@ internal_links:
 rank_math_description: "Topic clusters explained: how pillar pages and supporting content work, how to plan a cluster around a service, and the linking rules that keep it tidy."
 ---
 
-A topic cluster is a way of organizing content so one subject is covered thoroughly and connected clearly. A broad pillar page gives the overview. Several cluster pages each answer one specific question in depth. Every cluster page links to the pillar, and the pillar links back. The structure helps readers move from a general question to a specific one, and it helps search engines see which page is your main page for the topic.
+Topic clusters are a way of organizing content so one subject is covered thoroughly and connected clearly. A broad pillar page gives the overview. Several cluster pages each answer one specific question in depth. Every cluster page links to the pillar, and the pillar links back. The structure helps readers move from a general question to a specific one, and it helps search engines see which page is your main page for the topic.
 
 :::takeaways
 - One pillar page per topic, with 5 to 15 supporting pages that each target one narrower query.

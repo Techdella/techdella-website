@@ -18,7 +18,7 @@ internal_links:
   - /glossary/pay-per-click-advertising/
   - /glossary/landing-page/
   - /glossary/customer-acquisition-cost/
-rank_math_description: "Search engine marketing explained: how the Google Ads auction and Ad Rank work, 2026 cost benchmarks, SEM vs SEO, and a budget worked example for a first campaign."
+rank_math_description: "Search engine marketing explained: how the Google Ads auction and Ad Rank work, 2026 cost benchmarks, SEM vs SEO, and a worked budget example."
 ---
 
 Search engine marketing (SEM) is paying to appear in search results when people look for what you sell. You choose keywords, write ads, set a budget, and pay when someone clicks. Most SEM happens on Google Ads, with Microsoft Advertising covering Bing and partner sites. Some people use SEM to mean all search marketing, including SEO, but in day-to-day use it usually means paid search.
@@ -73,7 +73,7 @@ Fact: Small budgets work when they're focused on a few high-intent keywords, tig
 [CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
 :::
 
-## How to plan your first SEM campaign
+## How to plan your first search engine marketing campaign
 
 :::steps "First campaign in six steps"
 1. Set the target | Decide the cost per lead you can afford from your close rate and deal value.

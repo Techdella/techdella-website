@@ -6,7 +6,7 @@ primary_kw: guest posting
 secondary_kws: [guest blogging, guest post outreach, write for us, guest post links]
 intent: informational
 audience: "B2B founders and marketers looking to build reach and authority"
-short_definition: "Guest posting is writing and publishing an article on another website or publication, usually with an author byline, to reach that site's audience and build credibility. Links in guest posts that are placed mainly for rankings are treated as link spam."
+short_definition: "Guest posting is writing and publishing an article on another website, usually with an author byline, to reach that site's audience and build credibility. Links in guest posts placed mainly for rankings are treated as link spam."
 taxonomies:
   glossary_category: [content-marketing]
 related_terms: [link-building, backlinks, black-hat-seo, content-marketing, brand-awareness]
