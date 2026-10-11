@@ -25,13 +25,13 @@ if ( ! function_exists( 'td_m2_tool_related' ) ) :
 	 */
 	function td_m2_tool_related( string $component ): array {
 		$map = [
-			'utm-parameter-generator'     => [ [ 'Paid ads', '/services/paid-ads/' ], [ 'Startup marketing playbook: 30 days to your first 100 customers', '/how-to-get-your-first-100-customers/' ] ],
+			'utm-parameter-generator'     => [ [ 'Paid ads', '/services/paid-ads/' ], [ 'B2B paid advertising: LinkedIn, Google and Meta compared', '/b2b-paid-ads-guide/' ] ],
 			'hashtag-generator'           => [ [ 'Paid ads', '/services/paid-ads/' ], [ 'How to launch a new product', '/how-to-launch-a-new-product/' ] ],
-			'readability-checker'         => [ [ 'SEO', '/services/seo/' ], [ 'Why most content marketing agencies fail startups', '/content-marketing-agency-for-startups/' ] ],
-			'keyword-density-checker'     => [ [ 'SEO', '/services/seo/' ], [ 'Why most content marketing agencies fail startups', '/content-marketing-agency-for-startups/' ] ],
-			'email-subject-line-analyzer' => [ [ 'Email marketing', '/services/email-marketing/' ], [ 'What no one tells you about email marketing tools', '/email-marketing-setup-problems/' ] ],
-			'on-page-seo-checker'         => [ [ 'SEO', '/services/seo/' ], [ 'Why most content marketing agencies fail startups', '/content-marketing-agency-for-startups/' ] ],
-			'persona-builder'             => [ [ 'Lead generation', '/services/lead-generation/' ], [ 'Startup marketing playbook: 30 days to your first 100 customers', '/how-to-get-your-first-100-customers/' ] ],
+			'readability-checker'         => [ [ 'AI search optimization', '/services/ai-search-optimization/' ], [ 'How to get cited in AI search', '/how-to-get-cited-in-ai-search/' ] ],
+			'keyword-density-checker'     => [ [ 'SEO', '/services/seo/' ], [ 'B2B SEO strategy: a playbook for pipeline', '/b2b-seo-strategy/' ] ],
+			'email-subject-line-analyzer' => [ [ 'Email marketing', '/services/email-marketing/' ], [ 'B2B email deliverability: Gmail, Yahoo and Outlook rules', '/b2b-email-deliverability/' ] ],
+			'on-page-seo-checker'         => [ [ 'SEO', '/services/seo/' ], [ 'B2B SEO strategy: a playbook for pipeline', '/b2b-seo-strategy/' ] ],
+			'persona-builder'             => [ [ 'Lead generation', '/services/lead-generation/' ], [ 'B2B lead generation: build a pipeline that lasts', '/b2b-lead-generation/' ] ],
 			'ai-business-name-generator'  => [ [ 'Branding (TechDella Studios)', 'studios:/services/branding/' ], [ 'How to brainstorm a startup name that converts', '/how-to-brainstorm-a-startup-name/' ] ],
 		];
 		$row = $map[ $component ] ?? [ [ 'SEO', '/services/seo/' ], [ 'The Journal', '/' ] ];

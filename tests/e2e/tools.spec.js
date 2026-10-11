@@ -17,14 +17,27 @@ const fillForm = async (root, values) => {
   for (const [name, value] of Object.entries(values)) await root.locator(`[name="${name}"]`).fill(value);
 };
 
+// Every tool is email-gated (gate=email, owner 11 Oct 2026): results show after the tool_gate
+// form succeeds. Delivery of that form to Startbuddi is covered in forms.spec.js; here the
+// browser gets a success reply so the shared sb-mock log isn't touched from a parallel worker.
+const unlock = async (page, root) => {
+  const gate = root.locator('[data-td-tool-gate]');
+  await expect(gate).toBeVisible();
+  await expect(gate).toContainText('Enter your email');
+  await gate.locator('input[name="email"]').fill('tools-e2e@example.com');
+  await gate.locator('button[type="submit"]').click();
+};
+
 test.describe('tool pages', () => {
   for (const t of TOOLS) {
-    test(`${t.app}: runs in the browser and shows results`, async ({ page }) => {
+    test(`${t.app}: runs in the browser, asks for an email, then shows results`, async ({ page }) => {
+      await page.route('**/submit/tool_gate', (route) => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ ok: true }) }));
       await page.goto(site('marketing', `/tools/${t.slug}/`));
       const root = page.locator(`[data-td-tool-app="${t.app}"]`);
       await expect(root).toBeVisible();
       await fillForm(root, t.fill);
       await root.locator('.td-tool__submit').click();
+      await unlock(page, root);
       const results = root.locator('[data-td-tool-results]');
       await expect(results).toContainText(t.expect, { ignoreCase: true });
       // §12.1: real content below the tool.
