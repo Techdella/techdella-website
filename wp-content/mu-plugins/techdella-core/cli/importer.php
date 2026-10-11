@@ -375,6 +375,9 @@ function td_import_featured( string $rel, string $base, int $post_id, bool $priv
 	require_once ABSPATH . 'wp-admin/includes/image.php';
 	$tmp = wp_tempnam( basename( $file ) );
 	copy( $file, $tmp );
+	if ( $private_path && function_exists( 'td_forms_protect_private_files' ) ) {
+		td_forms_protect_private_files();
+	}
 	$dir_filter = static function ( array $dirs ): array {
 		$sub            = '/td-files/' . bin2hex( random_bytes( 16 ) );
 		$dirs['path']   = $dirs['basedir'] . $sub;

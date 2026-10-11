@@ -294,3 +294,65 @@ test('form markup is axe-clean, also with errors shown, and fits 390px', async (
   await expectNoA11yViolations(page, { include: '.td-form' });
   await expectNoHorizontalScroll(page);
 });
+
+// Lead magnets as a visitor does them (§13): the exit popup's email form and a resource page's
+// download form reach sb-mock, and the PDF is served with noindex after submit.
+const humanPause = (page) => page.waitForTimeout(3500); // Submissions under 3 s are rejected (§11.2).
+const unique = (name) => `${name}+${Date.now()}@example.com`;
+const delivered = async (request, key, needle) => (await sbMock.log(request, key)).filter((e) => JSON.stringify(e).includes(needle));
+
+test.describe('lead magnets', () => {
+  test.beforeEach(() => resetLimits());
+
+  test('exit popup: a visitor leaves an email and it reaches Startbuddi', async ({ page, request }) => {
+    await page.clock.install();
+    await page.goto(site('marketing', '/services/seo/'));
+    const dialog = page.locator('[data-td-popup="p3"]');
+    await page.clock.fastForward(11_000);
+    await page.evaluate(() => document.dispatchEvent(new MouseEvent('mouseout', { clientY: -2, clientX: 400, bubbles: true, relatedTarget: null })));
+    await expect(dialog).toBeVisible();
+    const email = unique('popup');
+    await dialog.locator('input[type="email"]').fill(email);
+    await page.clock.resume();
+    await humanPause(page);
+    await dialog.locator('button[type="submit"]').click();
+    await expect.poll(async () => (await delivered(request, 'popup_exit', email)).length, { timeout: 10_000 }).toBe(1);
+    await expect(dialog).toContainText(/thank|check your inbox|on its way/i);
+  });
+
+  test('resource page: the form unlocks the PDF and the lead reaches Startbuddi', async ({ page, request }) => {
+    await page.goto(site('marketing', '/resources/ai-search-readiness-checklist/'));
+    const form = page.locator('form[data-td-form="lead_magnet"], form[action*="submit/lead_magnet"]').first();
+    await expect(form).toBeVisible();
+    const email = unique('reader');
+    await form.locator('input[name="email"]').fill(email);
+    const first = form.locator('input[name="first_name"]');
+    if (await first.count()) await first.fill('Ada');
+    const company = form.locator('input[name="company"]');
+    if (await company.count()) await company.fill('Example Ltd');
+    await humanPause(page);
+    await form.locator('button[type="submit"]').click();
+
+    const link = page.locator('a[href$=".pdf"]').first();
+    await expect(link).toBeVisible({ timeout: 10_000 });
+    const pdf = await request.get(await link.getAttribute('href'));
+    expect(pdf.status()).toBe(200);
+    expect(pdf.headers()['content-type']).toContain('application/pdf');
+    expect((await pdf.body()).subarray(0, 5).toString()).toBe('%PDF-');
+    expect(pdf.headers()['x-robots-tag'] || '').toContain('noindex');
+
+    await expect.poll(async () => (await delivered(request, 'lead_magnet', email)).length, { timeout: 10_000 }).toBe(1);
+    const [entry] = await delivered(request, 'lead_magnet', email);
+    expect(JSON.stringify(entry)).toContain('ai-search-readiness-checklist');
+  });
+
+  test('every resource has a PDF attached and its page offers the form', async ({ request }) => {
+    const slugs = wp('marketing', 'post', 'list', '--post_type=td_resource', '--post_status=publish', '--field=post_name').trim().split('\n').filter(Boolean);
+    expect(slugs.length).toBe(7);
+    for (const slug of slugs) {
+      const html = await (await request.get(site('marketing', `/resources/${slug}/`))).text();
+      expect(html, slug).toContain('submit/lead_magnet');
+      expect(html, slug).not.toContain('[CONFIRM');
+    }
+  });
+});

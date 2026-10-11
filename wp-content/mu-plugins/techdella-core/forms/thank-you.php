@@ -245,3 +245,26 @@ add_filter(
 	},
 	20
 );
+
+/**
+ * Lead-magnet PDFs (uploads/td-files/<random>/) are never indexed and never listed (§13.2):
+ * an .htaccess there sends X-Robots-Tag: noindex (Apache and LiteSpeed read it), and an empty
+ * index.html stops directory listings. Written on td setup (every deploy) and when the importer
+ * uploads a PDF.
+ */
+function td_forms_protect_private_files(): void {
+	$dir = trailingslashit( (string) wp_upload_dir( null, false )['basedir'] ) . 'td-files';
+	if ( ! wp_mkdir_p( $dir ) ) {
+		return;
+	}
+	$rules = "# TechDella: lead-magnet PDFs are not indexed or listed (written by wp td setup).\n"
+		. "<IfModule mod_headers.c>\n\tHeader set X-Robots-Tag \"noindex, nofollow\"\n</IfModule>\n";
+	$file  = $dir . '/.htaccess';
+	if ( ! is_readable( $file ) || file_get_contents( $file ) !== $rules ) { // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+		file_put_contents( $file, $rules ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents
+	}
+	if ( ! file_exists( $dir . '/index.html' ) ) {
+		file_put_contents( $dir . '/index.html', '' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents
+	}
+}
+add_action( 'td_setup', 'td_forms_protect_private_files' );
