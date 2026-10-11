@@ -188,3 +188,11 @@
 .td-m2-quote figcaption strong { color: var(--td-paper); font-size: 15px; }
 p.td-m2-h2 { font-weight: 600; color: var(--td-ink); font-family: inherit; }
 .td-m2-scroller { align-items: start; }
+.td-m2-section-head--row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.td-m2-more { border: 1px solid var(--td-line); border-radius: var(--td-r-md); background: var(--td-paper); }
+.td-m2-more > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; padding: 14px 22px; font-weight: 600; }
+.td-m2-more > summary::-webkit-details-marker { display: none; }
+.td-m2-more > summary::after { content: "+"; font-size: 22px; line-height: 1; color: var(--td-muted); }
+.td-m2-more[open] > summary::after { content: "–"; }
+.td-m2-more > summary:focus-visible { outline: 3px solid var(--td-orange); outline-offset: 2px; border-radius: var(--td-r-md); }
+.td-m2-more > .td-prose { padding: 0 22px 22px; }
