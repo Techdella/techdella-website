@@ -11,7 +11,7 @@ audience: "Experts, trainers and educators in Nigeria, the US and the UK buildin
 author: joanna-okedara-kalu
 reviewer: chinedu-emmanuel-kalu
 tldr: "To start an e-learning business, pick a skill people pay to learn, pre-sell a pilot before you record, choose a platform that suits your audience's devices and bandwidth, and price around the outcome. Register the business and follow digital-content consumer rules, such as the UK's 14-day cancellation right."
-rank_math_description: "How to start an e-learning business: pre-sell a course, pick a platform, price it with simple maths and follow digital consumer rules in the US, UK and NG."
+rank_math_description: "How to start an e-learning business: pre-sell a course, pick a platform, price it and follow digital consumer rules in the US, UK and Nigeria."
 internal_links:
   - /services/email-marketing/
   - /services/marketing-automation/
