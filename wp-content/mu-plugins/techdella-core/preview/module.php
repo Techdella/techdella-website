@@ -111,7 +111,9 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 					$found    = get_posts(
 						[
 							'post_type'      => $p['type'],
-							'name'           => $name,
+							// post_name__in, not `name`: a `name` query is "singular" and hides drafts
+							// from WP-CLI (no user), which made every run create a duplicate draft.
+							'post_name__in'  => [ $name ],
 							'post_status'    => 'any',
 							'posts_per_page' => 1,
 						]

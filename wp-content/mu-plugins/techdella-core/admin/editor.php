@@ -228,8 +228,9 @@ add_filter(
 		if ( ! in_array( $type, td_checklist_post_types(), true ) || ! td_is_going_live( $old, (string) $data['post_status'] ) || isset( td_checklist_passed()[ $post_id ] ) ) {
 			return $data;
 		}
-		// `wp td preview:seed` on a local site only: preview pages are not editorial content.
-		if ( 'local' === td_environment() && apply_filters( 'td_checklist_bypass', false ) ) {
+		// `wp td preview:seed` on local or staging (noindex, private) only: preview pages are not
+		// editorial content. Production always runs the checklist.
+		if ( in_array( td_environment(), [ 'local', 'staging' ], true ) && apply_filters( 'td_checklist_bypass', false ) ) {
 			return $data;
 		}
 		$meta     = (array) ( $postarr['meta_input'] ?? [] );
