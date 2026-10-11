@@ -33,6 +33,12 @@ $td_markets = [];
 foreach ( td_nav_posts( 'location', 12 ) as $td_l ) {
 	$td_markets[ $td_l['label'] ] = $td_l['url'];
 }
+// One market (owner, 11 Oct 2026: only Nigeria has a page): a link under Explore, not a column.
+if ( 1 === count( $td_markets ) ) {
+	/* translators: %s: market */
+	$td_explore[ sprintf( __( 'Marketing in %s', 'techdella' ), (string) array_key_first( $td_markets ) ) ] = reset( $td_markets );
+	$td_markets = [];
+}
 $td_services = td_footer_links( 'footer-1', $td_services );
 $td_social   = td_social_links();
 ?>

@@ -61,7 +61,7 @@ test.describe('redirects', () => {
 
   test('conditional (GSC check first) rows are not imported by default', async ({ request }) => {
     const res = await hop(request, site('marketing', '/locations/germany/'));
-    expect(res.location).not.toContain('/locations/europe/');
+    expect(res.location || '').not.toMatch(/\/services\/$/);
   });
 });
 

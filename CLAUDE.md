@@ -140,8 +140,8 @@ Blocks must:
   - Oyinkansola Opatola (TechDella Team; both added by Joanna, 11 Oct 2026; photos `[CONFIRM]`, initials shown until then)
 - **Approved by Joanna (11 Oct 2026):** the founder letter ("Hi, I'm Joanna") as drafted, and client
   permissions for every existing case study, testimonial and logo (`wp td permissions:grant`).
+- **Approved by Joanna (11 Oct 2026, "go ahead with it"):** the founder quotes in her name that replace the "From our work" placeholders in guides, glossary terms, business guides and tools (advice and opinion; client facts only from published case studies).
 - **Draft copy that still needs Joanna's sign-off before launch:**
-  - Any new quote attributed to Joanna.
   - The 3 Studios "Concept" projects, which stay labelled "Concept".
   - Prices are set (owner's request, 11 Oct 2026): see `docs/PRICING.md`.
 
@@ -671,7 +671,7 @@ Copy each page from its prototype artboard, then expand it to the target length 
 
   `[CONFIRM industries]`
 - **Locations:**
-  - **Keep and rebuild** 7 market pages: Nigeria, Lagos, USA, UK, Canada, Dubai/UAE, Europe. Each needs:
+  - **Owner decision (11 Oct 2026):** only **Nigeria** keeps a market page (real Ibadan office, local proof, naira prices, sourced market data). Lagos 301s to Nigeria; USA, UK, Canada, Dubai/UAE and Europe 301 to `/services/` until there is a staffed presence and local proof there. A market page, when one exists, needs:
     - clients or case studies from that market;
     - local channels and costs (currency, ad CPM context);
     - time-zone working hours;

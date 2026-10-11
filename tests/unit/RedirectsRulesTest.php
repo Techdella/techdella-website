@@ -29,7 +29,7 @@ final class RedirectsRulesTest extends TestCase {
 	public function test_real_csv_parses_without_errors(): void {
 		$parsed = RedirectRules::parse_csv( (string) file_get_contents( dirname( __DIR__, 2 ) . '/data/redirects.csv' ) );
 		$this->assertSame( [], $parsed['errors'] );
-		$this->assertCount( 71, $parsed['rules'] );
+		$this->assertCount( 77, $parsed['rules'] );
 		$this->assertCount( 6, array_filter( $parsed['rules'], static fn( $r ) => $r['conditional'] ) );
 	}
 
@@ -84,7 +84,7 @@ final class RedirectsRulesTest extends TestCase {
 
 	public function test_conditional_rows_skipped_unless_included(): void {
 		$this->assertNull( self::target( '/locations/germany/' ) );
-		$this->assertSame( '/locations/europe/', self::target( '/locations/germany/', true ) );
+		$this->assertSame( '/services/', self::target( '/locations/germany/', true ) );
 	}
 
 	public function test_domain_rewrite(): void {

@@ -70,7 +70,7 @@ $td_side_card      = static function ( string $label, string $title, string $tex
 };
 $td_ind_panel      = $td_industries ? '<div class="td-mega__col"><p class="td-mega__label">' . esc_html__( 'Industries we work with', 'techdella' ) . '</p>'
 	. td_nav_mega_links( $td_industries, 'td-mega__list td-mega__list--3' )
-	. ( $td_markets ? '<p class="td-mega__label td-mega__label--gap">' . esc_html__( 'Markets we serve', 'techdella' ) . '</p>' . td_nav_mega_links( $td_markets, 'td-mega__list td-mega__list--4' ) : '' ) . '</div>'
+	. ( $td_markets ? '<p class="td-mega__label td-mega__label--gap">' . esc_html( 1 === count( $td_markets ) ? __( 'Where we are based', 'techdella' ) : __( 'Markets we serve', 'techdella' ) ) . '</p>' . td_nav_mega_links( $td_markets, 'td-mega__list td-mega__list--4' ) : '' ) . '</div>'
 	. $td_side_card( __( 'Not sure where to start?', 'techdella' ), __( 'Get a growth *audit*', 'techdella' ), __( 'We review your search, ads and funnel and tell you what to fix first.', 'techdella' ), td_url( 'marketing', '/growth-audit/' ) ) : '';
 $td_res_panel      = '<div class="td-mega__col td-mega__col--split">'
 	. ( $td_guides ? '<div><p class="td-mega__label">' . esc_html__( 'Free guides (PDF)', 'techdella' ) . '</p>' . td_nav_mega_links( $td_guides ) . '</div>' : '' )

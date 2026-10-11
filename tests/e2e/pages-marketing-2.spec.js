@@ -106,9 +106,26 @@ test.describe('solution without proof', () => {
   });
 });
 
-test('location shows only proof from its own market', async ({ page }) => {
-  await page.goto(site('marketing', '/locations/usa/'));
-  await expect(page.locator('.td-case-card')).toHaveCount(0);
+test('Nigeria location: office, sourced stats, local services, naira prices, local proof, booking', async ({ page }) => {
+  await page.goto(site('marketing', '/locations/nigeria/'));
+  await expect(page.locator('.td-hero .td-loc-office address')).toContainText('Yetmob Plaza');
+  await expect(page.locator('.td-loc-office a[href^="https://www.google.com/maps/"]').first()).toBeVisible();
+  await expect(page.locator('.td-stats__item')).toHaveCount(4);
+  await expect(page.locator('.td-stats__source a').first()).toHaveAttribute('href', /^https:\/\//);
+  await expect(page.locator('.td-feature-grid a[href*="/services/seo/"]')).toBeVisible();
+  await expect(page.locator('.td-pricing__price').first()).toContainText('₦');
+  await expect(page.locator('.td-case-card a[href*="/case-studies/johan-consults/"]')).toBeVisible();
+  await expect(page.locator('.td-loc-areas__list li')).toContainText(['Lagos']);
+  await expect(page.locator('#td-loc-book .td-booking iframe')).toHaveAttribute('src', /app\.startbuddi\.com/);
+  await expect(page.locator('main')).not.toContainText('[CONFIRM');
+});
+
+test('markets without a real presence redirect: Lagos to Nigeria, the rest to Services', async ({ request }) => {
+  for (const [from, to] of [['/locations/lagos-nigeria/', '/locations/nigeria/'], ['/locations/usa/', '/services/'], ['/locations/uk/', '/services/']]) {
+    const res = await request.get(site('marketing', from), { maxRedirects: 0 });
+    expect(res.status(), from).toBe(301);
+    expect(res.headers().location, from).toMatch(new RegExp(`${to.replace(/\//g, '\\/')}$`));
+  }
 });
 
 test('glossary: answer-first definition, A–Z index, byline', async ({ page }) => {

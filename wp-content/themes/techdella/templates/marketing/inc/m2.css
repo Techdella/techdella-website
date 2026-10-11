@@ -196,3 +196,20 @@ p.td-m2-h2 { font-weight: 600; color: var(--td-ink); font-family: inherit; }
 .td-m2-more[open] > summary::after { content: "–"; }
 .td-m2-more > summary:focus-visible { outline: 3px solid var(--td-orange); outline-offset: 2px; border-radius: var(--td-r-md); }
 .td-m2-more > .td-prose { padding: 0 22px 22px; }
+
+/* Location page (owner, 11 Oct 2026): office card, local work, areas served. */
+.td-loc-office { max-width: 420px; margin-inline: auto; padding: 28px; border: 1px solid var(--td-line); border-radius: var(--td-r-lg); background: var(--td-paper); box-shadow: var(--td-shadow); }
+.td-loc-office__label { margin: 0 0 10px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--td-muted); }
+.td-loc-office .td-m2-address { margin: 0 0 16px; color: var(--td-ink); font-size: 17px; }
+.td-loc-office__meta { margin: 0 0 6px; font-size: 15px; color: var(--td-body); }
+.td-loc-office__meta strong { color: var(--td-ink); font-weight: 600; margin-right: 6px; }
+.td-loc-office .td-link { display: inline-flex; min-height: 44px; align-items: center; margin-top: 8px; }
+.td-loc-work { display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr); }
+.td-loc-work__cards { display: grid; gap: 20px; margin: 0; padding: 0; list-style: none; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.td-loc-work__quote { margin: 0; }
+@media (min-width: 960px) { .td-loc-work { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; } }
+.td-loc-areas { display: grid; gap: 40px; grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 960px) { .td-loc-areas { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } }
+.td-loc-areas__list { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 0; padding: 0; list-style: none; }
+.td-loc-areas__list li { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border: 1px solid var(--td-line); border-radius: var(--td-r-pill); background: var(--td-paper); font-size: 14.5px; color: var(--td-ink); }
+.td-loc-areas__office .td-loc-office { margin-inline: 0; }
