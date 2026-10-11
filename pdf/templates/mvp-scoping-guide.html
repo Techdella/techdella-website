@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MVP Scoping Guide | TechDella Studios</title>
+<meta name="author" content="TechDella">
+<meta name="description" content="A twelve-page guide for founders: define the problem, find your riskiest assumption, map one core journey, cut the feature list, choose how to build, and brief a team.">
+<meta name="subject" content="MVP development">
+<meta name="keywords" content="MVP scoping, MVP development, minimum viable product, feature prioritization, MoSCoW, product brief">
+<meta name="td-pdf-id" content="PDF-07">
+<meta name="td-service" content="https://studios.techdella.com/services/mvp-development/">
+<link rel="stylesheet" href="brand.css">
+<style>
+@page{
+  @top-left{content:"TechDella Studios";}
+  @top-right{content:"MVP Scoping Guide";font:400 7.5pt "Geist",sans-serif;color:#6B6560;vertical-align:bottom;padding-bottom:4mm;}
+  @bottom-left{content:"studios.techdella.com/services/mvp-development/  ·  Ready to scope yours? Send a brief at studios.techdella.com/start/";font:400 7.5pt "Geist",sans-serif;color:#6B6560;vertical-align:top;padding-top:5mm;}
+}
+</style>
+</head>
+<body>
+<main class="doc">
+
+<section class="cover" aria-label="Cover">
+  <img class="cover__logo" src="../../assets/images/brand/techdella-logo.png" alt="TechDella">
+  <div class="cover__arch">
+    <p class="cover__meta">PDF-07 · TechDella Studios · Guide</p>
+    <h1>Scope the MVP you can actually <span class="accent">ship.</span></h1>
+    <p class="cover__sub">Eight steps from idea to a brief a build team can estimate: the problem, the riskiest assumption, one core journey, a cut-down feature list, the build approach and how you will know it worked.</p>
+    <dl class="cover__facts">
+      <div><dt>For</dt><dd>Founders and product leads before a first build</dd></div>
+      <div><dt>Time</dt><dd>Half a day, ideally with a co-founder or advisor</dd></div>
+      <div><dt>Output</dt><dd>A one-page MVP brief you can send to any build team</dd></div>
+    </dl>
+  </div>
+  <div class="cover__foot">
+    <span><strong>studios.techdella.com</strong>/services/mvp-development/</span>
+    <span>Version: October 2026</span>
+  </div>
+</section>
+
+<section class="pg" aria-labelledby="why">
+  <span class="chip">Start here</span>
+  <h2 id="why">What an MVP is for</h2>
+  <p class="lead">A minimum viable product is the smallest thing you can put in front of real users to learn whether your riskiest assumption is true. It is a learning tool first and a product second.</p>
+  <p>Most MVPs run late for the same reason: the scope grows to cover every user, every edge case and every feature a competitor has. This guide works the other way. You start from the one thing you most need to learn, and keep only what it takes to learn it.</p>
+
+  <h3>Signs your scope is too big</h3>
+  <ul class="check">
+    <li><span class="box">☐</span> It serves more than one type of user equally (for example buyers <em>and</em> sellers <em>and</em> admins, all fully featured).</li>
+    <li><span class="box">☐</span> The feature list has more than about ten "must have" items.</li>
+    <li><span class="box">☐</span> You cannot say in one sentence what you will learn from launch.</li>
+    <li><span class="box">☐</span> It includes features "for later" that are being built now "because it's easier".</li>
+    <li><span class="box">☐</span> Nobody outside the team has used a prototype or a manual version yet.</li>
+  </ul>
+  <p>If you ticked two or more, the steps that follow will save you time and money.</p>
+
+  <h3>The eight steps</h3>
+  <table class="tight">
+    <thead><tr><th style="width:6%">#</th><th style="width:34%">Step</th><th>Output</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><th>Problem and user</th><td>One problem statement, one primary user</td></tr>
+      <tr><td>2</td><th>Riskiest assumptions</th><td>The assumption the MVP must test</td></tr>
+      <tr><td>3</td><th>Core journey</th><td>One end-to-end flow, step by step</td></tr>
+      <tr><td>4</td><th>Feature cut</th><td>A MoSCoW list with a short "Must" column</td></tr>
+      <tr><td>5</td><th>The things people forget</th><td>Accounts, payments, data, compliance, analytics</td></tr>
+      <tr><td>6</td><th>How to build it</th><td>No-code, low-code or custom, with reasons</td></tr>
+      <tr><td>7</td><th>Budget and timeline drivers</th><td>What will make it cost more or take longer</td></tr>
+      <tr><td>8</td><th>Success metrics and launch</th><td>What "worked" means, and who sees it first</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="pg" aria-labelledby="s1">
+  <span class="chip">Step 1</span>
+  <h2 id="s1">Problem and user</h2>
+  <p class="lead">Name one primary user and one problem. Everyone else is secondary for now.</p>
+  <div class="field"><span class="q">Primary user</span><span class="hint">Role, context, and what they use today instead of your product</span><div class="write"></div><div class="write"></div></div>
+  <div class="field"><span class="q">The problem, in their words</span><span class="hint">Quote a real conversation if you have one</span><div class="write"></div><div class="write"></div></div>
+  <div class="field"><span class="q">How often it happens and what it costs them</span><span class="hint">Time, money, risk, frustration</span><div class="write"></div><div class="write"></div></div>
+  <div class="field"><span class="q">Current workaround</span><span class="hint">Spreadsheets, an agency, a competitor, doing nothing</span><div class="write"></div></div>
+
+  <h3>Problem statement</h3>
+  <div class="callout callout--sand">
+    <p><strong>[Primary user]</strong> needs a way to <strong>[job to be done]</strong> because <strong>[problem and its cost]</strong>. Today they <strong>[workaround]</strong>, which <strong>[why that falls short]</strong>.</p>
+  </div>
+  <div class="write"></div><div class="write"></div><div class="write"></div>
+
+  <h3>Evidence so far</h3>
+  <table class="fill tight">
+    <thead><tr><th style="width:30%">Evidence</th><th style="width:14%">How many</th><th>What you learned</th></tr></thead>
+    <tbody>
+      <tr><th>Problem interviews held</th><td></td><td></td></tr>
+      <tr><th>People on a waitlist</th><td></td><td></td></tr>
+      <tr><th>Pre-orders, letters of intent or pilots</th><td></td><td></td></tr>
+      <tr><th>Manual / concierge version run</th><td></td><td></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="pg" aria-labelledby="s2">
+  <span class="chip">Step 2</span>
+  <h2 id="s2">Riskiest assumptions</h2>
+  <p class="lead">List what must be true for the business to work. Rate each on how uncertain it is and how bad it would be if it were wrong. The MVP tests the top one.</p>
+  <table class="fill tight">
+    <thead><tr><th style="width:5%">#</th><th>Assumption ("We believe that …")</th><th style="width:13%">Type</th><th style="width:11%">Uncertainty (1–5)</th><th style="width:11%">Impact if wrong (1–5)</th><th style="width:9%">Score</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>2</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>3</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>4</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>5</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>6</td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <p class="small">Types: <strong>Desirability</strong> (do they want it?), <strong>Viability</strong> (will they pay enough?), <strong>Feasibility</strong> (can it be built and run?), <strong>Usability</strong> (can they use it without help?). Score = uncertainty × impact.</p>
+
+  <h3>Can you test it without building?</h3>
+  <p>Before committing to a build, check whether a cheaper test answers the same question.</p>
+  <table class="tight">
+    <thead><tr><th style="width:28%">Test</th><th>Answers</th></tr></thead>
+    <tbody>
+      <tr><th>Landing page with a sign-up or pre-order</th><td>Do enough people want this to act?</td></tr>
+      <tr><th>Clickable prototype (Figma)</th><td>Do users understand the flow? Where do they get stuck?</td></tr>
+      <tr><th>Concierge / manual service</th><td>Does the outcome solve the problem, before any automation?</td></tr>
+      <tr><th>"Wizard of Oz" (people behind a simple front end)</th><td>Will users rely on it in their real workflow?</td></tr>
+      <tr><th>Technical spike</th><td>Is the hard part (an integration, an AI feature, a data source) possible at all?</td></tr>
+    </tbody>
+  </table>
+  <div class="field"><span class="q">The assumption this MVP will test</span><div class="write"></div></div>
+  <div class="field"><span class="q">We will know it is true when …</span><span class="hint">A number, a behavior, a timeframe</span><div class="write"></div></div>
+</section>
+
+<section class="pg" aria-labelledby="s3">
+  <span class="chip">Step 3</span>
+  <h2 id="s3">One core journey</h2>
+  <p class="lead">Write the single path a primary user takes from first arriving to getting the value. Every screen in the MVP should sit on this path or directly support it.</p>
+  <table class="fill">
+    <thead><tr><th style="width:6%">#</th><th style="width:30%">User does</th><th style="width:30%">Product does</th><th>Screen / touchpoint</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td></td><td></td><td></td></tr>
+      <tr><td>2</td><td></td><td></td><td></td></tr>
+      <tr><td>3</td><td></td><td></td><td></td></tr>
+      <tr><td>4</td><td></td><td></td><td></td></tr>
+      <tr><td>5</td><td></td><td></td><td></td></tr>
+      <tr><td>6</td><td></td><td></td><td></td></tr>
+      <tr><td>7</td><td></td><td></td><td></td></tr>
+      <tr><td>8</td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <p class="callout__title">Example (illustrative)</p>
+    <p>A booking tool for independent physiotherapists: (1) patient opens the clinic's link, (2) picks a slot, (3) enters details and pays a deposit, (4) gets a confirmation, (5) clinic sees the booking on its calendar, (6) both get a reminder. Everything else (reporting, multi-clinic support, packages) waits.</p>
+  </div>
+  <h3>Moments that must feel right</h3>
+  <p>Mark the one or two steps where users decide whether the product is worth it. Spend design time there first.</p>
+  <div class="write"></div><div class="write"></div>
+</section>
+
+<section class="pg" aria-labelledby="s4">
+  <span class="chip">Step 4</span>
+  <h2 id="s4">Cut the feature list</h2>
+  <p class="lead">List every feature anyone has suggested, then sort with MoSCoW. A feature is a "Must" only if the core journey breaks without it, or if the law requires it.</p>
+  <table class="fill tight">
+    <thead><tr><th>Must have<br><small>Journey breaks without it</small></th><th>Should have<br><small>Painful to skip, but there is a workaround</small></th><th>Could have<br><small>Nice; add if time allows</small></th><th>Won't have (this time)<br><small>Written down so it stops coming up</small></th></tr></thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h3>Questions that cut scope</h3>
+  <ul class="check">
+    <li><span class="box">☐</span> Could an admin do this by hand for the first 50 users?</li>
+    <li><span class="box">☐</span> Could an existing tool (Stripe Checkout, a scheduling tool, a form builder, email) do it instead of custom code?</li>
+    <li><span class="box">☐</span> Does it serve the primary user, or someone secondary?</li>
+    <li><span class="box">☐</span> Would the learning goal from step 2 change if we left it out?</li>
+    <li><span class="box">☐</span> Is it needed on day one, or once there are paying customers?</li>
+  </ul>
+</section>
+
+<section class="pg" aria-labelledby="s5">
+  <span class="chip">Step 5</span>
+  <h2 id="s5">The things people forget</h2>
+  <p class="lead">These rarely appear in the first feature list, and they often decide the timeline. Tick what applies and note the decision.</p>
+  <table class="fill tight">
+    <thead><tr><th style="width:30%">Area</th><th style="width:8%">Needed?</th><th>Decision / notes</th></tr></thead>
+    <tbody>
+      <tr><th>Accounts and sign-in<br><small>Email + password, magic link, Google / Microsoft sign-in, roles</small></th><td style="font-family:var(--td-box)">☐</td><td></td></tr>
+      <tr><th>Payments<br><small>One-off, subscription, invoices, refunds, taxes. Tip: a hosted checkout keeps card details off your servers and shrinks your PCI DSS scope.</small></th><td style="font-family:var(--td-box)">☐</td><td></td></tr>
+      <tr><th>Admin tools<br><small>How your team views users, fixes data, issues refunds</small></th><td style="font-family:var(--td-box)">☐</td><td></td></tr>
+      <tr><th>Notifications<br><small>Email, SMS, push, in-app</small></th><td style="font-family:var(--td-box)">☐</td><td></td></tr>
+      <tr><th>Integrations<br><small>Calendars, CRMs, accounting, third-party APIs</small></th><td style="font-family:var(--td-box)">☐</td><td></td></tr>
+      <tr><th>AI features<br><small>Which model provider, cost per use, fallback when it fails, human review</small></th><td style="font-family:var(--td-box)">☐</td><td></td></tr>
+      <tr><th>Data and privacy<br><small>What personal data you store, where, for how long; privacy policy; data-processing agreements</small></th><td style="font-family:var(--td-box)">☐</td><td></td></tr>
+      <tr><th>Regulated areas<br><small>Health, finance, children's data, payments: get advice early</small></th><td style="font-family:var(--td-box)">☐</td><td></td></tr>
+      <tr><th>Accessibility<br><small>Keyboard use, contrast, screen readers (WCAG 2.2 AA is a common target)</small></th><td style="font-family:var(--td-box)">☐</td><td></td></tr>
+      <tr><th>Analytics<br><small>The events that prove or disprove your assumption</small></th><td style="font-family:var(--td-box)">☐</td><td></td></tr>
+      <tr><th>Platforms<br><small>Web, iOS, Android; app-store review time</small></th><td style="font-family:var(--td-box)">☐</td><td></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="pg" aria-labelledby="s6">
+  <span class="chip">Step 6</span>
+  <h2 id="s6">How to build it</h2>
+  <p class="lead">Pick the approach that tests your assumption fastest without blocking what comes next. There is no single right answer; the trade-offs are below.</p>
+  <table class="tight">
+    <thead><tr><th style="width:16%">Approach</th><th>Good when</th><th>Watch out for</th></tr></thead>
+    <tbody>
+      <tr><th>No-code<br><small>Website builders, form and automation tools, no-code app builders</small></th><td>You are testing demand or a workflow; logic is simple; speed matters most.</td><td>Platform limits, per-user pricing as you grow, hard migrations later, data residency.</td></tr>
+      <tr><th>Low-code<br><small>Backend-as-a-service plus a custom front end</small></th><td>You need a custom experience but standard back-end pieces (auth, database, storage).</td><td>Vendor lock-in for data and auth; pricing at scale.</td></tr>
+      <tr><th>Custom code</th><td>The product's value is in the technology itself, you need deep integrations, or you are in a regulated space.</td><td>Higher upfront cost and time; you need a team to maintain it.</td></tr>
+      <tr><th>Hybrid</th><td>Custom where it matters (the core journey), off-the-shelf for the rest (payments, email, analytics, admin).</td><td>Too many tools stitched together without an owner.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Decide</h3>
+  <ul class="check">
+    <li><span class="box">☐</span> What must the MVP prove, and can a no-code version prove it?</li>
+    <li><span class="box">☐</span> Who owns the code, designs and accounts at the end? (Put it in the contract.)</li>
+    <li><span class="box">☐</span> What happens if the MVP works: can it carry the first paying customers, or is a rebuild planned?</li>
+    <li><span class="box">☐</span> Who maintains it after launch, and how are bugs handled?</li>
+  </ul>
+  <div class="field"><span class="q">Our approach and why</span><div class="write"></div><div class="write"></div><div class="write"></div></div>
+</section>
+
+<section class="pg" aria-labelledby="s7">
+  <span class="chip">Step 7</span>
+  <h2 id="s7">Budget and timeline drivers</h2>
+  <p class="lead">Builds cost more and take longer for predictable reasons. Know which apply before you ask for an estimate, so quotes are comparable.</p>
+  <table class="tight">
+    <thead><tr><th style="width:34%">Driver</th><th>Effect</th><th style="width:12%">Applies?</th></tr></thead>
+    <tbody>
+      <tr><th>Number of user types with their own screens</th><td>Each one adds flows, permissions and testing.</td><td style="font-family:var(--td-box)">☐</td></tr>
+      <tr><th>Native mobile apps (vs. web)</th><td>Separate builds or a cross-platform framework, plus app-store review.</td><td style="font-family:var(--td-box)">☐</td></tr>
+      <tr><th>Third-party integrations</th><td>Each API has its own quirks, limits and approval process.</td><td style="font-family:var(--td-box)">☐</td></tr>
+      <tr><th>Real-time features</th><td>Chat, live updates and collaboration need more infrastructure.</td><td style="font-family:var(--td-box)">☐</td></tr>
+      <tr><th>AI features</th><td>Prompt design, evaluation, cost control and fallbacks take time to get right.</td><td style="font-family:var(--td-box)">☐</td></tr>
+      <tr><th>Regulated data</th><td>Security reviews, hosting choices and legal sign-off.</td><td style="font-family:var(--td-box)">☐</td></tr>
+      <tr><th>Design maturity</th><td>Starting from a brand and design system is faster than designing from scratch.</td><td style="font-family:var(--td-box)">☐</td></tr>
+      <tr><th>Decision speed</th><td>Slow feedback from the founder side is the most common cause of delay.</td><td style="font-family:var(--td-box)">☐</td></tr>
+    </tbody>
+  </table>
+  <div class="callout callout--sand">
+    <p class="callout__title">Get a ballpark</p>
+    <p>Our MVP calculator gives a rough estimate from your answers in a few minutes: <strong>studios.techdella.com/mvp-calculator/</strong>. Treat it as a starting point for a conversation, not a quote.</p>
+  </div>
+  <div class="field"><span class="q">Budget range you can commit</span><div class="write"></div></div>
+  <div class="field"><span class="q">Date that matters, and why (a pitch, a pilot, a season)</span><div class="write"></div></div>
+</section>
+
+<section class="pg" aria-labelledby="s8">
+  <span class="chip">Step 8</span>
+  <h2 id="s8">Success metrics and launch</h2>
+  <p class="lead">Decide before launch what result means "continue", "change direction" or "stop". Otherwise any result looks like success.</p>
+  <table class="fill tight">
+    <thead><tr><th style="width:28%">Metric</th><th>Why it matters</th><th style="width:16%">Target</th><th style="width:16%">By when</th></tr></thead>
+    <tbody>
+      <tr><th>Activation<br><small>Share of sign-ups who complete the core journey once</small></th><td></td><td></td><td></td></tr>
+      <tr><th>Retention<br><small>Share who come back and do it again</small></th><td></td><td></td><td></td></tr>
+      <tr><th>Willingness to pay<br><small>Conversions to paid, pre-orders, pilots</small></th><td></td><td></td><td></td></tr>
+      <tr><th>Qualitative<br><small>Interviews after first use</small></th><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h3>Launch plan</h3>
+  <ul class="check">
+    <li><span class="box">☐</span> The first 10 to 50 users are named people you can talk to, not anonymous traffic.</li>
+    <li><span class="box">☐</span> Analytics events for the core journey are firing and tested.</li>
+    <li><span class="box">☐</span> A feedback channel is visible in the product (an email, a chat, a short form).</li>
+    <li><span class="box">☐</span> A weekly review is booked for the first eight weeks after launch.</li>
+    <li><span class="box">☐</span> The "Won't have" list from step 4 is ready for the next round of decisions.</li>
+  </ul>
+</section>
+
+<section class="pg" aria-labelledby="brief">
+  <span class="chip">Send it</span>
+  <h2 id="brief">Your one-page MVP brief</h2>
+  <p class="lead">Copy your answers here. This is what a build team needs to give you a useful estimate.</p>
+  <table class="fill tight">
+    <tbody>
+      <tr><th style="width:32%">Product in one sentence</th><td></td></tr>
+      <tr><th>Primary user and problem (step 1)</th><td></td></tr>
+      <tr><th>Assumption to test (step 2)</th><td></td></tr>
+      <tr><th>Core journey (step 3)</th><td style="height:16mm"></td></tr>
+      <tr><th>Must-have features (step 4)</th><td style="height:16mm"></td></tr>
+      <tr><th>Constraints: accounts, payments, data, compliance (step 5)</th><td></td></tr>
+      <tr><th>Build approach (step 6)</th><td></td></tr>
+      <tr><th>Budget range and key date (step 7)</th><td></td></tr>
+      <tr><th>Success metrics (step 8)</th><td></td></tr>
+      <tr><th>Existing assets<br><small>Brand, designs, code, research</small></th><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="cta">
+    <h2>Ready to build <span class="accent">yours?</span></h2>
+    <p>TechDella Studios designs and builds MVPs, websites and AI automation. Send us your brief and we will reply with questions, a suggested scope and next steps.</p>
+    <a class="btn" href="https://studios.techdella.com/start/">Start a project brief <span aria-hidden="true">→</span></a>
+    <span class="url">studios.techdella.com/start/ · studios.techdella.com/mvp-calculator/</span>
+  </div>
+
+  <h3 id="sources">Sources</h3>
+  <ol class="sources">
+    <li>W3C, "Web Content Accessibility Guidelines (WCAG) 2.2". <a href="https://www.w3.org/TR/WCAG22/">w3.org/TR/WCAG22/</a></li>
+    <li>PCI Security Standards Council, "PCI DSS" document library. <a href="https://www.pcisecuritystandards.org/document_library/">pcisecuritystandards.org/document_library/</a></li>
+    <li>Stripe, "Integration security guide" (how hosted payment pages affect PCI scope). <a href="https://docs.stripe.com/security/guide">docs.stripe.com/security/guide</a></li>
+  </ol>
+</section>
+
+</main>
+</body>
+</html>
