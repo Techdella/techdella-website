@@ -3,7 +3,7 @@
  * Title: Marketing · Book a discovery call
  * Slug: techdella/marketing-book-a-discovery-call
  * Categories: techdella
- * Description: Contact page: hero with the contact form (Startbuddi key "contact"), what happens next, a client quote. No popups on this URL (popups module).
+ * Description: Contact page: hero, the Startbuddi booking calendar (booking-embed), the contact form for people who prefer to write (Startbuddi key "contact"), what happens next, a client quote. No popups on this URL (popups module).
  * Inserter: no
  * TD Site: marketing
  * TD Post Type: page
@@ -16,13 +16,44 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$td_b = static fn( string $name, array $attrs = [], array $inner = [] ): array => [
-	'blockName'    => 'techdella/' . $name,
+$td_b   = static fn( string $name, array $attrs = [], array $inner = [] ): array => [
+	'blockName'    => str_contains( $name, '/' ) ? $name : 'techdella/' . $name,
 	'attrs'        => $attrs,
 	'innerBlocks'  => $inner,
 	'innerHTML'    => '',
 	'innerContent' => array_fill( 0, count( $inner ), null ),
 ];
+$td_div = static function ( string $block, string $css_class, array $inner, array $extra = [] ): array {
+	$base  = [
+		'core/group'   => 'wp-block-group',
+		'core/columns' => 'wp-block-columns',
+		'core/column'  => 'wp-block-column',
+	][ $block ];
+	$attrs = array_merge( $css_class ? [ 'className' => $css_class ] : [], $extra );
+	// Inline style exactly as core's save() writes it for these attributes (column width, group padding).
+	$style = '';
+	if ( isset( $attrs['width'] ) ) {
+		$style = 'flex-basis:' . $attrs['width'];
+	}
+	foreach ( $attrs['style']['spacing']['padding'] ?? [] as $side => $value ) {
+		$style .= ( $style ? ';' : '' ) . 'padding-' . $side . ':' . $value;
+	}
+	$open = '<div class="' . esc_attr( trim( $base . ' ' . $css_class ) ) . '"' . ( $style ? ' style="' . esc_attr( $style ) . '"' : '' ) . '>';
+	return [
+		'blockName'    => $block,
+		'attrs'        => $attrs,
+		'innerBlocks'  => $inner,
+		'innerHTML'    => $open . '</div>',
+		'innerContent' => array_merge( [ $open ], array_fill( 0, count( $inner ), null ), [ '</div>' ] ),
+	];
+};
+// A full-width section with a container: optional surface (canvas|sand|dark) and extra group attributes.
+$td_section = static fn( array $inner, string $surface = '', array $extra = [] ): array => $td_div(
+	'core/group',
+	trim( 'td-section ' . ( $surface ? 'td-section--' . $surface : '' ) ),
+	[ $td_div( 'core/group', 'td-container', $inner ) ],
+	$extra
+);
 
 $td_blocks = [
 	$td_b(
@@ -30,35 +61,50 @@ $td_blocks = [
 		[
 			'eyebrow'    => 'Book a discovery call',
 			'title'      => 'Tell us where you want to *grow*',
-			'lead'       => 'Share a little about your company and goals. We’ll come to the call with questions about your market, your current marketing and what you’ve already tried.',
+			'lead'       => 'Pick a time that suits you. We’ll come to the call with questions about your market, your current marketing and what you’ve already tried.',
+			'layout'     => 'center',
 			'background' => 'plain',
-		],
+		]
+	),
+	$td_b(
+		'booking-embed',
+		[
+			'src'        => 'https://app.startbuddi.com/b/startbuddi-team/discovery-call-with-techdella',
+			'frameTitle' => 'Discovery Call with Techdella',
+			'height'     => 760,
+		]
+	),
+	$td_section(
 		[
 			$td_b(
 				'form',
 				[
+					'anchor'  => 'message',
 					'formKey' => 'contact',
+					'title'   => 'Prefer to write?',
+					'intro'   => 'Send us a message instead and we’ll reply by email.',
 					'variant' => 'light',
 				]
 			),
-		]
+		],
+		'canvas'
 	),
 	$td_b(
 		'feature-grid',
 		[
 			'label'   => 'What happens next',
-			'title'   => 'From form to *plan*',
+			'title'   => 'From booking to *plan*',
 			'style'   => 'numbered',
 			'surface' => 'canvas',
 			'columns' => 3,
 			'items'   => [
 				[
-					'title' => 'We reply',
-					'text'  => 'We read your answers and reply by email to set a time. [CONFIRM reply time]',
+					'title' => 'Pick a time',
+					'text'  => 'Choose a slot that suits you in the calendar above. Your booking is confirmed on the spot.',
 				],
 				[
 					'title' => 'Discovery call',
-					'text'  => 'A call to understand your market, your buyers and your current marketing. [CONFIRM call length]',
+					'text'  => 'A 45-minute call to understand your market, your buyers and your current marketing.',
 				],
 				[
 					'title' => 'Clear next step',

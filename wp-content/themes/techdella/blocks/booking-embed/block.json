@@ -1,0 +1,56 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/booking-embed",
+	"title": "Booking embed",
+	"category": "techdella",
+	"icon": "calendar-alt",
+	"description": "A Startbuddi booking page in a framed section, so visitors pick a time without leaving the site.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"attributes": {
+		"label": {
+			"type": "string",
+			"default": ""
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"lead": {
+			"type": "string",
+			"default": ""
+		},
+		"src": {
+			"type": "string",
+			"default": ""
+		},
+		"frameTitle": {
+			"type": "string",
+			"default": "Book a call"
+		},
+		"height": {
+			"type": "integer",
+			"default": 760
+		}
+	},
+	"example": {
+		"attributes": {
+			"label": "Book a call",
+			"title": "Pick a *time*",
+			"src": "https://app.startbuddi.com/b/startbuddi-team/discovery-call-with-techdella",
+			"frameTitle": "Discovery Call with Techdella"
+		}
+	},
+	"techdella": {
+		"controls": {
+			"lead": "textarea",
+			"src": "url"
+		},
+		"help": "src: a Startbuddi booking link (https://app.startbuddi.com/…); other sites are not embedded. The calendar loads when it scrolls near view; a plain link is shown as a fallback."
+	}
+}
