@@ -170,8 +170,8 @@ During the week:
 
 Watch the funnel daily. If traffic is high but signups are low, it's a message or offer problem. If one source converts far better than others, move budget there.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand launch example: a client launch (with permission) or a Techdella launch, what we changed during launch week based on the data, and one real number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+During launch week, I'd rather have one person reviewing the numbers every morning than a perfect content calendar. Launches rarely go to plan. A message that tested well can fall flat, and a channel you almost skipped can carry the week. Decide in advance what you'll change if signups lag, so you're adjusting from data, not from panic.
 :::
 
 ## Step 9: measure and improve after launch

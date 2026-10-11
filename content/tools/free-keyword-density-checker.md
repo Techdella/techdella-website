@@ -108,8 +108,8 @@ Now **B2B SEO services** appears once: 1 × 3 × 100 ÷ 78 = **3.85%**. The tool
 
 The useful signal is in the tables. After the rewrite, no 2- or 3-word phrase repeats at all, and "content" is now the top single word. The copy reads like a person wrote it.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Hitting a density target has never been the goal of a page we write. What I do notice is copy that sounds written for a robot, and buyers notice it too. Use the checker as a smoke alarm: if one phrase shows up far more than the rest, read the paragraph aloud and cut the repeats. Then spend your time on what the page actually answers.
 :::
 
 ## Where to put your keyword

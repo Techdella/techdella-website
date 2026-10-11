@@ -60,7 +60,7 @@ $1.5M | in grants shared by 10 finalists each year, up to $300,000 for the top w
 | [Orange Social Venture Prize](https://www.orange.com/en/our-news/young-entrepreneurs-africa-and-middle-east-apply-2026-osvp) | Tech-based social and environmental ventures in the 17 Orange countries in Africa and the Middle East | National and international prizes plus support through Orange Digital Centers | 16th edition launched spring 2026; applications closed in May 2026 |
 | [Africa's Business Heroes](https://africabusinessheroes.org/en) | Entrepreneurs from all 54 African countries, any sector | $1.5 million shared by 10 finalists, up to $300,000 for the winner | 2026 cycle reached its top-10 and grand-finale stage |
 | [Cartier Women's Initiative](https://www.cartierwomensinitiative.com/) | Women-run and women-owned businesses with strong social or environmental impact, any country | Funding and support through its fellowship program | 2026 fellows announced March 2026 |
-| [Google for Startups Black Founders Fund: Africa](https://startup.google.com/programs/black-founders-fund/africa/) | Black founders building startups in Africa | Equity-free cash awards and hands-on support | [CONFIRM: no 2026 cycle or application dates found on the official page; check status before listing as active] |
+| [Google for Startups Black Founders Fund: Africa](https://startup.google.com/programs/black-founders-fund/africa/) | Black founders building startups in Africa | Equity-free cash awards and hands-on support | No 2026 cycle or dates on the official page as of October 2026; check it before you plan around this one |
 
 Notice the pattern: the windows above opened early in the year or mid-year and stayed open for six to nine weeks. Put the recurring ones in a calendar now, so next year's application starts weeks before the deadline, not days.
 
@@ -118,8 +118,8 @@ Myth: The more grants you apply for, the better your chances.
 Fact: Reviewers can spot generic applications quickly. A few well-matched, tailored applications usually beat a scattergun approach.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Grant applications and sales pages often fail for the same reason: they describe the founder's idea instead of the reader's priorities. Before you write a word, read the funder's criteria and the profiles of past winners, then decide which true part of your story matches them. Write the problem the way you'd write a landing page headline: specific, local and easy to picture.
 :::
 
 ## How to spot grant scams

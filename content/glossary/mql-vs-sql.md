@@ -57,8 +57,8 @@ A hypothetical B2B software company reviews Q3:
 
 The weak point isn't volume. It's SAL → SQL at 30%. Call notes show many MQLs came from a broad ebook offer that attracted students and consultants. Marketing tightens the fit criteria and adds a company-size question to the form. Next quarter, MQLs drop to 180, but SQLs rise to 65. Fewer MQLs, more pipeline.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The definition matters less than the agreement. I've seen founders argue for weeks about lead scores when the real issue was that sales and marketing had never sat in the same room to agree what a good lead looks like. Write the criteria on one page, have both sides sign off, and review the rejected leads together every month.
 :::
 
 ## How to define MQL and SQL for your team

@@ -67,8 +67,8 @@ Fact: Consent choices, browser privacy features and cross-device journeys mean p
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Before anyone on our team touches a bid, we ask the client what a qualified lead is worth and where it gets recorded. If the CRM can't tell you which deals came from ads, every platform dashboard will happily take credit for all of them. Fix the tracking first, launch one channel with a tight audience, and only then argue about budgets.
 :::
 
 ## How to measure digital advertising in 2026

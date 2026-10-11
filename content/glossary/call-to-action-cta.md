@@ -69,8 +69,8 @@ Fact: Several competing goals split attention. Repeat the same primary CTA down 
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The CTA problems I see most often aren't about wording. They're about asking for too much too soon. Someone reading their first guide from you isn't ready to book a sales call. I map each page to where the reader probably is, then offer the next reasonable step: a checklist, a short audit, a call. Matching the ask to the moment matters more than the button.
 :::
 
 ## How to write and place a call to action

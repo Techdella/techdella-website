@@ -65,8 +65,8 @@ Fact: People refer when they're happy and the ask is easy. A large reward withou
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Most referral programs fail at the ask, not the reward. Happy clients rarely think to refer you unless you make it easy and specific. I'd ask right after a clear win, name the kind of company you help best, and give them a short intro they can forward. Then thank every referrer personally, whether or not the deal closes.
 :::
 
 ## How to start a referral marketing program

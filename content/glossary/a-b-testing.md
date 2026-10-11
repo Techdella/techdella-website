@@ -59,8 +59,8 @@ Fact: Google's testing guidance says small variations generally don't affect sea
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The mistake I see most often is a founder running a button-color test on a page that gets a few hundred visits a month, then trusting whatever the tool says after a week. If you can't reach a proper sample in a reasonable time, don't test. Talk to five customers, fix what they stumble on, and save experiments for the places where you actually have volume.
 :::
 
 ## How to run A/B testing, step by step

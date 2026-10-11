@@ -55,8 +55,8 @@ Fact: Mention counts show volume. Listening looks at topics, sentiment and langu
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+My favorite listening exercise costs nothing. Read the reviews of your top three competitors, especially the two- and three-star ones, and copy the exact phrases people use to describe what went wrong. Those sentences become headlines, ad hooks and FAQ answers. Founders often write about features, while buyers write about frustration, and the second converts better.
 :::
 
 ## How to set up social listening

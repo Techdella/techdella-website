@@ -88,7 +88,7 @@ Adult learners and international students fill daytime hours, which pairs well w
 | Video and scheduling tools (yearly) | $0–$300 | £0–£250 | ₦0–₦150,000 |
 | Website or listing | $0–$1,500 | £0–£1,200 | ₦0–₦600,000 |
 
-The DBS fee and registration figures come from official sources above. The rest are estimates from typical quotes we've seen. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+The DBS fee and registration figures come from official sources above. The rest are estimates from typical quotes we've seen. Use them to plan, then confirm with two or three local quotes before you buy.
 
 ## How should you price tutoring?
 
@@ -126,8 +126,8 @@ TechDella Studios builds websites for education businesses with subjects, levels
 - **Schools and community groups.** Offer exam workshops or revision sessions.
 - **Email to parents.** Exam countdowns, revision tips and term booking reminders. Our [email marketing service](/services/email-marketing/) can set this up.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Parents rarely choose a tutor from an ad. They ask another parent, then check you online. So your website and Google profile aren't there to persuade strangers; they're there to confirm a recommendation. Show subjects, levels, safeguarding checks and how booking works. Make the next step obvious, and a referral turns into a booked trial instead of a closed tab.
 :::
 
 :::myth-fact

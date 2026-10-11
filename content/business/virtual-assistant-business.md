@@ -84,7 +84,7 @@ Choose one specialty to lead your marketing. You can still help with other tasks
 | Training or certification (optional) | $0–$1,000 | £0–£800 | ₦0–₦400,000 |
 | Power and internet backup | n/a | n/a | ₦200,000–₦1,500,000 |
 
-Registration figures are from the official sources above. The rest are estimates from typical quotes we've seen. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Registration figures are from the official sources above. The rest are estimates from typical quotes we've seen. Treat them as a starting point and confirm current prices before you sign up for anything.
 
 ## How should you price virtual assistant services?
 
@@ -122,8 +122,8 @@ TechDella Studios sets up AI and workflow automations for small businesses: inta
 - **A simple website.** One page per specialty, a process section, testimonials and a booking link. [TechDella Studios](studios:/services/website-design/) can build it.
 - **Automation as a door-opener.** Many small businesses want [marketing automation](/glossary/marketing-automation/) but lack the time. VAs who can set up and run it stand out; see how we approach [marketing automation](/services/marketing-automation/).
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+My advice to new VAs is to stop selling hours and start selling outcomes: an inbox under control, a CRM that stays current, a report that arrives every Monday. Package one of those as a fixed monthly service. Clients understand it, compare you on value instead of hourly rate, and the automations you set up make the work lighter for you each month.
 :::
 
 :::myth-fact

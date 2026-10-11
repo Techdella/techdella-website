@@ -137,8 +137,8 @@ Fact: You can start with 10 to 20 clients from your existing classes or network 
 6. Automate reminders | Send class reminders and missed-class nudges automatically.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Online classes have one quiet problem: it's easy to skip when nobody notices you're missing. That's why I'd automate the missed-class nudge from day one. A friendly message after a couple of missed sessions keeps members connected to you. Retention is where an online coaching business earns its money; a full first month means little if people drift away by the third.
 :::
 
 Email is the backbone of an online coaching business. Welcome new subscribers with a short series, share a weekly practice tip, and announce new programmes to people who already trust you. Our [email marketing](/services/email-marketing/) and [marketing automation](/services/marketing-automation/) teams set up welcome series, reminders and win-back emails for service businesses.

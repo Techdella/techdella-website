@@ -56,8 +56,8 @@ Say you track 25 prompts across 3 tools, running each prompt twice to smooth out
 
 Next month you fix the outdated directory listing the tools keep citing, and tighten the [answer-first copy](/glossary/aeo/) on your services page. If accuracy rises and mentions hold, the fix worked. Single answers vary run to run, so only compare totals across the same prompt set.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When clients ask how they look in ChatGPT, I care about accuracy before mention rate. Being named with the wrong pricing or a service you dropped can cost you a deal. So the first month is usually cleanup: correct the facts on your site, update old listings and keep descriptions consistent. Then we track the same prompts monthly and watch the trend, not any single answer.
 :::
 
 ## How to improve LLM visibility

@@ -126,8 +126,8 @@ A useful positioning line: "I use AI to work faster, and I'm responsible for eve
 - **Invoicing** with a 50% deposit for new clients.
 - **Swipe file** of good copy in your niche, organised by format.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Good copywriters lose more time on intake than on writing. I'd never start a project without the client's proof in hand: real numbers, customer quotes and permission to use them. Copy without proof turns into adjectives, and adjectives don't sell. At TechDella, we ask for proof before we draft, and we flag any claim we can't verify so the client confirms it before anything goes live.
 :::
 
 ## Step 6: Find clients fast

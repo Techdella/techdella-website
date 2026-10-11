@@ -128,8 +128,8 @@ The fastest growth lever is rebooking. A client who rebooks before leaving costs
 6. Recruit renters or staff | Once your own diary is full, fill the other chairs.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The salons that fill their diaries fastest make booking effortless. If a client finds you on Google Maps at midnight, they should see your prices, real photos of your work and a button that books a slot with a deposit. Every extra step, like "DM for prices", loses some of them. Get booking and your listings right before you spend anything on promotion.
 :::
 
 ## Step 6: Market your salon locally

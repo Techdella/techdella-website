@@ -80,8 +80,8 @@ Fact: CTR measures interest in the ad. A campaign works when clicks turn into qu
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When a client sends me a report full of acronyms, I ask one question: which of these numbers would change what we do next week? Usually it's two or three. CTR, CPM and impressions help the person running the campaign. A founder needs cost per qualified lead and how many of those leads turned into revenue. Learn the terms, then report the few that drive decisions.
 :::
 
 ## How to use jargon without getting lost

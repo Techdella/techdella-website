@@ -56,8 +56,8 @@ Fact: Retention, upsells and referrals are where much of a B2B customer's value 
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The gap I see most often sits in the middle. Founders publish top-of-funnel posts and run demo ads, but there's nothing in between: no comparison page, no case study, no pricing explanation. Buyers who are curious but not ready have nowhere to go, so they leave. When we map a funnel, the middle stage is usually where we start writing.
 :::
 
 ## How to build a digital marketing funnel

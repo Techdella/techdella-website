@@ -57,8 +57,8 @@ Fact: Google ranks pages on helpfulness and E-E-A-T, however they were produced.
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Every draft that comes out of an AI tool at TechDella goes through a person who adds something the model couldn't know: an example from a client call, a judgment we'd stand behind, a screenshot from our own work. If an editor can't find anything to add, we don't publish the piece. That one rule protects quality better than any detector or style guide.
 :::
 
 ## How to use AI writing tools without hurting quality

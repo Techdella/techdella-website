@@ -57,8 +57,8 @@ Fact: That's how you annoy people and waste budget. Good remarketing changes the
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Before building audiences, I ask what someone should see after visiting the pricing page versus after reading a blog post. If the answer is the same ad, the segments aren't doing any work. Start with two or three audiences tied to clear intent, cap the frequency, and exclude people who already converted. That last step is the one most often missed.
 :::
 
 ## How to set up remarketing

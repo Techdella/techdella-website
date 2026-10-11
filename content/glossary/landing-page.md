@@ -70,8 +70,8 @@ Fact: Different audiences and offers need different messages. A page that matche
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The first thing I check on a landing page is whether it repeats the promise of the ad or email that sent people there. If the ad says "free audit" and the page opens with company history, visitors leave. Next comes proof near the form and one clear action. We change one thing at a time and compare against the page's previous version, not someone else's benchmark.
 :::
 
 ## How to build a landing page that converts

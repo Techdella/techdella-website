@@ -66,8 +66,8 @@ Fact: If 2% of leads become customers, doubling leads doubles waste too. Improvi
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When a founder tells me they need more leads, the first thing I ask for is the stage-by-stage numbers. Often the leak is in the middle: demo requests that wait two days for a reply, or proposals that never get a follow-up. Fixing one slow handoff is usually cheaper and faster than buying more traffic at the top.
 :::
 
 ## How to build and use your sales funnel

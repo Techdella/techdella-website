@@ -61,8 +61,8 @@ The agent's job, triggered by each new form:
 
 If review takes 3 minutes per lead, the team spends 150 × 3 = 450 minutes, 7.5 hours, instead of 25. The agent never sends email on its own, and every summary links to the sources it used so the salesperson can check.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Our rule is simple: an agent can research, summarize and draft, but a person decides what goes out under your name. The value is in the hours it saves before that decision, not in removing it. I'd start with one narrow, boring workflow, like preparing lead summaries, measure the time it saves for a month, and only then widen what the agent touches.
 :::
 
 ## How to start with AI agents in marketing

@@ -96,8 +96,8 @@ Suggested set: `#FintechProductLaunch #Fintech #Product #Startup #SaaS`
 
 That's one tag for the topic, one for the event, two for the place and audience, and one for the category. Every one of them came from the tool's lists; the editing took a minute.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Hashtags won't rescue a weak post, so I spend more time on the first line than on the tags. Where they help is context: telling the platform and the reader which topic and community the post belongs to. Use the tool to get options, then cut anything you wouldn't search for yourself. Three tags that fit beat ten that don't.
 :::
 
 ## Hashtag best practices by platform

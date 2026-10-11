@@ -129,8 +129,8 @@ Our growth audit shows where your leads come from, what's broken and what to fix
 
 For what investors expect at each stage, see our guide to [startup funding stages](/startup-funding-stages-for-african-founders/). If your first big "hire" is really a product build, compare it with working with a studio in [MVP development for startups](/mvp-development-for-startups/).
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The question I'd ask before any hire is: do you need a person, or an outcome? If you need someone to own a function every day, hire. If you need one result that takes several skills, like a website that brings in leads, coordinating five freelancers will cost you more time than you expect. Match the arrangement to the outcome.
 :::
 
 ## When an agency or studio is the better choice

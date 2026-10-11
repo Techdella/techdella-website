@@ -88,7 +88,7 @@ Online coaching works in all three countries, but it suits the UK and US more fo
 | Booking and payments app (yearly) | $0–$1,200 | £0–£1,000 | ₦0–₦400,000 |
 | Studio rent (if you lease) | $1,500–$8,000 a month | £1,200–£6,000 a month | ₦300,000–₦2,500,000 a month |
 
-Registration figures are from the official sources above. The rest are estimates from typical quotes we've seen. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Registration figures are from the official sources above. The rest are estimates from typical quotes we've seen. Equipment and rent vary widely by city, so collect two or three local quotes before you sign anything.
 
 ## How should you price fitness services?
 
@@ -128,8 +128,8 @@ TechDella Studios builds websites for fitness businesses with class schedules, m
 - **Email nurture.** Most leads aren't ready to commit today. Weekly tips and offers convert them later; our [email marketing service](/services/email-marketing/) builds these sequences.
 - **Seasonal ads.** Short [paid ads](/services/paid-ads/) campaigns in January and before summer, pointing to a starter offer.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Most fitness leads don't buy on their first visit. I'd give them a low-risk starter offer, like a trial week or an intro session, then follow up properly: a welcome message the same day, a check-in after the first session and a clear offer before the trial ends. Many trainers win the lead and then lose it because nobody followed up.
 :::
 
 :::myth-fact

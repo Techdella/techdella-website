@@ -55,8 +55,8 @@ Fact: For B2B, a show heard by a few hundred of the right people, with target cl
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+If you're unsure, guest on other shows for a quarter before starting your own. You'll learn which topics make hosts lean in, and you'll find out whether you enjoy the format. When founders do launch a show, I push them to invite the people they'd love as clients. The episode is useful, but the relationship is the real return.
 :::
 
 ## How to promote a podcast

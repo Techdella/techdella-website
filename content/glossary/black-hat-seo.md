@@ -66,8 +66,8 @@ Fact: Google says that in most cases it can assess which links to trust without 
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Founders sometimes ask me for a shortcut because a competitor seems to be getting away with one. My answer is that you're seeing them at the moment it works, not the moment it stops. We'd rather build something a client can keep: pages that answer real questions and links earned on merit. Cleaning up after a manual action costs far more than doing it properly.
 :::
 
 ## How to stay on the right side

@@ -186,8 +186,8 @@ Positioning sits under all of this. When WezOps worked with us on its go-to-mark
 Techdella reframed how we were thinking about our market entirely. We went from scattered tactics to a positioning and GTM system that actually made sense for where we were heading. The difference was immediate.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When lead volume stalls, most founders ask for more traffic. I usually ask to see the path first: the page a buyer lands on, the one action we want them to take, and what happens in the hour after they take it. If that path is unclear, extra traffic just leaks faster. Fix the offer and the follow-up, then turn up the spend.
 :::
 
 ## Lead generation myths

@@ -127,8 +127,8 @@ We look at how offices, schools and facilities managers find you, and give you a
 - **Be findable.** Buyers search "cleaning supplies supplier [city]" when their current supplier lets them down. A clear website and Google profile help. See our [local SEO](/services/local-seo/) work.
 - **Build a target list.** Our [lead generation](/services/lead-generation/) team covers how to build and work a list of [B2B](/glossary/business-to-business/) buyers.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When you sell to businesses, the first sale is rarely the hard part. Keeping the account is. I'd make reordering so easy that switching to a competitor feels like more work: a fixed delivery day, a standing order the office manager only has to confirm, and one clean monthly invoice. Then check in each quarter, before they have a reason to shop around.
 :::
 
 :::myth-fact

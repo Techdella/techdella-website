@@ -122,8 +122,8 @@ We review your Google Business Profile, website and local search visibility, the
 
 Keeping families is as important as finding them. Clear communication, daily updates and reliable hours drive [customer retention](/glossary/customer-retention/) in childcare more than anything else.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Parents are choosing someone to trust with their child, so your marketing has to answer safety questions before price questions. I'd lead the website and Google profile with your registration details, a typical day and real photos of the space. Reviews from current parents carry more weight than any ad. Make it easy for them to recommend you, then ask.
 :::
 
 :::myth-fact

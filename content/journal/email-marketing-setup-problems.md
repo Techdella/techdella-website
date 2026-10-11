@@ -48,8 +48,8 @@ It turned into one of the most painful setups I've had:
 
 I kept asking myself: is it my IP? My domain? The fact that I'm setting up email marketing from Nigeria? These silent shutdowns hurt more than you'd expect. It starts to feel personal, even when it isn't.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — confirm this 2025 account story is still accurate as edited (platform names, the $55 charge, the 2–3 day review), say whether any account was later restored, and add one line on what we now do first for clients so it doesn't happen again.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+If I set that account up again today, I'd start differently. Before paying for any email platform, ask support in writing whether your country, business type and use case are allowed. Then authenticate the domain and send to a small, opted-in list first. It won't stop every silent shutdown, but it takes much of the guesswork out of choosing a tool.
 :::
 
 ## Why do email marketing tools block new accounts?

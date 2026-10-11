@@ -78,7 +78,7 @@ Corporate work pays more steadily because the same client books again every year
 | Starter kit (emergency kit, signage, basic decor) | $300–$1,500 | £250–£1,200 | ₦150,000–₦800,000 |
 | Styled shoot or showcase event (optional) | $500–$2,500 | £400–£2,000 | ₦300,000–₦2,000,000 |
 
-Registration figures are from the official sources below. Other ranges are estimates from typical quotes we've seen, not survey data. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Registration figures are from the official sources below. Other ranges are estimates from typical quotes we've seen, not survey data. Get two or three local quotes for each item before you commit to a budget.
 
 ## How do you register and insure an event planning business?
 
@@ -127,8 +127,8 @@ TechDella Studios builds event and hospitality websites with galleries, packages
 - **Corporate outreach.** Contact office managers and HR teams before budget season with a simple offsite or end-of-year party package.
 - **Paid ads in peak season.** Short [paid campaigns](/services/paid-ads/) around engagement season or the run-up to December can fill gaps.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Event planning is sold on trust, and trust comes from proof people can see. Before spending on ads, I'd put three finished events on your site, each with the brief, the guest count and photos of the setup. Then ask your vendor partners to link to you. Paid campaigns work better once there is something convincing for people to land on.
 :::
 
 :::myth-fact

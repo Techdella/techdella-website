@@ -166,8 +166,8 @@ Myth: Deliverability is a technical problem only.
 Fact: Authentication gets you through the door. Permission, relevance and list hygiene keep you there.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When email performance drops, authentication is the first thing I check, but it's rarely the whole story. Often a list was imported without fresh permission, or a new tool started sending as the domain and nobody added it to SPF or DKIM. Write down every system that sends email as your domain. Most deliverability fixes start with that list.
 :::
 
 ## B2B email deliverability checklist

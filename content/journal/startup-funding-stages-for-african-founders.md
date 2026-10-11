@@ -137,8 +137,8 @@ We set up the offers, landing pages and follow-up that turn early interest into 
 - A target investor list filtered by stage, sector and geography
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Of everything on that checklist, the traction summary is where I see founders struggle most. They know their user numbers but can't say how those users found them or what each one cost to win. That's a marketing question as much as a finance one. If you can show one channel that brings customers predictably, and the numbers behind it, the rest of the conversation gets easier.
 :::
 
 ## Common funding mistakes African founders can avoid

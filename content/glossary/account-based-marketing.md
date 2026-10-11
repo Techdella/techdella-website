@@ -59,8 +59,8 @@ Fact: A small B2B team can run one-to-few ABM with LinkedIn company targeting, a
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Start smaller than you think. A list of 30 accounts you've actually researched beats 500 names pulled from a database. I ask teams one question before any ABM work: can sales and marketing agree on the same list and the same reason each account should care? If the answer is no, the tooling won't fix it. Get that agreement first, then build the ads and emails around it.
 :::
 
 ## How to start account-based marketing

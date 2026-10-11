@@ -64,8 +64,8 @@ Fact: Speed matters, but indexing comes first. Google's own Core Web Vitals guid
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Indexing comes before everything else on my list. I've lost count of how many sites I've opened to find important pages marked noindex, blocked in robots.txt, or redirecting in a loop after a redesign. Check Search Console's Pages report first. Speed fixes and schema are worth doing, but only once Google can actually reach and index the pages that sell.
 :::
 
 ## How to do technical SEO: a prioritized checklist

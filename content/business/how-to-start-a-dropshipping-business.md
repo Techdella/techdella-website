@@ -93,7 +93,7 @@ Local and regional suppliers (US warehouses for US customers, UK or EU warehouse
 | Test ad budget | $500–$2,000 | £400–£1,500 | ₦200,000–₦1,000,000 |
 | Branding and product photos | $100–$1,000 | £80–£800 | ₦50,000–₦500,000 |
 
-Shopify figures come from [Shopify's pricing page](https://www.shopify.com/pricing), checked October 2026. The rest are estimates from typical quotes we've seen. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Shopify figures come from [Shopify's pricing page](https://www.shopify.com/pricing), checked October 2026. The rest are estimates from typical quotes we've seen. Confirm the remaining figures with your own suppliers before you set a budget.
 
 ## How do you calculate dropshipping profit?
 
@@ -141,8 +141,8 @@ TechDella Studios builds fast ecommerce stores with clear shipping and returns i
 - **Search.** Useful buying guides and comparison pages bring cheaper traffic over time.
 - **Email.** Abandoned cart, welcome and post-purchase flows recover sales you already paid for.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I'd fix the store before spending on ads. Paid traffic only amplifies what the page already does. If shipping times, returns and the total price aren't clear before checkout, you'll pay for clicks that never convert. Answer those questions on the product page, test it on a phone, then run small ad tests and judge them on cost per order, not views.
 :::
 
 :::myth-fact

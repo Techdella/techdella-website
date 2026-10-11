@@ -58,8 +58,8 @@ A hypothetical cybersecurity firm targets 400 named accounts.
 
 Total paid spend: $4,800 + $1,500 retargeting = $6,300. Cost per opportunity: $6,300 ÷ 4 = **$1,575**. Whether that's good depends on deal size, which is the point: judge the sequence, not the post.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The founders who do well with these ads were already posting before they paid anything. Sponsorship amplifies a voice; it can't invent one. My advice is to post consistently first, sponsor only the posts that earned real comments from the right people, and plan the retargeting step before you launch. Otherwise you're paying for likes with nowhere to send the people who gave them.
 :::
 
 ## How to run LinkedIn Thought Leader Ads

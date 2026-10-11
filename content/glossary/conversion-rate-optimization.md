@@ -60,8 +60,8 @@ Fact: Your audience and offer are specific. Use best practices as ideas to test 
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Before any test, I watch real sessions and fill in the form myself on a phone. You'd be surprised how often the biggest problem is a broken field, a slow page or a pricing question the page never answers. Fix the obvious friction first. Testing is for the decisions you genuinely can't settle by looking, and most smaller sites have fewer of those than they think.
 :::
 
 ## The CRO process

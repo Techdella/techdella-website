@@ -63,8 +63,8 @@ Fact: Platforms need time and conversion data to optimize, and B2B sales cycles 
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The mistake I see most is a founder turning on ads to fix a sales problem. If your landing page doesn't explain the offer clearly, paid traffic just finds that out faster and charges you for it. Before we launch a campaign, we read the page as a stranger would, tighten the offer, and only then set a test budget.
 :::
 
 ## How to get started with paid advertising

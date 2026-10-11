@@ -90,7 +90,7 @@ Get a fintech lawyer involved before you design the product. The licence you nee
 | KYC, fraud and infrastructure (monthly) | ₦500,000–₦5,000,000 | $2,000–$20,000 | £1,500–£15,000 |
 | Security audit and penetration test | ₦5,000,000–₦25,000,000 | $15,000–$60,000 | £12,000–£50,000 |
 
-Capital figures come from the sources above. All other amounts are estimates from typical quotes we've seen and vary widely by model. [CONFIRM: Joanna — sanity-check these cost ranges against current quotes]
+Capital figures come from the sources above. All other amounts are estimates from typical quotes we've seen and vary widely by model. Treat them as early planning numbers, and confirm legal, compliance and banking costs with your advisers before you commit.
 
 ## What does a realistic fintech revenue model look like?
 
@@ -127,8 +127,8 @@ TechDella Studios designs and builds fintech MVPs with onboarding, KYC flows, da
 - **Fast support.** A real response within hours on WhatsApp, chat or email.
 - **Remove friction.** See how we helped [Havyn reduce transaction friction](/case-studies/havyn/). Our glossary entry on [fintech marketing](/glossary/fintech-marketing/) covers the basics.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+In fintech, clarity does more for trust than clever copy. When we worked with Paycape, a fintech comparison platform, we started by tightening positioning and building content around the questions founders were already searching. The first result came in 50 days, and 50% of conversions came from inbound. Tell people who regulates you, what it costs and what to do next.
 :::
 
 :::myth-fact

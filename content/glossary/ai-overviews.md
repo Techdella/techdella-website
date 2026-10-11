@@ -54,8 +54,8 @@ AI Mode is Google's separate, conversational search experience that uses the sam
 
 A query like "how to set up DMARC for Google Workspace" fans out into sub-questions: what DMARC is, what record to publish, which policy to start with. A page with a clear H2 "Which DMARC policy should you start with?" and a two-sentence answer ("Start at p=none to collect reports, then move to quarantine and reject once all senders pass") gives Google an exact passage for one part of the Overview. The page does not need to rank first for the head term to be cited.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I tell founders to stop chasing the head term and look at the questions underneath it. When we plan a page now, we list the sub-questions a buyer would ask and give each one a clear heading and a short, direct answer. That structure helps readers first. Whether Google cites the page is never guaranteed, but a vague page gives it nothing to quote.
 :::
 
 ## How to get cited in Google AI Overviews

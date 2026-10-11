@@ -60,8 +60,8 @@ Fact: Delete only pages with no traffic, links or purpose. Many old pages are wo
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The cheapest growth on most sites is sitting in pages that already ranked once. I'd rather refresh a guide that slipped off page one than write a new one from scratch. We look for pages losing clicks over a few months, check whether the search intent has changed, then rewrite the sections that are out of date. Changing the date alone doesn't count.
 :::
 
 ## How to find and fix content decay

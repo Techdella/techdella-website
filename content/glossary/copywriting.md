@@ -50,8 +50,8 @@ Fact: Clear beats clever. A plain headline that names the reader's problem and t
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I read headlines out loud to the founder and ask, "Would your customer say it like that?" Usually the answer is no, because the copy uses the company's internal language. The best lines we write often come straight from customer calls and reviews. Collect the exact phrases people use for their problem, and build the page around those words rather than your own.
 :::
 
 ## How to write copy that converts

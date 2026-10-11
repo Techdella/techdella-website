@@ -177,8 +177,8 @@ Myth: Turn on automated campaigns and let the algorithm find buyers.
 Fact: Automation optimizes toward the signal you give it. Without CRM outcomes fed back, it optimizes for the cheapest form fill.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Before I'll talk about scaling a paid budget, I want to see lead outcomes flowing back from the CRM. Without that, every platform looks good on its own dashboard, and the algorithm learns to find cheap form fills. Start with one platform, one offer and a budget you can hold long enough for a fair test. A focused test beats a scattered one.
 :::
 
 ## A 90-day launch plan

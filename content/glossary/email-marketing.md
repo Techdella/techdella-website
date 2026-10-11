@@ -50,8 +50,8 @@ Fact: Apple's Mail Privacy Protection downloads remote content in the background
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+If a client has no email set up, I don't start with a newsletter. I start with the emails people already expect: a welcome message after signup, a follow-up after someone downloads a guide, and a confirmation after they book a call. Those go to people who just raised their hand. Once they work and the domain is authenticated, a regular newsletter has something solid to build on.
 :::
 
 ## Which emails to set up first

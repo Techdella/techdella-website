@@ -144,8 +144,8 @@ Your first clients usually come from people who already trust you. After that, y
 6. Ask for referrals and testimonials | Ask within a week of delivery, while the result is fresh.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Designers tend to show finished visuals and skip the thinking, but buyers hire for the thinking. For each portfolio piece, I'd add three short lines: what the client needed, the decision you made and why. That turns a nice image into evidence you understand business problems. It also gives you a ready answer when a prospect asks what you'd do for them.
 :::
 
 ## Step 7: Run it like a business

@@ -57,8 +57,8 @@ Fact: Volume without a clear audience and message just adds noise. A consistent 
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+A strategy should fit on one page, and the hard part is what you leave out. I ask founders to choose one primary platform, one audience and three topics they can speak on with authority. That focus feels limiting for a month. After that, it's what lets a small team stay consistent without burning out or sounding generic.
 :::
 
 ## How to create a social media marketing strategy

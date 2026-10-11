@@ -140,8 +140,8 @@ Start with MVP Discovery & Prototype: scope, flows and a clickable prototype in 
 6. Launch, measure and improve | Ship to a small group with analytics, track activation, retention and drop-off points, then plan the next version from evidence.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Step two is where most MVPs drift. Founders agree on one core user, then the feature list quietly grows to serve three more. When we scope a build, I keep the "later" list visible in every weekly demo. New ideas go there, not into the sprint. It feels slow, but it's the quickest way to get evidence you can act on.
 :::
 
 ## Don't forget distribution

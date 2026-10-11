@@ -115,8 +115,8 @@ The SBA's startup cost guide suggests counting at least one year of monthly expe
 Tell TechDella Studios what you're building. We help founders scope, design and ship MVPs.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The startups I worry about are the ones that build for six months before showing anyone. A one-page site that explains the problem, plus a small ad test or twenty honest conversations, tells you whether people care, and it costs far less than a build. If nobody joins the waitlist, that isn't failure. It's the cheapest lesson you'll get.
 :::
 
 ## Who you need on the founding team

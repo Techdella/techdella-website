@@ -69,8 +69,8 @@ Fact: Gaps in tracking matter more than the model. Missing UTM tags, lost consen
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I care less about which model a team picks than whether their tracking is honest. Before we argue over first touch versus data-driven, we check UTM tagging, the consent setup and whether the CRM records how a deal really started. Then we ask new customers where they heard of us. Self-reported answers are messy, but they surface the podcasts and referrals no model can see.
 :::
 
 ## How to use attribution modeling well

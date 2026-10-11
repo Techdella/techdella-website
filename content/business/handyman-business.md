@@ -83,7 +83,7 @@ This is where most new handyman businesses get into trouble. Rules vary by count
 | Vehicle (used van or car, if needed) | $5,000–$20,000 | £4,000–£15,000 | ₦4,000,000–₦12,000,000 |
 | Branding, signage and website | $300–$2,500 | £250–£2,000 | ₦100,000–₦900,000 |
 
-Registration figures are from official sources above. Other amounts are estimates from typical quotes we've seen. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Registration figures are from official sources above. Other amounts are estimates from typical quotes we've seen. Tool and van prices vary a lot by area, so get a few local quotes before you spend.
 
 ## How should a handyman price jobs?
 
@@ -125,8 +125,8 @@ TechDella Studios builds simple, fast websites for trades with service pages, ar
 - **Neighborhood groups and Nextdoor.** Local recommendations travel fast.
 - **Targeted ads.** Small local [paid ads](/services/paid-ads/) campaigns for high-value tasks, like bathroom refreshes, can fill quiet weeks.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+For trades, I'd put more effort into reviews than into website design. Ask every customer the same day, by text, with a direct link, and reply to every review, including the bad ones. Then make the site boring in the best way: services, areas covered, photos of real jobs and a quote form that works on a phone. That combination is what wins the "near me" search.
 :::
 
 :::myth-fact

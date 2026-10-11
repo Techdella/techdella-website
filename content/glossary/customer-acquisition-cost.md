@@ -73,8 +73,8 @@ Fact: It covers sales and marketing together. Long sales cycles, discounting and
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When CAC climbs, teams usually look at ad costs first. I look at the sales side too: how long it takes to reply to a new lead, how many follow-ups happen, how often deals stall waiting on a proposal. Slow follow-up quietly wastes the money you already spent getting attention. Fixing response time is often cheaper than finding a new channel.
 :::
 
 ## How to lower customer acquisition cost

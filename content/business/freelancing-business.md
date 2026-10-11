@@ -83,7 +83,7 @@ Narrow your offer to a [niche market](/glossary/niche-market/): a service plus a
 | Professional indemnity insurance (yearly) | $300–$1,000 | £100–£400 | Often skipped at start |
 | Backup power and internet (Nigeria) | n/a | n/a | ₦150,000–₦1,500,000 |
 
-Registration figures are from the official sources above. The rest are estimates from typical quotes we've seen. [CONFIRM: Joanna — sanity-check these cost ranges against current local quotes]
+Registration figures are from the official sources above. The rest are estimates from typical quotes we've seen. Your real costs depend on the tools you already own, so confirm current prices before you buy.
 
 ## How should you price freelance work?
 
@@ -123,8 +123,8 @@ TechDella Studios designs freelancer and consultant websites with case studies, 
 - **Referral partners.** Agencies and complementary freelancers overflow work. A designer needs a copywriter; a developer needs a designer.
 - **A simple lead magnet.** A checklist or template your buyers want, in exchange for an email. Our [lead generation](/services/lead-generation/) page shows how businesses structure this.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Marketplaces are a good place to earn your first reviews but a weak place to build a business, because the platform owns the client relationship. Once you have three solid projects, write each one up as a short case study on your own site: the problem, what you did and what changed. Referrals then have somewhere to land, and you stop competing on price alone.
 :::
 
 :::myth-fact

@@ -72,8 +72,8 @@ Pricing starts at a fixed monthly retainer. We do not offer one-off audits.
 
 Northwind is a fictional brand. Notice the blockquote states facts a model might otherwise get wrong, and the "Optional" section marks content a tool can skip.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I see llms.txt as a cheap, sensible step, not a ranking lever. It doesn't take long, and it forces a useful exercise: writing down, in plain sentences, what your company does and which pages matter most. We generate ours from the CMS so it stays current. If writing it feels hard, that's a sign your positioning needs work before any AI tool reads it.
 :::
 
 ## How to create an llms.txt file

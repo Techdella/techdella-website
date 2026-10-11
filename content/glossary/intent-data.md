@@ -62,8 +62,8 @@ A hypothetical B2B cybersecurity firm has 300 target accounts and two salespeopl
 
 Two salespeople can properly work 9 accounts a week. They can't work 300.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Intent data is only useful if someone acts on it this week. A common mistake is buying a third-party feed, pushing every surging account into the CRM and then changing nothing about how sales works. Start with your own first-party signals, such as pricing and case study visits, because they're free and specific. Add a paid feed only when sales has the time to follow up on it.
 :::
 
 ## How to use intent data

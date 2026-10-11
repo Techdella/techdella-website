@@ -60,8 +60,8 @@ Take the question "How long does B2B SEO take to work?"
 
 The second version gives the engine a quotable sentence with a number and a reason. It also helps the human reader, which is the point. Note that a figure like "2–4 months" has to be one you can stand behind from your own data before it goes live.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+When we rewrite pages for answer engines, the hardest part is rarely the format. It's getting the team to commit to a direct answer. Founders hedge because they're afraid of being wrong. I'd rather publish a clear answer with its conditions spelled out than three paragraphs of "it depends." If you can't state it plainly, that's a sign you need better data, not more words.
 :::
 
 ## How to do AEO

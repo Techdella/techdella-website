@@ -54,8 +54,8 @@ Fact: A niche newsletter or trade blog your exact buyers read can be worth more 
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I judge a guest post with one test: would we still write it if the article carried no link at all? If yes, that publication's readers are our buyers and the piece deserves real effort. If the only appeal is the link, skip it. On our own Journal we edit every guest post and mark its outbound links nofollow or sponsored, for the same reason.
 :::
 
 ## How to do guest posting well

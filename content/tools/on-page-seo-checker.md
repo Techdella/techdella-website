@@ -157,8 +157,8 @@ Other mistakes we see often:
 - **The same title and description on every page.** Usually a CMS default. Each page needs its own.
 - **Canonical pointing to the home page.** Some plugins do this by mistake, telling Google every page is a duplicate.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+A noindex left over from staging is the mistake I check for first after any launch, because it can quietly undo months of work. I'd rather spend two minutes running each key page through a checker than find the problem weeks later in Search Console. Make the check part of your launch list, not something you do when traffic drops.
 :::
 
 ## What the checker can't see

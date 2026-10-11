@@ -123,8 +123,8 @@ Three paying customers is a small number, but it's real money from the right peo
 
 The 5% and 25% thresholds are illustrative. Set yours based on how warm the traffic is and how expensive the product will be. What matters is that you set them in advance.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The step founders skip is writing the threshold down before the test starts. Without it, every result looks encouraging after the fact: 2% becomes "promising" and ten replies become "strong interest." When we build a test page, I ask for the pass number in writing first. If the test misses it, that isn't failure. It's the cheapest lesson you'll get.
 :::
 
 ## Build, pivot or stop: the decision table

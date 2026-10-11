@@ -133,8 +133,8 @@ TechDella Studios builds simple websites and order pages so restaurants and hous
 - **No backup for pumps and aeration.** A power cut on a hot night can kill a tank. Plan backup power before you stock.
 - **No records.** Without feed, mortality and weight records, you can't tell why a cycle lost money.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Farmers who struggle to sell usually started marketing at harvest. I'd start the conversation the day you stock. Tell restaurants and fish sellers which sizes you'll have and when, keep a simple contact list of every buyer, and send a message before each harvest. A short, reliable list of repeat buyers is worth more than a busy social media page.
 :::
 
 :::myth-fact

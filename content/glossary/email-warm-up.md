@@ -65,8 +65,8 @@ A hypothetical SaaS company moves its newsletter to a new subdomain, news.exampl
 
 The rule: only step up if complaints stay under 0.1% and bounces stay low in the previous step. If a metric spikes, hold or step back for a few days. These numbers are a starting point, not a standard. Your platform may publish its own guidance.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+The mistake I see is impatience. A team moves to a new sending domain on Monday and wants to email the whole list by Friday, because the launch date is fixed. I'd rather push the launch than burn the domain. Start with your most engaged readers, watch complaints every day, and treat a slower first month as the price of reliable inbox placement afterward.
 :::
 
 ## How to warm up an email domain

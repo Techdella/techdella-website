@@ -196,8 +196,8 @@ Signs you have something people want:
 
 If none of those are true, pause the marketing. Go back to talking with potential customers about their problem, not your solution. Our guide to [product validation for startups](/product-validation-for-startups/) walks through how.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example: how a client (with permission) or Techdella itself won its first customers, which channel worked, and one real number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Your first customers rarely come from the channel you'll scale later. They come from conversations: people you already know, communities you're active in, and direct outreach where you hear objections in real time. Don't rush into ads or SEO before you can explain, in the buyer's own words, why the first ten said yes. That explanation becomes your marketing.
 :::
 
 ## Common mistakes when chasing your first customers

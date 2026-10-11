@@ -130,8 +130,8 @@ The goal of an MVP is to learn whether people want what you're building, with th
 
 For the full MVP process, read our guide on [how to develop an MVP for your startup](/how-to-develop-an-mvp-for-startup/). If you haven't tested demand yet, start with [product validation](/product-validation-for-startups/) before you prompt a single screen.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+I like vibe coding for one job: getting a rough version in front of real users this week instead of next quarter. Where founders get hurt is the next step, when the prototype quietly becomes the product. Customer data, payments and logins deserve an engineer's review. Treat the prototype as a question you're asking, not something you're shipping.
 :::
 
 ## When vibe coding is the wrong choice

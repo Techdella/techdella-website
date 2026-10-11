@@ -133,8 +133,8 @@ TechDella Studios builds simple, fast websites with your services, prices and lo
 - **Unclear prices.** Haggling at the counter slows service and annoys regulars. Post prices and stick to them.
 - **Ignoring security.** Shared machines attract misuse. Lock admin access, update antivirus and keep a visitor log during busy periods.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+For a business this local, being findable is half the marketing. I'd keep the Google Business Profile current, with accurate opening hours, a photo of the shopfront and the full price list for printing and registrations. When people face a portal deadline, they search, call and walk in within the hour. If your hours online are wrong, that customer goes to the next shop.
 :::
 
 :::myth-fact

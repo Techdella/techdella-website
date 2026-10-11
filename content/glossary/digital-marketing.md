@@ -60,8 +60,8 @@ Fact: Spreading a small budget across seven channels usually means doing all of 
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Founders often ask which channel to start with. My answer depends on where buyers already look. If people search for the problem, we start with search and a landing page built to convert. If they don't search yet, paid and social create that demand first. Either way, we connect email and tracking from day one, so the second channel builds on the first instead of starting over.
 :::
 
 ## How to build a digital marketing plan

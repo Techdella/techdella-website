@@ -53,8 +53,8 @@ Bulk senders must also authenticate with SPF, DKIM and DMARC and support one-cli
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+If you resell email under your own brand, you own the deliverability risk for every client, so I'd set rules before signing anyone. Each client sends from their own authenticated domain, imports only lists they can show consent for, and gets warmed up gradually. One client with a purchased list can hurt the reputation of everyone sharing the setup.
 :::
 
 ## How to set up white label email marketing

@@ -129,8 +129,8 @@ Tell TechDella Studios about your business. We design and build portfolio websit
 - **Local search.** People search "interior decorator near me" or "interior designer in Lekki." A Google Business Profile with project photos and reviews helps; see our [local SEO](/services/local-seo/) work.
 - **A focused website.** Show three to five strong projects, your process and pricing approach, and a way to book a consultation. Clear [branding](/glossary/branding/) helps you look like the studio clients expect.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+A decorator's portfolio is only as strong as its explanations. Before-and-after photos get attention, but clients book when they understand your process, your timeline and roughly what a project costs. I'd add a short story to each project: the brief, the constraint and the decision you made. That's what separates your studio from a mood board on Pinterest.
 :::
 
 :::myth-fact

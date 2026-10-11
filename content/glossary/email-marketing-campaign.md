@@ -52,8 +52,8 @@ Fact: Untargeted sends raise unsubscribes and complaints, which can push future 
 
 ## An example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Every campaign we write starts with a one-line brief: who it's for, the one thing we want them to do, and what we'll leave out. If the brief needs two calls to action, it's two campaigns. I'd rather send a short email to a small, engaged segment than a long one to the whole list, because a burst of complaints follows you into every send after it.
 :::
 
 ## How to build an email marketing campaign

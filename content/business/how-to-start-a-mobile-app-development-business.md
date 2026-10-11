@@ -133,8 +133,8 @@ You don't need a big marketing budget. You need one repeatable channel and proof
 - **Search:** clients search phrases like "app developer for clinics" or "Flutter developer Lagos." A focused website with case studies and one page per niche can rank for these over time. Our team covers this in [lead generation](/services/lead-generation/).
 - **Marketplaces:** fine for early reviews, but price pressure is high. Use them to build proof, then move clients to direct contracts.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Most new app studio websites I see say "we build apps for everyone." Nobody searches for that. Pick one or two niches, write a page for each, and show a real project with screenshots on it. A narrow site feels risky, but it's what makes a buyer think, "they've done this for someone like me." You can widen your focus once the first niche is paying.
 :::
 
 ## Myths that cost new app studios money

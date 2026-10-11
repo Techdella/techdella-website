@@ -132,8 +132,8 @@ Families also search online, often in a hurry after a hospital stay. A clear web
 6. Audit monthly | Review visit logs, missed visits, complaints and staff turnover every month.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Families choosing care are anxious and short on time, so your website has one job: say where you work, what care you offer and how quickly you can start, right at the top. I'd put a phone number someone actually answers ahead of any clever design. Hire your carers first, though. Marketing a service you can't staff damages trust fast.
 :::
 
 ## Step 6: Show up when families search

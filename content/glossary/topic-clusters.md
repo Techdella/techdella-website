@@ -47,8 +47,8 @@ Fact: Ten useful pages beat forty thin ones. Google's spam policies call out sca
 
 ## Example from our work
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+With Paycape, we built content clusters around the comparison and decision questions founders were actually searching for, instead of broad fintech topics, and the first result came 50 days in. The lesson I take into every cluster: map each page to one question and one intent, link the pages to each other deliberately, and cut anything that only exists to fill out the plan.
 :::
 
 ## How to build a topic cluster

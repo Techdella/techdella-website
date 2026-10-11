@@ -140,8 +140,8 @@ Fact: The ASA says platform labels may be enough only if they're upfront, clear 
 6. Launch one owned product | Something small your audience already asks for.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Brands don't pay for followers; they pay for what happens after a post. So I'd report results from your very first campaign, even an unpaid one: views, clicks, saves and what your audience said. Over time, that report becomes your strongest pitch. Keep your media kit on your own website, too, where an algorithm change can't take it away.
 :::
 
 Your platforms can change their algorithm or suspend your account overnight. A website with your media kit and an [email list](/services/email-marketing/) give you an audience and a shopfront you own.

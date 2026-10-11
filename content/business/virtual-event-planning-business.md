@@ -146,8 +146,8 @@ Fact: Online and hybrid formats remain part of how organisations run webinars, t
 6. Turn one-offs into retainers | Propose a monthly webinar series after every successful event.
 :::
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Clients often judge a virtual event by attendance on the day, but much of the value sits in the follow-up. I'd build the post-event email sequence into every package: the recording, a useful resource and a clear next step for attendees. When you can show a client what happened after the webinar, you're selling growth rather than logistics.
 :::
 
 :::cta "Want your event business to generate leads, not just attendees?" "Get a growth audit" /growth-audit/

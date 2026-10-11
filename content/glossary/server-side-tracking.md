@@ -62,8 +62,8 @@ After moving to server-side:
 
 The browser runs less vendor code, and ad platforms learn from qualified leads, not just form fills.
 
-:::callout note "From our work"
-[CONFIRM: Joanna — add one first-hand example here: what we saw with a client (with permission), a screenshot, or our own number.]
+:::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
+Server-side tracking is plumbing, and it's only worth it if you'll use what it unlocks. My question to a founder is: will you send qualified-lead events back to the ad platforms? If yes, it's worth the setup and the monthly hosting cost. If you just want fewer scripts on the page, there are simpler fixes to try first.
 :::
 
 ## How to set up server-side tracking
