@@ -1,0 +1,118 @@
+// Phase 4 pages (worker T2): Journal (localhost:8082) and Studios (localhost:8083).
+// Pages come from theme patterns via `wp td preview:seed`; the Journal needs published
+// posts (local sample fixtures) and Studios needs studio_work items.
+// Every page: 200, one H1, axe clean, no horizontal scroll at 390px.
+import { test, expect } from '@playwright/test';
+import { site, expectNoA11yViolations, expectNoHorizontalScroll } from './helpers.js';
+
+const PAGES = [
+  ['journal', '/'],
+  ['journal', '/newsletter/'],
+  ['journal', '/write-for-us/'],
+  ['studios', '/'],
+  ['studios', '/work/'],
+  ['studios', '/start/'],
+  ['studios', '/about/'],
+  ['studios', '/mvp-calculator/'],
+  ...['mvp-development', 'ai-automation', 'ui-ux-design', 'website-design', 'branding', 'graphic-design', 'motion-design'].map((s) => ['studios', `/services/${s}/`]),
+];
+
+async function check(page, url, { axe = true } = {}) {
+  const res = await page.goto(url);
+  expect(res.status(), url).toBe(200);
+  await expect(page.locator('h1'), url).toHaveCount(1);
+  const html = await page.content();
+  expect(html, url).not.toMatch(/(Warning|Notice|Fatal error)<\/b>:/);
+  if (axe) await expectNoA11yViolations(page);
+}
+
+test.describe('Journal + Studios pages', () => {
+  for (const [s, path] of PAGES) {
+    test(`${s} ${path}`, async ({ page }) => {
+      await check(page, site(s, path));
+    });
+  }
+
+  test('journal home shows real posts @smoke', async ({ page }) => {
+    await page.goto(site('journal', '/'));
+    await expect(page.locator('.td-post-featured')).toHaveCount(1);
+    const cards = page.locator('.td-post-grid__cards .td-post-card__link');
+    expect(await cards.count()).toBeGreaterThan(0);
+    // Real posts link to the Journal itself, never to an inline "Example".
+    await expect(page.locator('.td-post-grid .td-label-example')).toHaveCount(0);
+    await expect(page.locator('.td-newsletter form')).toHaveCount(1);
+  });
+
+  test('studios home renders the prototype sections @smoke', async ({ page }) => {
+    await page.goto(site('studios', '/'));
+    await expect(page.locator('h1')).toHaveCount(1);
+    for (const id of ['services', 'work', 'team', 'process', 'packages']) {
+      await expect(page.locator(`#${id}`), id).toHaveCount(1);
+    }
+    // Concept work is always labelled.
+    const concept = page.locator('.td-case-card--concept');
+    const n = await concept.count();
+    for (let i = 0; i < n; i++) await expect(concept.nth(i)).toContainText('Concept');
+    // Prices stay placeholders until the owner supplies them.
+    await expect(page.locator('#packages')).toContainText('[PRICE]');
+  });
+
+  test('journal post: header, toc, tldr, author box, related', async ({ page }) => {
+    await page.goto(site('journal', '/'));
+    const href = await page.locator('.td-post-featured a[href*="localhost"]').first().getAttribute('href').catch(() => null)
+      || await page.locator('.td-post-grid__cards .td-post-card__link').first().getAttribute('href');
+    await check(page, href);
+    await expect(page.locator('.td-post-header h1')).toHaveCount(1);
+    await expect(page.locator('.td-toc')).toHaveCount(1);
+    await expect(page.locator('.td-author-box')).toHaveCount(1);
+    // TOC links point at real heading ids.
+    const first = await page.locator('.td-toc a').first().getAttribute('href');
+    await expect(page.locator(first)).toHaveCount(1);
+  });
+
+  test('journal category + author archives', async ({ page }) => {
+    await page.goto(site('journal', '/'));
+    const cat = await page.locator('.td-post-grid__filters a:not([aria-current])').first().getAttribute('href');
+    await check(page, cat);
+    await expect(page.locator('.td-post-grid__filters [aria-current="page"]')).toHaveCount(1);
+    await page.goto(site('journal', '/'));
+    const author = await page.locator('.td-post-featured a[rel="author"], .td-post-header a[rel="author"]').first().getAttribute('href').catch(() => null);
+    if (author) await check(page, author);
+    await check(page, site('journal', '/?s=seo'), { axe: false });
+  });
+
+  test('write for us: guest-post form + nofollow/sponsored rule', async ({ page }) => {
+    await page.goto(site('journal', '/write-for-us/'));
+    await expect(page.locator('form[data-td-form="guest_post"], form[action*="guest_post"], .td-form').first()).toBeVisible();
+    await expect(page.locator('body')).toContainText(/nofollow/);
+  });
+
+  test('studios work archive + single show Live/Concept labels', async ({ page }) => {
+    await page.goto(site('studios', '/work/'));
+    const links = page.locator('.td-case-card__link');
+    expect(await links.count()).toBeGreaterThan(0);
+    const concept = await page.locator('.td-case-card--concept .td-case-card__link').first().getAttribute('href');
+    await check(page, concept);
+    await expect(page.locator('.td-work-single__status')).toContainText('Concept');
+    await page.goto(site('studios', '/work/'));
+    const live = await page.locator('.td-case-card:not(.td-case-card--concept) .td-case-card__link').first().getAttribute('href');
+    await check(page, live);
+    await expect(page.locator('.td-work-single__meta')).toContainText('Live');
+  });
+
+  test('start page: four-step studios brief form', async ({ page }) => {
+    await page.goto(site('studios', '/start/'));
+    await expect(page.locator('.td-form')).toBeVisible();
+    await expect(page.getByText('Step 1 of 4')).toBeVisible();
+  });
+});
+
+test.describe('390px', () => {
+  test.use({ viewport: { width: 390, height: 844 } });
+  for (const [s, path] of [['journal', '/'], ['studios', '/'], ['studios', '/start/'], ['studios', '/work/'], ['studios', '/services/mvp-development/']]) {
+    test(`no horizontal scroll ${s} ${path}`, async ({ page }) => {
+      await page.goto(site(s, path));
+      await expectNoHorizontalScroll(page);
+    });
+  }
+});
