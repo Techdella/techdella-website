@@ -548,7 +548,7 @@ Validate every template with the Rich Results Test and the Schema.org validator 
   - `type`, `status`, `title`, `old_url`
   - `action` (keep / rebuild / redirect / move / merge-review / keep-review / refresh / refresh-priority / prune-review / noindex / private-noindex / confirm)
   - `new_url`, `notes`, `words`
-- `data/redirects.csv`: 77 rules. Includes legacy rules from the old theme, with **corrected targets**.
+- `data/redirects.csv`: 120 rules (after the GSC review of 12 Oct 2026). Includes legacy rules from the old theme, with **corrected targets**.
 
 ### 9.2 Bugs in the current `td_redirects()` (delete the function)
 

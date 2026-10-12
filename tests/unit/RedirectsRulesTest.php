@@ -29,8 +29,9 @@ final class RedirectsRulesTest extends TestCase {
 	public function test_real_csv_parses_without_errors(): void {
 		$parsed = RedirectRules::parse_csv( (string) file_get_contents( dirname( __DIR__, 2 ) . '/data/redirects.csv' ) );
 		$this->assertSame( [], $parsed['errors'] );
-		$this->assertCount( 77, $parsed['rules'] );
-		$this->assertCount( 6, array_filter( $parsed['rules'], static fn( $r ) => $r['conditional'] ) );
+		$this->assertCount( 120, $parsed['rules'] );
+		// The GSC review (12 Oct 2026) resolved every "GSC check first" row.
+		$this->assertCount( 0, array_filter( $parsed['rules'], static fn( $r ) => $r['conditional'] ) );
 	}
 
 	public function test_per_site_csvs_parse_and_stay_on_their_site(): void {
@@ -94,8 +95,23 @@ final class RedirectsRulesTest extends TestCase {
 	}
 
 	public function test_conditional_rows_skipped_unless_included(): void {
-		$this->assertNull( self::target( '/locations/germany/' ) );
-		$this->assertSame( '/services/', self::target( '/locations/germany/', true ) );
+		$rule = RedirectRules::make_rule( '/locations/x/', '/services/', '301', 'GSC check first' );
+		$this->assertNull( RedirectRules::match( RedirectRules::active( [ $rule ], false ), '/locations/x/' ) );
+		$this->assertSame( '/services/', RedirectRules::match( RedirectRules::active( [ $rule ], true ), '/locations/x/' )['target'] );
+	}
+
+	public function test_gsc_review_outcomes(): void {
+		// <20 clicks: 301; Ibadan had 20, so its page stays (§10.4).
+		$this->assertSame( '/services/', self::target( '/locations/germany/' ) );
+		$this->assertSame( '/locations/nigeria/', self::target( '/locations/abuja-nigeria/' ) );
+		$this->assertNull( self::target( '/locations/ibadan-nigeria/' ) );
+		// Off-topic glossary terms under 50 clicks: 410, or 301 to the closest relevant page (§10.6).
+		$gone = RedirectRules::match( self::$rules, '/glossary/contract-law/' );
+		$this->assertSame( 410, $gone['rule']['code'] );
+		$this->assertSame( '/business/how-to-start-a-dropshipping-business/', self::target( '/glossary/dropshipping/' ) );
+		// URLs with clicks that were missing from the export now redirect in one hop (§9.4).
+		$this->assertSame( '/services/', self::target( '/service/cmo-service/' ) );
+		$this->assertSame( '/founders-hub-waitlist/', self::target( '/directory/founder-perks/' ) );
 	}
 
 	public function test_domain_rewrite(): void {

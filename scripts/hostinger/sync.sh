@@ -135,6 +135,9 @@ if [ "$REFRESH" = 1 ]; then
   $WP td legacy:retire
 fi
 
+# Thin business guides with no clicks (GSC review, §10.9) are noindexed; never unpublished.
+if [ "$SITE_NOW" = marketing ]; then $WP td url-map:noindex "$BUNDLE/data/url-map.csv"; fi
+
 $WP cache flush
 $WP litespeed-purge all 2> /dev/null || true
 $WP rankmath sitemap generate 2> /dev/null || true
