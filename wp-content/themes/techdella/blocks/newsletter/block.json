@@ -30,6 +30,18 @@
 			"default": [
 				"email"
 			]
+		},
+		"points": {
+			"type": "array",
+			"default": [
+				"One idea you can use the same week",
+				"Checklists and templates, not fluff",
+				"New guides before anyone else"
+			]
+		},
+		"label": {
+			"type": "string",
+			"default": "The TechDella newsletter"
 		}
 	},
 	"example": {

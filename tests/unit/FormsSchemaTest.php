@@ -20,7 +20,7 @@ final class FormsSchemaTest extends TestCase {
 			$this->assertTrue( $def['fields']['email']['required'], $key );
 			$this->assertNotEmpty( $def['sites'], $key );
 			foreach ( $def['fields'] as $name => $f ) {
-				$this->assertContains( $f['type'], [ 'text', 'email', 'url', 'textarea', 'select', 'pills', 'checkbox', 'hidden' ], "$key.$name" );
+				$this->assertContains( $f['type'], [ 'text', 'email', 'url', 'textarea', 'select', 'pills', 'checkbox', 'hidden', 'tel' ], "$key.$name" );
 				$this->assertNotEmpty( $f['sb'] ?? $name, "$key.$name has a Startbuddi name" );
 			}
 		}
@@ -110,5 +110,14 @@ final class FormsSchemaTest extends TestCase {
 		$this->assertSame( '', Validator::url( 'ftp://example.com' ) );
 		$this->assertSame( '', Validator::url( 'localhost' ) );
 		$this->assertSame( 'http://example.com/a', Validator::url( 'http://example.com/a' ) );
+	}
+
+	public function test_phone_needs_a_country_code(): void {
+		$f = [ 'type' => 'tel', 'required' => true, 'max' => 24 ];
+		$this->assertSame( '', \TechDella\Core\Forms\Validator::field( $f, '+234 803 000 0000' )[1] );
+		$this->assertSame( '', \TechDella\Core\Forms\Validator::field( $f, '+1 (415) 555-0100' )[1] );
+		$this->assertNotSame( '', \TechDella\Core\Forms\Validator::field( $f, '08030000000' )[1] );
+		$this->assertNotSame( '', \TechDella\Core\Forms\Validator::field( $f, '+12' )[1] );
+		$this->assertNotSame( '', \TechDella\Core\Forms\Validator::field( $f, '+234 803 abc' )[1] );
 	}
 }

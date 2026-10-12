@@ -215,7 +215,9 @@ function td_form_render( string $key, array $args = [] ): string {
 	$out .= '</div>';
 
 	$out .= '</div>';
-	return $out;
+	// The form styles travel with the form, so forms outside the form block (newsletter, popups,
+	// tool gates) are never unstyled.
+	return ( function_exists( 'td_block_css' ) ? td_block_css( 'form' ) : '' ) . $out;
 }
 
 /**
@@ -294,7 +296,7 @@ function td_forms_field_html( string $name, array $f, string $form, $value, stri
 	} elseif ( 'textarea' === $type ) {
 		$out .= '<textarea class="td-input td-input--area" rows="' . (int) ( $f['rows'] ?? 4 ) . '" maxlength="' . (int) ( $f['max'] ?? 4000 ) . '"' . $attr . '>' . esc_textarea( $v ) . '</textarea>';
 	} else {
-		$input_type = in_array( $type, [ 'email', 'url' ], true ) ? $type : 'text';
+		$input_type = in_array( $type, [ 'email', 'url', 'tel' ], true ) ? $type : 'text';
 		// URL fields accept "yourcompany.com" (the server adds https://), so they use type=text + inputmode=url.
 		$out .= '<input class="td-input" type="' . ( 'url' === $input_type ? 'text' : $input_type ) . '"' . ( 'url' === $input_type ? ' inputmode="url" data-type="url"' : '' ) . ' maxlength="' . (int) ( $f['max'] ?? 200 ) . '" value="' . esc_attr( $v ) . '"' . $attr . '>';
 	}

@@ -11,7 +11,7 @@ test.skip(({ isMobile }) => isMobile, 'Shares the sb-mock log; runs on desktop o
 
 const SITE_OF = {
   contact: 'marketing', audit: 'marketing', studios_brief: 'studios', newsletter: 'journal', lead_magnet: 'marketing',
-  tool_gate: 'marketing', popup_exit: 'marketing', popup_scroll: 'journal', mvp_calc: 'studios', guest_post: 'journal',
+  tool_gate: 'marketing', popup_exit: 'marketing', popup_scroll: 'journal', mvp_calc: 'studios', guest_post: 'journal', quote: 'studios',
 };
 
 // A valid payload per key, and the fields we expect to see forwarded (Startbuddi names).
@@ -26,6 +26,7 @@ const VALID = {
   popup_scroll: { email: 'ada@example.com', offer: 'newsletter', post_slug: 'what-is-ai-search-optimization' },
   mvp_calc: { email: 'ada@example.com', inputs: JSON.stringify({ screens: 12, platform: 'web' }), estimate: '$12,000 – $18,000' },
   guest_post: { name: 'Ada Obi', email: 'ada@example.com', topic: 'Lead scoring', outline: 'Three points.', samples: 'https://example.com/a' },
+  quote: { name: 'Ada Obi', email: 'ada@example.com', company: 'Example Ltd', country: 'NG', phone: '+234 803 000 0000', package: 'mvp_build' },
 };
 const EXPECT = {
   contact: { service_interest: ['seo', 'paid'], website: 'https://example.com', budget: '2000-5000' },
@@ -38,6 +39,7 @@ const EXPECT = {
   popup_scroll: { post_slug: 'what-is-ai-search-optimization' },
   mvp_calc: { estimate_inputs: { screens: 12, platform: 'web' }, estimate: '$12,000 – $18,000' },
   guest_post: { topic: 'Lead scoring', samples: 'https://example.com/a' },
+  quote: { country: 'NG', phone: '+234 803 000 0000', package: 'mvp_build', currency: 'NGN' },
 };
 const CONSENT = { audit: true, newsletter: true, lead_magnet: true };
 const DOMAIN = { marketing: 'techdella.com', journal: 'blog.techdella.com', studios: 'studios.techdella.com' };
@@ -355,4 +357,40 @@ test.describe('lead magnets', () => {
       expect(html, slug).not.toContain('[CONFIRM');
     }
   });
+});
+
+test('quote form: package link preselects, country fills the dial code, PDF in naira for Nigeria', async ({ page }) => {
+  await page.goto(site('marketing', '/pricing/'));
+  await page.locator('[data-quote-package="growth_sprint"]').click();
+  const f = page.locator('.td-form[data-td-form="quote"]');
+  await expect(f.locator('select[name="package"]')).toHaveValue('growth_sprint');
+  await f.locator('input[name="name"]').fill('Ada Obi');
+  await f.locator('input[name="email"]').fill('ada@example.com');
+  await f.locator('select[name="country"]').selectOption('NG');
+  await expect(f.locator('input[name="phone"]')).toHaveValue('+234 ');
+  await f.locator('input[name="phone"]').fill('+234 803 000 0000');
+  await page.waitForTimeout(3200);
+  await f.locator('button[type="submit"]').click();
+  const link = f.locator('[data-download] a');
+  await expect(link).toBeVisible({ timeout: 15000 });
+  const res = await page.request.get(await link.getAttribute('href'));
+  expect(res.status()).toBe(200);
+  expect(res.headers()['content-type']).toContain('application/pdf');
+  expect(res.headers()['x-robots-tag']).toContain('noindex');
+  const pdf = (await res.body()).toString('latin1');
+  expect(pdf.startsWith('%PDF-')).toBe(true);
+  expect(pdf).toContain('NGN 700,000');
+  expect(pdf).toContain('Growth Sprint');
+});
+
+
+test('phone must carry a country code', async ({ request }) => {
+  const t = await (await request.get(site('marketing', '/wp-json/techdella/v1/form-token?form=quote'))).json();
+  await new Promise((r) => setTimeout(r, 3200));
+  const res = await request.post(site('marketing', '/wp-json/techdella/v1/submit/quote'), {
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    data: { td_token: t.token, name: 'Ada', email: 'ada@example.com', country: 'NG', phone: '08030000000', package: 'growth_audit' },
+  });
+  expect(res.status()).toBe(400);
+  expect(JSON.stringify(await res.json())).toContain('country code');
 });

@@ -120,6 +120,11 @@ final class Validator {
 			if ( false === filter_var( $value, FILTER_VALIDATE_EMAIL ) ) {
 				return [ $value, __( 'Enter a valid email address, like name@company.com.', 'techdella' ) ];
 			}
+		} elseif ( 'tel' === $type ) {
+			$digits = (string) preg_replace( '/\D+/', '', $value );
+			if ( ! str_starts_with( $value, '+' ) || strlen( $digits ) < 7 || strlen( $digits ) > 15 || preg_match( '/[^\d\s()+.\-]/', $value ) ) {
+				return [ $value, __( 'Enter your number with the country code, like +234 803 000 0000.', 'techdella' ) ];
+			}
 		} elseif ( 'url' === $type ) {
 			$url = self::url( $value );
 			if ( '' === $url ) {

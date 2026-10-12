@@ -31,6 +31,7 @@ require_once __DIR__ . '/delivery.php';
 require_once __DIR__ . '/rest.php';
 require_once __DIR__ . '/render.php';
 require_once __DIR__ . '/thank-you.php';
+require_once __DIR__ . '/quote.php';
 require_once __DIR__ . '/admin.php';
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
 	require_once __DIR__ . '/cli.php';

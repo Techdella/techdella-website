@@ -244,7 +244,7 @@ PATH_STAGING=[staging path]
 # Startbuddi — one endpoint URL per form (copy from Startbuddi → Forms → <endpoint form> → settings)
 SB_ENDPOINT_CONTACT=  SB_ENDPOINT_AUDIT=  SB_ENDPOINT_STUDIOS_BRIEF=  SB_ENDPOINT_NEWSLETTER=
 SB_ENDPOINT_LEAD_MAGNET=  SB_ENDPOINT_TOOL_GATE=  SB_ENDPOINT_POPUP_EXIT=  SB_ENDPOINT_POPUP_SCROLL=
-SB_ENDPOINT_MVP_CALC=  SB_ENDPOINT_GUEST_POST=
+SB_ENDPOINT_MVP_CALC=  SB_ENDPOINT_GUEST_POST=  SB_ENDPOINT_QUOTE=
 SB_SHARED_SECRET=[optional HMAC secret if Startbuddi supports signed requests]
 # Spam
 TURNSTILE_SITE_KEY=  TURNSTILE_SECRET_KEY=
@@ -763,6 +763,7 @@ Some existing endpoint forms may belong to the startbuddi site itself, e.g. "exi
 | `POPUP_SCROLL` | Techdella · Post slide-in | Journal | email, offer, post_slug | tag `popup-scroll` |
 | `MVP_CALC` | Techdella Studios · MVP calculator | studios `/mvp-calculator/` | email, estimate inputs, estimate | deal in "Studios", tag `mvp-calc` |
 | `GUEST_POST` | Techdella · Write for us | Journal `/write-for-us/` | name, email, topic, outline, samples | task for editor |
+| `QUOTE` | Techdella · Quote request | Marketing `/pricing/` and every priced block, Studios packages | name, email, company, country, phone (with country code), package, notes | deal + tag `quote`; email the `quote_url` PDF link (in their currency: NGN for Nigeria, else USD; signed, 30 days) |
 
 ### 11.2 Request flow
 

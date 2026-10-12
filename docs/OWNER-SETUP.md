@@ -68,6 +68,7 @@ Create one **endpoint** form per row and paste each endpoint URL into the matchi
 | `SB_ENDPOINT_POPUP_EXIT` | TechDella · Exit-intent popup | tag `popup-exit` |
 | `SB_ENDPOINT_POPUP_SCROLL` | TechDella · Post slide-in | tag `popup-scroll` |
 | `SB_ENDPOINT_MVP_CALC` | TechDella Studios · MVP calculator | deal in "Studios", tag `mvp-calc` |
+| `SB_ENDPOINT_QUOTE` | TechDella · Quote request | deal + tag `quote`; email the `quote_url` (the PDF quote link) |
 | `SB_ENDPOINT_GUEST_POST` | TechDella · Write for us | task for editor |
 
 For staging, create the same set as `TechDella · TEST · …` (§11.5).

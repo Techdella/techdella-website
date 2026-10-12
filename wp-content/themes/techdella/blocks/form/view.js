@@ -312,3 +312,29 @@ function initForm(root) {
 });
 // Popups render forms later: they can call td.initForms(container).
 td.initForms = (scope = document) => scope.querySelectorAll('.td-form[data-td-form]').forEach(initForm);
+
+// Quote form: choosing a country starts the phone number with its dial code, and a package's
+// "Get a quote" link (data-quote-package) pre-selects that package and scrolls to the form.
+(td.ready || ((fn) => (document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn())))(() => {
+  document.querySelectorAll('.td-form[data-td-form="quote"]').forEach((root) => {
+    const country = root.querySelector('select[name="country"]');
+    const phone = root.querySelector('input[name="phone"]');
+    if (country && phone) {
+      country.addEventListener('change', () => {
+        const m = /\(\+(\d+)\)\s*$/.exec(country.options[country.selectedIndex]?.text || '');
+        if (m && (phone.value.trim() === '' || /^\+\d*\s*$/.test(phone.value.trim()))) phone.value = `+${m[1]} `;
+      });
+    }
+  });
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('[data-quote-package]');
+    if (!link) return;
+    const select = document.querySelector('.td-form[data-td-form="quote"] select[name="package"]');
+    if (!select) return;
+    e.preventDefault();
+    if ([...select.options].some((o) => o.value === link.dataset.quotePackage)) select.value = link.dataset.quotePackage;
+    const target = select.closest('.td-form') || select;
+    target.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    setTimeout(() => { const first = target.querySelector('input:not([type=hidden]):not([tabindex="-1"])'); if (first) first.focus({ preventScroll: true }); }, 400);
+  });
+});

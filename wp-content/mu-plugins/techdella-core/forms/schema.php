@@ -36,7 +36,7 @@ defined( 'ABSPATH' ) || exit;
  * @return string[]
  */
 function td_forms_keys(): array {
-	return [ 'contact', 'audit', 'studios_brief', 'newsletter', 'lead_magnet', 'tool_gate', 'popup_exit', 'popup_scroll', 'mvp_calc', 'guest_post' ];
+	return [ 'contact', 'audit', 'studios_brief', 'newsletter', 'lead_magnet', 'tool_gate', 'popup_exit', 'popup_scroll', 'mvp_calc', 'quote', 'guest_post' ];
 }
 
 /**
@@ -522,6 +522,54 @@ function td_forms_definitions(): array {
 					'type' => 'hidden',
 					'max'  => 200,
 					'sb'   => 'estimate',
+				],
+				'consent_marketing' => td_forms_consent_field(),
+			],
+		],
+		'quote'         => [
+			'name'          => 'Techdella · Quote request',
+			'sites'         => [ 'marketing', 'studios' ],
+			'title'         => __( 'Get a *quote*', 'techdella' ),
+			'intro'         => __( 'Pick a package and tell us where you are. You get a PDF quote in your currency straight away.', 'techdella' ),
+			'submit'        => __( 'Get my quote', 'techdella' ),
+			'success_title' => __( 'Your quote is *ready*', 'techdella' ),
+			'success'       => __( 'Open the PDF below. We will follow up within one business day.', 'techdella' ),
+			'fields'        => [
+				'name'              => $name,
+				'email'             => array_merge( $email, [ 'width' => 'half' ] ),
+				'company'           => $co,
+				'country'           => [
+					'type'         => 'select',
+					'label'        => __( 'Country', 'techdella' ),
+					'required'     => true,
+					'options'      => function_exists( 'td_quote_countries' ) ? td_quote_countries() : [],
+					'autocomplete' => 'country',
+					'width'        => 'half',
+					'sb'           => 'country',
+				],
+				'phone'             => [
+					'type'         => 'tel',
+					'label'        => __( 'Phone (with country code)', 'techdella' ),
+					'required'     => true,
+					'max'          => 24,
+					'placeholder'  => '+234 803 000 0000',
+					'autocomplete' => 'tel',
+					'sb'           => 'phone',
+				],
+				'package'           => [
+					'type'     => 'select',
+					'label'    => __( 'Package', 'techdella' ),
+					'required' => true,
+					'options'  => function_exists( 'td_quote_packages' ) ? td_quote_packages() : [],
+					'sb'       => 'package',
+				],
+				'notes'             => [
+					'type'     => 'textarea',
+					'label'    => __( 'Anything we should know? (optional)', 'techdella' ),
+					'required' => false,
+					'max'      => 2000,
+					'rows'     => 3,
+					'sb'       => 'notes',
 				],
 				'consent_marketing' => td_forms_consent_field(),
 			],

@@ -170,30 +170,27 @@ test('legal pages show the last-updated date and no placeholders', async ({ page
   }
 });
 
-test.describe('naira pricing', () => {
-  test('USD by default; the switch shows naira and is remembered', async ({ page }) => {
+test.describe('pricing by location and PDF quotes', () => {
+  test('USD by default with no currency switch; Africa/Lagos sees naira', async ({ page, browser }) => {
     await page.goto(site('marketing', '/pricing/'));
     const audit = page.locator('.td-pricing__card').first().locator('.td-price');
     await expect(audit).toHaveText('$1,500');
-    const ngn = page.locator('[data-td-currency] [data-currency="ngn"]');
-    await expect(ngn).toBeVisible();
-    await ngn.click();
-    await expect(audit).toHaveText('₦300,000');
-    await expect(ngn).toHaveAttribute('aria-pressed', 'true');
-    await page.reload();
-    await expect(audit).toHaveText('₦300,000');
+    await expect(page.locator('[data-td-currency]:visible')).toHaveCount(0);
     expect(await page.content()).not.toContain('{{price:');
-  });
-
-  test('a device in Nigeria (Africa/Lagos) sees naira on its first visit', async ({ browser }) => {
     const context = await browser.newContext({ timezoneId: 'Africa/Lagos' });
-    const page = await context.newPage();
-    await page.goto(site('marketing', '/services/paid-ads/'));
-    await expect(page.locator('.td-price').first()).toHaveText(/^₦/);
-    await page.goto(site('studios', '/'));
-    await expect(page.locator('.td-pricing .td-price').first()).toHaveText('₦700,000');
+    const ng = await context.newPage();
+    await ng.goto(site('marketing', '/services/paid-ads/'));
+    await expect(ng.locator('.td-price').first()).toHaveText(/^₦/);
+    await ng.goto(site('studios', '/'));
+    await expect(ng.locator('.td-pricing .td-price').first()).toHaveText('₦700,000');
     await context.close();
   });
+
+  test('quote link: a tampered token is refused', async ({ request }) => {
+    const res = await request.get(site('marketing', '/wp-json/techdella/v1/quote?q=bogus'));
+    expect(res.status()).toBe(410);
+  });
+
 });
 
 test('hero eyebrow sits on the headline\'s line (centered heroes and left heroes)', async ({ page }) => {
