@@ -119,20 +119,24 @@ test.describe('390px', () => {
   }
 });
 
-test('MVP calculator: live range from Studios prices, naira switch, fills the MVP_CALC form', async ({ page }) => {
+test('MVP calculator: live range from Studios prices, naira by location, fills the MVP_CALC form', async ({ page, browser }) => {
   await page.goto(site('studios', '/mvp-calculator/'));
   const range = page.locator('.td-mvp__range');
   await expect(range).toContainText('$');
+  await expect(page.locator('.td-mvp [data-td-currency]:visible')).toHaveCount(0);
   const before = await range.innerText();
   await page.locator('.td-mvp label:has-text("Payments")').click();
   await page.locator('.td-mvp label:has-text("Web and mobile apps")').click();
   await expect(range).not.toHaveText(before);
-  await page.locator('.td-mvp [data-currency="ngn"]').click();
-  await expect(range).toContainText('₦');
   const form = page.locator('form[action*="/submit/mvp_calc"]');
-  await expect(form.locator('input[name="estimate"]')).toHaveValue(/^₦[\d,]+–₦[\d,]+, \d+–\d+ weeks$/);
+  await expect(form.locator('input[name="estimate"]')).toHaveValue(/^\$[\d,]+–\$[\d,]+, \d+–\d+ weeks$/);
   expect(JSON.parse(await form.locator('input[name="inputs"]').inputValue())).toMatchObject({ platform: 'both', features: ['payments'] });
   await expect(page.locator('main')).not.toContainText('[CONFIRM');
+  const ng = await browser.newContext({ timezoneId: 'Africa/Lagos' });
+  const p2 = await ng.newPage();
+  await p2.goto(site('studios', '/mvp-calculator/'));
+  await expect(p2.locator('.td-mvp__range')).toContainText('₦');
+  await ng.close();
 });
 
 test.describe('paid placements', () => {

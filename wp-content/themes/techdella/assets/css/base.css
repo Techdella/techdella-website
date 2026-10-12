@@ -94,9 +94,9 @@ a:hover{color:var(--td-orange-text)}
 }
 
 /* Skip rendering work for page sections until they near the viewport (§8.4 LCP/INP).
-   On-screen sections render as normal; `auto` remembers each section's real height once seen. */
-main > section,
-.td-page--blocks > section,
-.td-page--blocks > [class*="wp-block-techdella-"]{content-visibility:auto;contain-intrinsic-size:auto 720px}
+   On-screen sections render as normal; `auto` remembers each section's real height once seen.
+   Sections holding forms always render: their height varies a lot, and a wrong estimate lets the
+   footer overlap them until they render. */
+:is(main > section, .td-page--blocks > section, .td-page--blocks > [class*="wp-block-techdella-"]):not(.wp-block-techdella-pricing-cards):not(.wp-block-techdella-form):not(:has(.td-form)){content-visibility:auto;contain-intrinsic-size:auto 720px}
 
 .td-prose .td-sponsored-note{margin-top:2em;padding-top:14px;border-top:1px solid var(--td-line-soft);font-size:13.5px;color:var(--td-muted)}

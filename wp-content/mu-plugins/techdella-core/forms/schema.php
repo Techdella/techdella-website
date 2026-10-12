@@ -565,7 +565,7 @@ function td_forms_definitions(): array {
 				],
 				'notes'             => [
 					'type'     => 'textarea',
-					'label'    => __( 'Anything we should know? (optional)', 'techdella' ),
+					'label'    => __( 'Anything we should know?', 'techdella' ),
 					'required' => false,
 					'max'      => 2000,
 					'rows'     => 3,
@@ -609,7 +609,7 @@ function td_forms_definitions(): array {
 				],
 				'target_url'   => [
 					'type'        => 'url',
-					'label'       => __( 'Page you want to link to (optional)', 'techdella' ),
+					'label'       => __( 'Page you want to link to', 'techdella' ),
 					'required'    => false,
 					'max'         => 500,
 					'placeholder' => 'https://yourcompany.com/guide/',
@@ -635,7 +635,7 @@ function td_forms_definitions(): array {
 				],
 				'samples'      => [
 					'type'     => 'textarea',
-					'label'    => __( 'Writing samples (optional)', 'techdella' ),
+					'label'    => __( 'Writing samples', 'techdella' ),
 					'help'     => __( 'Links to two or three published pieces, one per line.', 'techdella' ),
 					'required' => false,
 					'max'      => 1000,

@@ -46,7 +46,7 @@ To find any site's folder later: `find ~/domains -maxdepth 4 -name wp-config.php
 
 1. **Back up first:** hPanel → Websites → blog.techdella.com → Backups → create a backup.
 2. **Make a staging copy:** hPanel → Websites → blog.techdella.com → WordPress → Staging → Create
-   staging. Hostinger copies the files and database (usually to `blog.techdella.com/staging`).
+   staging. Hostinger copies the files and database (here it is served at `staging.blog.techdella.com`).
    Find its folder with the `find` command above (the one with `staging` in the path).
 3. Install on the **staging copy** and show the designs:
    ```
@@ -60,10 +60,10 @@ To find any site's folder later: `find ~/domains -maxdepth 4 -name wp-config.php
    - `/submit-guest-post/` → `/write-for-us/` and `/home-2/` → `/` (`data/redirects-journal.csv`).
 4. **Link the staging sites to each other** (so nav and footer links stay on staging):
    ```
-   wp --path=<marketing staging folder> config set TD_URL_JOURNAL https://blog.techdella.com/staging --type=constant
+   wp --path=<marketing staging folder> config set TD_URL_JOURNAL https://staging.blog.techdella.com --type=constant
    wp --path=<blog staging folder> config set TD_URL_MARKETING https://techdella.com/staging --type=constant
    wp --path=<studios folder> config set TD_URL_MARKETING https://techdella.com/staging --type=constant
-   wp --path=<studios folder> config set TD_URL_JOURNAL https://blog.techdella.com/staging --type=constant
+   wp --path=<studios folder> config set TD_URL_JOURNAL https://staging.blog.techdella.com --type=constant
    ```
    Remove these on launch day (`wp config delete TD_URL_JOURNAL`, etc.) so links use the real domains.
 5. Review: home, a few old posts, the new guides, category pages, search, /newsletter/, /write-for-us/.
@@ -78,11 +78,17 @@ To find any site's folder later: `find ~/domains -maxdepth 4 -name wp-config.php
    New guides arrive as **drafts**; existing published posts are never overwritten (§0.4).
    **Straight away**, publish the new **Write for us** and **Newsletter** pages (Pages → Drafts):
    `/submit-guest-post/` already redirects to `/write-for-us/`.
-3. Publish the 17 moved guides in WP admin first (they're the targets of the techdella.com
+3. Bring the 335 old posts into the new layout (service CTA, one mid-article CTA, a cover where
+   there's no image; nobody's text is rewritten). Check the list first:
+   ```
+   wp --path=<live blog folder> td legacy:upgrade --dry-run
+   wp --path=<live blog folder> td legacy:upgrade --production
+   ```
+4. Publish the 17 moved guides in WP admin first (they're the targets of the techdella.com
    `/guide/*` redirects), then the rest. Keep to **15 publishes a week** (§8.1).
-4. Only after the 17 guides are live: launch techdella.com, whose redirects send `/guide/<slug>/`
+5. Only after the 17 guides are live: launch techdella.com, whose redirects send `/guide/<slug>/`
    to `blog.techdella.com/<slug>/`.
-5. Google Site Kit is installed on the blog. Once `GA4_ID` is set in wp-config, turn off Site Kit's
+6. Google Site Kit is installed on the blog. Once `GA4_ID` is set in wp-config, turn off Site Kit's
    own Analytics tag (Site Kit → Settings → Analytics → "Place Google Analytics code": off), so GA4
    loads once and only after consent (§12.3).
 

@@ -19,6 +19,9 @@ export async function expectNoA11yViolations(page, { include, exclude } = {}) {
   if (exclude) builder = builder.exclude(exclude);
   // Third-party booking pages (Startbuddi) are checked by their owner, not by our page tests.
   builder = builder.exclude('.td-booking iframe');
+  // axe scrolls each element to the top of the viewport, under the sticky header, and then reads the
+  // header's black button as the element's background. Unstick the header while scanning.
+  await page.addStyleTag({ content: '.td-nav{position:static!important}' });
   const { violations } = await builder.analyze();
   const bad = violations.filter((v) => ['serious', 'critical'].includes(v.impact));
   expect(bad.map((v) => `${v.id}: ${v.help} (${v.nodes.map((n) => n.target.join(' ')).slice(0, 3).join(', ')})`)).toEqual([]);
