@@ -277,7 +277,7 @@ function td_cli_legacy_retire( array $args, array $assoc ): void {
 		// A site with no redirects (e.g. Studios) still gets the hub-address check below.
 		WP_CLI::log( 'No redirect rules on this site: only checking old pages on hub addresses.' );
 	}
-	$types = array_values( array_filter( [ 'page', 'service', 'solution', 'location', 'case_study', 'td_tool' ], 'post_type_exists' ) );
+	$types = array_values( array_filter( [ 'page', 'service', 'solution', 'location', 'case_study', 'td_tool', 'em-glossary', 'business' ], 'post_type_exists' ) );
 	$ids   = get_posts(
 		[
 			'post_type'      => $types,
