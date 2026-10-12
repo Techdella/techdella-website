@@ -2,13 +2,13 @@
 /**
  * Title: Journal write for us
  * Slug: techdella/journal-write-for-us
- * Description: /write-for-us/: what we publish, editorial rules (guest links are nofollow or sponsored, §8.1), the pitch form (GUEST_POST endpoint), FAQ.
+ * Description: /write-for-us/: guest posts, sponsored articles and link insertions (paid, owner 12 Oct 2026), editorial rules (paid links are rel="sponsored" and labelled, §8.1), the request form (GUEST_POST endpoint), FAQ.
  * Inserter: no
  * TD Site: journal
  * TD Post Type: page
  * TD Slug: write-for-us
- * TD Title: Write for us
- * TD Description: Write for the TechDella Journal. We publish edited guest posts from practitioners in SEO, paid ads, lead generation, email and automation. How to pitch.
+ * TD Title: Write for us and sponsored posts
+ * TD Description: Guest posts, sponsored articles and link insertions on the TechDella Journal: what we accept, how we label paid content and how to request rates.
  *
  * @package techdella
  */
@@ -19,36 +19,40 @@ $td_blocks = [
 	[
 		'hero',
 		[
-			'eyebrow'      => 'Write for us',
-			'title'        => 'Write for the *Journal*',
-			'lead'         => 'We publish a small number of guest posts from practitioners with first-hand experience in search, paid, lead generation, email and automation. Every post is edited by our team.',
-			'primaryLabel' => 'Pitch a post',
-			'primaryUrl'   => '#pitch',
-			'layout'       => 'center',
-			'background'   => 'plain',
+			'eyebrow'        => 'Write for us',
+			'title'          => 'Guest posts and *sponsored* content',
+			'lead'           => 'Reach founders and B2B marketing teams who read the Journal for practical search, ads, email and automation advice. We accept guest posts, sponsored articles and link insertions that are useful to our readers, and we label every paid placement.',
+			'primaryLabel'   => 'Request rates',
+			'primaryUrl'     => '#pitch',
+			'secondaryLabel' => 'Editorial rules',
+			'secondaryUrl'   => '#rules',
+			'layout'         => 'center',
+			'background'     => 'plain',
 		],
 	],
 	[
 		'feature-grid',
 		[
-			'label' => 'What we publish',
-			'title' => 'Experience over *opinions*',
-			'style' => 'icon',
-			'items' => [
+			'label'   => 'Options',
+			'title'   => 'Three ways to *publish* with us',
+			'intro'   => 'Rates depend on the format and the article. Send a request and we reply within two business days.',
+			'style'   => 'tiles',
+			'columns' => 3,
+			'items'   => [
 				[
-					'title' => 'First-hand work',
-					'text'  => 'What you did, what happened and what you would change. Screenshots and real numbers, shared with permission.',
-					'icon'  => 'check',
+					'title' => 'Guest post',
+					'text'  => 'You write an original article from your own experience; our editors shape it to the Journal’s standard. One link to your site in the article or your author bio.',
+					'tone'  => 'canvas',
 				],
 				[
-					'title' => 'Our topics',
-					'text'  => 'SEO, AI search, paid ads, lead generation, email and marketing automation for B2B teams.',
-					'icon'  => 'list',
+					'title' => 'Sponsored article',
+					'text'  => 'We write the article with you, from a brief and an interview, so it reads like the rest of the Journal. Clearly labelled as sponsored.',
+					'tone'  => 'dark',
 				],
 				[
-					'title' => 'Useful the same week',
-					'text'  => 'Readers should be able to act on the post without buying anything.',
-					'icon'  => 'target',
+					'title' => 'Link insertion',
+					'text'  => 'One relevant link added to an existing, published Journal article, where it genuinely helps the reader. Labelled as sponsored.',
+					'tone'  => 'sand',
 				],
 			],
 		],
@@ -56,27 +60,28 @@ $td_blocks = [
 	[
 		'feature-grid',
 		[
+			'anchor'  => 'rules',
 			'label'   => 'Editorial rules',
-			'title'   => 'How we *edit*',
+			'title'   => 'Paid, but *labelled*',
 			'style'   => 'checks',
-			'lead'    => 'We keep editorial control of everything on the Journal.',
+			'lead'    => 'We keep editorial control of everything on the Journal and follow Google’s rules for paid links, so placements stay useful to readers and safe for your site.',
 			'surface' => 'canvas',
 			'items'   => [
 				[
-					'title' => 'We edit every post.',
-					'text'  => 'Expect questions, cuts and a fact check before anything goes live.',
+					'title' => 'Every paid placement is labelled.',
+					'text'  => 'Sponsored articles, paid guest posts and link insertions show a “Sponsored” label and a short disclosure.',
 				],
 				[
-					'title' => 'Links are nofollow or sponsored.',
-					'text'  => 'Links in guest posts carry rel="nofollow", or rel="sponsored" where there is any commercial relationship.',
+					'title' => 'Paid links use rel="sponsored".',
+					'text'  => 'Google asks sites to mark paid links this way. We do it on every paid link, so they don’t pass ranking credit.',
 				],
 				[
-					'title' => 'Original work only.',
-					'text'  => 'No previously published posts, and no AI drafts without your own experience and review.',
+					'title' => 'Relevant topics only.',
+					'text'  => 'Marketing, search, ads, email, automation, startups, product and software. We decline gambling, adult, CBD, payday lending and get-rich-quick offers.',
 				],
 				[
-					'title' => 'No paid placements.',
-					'text'  => 'We edit every guest post, and links in guest posts carry rel="nofollow" or rel="sponsored".',
+					'title' => 'We edit everything.',
+					'text'  => 'Expect questions, cuts and a fact check. We don’t publish previously published posts or unreviewed AI drafts.',
 				],
 			],
 		],
@@ -91,23 +96,27 @@ $td_blocks = [
 	[
 		'faq',
 		[
-			'title' => 'Guest post *questions*',
+			'title' => 'Placement *questions*',
 			'items' => [
 				[
-					'question' => 'How long until I hear back?',
-					'answer'   => 'An editor replies to every pitch within two weeks.',
+					'question' => 'How much does a placement cost?',
+					'answer'   => 'It depends on the format and, for link insertions, the article. Send a request and we reply with rates within two business days.',
 				],
 				[
-					'question' => 'Can I include a link to my company?',
-					'answer'   => 'Yes, one link in your author bio. Like every link in a guest post, it is nofollow or sponsored.',
+					'question' => 'Will the link be dofollow?',
+					'answer'   => 'No. Paid links carry rel="sponsored", as Google requires. You get readers who are interested in the topic, not ranking credit.',
 				],
 				[
-					'question' => 'Do you pay for guest posts?',
-					'answer'   => 'Tell us in your pitch if you expect payment. Anything we agree is set out in writing before you start.',
+					'question' => 'Will the post be marked as sponsored?',
+					'answer'   => 'Yes. Every paid placement shows a “Sponsored” label and a disclosure line, so readers know.',
 				],
 				[
-					'question' => 'How long should a post be?',
-					'answer'   => 'As long as it needs to be to answer the question well. Most run 1,200 to 2,000 words.',
+					'question' => 'Can I write an unpaid guest post?',
+					'answer'   => 'Sometimes, when you bring first-hand experience our readers can’t get elsewhere. Choose “Guest post” in the form and tell us what you would share.',
+				],
+				[
+					'question' => 'How long until it goes live?',
+					'answer'   => 'We agree the publish date when we confirm the placement, after edits and payment.',
 				],
 			],
 		],

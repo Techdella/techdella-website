@@ -3,6 +3,7 @@
 // posts (local sample fixtures) and Studios needs studio_work items.
 // Every page: 200, one H1, axe clean, no horizontal scroll at 390px.
 import { test, expect } from '@playwright/test';
+import { execFileSync } from 'node:child_process';
 import { site, expectNoA11yViolations, expectNoHorizontalScroll } from './helpers.js';
 
 const PAGES = [
@@ -88,12 +89,6 @@ test.describe('Journal + Studios pages', () => {
     await check(page, site('journal', '/?s=seo'), { axe: false });
   });
 
-  test('write for us: guest-post form + nofollow/sponsored rule', async ({ page }) => {
-    await page.goto(site('journal', '/write-for-us/'));
-    await expect(page.locator('form[data-td-form="guest_post"], form[action*="guest_post"], .td-form').first()).toBeVisible();
-    await expect(page.locator('body')).toContainText(/nofollow/);
-  });
-
   test('studios work archive + single show Live/Concept labels', async ({ page }) => {
     await page.goto(site('studios', '/work/'));
     const links = page.locator('.td-case-card__link');
@@ -138,4 +133,38 @@ test('MVP calculator: live range from Studios prices, naira switch, fills the MV
   await expect(form.locator('input[name="estimate"]')).toHaveValue(/^₦[\d,]+–₦[\d,]+, \d+–\d+ weeks$/);
   expect(JSON.parse(await form.locator('input[name="inputs"]').inputValue())).toMatchObject({ platform: 'both', features: ['payments'] });
   await expect(page.locator('main')).not.toContainText('[CONFIRM');
+});
+
+test.describe('paid placements', () => {
+  const wpj = (args) => execFileSync('docker', ['compose', 'exec', '-T', '-u', 'www-data', 'wp-journal', 'wp', ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
+  let id = '';
+  test.beforeAll(() => { id = wpj(['post', 'list', '--name=b2b-seo-strategy', '--post_type=post', '--field=ID']); });
+  test.afterEach(() => { for (const k of ['sponsored', 'sponsor_name', 'sponsored_links']) { try { wpj(['post', 'meta', 'delete', id, k]); } catch { /* not set */ } } });
+
+  test('a sponsored post is labelled and every outside link is rel="sponsored"', async ({ page }) => {
+    wpj(['post', 'meta', 'update', id, 'sponsored', '1']);
+    wpj(['post', 'meta', 'update', id, 'sponsor_name', 'Acme Ltd']);
+    await page.goto(site('journal', '/b2b-seo-strategy/'));
+    await expect(page.locator('.td-post-header__sponsored')).toContainText('Acme Ltd');
+    const rels = await page.$$eval('.td-article__content a[href^="http"]', (as) => as.filter((a) => !a.href.includes('localhost')).map((a) => a.rel));
+    expect(rels.length).toBeGreaterThan(0);
+    for (const r of rels) expect(r).toContain('sponsored');
+  });
+
+  test('a link insertion marks only that link and adds a disclosure', async ({ page }) => {
+    await page.goto(site('journal', '/b2b-seo-strategy/'));
+    const href = await page.locator('.td-article__content a[href^="https://"]').first().getAttribute('href');
+    wpj(['post', 'meta', 'update', id, 'sponsored_links', href]);
+    await page.reload();
+    await expect(page.locator(`.td-article__content a[href="${href}"]`).first()).toHaveAttribute('rel', /sponsored/);
+    await expect(page.locator('.td-sponsored-note')).toBeVisible();
+    await expect(page.locator('.td-post-header__sponsored')).toHaveCount(0);
+  });
+});
+
+test('write for us: paid options, rules and the request form', async ({ page }) => {
+  await page.goto(site('journal', '/write-for-us/'));
+  await expect(page.locator('main')).toContainText('Link insertion');
+  await expect(page.locator('main')).toContainText('rel="sponsored"');
+  await expect(page.locator('form[action*="/submit/guest_post"] input[name="request_type"]')).toHaveCount(3);
 });

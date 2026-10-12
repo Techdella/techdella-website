@@ -83,6 +83,19 @@ $td_sub    = array_filter(
 			<?php endif; ?>
 		</nav>
 		<h1 class="td-post-header__title"><?php echo td_accent( $td_title ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h1>
+		<?php if ( $td_post && function_exists( 'td_is_sponsored' ) && td_is_sponsored( $td_id ) ) : ?>
+			<?php $td_sponsor = trim( (string) td_field( 'sponsor_name', $td_id ) ); ?>
+			<p class="td-post-header__sponsored"><span class="td-post-header__sponsored-tag"><?php esc_html_e( 'Sponsored', 'techdella' ); ?></span>
+				<?php
+				echo esc_html(
+					'' !== $td_sponsor
+						/* translators: %s: sponsor */
+						? sprintf( __( 'Paid placement by %s. Our editors reviewed it, and its links are marked as sponsored.', 'techdella' ), $td_sponsor )
+						: __( 'Paid placement. Our editors reviewed it, and its links are marked as sponsored.', 'techdella' )
+				);
+				?>
+			</p>
+		<?php endif; ?>
 		<?php if ( '' !== trim( $td_dek ) ) : ?>
 			<p class="td-post-header__dek"><?php echo td_a3_text( $td_dek ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 		<?php endif; ?>

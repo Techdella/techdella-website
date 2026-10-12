@@ -25,7 +25,7 @@ const VALID = {
   popup_exit: { email: 'ada@example.com', offer: 'growth-audit-worksheet', page: '/services/seo/' },
   popup_scroll: { email: 'ada@example.com', offer: 'newsletter', post_slug: 'what-is-ai-search-optimization' },
   mvp_calc: { email: 'ada@example.com', inputs: JSON.stringify({ screens: 12, platform: 'web' }), estimate: '$12,000 – $18,000' },
-  guest_post: { name: 'Ada Obi', email: 'ada@example.com', topic: 'Lead scoring', outline: 'Three points.', samples: 'https://example.com/a' },
+  guest_post: { request_type: 'sponsored_post', name: 'Ada Obi', email: 'ada@example.com', website: 'example.com', topic: 'Lead scoring', outline: 'Three points.', samples: 'https://example.com/a' },
   quote: { name: 'Ada Obi', email: 'ada@example.com', company: 'Example Ltd', country: 'NG', phone: '+234 803 000 0000', package: 'mvp_build' },
 };
 const EXPECT = {
@@ -38,7 +38,7 @@ const EXPECT = {
   popup_exit: { offer: 'growth-audit-worksheet', page: '/services/seo/' },
   popup_scroll: { post_slug: 'what-is-ai-search-optimization' },
   mvp_calc: { estimate_inputs: { screens: 12, platform: 'web' }, estimate: '$12,000 – $18,000' },
-  guest_post: { topic: 'Lead scoring', samples: 'https://example.com/a' },
+  guest_post: { request_type: 'sponsored_post', topic: 'Lead scoring', website: 'https://example.com', samples: 'https://example.com/a' },
   quote: { country: 'NG', phone: '+234 803 000 0000', package: 'mvp_build', currency: 'NGN' },
 };
 const CONSENT = { audit: true, newsletter: true, lead_magnet: true };

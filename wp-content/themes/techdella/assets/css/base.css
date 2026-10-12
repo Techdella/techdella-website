@@ -98,3 +98,5 @@ a:hover{color:var(--td-orange-text)}
 main > section,
 .td-page--blocks > section,
 .td-page--blocks > [class*="wp-block-techdella-"]{content-visibility:auto;contain-intrinsic-size:auto 720px}
+
+.td-prose .td-sponsored-note{margin-top:2em;padding-top:14px;border-top:1px solid var(--td-line-soft);font-size:13.5px;color:var(--td-muted)}
