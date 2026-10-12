@@ -257,3 +257,32 @@ add_action(
 	},
 	5
 );
+
+/**
+ * A hub address (/glossary/, /case-studies/, /tools/ …) always serves its post type's hub template.
+ * With /%postname%/ permalinks WordPress tries pages first, so an old page left published on the
+ * same address (e.g. an empty Elementor "Glossary" page) would hide the hub.
+ */
+add_filter(
+	'request',
+	static function ( array $vars ): array {
+		if ( empty( $vars['pagename'] ) || is_admin() ) {
+			return $vars;
+		}
+		$path = trim( (string) $vars['pagename'], '/' );
+		foreach ( get_post_types( [ 'public' => true ], 'objects' ) as $pto ) {
+			if ( ! $pto->has_archive ) {
+				continue;
+			}
+			$base = is_string( $pto->has_archive ) ? $pto->has_archive : (string) ( $pto->rewrite['slug'] ?? $pto->name );
+			if ( trim( $base, '/' ) === $path ) {
+				$hub = [ 'post_type' => $pto->name ];
+				if ( ! empty( $vars['paged'] ) ) {
+					$hub['paged'] = $vars['paged'];
+				}
+				return $hub;
+			}
+		}
+		return $vars;
+	}
+);
