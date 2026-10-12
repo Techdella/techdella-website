@@ -286,3 +286,24 @@ add_filter(
 		return $vars;
 	}
 );
+
+/**
+ * Our definition wins for every post type we own, whoever registers it. The old sites' plugins
+ * (e.g. Emo Glossary Pro, which also registers `em-glossary`, after us and without the /glossary/
+ * hub) would otherwise replace the URL base, archive and capabilities.
+ */
+add_filter(
+	'register_post_type_args',
+	static function ( array $args, string $type ): array {
+		static $ours = null;
+		if ( null === $ours ) {
+			$ours = Registry::for_site( td_site() );
+		}
+		if ( ! isset( $ours[ $type ] ) || ! empty( $ours[ $type ]['core'] ) ) {
+			return $args;
+		}
+		return td_cpt_args( $type, $ours[ $type ] );
+	},
+	PHP_INT_MAX,
+	2
+);
