@@ -154,6 +154,19 @@ test('resource: lead_magnet form carries the resource slug', async ({ page }) =>
   await expect(page.locator('input[name="resource_slug"]')).toHaveValue('ai-search-readiness-checklist');
 });
 
+test('tool: no author byline; a sidebar with the service CTA, audit and more tools', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto(site('marketing', '/tools/free-hashtag-generator/'));
+  await expect(page.locator('.td-byline')).toHaveCount(0);
+  const side = page.getByRole('complementary', { name: 'More from TechDella' });
+  await expect(side.getByRole('link', { name: 'See the service' })).toBeVisible();
+  await expect(side.getByRole('link', { name: /Get my audit/ })).toHaveAttribute('href', /\/growth-audit\/$/);
+  await expect(side.locator('.td-m2-side-list a').first()).toBeVisible();
+  await expect(side.locator('.td-m2-side-list a', { hasText: 'Hashtag Generator' })).toHaveCount(0);
+  // Live chat is off locally (no SB_CHAT_KEY): no third-party script in tests.
+  expect(await page.content()).not.toContain('app.startbuddi.com');
+});
+
 test('tool: app mount, then content; three ad positions', async ({ page }) => {
   await page.goto(site('marketing', '/tools/free-utm-parameter-generator/'));
   await expect(page.locator('[data-td-tool="utm-parameter-generator"] [data-td-tool-app="utm-parameter-generator"]')).toBeVisible();
