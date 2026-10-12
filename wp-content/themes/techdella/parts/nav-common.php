@@ -60,6 +60,11 @@ if ( ! function_exists( 'td_nav_services' ) ) {
 					'title'      => 'ASC',
 				],
 			]
+			// Markets: only rebuilt market pages (owner, 11 Oct 2026: Nigeria). Old city pages that
+			// wait on their GSC check stay reachable but are not promoted in the nav or footer.
+			+ ( 'location' === $type ? [
+				'meta_key' => '_td_import_source', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			] : [] )
 		);
 		return array_map(
 			static fn( WP_Post $p ): array => [

@@ -137,6 +137,18 @@ test('glossary: answer-first definition, A–Z index, byline', async ({ page }) 
   await expect(page.locator('.td-m2-byline')).toContainText('Reviewed by');
 });
 
+test('an old page on a hub address does not hide the hub', async ({ page }) => {
+  const wp = (args) => execFileSync('docker', ['compose', 'exec', '-T', '-u', 'www-data', 'wp-marketing', 'wp', ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
+  const id = wp(['post', 'create', '--post_type=page', '--post_status=publish', '--post_title=Glossary', '--post_name=glossary', '--porcelain']);
+  try {
+    await page.goto(site('marketing', '/glossary/'));
+    await expect(page.locator('body')).toHaveClass(/post-type-archive-em-glossary/);
+    await expect(page.getByRole('navigation', { name: 'Jump to letter' })).toBeVisible();
+  } finally {
+    wp(['post', 'delete', id, '--force']);
+  }
+});
+
 test('resource: lead_magnet form carries the resource slug', async ({ page }) => {
   await page.goto(site('marketing', '/resources/ai-search-readiness-checklist/'));
   await expect(page.locator('input[name="resource_slug"]')).toHaveValue('ai-search-readiness-checklist');
