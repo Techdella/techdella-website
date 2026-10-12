@@ -11,6 +11,8 @@
 # touched), activates the theme, imports the motion videos, runs `wp td setup`, clears the caches.
 # --refresh-pages (staging only): replace existing pages' and case studies' content with the new
 # designs (old content stays as a revision) and publish them on the private staging site.
+# Redirects are per site: data/redirects.csv (techdella.com), data/redirects-journal.csv (blog),
+# data/redirects-studios.csv (studios), picked from TD_SITE.
 # --first-run also: sets TD_SITE/TD_ENV in wp-config.php (only if missing), installs the plugins
 # (§5.2), blocks search engines on staging, imports content/ and the page patterns as DRAFTS (a
 # person publishes, §10.1), imports the redirects, and records the owner's client permissions.
@@ -87,6 +89,17 @@ if $WP plugin is-active litespeed-cache 2> /dev/null; then
   echo "  ✓ LiteSpeed CSS/JS optimisation off (page cache stays on)"
 fi
 
+SITE_NOW="$($WP config get TD_SITE 2> /dev/null || echo marketing)"
+case "$SITE_NOW" in
+  journal) REDIRECTS="$BUNDLE/data/redirects-journal.csv" ;;
+  studios) REDIRECTS="$BUNDLE/data/redirects-studios.csv" ;;
+  *) REDIRECTS="$BUNDLE/data/redirects.csv" ;;
+esac
+import_redirects() { # skips a file with no rules (header only)
+  [ "$(grep -cv '^[[:space:]]*$' "$REDIRECTS")" -gt 1 ] || { echo "  ✓ no redirects for this site"; return 0; }
+  $WP td redirects import --file="$REDIRECTS"
+}
+
 $WP td setup --quiet
 # New post types and pages need fresh rewrite rules. A soft flush works on Hostinger (the --hard
 # one needs proc_open, which is disabled there) and leaves .htaccess alone.
@@ -98,7 +111,7 @@ if [ "$FIRST" = 1 ]; then
   # Drafts only: nothing here publishes (§0.4). Imported pages wait for a person in WP admin.
   $WP td import-content "$BUNDLE/content" --status=draft
   $WP td preview:seed
-  $WP td redirects import --file="$BUNDLE/data/redirects.csv" || echo "  ! redirects import failed: run it again after Rank Math is set up"
+  import_redirects || echo "  ! redirects import failed: run it again after Rank Math is set up"
   $WP td permissions:grant --note="Joanna Okedara-Kalu confirmed all client permissions (names, numbers, quotes, logos), 11 Oct 2026"
 fi
 
@@ -109,14 +122,14 @@ if [ "$REFRESH" = 1 ]; then
   # Rebuilt case studies, industries, markets and (on the right site) guides, glossary and the
   # business library and the PDF resource pages, published on the private staging site for review
   # (never on production).
-  for d in case-studies solutions locations resources tools glossary business journal; do
+  for d in case-studies solutions locations resources tools glossary business journal work; do
     [ -d "$BUNDLE/content/$d" ] && $WP td import-content "$BUNDLE/content/$d" --status=draft --update-published --publish
   done
   # Article covers (title + photo in the arch) where an article has no image of its own.
   $WP td covers:generate
   # Old redirects that fight the new ones are switched off; old pages that are now redirected
   # (e.g. the old service pages) are unpublished (draft, never deleted).
-  $WP td redirects import --file="$BUNDLE/data/redirects.csv"
+  import_redirects
   $WP td legacy:retire
 fi
 
