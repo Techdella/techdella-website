@@ -95,7 +95,7 @@ test.describe('solution without proof', () => {
   });
   test.afterAll(() => {
     if (id) wp(['post', 'delete', id, '--force']);
-    try { wp(['term', 'delete', 'td_industry', 'e2e-healthcare', '--by=slug']); } catch (e) { /* already gone */ }
+    try { wp(['term', 'delete', 'td_industry', 'e2e-healthcare', '--by=slug']); } catch { /* already gone */ }
   });
   test('shows verbatim client quotes and real case studies, never an invented industry one', async ({ page }) => {
     await page.goto(site('marketing', '/solution/e2e-healthcare-marketing-agency/'));

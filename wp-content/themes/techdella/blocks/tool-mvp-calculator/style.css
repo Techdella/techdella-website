@@ -1,0 +1,23 @@
+/* MVP cost calculator (Studios). Uses the form pill controls; result card sticks on desktop. */
+.td-mvp__grid{display:grid;gap:32px;grid-template-columns:minmax(0,1fr);align-items:start}
+@media (min-width:1000px){.td-mvp__grid{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:48px}}
+.td-mvp__panel{display:grid;gap:28px;padding:0;background:none;box-shadow:none}
+.td-mvp__title{margin:0;font-size:clamp(28px,3vw,40px);line-height:1.08;letter-spacing:-.02em}
+.td-mvp__q{margin:0;padding:0;border:0;min-width:0}
+.td-mvp__q .td-field__label{margin-bottom:12px;font-weight:600;font-size:16px}
+.td-mvp__q .td-field__help{margin:-6px 0 12px;font-size:14px;color:var(--td-muted)}
+.td-mvp__sticky{position:sticky;top:96px;display:grid;gap:14px;padding:28px;border-radius:var(--td-r-lg);background:var(--td-dark-1);color:var(--td-paper)}
+.td-mvp__label{margin:0;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--td-on-dark)}
+.td-mvp__range{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;margin:0;font-size:clamp(30px,3.2vw,42px);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.td-mvp__weeks{margin:0;color:var(--td-on-dark);font-size:15px}
+.td-mvp__weeks strong{color:var(--td-paper)}
+.td-mvp__lines{margin:4px 0 0;padding:14px 0 0;border-top:1px solid var(--td-dark-border);list-style:none;display:grid;gap:6px;font-size:14.5px;color:var(--td-on-dark)}
+.td-mvp__lines li::before{content:"";display:inline-block;width:6px;height:6px;margin:0 10px 2px 0;border-radius:50%;background:var(--td-orange)}
+.td-mvp__note{margin:0;font-size:13.5px;color:var(--td-on-dark)}
+.td-mvp__cta{justify-self:start}
+.td-mvp .td-currency{color:var(--td-on-dark)}
+.td-mvp .td-currency{display:flex;align-items:center;gap:6px;margin:0;font-size:14px}
+.td-mvp .td-currency[hidden]{display:none}
+.td-mvp .td-currency__btn{min-height:44px;padding:0 16px;border:1px solid var(--td-dark-border);border-radius:var(--td-r-pill);background:transparent;color:var(--td-paper);font:inherit;font-weight:500;cursor:pointer}
+.td-mvp .td-currency__btn[aria-pressed="true"]{background:var(--td-paper);border-color:var(--td-paper);color:var(--td-ink)}
+.td-mvp .td-currency__btn:focus-visible{outline:2px solid var(--td-orange);outline-offset:2px}
