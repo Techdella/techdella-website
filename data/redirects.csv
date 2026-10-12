@@ -65,7 +65,6 @@ source,target,code,condition,notes
 /solution/ai-marketing-agency/,/services/marketing-automation/,301,,AI marketing page removed (owner, 11 Oct 2026)
 /resources/,https://blog.techdella.com/,301,,Resources has no hub page (owner, 11 Oct 2026): guides are in the nav
 /case-study/,/case-studies/,301,,Legacy redirect carried from old theme (fixed targets)
-/founder-dashboard/,https://hub.techdella.com/,301,,Legacy redirect carried from old theme (fixed targets)
 /guide/,https://blog.techdella.com/,301,prefix,Legacy redirect carried from old theme (fixed targets)
 /guide/*,https://blog.techdella.com/$1,301,regex ^/guide/(.+)$,Catch-all for any guide not listed
 /locations/,/services/,301,,Locations have no hub page (owner, 11 Oct 2026): the nav and footer list the markets
@@ -78,8 +77,6 @@ source,target,code,condition,notes
 /service/cmo-service/,/services/,301,,"Not in the export; in GSC (3 clicks). Old chain via /cmo-as-a-service/ → one hop"
 /location/new-york-usa/,/services/,301,,"Not in the export; in GSC (3 clicks). Old chain via /locations/usa/ → one hop"
 /tech-blog/a-complete-guide-for-saas-product-development/,https://blog.techdella.com/how-to-build-a-saas-product/,301,,"Not in the export; in GSC (3 clicks). Old theme rule made explicit"
-/directory/founder-perks/,/founders-hub-waitlist/,301,,"Not in the export; GSC 53 clicks, 404 now. Same offer as /founder-perks/ [CONFIRM if Founders Hub retires]"
-/founder-perks/,/founders-hub-waitlist/,301,,"Not in the export; GSC 31 clicks. Old rule made explicit"
 /glossary/risk-tolerance/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
 /glossary/diversification/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
 /glossary/platform-as-a-service-paas/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
@@ -119,3 +116,8 @@ source,target,code,condition,notes
 /glossary/solopreneurship/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
 /glossary/internet-of-things/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
 /glossary/dropshipping/,/business/how-to-start-a-dropshipping-business/,301,,"GSC 12 mo to 12 Oct 2026: <50 clicks; closest relevant page (§10.6)"
+/locations/ibadan-nigeria/,/locations/nigeria/,301,,"GSC 12 mo to 12 Oct 2026: 20 clicks; merged into the Nigeria page, which leads with the Ibadan office (owner, 12 Oct 2026)"
+/founders-hub-waitlist/,,410,,"Founders Hub retired (owner, 12 Oct 2026): 410 Gone"
+/founder-dashboard/,,410,,"Founders Hub retired (owner, 12 Oct 2026): 410 Gone"
+/founder-perks/,,410,,"Founders Hub retired (owner, 12 Oct 2026): 410 Gone"
+/directory/founder-perks/,,410,,"Founders Hub retired (owner, 12 Oct 2026): 410 Gone"
