@@ -86,7 +86,7 @@ For staging, create the same set as `TechDella · TEST · …` (§11.5).
 | Prices and minimum ad spend | `[PRICE]` / `[MINIMUM SPEND]` in content |
 | Client permissions for logos, quotes, creatives | `permission_confirmed` fields |
 | Real addresses, if any (LocalBusiness) | Location pages |
-| Social profile URLs (`sameAs`, footer) | option `td_social_profiles` |
+| Social profile URLs (`sameAs`, footer) | option `td_social_profiles`: supplied 12 Oct 2026, set by `wp td setup` (`td_seo_default_social_profiles()`) |
 | AI crawler policy | option `td_ai_crawler_policy` |
 | US vs UK English (default US) | Voice |
 | Decisions D1 (guides location) and §10.9 (business library) | CLAUDE.md §1, §10.9 |

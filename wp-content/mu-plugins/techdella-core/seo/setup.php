@@ -76,8 +76,11 @@ function td_seo_setup(): array {
 	if ( false === get_option( 'td_ai_crawler_policy' ) ) {
 		add_option( 'td_ai_crawler_policy', 'allow-all' ); // [CONFIRM owner].
 	}
-	if ( false === get_option( 'td_social_profiles' ) ) {
-		add_option( 'td_social_profiles', [] ); // [URLS] from the owner (§17).
+	// Official profiles (owner, 12 Oct 2026): footer links and Organization sameAs. Filled when the
+	// option is missing or empty, so a later edit in WordPress is never overwritten.
+	$profiles = get_option( 'td_social_profiles' );
+	if ( ! is_array( $profiles ) || ! array_filter( $profiles ) ) {
+		update_option( 'td_social_profiles', td_seo_default_social_profiles() );
 	}
 
 	// Rank Math's sitemap routes only register on a request where the module
@@ -211,3 +214,19 @@ add_action(
 	},
 	20
 );
+
+/**
+ * TechDella's official social profiles (owner, 12 Oct 2026), label => URL.
+ *
+ * @return array<string,string>
+ */
+function td_seo_default_social_profiles(): array {
+	return [
+		'LinkedIn'  => 'https://www.linkedin.com/company/techdella-inc/',
+		'Instagram' => 'https://www.instagram.com/techdella.agency/',
+		'X'         => 'https://x.com/TechDella',
+		'TikTok'    => 'https://www.tiktok.com/@techdella',
+		'YouTube'   => 'https://www.youtube.com/@techdella',
+		'Facebook'  => 'https://www.facebook.com/techdella/',
+	];
+}
