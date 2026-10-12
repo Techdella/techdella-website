@@ -45,7 +45,7 @@ cp -a "$R/content" "$R/data" "$WT/"
 cp -a "$R/assets/images" "$R/assets/logos" "$R/assets/creatives" "$R/assets/CREDITS.md" "$WT/assets/"
 cp -a "$R"/assets/video/*.{mp4,webm,jpg,vtt} "$WT/assets/video/"
 cp -a "$R/pdf/out" "$WT/pdf/"
-cp "$R/scripts/hostinger/sync.sh" "$R/scripts/hostinger/README.md" "$WT/"
+cp "$R/scripts/hostinger/sync.sh" "$R/scripts/hostinger/go-live.sh" "$R/scripts/hostinger/README.md" "$WT/"
 cp "$R/scripts/hostinger/htaccess" "$WT/.htaccess"
 find "$WT" -name .DS_Store -delete
 printf '%s\nbuilt %s from %s\n' "$SRC_SHA" "$(date -u +%Y-%m-%dT%H:%MZ)" "$(git rev-parse --abbrev-ref HEAD)" > "$WT/BUILD.txt"
