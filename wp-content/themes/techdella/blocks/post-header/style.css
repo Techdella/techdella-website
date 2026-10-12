@@ -13,3 +13,19 @@
 a.td-post-header__name:hover{text-decoration:underline}
 .td-post-header__sub{font-size:13px;color:var(--td-muted)}
 @media (max-width:600px){.td-post-header__inner{padding-block:48px 28px}}
+
+/* Byline (shared: posts, business guides, glossary, tools). */
+.td-byline{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:6px;text-align:left}
+.td-byline .td-avatar,.td-byline picture{width:48px;height:48px;border-radius:50%;overflow:hidden;flex:0 0 48px}
+.td-byline img{width:48px;height:48px;object-fit:cover}
+.td-byline__initials{display:inline-grid;place-items:center;width:48px;height:48px;flex:0 0 48px;border-radius:50%;background:var(--td-sand);color:var(--td-ink);font-size:15px;font-weight:600}
+.td-byline__text{display:flex;flex-direction:column;gap:3px;min-width:0}
+.td-byline__who{margin:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;font-size:15px;color:var(--td-ink)}
+.td-byline__who a{color:var(--td-ink);font-weight:600;text-decoration:none}
+.td-byline__who a:hover{color:var(--td-orange-text);text-decoration:underline}
+.td-byline__by{color:var(--td-muted)}
+.td-byline__role{font-size:13.5px;color:var(--td-muted)}
+.td-byline__meta{margin:0;display:flex;flex-wrap:wrap;gap:2px 8px;font-size:13.5px;color:var(--td-muted)}
+.td-byline__meta a{color:var(--td-body)}
+.td-byline__dot{color:var(--td-line)}
+@media (max-width:600px){.td-byline{justify-content:flex-start}}

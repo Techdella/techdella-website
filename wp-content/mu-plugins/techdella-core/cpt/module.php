@@ -19,6 +19,7 @@ require_once __DIR__ . '/register.php';
 require_once __DIR__ . '/meta.php';
 require_once __DIR__ . '/templates.php';
 require_once __DIR__ . '/gates.php';
+require_once __DIR__ . '/team-users.php';
 
 /**
  * Post types that are always noindex (meta robots + X-Robots-Tag), §8.3.

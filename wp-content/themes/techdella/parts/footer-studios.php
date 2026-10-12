@@ -13,6 +13,7 @@ $td_links = td_footer_links(
 		__( 'Work', 'techdella' )               => td_url( 'studios', '/work/' ),
 		__( 'Packages', 'techdella' )           => td_url( 'studios', '/#packages' ),
 		__( 'Start a project', 'techdella' )    => td_url( 'studios', '/start/' ),
+		__( 'Guides', 'techdella' )             => td_url( 'studios', '/guides/' ),
 		__( 'Search marketing ↗', 'techdella' ) => td_url( 'marketing', '/' ),
 		__( 'Journal', 'techdella' )            => td_url( 'journal', '/' ),
 	]

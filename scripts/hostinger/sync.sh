@@ -122,7 +122,7 @@ if [ "$REFRESH" = 1 ]; then
   # Rebuilt case studies, industries, markets and (on the right site) guides, glossary and the
   # business library and the PDF resource pages, published on the private staging site for review
   # (never on production).
-  for d in case-studies solutions locations resources tools glossary business journal work; do
+  for d in team case-studies solutions locations resources tools glossary business journal work guides; do
     [ -d "$BUNDLE/content/$d" ] && $WP td import-content "$BUNDLE/content/$d" --status=draft --update-published --publish
   done
   # Article covers (title + photo in the arch) where an article has no image of its own.

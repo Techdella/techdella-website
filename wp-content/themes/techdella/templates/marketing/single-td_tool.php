@@ -71,6 +71,10 @@ while ( have_posts() ) :
 			<?php if ( has_excerpt() ) : ?>
 				<p class="td-m2-head__lead"><?php echo td_mark_placeholders( esc_html( $td_lead ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
+			<?php
+			require_once get_theme_file_path( 'blocks/post-card/lib.php' );
+			echo td_block_css( 'post-header' ) . td_byline_html( $td_id, false ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped inside.
+			?>
 		</header>
 
 		<div class="td-container td-m2-tool-layout">

@@ -63,7 +63,7 @@ if ( ! function_exists( 'td_a3_person' ) ) {
 			$team = get_posts(
 				[
 					'post_type'      => 'td_team',
-					'post_status'    => 'publish',
+					'post_status'    => [ 'publish', 'draft', 'pending', 'private' ], // Profiles have no front end of their own.
 					'posts_per_page' => 1,
 					'fields'         => 'ids',
 					'no_found_rows'  => true,
@@ -82,6 +82,7 @@ if ( ! function_exists( 'td_a3_person' ) ) {
 				$person['role']     = (string) td_field( 'role', $tid );
 				$person['bio']      = (string) ( td_field( 'bio', $tid ) ?? $person['bio'] );
 				$person['photo']    = is_array( $photo ) ? (int) ( $photo['ID'] ?? $photo['id'] ?? 0 ) : (int) $photo;
+				$person['photo']    = $person['photo'] ? $person['photo'] : (int) get_post_thumbnail_id( $tid );
 				$person['linkedin'] = (string) td_field( 'linkedin', $tid );
 			}
 		}
@@ -240,5 +241,135 @@ if ( ! function_exists( 'td_a3_post_inline' ) ) {
 			'cover'    => (string) ( $item['cover'] ?? '' ),
 			'example'  => true,
 		];
+	}
+}
+
+if ( ! function_exists( 'td_byline_person' ) ) {
+	/**
+	 * A person from a stored value: a user (ID, array, WP_User) or a td_team / user slug.
+	 *
+	 * @param mixed $value Field value.
+	 */
+	function td_byline_person( $value ): ?array {
+		if ( is_array( $value ) ) {
+			$value = $value['ID'] ?? ( $value[0] ?? 0 );
+		}
+		if ( $value instanceof WP_User ) {
+			return td_a3_person( (int) $value->ID );
+		}
+		if ( is_numeric( $value ) ) {
+			return td_a3_person( (int) $value );
+		}
+		$slug = sanitize_title( (string) $value );
+		if ( '' === $slug ) {
+			return null;
+		}
+		if ( post_type_exists( 'td_team' ) ) {
+			$team = get_page_by_path( $slug, OBJECT, 'td_team' );
+			if ( $team instanceof WP_Post && function_exists( 'td_team_user_id' ) ) {
+				$uid = td_team_user_id( $team, false );
+				if ( $uid ) {
+					return td_a3_person( $uid );
+				}
+				return [
+					'name'     => get_the_title( $team ),
+					'role'     => (string) td_field( 'role', $team->ID ),
+					'bio'      => (string) td_field( 'bio', $team->ID ),
+					'photo'    => (int) get_post_thumbnail_id( $team ),
+					'linkedin' => (string) td_field( 'linkedin', $team->ID ),
+					'url'      => '',
+				];
+			}
+		}
+		$user = get_user_by( 'slug', $slug );
+		return $user ? td_a3_person( (int) $user->ID ) : null;
+	}
+}
+
+if ( ! function_exists( 'td_byline' ) ) {
+	/**
+	 * Byline facts for an article (§8.1): author, reviewer, published, last reviewed, reading time.
+	 *
+	 * @param int $post_id Post ID.
+	 * @return array{author:?array,reviewer:?array,published:string,published_iso:string,reviewed:string,reviewed_iso:string,reviewed_label:string,minutes:int}
+	 */
+	function td_byline( int $post_id ): array {
+		$post     = get_post( $post_id );
+		$author   = $post ? td_a3_person( (int) $post->post_author ) : null;
+		$reviewer = td_byline_person( td_field( 'reviewer', $post_id ) );
+		if ( $reviewer && $author && $reviewer['name'] === $author['name'] ) {
+			$reviewer = null;
+		}
+		$fmt      = 'j M Y';
+		$reviewed = trim( (string) td_field( 'last_reviewed', $post_id ) );
+		$rev_ts   = '' !== $reviewed ? strtotime( $reviewed ) : false;
+		$label    = __( 'Last reviewed', 'techdella' );
+		if ( ! $rev_ts && $post && strtotime( $post->post_modified_gmt ) - strtotime( $post->post_date_gmt ) > DAY_IN_SECONDS ) {
+			$rev_ts = strtotime( $post->post_modified_gmt . ' UTC' );
+			$label  = __( 'Updated', 'techdella' );
+		}
+		return [
+			'author'         => $author,
+			'reviewer'       => $reviewer,
+			'published'      => $post ? (string) get_the_date( $fmt, $post ) : '',
+			'published_iso'  => $post ? (string) get_the_date( 'c', $post ) : '',
+			'reviewed'       => $rev_ts ? wp_date( $fmt, $rev_ts ) : '',
+			'reviewed_iso'   => $rev_ts ? wp_date( 'c', $rev_ts ) : '',
+			'reviewed_label' => $label,
+			'minutes'        => td_a3_reading_time( $post_id ),
+		];
+	}
+}
+
+if ( ! function_exists( 'td_byline_html' ) ) {
+	/**
+	 * The byline: avatar, "By" author (linked to their author page) and role, then reviewer,
+	 * published and last-reviewed dates and reading time. Empty without a named author.
+	 *
+	 * @param int  $post_id Post ID.
+	 * @param bool $time    Show the reading time.
+	 */
+	function td_byline_html( int $post_id, bool $time = true ): string {
+		$b = td_byline( $post_id );
+		$a = $b['author'];
+		if ( ! $a || '' === (string) $a['name'] ) {
+			return '';
+		}
+		$avatar = ! empty( $a['photo'] ) ? td_image(
+			$a['photo'],
+			[
+				'alt'       => '',
+				'sizes'     => '48px',
+				'img_class' => 'td-avatar',
+				'width'     => 48,
+			]
+		) : '';
+		$avatar = str_starts_with( $avatar, '<!--' ) ? '' : $avatar;
+		if ( '' === $avatar ) {
+			$initials = implode( '', array_map( static fn( $w ) => mb_substr( $w, 0, 1 ), array_slice( preg_split( '/\s+/', trim( (string) $a['name'] ) ), 0, 2 ) ) );
+			$avatar   = '<span class="td-byline__initials" aria-hidden="true">' . esc_html( mb_strtoupper( $initials ) ) . '</span>';
+		}
+		$name = ! empty( $a['url'] ) ? '<a href="' . esc_url( (string) $a['url'] ) . '" rel="author">' . esc_html( (string) $a['name'] ) . '</a>' : '<strong>' . esc_html( (string) $a['name'] ) . '</strong>';
+		$meta = [];
+		if ( $b['reviewer'] ) {
+			$r      = $b['reviewer'];
+			$rname  = ! empty( $r['url'] ) ? '<a href="' . esc_url( (string) $r['url'] ) . '">' . esc_html( (string) $r['name'] ) . '</a>' : esc_html( (string) $r['name'] );
+			$meta[] = '<span>' . esc_html__( 'Reviewed by', 'techdella' ) . ' ' . $rname . '</span>';
+		}
+		if ( '' !== $b['published'] ) {
+			$meta[] = '<span>' . esc_html__( 'Published', 'techdella' ) . ' <time datetime="' . esc_attr( $b['published_iso'] ) . '">' . esc_html( $b['published'] ) . '</time></span>';
+		}
+		if ( '' !== $b['reviewed'] ) {
+			$meta[] = '<span>' . esc_html( $b['reviewed_label'] ) . ' <time datetime="' . esc_attr( $b['reviewed_iso'] ) . '">' . esc_html( $b['reviewed'] ) . '</time></span>';
+		}
+		if ( $time && $b['minutes'] ) {
+			/* translators: %d: minutes */
+			$meta[] = '<span>' . esc_html( sprintf( _n( '%d min read', '%d min read', $b['minutes'], 'techdella' ), $b['minutes'] ) ) . '</span>';
+		}
+		return '<div class="td-byline">' . $avatar
+			. '<div class="td-byline__text"><p class="td-byline__who"><span class="td-byline__by">' . esc_html__( 'By', 'techdella' ) . '</span> ' . $name
+			. ( '' !== (string) $a['role'] ? '<span class="td-byline__role">' . esc_html( (string) $a['role'] ) . '</span>' : '' ) . '</p>'
+			. ( $meta ? '<p class="td-byline__meta">' . implode( '<span class="td-byline__dot" aria-hidden="true">·</span>', $meta ) . '</p>' : '' )
+			. '</div></div>';
 	}
 }

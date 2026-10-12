@@ -18,7 +18,7 @@ if ( $td_paged > 1 ) :
 		<?php
 		echo td_section_head( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			[
-				'label' => __( 'Journal', 'techdella' ),
+				'label' => td_posts_hub_label(),
 				/* translators: %d: page number */
 				'title' => sprintf( __( 'All posts, *page %d*', 'techdella' ), $td_paged ),
 				'level' => 1,

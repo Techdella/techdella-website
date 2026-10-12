@@ -84,8 +84,7 @@ while ( have_posts() ) :
 
 			// Byline (§8.1): named author + reviewer + last reviewed. Never a generic team byline.
 			$td_author   = td_a3_person( (int) get_post_field( 'post_author', $td_id ) );
-			$td_rev_id   = (int) ( td_m2_ids( td_field( 'reviewer', $td_id ) )[0] ?? 0 );
-			$td_reviewer = $td_rev_id ? td_a3_person( $td_rev_id ) : null;
+			$td_reviewer = td_byline_person( td_field( 'reviewer', $td_id ) );
 			$td_reviewed = trim( (string) td_field( 'last_reviewed', $td_id ) );
 			$td_ts       = '' !== $td_reviewed ? strtotime( $td_reviewed ) : false;
 			?>
@@ -95,7 +94,7 @@ while ( have_posts() ) :
 					<dd>
 						<?php
 						if ( $td_author ) {
-							echo $td_author['linkedin'] ? '<a href="' . esc_url( $td_author['linkedin'] ) . '" rel="author">' . esc_html( $td_author['name'] ) . '</a>' : esc_html( $td_author['name'] );
+							echo $td_author['url'] ? '<a href="' . esc_url( $td_author['url'] ) . '" rel="author">' . esc_html( $td_author['name'] ) . '</a>' : esc_html( $td_author['name'] );
 							echo $td_author['role'] ? ', ' . esc_html( $td_author['role'] ) : '';
 						} else {
 							echo td_mark_placeholders( '[CONFIRM author]' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

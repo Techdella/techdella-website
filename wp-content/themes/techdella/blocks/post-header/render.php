@@ -46,7 +46,7 @@ if ( '' === $td_title ) {
 }
 $td_posts_page = (int) get_option( 'page_for_posts' );
 $td_journal    = $td_posts_page ? (string) get_permalink( $td_posts_page ) : home_url( '/' );
-$td_crumb      = __( 'Journal', 'techdella' );
+$td_crumb      = td_posts_hub_label();
 if ( $td_post && 'business' === $td_post->post_type ) { // Business library lives on Marketing under /business/.
 	$td_journal = (string) get_post_type_archive_link( 'business' );
 	$td_crumb   = __( 'Business guides', 'techdella' );
@@ -86,21 +86,14 @@ $td_sub    = array_filter(
 		<?php if ( '' !== trim( $td_dek ) ) : ?>
 			<p class="td-post-header__dek"><?php echo td_a3_text( $td_dek ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 		<?php endif; ?>
-		<?php if ( $td_person && '' !== (string) $td_person['name'] ) : ?>
-			<p class="td-post-header__byline">
-				<?php echo $td_avatar; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-				<span class="td-post-header__who">
-					<span class="td-sr"><?php esc_html_e( 'By', 'techdella' ); ?> </span>
-					<?php if ( ! empty( $td_person['url'] ) ) : ?>
-						<a class="td-post-header__name" href="<?php echo esc_url( (string) $td_person['url'] ); ?>" rel="author"><?php echo esc_html( (string) $td_person['name'] ); ?></a>
-					<?php else : ?>
-						<strong class="td-post-header__name"><?php echo esc_html( (string) $td_person['name'] ); ?></strong>
-					<?php endif; ?>
-					<?php if ( $td_sub ) : ?>
-						<span class="td-post-header__sub"><?php echo esc_html( implode( ' · ', $td_sub ) ); ?></span>
-					<?php endif; ?>
-				</span>
-			</p>
-		<?php endif; ?>
+		<?php
+		$td_byline = $td_post ? td_byline_html( $td_id ) : '';
+		if ( '' !== $td_byline ) {
+			echo $td_byline; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in td_byline_html().
+		} elseif ( $td_person && '' !== (string) $td_person['name'] ) {
+			// Styleguide preview item.
+			echo '<div class="td-byline"><div class="td-byline__text"><p class="td-byline__who"><span class="td-byline__by">' . esc_html__( 'By', 'techdella' ) . '</span> <strong>' . esc_html( (string) $td_person['name'] ) . '</strong>' . ( $td_sub ? '<span class="td-byline__role">' . esc_html( implode( ' · ', $td_sub ) ) . '</span>' : '' ) . '</p></div></div>';
+		}
+		?>
 	</div>
 </header>

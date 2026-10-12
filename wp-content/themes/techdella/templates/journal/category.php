@@ -18,7 +18,7 @@ $td_name  = $td_term instanceof WP_Term ? $td_term->name : '';
 echo td_block( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	'post-grid',
 	[
-		'label'      => __( 'Journal', 'techdella' ),
+		'label'      => td_posts_hub_label(),
 		'title'      => $td_paged > 1
 			/* translators: 1: category name, 2: page number */
 			? sprintf( __( '%1$s, page %2$d', 'techdella' ), $td_name, $td_paged )
