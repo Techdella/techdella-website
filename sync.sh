@@ -38,6 +38,14 @@ case "$SITE_DIR/" in "$BUNDLE"/*) echo "The site folder can't be inside the bund
 
 echo "▸ TechDella $(head -1 "$BUNDLE/BUILD.txt") → $SITE_DIR"
 
+# A site without TD_SITE would render as Marketing (wrong templates, wrong noindex rules). Only a
+# --first-run with --site may set it; otherwise stop before anything changes.
+if [ "$FIRST" != 1 ] && ! $WP config has TD_SITE --type=constant > /dev/null 2>&1; then
+  echo "Stopped: $SITE_DIR has no TD_SITE yet, so it isn't set up for the TechDella theme." >&2
+  echo "Check the folder (staging copies live in .../public_html/staging), or set it up with --first-run --site=… --env=…" >&2
+  exit 1
+fi
+
 # A live site changes the moment this runs (new theme, new plugin), so production needs a typed yes.
 CURRENT_ENV="$($WP config get TD_ENV 2> /dev/null || true)"
 if [ "${ENV:-$CURRENT_ENV}" != staging ]; then
