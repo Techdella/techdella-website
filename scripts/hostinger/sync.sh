@@ -67,7 +67,9 @@ copy_dir() { # <from> <to>
 copy_dir "$BUNDLE/wp-content/themes/techdella" "$SITE_DIR/wp-content/themes/techdella"
 copy_dir "$BUNDLE/wp-content/mu-plugins/techdella-core" "$SITE_DIR/wp-content/mu-plugins/techdella-core"
 cp "$BUNDLE/wp-content/mu-plugins/techdella-core.php" "$SITE_DIR/wp-content/mu-plugins/techdella-core.php"
-echo "  ✓ theme and core plugin copied"
+# The host's CDN answers /favicon.ico itself (404) unless a real file sits in the web root.
+cp "$BUNDLE/wp-content/themes/techdella/assets/img/icons/favicon.ico" "$SITE_DIR/favicon.ico"
+echo "  ✓ theme, core plugin and favicon copied"
 
 $WP theme activate techdella
 
