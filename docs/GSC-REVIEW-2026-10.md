@@ -8,7 +8,7 @@ Every decision applies the spec's rule; `data/url-map.csv` and `data/redirects.c
 
 | Page | Clicks | Outcome |
 |---|---|---|
-| /locations/ibadan-nigeria/ | 20 | **Stays** (not < 20). The owner may still choose to 301 it to /locations/nigeria/, which leads with the Ibadan office. |
+| /locations/ibadan-nigeria/ | 20 | 301 → /locations/nigeria/ (not < 20, but the owner chose to merge it into the Nigeria page, which leads with the Ibadan office) |
 | /locations/mumbai-india/ | 10 | 301 → /services/ |
 | /locations/abuja-nigeria/ | 6 | 301 → /locations/nigeria/ |
 | /locations/germany/, /new-york/, /pakistan/ | 0 | 301 → /services/ |
@@ -32,17 +32,14 @@ The library brought in 1,860 clicks, more than half of techdella.com's search tr
 
 ## URLs with clicks that were missing from the export (§9.4 step 2)
 
-These now 301 in one hop:
+These now 301 in one hop. The Founders Hub is retired (owner, 12 Oct 2026), so /founders-hub-waitlist/, /founder-dashboard/, /founder-perks/ (31 clicks) and /directory/founder-perks/ (53 clicks) return 410 Gone, and `legacy:retire` unpublishes the waitlist page.
 
 | Source | Clicks | Target | Note |
 |---|---|---|---|
-| /directory/founder-perks/ | 53 | /founders-hub-waitlist/ | 404 today |
-| /founder-perks/ | 31 | /founders-hub-waitlist/ | |
 | /service/cmo-service/ | 3 | /services/ | |
 | /location/new-york-usa/ | 3 | /services/ | |
 | /tech-blog/a-complete-guide-for-saas-product-development/ | 3 | the blog post | |
 
-`/founder-dashboard/` points at hub.techdella.com: confirm that site is up before launch, or `redirects:verify` will fail.
 
 ## Blog: refresh first (by clicks)
 

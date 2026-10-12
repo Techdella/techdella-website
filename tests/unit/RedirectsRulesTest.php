@@ -29,7 +29,7 @@ final class RedirectsRulesTest extends TestCase {
 	public function test_real_csv_parses_without_errors(): void {
 		$parsed = RedirectRules::parse_csv( (string) file_get_contents( dirname( __DIR__, 2 ) . '/data/redirects.csv' ) );
 		$this->assertSame( [], $parsed['errors'] );
-		$this->assertCount( 120, $parsed['rules'] );
+		$this->assertCount( 122, $parsed['rules'] );
 		// The GSC review (12 Oct 2026) resolved every "GSC check first" row.
 		$this->assertCount( 0, array_filter( $parsed['rules'], static fn( $r ) => $r['conditional'] ) );
 	}
@@ -101,17 +101,20 @@ final class RedirectsRulesTest extends TestCase {
 	}
 
 	public function test_gsc_review_outcomes(): void {
-		// <20 clicks: 301; Ibadan had 20, so its page stays (§10.4).
+		// <20 clicks: 301; Ibadan (20) merged too, by the owner's choice (§10.4).
 		$this->assertSame( '/services/', self::target( '/locations/germany/' ) );
 		$this->assertSame( '/locations/nigeria/', self::target( '/locations/abuja-nigeria/' ) );
-		$this->assertNull( self::target( '/locations/ibadan-nigeria/' ) );
+		$this->assertSame( '/locations/nigeria/', self::target( '/locations/ibadan-nigeria/' ) );
 		// Off-topic glossary terms under 50 clicks: 410, or 301 to the closest relevant page (§10.6).
 		$gone = RedirectRules::match( self::$rules, '/glossary/contract-law/' );
 		$this->assertSame( 410, $gone['rule']['code'] );
 		$this->assertSame( '/business/how-to-start-a-dropshipping-business/', self::target( '/glossary/dropshipping/' ) );
 		// URLs with clicks that were missing from the export now redirect in one hop (§9.4).
 		$this->assertSame( '/services/', self::target( '/service/cmo-service/' ) );
-		$this->assertSame( '/founders-hub-waitlist/', self::target( '/directory/founder-perks/' ) );
+		// The Founders Hub is retired: every address is gone.
+		foreach ( [ '/founders-hub-waitlist/', '/founder-dashboard/', '/founder-perks/', '/directory/founder-perks/' ] as $hub ) {
+			$this->assertSame( 410, RedirectRules::match( self::$rules, $hub )['rule']['code'] );
+		}
 	}
 
 	public function test_domain_rewrite(): void {

@@ -548,7 +548,7 @@ Validate every template with the Rich Results Test and the Schema.org validator 
   - `type`, `status`, `title`, `old_url`
   - `action` (keep / rebuild / redirect / move / merge-review / keep-review / refresh / refresh-priority / prune-review / noindex / private-noindex / confirm)
   - `new_url`, `notes`, `words`
-- `data/redirects.csv`: 120 rules (after the GSC review of 12 Oct 2026). Includes legacy rules from the old theme, with **corrected targets**.
+- `data/redirects.csv`: 122 rules (after the GSC review of 12 Oct 2026). Includes legacy rules from the old theme, with **corrected targets**.
 
 ### 9.2 Bugs in the current `td_redirects()` (delete the function)
 
@@ -677,6 +677,7 @@ Copy each page from its prototype artboard, then expand it to the target length 
     - local channels and costs (currency, ad CPM context);
     - time-zone working hours;
     - market-specific FAQs.
+  - **GSC review (12 Oct 2026):** all 6 merge-review pages 301. Ibadan had 20 clicks; the owner chose to merge it into Nigeria anyway. The Founders Hub is retired: its URLs return 410.
   - **Merge-review** 6 pages: Ibadan and Abuja → Nigeria; New York → USA; Germany → Europe; India and Pakistan → Locations hub. Redirect each one only if GSC shows fewer than 20 clicks in 12 months; otherwise rebuild it properly.
   - **Delete** the orphan templates with no content: `location-accra`, `berlin`, `cape-town`, `johannesburg`, `kano`, `london`, `nairobi`, `enugu`, `port-harcourt`, `toronto`. **Don't create pages for cities with no clients.** (Johannesburg/Cape Town could become a South Africa page once there is South African proof to show `[CONFIRM]`.)
 

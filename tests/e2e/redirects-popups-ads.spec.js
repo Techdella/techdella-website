@@ -59,11 +59,11 @@ test.describe('redirects', () => {
     expect([301, 302, 307, 308]).not.toContain(res.status);
   });
 
-  test('GSC review outcomes (12 Oct 2026): <20 clicks 301, Ibadan stays, off-topic terms 410', async ({ request }) => {
+  test('GSC review outcomes (12 Oct 2026): old markets 301, off-topic terms and the Founders Hub 410', async ({ request }) => {
     expect(await hop(request, site('marketing', '/locations/germany/'))).toEqual({ status: 301, location: site('marketing', '/services/') });
-    expect((await hop(request, site('marketing', '/locations/ibadan-nigeria/'))).status).not.toBe(301);
+    expect(await hop(request, site('marketing', '/locations/ibadan-nigeria/'))).toEqual({ status: 301, location: site('marketing', '/locations/nigeria/') });
     expect((await hop(request, site('marketing', '/glossary/contract-law/'))).status).toBe(410);
-    expect(await hop(request, site('marketing', '/directory/founder-perks/'))).toEqual({ status: 301, location: site('marketing', '/founders-hub-waitlist/') });
+    expect((await hop(request, site('marketing', '/directory/founder-perks/'))).status).toBe(410);
   });
 });
 

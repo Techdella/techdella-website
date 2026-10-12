@@ -248,7 +248,7 @@ em-glossary,publish,Digital Advertising,/glossary/digital-advertising/,refresh-p
 em-glossary,publish,Account-Based Marketing,/glossary/account-based-marketing/,refresh-priority,,"Core term: refresh, link to service page",884
 em-glossary,publish,Product-Market Fit,/glossary/product-market-fit/,refresh,,Adjacent business/startup term,2797
 location,publish,Lagos,/locations/lagos-nigeria/,redirect,/locations/nigeria/,"Merged into the Nigeria page (owner, 11 Oct 2026)",0
-location,publish,Ibadan,/locations/ibadan-nigeria/,keep,,"GSC 12 mo to 12 Oct 2026: 20 clicks (not <20) → keep, rebuild properly (§10.4); owner may still choose to 301 to /locations/nigeria/",0
+location,publish,Ibadan,/locations/ibadan-nigeria/,redirect,/locations/nigeria/,GSC 12 mo: 20 clicks; owner chose to merge into the Nigeria page (12 Oct 2026),0
 location,publish,Abuja,/locations/abuja-nigeria/,redirect,/locations/nigeria/,GSC 12 mo to 12 Oct 2026: 6 clicks (<20) → 301 (§10.4),0
 location,publish,Canada,/locations/canada/,redirect,/services/,"Only Nigeria keeps a market page (owner, 11 Oct 2026): no staffed presence or local proof here",0
 location,publish,USA,/locations/usa/,redirect,/services/,"Only Nigeria keeps a market page (owner, 11 Oct 2026): no staffed presence or local proof here",0
@@ -288,7 +288,7 @@ page,publish,Vibe Marketing,/vibe-marketing/,redirect,/services/marketing-automa
 page,publish,Global Expansion,/global-expansion/,redirect,/services/,Markets have no hub page (owner 11 Oct 2026),0
 page,publish,Studio,/studio/,redirect,https://studios.techdella.com/,Studios moves to subdomain,0
 page,publish,MVP Calculator,/mvp-calculator/,redirect,https://studios.techdella.com/mvp-calculator/,Studios tool,0
-page,publish,Founders Hub Waitlist,/founders-hub-waitlist/,confirm,,Founders Hub still running? keep or 301 → hub.techdella.com,0
+page,publish,Founders Hub Waitlist,/founders-hub-waitlist/,gone,,"Founders Hub retired (owner, 12 Oct 2026): 410 Gone",0
 page,publish,Disclaimer,/disclaimer/,keep,,,0
 service,publish,Content Marketing,/services/content-marketing/,redirect,/services/seo/,,0
 service,publish,Social Media Marketing,/services/social-media-marketing/,redirect,/services/paid-ads/,,0
@@ -362,5 +362,5 @@ thank-you,publish,Black Friday,/thank-you/black-friday/,noindex,,Keep only slugs
 page,publish,Old CMO service URL,/service/cmo-service/,redirect,/services/,Not in the export; in GSC (3 clicks). Old chain via /cmo-as-a-service/ → one hop,
 location,publish,Old New York location URL,/location/new-york-usa/,redirect,/services/,Not in the export; in GSC (3 clicks). Old chain via /locations/usa/ → one hop,
 post,publish,Old tech-blog SaaS guide,/tech-blog/a-complete-guide-for-saas-product-development/,redirect,https://blog.techdella.com/how-to-build-a-saas-product/,Not in the export; in GSC (3 clicks). Old theme rule made explicit,
-page,publish,Founder perks directory (404 today),/directory/founder-perks/,redirect,/founders-hub-waitlist/,"Not in the export; GSC 53 clicks, 404 now. Same offer as /founder-perks/ [CONFIRM if Founders Hub retires]",
-page,publish,Founder perks,/founder-perks/,redirect,/founders-hub-waitlist/,Not in the export; GSC 31 clicks. Old rule made explicit,
+page,publish,Founder perks directory (404 today),/directory/founder-perks/,gone,,"Founders Hub retired (owner, 12 Oct 2026): 410 Gone; GSC 53 clicks",
+page,publish,Founder perks,/founder-perks/,gone,,"Founders Hub retired (owner, 12 Oct 2026): 410 Gone; GSC 31 clicks",
