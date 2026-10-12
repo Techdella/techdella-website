@@ -33,6 +33,17 @@ final class RedirectsRulesTest extends TestCase {
 		$this->assertCount( 6, array_filter( $parsed['rules'], static fn( $r ) => $r['conditional'] ) );
 	}
 
+	public function test_per_site_csvs_parse_and_stay_on_their_site(): void {
+		$journal = RedirectRules::parse_csv( (string) file_get_contents( dirname( __DIR__, 2 ) . '/data/redirects-journal.csv' ) );
+		$this->assertSame( [], $journal['errors'] );
+		$this->assertSame( '/write-for-us/', RedirectRules::match( $journal['rules'], '/submit-guest-post/' )['target'] );
+		foreach ( $journal['rules'] as $rule ) {
+			$this->assertStringStartsWith( '/', $rule['target'], 'blog redirects stay on the blog' );
+		}
+		$studios = RedirectRules::parse_csv( (string) file_get_contents( dirname( __DIR__, 2 ) . '/data/redirects-studios.csv' ) );
+		$this->assertSame( [], $studios['errors'] );
+	}
+
 	public function test_conditions(): void {
 		$csv   = "source,target,code,condition,notes\n/a/,/b/,301,,x\n/c/,/d/,301,GSC check first,\"note, with comma\"\n/e/,/f/,301,prefix,\n/g/*,/h/$1,301,regex ^/g/(.+)$,\n/bad,/x/,999,,\nnoslash,/x/,301,,\n";
 		$out   = RedirectRules::parse_csv( $csv );
