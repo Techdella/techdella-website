@@ -55,7 +55,7 @@ function td_sponsored_rel( string $html, bool $all_out, array $paid ): string {
 		)
 	);
 	$tags = new WP_HTML_Tag_Processor( $html );
-	while ( $tags->next_tag( 'a' ) ) {
+	while ( $tags->next_tag( [ 'tag_name' => 'a' ] ) ) {
 		$href = (string) $tags->get_attribute( 'href' );
 		$host = (string) wp_parse_url( $href, PHP_URL_HOST );
 		if ( '' === $host ) {
