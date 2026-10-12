@@ -89,26 +89,41 @@ while ( have_posts() ) :
 			$td_ts       = '' !== $td_reviewed ? strtotime( $td_reviewed ) : false;
 			?>
 			<dl class="td-m2-byline">
-				<div>
-					<dt><?php esc_html_e( 'Written by', 'techdella' ); ?></dt>
-					<dd>
-						<?php
-						if ( $td_author ) {
+				<?php if ( $td_author ) : ?>
+					<div>
+						<dt><?php esc_html_e( 'Written by', 'techdella' ); ?></dt>
+						<dd>
+							<?php
 							echo $td_author['url'] ? '<a href="' . esc_url( $td_author['url'] ) . '" rel="author">' . esc_html( $td_author['name'] ) . '</a>' : esc_html( $td_author['name'] );
 							echo $td_author['role'] ? ', ' . esc_html( $td_author['role'] ) : '';
-						} else {
-							echo td_mark_placeholders( '[CONFIRM author]' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-						}
-						?>
-					</dd>
-				</div>
+							?>
+						</dd>
+					</div>
+				<?php endif; ?>
+				<?php if ( $td_reviewer ) : // Only a real sign-off is shown (§8.1); no placeholder on a public page. ?>
+					<div>
+						<dt><?php esc_html_e( 'Reviewed by', 'techdella' ); ?></dt>
+						<dd><?php echo esc_html( $td_reviewer['name'] . ( $td_reviewer['role'] ? ', ' . $td_reviewer['role'] : '' ) ); ?></dd>
+					</div>
+				<?php endif; ?>
+				<?php
+				// The reviewer's sign-off date when filled; otherwise the honest fallback the article
+				// bylines use: the last update (or the publish date), never a placeholder on the page.
+				if ( $td_ts ) {
+					$td_date_label = __( 'Last reviewed', 'techdella' );
+					$td_date_iso   = gmdate( 'Y-m-d', $td_ts );
+					$td_date_text  = date_i18n( get_option( 'date_format' ), $td_ts );
+				} else {
+					$td_byline     = td_byline( $td_id );
+					$td_updated    = '' !== $td_byline['reviewed'];
+					$td_date_label = $td_updated ? $td_byline['reviewed_label'] : __( 'Published', 'techdella' );
+					$td_date_iso   = $td_updated ? $td_byline['reviewed_iso'] : $td_byline['published_iso'];
+					$td_date_text  = $td_updated ? $td_byline['reviewed'] : $td_byline['published'];
+				}
+				?>
 				<div>
-					<dt><?php esc_html_e( 'Reviewed by', 'techdella' ); ?></dt>
-					<dd><?php echo $td_reviewer ? esc_html( $td_reviewer['name'] . ( $td_reviewer['role'] ? ', ' . $td_reviewer['role'] : '' ) ) : td_mark_placeholders( '[CONFIRM reviewer]' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></dd>
-				</div>
-				<div>
-					<dt><?php esc_html_e( 'Last reviewed', 'techdella' ); ?></dt>
-					<dd><?php echo $td_ts ? '<time datetime="' . esc_attr( gmdate( 'Y-m-d', $td_ts ) ) . '">' . esc_html( date_i18n( get_option( 'date_format' ), $td_ts ) ) . '</time>' : td_mark_placeholders( '[CONFIRM review date]' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></dd>
+					<dt><?php echo esc_html( $td_date_label ); ?></dt>
+					<dd><time datetime="<?php echo esc_attr( $td_date_iso ); ?>"><?php echo esc_html( $td_date_text ); ?></time></dd>
 				</div>
 			</dl>
 			<p><a class="td-link" href="<?php echo esc_url( (string) get_post_type_archive_link( 'em-glossary' ) ); ?>"><?php esc_html_e( 'Back to the glossary', 'techdella' ); ?></a></p>
