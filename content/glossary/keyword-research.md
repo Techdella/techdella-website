@@ -63,7 +63,7 @@ Fact: Google understands synonyms and related phrasing. Use the keyword in the t
 ## Example from our work
 
 :::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
-Volume is the number founders fixate on, and it's rarely the one that matters. For Paycape, a fintech comparison platform, we anchored content in defined search intent instead of volume alone, choosing the queries people use when they're actively comparing tools. Our rule is simple: if ranking for a keyword wouldn't lead to a demo, a signup or a sale, it goes to the bottom of the list.
+Volume is the number founders fixate on, and it's rarely the one that matters. For Paycape, a fintech platform for Nigerian businesses, we anchored content in defined search intent instead of volume alone, choosing the queries people use when they're actively comparing tools. Our rule is simple: if ranking for a keyword wouldn't lead to a demo, a signup or a sale, it goes to the bottom of the list.
 :::
 
 ## How to do keyword research

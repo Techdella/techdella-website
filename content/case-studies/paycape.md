@@ -1,8 +1,9 @@
 ---
 title: "How Paycape Boosted Organic Visibility and Demos with Techdella"
 slug: paycape
-excerpt: "Paycape is a fintech insights and comparison platform helping users and founders quickly find trusted financial tools and resources across categories like wallets, loan apps, and payment systems. They had strong intent and product value, but their growth was held back by limited organic visibility and inconsistent engagement with key audiences online."
+excerpt: "Paycape is a fintech platform built for Nigerian businesses: payments, invoicing, payroll, tax and cashflow in one workspace. Its content hub helps founders and operators compare financial tools such as wallets, loan apps and payment systems. They had strong intent and product value, but their growth was held back by limited organic visibility and inconsistent engagement with key audiences online."
 client: "Paycape"
+country: "Nigeria"
 taxonomies:
   td_industry: [fintech]
 permission_confirmed: true
@@ -15,7 +16,7 @@ metric_2_label: "monthly organic visitors"
 metric_3_num: "50 days"
 metric_3_label: "to first result"
 challenge: |
-  Paycape is a fintech insights and comparison platform helping users and founders quickly find trusted financial tools and resources across categories like wallets, loan apps, and payment systems. They had strong intent and product value, but their growth was held back by limited organic visibility and inconsistent engagement with key audiences online.
+  Paycape is a fintech platform built for Nigerian businesses: payments, invoicing, payroll, tax and cashflow in one workspace. Its content hub helps founders and operators compare financial tools such as wallets, loan apps and payment systems. They had strong intent and product value, but their growth was held back by limited organic visibility and inconsistent engagement with key audiences online.
 
   Techdella partnered with Paycape to tighten positioning, build content clusters that attract the right searches, and increase demo engagement without overhype or vanity metrics.
 

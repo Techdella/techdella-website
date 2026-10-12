@@ -7,9 +7,9 @@ td.ready(() => {
   if (!prices.length) return;
   const KEY = 'td-currency';
   let saved = null;
-  try { saved = window.localStorage.getItem(KEY); } catch (e) { saved = null; }
+  try { saved = window.localStorage.getItem(KEY); } catch { saved = null; }
   let zone = '';
-  try { zone = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) { zone = ''; }
+  try { zone = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch { zone = ''; }
   const switches = [...document.querySelectorAll('[data-td-currency]')];
   const apply = (cur) => {
     prices.forEach((p) => { p.textContent = cur === 'ngn' ? p.dataset.ngn : p.dataset.usd; });
@@ -22,7 +22,7 @@ td.ready(() => {
       const b = e.target.closest('[data-currency]');
       if (!b) return;
       apply(b.dataset.currency);
-      try { window.localStorage.setItem(KEY, b.dataset.currency); } catch (err) { /* private mode */ }
+      try { window.localStorage.setItem(KEY, b.dataset.currency); } catch { /* private mode */ }
     });
   });
   apply(saved === 'ngn' || saved === 'usd' ? saved : (zone === 'Africa/Lagos' ? 'ngn' : 'usd'));

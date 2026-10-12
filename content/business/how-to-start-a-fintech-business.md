@@ -128,7 +128,7 @@ TechDella Studios designs and builds fintech MVPs with onboarding, KYC flows, da
 - **Remove friction.** See how we helped [Havyn reduce transaction friction](/case-studies/havyn/). Our glossary entry on [fintech marketing](/glossary/fintech-marketing/) covers the basics.
 
 :::quote "Joanna Okedara-Kalu" "Founder & CEO, TechDella"
-In fintech, clarity does more for trust than clever copy. When we worked with Paycape, a fintech comparison platform, we started by tightening positioning and building content around the questions founders were already searching. The first result came in 50 days, and 50% of conversions came from inbound. Tell people who regulates you, what it costs and what to do next.
+In fintech, clarity does more for trust than clever copy. When we worked with Paycape, a fintech platform for Nigerian businesses, we started by tightening positioning and building content around the questions founders were already searching. The first result came in 50 days, and 50% of conversions came from inbound. Tell people who regulates you, what it costs and what to do next.
 :::
 
 :::myth-fact

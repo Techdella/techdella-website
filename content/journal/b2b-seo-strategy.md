@@ -181,7 +181,7 @@ Now change one input. If the cluster targets problem-stage keywords and converts
 
 ## What this looks like in practice: Paycape
 
-Paycape is a fintech insights and comparison platform. When we started, its content was broad and shallow, so it struggled to compete for high-intent fintech searches. We built content clusters anchored in the real queries founders and small business buyers use when they compare fintech tools, aligned internal links so each article led toward demo pages, and refreshed positioning on key pages.
+Paycape is a fintech platform for Nigerian businesses. When we started, its content hub was broad and shallow, so it struggled to compete for high-intent fintech searches. We built content clusters anchored in the real queries founders and small business buyers use when they compare fintech tools, aligned internal links so each article led toward demo pages, and refreshed positioning on key pages.
 
 :::stats "Paycape, 5-month engagement (Q3 2025)" highlight=0
 50% | of conversions came from inbound | TechDella case study, 2025 | marketing:/case-studies/paycape/

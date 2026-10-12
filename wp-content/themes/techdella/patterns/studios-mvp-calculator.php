@@ -1,14 +1,14 @@
 <?php
 /**
- * Title: Studios MVP calculator (shell)
+ * Title: Studios MVP calculator
  * Slug: techdella/studios-mvp-calculator
- * Description: /mvp-calculator/ page shell. The calculator itself is Phase 7 and needs a spec ([CONFIRM calculator spec]); until then the page offers the contact form, not a fake estimate.
+ * Description: /mvp-calculator/: a live MVP cost range from the Studios prices (Growth → Prices), emailed through the MVP_CALC form (owner, 12 Oct 2026).
  * Inserter: no
  * TD Site: studios
  * TD Post Type: page
  * TD Slug: mvp-calculator
  * TD Title: MVP cost calculator
- * TD Description: Estimate what your MVP will cost. Our MVP cost calculator is being rebuilt, so tell us about your idea and the Studios team will send a scoped estimate.
+ * TD Description: Free MVP cost calculator: pick your platform, features and timeline to see a price range and weeks to launch, based on TechDella Studios' published prices.
  *
  * @package techdella
  */
@@ -23,9 +23,9 @@ $td_blocks = [
 			'parentUrl'      => '/',
 			'eyebrow'        => 'MVP calculator',
 			'title'          => 'What will your MVP *cost*?',
-			'lead'           => 'Our MVP cost calculator is being rebuilt. Until it is back, tell us about your idea and the Studios team will reply with a scoped estimate.',
-			'primaryLabel'   => 'Ask for an estimate',
-			'primaryUrl'     => '#estimate',
+			'lead'           => 'Pick what your first version needs and see a price range and timeline, based on our published Studios prices. Then get the breakdown by email.',
+			'primaryLabel'   => 'Start the calculator',
+			'primaryUrl'     => '#calculator',
 			'secondaryLabel' => 'See MVP packages',
 			'secondaryUrl'   => '/services/mvp-development/#packages',
 			'layout'         => 'center',
@@ -33,32 +33,36 @@ $td_blocks = [
 		],
 	],
 	[
+		'tool-mvp-calculator',
+		[],
+	],
+	[
 		'feature-grid',
 		[
 			'label' => 'What drives the cost',
 			'title' => 'Five things that shape an *estimate*',
-			'intro' => '[CONFIRM calculator spec: inputs, pricing rules, and whether the estimate is emailed via the MVP_CALC endpoint.]',
+			'intro' => 'The calculator starts from our MVP Discovery & Prototype and MVP Build prices, then adjusts for these.',
 			'style' => 'numbered',
 			'items' => [
 				[
-					'title' => 'Project type',
-					'text'  => 'Web app, SaaS product, internal tool or prototype.',
-				],
-				[
-					'title' => 'Core features',
-					'text'  => 'Accounts, payments, dashboards, integrations and admin tools.',
+					'title' => 'Prototype or MVP',
+					'text'  => 'A clickable prototype to test the idea, or a working first version built in milestones.',
 				],
 				[
 					'title' => 'Platforms',
-					'text'  => 'Web only, or web plus mobile.',
+					'text'  => 'A web app, iOS and Android apps, or both. Native mobile apps add build time.',
+				],
+				[
+					'title' => 'Core features',
+					'text'  => 'Payments, roles, dashboards, messaging, bookings, integrations and AI each add to the build.',
 				],
 				[
 					'title' => 'Design',
-					'text'  => 'Whether you already have designs, or need UI/UX first.',
+					'text'  => 'End-to-end UI/UX from us, or ready-to-build screens from your team.',
 				],
 				[
 					'title' => 'Timeline',
-					'text'  => 'How soon you need a first version in users’ hands.',
+					'text'  => 'A standard pace, or a larger team to get a first version out sooner.',
 				],
 			],
 		],
@@ -66,10 +70,8 @@ $td_blocks = [
 	[
 		'form',
 		[
-			'formKey' => 'contact',
+			'formKey' => 'mvp_calc',
 			'anchor'  => 'estimate',
-			'title'   => 'Get an estimate from the team',
-			'intro'   => 'Describe the product in a few sentences. We reply with a scope and an estimate.',
 		],
 	],
 	[
