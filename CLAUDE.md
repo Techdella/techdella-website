@@ -141,6 +141,7 @@ Blocks must:
 - **Approved by Joanna (11 Oct 2026):** the founder letter ("Hi, I'm Joanna") as drafted, and client
   permissions for every existing case study, testimonial and logo (`wp td permissions:grant`).
 - **Approved by Joanna (11 Oct 2026, "go ahead with it"):** the founder quotes in her name that replace the "From our work" placeholders in guides, glossary terms, business guides and tools (advice and opinion; client facts only from published case studies).
+- **Confirmed by Joanna (12 Oct 2026):** Paycape is a Nigerian fintech platform (payroll, invoicing, tax, cashflow; country Nigeria). TechDella Studios delivered the build, MVP and full end-to-end UI/UX for Paycape, Shopinbos and startbuddi. The MVP calculator emails its estimate through `MVP_CALC`; its range comes from the Studios prices in Growth → Prices and the rules in `td_mvp_calc_rules()`.
 - **Draft copy that still needs Joanna's sign-off before launch:**
   - The 3 Studios "Concept" projects, which stay labelled "Concept".
   - Prices are set (owner's request, 11 Oct 2026): see `docs/PRICING.md`.
