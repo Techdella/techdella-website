@@ -61,8 +61,8 @@ To find any site's folder later: `find ~/domains -maxdepth 4 -name wp-config.php
 4. **Link the staging sites to each other** (so nav and footer links stay on staging):
    ```
    wp --path=<marketing staging folder> config set TD_URL_JOURNAL https://staging.blog.techdella.com --type=constant
-   wp --path=<blog staging folder> config set TD_URL_MARKETING https://techdella.com/staging --type=constant
-   wp --path=<studios folder> config set TD_URL_MARKETING https://techdella.com/staging --type=constant
+   wp --path=<blog staging folder> config set TD_URL_MARKETING https://staging.techdella.com --type=constant
+   wp --path=<studios folder> config set TD_URL_MARKETING https://staging.techdella.com --type=constant
    wp --path=<studios folder> config set TD_URL_JOURNAL https://staging.blog.techdella.com --type=constant
    ```
    Remove these on launch day (`wp config delete TD_URL_JOURNAL`, etc.) so links use the real domains.
