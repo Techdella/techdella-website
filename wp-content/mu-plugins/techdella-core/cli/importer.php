@@ -60,7 +60,13 @@ function td_import_files( string $path ): array {
 	}
 	sort( $files );
 	// Team profiles first, so articles that name an author or reviewer can link to them.
-	usort( $files, static fn( $a, $b ) => (int) ! str_contains( $a, '/team/' ) <=> (int) ! str_contains( $b, '/team/' ) ?: strcmp( $a, $b ) );
+	usort(
+		$files,
+		static function ( string $a, string $b ): int {
+			$rank = (int) ! str_contains( $a, '/team/' ) <=> (int) ! str_contains( $b, '/team/' );
+			return 0 !== $rank ? $rank : strcmp( $a, $b );
+		}
+	);
 	return $files;
 }
 
