@@ -294,7 +294,7 @@ function td_llms_txt(): string {
 	if ( is_string( $cached ) && '' !== $cached ) {
 		return $cached;
 	}
-	$body = LlmsTxt::build( td_seo_llms_data() );
+	$body = td_year_tokens( LlmsTxt::build( td_seo_llms_data() ) );
 	set_transient( $key, $body, DAY_IN_SECONDS );
 	return $body;
 }

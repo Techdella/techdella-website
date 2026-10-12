@@ -155,8 +155,15 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 					continue;
 				}
 				update_post_meta( (int) $id, '_td_seed_hash', md5( (string) get_post_field( 'post_content', (int) $id ) ) );
-				// Meta description: only fill it when empty, so an editor's wording always wins.
-				if ( '' !== $p['desc'] && '' === (string) get_post_meta( (int) $id, 'rank_math_description', true ) ) {
+				// Meta description: only fill it when empty, so an editor's wording always wins. With
+				// --force (local/staging rebuilds) the old site's title and description go too: they were
+				// written for the old page (e.g. unverified "10x more leads" claims, §0.5).
+				if ( $force ) {
+					delete_post_meta( (int) $id, 'rank_math_title' );
+					if ( '' !== $p['desc'] ) {
+						update_post_meta( (int) $id, 'rank_math_description', $p['desc'] );
+					}
+				} elseif ( '' !== $p['desc'] && '' === (string) get_post_meta( (int) $id, 'rank_math_description', true ) ) {
 					update_post_meta( (int) $id, 'rank_math_description', $p['desc'] );
 				}
 				if ( $p['template'] ) {
@@ -168,6 +175,10 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 				}
 				$rows[] = [ $p['file'], $p['type'], $p['slug'], ( $existing ? 'updated' : 'created' ) . ' ' . get_post_status( (int) $id ) . ' #' . $id ];
 				unset( $hash );
+			}
+			// Fill our default SEO titles where the rebuild cleared the old ones.
+			if ( $force && ! $dry && function_exists( 'td_seo_apply_page_titles' ) ) {
+				td_seo_apply_page_titles();
 			}
 			WP_CLI\Utils\format_items( 'table', array_map( static fn( $r ) => array_combine( [ 'pattern', 'type', 'slug', 'result' ], $r ), $rows ), [ 'pattern', 'type', 'slug', 'result' ] );
 		}
