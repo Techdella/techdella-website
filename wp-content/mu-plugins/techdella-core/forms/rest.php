@@ -191,7 +191,15 @@ function td_forms_rest_submit( WP_REST_Request $request ): WP_REST_Response {
 	}
 
 	// 7. Enrich + build.
-	$payload = Payload::build( $key, $fields, $clean, td_forms_meta( $request, $input ), ! empty( $input['td_test'] ) && ! td_is_production() );
+	$payload     = Payload::build( $key, $fields, $clean, td_forms_meta( $request, $input ), ! empty( $input['td_test'] ) && ! td_is_production() );
+	$quote_token = '';
+	if ( 'quote' === $key ) {
+		// The signed PDF link goes to Startbuddi with the lead, so its automation can email it.
+		$quote_token          = td_quote_token( $clean );
+		$quote_url            = td_quote_link( $quote_token );
+		$payload['quote_url'] = $quote_url;
+		$payload['currency']  = strtoupper( td_quote_currency( (string) ( $clean['country'] ?? '' ) ) );
+	}
 	$payload = (array) apply_filters( 'td_form_payload', $payload, $key );
 
 	// 8. Forward; queue on failure.
@@ -220,6 +228,13 @@ function td_forms_rest_submit( WP_REST_Request $request ): WP_REST_Response {
 			];
 			$body['redirect'] = add_query_arg( 'dl', rawurlencode( td_forms_token()->sign( (string) $download['id'], time() + HOUR_IN_SECONDS ) ), $redirect );
 		}
+	}
+	if ( '' !== $quote_token ) {
+		$body['download'] = [
+			'url'   => td_quote_link( $quote_token ),
+			'title' => __( 'Your quote (PDF)', 'techdella' ),
+		];
+		$body['redirect'] = add_query_arg( 'q', rawurlencode( $quote_token ), $redirect );
 	}
 	if ( $queued ) {
 		$body['queued'] = true;

@@ -8,13 +8,39 @@
 	"description": "\"Ways to start\": a dark \"Start here\" offer and two paper offers with defined deliverables.",
 	"editorScript": "techdella-blocks-editor",
 	"render": "file:./render.php",
-	"supports": { "html": false, "anchor": true },
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
 	"attributes": {
-		"label": { "type": "string", "default": "Ways to start" },
-		"title": { "type": "string", "default": "" },
-		"intro": { "type": "string", "default": "" },
-		"cards": { "type": "array", "default": [] },
-		"background": { "type": "string", "enum": [ "canvas", "paper" ], "default": "canvas" }
+		"label": {
+			"type": "string",
+			"default": "Ways to start"
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"intro": {
+			"type": "string",
+			"default": ""
+		},
+		"cards": {
+			"type": "array",
+			"default": []
+		},
+		"background": {
+			"type": "string",
+			"enum": [
+				"canvas",
+				"paper"
+			],
+			"default": "canvas"
+		},
+		"quote": {
+			"type": "boolean",
+			"default": true
+		}
 	},
 	"example": {
 		"attributes": {
@@ -22,14 +48,36 @@
 			"title": "Start with an audit.\nGrow from *there*.",
 			"intro": "Clear offers with defined deliverables. No open-ended retainers.",
 			"cards": [
-				{ "featured": true, "kicker": "One-time", "badge": "Start here", "title": "Growth Audit", "text": "Search, AI visibility, ads, funnel and tracking reviewed, with a prioritized plan.", "price": "[PRICE]", "buttonLabel": "Get started", "buttonUrl": "/growth-audit/" },
-				{ "kicker": "Fixed scope", "title": "Growth Sprint", "text": "We implement the top priorities: SEO fixes, a campaign launch, an email sequence or an automation.", "price": "From [PRICE]" },
-				{ "kicker": "Monthly", "title": "Growth Management", "text": "Ongoing search, paid, email and automation work with contracted monthly deliverables.", "price": "[PRICE] / month" }
+				{
+					"featured": true,
+					"kicker": "One-time",
+					"badge": "Start here",
+					"title": "Growth Audit",
+					"text": "Search, AI visibility, ads, funnel and tracking reviewed, with a prioritized plan.",
+					"price": "[PRICE]",
+					"buttonLabel": "Get started",
+					"buttonUrl": "/growth-audit/"
+				},
+				{
+					"kicker": "Fixed scope",
+					"title": "Growth Sprint",
+					"text": "We implement the top priorities: SEO fixes, a campaign launch, an email sequence or an automation.",
+					"price": "From [PRICE]"
+				},
+				{
+					"kicker": "Monthly",
+					"title": "Growth Management",
+					"text": "Ongoing search, paid, email and automation work with contracted monthly deliverables.",
+					"price": "[PRICE] / month"
+				}
 			]
 		}
 	},
 	"techdella": {
-		"controls": { "title": "textarea", "cards": "json" },
-		"help": "Cards: {featured, kicker, badge, title, text, price, buttonLabel, buttonUrl}. Prices stay [PRICE] until the owner supplies them (§17); placeholders are highlighted on staging. One featured (dark) card at most."
+		"controls": {
+			"title": "textarea",
+			"cards": "json"
+		},
+		"help": "Cards: {featured, kicker, badge, title, text, price, buttonLabel, buttonUrl}. Prices stay [PRICE] until the owner supplies them (§17); placeholders are highlighted on staging. One featured (dark) card at most. quote (default on): each priced card gets a 'Get a PDF quote' link and the quote form (QUOTE endpoint) shows under the cards; prices follow the visitor's location (no switch)."
 	}
 }

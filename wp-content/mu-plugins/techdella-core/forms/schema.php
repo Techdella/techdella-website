@@ -36,7 +36,7 @@ defined( 'ABSPATH' ) || exit;
  * @return string[]
  */
 function td_forms_keys(): array {
-	return [ 'contact', 'audit', 'studios_brief', 'newsletter', 'lead_magnet', 'tool_gate', 'popup_exit', 'popup_scroll', 'mvp_calc', 'guest_post' ];
+	return [ 'contact', 'audit', 'studios_brief', 'newsletter', 'lead_magnet', 'tool_gate', 'popup_exit', 'popup_scroll', 'mvp_calc', 'quote', 'guest_post' ];
 }
 
 /**
@@ -526,38 +526,118 @@ function td_forms_definitions(): array {
 				'consent_marketing' => td_forms_consent_field(),
 			],
 		],
-		'guest_post'    => [
-			'name'          => 'Techdella · Write for us',
-			'sites'         => [ 'journal' ],
-			'title'         => __( 'Pitch a *post*', 'techdella' ),
-			'intro'         => __( 'We edit every guest post and reply to every pitch within two weeks.', 'techdella' ),
-			'submit'        => __( 'Send pitch', 'techdella' ),
-			'success_title' => __( 'Pitch *received*', 'techdella' ),
-			'success'       => __( 'Thanks. An editor will reply within two weeks.', 'techdella' ),
+		'quote'         => [
+			'name'          => 'Techdella · Quote request',
+			'sites'         => [ 'marketing', 'studios' ],
+			'title'         => __( 'Get a *quote*', 'techdella' ),
+			'intro'         => __( 'Pick a package and tell us where you are. You get a PDF quote in your currency straight away.', 'techdella' ),
+			'submit'        => __( 'Get my quote', 'techdella' ),
+			'success_title' => __( 'Your quote is *ready*', 'techdella' ),
+			'success'       => __( 'Open the PDF below. We will follow up within one business day.', 'techdella' ),
 			'fields'        => [
-				'name'    => $name,
-				'email'   => array_merge( $email, [ 'width' => 'half' ] ),
-				'topic'   => [
+				'name'              => $name,
+				'email'             => array_merge( $email, [ 'width' => 'half' ] ),
+				'company'           => $co,
+				'country'           => [
+					'type'         => 'select',
+					'label'        => __( 'Country', 'techdella' ),
+					'required'     => true,
+					'options'      => function_exists( 'td_quote_countries' ) ? td_quote_countries() : [],
+					'autocomplete' => 'country',
+					'width'        => 'half',
+					'sb'           => 'country',
+				],
+				'phone'             => [
+					'type'         => 'tel',
+					'label'        => __( 'Phone (with country code)', 'techdella' ),
+					'required'     => true,
+					'max'          => 24,
+					'placeholder'  => '+234 803 000 0000',
+					'autocomplete' => 'tel',
+					'sb'           => 'phone',
+				],
+				'package'           => [
+					'type'     => 'select',
+					'label'    => __( 'Package', 'techdella' ),
+					'required' => true,
+					'options'  => function_exists( 'td_quote_packages' ) ? td_quote_packages() : [],
+					'sb'       => 'package',
+				],
+				'notes'             => [
+					'type'     => 'textarea',
+					'label'    => __( 'Anything we should know?', 'techdella' ),
+					'required' => false,
+					'max'      => 2000,
+					'rows'     => 3,
+					'sb'       => 'notes',
+				],
+				'consent_marketing' => td_forms_consent_field(),
+			],
+		],
+		'guest_post'    => [
+			'name'          => 'Techdella · Write for us / Sponsored',
+			'sites'         => [ 'journal' ],
+			'title'         => __( 'Request a *placement*', 'techdella' ),
+			'intro'         => __( 'Tell us what you want to publish. We reply within two business days with our rates and whether it fits.', 'techdella' ),
+			'submit'        => __( 'Send request', 'techdella' ),
+			'success_title' => __( 'Request *received*', 'techdella' ),
+			'success'       => __( 'Thanks. An editor will reply within two business days with rates and next steps.', 'techdella' ),
+			'fields'        => [
+				'request_type' => [
+					'type'     => 'pills',
+					'label'    => __( 'What do you need?', 'techdella' ),
+					'required' => true,
+					'style'    => 'card',
+					'options'  => [
+						'guest_post'     => [ __( 'Guest post', 'techdella' ), __( 'You write it, we edit it', 'techdella' ) ],
+						'sponsored_post' => [ __( 'Sponsored article', 'techdella' ), __( 'We write it with you', 'techdella' ) ],
+						'link_insertion' => [ __( 'Link insertion', 'techdella' ), __( 'One link in an existing article', 'techdella' ) ],
+					],
+					'sb'       => 'request_type',
+				],
+				'name'         => $name,
+				'email'        => array_merge( $email, [ 'width' => 'half' ] ),
+				'website'      => [
+					'type'         => 'url',
+					'label'        => __( 'Your website', 'techdella' ),
+					'required'     => true,
+					'max'          => 300,
+					'placeholder'  => 'https://yourcompany.com',
+					'autocomplete' => 'url',
+					'width'        => 'half',
+					'sb'           => 'website',
+				],
+				'target_url'   => [
+					'type'        => 'url',
+					'label'       => __( 'Page you want to link to', 'techdella' ),
+					'required'    => false,
+					'max'         => 500,
+					'placeholder' => 'https://yourcompany.com/guide/',
+					'width'       => 'half',
+					'sb'          => 'target_url',
+				],
+				'topic'        => [
 					'type'     => 'text',
-					'label'    => __( 'Proposed topic', 'techdella' ),
+					'label'    => __( 'Topic or article', 'techdella' ),
+					'help'     => __( 'For a link insertion, the Journal article you have in mind.', 'techdella' ),
 					'required' => true,
 					'max'      => 200,
 					'sb'       => 'topic',
 				],
-				'outline' => [
+				'outline'      => [
 					'type'     => 'textarea',
-					'label'    => __( 'Outline', 'techdella' ),
-					'help'     => __( 'The angle, the main points, and what first-hand experience you bring.', 'techdella' ),
+					'label'    => __( 'Details', 'techdella' ),
+					'help'     => __( 'For a guest post: the angle, the main points and your first-hand experience. For a placement: what you want readers to learn.', 'techdella' ),
 					'required' => true,
 					'max'      => 4000,
 					'rows'     => 5,
 					'sb'       => 'outline',
 				],
-				'samples' => [
+				'samples'      => [
 					'type'     => 'textarea',
 					'label'    => __( 'Writing samples', 'techdella' ),
 					'help'     => __( 'Links to two or three published pieces, one per line.', 'techdella' ),
-					'required' => true,
+					'required' => false,
 					'max'      => 1000,
 					'rows'     => 3,
 					'sb'       => 'samples',

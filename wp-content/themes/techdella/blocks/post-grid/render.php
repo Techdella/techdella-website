@@ -111,6 +111,9 @@ $td_cls    = 'td-post-grid td-post-grid--' . $td_layout . ( 'canvas' === ( $attr
 					<div class="td-post-grid__heading">
 						<?php echo td_chip( (string) ( $attributes['label'] ?? '' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						<?php printf( '<h%1$d class="td-post-grid__title">%2$s</h%1$d>', (int) $td_hlevel, td_accent( $td_title ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php if ( '' !== trim( (string) ( $attributes['intro'] ?? '' ) ) ) : ?>
+							<p class="td-post-grid__intro"><?php echo esc_html( (string) $attributes['intro'] ); ?></p>
+						<?php endif; ?>
 					</div>
 				<?php endif; ?>
 				<?php if ( $td_chips ) : ?>

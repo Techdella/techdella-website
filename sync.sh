@@ -122,11 +122,13 @@ if [ "$REFRESH" = 1 ]; then
   # Rebuilt case studies, industries, markets and (on the right site) guides, glossary and the
   # business library and the PDF resource pages, published on the private staging site for review
   # (never on production).
-  for d in case-studies solutions locations resources tools glossary business journal work; do
+  for d in team case-studies solutions locations resources tools glossary business journal work guides; do
     [ -d "$BUNDLE/content/$d" ] && $WP td import-content "$BUNDLE/content/$d" --status=draft --update-published --publish
   done
-  # Article covers (title + photo in the arch) where an article has no image of its own.
+  # Article covers (topic illustration or photo in the arch) where an article has no image of its own.
   $WP td covers:generate
+  # The blog's old posts: new layout (service CTA, one inline CTA, cover), text untouched.
+  if [ "$SITE_NOW" = journal ]; then $WP td legacy:upgrade; fi
   # Old redirects that fight the new ones are switched off; old pages that are now redirected
   # (e.g. the old service pages) are unpublished (draft, never deleted).
   import_redirects

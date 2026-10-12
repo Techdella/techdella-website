@@ -127,7 +127,6 @@ add_filter( 'render_block', static fn( $html ) => td_price_tokens( (string) $htm
  * The USD/NGN switch (shown by the pricing-cards script; hidden without JavaScript).
  */
 function td_currency_switch(): string {
-	return '<div class="td-currency" data-td-currency hidden><span class="td-currency__label">' . esc_html__( 'Prices in', 'techdella' ) . '</span>'
-		. '<button type="button" class="td-currency__btn" data-currency="usd" aria-pressed="true">USD $</button>'
-		. '<button type="button" class="td-currency__btn" data-currency="ngn" aria-pressed="false">NGN ₦</button></div>';
+	// Owner, 12 Oct 2026: visitors can't switch currency; their location decides (pricing-cards view.js).
+	return '';
 }

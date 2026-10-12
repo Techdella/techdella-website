@@ -15,7 +15,7 @@ if ( function_exists( 'td_form_render' ) ) {
 	$td_form = td_form_render(
 		'newsletter',
 		[
-			'variant'      => 'dark',
+			'variant'      => 'compact',
 			'title'        => '',
 			'intro'        => '',
 			'submit_label' => (string) ( $attributes['submitLabel'] ?? __( 'Subscribe', 'techdella' ) ),
@@ -41,9 +41,20 @@ if ( '' === $td_form ) {
 	<div class="td-container">
 		<div class="td-newsletter__panel">
 			<div class="td-newsletter__copy">
+				<?php if ( '' !== trim( (string) ( $attributes['label'] ?? '' ) ) ) : ?>
+					<p class="td-newsletter__label"><span class="td-newsletter__dot" aria-hidden="true"></span><?php echo esc_html( (string) $attributes['label'] ); ?></p>
+				<?php endif; ?>
 				<h2 class="td-newsletter__title" id="<?php echo esc_attr( $td_uid . '-title' ); ?>"><?php echo td_accent( $td_title ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
 				<?php if ( ! empty( $attributes['intro'] ) ) : ?>
 					<p class="td-newsletter__intro"><?php echo esc_html( (string) $attributes['intro'] ); ?></p>
+				<?php endif; ?>
+				<?php $td_points = array_filter( array_map( 'strval', (array) ( $attributes['points'] ?? [] ) ) ); ?>
+				<?php if ( $td_points ) : ?>
+					<ul class="td-newsletter__points" role="list">
+						<?php foreach ( $td_points as $td_point ) : ?>
+							<li><span class="td-newsletter__check" aria-hidden="true"><?php echo td_icon( 'check' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span><?php echo esc_html( $td_point ); ?></li>
+						<?php endforeach; ?>
+					</ul>
 				<?php endif; ?>
 			</div>
 			<div class="td-newsletter__formwrap">

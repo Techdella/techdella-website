@@ -101,3 +101,10 @@ function td_platform_badge( string $name, string $slug = '', string $mark = '', 
 	$mark_html = $logo ? $logo : esc_html( $mark );
 	return '<span class="td-badge"><span class="td-badge__mark' . ( $ink && ! $logo ? ' td-badge__mark--ink' : '' ) . '" aria-hidden="true">' . $mark_html . '</span>' . esc_html( $name ) . '</span>';
 }
+
+/**
+ * Name of a site's article hub: "Guides" on Studios, "Journal" elsewhere.
+ */
+function td_posts_hub_label(): string {
+	return 'studios' === td_site() ? __( 'Guides', 'techdella' ) : __( 'Journal', 'techdella' );
+}

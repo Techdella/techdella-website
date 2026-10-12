@@ -27,6 +27,12 @@ if ( '' === $td_service ) {
 	$td_service = $td_id ? sanitize_key( (string) td_field( 'cta_service', $td_id ) ) : '';
 }
 $td_title = trim( (string) ( $attributes['title'] ?? '' ) );
+if ( 'studios' === td_site() ) {
+	// Studios guides: the CTA names the Studios service (studio_service slug) and goes to /start/.
+	$td_ss                  = '' !== $td_service && post_type_exists( 'studio_service' ) ? get_page_by_path( $td_service, OBJECT, 'studio_service' ) : null;
+	$td_services['studios'] = $td_ss instanceof WP_Post ? strtolower( get_the_title( $td_ss ) ) : $td_services['studios'];
+	$td_service             = 'studios';
+}
 if ( '' === $td_title && ! isset( $td_services[ $td_service ] ) ) {
 	echo td_a3_notice( __( 'Post CTA: set the post’s cta_service field or a title.', 'techdella' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	return;

@@ -14,6 +14,7 @@ $td_links = [
 	[ __( 'Services', 'techdella' ), td_url( 'studios', '/#services' ) ],
 	[ __( 'Packages', 'techdella' ), td_url( 'studios', '/#packages' ) ],
 	[ __( 'Team', 'techdella' ), td_url( 'studios', '/about/' ) ],
+	[ __( 'Guides', 'techdella' ), td_url( 'studios', '/guides/' ) ],
 	[ __( 'Search marketing ↗', 'techdella' ), td_url( 'marketing', '/' ) ],
 ];
 ?>

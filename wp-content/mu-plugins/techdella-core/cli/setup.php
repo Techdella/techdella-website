@@ -47,6 +47,38 @@ function td_setup_run(): array {
 		$log[] = 'Timezone set to ' . $tz;
 	}
 
+	// WordPress's sample post and page, only while untouched (never anything a person edited).
+	foreach ( [ [ 'hello-world', 'post' ], [ 'sample-page', 'page' ] ] as [ $slug, $type ] ) {
+		$sample = get_page_by_path( $slug, OBJECT, $type );
+		if ( $sample instanceof WP_Post && 'publish' === $sample->post_status && $sample->post_modified_gmt === $sample->post_date_gmt ) {
+			wp_trash_post( $sample->ID );
+			$log[] = "Trashed WordPress's sample {$type} /{$slug}/";
+		}
+	}
+
+	// Studios guides (owner, 12 Oct 2026): posts live under a /guides/ posts page on Studios.
+	if ( 'studios' === td_site() ) {
+		$guides = get_page_by_path( 'guides', OBJECT, 'page' );
+		if ( ! $guides instanceof WP_Post ) {
+			$gid    = wp_insert_post(
+				[
+					'post_type'    => 'page',
+					'post_status'  => 'publish',
+					'post_title'   => 'Guides',
+					'post_name'    => 'guides',
+					'post_content' => '',
+				],
+				true
+			);
+			$guides = is_wp_error( $gid ) ? null : get_post( $gid );
+			$log[]  = 'Created /guides/ (the Studios guides page)';
+		}
+		if ( $guides instanceof WP_Post && (int) get_option( 'page_for_posts' ) !== $guides->ID ) {
+			update_option( 'page_for_posts', $guides->ID );
+			$log[] = 'Guides page set as the posts page';
+		}
+	}
+
 	// Styleguide (published, noindex) on every site.
 	$styleguide = get_page_by_path( 'styleguide', OBJECT, 'page' );
 	if ( ! $styleguide instanceof WP_Post ) {

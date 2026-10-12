@@ -27,6 +27,8 @@ function td_import_folder_map(): array {
 		'services'     => [ 'marketing', 'service' ],
 		'studios'      => [ 'studios', 'page' ],
 		'work'         => [ 'studios', 'studio_work' ],
+		'guides'       => [ 'studios', 'post' ],
+		'team'         => [ '', 'td_team' ],
 	];
 }
 
@@ -57,6 +59,14 @@ function td_import_files( string $path ): array {
 		}
 	}
 	sort( $files );
+	// Team profiles first, so articles that name an author or reviewer can link to them.
+	usort(
+		$files,
+		static function ( string $a, string $b ): int {
+			$rank = (int) ! str_contains( $a, '/team/' ) <=> (int) ! str_contains( $b, '/team/' );
+			return 0 !== $rank ? $rank : strcmp( $a, $b );
+		}
+	);
 	return $files;
 }
 
@@ -198,11 +208,7 @@ function td_import_user_id( $value ): int {
 	if ( post_type_exists( 'td_team' ) ) {
 		$team = get_page_by_path( sanitize_title( $value ), OBJECT, 'td_team' );
 		if ( $team instanceof WP_Post ) {
-			$user = td_field( 'wp_user', $team->ID );
-			if ( is_array( $user ) ) {
-				$user = $user['ID'] ?? 0;
-			}
-			return (int) ( $user instanceof WP_User ? $user->ID : $user );
+			return function_exists( 'td_team_user_id' ) ? td_team_user_id( $team ) : 0;
 		}
 	}
 	return 0;
@@ -553,6 +559,7 @@ function td_import_file( string $file, string $status, bool $dry, string $base )
 			$term  = get_term_by( 'slug', sanitize_title( $value ), $taxonomy );
 			if ( ! $term ) {
 				$name    = preg_match( '/^[a-z0-9-]+$/', $value ) ? ucwords( str_replace( '-', ' ', $value ) ) : $value; // Slug → readable name; editors can rename.
+				$name    = (string) preg_replace_callback( '/\b(Ai|Seo|Ux|Ui|Saas|B2b|Mvp)\b/', static fn( $m ) => strtoupper( $m[1] ), $name );
 				$created = wp_insert_term( $name, $taxonomy, [ 'slug' => sanitize_title( $value ) ] );
 				$term    = is_wp_error( $created ) ? null : get_term( (int) $created['term_id'], $taxonomy );
 			}

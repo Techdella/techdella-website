@@ -26,9 +26,14 @@ $td_title = implode( '<br>', array_map( 'td_accent', explode( "\n", (string) ( $
 			<?php endif; ?>
 		</div>
 		<?php
-		$td_has_price = (bool) array_filter( $td_cards, static fn( $c ) => str_contains( (string) ( $c['price'] ?? '' ), '{{price:' ) );
-		if ( $td_has_price ) {
-			echo td_currency_switch(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped inside.
+		// Prices follow the visitor's location (owner, 12 Oct 2026: no currency switch). A priced card
+		// gets a quote link; the quote form below sends a PDF quote in the visitor's currency.
+		$td_quote = ! empty( $td_a['quote'] ?? true ) && function_exists( 'td_form_render' ) && in_array( 'quote', td_forms_keys_for_site(), true );
+		$td_quote = $td_quote && (bool) array_filter( $td_cards, static fn( $c ) => str_contains( (string) ( $c['price'] ?? '' ), '{{price:' ) );
+		// One quote form per page (the first priced block); later blocks link up to it.
+		$td_quote_here = $td_quote && empty( $GLOBALS['td_quote_form_shown'] );
+		if ( $td_quote_here ) {
+			$GLOBALS['td_quote_form_shown'] = true; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- page-scoped flag.
 		}
 		?>
 		<ul class="td-pricing__grid" role="list">
@@ -55,8 +60,31 @@ $td_title = implode( '<br>', array_map( 'td_accent', explode( "\n", (string) ( $
 						}
 						?>
 					</div>
+					<?php if ( $td_quote && preg_match( '/\{\{price:([a-z0-9_]+)\}\}/', (string) ( $td_c['price'] ?? '' ), $td_pm ) ) : ?>
+						<a class="td-pricing__quote" href="#quote" data-quote-package="<?php echo esc_attr( $td_pm[1] ); ?>"><?php esc_html_e( 'Get a PDF quote', 'techdella' ); ?><span aria-hidden="true"> →</span></a>
+					<?php endif; ?>
 				</li>
 			<?php endforeach; ?>
 		</ul>
+		<?php if ( $td_quote_here ) : ?>
+			<div class="td-pricing__quotebox" id="quote">
+				<div class="td-pricing__quotecopy">
+					<p class="td-pricing__quotelabel"><?php esc_html_e( 'Want it in writing?', 'techdella' ); ?></p>
+					<h3 class="td-pricing__quotetitle"><?php echo td_accent( __( 'Get a PDF quote in *your currency*', 'techdella' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h3>
+					<p><?php esc_html_e( 'Pick a package, tell us your country and phone number, and download your quote straight away. Prices are in naira for Nigeria and US dollars everywhere else.', 'techdella' ); ?></p>
+				</div>
+				<?php
+				echo td_form_render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped by td_form_render().
+					'quote',
+					[
+						'variant'   => 'light',
+						'title'     => '',
+						'intro'     => '',
+						'id_prefix' => 'quote-form',
+					]
+				);
+				?>
+			</div>
+		<?php endif; ?>
 	</div>
 </section>

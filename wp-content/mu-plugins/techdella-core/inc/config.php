@@ -40,6 +40,7 @@ function td_env( string $key, string $fallback = '' ): string {
 		'SB_ENDPOINT_POPUP_SCROLL',
 		'SB_ENDPOINT_MVP_CALC',
 		'SB_ENDPOINT_GUEST_POST',
+		'SB_ENDPOINT_QUOTE',
 		'SB_SHARED_SECRET',
 		'TURNSTILE_SITE_KEY',
 		'TURNSTILE_SECRET_KEY',

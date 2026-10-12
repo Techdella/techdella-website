@@ -36,6 +36,7 @@ require_once __DIR__ . '/llms.php';
 require_once __DIR__ . '/sitemaps.php';
 require_once __DIR__ . '/breadcrumbs.php';
 require_once __DIR__ . '/schema.php';
+require_once __DIR__ . '/sponsored.php';
 require_once __DIR__ . '/social.php';
 require_once __DIR__ . '/health.php';
 require_once __DIR__ . '/setup.php';
