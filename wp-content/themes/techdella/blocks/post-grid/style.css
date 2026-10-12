@@ -10,8 +10,12 @@
 .td-post-grid__filters a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;font-size:14px;font-weight:500;padding:9px 16px;border-radius:var(--td-r-pill)}
 .td-post-grid__filters a:hover{background:var(--td-paper);color:var(--td-ink)}
 .td-post-grid__filters a.is-active{background:var(--td-ink);color:var(--td-paper)}
-.td-post-grid__cards{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:40px 22px}
-.td-post-grid--canvas .td-post-grid__cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.td-post-grid__cards{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr;gap:24px}
+@media (min-width:640px){.td-post-grid__cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1000px){.td-post-grid__cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.td-post-grid__cards>li{display:flex}
+.td-post-grid__cards>li>.td-post-card{width:100%}
+
 .td-post-grid__rows{margin:0;padding:0;list-style:none;border-top:1px solid var(--td-line-soft)}
 .td-post-grid__row{position:relative;display:flex;flex-wrap:wrap;gap:6px 24px;align-items:baseline;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--td-line-soft)}
 .td-post-grid__row-title{flex:1 1 480px;font-size:17px;font-weight:500;line-height:1.4;letter-spacing:-.01em}
@@ -22,3 +26,12 @@
 .td-post-grid__example{margin-left:6px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
 .td-post-grid__more{align-self:center;margin-top:10px}
 @media (max-width:760px){.td-post-grid__filters ul{border-radius:22px}}
+
+/* Pagination (archives) */
+.td-post-grid .pagination{margin-top:16px}
+.td-post-grid .nav-links{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px}
+.td-post-grid .page-numbers{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 14px;border-radius:var(--td-r-pill);border:1px solid var(--td-line);background:var(--td-paper);color:var(--td-ink);font-size:14.5px;text-decoration:none}
+.td-post-grid .page-numbers:hover{border-color:var(--td-ink)}
+.td-post-grid .page-numbers.current{background:var(--td-ink);border-color:var(--td-ink);color:var(--td-paper)}
+.td-post-grid .page-numbers.dots{border:0;background:none}
+.td-post-grid__intro{margin:0;max-width:640px;font-size:17px;line-height:1.6;color:var(--td-body)}

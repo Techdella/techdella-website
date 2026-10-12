@@ -1130,7 +1130,7 @@ function td_cli_covers_generate( array $args, array $assoc ): void {
 	if ( ! function_exists( 'imagettftext' ) ) {
 		WP_CLI::error( 'PHP GD with FreeType is required.' );
 	}
-	$types  = ! empty( $assoc['post_type'] ) ? array_map( 'trim', explode( ',', (string) $assoc['post_type'] ) ) : ( 'journal' === td_site() ? [ 'post' ] : [ 'business', 'em-glossary' ] );
+	$types  = ! empty( $assoc['post_type'] ) ? array_map( 'trim', explode( ',', (string) $assoc['post_type'] ) ) : ( in_array( td_site(), [ 'journal', 'studios' ], true ) ? [ 'post' ] : [ 'business', 'em-glossary' ] );
 	$types  = array_values( array_filter( $types, 'post_type_exists' ) );
 	$force  = (bool) WP_CLI\Utils\get_flag_value( $assoc, 'force', false );
 	$photos = td_cover_photos();

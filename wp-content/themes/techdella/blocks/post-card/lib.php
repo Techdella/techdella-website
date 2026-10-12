@@ -159,9 +159,9 @@ if ( ! function_exists( 'td_a3_post_cover' ) ) {
 	 * @param int                 $tone 0–3 surface index.
 	 */
 	function td_a3_post_cover( array $p, int $tone ): string {
-		$tones = [ 'ink', 'sand', 'canvas', 'line' ];
-		$word  = '' !== (string) $p['cover'] ? (string) $p['cover'] : ( '' !== (string) $p['category'] ? (string) $p['category'] : __( 'Journal', 'techdella' ) );
-		return '<span class="td-post-cover td-post-cover--' . esc_attr( $tones[ $tone % 4 ] ) . '" aria-hidden="true"><span class="td-post-cover__word">' . td_accent( $word ) . '</span></span>';
+		$tones = [ 'sand', 'canvas', 'ink', 'canvas' ];
+		$word  = '' !== (string) $p['cover'] ? (string) $p['cover'] : ( '' !== (string) $p['category'] ? (string) $p['category'] : td_posts_hub_label() );
+		return '<span class="td-post-cover td-post-cover--' . esc_attr( $tones[ $tone % 4 ] ) . '" aria-hidden="true"><span class="td-post-cover__arch"></span><span class="td-post-cover__word">' . esc_html( $word ) . '</span></span>';
 	}
 }
 
@@ -173,40 +173,35 @@ if ( ! function_exists( 'td_a3_post_card' ) ) {
 	 * @param array<string,mixed> $args level (2|3|4), tone (int), meta (read|date), size (md|sm).
 	 */
 	function td_a3_post_card( array $p, array $args = [] ): string {
-		$level = in_array( (int) ( $args['level'] ?? 3 ), [ 2, 3, 4 ], true ) ? (int) ( $args['level'] ?? 3 ) : 3;
-		$tone  = (int) ( $args['tone'] ?? 0 );
-		$meta  = [];
-		if ( '' !== (string) $p['category'] ) {
-			$meta[] = (string) $p['category'];
-		}
-		if ( 'date' === ( $args['meta'] ?? 'read' ) ) {
-			if ( '' !== (string) $p['author'] ) {
-				$meta[] = (string) $p['author'];
-			}
-			if ( '' !== (string) $p['date'] ) {
-				$meta[] = (string) $p['date'];
-			}
-		} elseif ( ! empty( $p['minutes'] ) ) {
-			/* translators: %d: minutes */
-			$meta[] = sprintf( _n( '%d min read', '%d min read', (int) $p['minutes'], 'techdella' ), (int) $p['minutes'] );
-		}
-		$img = $p['image'] ? td_image(
+		$level   = in_array( (int) ( $args['level'] ?? 3 ), [ 2, 3, 4 ], true ) ? (int) ( $args['level'] ?? 3 ) : 3;
+		$tone    = (int) ( $args['tone'] ?? 0 );
+		$size    = 'sm' === ( $args['size'] ?? 'md' ) ? 'sm' : 'md';
+		$excerpt = 'md' === $size && ( $args['excerpt'] ?? true ) ? trim( wp_strip_all_tags( (string) $p['excerpt'] ) ) : '';
+		$img     = $p['image'] ? td_image(
 			$p['image'],
 			[
 				'alt'   => '',
-				'sizes' => '(max-width: 760px) 100vw, 400px',
+				'sizes' => '(max-width: 640px) 100vw, (max-width: 1000px) 50vw, 400px',
 			]
 		) : '';
-		$img = str_starts_with( $img, '<!--' ) ? '' : $img;
+		$img     = str_starts_with( $img, '<!--' ) ? '' : $img;
 
-		$out  = ( function_exists( 'td_block_css' ) ? td_block_css( 'post-card' ) : '' ) . '<article class="td-post-card td-post-card--' . ( 'sm' === ( $args['size'] ?? 'md' ) ? 'sm' : 'md' ) . '">';
+		$out  = ( function_exists( 'td_block_css' ) ? td_block_css( 'post-card' ) : '' ) . '<article class="td-post-card td-post-card--' . $size . '">';
 		$out .= '<div class="td-post-card__media">' . ( '' !== $img ? $img : td_a3_post_cover( $p, $tone ) );
 		if ( ! empty( $p['example'] ) ) {
 			$out .= '<span class="td-label-example">' . esc_html__( 'Example', 'techdella' ) . '</span>';
 		}
-		$out .= '</div>';
-		if ( $meta ) {
-			$out .= '<p class="td-post-card__meta">' . esc_html( implode( ' · ', $meta ) ) . '</p>';
+		$out .= '</div><div class="td-post-card__body">';
+		$top  = [];
+		if ( '' !== (string) $p['category'] ) {
+			$top[] = '<span class="td-post-card__cat">' . esc_html( (string) $p['category'] ) . '</span>';
+		}
+		if ( ! empty( $p['minutes'] ) ) {
+			/* translators: %d: minutes */
+			$top[] = '<span>' . esc_html( sprintf( _n( '%d min read', '%d min read', (int) $p['minutes'], 'techdella' ), (int) $p['minutes'] ) ) . '</span>';
+		}
+		if ( $top ) {
+			$out .= '<p class="td-post-card__meta">' . implode( '', $top ) . '</p>';
 		}
 		$title = esc_html( (string) $p['title'] );
 		$out  .= sprintf(
@@ -214,7 +209,19 @@ if ( ! function_exists( 'td_a3_post_card' ) ) {
 			$level,
 			'' !== (string) $p['url'] ? '<a class="td-post-card__link" href="' . esc_url( (string) $p['url'] ) . '">' . $title . '</a>' : $title
 		);
-		return $out . '</article>';
+		if ( '' !== $excerpt ) {
+			$out .= '<p class="td-post-card__excerpt">' . esc_html( wp_trim_words( $excerpt, 26, '…' ) ) . '</p>';
+		}
+		$who = (string) $p['author'];
+		if ( '' !== $who || '' !== (string) $p['date'] ) {
+			$initials = '' !== $who ? mb_strtoupper( implode( '', array_map( static fn( $w ) => mb_substr( $w, 0, 1 ), array_slice( preg_split( '/\s+/', $who ), 0, 2 ) ) ) ) : '';
+			$out     .= '<p class="td-post-card__foot">'
+				. ( '' !== $initials ? '<span class="td-post-card__avatar" aria-hidden="true">' . esc_html( $initials ) . '</span>' : '' )
+				. ( '' !== $who ? '<span class="td-post-card__author">' . esc_html( $who ) . '</span>' : '' )
+				. ( '' !== (string) $p['date'] ? '<time datetime="' . esc_attr( (string) $p['dateIso'] ) . '">' . esc_html( (string) $p['date'] ) . '</time>' : '' )
+				. '</p>';
+		}
+		return $out . '</div></article>';
 	}
 }
 
