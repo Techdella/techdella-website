@@ -40,3 +40,5 @@
   .td-popup--slidein.is-open .td-popup__panel{animation:td-popup-in .25s ease-out}
   @keyframes td-popup-in{from{transform:translateY(16px);opacity:0}to{transform:none;opacity:1}}
 }
+/* The live chat button sits bottom-right: the desktop slide-in moves to the left corner. */
+@media (min-width:768px){.td-has-chat .td-popup--slidein{right:auto;left:24px}}

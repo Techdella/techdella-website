@@ -17,6 +17,7 @@ require_once __DIR__ . '/inc/helpers.php';
 require_once __DIR__ . '/inc/dev.php';
 require_once __DIR__ . '/inc/litespeed.php';
 require_once __DIR__ . '/inc/year.php';
+require_once __DIR__ . '/inc/chat.php';
 
 /**
  * Modules, in load order. Filterable for tests.

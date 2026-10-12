@@ -71,10 +71,6 @@ while ( have_posts() ) :
 			<?php if ( has_excerpt() ) : ?>
 				<p class="td-m2-head__lead"><?php echo td_mark_placeholders( esc_html( $td_lead ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
-			<?php
-			require_once get_theme_file_path( 'blocks/post-card/lib.php' );
-			echo td_block_css( 'post-header' ) . td_byline_html( $td_id, false ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped inside.
-			?>
 		</header>
 
 		<div class="td-container td-m2-tool-layout">
@@ -180,10 +176,54 @@ while ( have_posts() ) :
 					</section>
 				</div>
 			</div>
-			<?php $td_side = td_block( 'ad-slot', [ 'position' => 'sidebar' ] ); ?>
-			<?php if ( '' !== trim( $td_side ) ) : ?>
-				<div class="td-m2-tool-side"><div><?php echo $td_side; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div></div>
-			<?php endif; ?>
+			<?php
+			// Desktop sidebar (owner, 12 Oct 2026: no empty right column): the related service, a growth
+			// audit, more free tools, then the sidebar ad unit when ads run (§12.2, below the CTAs).
+			$td_more = get_posts(
+				[
+					'post_type'      => 'td_tool',
+					'post_status'    => 'publish',
+					'posts_per_page' => 6,
+					'post__not_in'   => [ $td_id ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in
+					'orderby'        => 'menu_order title',
+					'order'          => 'ASC',
+					'no_found_rows'  => true,
+				]
+			);
+			?>
+			<aside class="td-m2-tool-side" aria-label="<?php esc_attr_e( 'More from TechDella', 'techdella' ); ?>">
+				<div class="td-m2-side-stack">
+					<div class="td-m2-side-cta">
+						<?php echo td_chip( __( 'Done for you', 'techdella' ), 'td-chip--dark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<p class="td-m2-side-cta__title">
+							<?php
+							/* translators: %s: service name */
+							echo esc_html( sprintf( __( 'Want results, not just a tool? Our %s team can run it for you.', 'techdella' ), (string) $td_related['service'][0] ) );
+							?>
+						</p>
+						<?php echo td_button( __( 'See the service', 'techdella' ), $td_svc_url, 'light', [ 'size' => 'sm' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					</div>
+					<div class="td-m2-side-card">
+						<p class="td-m2-side-card__title"><?php esc_html_e( 'Free growth audit', 'techdella' ); ?></p>
+						<p><?php esc_html_e( 'We review your search, ads, website and follow-up, and rank what to fix first.', 'techdella' ); ?></p>
+						<a class="td-m2-side-card__link" href="<?php echo esc_url( td_url( 'marketing', '/growth-audit/' ) ); ?>"><?php esc_html_e( 'Get my audit', 'techdella' ); ?> <span aria-hidden="true">→</span></a>
+					</div>
+					<?php echo td_block( 'ad-slot', [ 'position' => 'sidebar' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				</div>
+				<div class="td-m2-side-stack td-m2-side-stack--sticky">
+					<?php if ( $td_more ) : ?>
+						<nav class="td-m2-side-card" aria-labelledby="td-m2-more-tools">
+							<p class="td-m2-side-card__title" id="td-m2-more-tools"><?php esc_html_e( 'More free tools', 'techdella' ); ?></p>
+							<ul class="td-m2-side-list" role="list">
+								<?php foreach ( $td_more as $td_tool ) : ?>
+									<li><a href="<?php echo esc_url( (string) get_permalink( $td_tool ) ); ?>"><?php echo esc_html( preg_replace( '/^Free\s+/i', '', get_the_title( $td_tool ) ) ); ?></a></li>
+								<?php endforeach; ?>
+							</ul>
+							<a class="td-m2-side-card__link" href="<?php echo esc_url( (string) get_post_type_archive_link( 'td_tool' ) ); ?>"><?php esc_html_e( 'All tools', 'techdella' ); ?> <span aria-hidden="true">→</span></a>
+						</nav>
+					<?php endif; ?>
+				</div>
+			</aside>
 		</div>
 	</article>
 	<?php
