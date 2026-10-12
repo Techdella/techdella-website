@@ -215,8 +215,22 @@ if ( ! function_exists( 'td_a3_post_card' ) ) {
 		$who = (string) $p['author'];
 		if ( '' !== $who || '' !== (string) $p['date'] ) {
 			$initials = '' !== $who ? mb_strtoupper( implode( '', array_map( static fn( $w ) => mb_substr( $w, 0, 1 ), array_slice( preg_split( '/\s+/', $who ), 0, 2 ) ) ) ) : '';
-			$out     .= '<p class="td-post-card__foot">'
-				. ( '' !== $initials ? '<span class="td-post-card__avatar" aria-hidden="true">' . esc_html( $initials ) . '</span>' : '' )
+			// The author's team photo; initials until one is uploaded.
+			$photo  = is_array( $p['authorP'] ?? null ) ? (int) ( $p['authorP']['photo'] ?? 0 ) : 0;
+			$avatar = $photo ? td_image(
+				$photo,
+				[
+					'alt'       => '',
+					'sizes'     => '26px',
+					'img_class' => 'td-post-card__avatar-img',
+					'width'     => 26,
+				]
+			) : '';
+			$avatar = str_starts_with( $avatar, '<!--' ) ? '' : $avatar;
+			$avatar = '' !== $avatar ? '<span class="td-post-card__avatar td-post-card__avatar--photo" aria-hidden="true">' . $avatar . '</span>' : '';
+			$avatar = '' === $avatar && '' !== $initials ? '<span class="td-post-card__avatar" aria-hidden="true">' . esc_html( $initials ) . '</span>' : $avatar;
+			$out   .= '<p class="td-post-card__foot">'
+				. $avatar
 				. ( '' !== $who ? '<span class="td-post-card__author">' . esc_html( $who ) . '</span>' : '' )
 				. ( '' !== (string) $p['date'] ? '<time datetime="' . esc_attr( (string) $p['dateIso'] ) . '">' . esc_html( (string) $p['date'] ) . '</time>' : '' )
 				. '</p>';
