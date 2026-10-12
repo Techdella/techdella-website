@@ -96,6 +96,9 @@ To find any site's folder later: `find ~/domains -maxdepth 4 -name wp-config.php
      wp-config first (our loader then sends GA4 after consent, §12.3), then deactivate it:
      `wp --path=<site> plugin deactivate google-site-kit`. Its AdSense tag (Auto ads on every
      page) is already blocked: ads run only on tool pages (D8).
+   - **Emo Glossary Pro** (techdella.com) registered the glossary post type without the /glossary/
+     hub. Our definition now wins, so it can go: `wp --path=<site> plugin deactivate emo-glossary-pro`.
+     The terms stay: they are ordinary posts of our `em-glossary` type.
    - **Hostinger Tools llms.txt** is turned off and its file removed by `wp td setup` (part of the
      sync); /llms.txt is then ours, built from the site's content.
 
