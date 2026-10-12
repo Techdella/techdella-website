@@ -272,30 +272,44 @@ function td_schema_organization(): array {
 		)
 	);
 	return [
-		'@type'       => 'Organization',
-		'@id'         => td_schema_org_id(),
-		'name'        => 'TechDella',
-		'legalName'   => 'Tech Della Solutions LTD',
-		'url'         => td_url( 'marketing', '/' ),
-		'email'       => 'hello@techdella.com',
+		'@type'           => 'Organization',
+		'@id'             => td_schema_org_id(),
+		'name'            => 'TechDella',
+		'legalName'       => 'Tech Della Solutions LTD',
+		'url'             => td_url( 'marketing', '/' ),
+		'email'           => 'hello@techdella.com',
 		// Registered office (owner, 11 Oct 2026). An Organization address, not LocalBusiness (§8.2).
-		'address'     => [
+		'address'         => [
 			'@type'           => 'PostalAddress',
 			'streetAddress'   => 'Office 7B, Yetmob Plaza, Elewure, off Akala Express, Oluyole',
 			'addressLocality' => 'Ibadan',
 			'addressRegion'   => 'Oyo State',
 			'addressCountry'  => 'NG',
 		],
-		'description' => 'B2B growth marketing agency: search (SEO and AI search optimization), paid ads, lead generation, email marketing and AI marketing automation, with TechDella Studios for product and brand builds.',
-		'logo'        => [
+		'description'     => 'B2B growth marketing agency: search (SEO and AI search optimization), paid ads, lead generation, email marketing and AI marketing automation, with TechDella Studios for product and brand builds.',
+		'logo'            => [
 			'@type'  => 'ImageObject',
 			'@id'    => td_url( 'marketing', '/#logo' ),
 			'url'    => td_url( 'marketing', $logo_path ),
 			'width'  => 1200,
 			'height' => 272,
 		],
-		'founder'     => [ '@id' => td_schema_person_id( 'Joanna Okedara-Kalu' ) ],
-		'sameAs'      => $same_as,
+		'founder'         => [ '@id' => td_schema_person_id( 'Joanna Okedara-Kalu' ) ],
+		// Entity facts for AI answers (§8.1): what we do, how to reach us, the build division.
+		'knowsAbout'      => [ 'Search engine optimization', 'AI search optimization', 'Generative engine optimization', 'Paid advertising', 'B2B lead generation', 'Email marketing', 'Marketing automation', 'MVP development', 'UI/UX design', 'Website design', 'Branding' ],
+		'contactPoint'    => [
+			'@type'       => 'ContactPoint',
+			'contactType' => 'sales',
+			'email'       => 'hello@techdella.com',
+			'url'         => td_url( 'marketing', '/book-a-discovery-call/' ),
+		],
+		'subOrganization' => [
+			'@type' => 'Organization',
+			'@id'   => td_url( 'studios', '/#studios' ),
+			'name'  => 'TechDella Studios',
+			'url'   => td_url( 'studios', '/' ),
+		],
+		'sameAs'          => $same_as,
 	];
 }
 
@@ -519,6 +533,32 @@ function td_schema_template_nodes( string $page_id ): array {
 					'articleSection' => array_values( array_diff( $sections, [ 'Uncategorized' ] ) ),
 					'keywords'       => $kw,
 					'inLanguage'     => 'en-US',
+				] + $main
+			);
+			break;
+
+		case 'business':
+			// The business library (most of the Marketing site's search clicks): a dated, authored
+			// Article like a guide, never HowTo (§8.2).
+			$author_node = td_schema_person_from_user( (int) $post->post_author );
+			if ( $author_node ) {
+				$nodes[] = $author_node;
+			}
+			$text = td_seo_text( strip_shortcodes( $post->post_content ) );
+			array_unshift(
+				$nodes,
+				[
+					'@type'         => 'Article',
+					'@id'           => $url . '#article',
+					'headline'      => $title,
+					'description'   => $desc,
+					'image'         => $image,
+					'datePublished' => $published,
+					'dateModified'  => $modified,
+					'author'        => $author_node ? [ '@id' => $author_node['@id'] ] : $org,
+					'publisher'     => $org,
+					'wordCount'     => (int) preg_match_all( '/[\p{L}\p{N}][\p{L}\p{N}\'’-]*/u', $text ),
+					'inLanguage'    => 'en-US',
 				] + $main
 			);
 			break;

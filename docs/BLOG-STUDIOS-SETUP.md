@@ -88,9 +88,16 @@ To find any site's folder later: `find ~/domains -maxdepth 4 -name wp-config.php
    `/guide/*` redirects), then the rest. Keep to **15 publishes a week** (§8.1).
 5. Only after the 17 guides are live: launch techdella.com, whose redirects send `/guide/<slug>/`
    to `blog.techdella.com/<slug>/`.
-6. Google Site Kit is installed on the blog. Once `GA4_ID` is set in wp-config, turn off Site Kit's
-   own Analytics tag (Site Kit → Settings → Analytics → "Place Google Analytics code": off), so GA4
-   loads once and only after consent (§12.3).
+6. Old plugins (blog and techdella.com). The theme already silences them, but remove them at launch
+   so nothing comes back after an update:
+   - **Yoast SEO** runs next to Rank Math. Deactivate it: `wp --path=<site> plugin deactivate wordpress-seo`.
+     Rank Math is the SEO plugin (D5); it already holds the titles and descriptions.
+   - **Site Kit** prints GA4, Tag Manager and AdSense tags before consent. Set `GA4_ID` in
+     wp-config first (our loader then sends GA4 after consent, §12.3), then deactivate it:
+     `wp --path=<site> plugin deactivate google-site-kit`. Its AdSense tag (Auto ads on every
+     page) is already blocked: ads run only on tool pages (D8).
+   - **Hostinger Tools llms.txt** is turned off and its file removed by `wp td setup` (part of the
+     sync); /llms.txt is then ours, built from the site's content.
 
 **Rollback** (the old look comes straight back; content is unaffected):
 ```

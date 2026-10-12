@@ -183,3 +183,35 @@ test.describe('noindex post types', () => {
     }
   });
 });
+
+test.describe('favicons and manifest (all sites)', () => {
+  for (const [name, app] of [['marketing', 'TechDella'], ['journal', 'TechDella Journal'], ['studios', 'TechDella Studios']]) {
+    test(`${name}: brand icons, /favicon.ico and /site.webmanifest`, async ({ page, request }) => {
+      const ico = await request.get(site(name, '/favicon.ico'));
+      expect(ico.status()).toBe(200);
+      expect(ico.headers()['content-type']).toContain('image/x-icon');
+      const manifest = await request.get(site(name, '/site.webmanifest'));
+      expect(manifest.status()).toBe(200);
+      const json = await manifest.json();
+      expect(json.name).toBe(app);
+      expect(json.icons.length).toBeGreaterThanOrEqual(2);
+      await page.goto(site(name, '/'));
+      await expect(page.locator('link[rel="apple-touch-icon"]')).toHaveAttribute('href', /assets\/img\/icons\/apple-touch-icon\.png$/);
+      // Only our icon tags: no WordPress Site Icon (cropped-*.png) left over from the old sites.
+      expect(await page.locator('link[rel~="icon"][href*="cropped-"]').count()).toBe(0);
+    });
+  }
+});
+
+test('business guides carry an authored Article; the Organization lists its Studios division', async ({ page }) => {
+  await page.goto(site('marketing', '/business/how-to-start-a-mobile-car-wash-business/'));
+  const graph = JSON.parse(await page.locator('#td-schema').textContent())['@graph'];
+  const article = graph.find((n) => n['@type'] === 'Article');
+  expect(article).toBeTruthy();
+  expect(article.datePublished).toBeTruthy();
+  expect(article.author).toBeTruthy();
+  const org = graph.find((n) => n['@type'] === 'Organization' && n.subOrganization);
+  expect(org.subOrganization.name).toBe('TechDella Studios');
+  expect(org.knowsAbout.length).toBeGreaterThan(5);
+  expect(graph.some((n) => n['@type'] === 'HowTo' || n['@type'] === 'FAQPage')).toBe(false);
+});

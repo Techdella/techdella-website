@@ -33,6 +33,8 @@ require_once __DIR__ . '/indexing.php';
 require_once __DIR__ . '/rank-math.php';
 require_once __DIR__ . '/robots-txt.php';
 require_once __DIR__ . '/llms.php';
+require_once __DIR__ . '/icons.php';
+require_once __DIR__ . '/conflicts.php';
 require_once __DIR__ . '/sitemaps.php';
 require_once __DIR__ . '/breadcrumbs.php';
 require_once __DIR__ . '/schema.php';
