@@ -71,3 +71,21 @@ td.ready(() => {
   td.cookie('td_utm_last', value);
 });
 import './nav.js';
+
+// Tidy the address bar: Google's cross-domain linker adds ?_gl=… to links between our sites.
+// Google Analytics reads it as the page loads; a few seconds later it's dropped from the visible URL
+// (history.replaceState: no reload, no new history entry). Canonicals already ignore query strings.
+window.addEventListener(
+  'load',
+  () => {
+    setTimeout(() => {
+      try {
+        const url = new URL(window.location.href);
+        if (!url.searchParams.has('_gl')) return;
+        url.searchParams.delete('_gl');
+        window.history.replaceState(window.history.state, '', url.pathname + url.search + url.hash);
+      } catch { /* old browser: leave the URL as it is */ }
+    }, 4000);
+  },
+  { once: true }
+);
