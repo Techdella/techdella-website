@@ -103,7 +103,8 @@ test('every form delivers the right payload to sb-mock @smoke', async ({ request
 
     const log = await sbMock.log(request, key);
     expect(log, key).toHaveLength(1);
-    const p = log[0].body;
+    // Startbuddi endpoint shape: the answers sit under "data".
+    const p = log[0].body.data;
     expect(log[0].headers['content-type']).toContain('application/json');
     expect(log[0].headers['idempotency-key']).toMatch(/^[0-9a-f-]{36}$/);
     expect(p.form).toBe(key);
@@ -188,7 +189,7 @@ test('Startbuddi down → queued (ok for the visitor), then forms:retry delivers
   expect(log[0].failed_with).toBe(503);
   expect(log[1].failed_with).toBeUndefined();
   expect(log[1].headers['idempotency-key']).toBe(log[0].headers['idempotency-key']);
-  expect(log[1].body).toMatchObject({ form: 'contact', email: 'ada@example.com' });
+  expect(log[1].body.data).toMatchObject({ form: 'contact', email: 'ada@example.com' });
 });
 
 test.describe('no-JS fallback', () => {
@@ -208,7 +209,7 @@ test.describe('no-JS fallback', () => {
     expect(await page.content()).toContain('"event":"generate_lead","form_key":"audit"');
     const log = await sbMock.log(request, 'audit');
     expect(log).toHaveLength(1);
-    expect(log[0].body).toMatchObject({ form: 'audit', goals: ['ai'], website: 'https://example.com', meta: { page_url: site('marketing', '/forms-test/') } });
+    expect(log[0].body.data).toMatchObject({ form: 'audit', goals: ['ai'], website: 'https://example.com', meta: { page_url: site('marketing', '/forms-test/') } });
   });
 
   test('server-side errors come back on the form, with no PII in the URL', async ({ page, request }) => {
@@ -257,7 +258,7 @@ test('JS: inline validation, pills, in-place success with focus', async ({ page,
   expect(lead).toEqual({ event: 'generate_lead', form_key: 'audit' });
   const log = await sbMock.log(request, 'audit');
   expect(log).toHaveLength(1);
-  expect(log[0].body).toMatchObject({ goals: ['ads'], meta: { page_url: site('marketing', '/forms-test/'), consent_marketing: false } });
+  expect(log[0].body.data).toMatchObject({ goals: ['ads'], meta: { page_url: site('marketing', '/forms-test/'), consent_marketing: false } });
 });
 
 test('JS: Studios brief steps through four questions', async ({ page, request }) => {
@@ -281,7 +282,7 @@ test('JS: Studios brief steps through four questions', async ({ page, request })
   await f.getByRole('button', { name: 'Send brief' }).click();
   await expect(f.locator('.td-form__success')).toBeFocused({ timeout: 10_000 });
   const log = await sbMock.log(request, 'studios_brief');
-  expect(log[0].body).toMatchObject({ project_type: ['ai'], budget: '2k-5k', timeline: 'asap', stage: '' });
+  expect(log[0].body.data).toMatchObject({ project_type: ['ai'], budget: '2k-5k', timeline: 'asap', stage: '' });
 });
 
 test('form markup is axe-clean, also with errors shown, and fits 390px', async ({ page }) => {

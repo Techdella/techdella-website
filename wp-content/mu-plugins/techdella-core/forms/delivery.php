@@ -78,7 +78,9 @@ function td_forms_forward( string $key, array $payload, string $idem ): array {
 			'error'  => 'not_configured',
 		];
 	}
-	$body    = (string) wp_json_encode( $payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+	// Startbuddi endpoint forms take the answers under "data" ({"data": {question_id|key: answer}});
+	// keys that match no question are kept with the response, so our field names and `meta` arrive as is.
+	$body    = (string) wp_json_encode( [ 'data' => $payload ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
 	$headers = [
 		'Content-Type'    => 'application/json; charset=utf-8',
 		'Accept'          => 'application/json',
