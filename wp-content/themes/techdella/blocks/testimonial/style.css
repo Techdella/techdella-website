@@ -1,0 +1,19 @@
+/* techdella/testimonial */
+.td-testimonial{margin:0;border-radius:30px;padding:30px;display:flex;flex-direction:column;gap:16px;height:100%}
+.td-testimonial--arch{background:var(--td-sand)}
+.td-testimonial--dark{background:var(--td-ink);color:var(--td-paper)}
+.td-testimonial__logo{align-self:flex-start;width:auto}
+.td-testimonial__logo-img{max-width:none;object-fit:contain}
+.td-testimonial__mark{color:var(--td-orange);width:30px;height:24px}
+.td-testimonial__quote{margin:0;font-family:var(--td-font-serif);font-size:24px;line-height:1.3}
+.td-testimonial--dark .td-testimonial__quote{font-size:26px;line-height:1.28}
+.td-testimonial__person{margin-top:auto;display:flex;align-items:center;gap:12px;line-height:1.3}
+.td-testimonial__photo{flex:0 0 44px;width:44px;height:54px}
+.td-testimonial__photo-img{width:100%!important;height:100%;object-fit:cover;border-radius:999px 999px 10px 10px}
+.td-testimonial--dark .td-testimonial__photo{width:46px;height:46px;flex-basis:46px}
+.td-testimonial--dark .td-testimonial__photo-img{border-radius:50%}
+.td-testimonial__who{display:flex;flex-direction:column;font-size:13px;color:var(--td-ink-soft)}
+.td-testimonial__who strong{font-size:15px;color:var(--td-ink)}
+.td-testimonial--dark .td-testimonial__who{color:var(--td-on-dark)}
+.td-testimonial--dark .td-testimonial__who strong{color:var(--td-paper)}
+@media (max-width:640px){.td-testimonial{padding:24px}.td-testimonial__quote{font-size:21px}}

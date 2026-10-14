@@ -1,0 +1,31 @@
+{
+  "name": "techdella-web",
+  "private": true,
+  "version": "0.1.0",
+  "description": "TechDella sites: techdella.com, blog.techdella.com, studios.techdella.com",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.mjs && node scripts/images.mjs",
+    "build:assets": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "images": "node scripts/images.mjs",
+    "lint": "eslint . && node scripts/build.mjs --check",
+    "test:e2e": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:lighthouse": "lhci autorun --config=tests/lighthouse/lighthouserc.cjs",
+    "pdf": "node pdf/render.mjs && bash scripts/pdf-previews.sh",
+    "motion:render": "node motion/render.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@eslint/js": "9.37.0",
+    "@lhci/cli": "0.15.1",
+    "@playwright/test": "1.56.1",
+    "esbuild": "0.25.10",
+    "eslint": "9.37.0",
+    "globals": "16.4.0",
+    "lightningcss": "1.30.2",
+    "sharp": "0.34.4"
+  }
+}

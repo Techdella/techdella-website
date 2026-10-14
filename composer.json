@@ -1,0 +1,32 @@
+{
+  "name": "techdella/techdella-web",
+  "description": "TechDella WordPress theme + core plugin",
+  "type": "project",
+  "license": "proprietary",
+  "require": {
+    "php": ">=8.2"
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+    "wp-coding-standards/wpcs": "^3.1",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "phpstan/phpstan": "^2.1",
+    "szepeviktor/phpstan-wordpress": "^2.0",
+    "php-stubs/wp-cli-stubs": "^2.11",
+    "phpunit/phpunit": "^11.5"
+  },
+  "autoload-dev": {
+    "psr-4": { "TechDella\\Tests\\": "tests/unit/" }
+  },
+  "config": {
+    "allow-plugins": { "dealerdirect/phpcodesniffer-composer-installer": true },
+    "sort-packages": true
+  },
+  "scripts": {
+    "lint": ["@phpcs", "@phpstan"],
+    "phpcs": "phpcs",
+    "phpcbf": "phpcbf",
+    "phpstan": "phpstan analyse --memory-limit=3G",
+    "test": "phpunit"
+  }
+}

@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/post-header",
+	"title": "Post header",
+	"category": "techdella",
+	"icon": "heading",
+	"description": "Journal post header: Journal / category crumb, the H1 (one accent word), the dek, and the named author with role and read time. Reads the current post.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"postId": { "type": "integer", "default": 0 },
+		"title": { "type": "string", "default": "" },
+		"dek": { "type": "string", "default": "" },
+		"item": { "type": "object", "default": {} }
+	},
+	"example": {
+		"attributes": {
+			"item": {
+				"title": "What is AI search optimization, and why should businesses *care?*",
+				"category": "AI Search",
+				"dek": "Your buyers are asking AI tools for recommendations. Here’s how those answers come together, and what you can realistically influence.",
+				"author": "Joanna Okedara-Kalu",
+				"role": "Founder & CEO",
+				"image": "team/joanna-okedara-kalu",
+				"minutes": 10
+			}
+		}
+	},
+	"techdella": {
+		"controls": { "dek": "textarea", "item": "json" },
+		"help": "Renders the page H1 from the post title; set title to add the *accent* word (keep the words the same). dek defaults to the excerpt. Bylines are always a named person (td_team profile when linked), never 'TechDella Team'. item is a preview-only example."
+	}
+}

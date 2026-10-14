@@ -1,0 +1,20 @@
+/* techdella/funnel */
+.td-funnel .td-section-head{margin-bottom:36px}
+.td-funnel .td-section-head p{max-width:600px}
+.td-funnel__stages{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px;margin:0;padding:0;list-style:none}
+.td-funnel__stage{border-radius:26px;padding:22px;display:flex;flex-direction:column;gap:10px;min-height:220px;background:var(--td-canvas)}
+.td-funnel__stage--sand{background:var(--td-sand)}
+.td-funnel__stage--dark{background:var(--td-ink);color:var(--td-paper)}
+.td-funnel__step{font-size:12px;font-weight:600;color:var(--td-muted)}
+.td-funnel__stage--sand .td-funnel__step,.td-funnel__stage--sand .td-funnel__text{color:var(--td-ink-soft)}
+.td-funnel__stage--dark .td-funnel__step{color:var(--td-orange-on-dark)}
+.td-funnel__title{font-size:19px;letter-spacing:-.025em}
+.td-funnel__stage--dark .td-funnel__title{color:var(--td-paper)}
+.td-funnel__text{font-size:14px;color:var(--td-body)}
+.td-funnel__stage--dark .td-funnel__text{color:var(--td-on-dark)}
+.td-funnel__chips{margin:auto 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.td-funnel__chip{display:inline-flex;align-items:center;font-size:12.5px;background:var(--td-ink);color:var(--td-paper);border-radius:var(--td-r-pill);padding:4px 11px;text-decoration:none}
+.td-funnel__chip--link{background:var(--td-paper);color:var(--td-ink);min-height:44px;padding:0 14px;text-decoration:underline;text-underline-offset:3px}
+.td-funnel__stage--dark .td-funnel__chip,.td-funnel__stage--dark .td-funnel__chip--link{background:var(--td-dark-2);color:var(--td-paper)}
+.td-funnel__chip--link:hover{color:var(--td-orange-text)}
+.td-funnel__stage--dark .td-funnel__chip--link:hover{color:var(--td-orange-on-dark)}

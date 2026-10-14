@@ -1,0 +1,22 @@
+/* Video (§6.3). The frame reserves the aspect ratio, so nothing shifts when the video loads. */
+.td-video{margin:0;display:flex;flex-direction:column;gap:12px}
+.td-video__frame{position:relative;border-radius:var(--td-r-lg);overflow:hidden;background:var(--td-sand) center/cover no-repeat;aspect-ratio:16/9}
+.td-video--r1x1 .td-video__frame{aspect-ratio:1/1}
+.td-video--r4x5 .td-video__frame{aspect-ratio:4/5}
+.td-video--r9x16 .td-video__frame{aspect-ratio:9/16;max-width:420px;margin-inline:auto;width:100%}
+.td-video__el{display:block;width:100%;height:100%;object-fit:cover;background:transparent}
+.td-video .td-label-example{z-index:1}
+.td-video__toggle{position:absolute;right:14px;bottom:14px;z-index:1;display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:rgba(13,13,13,.72);color:var(--td-paper);cursor:pointer}
+.td-video__toggle:focus-visible{outline:2px solid var(--td-orange);outline-offset:3px}
+.td-video__icon{display:block;width:12px;height:14px;border-left:4px solid currentColor;border-right:4px solid currentColor}
+.td-video__toggle[aria-pressed="true"] .td-video__icon{width:0;height:0;border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent currentColor;margin-left:4px}
+.td-video__caption{font-size:14px;line-height:1.5;color:var(--td-muted)}
+.td-video__toggle[hidden]{display:none}
+/* A row of clips (e.g. three 9:16 ad samples): a core/group with className td-video-row. */
+.td-video-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px;align-items:start}
+.td-video-row .td-video--r9x16 .td-video__frame{max-width:none}
+@media (max-width:719px){
+  .td-video-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding-bottom:8px;overscroll-behavior-x:contain}
+  .td-video-row > .td-video{flex:0 0 72%;scroll-snap-align:start}
+  .td-video-row:focus-visible{outline:2px solid var(--td-orange);outline-offset:4px}
+}

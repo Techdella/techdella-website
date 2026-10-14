@@ -1,0 +1,7 @@
+# Large binary sources (§3: large files via Git LFS)
+assets/video/** filter=lfs diff=lfs merge=lfs -text
+assets/creatives/**/*.psd filter=lfs diff=lfs merge=lfs -text
+*.woff2 binary
+*.png binary
+*.jpg binary
+*.webp binary

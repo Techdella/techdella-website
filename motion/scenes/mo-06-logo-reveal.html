@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MO-06 Logo reveal</title>
+<link rel="stylesheet" href="scene.css">
+<script type="application/json" id="scene-meta">{"id":"MO-06","title":"Logo reveal with gradient arch","duration":8,"poster":6.5,"captions":[[3.4,8,"TechDella Studios. Design. Build. Automate. studios.techdella.com"]]}</script>
+<style>
+.arch{position:absolute;left:50%;top:50%;width:52rem;height:66rem;translate:-50% -50%;border-radius:999px 999px 3.2rem 3.2rem;background:var(--gradient);clip-path:inset(100% 0 0 0 round 999px 999px 3.2rem 3.2rem);animation:arch-in 1.4s .2s both var(--ease),arch-out .9s 3s forwards var(--ease)}
+@keyframes arch-in{to{clip-path:inset(0 0 0 0 round 999px 999px 3.2rem 3.2rem)}}
+@keyframes arch-out{to{transform:scale(.2) translateY(-40rem);opacity:0}}
+.door{position:absolute;left:50%;top:50%;width:30rem;height:46rem;translate:-50% calc(-50% + 10rem);border-radius:999px 999px 1.6rem 1.6rem;background:var(--canvas);transform:scaleY(0);transform-origin:bottom;animation:grow-y .8s 1.3s both var(--ease),fade-out .5s 3s forwards}
+.bar{position:absolute;left:50%;top:50%;width:6rem;height:46rem;translate:-50% calc(-50% + 10rem);background:var(--gradient);transform:scaleY(0);transform-origin:bottom;animation:grow-y .6s 1.9s both var(--ease),fade-out .5s 3s forwards}
+.lockup{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4rem}
+.brandline{display:flex;align-items:flex-end;gap:2.4rem;animation:pop .9s 3.4s both var(--ease)}
+.brandline img{height:13rem;width:auto}
+.brandline em{font-size:10.4rem;line-height:.9;color:var(--ink);transform:translateY(-.6rem)}
+.tag{font-size:4rem;font-weight:500;color:var(--body);letter-spacing:-.02em;animation:rise .8s 4.4s both var(--ease)}
+.tag b{font-weight:500;color:var(--ink)}
+.glow{position:absolute;left:50%;top:50%;width:120rem;height:120rem;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle,rgba(249,138,15,.16),transparent 60%);animation:fade-in 1.2s 3.2s both}
+@media (min-aspect-ratio:3/4) and (max-aspect-ratio:4/3){.brandline img{height:10rem}.brandline em{font-size:8rem}.tag{font-size:3.4rem}}
+@media (max-aspect-ratio:3/4){.brandline{flex-direction:column;align-items:center;gap:1rem}.brandline img{height:14rem}.brandline em{font-size:13rem}}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="arch"></div>
+<div class="door"></div>
+<div class="bar"></div>
+<div class="lockup">
+  <div class="brandline"><img src="../../assets/images/brand/techdella-logo.png" alt="TechDella"><em>Studios</em></div>
+  <p class="tag"><b>Design.</b> Build. Automate.</p>
+</div>
+<p class="url anim" style="animation:fade-in .6s 5s both">studios.techdella.com</p>
+</body>
+</html>

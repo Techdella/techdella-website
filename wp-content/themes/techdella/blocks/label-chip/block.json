@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/label-chip",
+	"title": "Label chip",
+	"category": "techdella",
+	"icon": "tag",
+	"description": "Orange-dot section label, or a neutral / highlight / selected chip.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"text": { "type": "string", "default": "Section label" },
+		"variant": { "type": "string", "enum": [ "label", "upper", "dark", "neutral", "highlight", "selected" ], "default": "label" }
+	},
+	"example": { "attributes": { "text": "How we work", "variant": "label" } },
+	"techdella": {
+		"help": "'label' and 'upper' carry the orange dot: use one per section. 'highlight' is the one orange moment; don't stack several."
+	}
+}

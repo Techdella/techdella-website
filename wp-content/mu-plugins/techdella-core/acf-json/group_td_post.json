@@ -1,0 +1,243 @@
+{
+    "key": "group_td_post",
+    "title": "TechDella · Guide",
+    "fields": [
+        {
+            "key": "field_td_post_tldr",
+            "label": "TL;DR",
+            "name": "tldr",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Two or three sentences that answer the headline directly. Include the primary keyword once.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3
+        },
+        {
+            "key": "field_td_post_primary_kw",
+            "label": "Primary keyword",
+            "name": "primary_kw",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The one search phrase this page should rank for, validated in Ahrefs/Semrush/GSC first. Good: \"b2b seo services\". It must appear in the H1/title and in the first paragraph, or the pre-publish checklist blocks publishing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_post_reviewer",
+            "label": "Reviewer",
+            "name": "reviewer",
+            "aria-label": "",
+            "type": "user",
+            "instructions": "A real team member (with a Team profile) who fact-checked this. Never \"TechDella Team\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "id"
+        },
+        {
+            "key": "field_td_post_last_reviewed",
+            "label": "Last reviewed",
+            "name": "last_reviewed",
+            "aria-label": "",
+            "type": "date_picker",
+            "instructions": "The day a named reviewer last checked every fact on this page. Drives the \"Refresh due\" list: money pages every 3 months, guides every 6.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "j M Y",
+            "return_format": "Y-m-d",
+            "first_day": 1
+        },
+        {
+            "key": "field_td_post_sources",
+            "label": "Sources",
+            "name": "sources",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Every number or claim from outside TechDella needs a source. Prefer primary sources.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add source",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_post_sources_title",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Short and specific: a verb or a noun, under 8 words.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_post_sources"
+                },
+                {
+                    "key": "field_td_post_sources_url",
+                    "label": "URL",
+                    "name": "url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "A full URL. Prefer internal pages; external sources should be primary.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_post_sources"
+                },
+                {
+                    "key": "field_td_post_sources_publisher",
+                    "label": "Publisher",
+                    "name": "publisher",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Who published it, e.g. \"Google Search Central\".",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_post_sources"
+                }
+            ]
+        },
+        {
+            "key": "field_td_post_cta_service",
+            "label": "Service CTA",
+            "name": "cta_service",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "The one service this guide leads to (every guide links to one service).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "seo": "SEO",
+                "technical-seo": "Technical SEO",
+                "local-seo": "Local SEO",
+                "ai-search-optimization": "AI search optimization",
+                "paid-ads": "Paid ads",
+                "lead-generation": "Lead generation",
+                "email-marketing": "Email marketing",
+                "marketing-automation": "AI marketing automation",
+                "studios": "Studios (build)"
+            },
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_td_post_sponsored",
+            "label": "Sponsored",
+            "name": "sponsored",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Tick for any paid placement (sponsored article or paid guest post). Shows a \"Sponsored\" label and disclosure, and marks every outside link rel=\"sponsored\" (Google requires this for paid links).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "ui": 1,
+            "default_value": 0
+        },
+        {
+            "key": "field_td_post_sponsor_name",
+            "label": "Sponsor",
+            "name": "sponsor_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Who paid for it, shown in the disclosure, e.g. \"Acme Ltd\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_post_sponsored_links",
+            "label": "Sponsored links (link insertions)",
+            "name": "sponsored_links",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Paid links added to this article, one URL per line. Each gets rel=\"sponsored\" and the article shows a short disclosure.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for guide entries (CLAUDE.md §7). Also registered as post meta by techdella-core/cpt.",
+    "show_in_rest": 0,
+    "modified": 1791850000
+}

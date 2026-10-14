@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI Search Readiness Checklist (2026) | TechDella</title>
+<meta name="author" content="TechDella">
+<meta name="description" content="An eight-page checklist to make your site easy for Google AI Overviews, AI Mode, ChatGPT search, Perplexity, Copilot and Claude to crawl, understand and cite.">
+<meta name="subject" content="AI search optimization">
+<meta name="keywords" content="AI search optimization, AI Overviews, generative engine optimization, llms.txt, AI crawlers">
+<meta name="td-pdf-id" content="PDF-01">
+<meta name="td-service" content="https://techdella.com/services/ai-search-optimization/">
+<link rel="stylesheet" href="brand.css">
+<style>
+@page{
+  @top-right{content:"AI Search Readiness Checklist (2026)";font:400 7.5pt "Geist",sans-serif;color:#6B6560;vertical-align:bottom;padding-bottom:4mm;}
+  @bottom-left{content:"techdella.com/services/ai-search-optimization/  ·  Want us to run this check for you? techdella.com/growth-audit/";font:400 7.5pt "Geist",sans-serif;color:#6B6560;vertical-align:top;padding-top:5mm;}
+}
+</style>
+</head>
+<body>
+<main class="doc">
+
+<section class="cover" aria-label="Cover">
+  <img class="cover__logo" src="../../assets/images/brand/techdella-logo.png" alt="TechDella">
+  <div class="cover__arch">
+    <p class="cover__meta">PDF-01 · Checklist · 2026 edition</p>
+    <h1>AI search readiness, <span class="accent">checked.</span></h1>
+    <p class="cover__sub">Can AI answer engines reach your pages, understand who you are, and quote you? Fifty checks across crawler access, rendering, entity clarity, answer-first content and measurement.</p>
+    <dl class="cover__facts">
+      <div><dt>For</dt><dd>Marketing leads at B2B companies</dd></div>
+      <div><dt>Time</dt><dd>About 90 minutes for a first pass</dd></div>
+      <div><dt>You need</dt><dd>Your robots.txt, Search Console, GA4 and a list of buyer questions</dd></div>
+    </dl>
+  </div>
+  <div class="cover__foot">
+    <span><strong>techdella.com</strong>/services/ai-search-optimization/</span>
+    <span>Version: October 2026. AI products change fast: check the sources on the last page.</span>
+  </div>
+</section>
+
+<section class="pg" aria-labelledby="how">
+  <span class="chip">Start here</span>
+  <h2 id="how">How to use this checklist</h2>
+  <p class="lead">AI answer engines can only cite pages they are allowed to fetch, can read without running scripts, and can tie to a clear entity. Most of AI search readiness is good technical SEO plus content that answers questions directly.</p>
+  <p>Google says there are no extra requirements to appear in AI Overviews or AI Mode beyond being indexed and eligible to show a snippet, and that normal SEO best practices apply. Other engines (ChatGPT search, Perplexity, Microsoft Copilot, Claude) run their own crawlers or rely on a search partner's index. So the work splits into two parts: let the right bots in, and make your pages the clearest answer on the topic.</p>
+
+  <h3>Scoring</h3>
+  <p>Tick each box that is true today. Each section ends with a score line. Use the totals to choose where to start, not as a grade.</p>
+  <table>
+    <thead><tr><th style="width:30%">Section</th><th>What it answers</th><th class="num" style="width:16%">Checks</th></tr></thead>
+    <tbody>
+      <tr><th>1. Crawler access</th><td>Can the AI crawlers and search bots fetch your pages?</td><td class="num">8</td></tr>
+      <tr><th>2. Indexing and rendering</th><td>Can they read the content without running JavaScript, and are your snippet settings intentional?</td><td class="num">12</td></tr>
+      <tr><th>3. Entity clarity</th><td>Is it obvious who you are, what you sell and who stands behind the content?</td><td class="num">10</td></tr>
+      <tr><th>4. Answer-first content</th><td>Do your pages answer buyer questions in a form that is easy to quote?</td><td class="num">12</td></tr>
+      <tr><th>5. Measurement</th><td>Will you know whether any of this is working?</td><td class="num">8</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout--sand">
+    <p class="callout__title">Before you start: write down 20 buyer questions</p>
+    <p>Pull them from sales calls, support tickets, Search Console queries and "People also ask". Mix category questions ("what is generative engine optimization"), comparison questions ("X vs Y for SaaS"), and buying questions ("best B2B SEO agency for fintech"). You will use this list in sections 4 and 5.</p>
+  </div>
+  <table class="fill">
+    <thead><tr><th style="width:6%">#</th><th>Buyer question</th><th style="width:22%">Type (category / compare / buy)</th><th style="width:22%">Page that should answer it</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td></td><td></td><td></td></tr>
+      <tr><td>2</td><td></td><td></td><td></td></tr>
+      <tr><td>3</td><td></td><td></td><td></td></tr>
+      <tr><td>4</td><td></td><td></td><td></td></tr>
+      <tr><td>5</td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="pg" aria-labelledby="crawl">
+  <span class="chip">Section 1</span>
+  <h2 id="crawl">Crawler access</h2>
+  <p class="lead">Check robots.txt, then check that your CDN or firewall is not blocking the same bots silently. A bot blocked at the firewall never sees your robots.txt.</p>
+
+  <table class="tight">
+    <caption>Crawlers to know (names as published by each company)</caption>
+    <thead><tr><th style="width:22%">User agent</th><th style="width:16%">Company</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><th>Googlebot</th><td>Google</td><td>Crawls for Google Search, which also feeds AI Overviews and AI Mode. Blocking it removes you from both.</td></tr>
+      <tr><th>Google-Extended</th><td>Google</td><td>A robots.txt token, not a separate crawler. Controls whether content Google crawls may be used for Gemini model training and grounding. Google states it does not affect Search inclusion or ranking.</td></tr>
+      <tr><th>Bingbot</th><td>Microsoft</td><td>Crawls for Bing, which Microsoft Copilot uses for web answers.</td></tr>
+      <tr><th>OAI-SearchBot</th><td>OpenAI</td><td>Surfaces sites in ChatGPT search results.</td></tr>
+      <tr><th>ChatGPT-User</th><td>OpenAI</td><td>Fetches a page when a ChatGPT user or GPT asks for it.</td></tr>
+      <tr><th>GPTBot</th><td>OpenAI</td><td>Collects content that may be used to train OpenAI models.</td></tr>
+      <tr><th>PerplexityBot / Perplexity-User</th><td>Perplexity</td><td>Indexing for Perplexity search results / fetching pages for a user's question.</td></tr>
+      <tr><th>ClaudeBot / Claude-User / Claude-SearchBot</th><td>Anthropic</td><td>Collects content that may be used for model training / fetches a page when a Claude user asks a question / indexes content to improve search results.</td></tr>
+      <tr><th>Applebot / Applebot-Extended</th><td>Apple</td><td>Crawling for Apple search features / a token controlling use for Apple's model training.</td></tr>
+    </tbody>
+  </table>
+
+  <ul class="check">
+    <li><span class="box">☐</span> <strong>You have decided, in writing, which bots to allow.</strong> <span class="why">A common B2B choice: allow all search and user-fetch bots, and decide separately on training-only bots (GPTBot, Google-Extended, ClaudeBot, Applebot-Extended).</span></li>
+    <li><span class="box">☐</span> <strong>robots.txt matches that decision</strong> and returns HTTP 200 at <code>/robots.txt</code>.</li>
+    <li><span class="box">☐</span> <strong>No blanket <code>Disallow: /</code> under <code>User-agent: *</code></strong> left over from a staging site.</li>
+    <li><span class="box">☐</span> <strong>Googlebot and Bingbot can fetch your key pages.</strong> <span class="why">Use URL Inspection in Search Console and the URL Inspection tool in Bing Webmaster Tools.</span></li>
+    <li><span class="box">☐</span> <strong>Your CDN or firewall's "AI bot" or "bot fight" settings match your robots.txt.</strong> <span class="why">Some CDNs offer one-click blocking of AI crawlers. Since July 1, 2025, <a href="https://www.cloudflare.com/press-releases/2025/cloudflare-just-changed-how-ai-crawlers-scrape-the-internet-at-large/">Cloudflare</a> blocks AI crawlers by default and asks each new domain at sign-up whether to allow them. Check your CDN's dashboard.</span></li>
+    <li><span class="box">☐</span> <strong>Server logs show the bots you allowed actually visiting.</strong> <span class="why">Filter access logs by the user agents above. No visits in 30 days usually means a block somewhere.</span></li>
+    <li><span class="box">☐</span> <strong>Key pages return 200</strong>, not 403 or a challenge page, to non-browser clients.</li>
+    <li><span class="box">☐</span> <strong>Your XML sitemap is listed in robots.txt</strong> and submitted in Search Console and Bing Webmaster Tools.</li>
+  </ul>
+  <p class="small">Score: ____ / 8</p>
+</section>
+
+<section class="pg" aria-labelledby="render">
+  <span class="chip">Section 2</span>
+  <h2 id="render">Indexing and rendering</h2>
+  <p class="lead">Many AI crawlers do not run JavaScript the way Googlebot does. If your answer only appears after scripts run, assume some engines never see it.</p>
+  <ul class="check">
+    <li><span class="box">☐</span> <strong>The main text of each key page is in the initial HTML.</strong> <span class="why">Test: view source (not the inspector) or fetch the page with <code>curl</code>, and search for a sentence from the body.</span></li>
+    <li><span class="box">☐</span> <strong>Headings, lists and tables are real HTML</strong> (<code>h2</code>, <code>ul</code>, <code>table</code>), not styled <code>div</code>s or images of text.</li>
+    <li><span class="box">☐</span> <strong>FAQs and tabs are in the HTML</strong> even when collapsed. <span class="why"><code>&lt;details&gt;</code> works without scripts.</span></li>
+    <li><span class="box">☐</span> <strong>Each page has one self-referencing canonical URL</strong>, and parameter variants (UTM, <code>?ref=</code>) point to it.</li>
+    <li><span class="box">☐</span> <strong>Key pages are indexed in Google and Bing.</strong> <span class="why">Check the Pages report in Search Console and Bing's Site Explorer.</span></li>
+    <li><span class="box">☐</span> <strong><code>nosnippet</code>, <code>max-snippet</code> and <code>data-nosnippet</code> are used only on purpose.</strong> <span class="why">Google applies these controls to AI Overviews and AI Mode too; a <code>nosnippet</code> page cannot be quoted.</span></li>
+    <li><span class="box">☐</span> <strong>Important pages are not behind a login, a cookie wall or a form.</strong></li>
+    <li><span class="box">☐</span> <strong>Staging and preview sites are blocked</strong> (password plus noindex), so engines do not cite the wrong copy.</li>
+    <li><span class="box">☐</span> <strong>No important pages are <code>noindex</code></strong> by mistake (common after a theme or plugin change).</li>
+    <li><span class="box">☐</span> <strong>Pages load fast on mobile</strong>: Core Web Vitals pass in Search Console for your key templates.</li>
+    <li><span class="box">☐</span> <strong>Bing Webmaster Tools is verified</strong>, and IndexNow (or Bing's URL submission) is set up so updates reach Bing quickly.</li>
+    <li><span class="box">☐</span> <strong>PDFs and resources you want cited have an HTML page</strong> that summarizes them. <span class="why">Answer engines quote HTML pages more reliably than files.</span></li>
+  </ul>
+  <p class="small">Score: ____ / 12</p>
+
+  <div class="callout">
+    <p class="callout__title">Quick test</p>
+    <p>Run <code>curl -sA "OAI-SearchBot" https://yoursite.com/your-key-page/ | grep -c "a sentence from your page"</code>. A result of 0 means the bot either got blocked or got a page without your content. Repeat with the other user agents you allow.</p>
+  </div>
+</section>
+
+<section class="pg" aria-labelledby="entity">
+  <span class="chip">Section 3</span>
+  <h2 id="entity">Entity clarity</h2>
+  <p class="lead">Answer engines describe companies by stitching together facts from many sources. Make those facts identical everywhere, and make it easy to connect your site, your people and your profiles.</p>
+  <ul class="check">
+    <li><span class="box">☐</span> <strong>One sentence says what you do</strong>, and it is the same on your homepage, About page, LinkedIn, and directory profiles. <span class="why">Example format: "[Company] is a [category] for [audience] that [outcome]."</span></li>
+    <li><span class="box">☐</span> <strong>Your company name is written the same way everywhere</strong> (capitalization, spacing, legal suffix).</li>
+    <li><span class="box">☐</span> <strong><code>Organization</code> structured data</strong> on the homepage includes name, URL, logo and <code>sameAs</code> links to your official profiles.</li>
+    <li><span class="box">☐</span> <strong>Structured data matches the visible page</strong> and validates in the Rich Results Test and the Schema.org validator.</li>
+    <li><span class="box">☐</span> <strong>An About page</strong> names the founders and team, where you work, who you serve and how to contact you.</li>
+    <li><span class="box">☐</span> <strong>Articles have named authors</strong> with an author page (role, experience, LinkedIn) and <code>Person</code> markup.</li>
+    <li><span class="box">☐</span> <strong>Service pages name the service plainly</strong> in the H1 and title, using the words buyers use.</li>
+    <li><span class="box">☐</span> <strong>Case studies name the client, the timeframe and the numbers</strong>, with permission. <span class="why">Specific, attributable facts are what engines can quote.</span></li>
+    <li><span class="box">☐</span> <strong>Third-party profiles are complete and current</strong>: LinkedIn company page, Google Business Profile if you have an office, and the review or directory sites your buyers use.</li>
+    <li><span class="box">☐</span> <strong>Contact details (name, address if public, phone, email) are consistent</strong> across the site and profiles.</li>
+  </ul>
+  <p class="small">Score: ____ / 10</p>
+
+  <h3>Entity fact sheet</h3>
+  <table class="fill">
+    <thead><tr><th style="width:30%">Fact</th><th>Your exact wording</th></tr></thead>
+    <tbody>
+      <tr><th>One-sentence description</th><td></td></tr>
+      <tr><th>Category you want to be named in</th><td></td></tr>
+      <tr><th>Primary audience</th><td></td></tr>
+      <tr><th>Markets / countries served</th><td></td></tr>
+      <tr><th>Founders and key people</th><td></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="pg" aria-labelledby="answer">
+  <span class="chip">Section 4</span>
+  <h2 id="answer">Answer-first content</h2>
+  <p class="lead">Engines pull short passages that answer the question. Put the answer in the first two or three sentences, then support it with evidence that only you have.</p>
+  <ul class="check">
+    <li><span class="box">☐</span> <strong>Each of your 20 buyer questions maps to one page</strong> that answers it (from the table on page 2).</li>
+    <li><span class="box">☐</span> <strong>The answer comes first</strong>: 40 to 60 words directly under the H1 or the matching H2, before any background.</li>
+    <li><span class="box">☐</span> <strong>Question-shaped subheadings</strong> where they fit the reader ("How long does B2B SEO take?").</li>
+    <li><span class="box">☐</span> <strong>Definitions are self-contained</strong>: a sentence that still makes sense when quoted on its own.</li>
+    <li><span class="box">☐</span> <strong>Comparisons are in tables</strong> with clear row and column labels.</li>
+    <li><span class="box">☐</span> <strong>Steps are in numbered lists.</strong></li>
+    <li><span class="box">☐</span> <strong>Every page has something first-hand</strong>: your numbers, a screenshot, what you did and what happened, or a clear opinion.</li>
+    <li><span class="box">☐</span> <strong>Claims link to their source</strong>, and statistics carry a date.</li>
+    <li><span class="box">☐</span> <strong>Pages show "last updated" or "last reviewed" dates</strong> that change only when the content does.</li>
+    <li><span class="box">☐</span> <strong>Thin and duplicate pages are merged or removed</strong>, so one strong page answers each question.</li>
+    <li><span class="box">☐</span> <strong>Comparison and "alternatives" pages are fair</strong>: they name where a competitor is the better fit.</li>
+    <li><span class="box">☐</span> <strong>Internal links connect each answer</strong> to the related service page and two or three related definitions.</li>
+  </ul>
+  <p class="small">Score: ____ / 12</p>
+
+  <div class="cols">
+    <div class="callout">
+      <p class="callout__title">Weak opening</p>
+      <p>"In today's digital landscape, more and more buyers are turning to AI tools. In this article we'll explore what generative engine optimization means for your business."</p>
+    </div>
+    <div class="callout callout--sand">
+      <p class="callout__title">Answer-first opening</p>
+      <p>"Generative engine optimization (GEO) is the work of making your content easy for AI answer engines to find, trust and quote. In practice it means crawler access, clear entity facts and pages that answer one question directly."</p>
+    </div>
+  </div>
+
+  <h3>About llms.txt</h3>
+  <p><code>llms.txt</code> is a proposed convention (llmstxt.org) for a plain-Markdown file at your site root that summarizes your site and links to key pages. It is cheap to add. Google says you don't need new machine-readable files or "AI text files" to appear in AI Overviews or AI Mode. The crawler documentation from OpenAI, Anthropic and Perplexity does not say their bots use the file. Treat it as optional housekeeping, not a strategy.</p>
+  <ul class="check">
+    <li><span class="box">☐</span> <strong>Optional:</strong> <code>/llms.txt</code> exists, lists your services and key guides with URLs, and is generated from your CMS so it stays current.</li>
+  </ul>
+</section>
+
+<section class="pg" aria-labelledby="measure">
+  <span class="chip">Section 5</span>
+  <h2 id="measure">Measurement</h2>
+  <p class="lead">There is no single "AI rankings" report. Combine what your analytics already sees with a fixed set of prompts you check by hand every month.</p>
+  <ul class="check">
+    <li><span class="box">☐</span> <strong>GA4 has a channel or segment for AI referrals</strong>: sessions with referrers such as chatgpt.com, perplexity.ai, copilot.microsoft.com, gemini.google.com and claude.ai.</li>
+    <li><span class="box">☐</span> <strong>Your CRM records "How did you hear about us?"</strong> with an option for "ChatGPT / AI assistant". <span class="why">Many AI-influenced buyers arrive by typing your URL, so referrers undercount.</span></li>
+    <li><span class="box">☐</span> <strong>Search Console is reviewed monthly</strong> for impressions and clicks on your buyer-question pages. <span class="why">Google includes AI Overviews and AI Mode traffic in the Performance report under the "Web" search type. It does not report it separately.</span></li>
+    <li><span class="box">☐</span> <strong>A fixed prompt set (your 20 questions) is run monthly</strong> in Google AI Mode, ChatGPT search, Perplexity and Copilot, logged in the table below.</li>
+    <li><span class="box">☐</span> <strong>You record which competitors and which of their pages are cited</strong>, not just whether you are.</li>
+    <li><span class="box">☐</span> <strong>Answers about your company are checked for accuracy</strong> ("What does [Company] do?", "Who founded [Company]?").</li>
+    <li><span class="box">☐</span> <strong>Bot visits are tracked from server logs</strong> monthly, by user agent.</li>
+    <li><span class="box">☐</span> <strong>Results are reviewed on a set date</strong> with an owner and next actions.</li>
+  </ul>
+  <p class="small">Score: ____ / 8</p>
+
+  <table class="fill">
+    <caption>Monthly prompt log</caption>
+    <thead><tr><th style="width:26%">Prompt</th><th style="width:12%">Engine</th><th style="width:10%">Date</th><th style="width:10%">Cited? (Y/N)</th><th>Our URL cited</th><th>Competitors cited</th></tr></thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <p class="small">AI answers vary between runs and between users. Run each prompt in a logged-out or fresh session, note the date, and look at trends over several months rather than single results.</p>
+</section>
+
+<section class="pg" aria-labelledby="next">
+  <span class="chip">Your results</span>
+  <h2 id="next">Add it up and pick three fixes</h2>
+  <table class="tight">
+    <thead><tr><th>Section</th><th class="num">Your score</th><th class="num">Max</th><th>Start here if…</th></tr></thead>
+    <tbody>
+      <tr><th>1. Crawler access</th><td class="num">____</td><td class="num">8</td><td>Any box in this section is unticked. Nothing else matters until bots can reach you.</td></tr>
+      <tr><th>2. Indexing and rendering</th><td class="num">____</td><td class="num">12</td><td>Your content only appears after JavaScript runs.</td></tr>
+      <tr><th>3. Entity clarity</th><td class="num">____</td><td class="num">10</td><td>Engines describe your company wrongly or vaguely.</td></tr>
+      <tr><th>4. Answer-first content</th><td class="num">____</td><td class="num">12</td><td>You are indexed but competitors get cited for your topics.</td></tr>
+      <tr><th>5. Measurement</th><td class="num">____</td><td class="num">8</td><td>You cannot tell whether AI search sends you anything.</td></tr>
+      <tr><th>Total</th><td class="num">____</td><td class="num">50</td><td></td></tr>
+    </tbody>
+  </table>
+  <table class="fill tight">
+    <thead><tr><th style="width:6%">#</th><th>Fix</th><th style="width:20%">Owner</th><th style="width:18%">Due</th></tr></thead>
+    <tbody><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td></tr></tbody>
+  </table>
+
+  <div class="cta">
+    <h2>Want a second <span class="accent">opinion?</span></h2>
+    <p>Our AI search optimization work starts with this checklist, run against your site and your buyers' real questions, plus a prioritized fix list.</p>
+    <a class="btn" href="https://techdella.com/growth-audit/">Request a growth audit <span aria-hidden="true">→</span></a>
+    <span class="url">techdella.com/services/ai-search-optimization/</span>
+  </div>
+
+  <h3 id="sources">Sources</h3>
+  <ol class="sources">
+    <li>Google Search Central, "AI features and your website". <a href="https://developers.google.com/search/docs/appearance/ai-features">developers.google.com/search/docs/appearance/ai-features</a></li>
+    <li>Google Search Central, "Overview of Google crawlers and fetchers (user agents)", including Google-Extended. <a href="https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers">developers.google.com/search/docs/crawling-indexing/google-common-crawlers</a></li>
+    <li>Google Search Central, "Robots meta tag, data-nosnippet, and X-Robots-Tag specifications". <a href="https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag">developers.google.com/search/docs/crawling-indexing/robots-meta-tag</a></li>
+    <li>OpenAI, "Overview of OpenAI Crawlers". <a href="https://developers.openai.com/api/docs/bots">developers.openai.com/api/docs/bots</a></li>
+    <li>Perplexity, "Perplexity Crawlers". <a href="https://docs.perplexity.ai/guides/bots">docs.perplexity.ai/guides/bots</a></li>
+    <li>Anthropic, "Does Anthropic crawl data from the web, and how can site owners block the crawler?", Claude Help Center. <a href="https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler">support.claude.com/en/articles/8896518</a></li>
+    <li>Apple, "About Applebot". <a href="https://support.apple.com/en-us/119829">support.apple.com/en-us/119829</a></li>
+    <li>Microsoft, "Bing Webmaster Guidelines" and IndexNow. <a href="https://www.bing.com/webmasters/help/webmaster-guidelines-30fba23a">bing.com/webmasters</a>, <a href="https://www.indexnow.org/">indexnow.org</a></li>
+    <li>llms.txt proposal. <a href="https://llmstxt.org/">llmstxt.org</a></li>
+    <li>Schema.org, "Organization". <a href="https://schema.org/Organization">schema.org/Organization</a></li>
+  </ol>
+</section>
+
+</main>
+</body>
+</html>

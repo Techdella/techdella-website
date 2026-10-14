@@ -1,0 +1,62 @@
+/* Shared components used by many blocks (§2.3): buttons, chips, cards, media. */
+
+/* btn-primary: black pill + orange circle arrow. Min height 52px. */
+.td-btn{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:6px 6px 6px 22px;border-radius:var(--td-r-pill);font-weight:500;font-size:16px;line-height:1.2;text-decoration:none;border:1px solid transparent;transition:background-color .15s,color .15s,border-color .15s;white-space:nowrap}
+.td-btn--primary{background:var(--td-ink);color:var(--td-paper)}
+.td-btn--primary:hover{color:var(--td-paper);background:#262321}
+.td-btn__arrow{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--td-orange);display:inline-flex;align-items:center;justify-content:center;transition:transform .18s ease}
+.td-btn__arrow svg{width:15px;height:15px;stroke:var(--td-paper)}
+.td-btn:hover .td-btn__arrow{transform:translate(2px,-2px)}
+.td-btn--light{background:var(--td-paper);color:var(--td-ink)}
+.td-btn--light:hover{background:var(--td-canvas);color:var(--td-ink)}
+/* btn-secondary: white pill with ink border */
+.td-btn--secondary{background:var(--td-paper);color:var(--td-ink);border-color:var(--td-ink);padding:13px 22px}
+.td-btn--secondary:hover{background:var(--td-canvas);color:var(--td-ink)}
+.td-btn--sm{min-height:44px;font-size:14.5px;padding:5px 5px 5px 18px;gap:10px}
+.td-btn--sm .td-btn__arrow{width:34px;height:34px}
+.td-btn--sm .td-btn__arrow svg{width:13px;height:13px}
+.td-btn--sm.td-btn--secondary{padding:10px 18px}
+.td-btn:focus-visible{outline:none;box-shadow:var(--td-focus)}
+.td-btn--block{width:100%;justify-content:space-between}
+.td-link{font-weight:500;font-size:15px;text-decoration:underline;text-underline-offset:4px}
+
+/* label-chip: orange dot + label (§2.3) */
+.td-chip{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;line-height:1.4;border:1px solid var(--td-line);background:var(--td-paper);color:var(--td-ink);border-radius:var(--td-r-pill);padding:5px 12px 5px 10px;align-self:flex-start}
+/* In centered headers the chip sits on the headline's center line. */
+.td-hero--center .td-chip,.td-hero--center .td-hero__crumb,.td-arch-people__head .td-chip{align-self:center}
+.td-chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--td-orange);flex:0 0 auto}
+.td-chip--upper{text-transform:uppercase;font-size:12px;letter-spacing:.08em}
+.td-chip--plain::before{display:none}
+.td-chip--dark{background:var(--td-dark-1);border-color:var(--td-dark-border);color:var(--td-paper)}
+.td-tag{display:inline-flex;align-items:center;font-size:13px;background:var(--td-canvas);border-radius:var(--td-r-pill);padding:5px 12px;line-height:1.4}
+.td-tag--highlight{background:var(--td-orange-tint);color:var(--td-orange-text);font-weight:500}
+.td-tag--selected{background:var(--td-ink);color:var(--td-paper)}
+.td-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--td-orange);flex:0 0 auto}
+
+/* Cards */
+.td-card{background:var(--td-paper);border:1px solid var(--td-line);border-radius:var(--td-r-lg);padding:28px}
+.td-card--canvas{background:var(--td-canvas);border-color:transparent}
+.td-card--sand{background:var(--td-sand);border-color:transparent}
+.td-card--dark{background:var(--td-ink);color:var(--td-paper);border-color:transparent}
+.td-card--dark p,.td-card--dark .td-body{color:var(--td-on-dark)}
+.td-eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--td-muted);text-transform:uppercase}
+.td-card--dark .td-eyebrow{color:var(--td-on-dark)}
+.td-stat{font-size:clamp(36px,4vw,54px);font-weight:600;letter-spacing:-0.05em;line-height:1}
+.td-stat__label{font-size:15px;color:var(--td-ink-soft)}
+
+/* Media: arch frame (§2 "the arch is our shape") */
+.td-arch{border-radius:var(--td-arch);overflow:hidden;background:var(--td-sand)}
+.td-arch img{width:100%;height:100%;object-fit:cover}
+.td-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:0 0 auto}
+.td-avatars{display:flex}
+.td-avatars>*{border:2px solid var(--td-paper);margin-left:-9px}
+.td-avatars>:first-child{margin-left:0}
+
+/* "Example" / "Concept" labels for non-client creatives (§2.3, §10.8) */
+.td-label-example{position:absolute;top:10px;left:10px;z-index:1;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:rgba(13,13,13,.78);color:var(--td-paper);border-radius:var(--td-r-pill);padding:3px 9px}
+
+/* Platform text badge (fallback when no official logo file exists, §0.6) */
+.td-badge{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:500;background:var(--td-paper);border:1px solid var(--td-line-soft);border-radius:14px;padding:9px 14px 9px 9px;line-height:1.2}
+.td-badge__mark{width:26px;height:26px;border-radius:8px;background:var(--td-sand);color:var(--td-ink);font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.td-badge__mark--ink{background:var(--td-ink);color:var(--td-paper)}
+.td-badge__mark img{width:18px;height:18px;object-fit:contain}

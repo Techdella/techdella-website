@@ -1,0 +1,558 @@
+{
+    "key": "group_td_studio_service",
+    "title": "TechDella · Studio service",
+    "fields": [
+        {
+            "key": "field_td_studio_service_hero_title",
+            "label": "Hero title (H1)",
+            "name": "hero_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The H1. Lead with the outcome and include the primary keyword, under 60 characters. Good: \"B2B SEO that turns search into pipeline\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_studio_service_hero_accent_word",
+            "label": "Hero accent word",
+            "name": "hero_accent_word",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "One word from the hero title, set in serif italic (e.g. \"pipeline\"). One word only, never a phrase.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_studio_service_primary_kw",
+            "label": "Primary keyword",
+            "name": "primary_kw",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The one search phrase this page should rank for, validated in Ahrefs/Semrush/GSC first. Good: \"b2b seo services\". It must appear in the H1/title and in the first paragraph, or the pre-publish checklist blocks publishing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_studio_service_secondary_kws",
+            "label": "Secondary keywords",
+            "name": "secondary_kws",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "3–6 close variants and questions people search. Use them naturally in H2s and copy; never stuff.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add keyword",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_studio_service_secondary_kws_keyword",
+                    "label": "Keyword",
+                    "name": "keyword",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "One phrase, lowercase, as people search it.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_studio_service_secondary_kws"
+                }
+            ]
+        },
+        {
+            "key": "field_td_studio_service_platforms",
+            "label": "Platforms",
+            "name": "platforms",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "Platforms we actually use on this service. Badges use the official logo file, or a text badge if it is missing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "platform"
+            ],
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": ""
+        },
+        {
+            "key": "field_td_studio_service_bento",
+            "label": "Bento tiles",
+            "name": "bento",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "4–6 tiles. Every stat needs a verifiable source (§2.4); write [CONFIRM] if it is not verified yet.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Add tile",
+            "layouts": {
+                "layout_td_studio_service_bento_stat": {
+                    "key": "layout_td_studio_service_bento_stat",
+                    "name": "stat",
+                    "label": "Stat",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_td_studio_service_bento_stat_number",
+                            "label": "Number",
+                            "name": "number",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "e.g. \"50 days\". Verified only.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "parent_layout": "layout_td_studio_service_bento_stat"
+                        },
+                        {
+                            "key": "field_td_studio_service_bento_stat_label",
+                            "label": "Label",
+                            "name": "label",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "What the number means, in under 8 words.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "parent_layout": "layout_td_studio_service_bento_stat"
+                        },
+                        {
+                            "key": "field_td_studio_service_bento_stat_source",
+                            "label": "Source",
+                            "name": "source",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Which case study or report it comes from.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "parent_layout": "layout_td_studio_service_bento_stat"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_td_studio_service_bento_image": {
+                    "key": "layout_td_studio_service_bento_image",
+                    "name": "image",
+                    "label": "Image",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_td_studio_service_bento_image_image",
+                            "label": "Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Real work over stock. Alt text describes what is shown.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "id",
+                            "parent_layout": "layout_td_studio_service_bento_image"
+                        },
+                        {
+                            "key": "field_td_studio_service_bento_image_caption",
+                            "label": "Caption",
+                            "name": "caption",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Optional. What the image shows, in one line.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "parent_layout": "layout_td_studio_service_bento_image"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_td_studio_service_bento_quote": {
+                    "key": "layout_td_studio_service_bento_quote",
+                    "name": "quote",
+                    "label": "Quote",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_td_studio_service_bento_quote_testimonial",
+                            "label": "Testimonial",
+                            "name": "testimonial",
+                            "aria-label": "",
+                            "type": "post_object",
+                            "instructions": "Pick a permission-confirmed testimonial. Quotes are verbatim.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "td_testimonial"
+                            ],
+                            "return_format": "id",
+                            "allow_null": 1,
+                            "parent_layout": "layout_td_studio_service_bento_quote"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_td_studio_service_bento_link": {
+                    "key": "layout_td_studio_service_bento_link",
+                    "name": "link",
+                    "label": "Link",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_td_studio_service_bento_link_title",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Short and specific: a verb or a noun, under 8 words.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "parent_layout": "layout_td_studio_service_bento_link"
+                        },
+                        {
+                            "key": "field_td_studio_service_bento_link_text",
+                            "label": "Text",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "One sentence.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "parent_layout": "layout_td_studio_service_bento_link"
+                        },
+                        {
+                            "key": "field_td_studio_service_bento_link_url",
+                            "label": "URL",
+                            "name": "url",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "An internal page where possible.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "parent_layout": "layout_td_studio_service_bento_link"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_td_studio_service_bento_platform_list": {
+                    "key": "layout_td_studio_service_bento_platform_list",
+                    "name": "platform_list",
+                    "label": "Platform list",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_td_studio_service_bento_platform_list_platforms",
+                            "label": "Platforms",
+                            "name": "platforms",
+                            "aria-label": "",
+                            "type": "relationship",
+                            "instructions": "Platforms we actually use here.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "platform"
+                            ],
+                            "return_format": "id",
+                            "parent_layout": "layout_td_studio_service_bento_platform_list"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": ""
+        },
+        {
+            "key": "field_td_studio_service_process",
+            "label": "Process steps",
+            "name": "process",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "3–5 steps. A verb-led title (\"Audit\", \"Fix\", \"Grow\") plus one or two sentences on what the client gets.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Add step",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_studio_service_process_title",
+                    "label": "Step title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Short and specific: a verb or a noun, under 8 words.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_studio_service_process"
+                },
+                {
+                    "key": "field_td_studio_service_process_text",
+                    "label": "What happens",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "One or two plain sentences. Name the platform, metric or timeframe.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_studio_service_process"
+                }
+            ]
+        },
+        {
+            "key": "field_td_studio_service_faq",
+            "label": "FAQ",
+            "name": "faq",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "4–8 real questions from sales calls or Search Console. Answer in the first sentence, 40–80 words in total. Shown as page content only: no FAQPage schema (§8.2).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Add question",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_studio_service_faq_question",
+                    "label": "Question",
+                    "name": "question",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Phrase it the way a buyer would type it.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_studio_service_faq"
+                },
+                {
+                    "key": "field_td_studio_service_faq_answer",
+                    "label": "Answer",
+                    "name": "answer",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Lead with the direct answer, then one supporting detail.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_studio_service_faq"
+                }
+            ]
+        },
+        {
+            "key": "field_td_studio_service_related_services",
+            "label": "Related services",
+            "name": "related_services",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "The 2–3 services that naturally come next. They become internal links at the bottom of the page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "studio_service"
+            ],
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": 3
+        },
+        {
+            "key": "field_td_studio_service_related_case_studies",
+            "label": "Related case studies",
+            "name": "related_case_studies",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "Case studies where this service did the work. Only published, permission-confirmed ones.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "case_study"
+            ],
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": 3
+        },
+        {
+            "key": "field_td_studio_service_cta_variant",
+            "label": "Closing CTA",
+            "name": "cta_variant",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Which closing call to action to show. Growth audit suits most search/growth pages; Studios pages use the project brief.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "audit": "Growth audit",
+                "call": "Book a discovery call",
+                "studios_brief": "Studios project brief"
+            },
+            "default_value": "audit",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "studio_service"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for studio service entries (CLAUDE.md §7). Also registered as post meta by techdella-core/cpt.",
+    "show_in_rest": 0,
+    "modified": 1791590400
+}

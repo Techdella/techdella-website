@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/form",
+	"title": "Form (Startbuddi)",
+	"category": "techdella",
+	"icon": "feedback",
+	"description": "A lead form that posts to WordPress and is forwarded to the matching Startbuddi endpoint. Pill options, inline validation, success state; works without JavaScript.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"formKey": {
+			"type": "string",
+			"enum": [ "contact", "audit", "studios_brief", "newsletter", "lead_magnet", "tool_gate", "popup_exit", "popup_scroll", "mvp_calc", "guest_post" ],
+			"default": "contact"
+		},
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"submitLabel": { "type": "string", "default": "" },
+		"variant": { "type": "string", "enum": [ "light", "dark", "inline", "compact" ], "default": "light" },
+		"successMessage": { "type": "string", "default": "" },
+		"hidden": { "type": "object", "default": {} }
+	},
+	"example": {
+		"attributes": { "formKey": "audit", "variant": "light" }
+	},
+	"techdella": {
+		"controls": { "intro": "textarea", "successMessage": "textarea", "hidden": "json" },
+		"help": "Pick the form (one per Startbuddi endpoint). Leave title, intro, button label and success message empty to use the defaults. Hidden values: e.g. {\"resource_slug\":\"ai-search-readiness-checklist\"} for a resource download, {\"tool_slug\":\"utm-builder\"} for a tool."
+	}
+}

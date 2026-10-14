@@ -1,0 +1,87 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/studio-hero",
+	"title": "Studios hero",
+	"category": "techdella",
+	"icon": "smartphone",
+	"description": "Studios hero: dark grid panel with chip, H1 (one accent word), lead, CTAs and phone screens. Screens without an uploaded image render as neutral HTML/CSS UI placeholders; Concept screens always carry a Concept label (IMG-09).",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"attributes": {
+		"chip": {
+			"type": "string",
+			"default": ""
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"lead": {
+			"type": "string",
+			"default": ""
+		},
+		"primaryLabel": {
+			"type": "string",
+			"default": ""
+		},
+		"primaryUrl": {
+			"type": "string",
+			"default": "/start/"
+		},
+		"secondaryLabel": {
+			"type": "string",
+			"default": ""
+		},
+		"secondaryUrl": {
+			"type": "string",
+			"default": "#work"
+		},
+		"screens": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"example": {
+		"attributes": {
+			"chip": "Apps · AI automation · Design · Motion",
+			"title": "From idea to something *real*",
+			"lead": "We design, build and automate digital products. Clearly scoped, milestone-based, and made with care.",
+			"primaryLabel": "Start a project",
+			"primaryUrl": "/start/",
+			"secondaryLabel": "Explore our work",
+			"secondaryUrl": "#work",
+			"screens": [
+				{
+					"title": "startbuddi",
+					"image": "work/startbuddi-website-phone",
+					"alt": "The startbuddi.com website on a phone",
+					"note": "[CONFIRM Studios build]"
+				},
+				{
+					"title": "Bookings",
+					"kind": "dashboard",
+					"concept": true
+				},
+				{
+					"title": "Automations",
+					"kind": "toggle",
+					"concept": true
+				}
+			]
+		}
+	},
+	"techdella": {
+		"controls": {
+			"lead": "textarea",
+			"screens": "json",
+			"primaryUrl": "url",
+			"secondaryUrl": "url"
+		},
+		"help": "Renders the page H1. screens (up to 3): [{title, kind: list|dashboard|toggle, image (attachment ID / key of a real app screen), alt, concept, note}]. Concept screens always show a 'Concept' label. Placeholders carry no invented numbers."
+	}
+}

@@ -1,0 +1,156 @@
+{
+    "key": "group_td_td_resource",
+    "title": "TechDella · Resource",
+    "fields": [
+        {
+            "key": "field_td_td_resource_pdf",
+            "label": "PDF",
+            "name": "pdf",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "The final, tagged PDF under 3 MB. Its URL is never shown on the page; it is sent after the form.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "mime_types": "pdf"
+        },
+        {
+            "key": "field_td_td_resource_cover",
+            "label": "Cover",
+            "name": "cover",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "The cover render (4:5). Alt text: the guide title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_td_td_resource_primary_kw",
+            "label": "Primary keyword",
+            "name": "primary_kw",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The one search phrase this page should rank for, validated in Ahrefs/Semrush/GSC first. Good: \"b2b seo services\". It must appear in the H1/title and in the first paragraph, or the pre-publish checklist blocks publishing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_td_td_resource_pages",
+            "label": "Page count",
+            "name": "pages",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "The real page count of the PDF.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "step": 1
+        },
+        {
+            "key": "field_td_td_resource_form",
+            "label": "Form",
+            "name": "form",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "The Startbuddi endpoint this download goes to. Almost always \"Resource download\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "lead_magnet": "Resource download (lead_magnet)",
+                "newsletter": "Newsletter"
+            },
+            "default_value": "lead_magnet",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_td_td_resource_bullets",
+            "label": "What's inside",
+            "name": "bullets",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "3–6 bullets, each a concrete thing the reader will be able to do.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add bullet",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "pagination": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_td_td_resource_bullets_text",
+                    "label": "Bullet",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "One or two plain sentences. Name the platform, metric or timeframe.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_td_td_resource_bullets"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "td_resource"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for resource entries (CLAUDE.md §7). Also registered as post meta by techdella-core/cpt.",
+    "show_in_rest": 0,
+    "modified": 1791590400
+}

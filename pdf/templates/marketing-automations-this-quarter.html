@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>10 Marketing Automations to Set Up This Quarter | TechDella</title>
+<meta name="author" content="TechDella">
+<meta name="description" content="Ten B2B marketing automations with the trigger, the steps, the data you need, what to measure and what goes wrong, in the order we would build them.">
+<meta name="subject" content="Marketing automation">
+<meta name="keywords" content="marketing automation, lead routing, lead scoring, nurture sequence, CRM automation, AI marketing automation">
+<meta name="td-pdf-id" content="PDF-06">
+<meta name="td-service" content="https://techdella.com/services/marketing-automation/">
+<link rel="stylesheet" href="brand.css">
+<style>
+@page{
+  @top-right{content:"10 Marketing Automations to Set Up This Quarter";font:400 7.5pt "Geist",sans-serif;color:#6B6560;vertical-align:bottom;padding-bottom:4mm;}
+  @bottom-left{content:"techdella.com/services/marketing-automation/  ·  Want these built for you? Request a growth audit at techdella.com/growth-audit/";font:400 7.5pt "Geist",sans-serif;color:#6B6560;vertical-align:top;padding-top:5mm;}
+}
+.recipe{display:grid;grid-template-columns:32mm 1fr;border-top:1px solid var(--td-line);margin:0 0 4mm;}
+.recipe dt{font-size:7.5pt;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--td-ink);padding:2mm 0;border-bottom:1px solid var(--td-line-soft);}
+.recipe dd{margin:0;padding:2mm 0;border-bottom:1px solid var(--td-line-soft);}
+.recipe dd ol,.recipe dd ul{margin:0;}
+.num-big{font-size:9pt;font-weight:600;color:var(--td-muted);letter-spacing:0.08em;display:block;margin:0 0 1mm;}
+.auto + .auto{break-before:page;}
+</style>
+</head>
+<body>
+<main class="doc">
+
+<section class="cover" aria-label="Cover">
+  <img class="cover__logo" src="../../assets/images/brand/techdella-logo.png" alt="TechDella">
+  <div class="cover__arch">
+    <p class="cover__meta">PDF-06 · Playbook</p>
+    <h1>10 marketing automations to set up this <span class="accent">quarter.</span></h1>
+    <p class="cover__sub">The trigger, the steps, the data you need, what to measure and what usually breaks, for the ten automations we would build first in a B2B marketing stack.</p>
+    <dl class="cover__facts">
+      <div><dt>For</dt><dd>Marketing and RevOps leads at B2B companies</dd></div>
+      <div><dt>Works with</dt><dd>Any CRM with workflows, plus a form tool and a chat tool such as Slack</dd></div>
+      <div><dt>Effort</dt><dd>One to three days each, once tracking is in place</dd></div>
+    </dl>
+    <table class="fill tight">
+      <caption>Your version</caption>
+      <tbody>
+        <tr><th style="width:30%">Tools involved</th><td></td></tr>
+        <tr><th>Trigger and stop conditions</th><td></td></tr>
+        <tr><th>Owner</th><td></td></tr>
+        <tr><th>Target measure</th><td></td></tr>
+        <tr><th>Notes</th><td style="height:14mm"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cover__foot">
+    <span><strong>techdella.com</strong>/services/marketing-automation/</span>
+    <span>Version: October 2026</span>
+  </div>
+</section>
+
+<section class="pg" aria-labelledby="start">
+  <span class="chip">Start here</span>
+  <h2 id="start">Before you automate anything</h2>
+  <p class="lead">Automation repeats whatever process you give it, at speed. If lead stages are vague or form data is messy, automation spreads the mess. Get these four things right first.</p>
+  <ul class="check">
+    <li><span class="box">☐</span> <strong>One CRM is the source of truth</strong> for contacts, companies and deals. <span class="why">Other tools read from it and write back to it, not to their own lists.</span></li>
+    <li><span class="box">☐</span> <strong>Lifecycle stages are written down</strong>: what makes someone a subscriber, a lead, a marketing-qualified lead (MQL), a sales-qualified lead (SQL), an opportunity and a customer.</li>
+    <li><span class="box">☐</span> <strong>Every form sends source data</strong>: page URL, referrer, UTM parameters (first and last touch) and consent.</li>
+    <li><span class="box">☐</span> <strong>Someone owns automation</strong>: they keep a list of every live workflow, what it does and who to ask about it.</li>
+  </ul>
+
+  <h3>The ten, in build order</h3>
+  <table class="tight">
+    <thead><tr><th style="width:5%">#</th><th style="width:36%">Automation</th><th>Why this position</th><th style="width:15%">Effort</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><th>Form to CRM with source capture</th><td>Every other automation depends on clean, attributed records.</td><td>Low</td></tr>
+      <tr><td>2</td><th>Instant lead routing and alert</th><td>The fastest way to stop losing warm leads.</td><td>Low</td></tr>
+      <tr><td>3</td><th>Deduplication and enrichment</th><td>Keeps routing and scoring accurate.</td><td>Medium</td></tr>
+      <tr><td>4</td><th>Lead-magnet delivery and nurture</th><td>Turns downloads into conversations.</td><td>Medium</td></tr>
+      <tr><td>5</td><th>Meeting booked: reminders and no-show follow-up</th><td>Protects the meetings you already won.</td><td>Low</td></tr>
+      <tr><td>6</td><th>Lead scoring and MQL handoff</th><td>Needs a few months of clean data from 1 to 3.</td><td>Medium</td></tr>
+      <tr><td>7</td><th>Stalled-deal nudges</th><td>Uses deal stages and activity dates.</td><td>Low</td></tr>
+      <tr><td>8</td><th>New-customer onboarding</th><td>Hands won deals to delivery without dropped context.</td><td>Medium</td></tr>
+      <tr><td>9</td><th>Re-engagement and sunset</th><td>Protects email deliverability.</td><td>Low</td></tr>
+      <tr><td>10</td><th>Weekly pipeline report to chat</th><td>Makes the numbers visible without anyone building a deck.</td><td>Low</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout--sand">
+    <p class="callout__title">Where AI fits</p>
+    <p>AI is useful inside several of these automations: summarizing a form message for the sales alert, classifying inquiries by intent, drafting (not sending) a first reply, or turning call notes into CRM fields. Keep a person in the loop for anything a customer sees, log what the model produced, and do not send personal data to a model provider without a data-processing agreement in place.</p>
+  </div>
+</section>
+
+<section class="pg" aria-labelledby="a1">
+  <div class="auto">
+    <span class="num-big">Automation 01</span>
+    <h2 id="a1">Form to CRM with source capture</h2>
+    <p>Every form submission creates or updates a contact in the CRM, with where the person came from attached to the record.</p>
+    <dl class="recipe">
+      <dt>Trigger</dt><dd>Any form submitted on your website, landing pages or tools.</dd>
+      <dt>Steps</dt><dd><ol><li>Store first-touch and last-touch UTM values in a first-party cookie when the visitor lands.</li><li>Pass them, plus page URL and referrer, as hidden fields with the form.</li><li>Create or update the contact, matched on email address.</li><li>Write the source fields only if they are empty (first touch), and always update last touch.</li><li>Record the consent checkbox value and timestamp.</li></ol></dd>
+      <dt>Data you need</dt><dd>A UTM naming convention; CRM properties for first and last source, medium, campaign, landing page.</dd>
+      <dt>Measure</dt><dd>Share of new contacts with a known source. Aim for nearly all of them.</dd>
+      <dt>Watch out for</dt><dd>Ad blockers and consent choices that strip cookies; forms embedded from third-party tools that drop hidden fields; overwriting first touch on every visit.</dd>
+    </dl>
+    <table class="fill tight">
+      <caption>Your version</caption>
+      <tbody>
+        <tr><th style="width:30%">Tools involved</th><td></td></tr>
+        <tr><th>Trigger and stop conditions</th><td></td></tr>
+        <tr><th>Owner</th><td></td></tr>
+        <tr><th>Target measure</th><td></td></tr>
+        <tr><th>Notes</th><td style="height:14mm"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="auto">
+    <span class="num-big">Automation 02</span>
+    <h2 id="a2">Instant lead routing and alert</h2>
+    <p>High-intent inquiries (contact, demo, audit requests) reach the right person within minutes, with the context they need to reply well.</p>
+    <dl class="recipe">
+      <dt>Trigger</dt><dd>A high-intent form is submitted.</dd>
+      <dt>Steps</dt><dd><ol><li>Assign an owner using clear rules (territory, company size, service line, or round-robin).</li><li>Post an alert to the owner in Slack or Teams: name, company, message, source, pages viewed.</li><li>Create a "reply" task due within your target response time.</li><li>If the task is still open when the target passes, alert the owner's manager.</li></ol></dd>
+      <dt>Measure</dt><dd>Median time from submission to first human reply, reviewed weekly.</dd>
+      <dt>Watch out for</dt><dd>Routing rules nobody updates when the team changes; alerts in a busy channel nobody watches.</dd>
+    </dl>
+    <table class="fill tight">
+      <caption>Your version</caption>
+      <tbody>
+        <tr><th style="width:30%">Tools involved</th><td></td></tr>
+        <tr><th>Trigger and stop conditions</th><td></td></tr>
+        <tr><th>Owner</th><td></td></tr>
+        <tr><th>Target measure</th><td></td></tr>
+        <tr><th>Notes</th><td style="height:14mm"></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="pg" aria-labelledby="a3">
+  <div class="auto">
+    <span class="num-big">Automation 03</span>
+    <h2 id="a3">Deduplication and enrichment</h2>
+    <p>Each person and company exists once in the CRM, with the firmographic fields your routing and scoring rely on.</p>
+    <dl class="recipe">
+      <dt>Trigger</dt><dd>A contact or company is created; plus a weekly batch for existing records.</dd>
+      <dt>Steps</dt><dd><ol><li>Match on email for people and on website domain for companies.</li><li>Associate the contact with its company by email domain (skip free-mail domains such as gmail.com).</li><li>Fill missing fields from an enrichment source: industry, employee range, country.</li><li>Flag likely duplicates for a person to merge rather than merging automatically.</li></ol></dd>
+      <dt>Measure</dt><dd>Duplicate rate; share of qualified leads with industry and company size filled.</dd>
+      <dt>Watch out for</dt><dd>Enrichment providers' terms and data-protection rules in your markets; overwriting data a salesperson entered by hand.</dd>
+    </dl>
+    <table class="fill tight">
+      <caption>Your version</caption>
+      <tbody>
+        <tr><th style="width:30%">Tools involved</th><td></td></tr>
+        <tr><th>Trigger and stop conditions</th><td></td></tr>
+        <tr><th>Owner</th><td></td></tr>
+        <tr><th>Target measure</th><td></td></tr>
+        <tr><th>Notes</th><td style="height:14mm"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="auto">
+    <span class="num-big">Automation 04</span>
+    <h2 id="a4">Lead-magnet delivery and nurture</h2>
+    <p>Someone downloads a guide; they get it immediately, then a short sequence that helps them use it and offers a next step.</p>
+    <dl class="recipe">
+      <dt>Trigger</dt><dd>Resource form submitted.</dd>
+      <dt>Steps</dt><dd><ol><li>Show the download link on the thank-you page and send it by email.</li><li>Tag the contact with the resource (for example <code>lm-ai-search-checklist</code>).</li><li>If they gave marketing consent: send three emails over about two weeks. One practical tip from the guide, one example or case study, one invitation to talk.</li><li>Stop the sequence when they book a meeting or reply.</li></ol></dd>
+      <dt>Measure</dt><dd>Download-to-meeting rate per resource; replies; unsubscribes.</dd>
+      <dt>Watch out for</dt><dd>Sending nurture without consent where the law requires it; generic emails that ignore which guide they downloaded.</dd>
+    </dl>
+    <table class="fill tight">
+      <caption>Your version</caption>
+      <tbody>
+        <tr><th style="width:30%">Tools involved</th><td></td></tr>
+        <tr><th>Trigger and stop conditions</th><td></td></tr>
+        <tr><th>Owner</th><td></td></tr>
+        <tr><th>Target measure</th><td></td></tr>
+        <tr><th>Notes</th><td style="height:14mm"></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="pg" aria-labelledby="a5">
+  <div class="auto">
+    <span class="num-big">Automation 05</span>
+    <h2 id="a5">Meeting booked: reminders and no-show follow-up</h2>
+    <p>Fewer missed calls, and a clear path back when someone does miss one.</p>
+    <dl class="recipe">
+      <dt>Trigger</dt><dd>A meeting is booked through your scheduling tool.</dd>
+      <dt>Steps</dt><dd><ol><li>Move the contact or deal to the "Meeting booked" stage.</li><li>Send a confirmation with the agenda and one question to think about.</li><li>Send reminders a day before and an hour before.</li><li>If the meeting is marked no-show, send a friendly rebooking email the same day, and create a call task for the owner.</li><li>After a held meeting, create a follow-up task with a due date.</li></ol></dd>
+      <dt>Measure</dt><dd>Show rate; share of no-shows that rebook.</dd>
+      <dt>Watch out for</dt><dd>Reminders that keep sending after a meeting is cancelled or rescheduled.</dd>
+    </dl>
+    <table class="fill tight">
+      <caption>Your version</caption>
+      <tbody>
+        <tr><th style="width:30%">Tools involved</th><td></td></tr>
+        <tr><th>Trigger and stop conditions</th><td></td></tr>
+        <tr><th>Owner</th><td></td></tr>
+        <tr><th>Target measure</th><td></td></tr>
+        <tr><th>Notes</th><td style="height:14mm"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="auto">
+    <span class="num-big">Automation 06</span>
+    <h2 id="a6">Lead scoring and MQL handoff</h2>
+    <p>Sales sees the leads most likely to buy first, and marketing keeps nurturing the rest.</p>
+    <dl class="recipe">
+      <dt>Trigger</dt><dd>Changes to contact properties or new activity (page views, email clicks, form fills).</dd>
+      <dt>Steps</dt><dd><ol><li>Score fit (industry, size, role, market) and intent (pricing page visits, repeat visits, high-intent forms) separately.</li><li>When both pass your thresholds, set the stage to MQL and route as in automation 02.</li><li>Sales accepts (SQL) or rejects with a reason from a fixed list.</li><li>Review rejected reasons monthly and adjust the scoring.</li></ol></dd>
+      <dt>Measure</dt><dd>MQL-to-SQL acceptance rate; opportunities created from MQLs.</dd>
+      <dt>Watch out for</dt><dd>Scores built on guesses: base the first version on what your last 20 to 50 won deals had in common, and keep it simple.</dd>
+    </dl>
+    <table class="fill tight">
+      <caption>Your version</caption>
+      <tbody>
+        <tr><th style="width:30%">Tools involved</th><td></td></tr>
+        <tr><th>Trigger and stop conditions</th><td></td></tr>
+        <tr><th>Owner</th><td></td></tr>
+        <tr><th>Target measure</th><td></td></tr>
+        <tr><th>Notes</th><td style="height:14mm"></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="pg" aria-labelledby="a7">
+  <div class="auto">
+    <span class="num-big">Automation 07</span>
+    <h2 id="a7">Stalled-deal nudges</h2>
+    <p>Deals that have gone quiet get attention before they go cold.</p>
+    <dl class="recipe">
+      <dt>Trigger</dt><dd>An open deal has had no logged activity for a set number of days for its stage (for example 14 days).</dd>
+      <dt>Steps</dt><dd><ol><li>Create a task for the owner with the last activity and next step from the deal.</li><li>Optional: enroll the contact in a short, personal-sounding check-in sequence sent from the owner's mailbox, which stops on any reply.</li><li>If still quiet after a second period, flag the deal in the weekly pipeline report.</li></ol></dd>
+      <dt>Measure</dt><dd>Deals reactivated; average days in stage.</dd>
+      <dt>Watch out for</dt><dd>Automated emails to contacts in active negotiation. Let owners opt a deal out.</dd>
+    </dl>
+    <table class="fill tight">
+      <caption>Your version</caption>
+      <tbody>
+        <tr><th style="width:30%">Tools involved</th><td></td></tr>
+        <tr><th>Trigger and stop conditions</th><td></td></tr>
+        <tr><th>Owner</th><td></td></tr>
+        <tr><th>Target measure</th><td></td></tr>
+        <tr><th>Notes</th><td style="height:14mm"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="auto">
+    <span class="num-big">Automation 08</span>
+    <h2 id="a8">New-customer onboarding</h2>
+    <p>Everything sales learned reaches the delivery team, and the customer knows what happens next.</p>
+    <dl class="recipe">
+      <dt>Trigger</dt><dd>Deal moved to "Won".</dd>
+      <dt>Steps</dt><dd><ol><li>Create the project or onboarding record from a template, with tasks and due dates.</li><li>Copy key deal fields (scope, goals, contacts, start date) to the project.</li><li>Send the welcome email: who their contacts are, the first three steps, and what you need from them.</li><li>Post the win to the team channel with the deal summary.</li><li>Schedule check-ins at set points, such as day 7 and day 30.</li></ol></dd>
+      <dt>Measure</dt><dd>Time from signed to kickoff; onboarding tasks completed on time.</dd>
+      <dt>Watch out for</dt><dd>Welcome emails that go out before the contract or invoice is actually signed.</dd>
+    </dl>
+    <table class="fill tight">
+      <caption>Your version</caption>
+      <tbody>
+        <tr><th style="width:30%">Tools involved</th><td></td></tr>
+        <tr><th>Trigger and stop conditions</th><td></td></tr>
+        <tr><th>Owner</th><td></td></tr>
+        <tr><th>Target measure</th><td></td></tr>
+        <tr><th>Notes</th><td style="height:14mm"></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="pg" aria-labelledby="a9">
+  <div class="auto">
+    <span class="num-big">Automation 09</span>
+    <h2 id="a9">Re-engagement and sunset</h2>
+    <p>Inactive subscribers either come back or leave your list, which protects your sender reputation.</p>
+    <dl class="recipe">
+      <dt>Trigger</dt><dd>No email clicks or replies, and no site visits, for a set period (for example 6 months).</dd>
+      <dt>Steps</dt><dd><ol><li>Send one or two emails asking whether they still want to hear from you, with a clear "keep me subscribed" button.</li><li>If they click, reset their engagement date.</li><li>If not, suppress them from marketing email. Keep the record for sales and customer history.</li></ol></dd>
+      <dt>Measure</dt><dd>Share of the list that is engaged; spam-complaint rate in Google Postmaster Tools.</dd>
+      <dt>Watch out for</dt><dd>Using opens alone as the activity signal: privacy features in some mail apps report opens that did not happen.</dd>
+    </dl>
+    <table class="fill tight">
+      <caption>Your version</caption>
+      <tbody>
+        <tr><th style="width:30%">Tools involved</th><td></td></tr>
+        <tr><th>Trigger and stop conditions</th><td></td></tr>
+        <tr><th>Owner</th><td></td></tr>
+        <tr><th>Target measure</th><td></td></tr>
+        <tr><th>Notes</th><td style="height:14mm"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="auto">
+    <span class="num-big">Automation 10</span>
+    <h2 id="a10">Weekly pipeline report to chat</h2>
+    <p>The team sees the numbers that matter every Monday without anyone building a slide.</p>
+    <dl class="recipe">
+      <dt>Trigger</dt><dd>Schedule: every Monday morning.</dd>
+      <dt>Steps</dt><dd><ol><li>Pull last week's leads, MQLs, SQLs, opportunities created and deals won, by source.</li><li>Compare with the previous four-week average.</li><li>Post a short summary to the team channel with a link to the full dashboard.</li><li>Optional: use AI to write a two-sentence summary of what changed, clearly labelled as generated.</li></ol></dd>
+      <dt>Measure</dt><dd>Whether people read it: ask in the first month, and cut what nobody uses.</dd>
+      <dt>Watch out for</dt><dd>Reports nobody acts on. End each report with one question for the team.</dd>
+    </dl>
+    <table class="fill tight">
+      <caption>Your version</caption>
+      <tbody>
+        <tr><th style="width:30%">Tools involved</th><td></td></tr>
+        <tr><th>Trigger and stop conditions</th><td></td></tr>
+        <tr><th>Owner</th><td></td></tr>
+        <tr><th>Target measure</th><td></td></tr>
+        <tr><th>Notes</th><td style="height:14mm"></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="pg" aria-labelledby="plan">
+  <span class="chip">Plan the quarter</span>
+  <h2 id="plan">Your automation plan</h2>
+  <p class="lead">Pick three to five for this quarter. Write the owner and the measure next to each before you build.</p>
+  <table class="fill">
+    <thead><tr><th style="width:5%">#</th><th style="width:30%">Automation</th><th>Measure of success</th><th style="width:15%">Owner</th><th style="width:13%">Live by</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>2</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>3</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>4</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>5</td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h3>Before each automation goes live</h3>
+  <ul class="check">
+    <li><span class="box">☐</span> Tested end to end with a test contact, including the "stop" conditions.</li>
+    <li><span class="box">☐</span> Added to the automation register with owner, trigger and purpose.</li>
+    <li><span class="box">☐</span> Emails checked for consent rules and unsubscribe links.</li>
+    <li><span class="box">☐</span> Failure alert set: someone hears about it when a step errors.</li>
+    <li><span class="box">☐</span> Review date on the calendar (30 days after launch).</li>
+  </ul>
+
+  <div class="cta">
+    <h2>Want these built and <span class="accent">maintained?</span></h2>
+    <p>We design and build AI marketing automation on top of your CRM, forms and email, and we document every workflow so your team can own it.</p>
+    <a class="btn" href="https://techdella.com/growth-audit/">Request a growth audit <span aria-hidden="true">→</span></a>
+    <span class="url">techdella.com/services/marketing-automation/</span>
+  </div>
+
+  <h3 id="sources">Sources</h3>
+  <ol class="sources">
+    <li>Google, "Email sender guidelines", Google Workspace Admin Help (spam-rate and unsubscribe requirements referenced in automation 09). <a href="https://support.google.com/a/answer/81126">support.google.com/a/answer/81126</a></li>
+    <li>Apple, "Use Mail Privacy Protection on iPhone", Apple Support (why opens are unreliable). <a href="https://support.apple.com/guide/iphone/use-mail-privacy-protection-iphf084865c7/ios">support.apple.com</a></li>
+    <li>European Commission, "Data protection: rules for business and organisations" (consent and processors). <a href="https://commission.europa.eu/law/law-topic/data-protection_en">commission.europa.eu/law/law-topic/data-protection_en</a></li>
+  </ol>
+</section>
+
+</main>
+</body>
+</html>

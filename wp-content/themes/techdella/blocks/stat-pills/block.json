@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/stat-pills",
+	"title": "Stat pills",
+	"category": "techdella",
+	"icon": "chart-bar",
+	"description": "Case-study results as pills (Main → Paycape), with a link to the case study.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "Results" },
+		"title": { "type": "string", "default": "" },
+		"meta": { "type": "string", "default": "" },
+		"stats": { "type": "array", "default": [] },
+		"linkLabel": { "type": "string", "default": "" },
+		"linkUrl": { "type": "string", "default": "" },
+		"logo": { "type": ["integer", "string"], "default": "" },
+		"logoAlt": { "type": "string", "default": "" },
+		"image": { "type": ["integer", "string"], "default": "" },
+		"imageAlt": { "type": "string", "default": "" }
+	},
+	"example": {
+		"attributes": {
+			"label": "Results",
+			"title": "What we did for *Paycape*",
+			"meta": "5-month engagement · Q3 2025",
+			"stats": [
+				{ "value": "50%", "label": "of conversions came from inbound" },
+				{ "value": "15,000", "label": "monthly organic visitors" },
+				{ "value": "50 days", "label": "to first result" }
+			],
+			"linkLabel": "Read the Paycape case study",
+			"linkUrl": "/case-studies/paycape/"
+		}
+	},
+	"techdella": {
+		"controls": { "stats": "json", "linkUrl": "url", "logo": "media", "image": "media" },
+		"help": "Exactly three stats {value, label}: the first sits on the top row, the third is the dark pill. Verified numbers only (§2.4); anything else needs [CONFIRM]. logo fills the first outline pill (a permissioned client logo) and image the last (a product or site shot); without them they stay empty outlines, hidden from screen readers."
+	}
+}

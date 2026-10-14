@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/tool-keyword-density-checker",
+	"title": "Tool: Keyword Density Checker",
+	"category": "techdella",
+	"icon": "search",
+	"description": "Keyword counts, density and the most used words and phrases in a text. Free tool app (§12.1); used by the td_tool template via tool_component.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": false,
+		"multiple": false
+	},
+	"attributes": {
+		"gate": {
+			"type": "boolean",
+			"default": false
+		},
+		"slug": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"example": {
+		"attributes": {
+			"gate": false
+		}
+	},
+	"techdella": {
+		"controls": {
+			"slug": "hidden"
+		},
+		"help": "gate: true shows results only after the tool_gate email form succeeds (the tool page's gate field = email). slug: the tool page slug sent as tool_slug."
+	}
+}

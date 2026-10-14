@@ -1,0 +1,41 @@
+{
+    "key": "group_td_thank_you",
+    "title": "TechDella · Thank-you page",
+    "fields": [
+        {
+            "key": "field_td_thank_you_next_step_cta",
+            "label": "Next step",
+            "name": "next_step_cta",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "The one thing to do next (e.g. read a guide, book a call). This page is always noindex.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "thank-you"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for thank-you page entries (CLAUDE.md §7). Also registered as post meta by techdella-core/cpt.",
+    "show_in_rest": 0,
+    "modified": 1791590400
+}

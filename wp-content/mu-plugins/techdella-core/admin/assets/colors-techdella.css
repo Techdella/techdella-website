@@ -1,0 +1,111 @@
+/*
+ * "TechDella" admin colour scheme (§14.2): ink menu on a canvas page,
+ * orange only for focus rings. Loaded on top of the base admin styles.
+ */
+body.admin-color-techdella {
+  background: #F7F5F2;
+  /* Core and block-editor components read these. */
+  --wp-admin-theme-color: #0D0D0D;
+  --wp-admin-theme-color--rgb: 13, 13, 13;
+  --wp-admin-theme-color-darker-10: #262321;
+  --wp-admin-theme-color-darker-10--rgb: 38, 35, 33;
+  --wp-admin-theme-color-darker-20: #1A1715;
+  --wp-admin-theme-color-darker-20--rgb: 26, 23, 21;
+}
+
+/* Menu */
+.admin-color-techdella #adminmenuback,
+.admin-color-techdella #adminmenuwrap,
+.admin-color-techdella #adminmenu { background: #0D0D0D; }
+.admin-color-techdella #adminmenu a { color: #C9C4BE; }
+.admin-color-techdella #adminmenu div.wp-menu-image::before { color: #C9C4BE; }
+.admin-color-techdella #adminmenu li.menu-top:hover,
+.admin-color-techdella #adminmenu li.opensub > a.menu-top,
+.admin-color-techdella #adminmenu li > a.menu-top:focus { background: #1A1715; color: #FFFFFF; }
+.admin-color-techdella #adminmenu li.menu-top:hover div.wp-menu-image::before,
+.admin-color-techdella #adminmenu li.opensub > a.menu-top div.wp-menu-image::before { color: #FFFFFF; }
+.admin-color-techdella #adminmenu .wp-submenu,
+.admin-color-techdella #adminmenu .wp-has-current-submenu .wp-submenu,
+.admin-color-techdella #adminmenu .wp-has-current-submenu.opensub .wp-submenu,
+.admin-color-techdella #adminmenu a.wp-has-current-submenu:focus + .wp-submenu { background: #1A1715; }
+.admin-color-techdella #adminmenu .wp-submenu a { color: #C9C4BE; }
+.admin-color-techdella #adminmenu .wp-submenu a:hover,
+.admin-color-techdella #adminmenu .wp-submenu a:focus,
+.admin-color-techdella #adminmenu .wp-submenu li.current a,
+.admin-color-techdella #adminmenu .wp-submenu li.current a:hover { color: #FFFFFF; }
+.admin-color-techdella #adminmenu .wp-submenu-head { color: #FFFFFF; }
+.admin-color-techdella #adminmenu li.current a.menu-top,
+.admin-color-techdella #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+.admin-color-techdella #adminmenu li.wp-has-current-submenu .wp-submenu .wp-submenu-head,
+.admin-color-techdella .folded #adminmenu li.current.menu-top { background: #262321; color: #FFFFFF; }
+.admin-color-techdella #adminmenu li.wp-has-current-submenu div.wp-menu-image::before,
+.admin-color-techdella #adminmenu li.current div.wp-menu-image::before { color: #FFFFFF; }
+.admin-color-techdella #adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover::after,
+.admin-color-techdella #adminmenu li.wp-has-submenu.wp-not-current-submenu:focus-within::after { border-right-color: #1A1715; }
+.admin-color-techdella #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu::after,
+.admin-color-techdella #adminmenu li.current a.menu-top::after { border-right-color: #F7F5F2; }
+.admin-color-techdella #adminmenu .awaiting-mod,
+.admin-color-techdella #adminmenu .update-plugins { background: #2E2A27; color: #FFFFFF; }
+.admin-color-techdella #collapse-button { color: #C9C4BE; }
+.admin-color-techdella #collapse-button:hover,
+.admin-color-techdella #collapse-button:focus { color: #FFFFFF; }
+
+/* Admin bar */
+.admin-color-techdella #wpadminbar { background: #0D0D0D; color: #C9C4BE; }
+.admin-color-techdella #wpadminbar .ab-item,
+.admin-color-techdella #wpadminbar a.ab-item,
+.admin-color-techdella #wpadminbar > #wp-toolbar span.ab-label,
+.admin-color-techdella #wpadminbar > #wp-toolbar span.noticon,
+.admin-color-techdella #wpadminbar .ab-icon::before,
+.admin-color-techdella #wpadminbar .ab-item::before { color: #C9C4BE; }
+.admin-color-techdella #wpadminbar .ab-top-menu > li:hover > .ab-item,
+.admin-color-techdella #wpadminbar .ab-top-menu > li > .ab-item:focus,
+.admin-color-techdella #wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
+.admin-color-techdella #wpadminbar .ab-top-menu > li.hover > .ab-item { background: #1A1715; color: #FFFFFF; }
+.admin-color-techdella #wpadminbar .menupop .ab-sub-wrapper { background: #1A1715; }
+.admin-color-techdella #wpadminbar .quicklinks .menupop ul li a,
+.admin-color-techdella #wpadminbar .quicklinks .menupop ul li .ab-item { color: #C9C4BE; }
+.admin-color-techdella #wpadminbar .quicklinks .menupop ul li a:hover,
+.admin-color-techdella #wpadminbar .quicklinks .menupop ul li a:focus { color: #FFFFFF; }
+
+/* Buttons: ink pill, no orange fills */
+.admin-color-techdella .wp-core-ui .button-primary {
+  background: #0D0D0D;
+  border-color: #0D0D0D;
+  color: #FFFFFF;
+}
+.admin-color-techdella .wp-core-ui .button-primary:hover,
+.admin-color-techdella .wp-core-ui .button-primary:focus { background: #262321; border-color: #262321; color: #FFFFFF; }
+.admin-color-techdella .wp-core-ui .button,
+.admin-color-techdella .wp-core-ui .button-secondary { border-color: #0D0D0D; color: #0D0D0D; }
+.admin-color-techdella .wp-core-ui .button:hover,
+.admin-color-techdella .wp-core-ui .button-secondary:hover { background: #EFE7DD; border-color: #0D0D0D; color: #0D0D0D; }
+.admin-color-techdella a { color: #0D0D0D; }
+.admin-color-techdella a:hover,
+.admin-color-techdella a:active { color: #C23B07; }
+.admin-color-techdella .wrap .page-title-action { border-color: #0D0D0D; color: #0D0D0D; }
+
+/* Focus: the one place orange is used */
+.admin-color-techdella a:focus,
+.admin-color-techdella .wp-core-ui .button:focus,
+.admin-color-techdella .wp-core-ui .button-primary:focus,
+.admin-color-techdella input:focus,
+.admin-color-techdella select:focus,
+.admin-color-techdella textarea:focus,
+.admin-color-techdella #adminmenu a:focus,
+.admin-color-techdella #wpadminbar a:focus {
+  outline: 2px solid #E8470A;
+  outline-offset: 1px;
+  box-shadow: none;
+}
+.admin-color-techdella input[type="checkbox"]:checked::before { content: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%230D0D0D%27%2F%3E%3C%2Fsvg%3E"); }
+.admin-color-techdella input[type="radio"]:checked::before { background: #0D0D0D; }
+.admin-color-techdella .wp-core-ui .wp-ui-highlight { background: #262321; color: #FFFFFF; }
+.admin-color-techdella .wp-core-ui .wp-ui-text-highlight { color: #0D0D0D; }
+
+/* Notices keep their meaning colours, but the info stripe is ink */
+.admin-color-techdella .notice-info { border-left-color: #0D0D0D; }
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-color-techdella * { transition: none !important; }
+}

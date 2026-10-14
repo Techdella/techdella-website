@@ -1,0 +1,60 @@
+/* techdella/hero-orbit (Main hero) */
+.td-hero-orbit{position:relative;overflow:hidden;background-color:var(--td-paper);background-image:radial-gradient(42% 46% at 50% 62%,rgba(232,71,10,.08),transparent 72%)}
+.td-hero-orbit__grid{position:absolute;inset:0;background-image:linear-gradient(rgba(13,13,13,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(13,13,13,.05) 1px,transparent 1px);background-size:72px 72px;-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 40%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 60% 70% at 50% 40%,#000 30%,transparent 75%)}
+.td-hero-orbit__inner{position:relative;padding-top:88px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px}
+.td-hero-orbit__chip{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;color:var(--td-ink-soft);background:var(--td-paper);border:1px solid var(--td-line);border-radius:var(--td-r-pill);padding:6px 14px 6px 10px;line-height:1.4}
+.td-hero-orbit__title{font-size:clamp(50px,7.4vw,104px);line-height:.96;letter-spacing:-.058em;max-width:1000px}
+.td-hero-orbit__lead{font-size:19px;color:var(--td-body);max-width:620px}
+.td-hero-orbit__ctas{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.td-btn--soft{border-color:var(--td-line)}
+.td-hero-orbit__trust{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;font-size:14px;color:var(--td-body)}
+.td-hero-orbit__avatars{display:flex}
+.td-hero-orbit__avatars picture{width:30px;height:30px;margin-left:-9px}
+.td-hero-orbit__avatars picture:first-child{margin-left:0}
+.td-hero-orbit__avatar{width:30px!important;height:30px;border-radius:50%;object-fit:cover;border:2px solid var(--td-paper)}
+
+.td-hero-orbit__stage{position:relative;width:100%;max-width:1040px;height:400px;margin-top:20px}
+.td-hero-orbit__arcs{position:absolute;inset:0;width:100%;height:100%}
+.td-hero-orbit__tile{position:absolute;left:50%;top:104px;transform:translateX(-50%);width:148px;height:148px;border-radius:40px;background:var(--td-paper);border:1px solid var(--td-line-soft);box-shadow:0 30px 70px -28px rgba(232,71,10,.45);display:flex;align-items:center;justify-content:center}
+.td-hero-orbit__tile picture,.td-hero-orbit__tile img{width:78px;height:78px}
+.td-hero-orbit__platforms{margin:0;padding:0;list-style:none}
+.td-hero-orbit__float{position:absolute;animation:td-orbit-float 7s ease-in-out infinite;will-change:transform}
+.td-hero-orbit__float .td-badge{box-shadow:var(--td-shadow-float);white-space:nowrap}
+.td-hero-orbit__float--p1{left:3%;top:238px;animation-delay:-1s}
+.td-hero-orbit__float--p2{left:19%;top:118px;animation-delay:-3.2s;animation-duration:8s}
+.td-hero-orbit__float--p3{left:21%;top:320px;animation-delay:-5s}
+.td-hero-orbit__float--p4{right:20%;top:128px;animation-delay:-2.1s;animation-duration:8.5s}
+.td-hero-orbit__float--p5{right:3%;top:250px;animation-delay:-4.4s}
+.td-hero-orbit__float--lead{right:22%;top:324px;animation-delay:-6s;animation-duration:9s}
+.td-hero-orbit__leadchip{display:inline-flex;align-items:center;gap:9px;background:var(--td-ink);color:var(--td-paper);border-radius:14px;padding:10px 15px;box-shadow:0 14px 34px -18px rgba(13,13,13,.45);font-size:14px;font-weight:500;white-space:nowrap}
+.td-hero-orbit__leadchip .td-dot{width:8px;height:8px}
+.td-hero-orbit__stat{background:var(--td-paper);border:1px solid var(--td-line-soft);border-radius:18px;padding:14px 18px;text-align:left;box-shadow:var(--td-shadow-float);display:flex;flex-direction:column;white-space:nowrap}
+.td-hero-orbit__stat--s1{left:0;top:24px;animation-delay:-2.5s;animation-duration:10s}
+.td-hero-orbit__stat--s2{right:0;top:18px;animation-delay:-7s;animation-duration:10s}
+.td-hero-orbit__stat-value{font-size:30px;font-weight:600;letter-spacing:-.045em;line-height:1}
+.td-hero-orbit__stat-label{font-size:12.5px;color:var(--td-body);line-height:1.4;margin-top:4px}
+
+/* Gentle orbit: a small elliptical drift around each chip's resting point. */
+@keyframes td-orbit-float{
+  0%,100%{transform:translate(0,0)}
+  25%{transform:translate(4px,-6px)}
+  50%{transform:translate(0,-9px)}
+  75%{transform:translate(-4px,-4px)}
+}
+@media (prefers-reduced-motion:reduce){.td-hero-orbit__float{animation:none}}
+
+/* Tablet/phone: the stage collapses into a tidy wrap of chips. */
+@media (max-width:900px){
+  .td-hero-orbit__inner{padding-top:64px;padding-bottom:56px}
+  .td-hero-orbit__stage{height:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:8px}
+  .td-hero-orbit__arcs,.td-hero-orbit__tile{display:none}
+  .td-hero-orbit__platforms{display:contents}
+  .td-hero-orbit__float{position:static;animation:none}
+  .td-hero-orbit__stat{order:-1;flex:1 1 150px;white-space:normal}
+}
+@media (max-width:480px){
+  .td-hero-orbit__float .td-badge,.td-hero-orbit__leadchip{white-space:normal;text-align:left}
+  .td-hero-orbit__ctas{width:100%}
+  .td-hero-orbit__ctas .td-btn{flex:1 1 100%;justify-content:space-between}
+  .td-hero-orbit__ctas .td-btn--secondary{justify-content:center}
+}

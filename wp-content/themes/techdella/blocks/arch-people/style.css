@@ -1,0 +1,37 @@
+/* techdella/arch-people */
+.td-arch-people__inner{display:flex;flex-direction:column;gap:48px}
+.td-arch-people__head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
+.td-arch-people__title{font-size:clamp(40px,5.2vw,68px);line-height:1;letter-spacing:-.055em}
+.td-arch-people__intro{font-size:17px;color:var(--td-body);max-width:520px}
+.td-arch-people__ctas{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.td-arch-people__body{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch}
+.td-arch-people__aside{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.td-arch-people__aside-title{font-size:34px;line-height:1.05;letter-spacing:-.045em;max-width:12ch}
+.td-arch-people__aside-text{font-size:15.5px;color:var(--td-body)}
+.td-arch-people__cards{margin:auto 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.td-arch-people__card{text-decoration:none;background:var(--td-paper);border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:14px;min-height:168px;height:100%}
+.td-arch-people__card:hover{color:var(--td-ink)}
+.td-arch-people__card--dark{background:var(--td-ink);color:var(--td-paper)}
+.td-arch-people__card--dark:hover{color:var(--td-paper)}
+.td-arch-people__card-tag{align-self:flex-start;font-size:12px;border:1px solid var(--td-line);border-radius:var(--td-r-pill);padding:3px 10px}
+.td-arch-people__card--dark .td-arch-people__card-tag{border-color:var(--td-ink-soft)}
+.td-arch-people__card-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:8px}
+.td-arch-people__card-foot strong{font-size:16px;line-height:1.2;max-width:10ch}
+.td-arch-people__card-arrow{flex:0 0 auto;width:32px;height:32px;border-radius:50%;border:1px solid var(--td-ink);display:inline-flex;align-items:center;justify-content:center}
+.td-arch-people__card-arrow svg{width:13px;height:13px;stroke:currentColor}
+.td-arch-people__card--dark .td-arch-people__card-arrow{background:var(--td-orange);border-color:var(--td-orange)}
+.td-arch-people__card--dark .td-arch-people__card-arrow svg{stroke:var(--td-paper)}
+.td-arch-people__scroller{flex:2 1 600px;min-width:0;overflow-x:auto;padding-bottom:6px;border-radius:24px;scroll-snap-type:x proximity}
+.td-arch-people__scroller:focus-visible{outline:2px solid var(--td-orange);outline-offset:4px}
+.td-arch-people__body:not(.td-arch-people__body--aside) .td-arch-people__scroller{flex-basis:100%}
+.td-arch-people__list{margin:0;padding:0;list-style:none;display:flex;gap:12px;align-items:flex-end}
+.td-arch-people__person{flex:0 0 240px;scroll-snap-align:start}
+.td-arch-people__photo{width:240px;height:320px}
+.td-arch-people__photo picture{height:100%}
+.td-arch-people__name{margin-top:10px;padding:0 6px;font-size:16px;font-weight:600;line-height:1.35}
+.td-arch-people__name a{text-decoration:none;display:inline-flex;min-height:24px}
+.td-arch-people__name a:hover{text-decoration:underline}
+.td-arch-people__role{padding:0 6px;font-size:13.5px;color:var(--td-body);line-height:1.35}
+@media (max-width:600px){.td-arch-people__person{flex-basis:200px}.td-arch-people__photo{width:200px;height:266px}.td-arch-people__aside{flex-basis:100%}}
+.td-arch-people__photo:has(.td-arch-people__initials){display:grid;place-items:center;background:var(--td-sand)}
+.td-arch-people__initials{font-size:clamp(40px,5vw,64px);font-weight:500;letter-spacing:-.04em;color:var(--td-body)}

@@ -1,0 +1,30 @@
+.env
+node_modules/
+vendor/
+wp-content/uploads/
+*.sql
+*.sql.gz
+# Motion renders (npm run motion:render): reproducible, uploaded to WordPress, never committed
+assets/video/*
+!assets/video/.gitkeep
+motion/out/
+# Build output (CI builds these before deploy)
+wp-content/themes/techdella/assets/build/
+wp-content/themes/techdella/assets/img/
+# Test output
+test-results/
+playwright-report/
+.lighthouseci/
+tests/e2e/.auth/
+# Local tooling
+.phpunit.cache/
+.DS_Store
+# Offline caches for docker/bin/setup.sh (plugin zips, wp-cli.phar)
+docker/cache/**
+!docker/cache/plugins/
+!docker/cache/plugins/.gitkeep
+docker-compose.override.yml
+previews/
+
+# Rendered lead-magnet PDFs (npm run pdf)
+pdf/out/

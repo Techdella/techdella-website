@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/faq",
+	"title": "FAQ",
+	"category": "techdella",
+	"icon": "editor-help",
+	"description": "Questions and answers as <details> (no FAQPage schema, §8.2).",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"title": { "type": "string", "default": "" },
+		"items": { "type": "array", "default": [] },
+		"openFirst": { "type": "boolean", "default": true },
+		"background": { "type": "string", "enum": [ "canvas", "paper" ], "default": "canvas" }
+	},
+	"example": {
+		"attributes": {
+			"title": "SEO *questions*",
+			"items": [
+				{ "question": "How long does SEO take to work?", "answer": "Technical fixes can show impact within weeks; content usually takes a few months to compound. Paycape saw its first results in 50 days." },
+				{ "question": "Do you guarantee first-page rankings?", "answer": "No. Nobody controls Google’s rankings. We commit to a clear roadmap, quality work and transparent reporting." },
+				{ "question": "What’s the difference between SEO and AI search optimization?", "answer": "SEO gets your pages ranked on Google. AI search optimization gets your brand mentioned in AI answers. They share foundations, and we usually run them together." },
+				{ "question": "Can you work with our existing website?", "answer": "Yes. We work in WordPress, Webflow and most modern CMSs. If you need a rebuild, TechDella Studios can help." }
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "items": "json" },
+		"help": "Items: {question, answer}. Answer the question in the first sentence. Blank lines in an answer start a new paragraph. This block never outputs FAQPage schema (Google limits it to government/health sites)."
+	}
+}

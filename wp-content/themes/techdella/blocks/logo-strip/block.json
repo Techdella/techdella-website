@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/logo-strip",
+	"title": "Logo strip",
+	"category": "techdella",
+	"icon": "images-alt",
+	"description": "\"Trusted by\" label + client logos (real, permissioned clients only).",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "Trusted by\ngrowing brands" },
+		"logos": { "type": "array", "default": [] }
+	},
+	"example": {
+		"attributes": {
+			"label": "Trusted by\ngrowing brands",
+			"logos": [
+				{ "name": "Paycape", "image": "clients/paycape", "height": 26 },
+				{ "name": "Johan Consults", "image": "clients/johan-consults", "height": 30 },
+				{ "name": "WezOps", "image": "clients/wezops", "height": 24 },
+				{ "name": "startbuddi", "height": 24 },
+				{ "name": "Shopinbos", "image": "clients/shopinbos", "height": 14 }
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "label": "textarea", "logos": "json" },
+		"help": "permissionConfirmed: only add a client whose logo use is confirmed in writing (and who is one of the published case studies, §2.4). Items: {name, image (theme key or attachment ID), height (px)}. With no image the name renders as text in the same visual weight."
+	}
+}

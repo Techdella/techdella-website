@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/cta-dark",
+	"title": "CTA (dark arch)",
+	"category": "techdella",
+	"icon": "megaphone",
+	"description": "Final call to action: dark rounded section with the gradient arch (the page's one gradient use).",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"title": { "type": "string", "default": "Ready to *grow?*" },
+		"lead": { "type": "string", "default": "" },
+		"buttonLabel": { "type": "string", "default": "Get a growth audit" },
+		"buttonUrl": { "type": "string", "default": "/growth-audit/" },
+		"variant": { "type": "string", "enum": [ "dark", "sand" ], "default": "dark" },
+		"arch": { "type": "boolean", "default": true }
+	},
+	"example": {
+		"attributes": {
+			"title": "Ready to *grow?*",
+			"lead": "Get an audit of your search, ads and funnel, and a clear plan for what to fix first.",
+			"buttonLabel": "Get a growth audit",
+			"buttonUrl": "/growth-audit/",
+			"variant": "dark",
+			"arch": true
+		}
+	},
+	"techdella": {
+		"controls": { "lead": "textarea", "buttonUrl": "url" },
+		"help": "Use once per page, at the end. The dark variant carries the page's only gradient (§2.1); 'sand' (Studios) uses a quiet ink arch instead. Button URLs may be '/path/' or 'studios:/start/'."
+	}
+}

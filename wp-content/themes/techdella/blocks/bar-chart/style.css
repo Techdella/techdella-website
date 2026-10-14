@@ -1,0 +1,13 @@
+.td-barchart{margin:2.2em 0;padding:22px 24px;border-radius:var(--td-r-md);background:var(--td-paper);border:1px solid var(--td-line)}
+.td-barchart__title{margin:0 0 16px;font-size:17px;font-weight:600;letter-spacing:-.015em;color:var(--td-ink)}
+ul.td-barchart__list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:2px}
+.td-barchart__row{display:grid;grid-template-columns:minmax(110px,30%) 1fr auto;align-items:center;gap:12px;padding:6px 0}
+.td-barchart__row+.td-barchart__row{margin-top:0}
+.td-barchart__label{font-size:14.5px;line-height:1.3;color:var(--td-ink)}
+.td-barchart__track{height:14px;display:block}
+.td-barchart__bar{display:block;height:100%;background:var(--td-ink);border-radius:0 4px 4px 0}
+.td-barchart__row--hl .td-barchart__bar{background:var(--td-orange)}
+.td-barchart__value{min-width:3.2em;text-align:right;font-size:14.5px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--td-ink)}
+.td-barchart__source{margin-top:12px;font-size:12.5px;color:var(--td-muted)}
+.td-barchart__source a{color:inherit;text-decoration:underline}
+@media (max-width:520px){.td-barchart__row{grid-template-columns:1fr auto;row-gap:6px}.td-barchart__track{grid-column:1/-1;grid-row:2}}

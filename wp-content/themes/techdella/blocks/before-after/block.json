@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/before-after",
+	"title": "Before / after",
+	"category": "techdella",
+	"icon": "image-flip-horizontal",
+	"description": "Two-card comparison (before → after) as an accessible list. Split layout (heading left, cards right: SEO) or centered (heading above, two large cards: Automation). Each side takes a title, text and/or a list of points.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"layout": { "type": "string", "enum": [ "split", "center" ], "default": "split" },
+		"surface": { "type": "string", "enum": [ "paper", "canvas", "sand" ], "default": "canvas" },
+		"afterStyle": { "type": "string", "enum": [ "paper", "dark" ], "default": "paper" },
+		"strike": { "type": "boolean", "default": false },
+		"before": { "type": "object", "default": {} },
+		"after": { "type": "object", "default": {} }
+	},
+	"example": {
+		"attributes": {
+			"title": "Written for the *search*, not the org chart",
+			"intro": "Most B2B pages describe the company. Pages that rank describe the buyer’s problem in the words they search with.",
+			"layout": "split",
+			"surface": "canvas",
+			"afterStyle": "paper",
+			"strike": true,
+			"before": { "label": "Before", "title": "Services | Home", "text": "We offer a range of solutions for businesses of all sizes." },
+			"after": { "label": "After", "title": "Data Protection Consulting for Fintech | YourCo", "text": "NDPA and GDPR compliance programs for growing fintech teams. Book a scoping call." }
+		}
+	},
+	"techdella": {
+		"controls": { "intro": "textarea", "before": "json", "after": "json" },
+		"help": "before/after: {label, title, text, items: [\"…\"]}. Automation page: layout \"center\", afterStyle \"dark\", items lists. strike crosses out the before copy (SEO title example)."
+	}
+}

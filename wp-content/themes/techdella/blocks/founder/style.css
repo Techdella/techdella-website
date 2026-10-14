@@ -1,0 +1,27 @@
+/* techdella/founder */
+.td-founder__inner{padding-block:var(--td-space);display:flex;flex-direction:column;gap:12px}
+.td-founder__row{display:flex;flex-wrap:wrap;gap:12px}
+.td-founder__letter{flex:1.4 1 520px;min-width:0;background:var(--td-canvas);border-radius:var(--td-r-xl);padding:44px;display:flex;flex-direction:column;gap:20px}
+.td-founder__title{font-size:clamp(32px,3.6vw,46px);letter-spacing:-.05em;line-height:1.02}
+.td-founder__note{font-size:14px}
+.td-founder__p{font-size:17px;color:var(--td-ink-soft);max-width:560px}
+.td-founder__stats{display:flex;flex-wrap:wrap;gap:10px;margin:auto 0 0;padding:0;list-style:none}
+.td-founder__stat{background:var(--td-paper);border-radius:18px;padding:14px 20px;min-width:150px;display:flex;flex-direction:column}
+.td-founder__stat strong{font-size:30px;font-weight:600;letter-spacing:-.045em;line-height:1.3}
+.td-founder__stat span{font-size:13px;color:var(--td-body)}
+.td-founder__portrait{flex:1 1 340px;min-width:0;display:flex;align-items:flex-end;justify-content:center;background:var(--td-sand);border-radius:var(--td-r-xl);padding:32px 32px 0;min-height:460px}
+.td-founder__portrait picture{width:100%;max-width:320px}
+.td-founder__img{width:100%;height:420px;object-fit:cover;object-position:center 18%;border-radius:999px 999px 0 0}
+.td-founder__quote{margin:0;border:1px solid var(--td-line-soft);border-radius:var(--td-r-xl);padding:30px 36px;display:flex;flex-wrap:wrap;gap:22px;align-items:center}
+.td-founder__qphoto{flex:0 0 68px;width:68px;height:84px}
+.td-founder__qimg{width:100%!important;height:100%;object-fit:cover;border-radius:999px 999px 14px 14px}
+.td-founder__qtext{flex:1 1 520px;margin:0;font-family:var(--td-font-serif);font-size:25px;line-height:1.32}
+.td-founder__qwho{display:flex;flex-direction:column;line-height:1.3;font-size:13px;color:var(--td-muted)}
+.td-founder__qwho strong{font-size:15px;color:var(--td-ink)}
+@media (max-width:640px){
+  .td-founder__letter{padding:28px 22px}
+  .td-founder__portrait{min-height:0;padding:24px 24px 0}
+  .td-founder__img{height:340px}
+  .td-founder__quote{padding:24px}
+  .td-founder__qtext{font-size:21px;flex-basis:100%}
+}

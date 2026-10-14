@@ -1,0 +1,242 @@
+// Phase 3 Marketing templates (worker T3): case studies, solutions, locations, glossary,
+// resources, tools, About, Book a call, legal pages, 404.
+// Relies on the local fixtures (see the T3 report) or real content at these URLs.
+import { test, expect } from '@playwright/test';
+import { execFileSync } from 'node:child_process';
+import { site, expectNoA11yViolations, expectNoHorizontalScroll } from './helpers.js';
+
+// The feature-grid "01–04" numbers are aria-hidden decoration (WCAG 1.4.3 exempts pure
+// decoration); axe still flags their contrast. Reported to the integrator (block owner).
+const AXE = {};
+
+const PAGES = [
+  { path: '/case-studies/', schema: 'CollectionPage' },
+  { path: '/case-studies/paycape/', schema: 'Article' },
+  { path: '/solution/fintech-marketing-agency/', schema: 'Service' },
+  { path: '/solution/saas-marketing-agency/', schema: 'Service' },
+  { path: '/locations/nigeria/', schema: 'Service' },
+  { path: '/glossary/', schema: 'DefinedTermSet' },
+  { path: '/glossary/aeo/', schema: 'DefinedTerm' },
+  { path: '/resources/ai-search-readiness-checklist/', schema: 'DigitalDocument' },
+  { path: '/tools/', schema: 'CollectionPage', ads: true },
+  { path: '/tools/free-utm-parameter-generator/', schema: 'SoftwareApplication', ads: true },
+  { path: '/about-us/', schema: 'AboutPage' },
+  { path: '/book-a-discovery-call/', schema: null },
+  { path: '/privacy-policy/', schema: null },
+  { path: '/terms/', schema: null },
+  { path: '/cookies/', schema: null },
+  { path: '/disclaimer/', schema: null },
+];
+
+/** All @type values in the page's JSON-LD. */
+async function schemaTypes(page) {
+  return page.$$eval('script[type="application/ld+json"]', (nodes) => {
+    const types = new Set();
+    const walk = (v) => {
+      if (Array.isArray(v)) v.forEach(walk);
+      else if (v && typeof v === 'object') {
+        if (v['@type']) [].concat(v['@type']).forEach((t) => types.add(t));
+        Object.values(v).forEach(walk);
+      }
+    };
+    nodes.forEach((n) => { try { walk(JSON.parse(n.textContent)); } catch { /* ignore */ } });
+    return [...types];
+  });
+}
+
+for (const p of PAGES) {
+  test(`marketing ${p.path}: 200, one H1, schema, ads rule, a11y @mobile`, async ({ page }) => {
+    const res = await page.goto(site('marketing', p.path));
+    expect(res.status()).toBe(200);
+    await expect(page.locator('h1')).toHaveCount(1);
+    if (p.schema) expect(await schemaTypes(page)).toContain(p.schema);
+    expect(await schemaTypes(page)).not.toContain('FAQPage');
+    const ads = await page.locator('[data-td-ad]').count();
+    if (p.ads) expect(ads).toBeGreaterThan(0);
+    else expect(ads).toBe(0);
+    expect(ads).toBeLessThanOrEqual(3);
+    await expectNoHorizontalScroll(page);
+    await expectNoA11yViolations(page, AXE);
+  });
+}
+
+test('404 is helpful: search, links, audit CTA @smoke', async ({ page }) => {
+  const res = await page.goto(site('marketing', '/this-page-does-not-exist-t3/'));
+  expect(res.status()).toBe(404);
+  await expect(page.locator('h1')).toHaveCount(1);
+  await expect(page.getByRole('search')).toBeVisible();
+  await expect(page.locator('a[href$="/growth-audit/"]', { hasText: 'Get an audit' }).last()).toBeVisible();
+  await expectNoA11yViolations(page);
+});
+
+test('case study: verified Paycape metrics, story sections, the 11 permissioned cases on the hub', async ({ page }) => {
+  await page.goto(site('marketing', '/case-studies/paycape/'));
+  const pills = page.locator('.td-stat-pills');
+  await expect(pills).toContainText('50%');
+  await expect(pills).toContainText('50 days');
+  await page.goto(site('marketing', '/case-studies/wezops/'));
+  await expect(page.locator('.td-m2-story__step')).toHaveCount(3);
+  await expect(page.locator('.td-m2-story__body ul').first()).toBeVisible();
+  await expect(page.getByText('Levi Barbosa')).toBeVisible();
+  await page.goto(site('marketing', '/case-studies/'));
+  await expect(page.locator('.td-case-card a[href*="/case-studies/"]')).toHaveCount(11);
+  await expect(page.locator('.td-m2-chips a[aria-current="page"]')).toHaveText(/All industries/);
+});
+
+test.describe('solution without proof', () => {
+  const wp = (args) => execFileSync('docker', ['compose', 'exec', '-T', '-u', 'www-data', 'wp-marketing', 'wp', ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
+  let id = '';
+  test.beforeAll(() => {
+    id = wp(['post', 'create', '--post_type=solution', '--post_status=draft', '--post_title=E2E healthcare marketing agency', '--post_name=e2e-healthcare-marketing-agency', '--porcelain']);
+    wp(['post', 'term', 'set', id, 'td_industry', 'e2e-healthcare']);
+    // The pre-publish checklist blocks a bare page; an admin override (logged) publishes it.
+    wp(['post', 'meta', 'update', id, '_td_checklist_override', '1']);
+    wp(['post', 'update', id, '--post_status=publish', '--user=admin']);
+  });
+  test.afterAll(() => {
+    if (id) wp(['post', 'delete', id, '--force']);
+    try { wp(['term', 'delete', 'td_industry', 'e2e-healthcare', '--by=slug']); } catch { /* already gone */ }
+  });
+  test('shows verbatim client quotes and real case studies, never an invented industry one', async ({ page }) => {
+    await page.goto(site('marketing', '/solution/e2e-healthcare-marketing-agency/'));
+    await expect(page.getByRole('heading', { name: /What our clients say/ })).toBeVisible();
+    await expect(page.locator('.td-m2-quote').first()).toContainText('Techdella reframed how we were thinking');
+    await expect(page.locator('.td-m2-scroller')).toHaveAttribute('tabindex', '0');
+    await expect(page.locator('main')).not.toContainText('Proof:');
+  });
+});
+
+test('Nigeria location: office, sourced stats, local services, naira prices, local proof, booking', async ({ page }) => {
+  await page.goto(site('marketing', '/locations/nigeria/'));
+  await expect(page.locator('.td-hero .td-loc-office address')).toContainText('Yetmob Plaza');
+  await expect(page.locator('.td-loc-office a[href^="https://www.google.com/maps/"]').first()).toBeVisible();
+  await expect(page.locator('.td-stats__item')).toHaveCount(4);
+  await expect(page.locator('.td-stats__source a').first()).toHaveAttribute('href', /^https:\/\//);
+  await expect(page.locator('.td-feature-grid a[href*="/services/seo/"]')).toBeVisible();
+  await expect(page.locator('.td-pricing__price').first()).toContainText('₦');
+  await expect(page.locator('.td-case-card a[href*="/case-studies/johan-consults/"]')).toBeVisible();
+  await expect(page.locator('.td-loc-areas__list li')).toContainText(['Lagos']);
+  await expect(page.locator('#td-loc-book .td-booking iframe')).toHaveAttribute('src', /app\.startbuddi\.com/);
+  await expect(page.locator('main')).not.toContainText('[CONFIRM');
+});
+
+test('markets without a real presence redirect: Lagos to Nigeria, the rest to Services', async ({ request }) => {
+  for (const [from, to] of [['/locations/lagos-nigeria/', '/locations/nigeria/'], ['/locations/usa/', '/services/'], ['/locations/uk/', '/services/']]) {
+    const res = await request.get(site('marketing', from), { maxRedirects: 0 });
+    expect(res.status(), from).toBe(301);
+    expect(res.headers().location, from).toMatch(new RegExp(`${to.replace(/\//g, '\\/')}$`));
+  }
+});
+
+test('glossary: answer-first definition, A–Z index, byline', async ({ page }) => {
+  await page.goto(site('marketing', '/glossary/'));
+  await expect(page.getByRole('navigation', { name: 'Jump to letter' })).toBeVisible();
+  await page.goto(site('marketing', '/glossary/aeo/'));
+  const first = page.locator('.td-m2-term > :not(style)').first();
+  await expect(first).toHaveClass(/td-tldr/);
+  await expect(page.locator('.td-m2-byline')).toContainText('Reviewed by');
+});
+
+test('an old page on a hub address does not hide the hub', async ({ page }) => {
+  const wp = (args) => execFileSync('docker', ['compose', 'exec', '-T', '-u', 'www-data', 'wp-marketing', 'wp', ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
+  const id = wp(['post', 'create', '--post_type=page', '--post_status=publish', '--post_title=Glossary', '--post_name=glossary', '--porcelain']);
+  try {
+    await page.goto(site('marketing', '/glossary/'));
+    await expect(page.locator('body')).toHaveClass(/post-type-archive-em-glossary/);
+    await expect(page.getByRole('navigation', { name: 'Jump to letter' })).toBeVisible();
+  } finally {
+    wp(['post', 'delete', id, '--force']);
+  }
+});
+
+test('resource: lead_magnet form carries the resource slug', async ({ page }) => {
+  await page.goto(site('marketing', '/resources/ai-search-readiness-checklist/'));
+  await expect(page.locator('input[name="resource_slug"]')).toHaveValue('ai-search-readiness-checklist');
+});
+
+test('tool: no author byline; a sidebar with the service CTA, audit and more tools', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto(site('marketing', '/tools/free-hashtag-generator/'));
+  await expect(page.locator('.td-byline')).toHaveCount(0);
+  const side = page.getByRole('complementary', { name: 'More from TechDella' });
+  await expect(side.getByRole('link', { name: 'See the service' })).toBeVisible();
+  await expect(side.getByRole('link', { name: /Get my audit/ })).toHaveAttribute('href', /\/growth-audit\/$/);
+  await expect(side.locator('.td-m2-side-list a').first()).toBeVisible();
+  await expect(side.locator('.td-m2-side-list a', { hasText: 'Hashtag Generator' })).toHaveCount(0);
+  // Live chat is off locally (no SB_CHAT_KEY): no third-party script in tests.
+  expect(await page.content()).not.toContain('app.startbuddi.com');
+});
+
+test('tool: app mount, then content; three ad positions', async ({ page }) => {
+  await page.goto(site('marketing', '/tools/free-utm-parameter-generator/'));
+  await expect(page.locator('[data-td-tool="utm-parameter-generator"] [data-td-tool-app="utm-parameter-generator"]')).toBeVisible();
+  for (const pos of ['result', 'content', 'sidebar']) {
+    await expect(page.locator(`[data-td-ad="${pos}"]`)).toHaveCount(1);
+  }
+});
+
+test('book a discovery call: Startbuddi booking calendar, contact form, no popups', async ({ page }) => {
+  await page.goto(site('marketing', '/book-a-discovery-call/'));
+  const frame = page.locator('.td-booking iframe');
+  await expect(frame).toHaveAttribute('src', /^https:\/\/app\.startbuddi\.com\/b\//);
+  await expect(frame).toHaveAttribute('title', /Discovery Call/);
+  await expect(frame).toHaveAttribute('loading', 'lazy');
+  await expect(page.locator('.td-booking__fallback a')).toHaveAttribute('href', /app\.startbuddi\.com/);
+  await expect(page.locator('form[action*="/submit/contact"]')).toBeVisible();
+  await expect(page.locator('.td-popup, [data-td-popup]')).toHaveCount(0);
+});
+
+test('legal pages show the last-updated date and no placeholders', async ({ page }) => {
+  for (const p of ['/privacy-policy/', '/terms/', '/cookies/', '/disclaimer/']) {
+    await page.goto(site('marketing', p));
+    const main = page.locator('main, body').first();
+    await expect(main).toContainText('Last updated: 11 October 2026');
+    await expect(main).not.toContainText('[CONFIRM');
+  }
+});
+
+test.describe('pricing by location and PDF quotes', () => {
+  test('USD by default with no currency switch; Africa/Lagos sees naira', async ({ page, browser }) => {
+    await page.goto(site('marketing', '/pricing/'));
+    const audit = page.locator('.td-pricing__card').first().locator('.td-price');
+    await expect(audit).toHaveText('$1,500');
+    await expect(page.locator('[data-td-currency]:visible')).toHaveCount(0);
+    expect(await page.content()).not.toContain('{{price:');
+    const context = await browser.newContext({ timezoneId: 'Africa/Lagos' });
+    const ng = await context.newPage();
+    await ng.goto(site('marketing', '/services/paid-ads/'));
+    await expect(ng.locator('.td-price').first()).toHaveText(/^₦/);
+    await ng.goto(site('studios', '/'));
+    await expect(ng.locator('.td-pricing .td-price').first()).toHaveText('₦700,000');
+    await context.close();
+  });
+
+  test('quote link: a tampered token is refused', async ({ request }) => {
+    const res = await request.get(site('marketing', '/wp-json/techdella/v1/quote?q=bogus'));
+    expect(res.status()).toBe(410);
+  });
+
+});
+
+test('hero eyebrow sits on the headline\'s line (centered heroes and left heroes)', async ({ page }) => {
+  for (const p of ['/services/', '/locations/nigeria/', '/case-studies/', '/pricing/', '/glossary/', '/book-a-discovery-call/', '/services/seo/']) {
+    await page.goto(site('marketing', p));
+    const offset = await page.evaluate(() => {
+      const h = document.querySelector('.td-hero h1');
+      const c = h.closest('section').querySelector('.td-chip, .td-hero__crumb');
+      const a = h.getBoundingClientRect();
+      const b = c.getBoundingClientRect();
+      return getComputedStyle(h).textAlign === 'center' ? (b.x + b.width / 2) - (a.x + a.width / 2) : b.x - a.x;
+    });
+    expect(Math.abs(offset), p).toBeLessThanOrEqual(2);
+  }
+});
+
+test('year token: titles and meta show the current year, never {{year}}', async ({ page }) => {
+  const year = String(new Date().getFullYear());
+  await page.goto(site('marketing', '/business/catering-business/'));
+  await expect(page).toHaveTitle(new RegExp(`\\(${year} Guide\\)`));
+  await expect(page.locator('h1')).toContainText(year);
+  await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content', new RegExp(year));
+  expect(await page.content()).not.toContain('{{year}}');
+});

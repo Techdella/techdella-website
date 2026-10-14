@@ -1,0 +1,55 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/hero-orbit",
+	"title": "Hero (orbit)",
+	"category": "techdella",
+	"icon": "superhero",
+	"description": "Home hero: chip line, H1 with accent, lead, two CTAs, trust line and the orbit stage with platform chips and two proof stats.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"chip": { "type": "string", "default": "SEO · AI search · Paid ads · Email · Lead gen · AI automation" },
+		"title": { "type": "string", "default": "Get found. Get noticed. *Grow.*" },
+		"lead": { "type": "string", "default": "" },
+		"primaryLabel": { "type": "string", "default": "Get a growth audit" },
+		"primaryUrl": { "type": "string", "default": "/growth-audit/" },
+		"secondaryLabel": { "type": "string", "default": "See how we work" },
+		"secondaryUrl": { "type": "string", "default": "#how" },
+		"trustText": { "type": "string", "default": "" },
+		"trustAvatars": { "type": "array", "default": [], "items": { "type": "string" } },
+		"platforms": { "type": "array", "default": [] },
+		"stats": { "type": "array", "default": [] },
+		"leadChip": { "type": "string", "default": "New qualified lead" }
+	},
+	"example": {
+		"attributes": {
+			"chip": "SEO · AI search · Paid ads · Email · Lead gen · AI automation",
+			"title": "Get found. Get noticed. *Grow.*",
+			"lead": "We help established businesses show up where customers search, reach them with ads we create in-house, and turn interest into leads with email and AI automation.",
+			"primaryLabel": "Get a growth audit",
+			"primaryUrl": "/growth-audit/",
+			"secondaryLabel": "See how we work",
+			"secondaryUrl": "#how",
+			"trustText": "Trusted by teams at Paycape, Johan Consults and WezOps",
+			"trustAvatars": [ "people/levi-barbosa-wezops", "people/akin-oyegoke-johan-consults", "team/joanna-okedara-kalu" ],
+			"platforms": [
+				{ "name": "Google Search & Ads", "mark": "G", "slug": "google-search", "ink": true },
+				{ "name": "AI answers", "mark": "AI" },
+				{ "name": "LinkedIn Ads", "mark": "in", "slug": "linkedin" },
+				{ "name": "Meta · Facebook & Instagram", "mark": "M", "slug": "meta", "ink": true },
+				{ "name": "TikTok Ads", "mark": "T", "slug": "tiktok" }
+			],
+			"stats": [
+				{ "value": "15,000", "label": "monthly organic visitors · Paycape" },
+				{ "value": "50%", "label": "of conversions from inbound · Paycape" }
+			],
+			"leadChip": "New qualified lead"
+		}
+	},
+	"techdella": {
+		"controls": { "lead": "textarea", "trustAvatars": "json", "platforms": "json", "stats": "json" },
+		"help": "Stats must be verified proof only (§2.4): Paycape ~15,000 monthly organic visitors; 50% of conversions came from inbound. Platforms: up to 5 items {name, mark, ink, slug}. Avatars: theme image keys or attachment IDs. Chips float gently; motion stops under prefers-reduced-motion."
+	}
+}

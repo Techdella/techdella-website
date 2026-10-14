@@ -1,0 +1,43 @@
+/* Template-level styles (Journal post, author header, Studios work single). */
+/* templates/journal/single.php */
+.td-article__figure{margin:0 auto 48px}
+		.td-article__figure img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center;border-radius:var(--td-r-lg);background:var(--td-canvas)}
+		.td-article__layout{display:grid;grid-template-columns:minmax(0,1fr);gap:32px;padding-bottom:var(--td-space)}
+		.td-article__main{min-width:0;max-width:720px;display:flex;flex-direction:column;gap:32px}
+		.td-article__main>*{margin-block:0}
+		@media (min-width:1024px){.td-article__layout{grid-template-columns:230px minmax(0,1fr);gap:64px}}
+/* templates/journal/author.php */
+/* templates/studios/single-studio_work.php */
+.td-work-single__head{padding-bottom:40px}
+		.td-work-single__status{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 18px}
+		.td-work-single__title{margin:0 0 16px}
+		.td-work-single__meta{display:flex;flex-wrap:wrap;gap:12px 40px;margin:28px 0 0;padding:20px 0 0;border-top:1px solid var(--td-line)}
+		.td-work-single__meta dt{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--td-muted)}
+		.td-work-single__meta dd{margin:4px 0 0;color:var(--td-ink);font-weight:500}
+		.td-work-single__gallery{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));margin:0 0 56px;padding:0;list-style:none}
+		.td-work-single__gallery li:first-child{grid-column:1/-1}
+		.td-work-single__gallery figure{margin:0;border-radius:var(--td-r-md);overflow:hidden;background:var(--td-canvas)}
+		.td-work-single__gallery img{display:block;width:100%;height:auto}
+		.td-work-single__gallery li:not(:first-child) img{max-height:640px;object-fit:contain}
+		.td-work-single__body{padding-bottom:var(--td-space)}
+
+/* Author page: profile header on canvas (arch photo, role, bio, expertise, stats), then their articles. */
+.td-author-head{background:var(--td-canvas);border-bottom:1px solid var(--td-line-soft);padding-block:clamp(56px,7vw,96px) clamp(40px,5vw,64px)}
+.td-author-head__inner{display:grid;grid-template-columns:minmax(0,1fr);gap:28px 56px;align-items:center}
+@media (min-width:760px){.td-author-head__inner{grid-template-columns:240px minmax(0,1fr)}}
+.td-author-head__photo{width:min(240px,60vw);aspect-ratio:4/5;margin:0;border-radius:var(--td-arch);overflow:hidden;background:var(--td-sand);box-shadow:var(--td-shadow)}
+.td-author-head__photo picture,.td-author-head__photo img{display:block;width:100%;height:100%;object-fit:cover}
+.td-author-head__initials{display:grid;place-items:center;width:100%;height:100%;font-size:56px;font-weight:600;letter-spacing:-.03em;color:var(--td-ink)}
+.td-author-head__copy{display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-width:0}
+.td-author-head__name{margin:4px 0 0;font-size:clamp(40px,5.4vw,72px);line-height:1.02;letter-spacing:-.04em}
+.td-author-head__role{margin:0;font-size:17px;font-weight:500;color:var(--td-muted)}
+.td-author-head__bio{margin:6px 0 0;max-width:620px;font-size:17px;line-height:1.6;color:var(--td-body)}
+.td-author-head__tags{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0;padding:0;list-style:none}
+.td-author-head__tags li{padding:6px 14px;border:1px solid var(--td-line);border-radius:var(--td-r-pill);background:var(--td-paper);font-size:13.5px;color:var(--td-ink)}
+.td-author-head__stats{display:flex;flex-wrap:wrap;gap:16px 40px;margin:18px 0 0;padding-top:18px;border-top:1px solid var(--td-line)}
+.td-author-head__stats div{display:flex;flex-direction:column;gap:4px}
+.td-author-head__stats dt{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--td-muted)}
+.td-author-head__stats dd{margin:0;font-size:16px;font-weight:500;color:var(--td-ink)}
+.td-author-head__stats a{color:var(--td-ink)}
+.td-author-list-head{padding-block:56px 24px}
+.td-author-list-head__title{margin:0;font-size:clamp(28px,3vw,40px);letter-spacing:-.03em}

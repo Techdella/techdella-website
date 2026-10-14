@@ -1,0 +1,15 @@
+/* techdella/faq */
+.td-faq--canvas{background:var(--td-canvas)}
+.td-faq__inner{max-width:calc(900px + var(--td-gutter)*2);padding-block:clamp(64px,7vw,104px);display:flex;flex-direction:column;gap:10px}
+.td-faq__title{margin-bottom:20px;font-size:clamp(32px,4vw,46px);letter-spacing:-.05em;text-align:center}
+.td-faq__item{background:var(--td-paper);border-radius:var(--td-r-md);padding:4px 24px}
+.td-faq--paper .td-faq__item{background:var(--td-canvas)}
+.td-faq__q{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;min-height:44px;font-size:17px;font-weight:600;line-height:1.35;cursor:pointer;list-style:none;border-radius:12px}
+.td-faq__q::-webkit-details-marker{display:none}
+.td-faq__q::marker{content:""}
+.td-faq__toggle{width:32px;height:32px;flex:0 0 32px;border-radius:50%;background:var(--td-canvas);display:inline-flex;align-items:center;justify-content:center;transition:transform .2s ease}
+.td-faq--paper .td-faq__toggle{background:var(--td-paper)}
+.td-faq__toggle svg{width:15px;height:15px}
+.td-faq__item[open] .td-faq__toggle{transform:rotate(45deg)}
+.td-faq__a{padding:0 0 20px;font-size:16px;color:var(--td-body);display:flex;flex-direction:column;gap:.8em}
+@media (max-width:640px){.td-faq__item{padding:2px 18px}.td-faq__q{font-size:16px}}

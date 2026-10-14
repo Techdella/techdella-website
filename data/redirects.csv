@@ -1,0 +1,123 @@
+source,target,code,condition,notes
+/locations/abuja-nigeria/,/locations/nigeria/,301,,"GSC 12 mo to 12 Oct 2026: 6 clicks (<20) → 301 (§10.4)"
+/locations/mumbai-india/,/services/,301,,"GSC 12 mo to 12 Oct 2026: 10 clicks (<20) → 301 (§10.4)"
+/locations/germany/,/services/,301,,"GSC 12 mo to 12 Oct 2026: 0 clicks (<20) → 301 (§10.4)"
+/locations/new-york/,/services/,301,,"GSC 12 mo to 12 Oct 2026: 0 clicks (<20) → 301 (§10.4)"
+/locations/pakistan/,/services/,301,,"GSC 12 mo to 12 Oct 2026: 0 clicks (<20) → 301 (§10.4)"
+/guides/,https://blog.techdella.com/,301,,Guides index moves to the Journal
+/guide/email-marketing-setup-problems/,https://blog.techdella.com/email-marketing-setup-problems/,301,,Guide moves to Journal (see D1)
+/free-tools/,/tools/,301,,Duplicate of /tools/ archive
+/startup-quiz/,/growth-audit/,301,,Replaced by Growth Audit
+/cmo-as-a-service/,/services/,301,,Retired offer
+/vibe-marketing/,/services/marketing-automation/,301,,Folded into AI automation
+/global-expansion/,/services/,301,,Markets have no hub page (owner, 11 Oct 2026): the nav lists them
+/studio/,https://studios.techdella.com/,301,,Studios moves to subdomain
+/mvp-calculator/,https://studios.techdella.com/mvp-calculator/,301,,Studios tool
+/services/content-marketing/,/services/seo/,301,,
+/services/social-media-marketing/,/services/paid-ads/,301,,
+/services/conversion-rate-optimization/,/services/lead-generation/,301,,
+/services/branding-and-design/,https://studios.techdella.com/services/branding/,301,,Studios
+/guide/how-to-crush-q4/,https://blog.techdella.com/how-to-crush-q4/,301,,Guide moves to Journal (see D1)
+/guide/business-launch-lessons/,https://blog.techdella.com/business-launch-lessons/,301,,Guide moves to Journal (see D1)
+/guide/how-to-get-your-first-100-customers/,https://blog.techdella.com/how-to-get-your-first-100-customers/,301,,Guide moves to Journal (see D1)
+/guide/content-marketing-agency-for-startups/,https://blog.techdella.com/content-marketing-agency-for-startups/,301,,Guide moves to Journal (see D1)
+/guide/how-to-brainstorm-a-startup-name/,https://blog.techdella.com/how-to-brainstorm-a-startup-name/,301,,Guide moves to Journal (see D1)
+/guide/how-to-launch-a-new-product/,https://blog.techdella.com/how-to-launch-a-new-product/,301,,Guide moves to Journal (see D1)
+/guide/what-is-vibe-coding/,https://blog.techdella.com/what-is-vibe-coding/,301,,Guide moves to Journal (see D1)
+/guide/how-to-develop-an-mvp-for-startup/,https://blog.techdella.com/how-to-develop-an-mvp-for-startup/,301,,Guide moves to Journal (see D1)
+/guide/mvp-development-for-startups/,https://blog.techdella.com/mvp-development-for-startups/,301,,Guide moves to Journal (see D1)
+/guide/product-validation-for-startups/,https://blog.techdella.com/product-validation-for-startups/,301,,Guide moves to Journal (see D1)
+/guide/startup-funding-stages-for-african-founders/,https://blog.techdella.com/startup-funding-stages-for-african-founders/,301,,Guide moves to Journal (see D1)
+/guide/finding-startup-grants-in-africa/,https://blog.techdella.com/finding-startup-grants-in-africa/,301,,Guide moves to Journal (see D1)
+/guide/safe-note-guide/,https://blog.techdella.com/safe-note-guide/,301,,Guide moves to Journal (see D1)
+/guide/startup-marketing-team-for-growth-stage/,https://blog.techdella.com/startup-marketing-team-for-growth-stage/,301,,Guide moves to Journal (see D1)
+/guide/startup-hiring-strategy/,https://blog.techdella.com/startup-hiring-strategy/,301,,Guide moves to Journal (see D1)
+/guide/how-to-build-momentum/,https://blog.techdella.com/how-to-build-momentum/,301,,Guide moves to Journal (see D1)
+/services/website-design/,https://studios.techdella.com/services/website-design/,301,,Studios
+/services/growth-paid/,/services/paid-ads/,301,,
+/services/startup-marketing-strategy/,/services/,301,,
+/services/growth-hacking/,/services/lead-generation/,301,,
+/services/b2b-marketing/,/services/lead-generation/,301,,
+/services/on-page-seo/,/services/seo/,301,,
+/services/landing-page-design/,https://studios.techdella.com/services/website-design/,301,,Studios
+/services/gtm-strategy/,/services/,301,,
+/services/product-launches/,/services/paid-ads/,301,,
+/services/saas-seo-content/,/solution/saas-marketing-agency/,301,,
+/service/cmo-as-a-service/,/services/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/startup-marketing-strategy/,/services/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/seo/,/services/seo/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/on-page-seo/,/services/seo/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/technical-seo/,/services/technical-seo/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/local-seo/,/services/local-seo/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/content-marketing/,/services/seo/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/social-media-marketing/,/services/paid-ads/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/email-marketing/,/services/email-marketing/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/paid-advertising/,/services/paid-ads/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/b2b-marketing/,/services/lead-generation/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/growth-hacking/,/services/lead-generation/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/website-design/,https://studios.techdella.com/services/website-design/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/landing-page-design/,https://studios.techdella.com/services/website-design/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/branding-and-design/,https://studios.techdella.com/services/branding/,301,,Legacy redirect carried from old theme (fixed targets)
+/service/conversion-rate-optimization/,/services/lead-generation/,301,,Legacy redirect carried from old theme (fixed targets)
+/solutions/,/services/,301,,Old solutions index; industries have no hub page (owner, 11 Oct 2026)
+/solutions/*,/solution/$1,301,regex ^/solutions/(.+)$,Legacy /solutions/<page>/ to the live /solution/ base
+/solution/,/services/,301,,Industries have no hub page (owner, 11 Oct 2026): the nav lists them
+/solution/ai-marketing-agency/,/services/marketing-automation/,301,,AI marketing page removed (owner, 11 Oct 2026)
+/resources/,https://blog.techdella.com/,301,,Resources has no hub page (owner, 11 Oct 2026): guides are in the nav
+/case-study/,/case-studies/,301,,Legacy redirect carried from old theme (fixed targets)
+/guide/,https://blog.techdella.com/,301,prefix,Legacy redirect carried from old theme (fixed targets)
+/guide/*,https://blog.techdella.com/$1,301,regex ^/guide/(.+)$,Catch-all for any guide not listed
+/locations/,/services/,301,,Locations have no hub page (owner, 11 Oct 2026): the nav and footer list the markets
+/locations/lagos-nigeria/,/locations/nigeria/,301,,"Merged into the Nigeria page (owner, 11 Oct 2026)"
+/locations/usa/,/services/,301,,"Only Nigeria keeps a market page; no staffed presence or local proof here (owner, 11 Oct 2026; doorway-page policy)"
+/locations/uk/,/services/,301,,"Only Nigeria keeps a market page; no staffed presence or local proof here (owner, 11 Oct 2026; doorway-page policy)"
+/locations/canada/,/services/,301,,"Only Nigeria keeps a market page; no staffed presence or local proof here (owner, 11 Oct 2026; doorway-page policy)"
+/locations/dubai-uae/,/services/,301,,"Only Nigeria keeps a market page; no staffed presence or local proof here (owner, 11 Oct 2026; doorway-page policy)"
+/locations/europe/,/services/,301,,"Only Nigeria keeps a market page; no staffed presence or local proof here (owner, 11 Oct 2026; doorway-page policy)"
+/service/cmo-service/,/services/,301,,"Not in the export; in GSC (3 clicks). Old chain via /cmo-as-a-service/ → one hop"
+/location/new-york-usa/,/services/,301,,"Not in the export; in GSC (3 clicks). Old chain via /locations/usa/ → one hop"
+/tech-blog/a-complete-guide-for-saas-product-development/,https://blog.techdella.com/how-to-build-a-saas-product/,301,,"Not in the export; in GSC (3 clicks). Old theme rule made explicit"
+/glossary/risk-tolerance/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/diversification/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/platform-as-a-service-paas/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/asset-allocation/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/financial-planning/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/what-is-budgeting/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/debt-to-income-ratio/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/liquidity/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/franchising/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/inflation/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/deflation/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/credit-score/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/supply-chain-management/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/inventory-management/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/quality-control/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/cash-flow-statement/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/customer-service/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/outsourcing/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/delegation/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/digital-download/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/digital-asset/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/intellectual-property/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/six-sigma/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/e-book/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/merger-and-acquisition/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/consumer-to-consumer/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/infrastructure-as-a-service/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/microbusiness/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/risk-management/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/retail-payment-methods/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/contract-law/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/print-on-demand/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/corporate-finance/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/break-even-point/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/side-hustle/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/initial-public-offering/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/solopreneurship/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/internet-of-things/,,410,,"GSC 12 mo to 12 Oct 2026: off-topic glossary term, <50 clicks (§10.6)"
+/glossary/dropshipping/,/business/how-to-start-a-dropshipping-business/,301,,"GSC 12 mo to 12 Oct 2026: <50 clicks; closest relevant page (§10.6)"
+/locations/ibadan-nigeria/,/locations/nigeria/,301,,"GSC 12 mo to 12 Oct 2026: 20 clicks; merged into the Nigeria page, which leads with the Ibadan office (owner, 12 Oct 2026)"
+/founders-hub-waitlist/,,410,,"Founders Hub retired (owner, 12 Oct 2026): 410 Gone"
+/founder-dashboard/,,410,,"Founders Hub retired (owner, 12 Oct 2026): 410 Gone"
+/founder-perks/,,410,,"Founders Hub retired (owner, 12 Oct 2026): 410 Gone"
+/directory/founder-perks/,,410,,"Founders Hub retired (owner, 12 Oct 2026): 410 Gone"

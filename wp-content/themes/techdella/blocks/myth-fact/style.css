@@ -1,0 +1,14 @@
+/* Myth vs fact: the myth muted with a cross, the fact on sand with a check. Lighter than ink blocks. */
+.td-mythfact{margin:2.2em 0}
+.td-mythfact__title{margin:0 0 12px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--td-muted)}
+.td-mythfact__list{margin:0;display:flex;flex-direction:column;gap:12px}
+.td-mythfact__row{display:grid;grid-template-columns:1fr 1.25fr;border:1px solid var(--td-line);border-radius:var(--td-r-md);overflow:hidden;background:var(--td-paper)}
+.td-mythfact__myth,.td-mythfact__fact{margin:0;padding:18px 20px;font-size:15.5px;line-height:1.55;display:flex;flex-direction:column;gap:8px}
+.td-mythfact__myth{background:var(--td-paper);color:var(--td-muted);border-right:1px solid var(--td-line)}
+.td-mythfact__fact{background:var(--td-canvas);color:var(--td-ink)}
+.td-mythfact__tag{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--td-muted)}
+.td-mythfact__tag::before{content:"✕";display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--td-line-soft);font-size:10px;color:var(--td-muted)}
+.td-mythfact__tag--fact{color:var(--td-ink)}
+.td-mythfact__tag--fact::before{content:"✓";background:var(--td-ink);color:var(--td-paper)}
+.td-mythfact__fact a{color:inherit}
+@media (max-width:640px){.td-mythfact__row{grid-template-columns:1fr}.td-mythfact__myth{border-right:0;border-bottom:1px solid var(--td-line)}}

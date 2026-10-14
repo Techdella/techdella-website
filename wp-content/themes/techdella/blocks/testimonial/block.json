@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/testimonial",
+	"title": "Testimonial",
+	"category": "techdella",
+	"icon": "format-quote",
+	"description": "A verbatim client quote with name, role, company and photo. Sand card with arch portrait, or dark card.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"quote": { "type": "string", "default": "" },
+		"name": { "type": "string", "default": "" },
+		"role": { "type": "string", "default": "" },
+		"company": { "type": "string", "default": "" },
+		"image": { "type": [ "string", "integer" ], "default": "" },
+		"logo": { "type": [ "string", "integer" ], "default": "" },
+		"variant": { "type": "string", "enum": [ "arch", "dark" ], "default": "arch" },
+		"aboutThisPage": { "type": "boolean", "default": false }
+	},
+	"example": {
+		"attributes": {
+			"quote": "Techdella reframed how we were thinking about our market entirely. We went from scattered tactics to a positioning and GTM system that actually made sense for where we were heading. The difference was immediate.",
+			"name": "Levi Barbosa",
+			"role": "CEO",
+			"company": "WezOps",
+			"image": "people/levi-barbosa-wezops",
+			"logo": "clients/wezops",
+			"variant": "arch",
+			"aboutThisPage": false
+		}
+	},
+	"techdella": {
+		"controls": { "quote": "textarea", "image": "media", "logo": "media" },
+		"help": "Verbatim quotes only (§2.4), pasted exactly, with permission confirmed. Turn on 'About this page' only when the quote is about the service or case study on this page: it then adds Review schema pointing at this page's Service."
+	}
+}

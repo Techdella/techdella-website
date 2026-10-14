@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/photo-cards",
+	"title": "Photo + cards",
+	"category": "techdella",
+	"icon": "format-image",
+	"description": "Studios 'PHOTO + CARDS': a large rounded photo panel with a dark fade, a headline, and up to four small cards (one sand, the rest white) with optional link pills.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"image": { "type": [ "string", "integer" ], "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"cards": { "type": "array", "default": [] }
+	},
+	"example": {
+		"attributes": {
+			"image": "stock/designer-drawing-tablet-studio",
+			"title": "Build faster, and *finally* ship it properly",
+			"intro": "What makes working with us different:",
+			"cards": [
+				{ "title": "Fixed scope before we start", "icon": "scope", "linkLabel": "See packages", "url": "#packages" },
+				{ "title": "Milestone-based payments", "icon": "milestone" },
+				{ "title": "Human-reviewed AI builds", "icon": "review" }
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "image": "media", "cards": "json" },
+		"help": "Image: a real studio/work photo (decorative background, so no alt). cards: [{title, icon: scope|milestone|review|clock, linkLabel, url}]; the first card is sand, the others white."
+	}
+}

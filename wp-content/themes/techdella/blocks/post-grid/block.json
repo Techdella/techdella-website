@@ -1,0 +1,129 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/post-grid",
+	"title": "Post grid",
+	"category": "techdella",
+	"icon": "grid-view",
+	"description": "Journal posts from a real query: grid (cards) or list (archive rows), optional title and JS-free category filter chips (links to category archives), count/offset/category, related mode for 'Keep reading'.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"attributes": {
+		"postType": {
+			"type": "string",
+			"default": ""
+		},
+		"label": {
+			"type": "string",
+			"default": ""
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"titleLevel": {
+			"type": "integer",
+			"enum": [
+				1,
+				2
+			],
+			"default": 2
+		},
+		"layout": {
+			"type": "string",
+			"enum": [
+				"grid",
+				"list"
+			],
+			"default": "grid"
+		},
+		"count": {
+			"type": "integer",
+			"default": 6
+		},
+		"offset": {
+			"type": "integer",
+			"default": 0
+		},
+		"category": {
+			"type": "string",
+			"default": ""
+		},
+		"related": {
+			"type": "boolean",
+			"default": false
+		},
+		"filters": {
+			"type": "boolean",
+			"default": false
+		},
+		"filterCategories": {
+			"type": "array",
+			"default": []
+		},
+		"allLabel": {
+			"type": "string",
+			"default": "All"
+		},
+		"moreLabel": {
+			"type": "string",
+			"default": ""
+		},
+		"moreUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"surface": {
+			"type": "string",
+			"enum": [
+				"paper",
+				"canvas"
+			],
+			"default": "paper"
+		},
+		"items": {
+			"type": "array",
+			"default": []
+		},
+		"intro": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"example": {
+		"attributes": {
+			"title": "Notes on getting *found*",
+			"filters": true,
+			"count": 3,
+			"items": [
+				{
+					"title": "AEO vs SEO vs GEO",
+					"category": "AI Search",
+					"cover": "SEO *vs* GEO"
+				},
+				{
+					"title": "Technical SEO checklist for WordPress",
+					"category": "SEO",
+					"cover": "Checklist"
+				},
+				{
+					"title": "B2B lead magnets that convert",
+					"category": "Lead gen",
+					"cover": "Lead *magnets*"
+				}
+			]
+		}
+	},
+	"techdella": {
+		"controls": {
+			"items": "json",
+			"filterCategories": "json",
+			"moreUrl": "url"
+		},
+		"help": "Shows published posts (sticky posts ignored). category: a category slug. related: same category as the current post, current post excluded. filters: chips linking to category archives (filterCategories = slugs; empty = the 6 largest categories). titleLevel 1 when the grid heads an archive page. items are preview-only examples (labelled Example) shown in the editor/styleguide when there are no posts."
+	}
+}

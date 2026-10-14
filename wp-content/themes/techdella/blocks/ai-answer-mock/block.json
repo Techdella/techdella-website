@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/ai-answer-mock",
+	"title": "AI answer mock",
+	"category": "techdella",
+	"icon": "format-chat",
+	"description": "AI assistant answer card in HTML/CSS: the buyer's question, an answer that mentions your brand, and numbered source pills with your site cited. Always labelled as an example.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"question": { "type": "string", "default": "" },
+		"answer": { "type": "string", "default": "" },
+		"platform": { "type": "string", "default": "" },
+		"sources": { "type": "array", "default": [] },
+		"caption": { "type": "string", "default": "Example AI answer" },
+		"variant": { "type": "string", "enum": [ "sand", "plain" ], "default": "sand" },
+		"contained": { "type": "boolean", "default": false }
+	},
+	"example": {
+		"attributes": {
+			"question": "Which firms help fintechs with data protection compliance?",
+			"answer": "Firms frequently recommended for fintech compliance include *YourCo*[1], known for NDPA and GDPR programs, and two others…",
+			"sources": [
+				{ "label": "yourcompany.com", "own": true },
+				{ "label": "industry directory" },
+				{ "label": "news article" }
+			],
+			"caption": "Example AI answer",
+			"variant": "sand",
+			"contained": true
+		}
+	},
+	"techdella": {
+		"controls": { "answer": "textarea", "sources": "json" },
+		"help": "Wrap your (fictional) brand in *asterisks* to highlight it; [1] becomes a citation number. Sources: [{label, own}] — own=true marks your cited site. Optional platform names the assistant (e.g. \"Perplexity\")."
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/built-for",
+	"title": "Built for",
+	"category": "techdella",
+	"icon": "groups",
+	"description": "Studios 'BUILT FOR' strip: a short label and audience pills.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "Built for" },
+		"items": { "type": "array", "default": [] }
+	},
+	"example": {
+		"attributes": {
+			"label": "Built for",
+			"items": [ "Bootstrapped founders", "Small & medium businesses", "Agencies & marketing teams" ]
+		}
+	},
+	"techdella": {
+		"controls": { "items": "json" },
+		"help": "items: a list of audience names (strings)."
+	}
+}

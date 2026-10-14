@@ -1,0 +1,55 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/arch-people",
+	"title": "Arch people (team)",
+	"category": "techdella",
+	"icon": "groups",
+	"description": "Studios TEAM: arch-masked team portraits with name and role, from the td_team CPT (role, photo, linkedin) or the inline people list, with an optional 'expand your team' side panel.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": { "html": false, "anchor": true },
+	"attributes": {
+		"label": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"intro": { "type": "string", "default": "" },
+		"primaryLabel": { "type": "string", "default": "" },
+		"primaryUrl": { "type": "string", "default": "" },
+		"secondaryLabel": { "type": "string", "default": "" },
+		"secondaryUrl": { "type": "string", "default": "" },
+		"source": { "type": "string", "enum": [ "auto", "inline" ], "default": "auto" },
+		"people": { "type": "array", "default": [] },
+		"asideTitle": { "type": "string", "default": "" },
+		"asideText": { "type": "string", "default": "" },
+		"asideCards": { "type": "array", "default": [] },
+		"surface": { "type": "string", "enum": [ "canvas", "paper" ], "default": "canvas" }
+	},
+	"example": {
+		"attributes": {
+			"title": "Where ideas get *built*",
+			"intro": "A small, senior team of strategists, designers and builders who work directly with you.",
+			"primaryLabel": "Start a project",
+			"primaryUrl": "studios:/start/",
+			"secondaryLabel": "Contact us",
+			"secondaryUrl": "marketing:/book-a-discovery-call/",
+			"source": "inline",
+			"people": [
+				{ "name": "Joanna Okedara-Kalu", "role": "Founder & CEO", "image": "team/joanna-okedara-kalu" },
+				{ "name": "Chinedu Emmanuel Kalu", "role": "COO & Co-founder", "image": "team/chinedu-emmanuel-kalu" },
+				{ "name": "Abel Saka", "role": "Brand Designer & UI/UX", "image": "team/abel-saka" },
+				{ "name": "Omolola Akiyode", "role": "TechDella Team", "image": "team/omolola-akiyode" },
+				{ "name": "Mercy Olumakinwa", "role": "TechDella Team", "image": "team/mercy-olumakinwa" }
+			],
+			"asideTitle": "Quickly expand your team.",
+			"asideText": "Bring us in for a single project, or as an ongoing creative and technical partner.",
+			"asideCards": [
+				{ "tag": "Founders", "title": "Build an MVP", "url": "studios:/start/" },
+				{ "tag": "Agencies", "title": "White-label delivery", "url": "studios:/start/", "dark": true }
+			]
+		}
+	},
+	"techdella": {
+		"controls": { "intro": "textarea", "people": "json", "asideCards": "json", "asideText": "textarea", "primaryUrl": "url", "secondaryUrl": "url" },
+		"help": "source auto: published td_team members (menu order) when any exist, else the inline people [{name, role, image (team/* key or attachment ID), linkedin}]. Names and roles exactly as in §2.4. asideCards: [{tag, title, url, dark}]."
+	}
+}

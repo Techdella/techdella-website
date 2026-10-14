@@ -1,0 +1,155 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/hero",
+	"title": "Hero (page)",
+	"category": "techdella",
+	"icon": "cover-image",
+	"description": "Page hero for service, solution and location pages: eyebrow, H1 with accent, lead, CTAs, platform badges and an optional image or right-hand slot.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"attributes": {
+		"eyebrow": {
+			"type": "string",
+			"default": ""
+		},
+		"parentLabel": {
+			"type": "string",
+			"default": ""
+		},
+		"parentUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"lead": {
+			"type": "string",
+			"default": ""
+		},
+		"primaryLabel": {
+			"type": "string",
+			"default": ""
+		},
+		"primaryUrl": {
+			"type": "string",
+			"default": "/growth-audit/"
+		},
+		"secondaryLabel": {
+			"type": "string",
+			"default": ""
+		},
+		"secondaryUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"platformsLabel": {
+			"type": "string",
+			"default": ""
+		},
+		"platforms": {
+			"type": "array",
+			"default": []
+		},
+		"image": {
+			"type": [
+				"string",
+				"integer"
+			],
+			"default": ""
+		},
+		"imageAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"imageCaption": {
+			"type": "string",
+			"default": ""
+		},
+		"imageShape": {
+			"type": "string",
+			"enum": [
+				"rounded",
+				"arch"
+			],
+			"default": "rounded"
+		},
+		"layout": {
+			"type": "string",
+			"enum": [
+				"split",
+				"center"
+			],
+			"default": "split"
+		},
+		"background": {
+			"type": "string",
+			"enum": [
+				"grid",
+				"plain",
+				"canvas"
+			],
+			"default": "grid"
+		},
+		"imageSet": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"example": {
+		"attributes": {
+			"parentLabel": "Services",
+			"parentUrl": "/services/",
+			"eyebrow": "SEO",
+			"title": "B2B SEO services that turn *searches* into pipeline",
+			"lead": "Technical SEO, keyword strategy and content that ranks for the searches your buyers make before they choose a provider.",
+			"primaryLabel": "Get an SEO audit",
+			"primaryUrl": "/growth-audit/",
+			"secondaryLabel": "What's included",
+			"secondaryUrl": "#included",
+			"platformsLabel": "Platforms & tools we work in",
+			"platforms": [
+				{
+					"name": "Google Search Console",
+					"mark": "G",
+					"ink": true
+				},
+				{
+					"name": "GA4",
+					"mark": "GA"
+				},
+				{
+					"name": "Semrush",
+					"mark": "S"
+				},
+				{
+					"name": "WordPress & Webflow",
+					"mark": "W"
+				}
+			],
+			"image": "photos/techdella-team-group",
+			"imageAlt": "The TechDella team working together",
+			"imageCaption": "Content by our team",
+			"layout": "split",
+			"background": "grid"
+		}
+	},
+	"techdella": {
+		"innerBlocks": true,
+		"controls": {
+			"lead": "textarea",
+			"platforms": "json",
+			"image": "media",
+			"parentUrl": "url",
+			"primaryUrl": "url",
+			"secondaryUrl": "url"
+		},
+		"help": "One H1 per page: this block renders it. Wrap one word in *asterisks* for the accent. Templates can pass a right-hand slot (e.g. a SERP mock) as inner content; otherwise the image shows. Platforms: {name, mark, ink, slug}; official logo files are used when present. imageSet: 2–6 portraits [{image, name, role}] shown as an arch mosaic instead of a single image (About pages)."
+	}
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MO-04b Meta carousel (Example)</title>
+<link rel="stylesheet" href="scene.css">
+<script type="application/json" id="scene-meta">{"id":"MO-04b","title":"Ad creative sample: Meta carousel (fictional brand Northwind, Example)","duration":10,"poster":3.6,"captions":[[0.2,2.6,"Send an invoice in under a minute."],[2.6,5,"Reminders go out on WhatsApp and email."],[5,7.4,"See who has paid at a glance."],[7.4,10,"Northwind. Start free. Example ad for a fictional brand."]]}</script>
+<style>
+.stage{flex-direction:row;gap:10rem}
+.side{display:flex;flex-direction:column;gap:3rem;width:66rem;animation:rise .8s .2s both var(--ease)}
+.side .h2,.side .lead{text-align:left}
+.post{flex:none;width:76rem;display:flex;flex-direction:column;border-radius:2.8rem;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden;animation:rise .8s both var(--ease)}
+.top{display:flex;align-items:center;gap:1.6rem;padding:2.2rem 2.6rem}
+.av{display:grid;place-items:center;width:6rem;height:6rem;border-radius:50%;background:#1F6F5C;color:var(--paper);font-weight:600;font-size:3rem}
+.top b{display:block;font-size:2.6rem}
+.top small{font-size:2rem;color:var(--muted)}
+.copy{padding:0 2.6rem 2rem;font-size:2.5rem;line-height:1.4}
+.track{position:relative;overflow:hidden}
+.slides{display:flex;gap:1.6rem;padding:0 2.6rem;animation:slide 10s var(--ease) both}
+@keyframes slide{0%,22%{transform:translateX(0)}26%,46%{transform:translateX(-56.6rem)}50%,70%{transform:translateX(-113.2rem)}74%,100%{transform:translateX(-169.8rem)}}
+.slide{flex:none;width:55rem;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:1.8rem;overflow:hidden;background:var(--paper)}
+.art{height:47rem;position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:1.6rem;padding:3.6rem;background:#EAF4EF}
+.art h3{font-size:5.6rem;line-height:1.02;letter-spacing:-.04em;font-weight:600;color:#0F3D30}
+.art .ui{position:absolute;left:3.6rem;right:3.6rem;top:3.6rem;display:flex;flex-direction:column;gap:1.2rem}
+.ui span{display:flex;justify-content:space-between;align-items:center;padding:1.6rem 2rem;border-radius:1.4rem;background:var(--paper);font-size:2.4rem;box-shadow:0 .4rem 1.2rem rgba(15,61,48,.08)}
+.ui i{font-style:normal;font-size:2rem;padding:.4rem 1.2rem;border-radius:999px;background:#DCF2E6;color:#14674C}
+.ui i.due{background:#FDF0E9;color:var(--orange-text)}
+.photo{background:url("../../assets/images/stock/shop-owner-checking-phone.jpg") 30% 30%/cover}
+.photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(8,38,26,.75))}
+.photo h3{position:relative;color:var(--paper)}
+.cta-art{background:#1F6F5C}.cta-art h3{color:var(--paper)}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:1.6rem;padding:2rem 2.4rem;background:var(--canvas)}
+.foot b{font-size:2.4rem}.foot small{display:block;font-size:2rem;color:var(--muted)}
+.foot .go{flex:none;font-size:2.2rem;font-weight:600;padding:1.2rem 2rem;border-radius:1rem;background:var(--line)}
+.dots{display:flex;justify-content:center;gap:1rem;padding:2rem}
+.dots i{width:1.2rem;height:1.2rem;border-radius:50%;background:var(--line);animation:dot 10s both step-end}
+.dots i:nth-child(1){animation-name:d1}.dots i:nth-child(2){animation-name:d2}.dots i:nth-child(3){animation-name:d3}.dots i:nth-child(4){animation-name:d4}
+@keyframes d1{0%{background:#1877F2}24%{background:var(--line)}}
+@keyframes d2{0%{background:var(--line)}24%{background:#1877F2}48%{background:var(--line)}}
+@keyframes d3{0%{background:var(--line)}48%{background:#1877F2}72%{background:var(--line)}}
+@keyframes d4{0%{background:var(--line)}72%{background:#1877F2}}
+.react{display:flex;gap:3rem;padding:0 2.6rem 2.4rem;font-size:2.2rem;color:var(--muted)}
+@media (max-aspect-ratio:4/3){.side{display:none}}
+@media (min-aspect-ratio:3/4) and (max-aspect-ratio:4/3){.post{width:72rem;transform:scale(.93)}.art{height:40rem}}
+@media (max-aspect-ratio:3/4){.post{width:94rem}.slide{width:70rem}.art{height:66rem}
+  @keyframes slide{0%,22%{transform:translateX(0)}26%,46%{transform:translateX(-71.6rem)}50%,70%{transform:translateX(-143.2rem)}74%,100%{transform:translateX(-214.8rem)}}
+  .copy,.top b{font-size:3rem}.art h3{font-size:6.8rem}}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<span class="example">Example</span>
+<main class="stage">
+  <div class="side">
+    <span class="label">Meta · carousel</span>
+    <h1 class="h2">One idea<br>per <em>card</em></h1>
+    <p class="lead">An example creative we made for a fictional brand, Northwind.</p>
+  </div>
+  <article class="post">
+    <div class="top"><span class="av">N</span><div><b>Northwind</b><small>Sponsored</small></div></div>
+    <p class="copy">Invoices that chase themselves. Swipe to see how it works →</p>
+    <div class="track"><div class="slides">
+      <div class="slide"><div class="art"><div class="ui"><span>Invoice #1042 <i>Sent</i></span><span>Invoice #1043 <i>Sent</i></span></div><h3>Send an invoice in under a minute</h3></div><div class="foot"><div><b>northwind.example</b><small>Invoicing for small teams</small></div><span class="go">Learn more</span></div></div>
+      <div class="slide"><div class="art photo"><h3>Reminders go out on WhatsApp and email</h3></div><div class="foot"><div><b>northwind.example</b><small>Automatic reminders</small></div><span class="go">Learn more</span></div></div>
+      <div class="slide"><div class="art"><div class="ui"><span>Ada Studio <i>Paid</i></span><span>Kemi Foods <i>Paid</i></span><span>Tolu &amp; Co <i class="due">Due Friday</i></span></div><h3>See who has paid at a glance</h3></div><div class="foot"><div><b>northwind.example</b><small>One dashboard</small></div><span class="go">Learn more</span></div></div>
+      <div class="slide"><div class="art cta-art"><h3>Start free. No card needed.</h3></div><div class="foot"><div><b>northwind.example</b><small>Free to start</small></div><span class="go">Sign up</span></div></div>
+    </div></div>
+    <div class="dots"><i></i><i></i><i></i><i></i></div>
+    <div class="react"><span>Like</span><span>Comment</span><span>Share</span></div>
+  </article>
+</main>
+</body>
+</html>

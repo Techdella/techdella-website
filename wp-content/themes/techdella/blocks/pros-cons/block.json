@@ -1,0 +1,59 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "techdella/pros-cons",
+	"title": "Pros and cons",
+	"category": "techdella",
+	"icon": "leftright",
+	"description": "Two columns: what works for and against an option.",
+	"editorScript": "techdella-blocks-editor",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"prosLabel": {
+			"type": "string",
+			"default": "Pros"
+		},
+		"consLabel": {
+			"type": "string",
+			"default": "Cons"
+		},
+		"pros": {
+			"type": "array",
+			"default": []
+		},
+		"cons": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"example": {
+		"attributes": {
+			"title": "Agency vs in-house",
+			"prosLabel": "Agency",
+			"consLabel": "In-house",
+			"pros": [
+				"Senior skills from day one",
+				"Flexible scope"
+			],
+			"cons": [
+				"Deep product knowledge",
+				"Always available"
+			]
+		}
+	},
+	"techdella": {
+		"controls": {
+			"pros": "json",
+			"cons": "json"
+		},
+		"help": "pros/cons: short strings. Rename the columns with prosLabel/consLabel for a comparison (e.g. \"Agency\" / \"In-house\")."
+	}
+}
